@@ -12,7 +12,7 @@ tags:
 
 ## Comparing with other models
 
-It is really sensitive to the learning rate. It is harder to optimize the transformer than the CNN or Seq2Seq model.
+The transformer is really sensitive to the learning rate. It is harder to optimize the transformer than the CNN or Seq2Seq model.
 * Reason : Initial gradient is so unstable
 * Warmup stage comes here. but we need more hyperparameter tuning.
 
@@ -28,7 +28,6 @@ The model ended up predicting the same label for all inputs, suggesting that the
 * hyperparameters are the factors which control the training process itself. The learning rate, the number of training epochs/iterations, and the batch size are some examples of common hyperparameters
 * In a nutshell, the parameters are what the model learns, and the hyperparameters determine how well (or how badly) the model learns.
 
-=====
 
 ## References
 
