@@ -8,7 +8,7 @@ tags:
   - bart
 ---
 
-# Transformer
+Training transformer is not easy comparing to other models like CNN or Seq2Seq. Here is my survey about training transformer.
 
 ## Comparing with other models
 
