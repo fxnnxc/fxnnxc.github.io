@@ -1,7 +1,7 @@
 ---
 title: 'Training Transformer is not easy'
-date: 2020-01-21
-permalink: /posts/2020/01/transformer-training /
+date: 2021-01-21
+permalink: /posts/2021/01/transformer-training/
 tags:
   - training
   - transformer
