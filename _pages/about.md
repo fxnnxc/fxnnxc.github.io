@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "academicpages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "Artificial Intelligence"
 excerpt: "About me"
 author_profile: true
 redirect_from: 
@@ -8,4 +8,7 @@ redirect_from:
   - /about.html
 ---
 
+
 Hello World!
+
+I'm building the site due day is  ```2021/02/28```
