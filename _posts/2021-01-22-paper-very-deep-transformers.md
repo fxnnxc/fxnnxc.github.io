@@ -1,5 +1,5 @@
 ---
-title: '[논문 리뷰] Very Deep Transformers for Neural Machine Translation '
+title: '[논문 리뷰] Very Deep Transformers for Neural Machine Translation'
 date: 2021-01-22
 permalink: /posts/2021/01/paper-very-deep-transformers/
 tags:
