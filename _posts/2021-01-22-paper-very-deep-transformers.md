@@ -41,13 +41,13 @@ f_{FF}(\cdot) : Feed Forward
 $$
 
 
-
 1. Optimization difficulty
    Vanishing gradient : LN이 완화를 해주지만, 디코더와 인코더의 아래 층에 gradient flow가 약한 것은 문제가 됩니다. 
       1. 해결책으로 pre-LN을 할 수 있고 이 방법으로 30층까지는 훈련을 안정적으로 진행할 수 있습니다. 
       2. 하지만 post-LN이 훈련된다면, pre-LN보다 성능이 좋은 경우가 많습니다. 따라서 논문에서는 post-LM을 안정적으로 훈련하고자 하였습니다.  
 
 ## 3. Initialization Technique
+
 $$
 x_{i} = f_{LN}(x_{i-1}\cdot w_i+f_{i}(x_{i-1}))
 $$
