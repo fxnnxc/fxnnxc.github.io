@@ -28,6 +28,8 @@ tags:
 
 1. Transformer equation
 
+![images](/images/posts/verydeep1.png)
+
 $$
 x_i = f_{LN}(x_{i-1}+f_{ATT}(x_{i-1}))\\
 x_{i+1} = f_{LN}(x_{i}+f_{FF}(x_{i}))\\
@@ -90,7 +92,7 @@ $x_{i-1}$부분과 $f_i(x_{i-1})$의 magnitued가 다른 게, 불안정한 훈�
 
 ### Result
 
-<img src="/images/posts/verydeep1.png"
+
 <img src="/images/posts/verydeep2.png">
 <img src="/images/posts/verydeep3.png">
 <img src="/images/posts/verydeep4.png">
