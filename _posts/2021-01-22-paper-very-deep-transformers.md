@@ -8,7 +8,7 @@ tags:
   - NMT
 ---
 
-# Very Deep Transformers for Neural Machine Translation
+트랜스포머가 훈련이 잘 안되는 이유와 그걸 가능하게 만든 방법. 
 
 ## Abstract 
 
