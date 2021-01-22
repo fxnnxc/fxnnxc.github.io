@@ -6,7 +6,6 @@ tags:
   - training
   - transformer
   - NMT
-comments: true
 ---
 
 # Very Deep Transformers for Neural Machine Translation
