@@ -15,10 +15,10 @@ url                      : https://fxnnxc.github.io # the base hostname & protoc
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "fxnnxc/fxnnxc.github.io"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
-breadcrumbs              : false # true, false (default)
+breadcrumbs              : true # true, false (default)
 words_per_minute         : 160
-future                   : false
-read_more                : "enabled" # if enabled, adds "Read more" links to excerpts
+future                   : true
+read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
 talkmap_link             : true #change to true to add link to talkmap on talks page
 comments:   
   provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
