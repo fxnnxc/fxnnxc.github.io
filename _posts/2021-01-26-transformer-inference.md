@@ -15,7 +15,7 @@ tags:
 
 ### ✨ Therefore we run **encoder only 1 time but decoder several times** ✨
 
-Because of this property, we don't use the forward method in the transformer, but instead we use forward method in the encoder and the decoder each. In the fairseq code, this happens in ```Sequence Generator``` class. If you want to decode tokens with additional layers, then change the ```def generate``` code to use additional layers.  
+Because of this property, we don't use the forward method in the transformer, but instead we use forward method in the encoder and the decoder seperately. In the fairseq code, this happens in ```Sequence Generator``` class. If you want to decode tokens with additional layers, then change the ```def generate``` code to use additional layers.  
 
 
 ## 1. Make additonal methods for the Model.  
