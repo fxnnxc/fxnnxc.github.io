@@ -22,7 +22,7 @@ Because of this property, we don't use the forward method in the transformer, bu
 In the fairseq code, this happens in ```Sequence Generator``` class. If you want to decode tokens with additional layers, then change the ```def generate``` code to use additional layers.  
 
 
-## Make additonal methods for the Model.  
+## 1. Make additonal methods for the Model.  
 
 ```python
 # additional functions in the model.py
@@ -37,7 +37,7 @@ In the fairseq code, this happens in ```Sequence Generator``` class. If you want
         return self.XtoV(x)
 ```
 
-## Now change the sequence generator's forward decoder. 
+## 2. Now change the sequence generator's forward decoder. 
 
 ```python
 def forward_decoder(
