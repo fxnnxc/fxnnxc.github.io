@@ -24,16 +24,12 @@ tags:
 * **multi-scale prediction objective** : 마지막 층에 가기 전에 단계별로 추론을 하고, Loss를 더하는 방법입니다. 
 
 ## Introduction
-* Structured Output Prediction, it is important to learn a model that can perform probabilistic in- ference and make diverse predictions.
 * Structured Output Prediction에서는 확률적인 추론과 다양한 예측이 중요합니다. 여기서 말하는 Structured Output Prediction은 단순히 숫자를 예측하는 것을 넘어서 구조 자체를 예측하는 것을 말합니다. 
 * Deep conditional generative models (CGMs) 
 * A conditional variational auto-encoder (CVAE)
 
-## Related work
+## Related work & Preliminary: Variational Auto-encoder
 * pass 
-
-## Preliminary: Variational Auto-encoder
-* VAE에 대한 기본적인 설명.
 
 ## Deep Conditional Generative Models for Structured Output Prediction
 
@@ -41,6 +37,9 @@ $$
 \log{p_{\theta}(\mathbf{y}|\mathbf{x})} \geq -\it{KL}(q_{\phi}(\mathbf{z}|\mathbf{x},\mathbf{y}) ||p_{\theta}(\mathbf{z}|\mathbf{x})) + \mathbb{E}_{q_{\phi}(\mathbf{z}|\mathbf{x},\mathbf{y})} [\log p_{\theta}(\mathbf{y}|\mathbf{x},\mathbf{z})]
 $$
 
+VAE의 ELBO와 비슷하게, CVAE에서도 ELBO를 학습시킵니다. 
+
+우변의 두 번째 값은 intractable하므로 아래와 같이 Loss를 적을 수 있습니다. 
 
 $$
 \tilde{\mathcal{L}}_{CVAE}(\mathbf{x},\mathbf{y};\theta, \phi) = -\it{KL}(q_{\phi}(\mathbf{z}|\mathbf{x},\mathbf{y}) ||p_{\theta}(\mathbf{z}|\mathbf{x})) + \frac{1}{L}\sum_{l=1}^{L} \log p_{\theta}(\mathbf{y}|\mathbf{x},\mathbf{z})
@@ -52,10 +51,10 @@ $\text{ where } \mathbf{z}^{(l)} = g_\phi(\mathbf{x}, \mathbf{y},\epsilon^{(l)})
 
 $L$ is the number of samples. 
 CVAE 
-* recognition network $q_\phi(z|x,y)$
-* (conditional) prior network $p_\theta(z|x)$
-* generation network $p_\theta(y|x,z)$
-* They build it on top of the baseline $\text{CNN}$
+* (c) recognition network $q_\phi(z|x,y)$
+* (b) (conditional) prior network $p_\theta(z|x)$
+* (b) generation network $p_\theta(y|x,z)$
+* (a) They build it on top of the baseline $\text{CNN}$
 
 
 ![images](/images/posts/CGM1.png)
