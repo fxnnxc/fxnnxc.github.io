@@ -33,13 +33,14 @@ tags:
 
 ## Deep Conditional Generative Models for Structured Output Prediction
 
+
 $$
-\log{p_{\theta}(\mathbf{y}|\mathbf{x})} \geq -\it{KL}(q_{\phi}(\mathbf{z}|\mathbf{x},\mathbf{y}) ||p_{\theta}(\mathbf{z}|\mathbf{x})) + \mathbb{E}_{q_{\phi}(\mathbf{z}|\mathbf{x},\mathbf{y})} [\log p_{\theta}(\mathbf{y}|\mathbf{x},\mathbf{z})]
+\log{p_{\theta}(\mathbf{y}|\mathbf{x})} \geq -\it{KL} (q_{\phi}(\mathbf{z}|\mathbf{x},\mathbf{y}) ||p_{\theta}(\mathbf{z}|\mathbf{x})) + \mathbb{E}_{q_{\phi}(\mathbf{z}|\mathbf{x},\mathbf{y})} [\log p_{\theta}(\mathbf{y}|\mathbf{x},\mathbf{z})]
 $$
 
-VAE의 ELBO와 비슷하게, CVAE에서도 ELBO를 학습시킵니다. 
+VAE의 ELBO와 비슷하게, CVAE에서도 ELBO를 학습시킵니다. 우변의 두 번째 값은 intractable하므로 아래와 같이 Loss를 적을 수 있습니다. 
 
-우변의 두 번째 값은 intractable하므로 아래와 같이 Loss를 적을 수 있습니다. 
+
 
 $$
 \tilde{\mathcal{L}}_{CVAE}(\mathbf{x},\mathbf{y};\theta, \phi) = -\it{KL}(q_{\phi}(\mathbf{z}|\mathbf{x},\mathbf{y}) ||p_{\theta}(\mathbf{z}|\mathbf{x})) + \frac{1}{L}\sum_{l=1}^{L} \log p_{\theta}(\mathbf{y}|\mathbf{x},\mathbf{z})
