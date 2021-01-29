@@ -14,10 +14,11 @@ Education
 * B.S. in Mathematics, ChungAng University, Seoul, South Korea
   * March 2018 - August 2020
   * Double major in Computer Science
-<!--
+
+<!------
 * M.S. in Jekyll, GitHub University, 2014)
 * Ph.D in Version Control Theory, GitHub University, 2018 (expected)
--->
+------->
 
 Work experience
 ======
