@@ -42,7 +42,7 @@ Text Summarization은 더욱 세분화가 될 수 있습니다.
 
   Summarization을 하면 가장 많이 나오는 구분입니다. 문서로부터 주요 정보를 추출하는 목적을 가지고 있기 때문에, 문서에 있는 중요한 문장을 선택할 수 있습니다. Extractive는 문서의 내용을 변경하지 않고 주요 문장을 추출하는 것 입니다. 이와는 다르게 Abstractive Summarization은 문서에 있던 문장들을 그대로 사용하지 않고 Paraphrase해서 요약하는 방법입니다. Extractive Summarization의 문제점은 문장을 선택함으로써 전체 Summary가 부자연스러울 수 있고, 내용이 의미하는 바를 모델이 알지 못할 가능성이 높다는 것 입니다. 이는 문장을 paraphrase하지 못하기 때문입니다. 따라서 최근에는 Extractive에서 Abstractive로 Text Summarization의 흐름이 바뀌었습니다. 
 
-|![images](/images/posts/docs/img1.png)|
+|![images](/images/posts/text_summarization_survey/img1.png)|
 |---|
 |이 문장은 두 문장의 합으로 이루어져 있습니다. Abstractive Summarization으로 두 문장이 지닌 의미를 축약할 수 있습니다.|
 
@@ -54,7 +54,7 @@ Single Document Summarization은 주어진 1개의 문서에 대해서 요약을
 
 Query-based는 Summarization은 Multdocument에서 주어진 Query(질문)에 대해서 관련된 문서의 부분을 요약하는 Task입니다. query에 해당하는 정보를 찾아서 요약해주기 때문에, extractive와 abstractive 모두 사용이 가능합니다. 
 
-![images](/images/posts/docs/img2.png)
+![images](/images/posts/text_summarization_survey/img2.png)
 
 
 **4.** Update Summarization
