@@ -52,9 +52,9 @@ $\text{ where } \mathbf{z}^{(l)} = g_\phi(\mathbf{x}, \mathbf{y},\epsilon^{(l)})
 
 $L$ is the number of samples. 
 CVAE 
-* (c) recognition network $q_\phi(z|x,y)$
-* (b) (conditional) prior network $p_\theta(z|x)$
-* (b) generation network $p_\theta(y|x,z)$
+* (c) recognition network $q_\phi(z\bar x,y)$
+* (b) (conditional) prior network $p_\theta(z\|x)$
+* (b) generation network $p_\theta(y\|x,z)$
 * (a) They build it on top of the baseline $\text{CNN}$
 
 
