@@ -112,6 +112,9 @@ collections:
   preprint:
     output: true
     permalink: /preprint/:path/
+  learning:
+    output: true
+    permalink: /learning/:path/
 
 news_limit: 5
 

@@ -11,12 +11,9 @@ nav: false
 <h1>
 Hello World
 </h1>
+
   {%- assign sorted_projects = site.preprint  -%}
   <!-- Generate cards for each project -->
-  <div class="container">
-    <div class="row row-cols-2">
-    {%- for project in sorted_projects -%}
+  <div class="row">
       {% include preprint.html %}
-    {%- endfor %}
-    </div>
   </div>

@@ -1,11 +1,13 @@
 ---
-layout: post
+layout: page
 title: '🎯 #3 Four Samples for the dynamics of LRP'
-date: 2023-04-19 11:53:01
-description: an example of a blog post with some math
-tags: RL LRP XAI
-categories: XAI-posts
+description: a project with a background image
+img: assets/img/12.jpg
+importance: 1
+category: work
 ---
+
+
 
 ## Motivation / Overview / Goal
 

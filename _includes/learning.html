@@ -4,7 +4,7 @@
     {% if site.news != blank -%} 
     <div class="table-responsive">
       <table class="table table-sm table-borderless">
-      {%- assign news = site.preprint | reverse -%} 
+      {%- assign news = site.learning | reverse -%} 
       {% for item in news limit: site.news_limit %} 
         <tr>
           <th scope="row">{{ item.date | date: "%b %-d, %Y" }}</th>
@@ -23,3 +23,4 @@
     <p>No news so far...</p>
   {%- endif %} 
   </div>
+Í
