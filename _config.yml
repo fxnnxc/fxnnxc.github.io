@@ -109,6 +109,9 @@ collections:
   projects:
     output: true
     permalink: /projects/:path/
+  preprint:
+    output: true
+    permalink: /preprint/:path/
 
 news_limit: 5
 
