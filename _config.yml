@@ -2,7 +2,7 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: Bumjin's Research # the website title (if blank, full name will be used instead)
+title: Creative Rudiment # the website title (if blank, full name will be used instead)
 first_name: Bumjin
 middle_name: 
 last_name: Park
@@ -84,7 +84,7 @@ panelbear_analytics:  # panelbear analytics site ID (format: XXXXXXXXX)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: Bumjin's research  # your blog must have a name for it to show up in the nav bar
+blog_name: ©® Creative Rudiment  # your blog must have a name for it to show up in the nav bar
 blog_description: try every thing by my self. 
 permalink: /blog/:year/:title/
 
