@@ -1,19 +1,19 @@
 ---
 layout: page
-permalink: /learning/
-title: learning
+permalink: /knowledge/
+title: 🌀 knowledge
 description: Materials for courses you taught. Replace this text with your description.
 nav: true
 ---
 
-<!-- pages/learning.md -->
-<div class="learning">
+<!-- pages/knowledge.md -->
+<div class="knowledge">
 <h1>
 Hello World
 </h1>
 
-  {%- assign sorted_projects = site.learning  -%}
+  {%- assign sorted_projects = site.knowledge  -%}
   <!-- Generate cards for each project -->
   <div class="row">
-      {% include learning.html %}
+      {% include knowledge.html %}
   </div>

@@ -1,80 +1,33 @@
 ---
 layout: page
-title: project 1
+title: LRP 에 관련된 오해와 고민 
 description: a project with a background image
-img: assets/img/12.jpg
-importance: 1
+img: 
+importance: 2
 category: work
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+## LRP 와 관련된 고민 
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+### 첫번째 고민 
+첫번 째 걱정은 LRP 모델을 믿을 수 있는가에 대한 문제이다. 
+내가 구현한 것과 다른 사람이 구현한 것은 LRP mechanism 상 차이가 없어야 한다. 
+이에 관련된 룰을 다른 곳에서 구현한 것을 보고, LRP model 을 더욱 신뢰할 수 있어야 한다. 
+현재는 construction이 꽤나 불안정한 상태이다. 고쳐야 한다. 
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+### 두번째 고민 
+LRP 를 기반으로 학습과정에서 발견되는 특징을 설명하려고 하는데, 동적인 강화학습과 정적인 LRP에 대한 고민이 있다. 
+강화학습은 보상을 최대한으로 얻기 위해서 움직인다. 
+LRP가 크게 활성화되는 것과 이 정보는 어떠한 관계가 있는가? 
+측, input attribution 이 큰 경우, 강화학습에 대해서 어떠한 사실을 말해줄 수 있는가?
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, *bled* for your project, and then... you reveal it's glory in the next row of images.
+PPO로 학습할 경우, 행동에 대해서 가장 좋은 행동을 선택하게 된다. 
 
-
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
-
-
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-{% raw %}
-```html
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-```
-{% endraw %}
+* LRP가 활성화되면, 해당 정보를 더욱 이용하는가? 
+* 그렇다면 학습 자체는 해당 정보를 더욱 이용하고 싶어한다는 걸 반증하는 건가? 
+* Feature 들은 상대적으로 비교할 수 있다. Mountain Car에는 두 가지 observation space가 있고, LRP 정보는 둘 중 어떤 게 더 중요한 지 알려준다.
+  
+* 특정 상태에 대해서 LRP 정보가 학습되는 것은 모델이 해당 정보를 더욱 활용한다는 것을 나타낸다. 
+* LRP의 변화를 관측하는 것의 정보의 활용에 대한 dynamics 를 분석하는 것이다. 
+* 
