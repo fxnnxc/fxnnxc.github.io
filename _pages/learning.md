@@ -8,10 +8,6 @@ nav: true
 
 <!-- pages/knowledge.md -->
 <div class="knowledge">
-<h1>
-Hello World
-</h1>
-
   {%- assign sorted_projects = site.knowledge  -%}
   <!-- Generate cards for each project -->
   <div class="row">
