@@ -3,7 +3,7 @@ layout: about
 title: 🖌 About Me
 permalink: /
 subtitle: Bumjin Park
-
+order : 1
 profile:
   align: right
   image: me.jpeg

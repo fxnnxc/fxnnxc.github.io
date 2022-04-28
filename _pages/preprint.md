@@ -4,6 +4,8 @@ permalink: /preprint/
 title: Preprint
 description: Materials for courses you taught. Replace this text with your description.
 nav: false
+order : 10
+
 ---
 
 <!-- pages/preprint.md -->

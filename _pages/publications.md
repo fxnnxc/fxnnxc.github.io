@@ -5,6 +5,7 @@ title: publications
 description: these are published papers
 years: [2022, 2021]
 nav: false
+order : 6
 ---
 
 <a href="https://scholar.google.co.kr/citations?user=XzIXaxoAAAAJ&hl=ko"> Bumjin's Google Scholar </a>

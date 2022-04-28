@@ -3,7 +3,8 @@ layout: page
 permalink: /knowledge/
 title: 🌀 knowledge
 description: Materials for courses you taught. Replace this text with your description.
-nav: true
+nav: false
+order : 7
 ---
 
 <!-- pages/knowledge.md -->
