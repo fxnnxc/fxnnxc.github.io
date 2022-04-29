@@ -3,8 +3,8 @@ layout: post
 title: '🎯 #5 Image Visualization'
 date: 2022-04-28 11:53:01
 description: an example of a blog post with some math
-tags: Vision
-categories: XAI-posts
+tags: Vision, Visualization
+categories: Vision
 ---
 
 
