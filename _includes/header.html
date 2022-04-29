@@ -26,7 +26,7 @@
             <ul class="navbar-nav ml-auto flex-nowrap">
 
               <!-- About -->
-              <li class="nav-item {% if page.title == 'about' %}active{% endif %}">
+              <li style="font-size: 17px" class="nav-item {% if page.title == 'about' %}active{% endif %}">
                 <a class="nav-link" href="{{ '/' | relative_url }}"> 🖌 About Me
                   {%- if page.title == "about" -%}
                   <span class="sr-only">(current)</span>
@@ -35,7 +35,7 @@
               </li>
               {% if site.blog_name %}
               <!-- Blog -->
-              <li class="nav-item {% if page.url contains 'blog' %}active{% endif %}">
+              <li style="font-size: 17px" class="nav-item {% if page.url contains 'blog' %}active{% endif %}">
                 <a class="nav-link" href="{{ '/blog/' | relative_url }}">🚀 experiment
                   {%- if page.title == "blog" -%}
                   <span class="sr-only">(current)</span>
@@ -49,7 +49,7 @@
               {%- for p in sorted_pages -%}
               {%- if p.nav and p.autogen == nil -%}
               {%- if p.dropdown %}
-              <li class="nav-item dropdown {% if page.title == p.title %}active{% endif %}">
+              <li style="font-size: 17px" class="nav-item dropdown {% if page.title == p.title %}active{% endif %}">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ p.title }}
                   {%- if page.title == p.title -%}
                   <span class="sr-only">(current)</span>
@@ -66,7 +66,7 @@
                 </div>
               </li>
               {%- else %}
-              <li class="nav-item {% if page.title == p.title %}active{% endif %}">
+              <li style="font-size: 17px" class="nav-item {% if page.title == p.title %}active{% endif %}">
                 <a class="nav-link" href="{{ p.url | relative_url }}">{{ p.title }}
                   {%- if page.title == p.title -%}
                   <span class="sr-only">(current)</span>

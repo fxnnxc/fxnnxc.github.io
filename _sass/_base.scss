@@ -4,8 +4,31 @@
 
 // Typography
 
-p, h1, h2, h3, h4, h5, h6, em, div, li, span, strong {
+
+h1, h2, h3, h4, h5, h6, strong, div{
   color: var(--global-text-color);
+  font-family :TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif; 
+}
+ li, ul{
+  color: var(--global-text-color);
+  font-size: 19px;
+}
+strong{
+  font-weight:700;
+  font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif; 
+}
+
+span {
+  color: var(--global-text-color);
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+
+p {
+  color: var(--global-text-color);
+  line-height:  180%;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 19px;
 }
 
 hr {
@@ -99,7 +122,7 @@ blockquote {
   .address {
     margin-bottom: 5px;
     margin-top: 5px;
-    font-family: monospace;
+    font-family: 'Times New Roman', Times, serif;
     p {
       display: inline-block;
       margin: 0;
@@ -293,6 +316,9 @@ footer.sticky-bottom {
   h1 {
     color: var(--global-theme-color);
     font-size: 3rem;
+  }
+  li{
+    font-size:17px;
   }
 }
 
@@ -493,7 +519,7 @@ footer.sticky-bottom {
         transition: all 0.15s ease;
 
         p {
-          line-height: 1.4em;
+          line-height: 160%;
           margin: 10px;
         }
         pre {
@@ -534,6 +560,9 @@ pre {
     background-color: transparent;
     border-radius: 0;
     padding: 0;
+    font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif; 
+    line-height: 200%;
+
   }
 }
 
@@ -542,6 +571,8 @@ code {
   background-color: var(--global-code-bg-color);
   border-radius: 3px;
   padding: 3px 3px;
+  font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif; 
+  font-size: 19px;
 }
 
 
