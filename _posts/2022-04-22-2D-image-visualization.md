@@ -94,7 +94,7 @@ In the case of `real worl value`, the value itself represents the degree of RGB 
 
 <h3 > 3.2 Relative Value </h3>
 
-There are many images which is not real world image, such as 2D heatmap of visitation in grid world as in Figure 3. To plot the *relative value*, you must pre-define it so that there is no value outside the interval. If you plot just one instance, setting $V_{max} = \max({I_p^c)}$ is fine. However, when you plot multiple images, you should not use $V_{max} = \max{(I_p^c (x))}$ for each $x$, because in most cases, it will lead to result in Figure 2.
+There are many images which is not real world image, such as 2D heatmap of tempature as in Figure 3. To plot the *relative value*, you must pre-define it so that there is no value outside the interval. If you plot just one instance, setting $V_{max} = \max({I_p^c)}$ is fine. However, when you plot multiple images, you should not use $V_{max} = \max{(I_p^c (x))}$ for each $x$, because in most cases, it will lead to result in Figure 2.
 
 <center>
 <div class="row mt-3">
@@ -109,7 +109,7 @@ There are many images which is not real world image, such as 2D heatmap of visit
 <h1 style="font-family:Cursive">  4. Input Attribution 🎯 </h1>
 
 
-In many machine learning experiments, there measure the input gradient to measure the importance of the pixels in prediction tasks. They use a *real world images* such as dog, cat, and horse. However, the input attribution is *relative value*, meaning, the value range must be defined properly to visual effects. 
+In many machine learning experiments, people measure the input gradient to measure the importance of the pixels in prediction tasks. They use a *real world images* such as dog, cat, and horse. However, the input attribution is *relative value*, meaning, the value range must be defined properly to visual effects. 
 
 For prediction Model $F : \text{Images} \rightarrow \mathbb{R}$, the input gradient of pixel $p$ in channel $c$ is calculated by 
 
@@ -117,7 +117,7 @@ $$
 Attr_p^c = \Large{\frac{\partial F}{\partial I_p^c}}
 $$
 
-Figure 4 shows an overview of the input attribution. In the case of deeping learning, the function is non-linear and not convex function with respect to the input. In addition, we can not analytically find the overall shape of the function. 
+Figure 4 shows the overview of an input attribution. In the case of deep learning, the function is non-linear and not convex function with respect to the input. In addition, we can not analytically find the overall shape of the function. 
 
 <center>
 <div class="row mt-3">
@@ -129,7 +129,7 @@ Figure 4 shows an overview of the input attribution. In the case of deeping lear
 </center>
 
 
-In this case, the value interval $V = (\-\infty, \infty)$.  As we discuessed earlier, we can not visualize the infinite range of the values. We assume the distribution of $F$ such as Gaussian, we get a value interval by clipping the overall values by mean and variance like
+In this case, the value interval $V = (\-\infty, \infty)$.  As we discuessed earlier, we can not visualize the infinite range of the values. If we assume the distribution of $\nabla F$ such as Gaussian, we get a value interval by clipping the overall values by mean and variance like
 
 $$
 \begin{aligned}
@@ -142,8 +142,8 @@ where $\mu(Attr) = \frac{1}{W\times H \times C} \sum_c \sum_p  Attr_p^c$ is the 
 
 <h1 style="font-family:Cursive">  5. Separation of the values 🎯 </h1>
 
-In the previous case, the values are assumed to be continous and the effect of the color was one way. On the other hand, you can consider where values are divided by groups like positive and negative. 
-For example, $V = \set{v | v \in V s.t. v \ge 0} \cup \set{v | v \in V s.t. v<0}$. In this case, you can just select different colors for each group and visualize it as in Figure 5. 
+In the previous case, the values are assumed to be continous and the effect of the color is one way. On the other hand, you can consider the case where values are divided by groups for positive and negative values. 
+ $V = \set{v | v \in V s.t. v \ge 0} \cup \set{v | v \in V s.t. v<0}$. In this case, you can just select different colors for each group and visualize it as in Figure 5. 
 
 
 <center>
