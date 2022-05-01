@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'LRP rudiment'
+title: '#1 LRP rudiment'
 date: 2022-04-15 11:12:00-0400
 description: an example of a blog post with some math
 tags: RL LRP XAI
