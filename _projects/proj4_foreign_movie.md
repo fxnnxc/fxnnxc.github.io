@@ -1,9 +1,9 @@
 ---
 layout: page
-title: project 4
-description: another without an image
-img:
-importance: 3
+title: Foreign Movie
+description: Allocating Multiple Robots while maximizing utility. 
+img: assets/img/proj2/webot.png
+importance: 2
 category: fun
 ---
 

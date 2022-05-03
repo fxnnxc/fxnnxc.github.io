@@ -1,10 +1,10 @@
 ---
 layout: page
-title: project 6
-description: a project with no image
-img:
-importance: 4
-category: fun
+title: Multi-Robot Task Allocation 
+description: Allocating Multiple Robots while maximizing utility. 
+img: assets/img/proj2/webot.png
+importance: 2
+category: work
 ---
 
 Every project has a beautiful feature showcase page.
