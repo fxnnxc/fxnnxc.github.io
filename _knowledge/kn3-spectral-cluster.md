@@ -31,7 +31,7 @@ Given $\set{x_1, \cdots, x_n}$
 3. **mutual $k-$nearest neighborhood graph** : $w_{ij}~ \mathrm{when} ~ (v_i \in \mathrm{neigh}_k(v_j)$) **and** $(v_j \in \mathrm{neigh}_k(v_i)$)
 4. **fully connected graph**  : $\exp{-\frac{\|\|x_i - x_j\|\|^2}{2\sigma^2}}$
 
-*  (1) and (2) set $w_{ij} = 0 $ when the edge is not connected
+*  (1), (2) and (3) set $w_{ij} = 0 $ when the edge is not connected
 
 <br/>
 ## Laplace Matrix 
