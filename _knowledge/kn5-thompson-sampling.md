@@ -22,7 +22,6 @@ $\theta_1^\*, \theta_2^\*, \cdots, \theta_n^\*$.
 * Win or Lose after selecting an arm -> bernoulli distirubion 
 * probability of winning is beta distiribution. 
 
-
 All the model parameter is Beta distribution with $\alpha=1, \beta=1$.
 For each model parameter $\theta_i$, the posterior distribution is computed by 
 
