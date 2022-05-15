@@ -14,12 +14,23 @@ pagination:
 ---
 
 <div class="post">
-
   <div class="header-bar">
     <h1>{{ site.blog_name }}</h1>
     <h2>{{ site.blog_description }}</h2>
   </div>
 
+  <details open><summary><strong>(List of all experiments)</strong></summary>
+
+  <ul>
+    <li>🔲 #11 Object Region LRP Scores Compared to Out-Region</li>
+    <li>📉 #9 How Gradient-based Input Attribution Differs</li>
+    <li>🤖 #8 LRP Scores in Training Rosbot Navigation</li>
+    <li>🏞 #5 Mathematical Image Visualization</li>
+    <li>🧶 #2 The Dynamics of LRP in CIFAR 10 Training : Entropy</li>
+    <li>🏃‍♂️ #1 The Dynamics of LRP in CIFAR 10 Training : Relevance </li>
+  </ul>
+    
+  </details>
 
   <ul class="post-list">
     {% for post in paginator.posts %}
