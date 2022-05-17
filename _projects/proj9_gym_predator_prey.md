@@ -18,7 +18,7 @@ There are several multiagent envrionemts, but this environment is
 <center>
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/proj9/demo.gif" title="example image" class="img-fluid rounded z-depth-1" %}
+        <img src="https://github.com/deep-ing/gym-predator-prey/raw/main/assets/demo.gif" width=700px>
     <p> Demo of an environment with rendering! </p>
     </div>
 </div>
