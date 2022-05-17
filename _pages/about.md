@@ -6,7 +6,7 @@ subtitle: Bumjin Park
 order : 1
 profile:
   align: right
-  image: me.jpeg
+  image: me.JPG
   address: >
     <p>Seoul, Korea</p>
     <p>on a street ... </p>
