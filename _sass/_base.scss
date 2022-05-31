@@ -6,13 +6,14 @@
 
 
 h1, h2, h3{
-  margin-bottom: .8rem;
+  margin-bottom: .9rem;
+  margin-top: 1.9rem;
 }
 
 
 h1, h2, h3, h4, h5, h6, strong, div{
   color: var(--global-text-color);
-  font-family :TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif; 
+  font-family :"Roboto", Helvetica, Arial, sans-serif;
 }
  li, ul{
   color: var(--global-text-color);
@@ -22,7 +23,7 @@ h1, h2, h3, h4, h5, h6, strong, div{
 }
 strong{
   font-weight:700;
-  font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif; 
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
 }
 
 span {
@@ -34,7 +35,7 @@ span {
 p {
   color: var(--global-text-color);
   line-height:  180%;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 19px;
 }
 
