@@ -6,8 +6,6 @@ description: 'policy gradient methods'
 tags: RL 
 ---
 
-
-
 General formula maximizes <span> $$\nabla_\theta J(\theta) = \mathbb{E}_{s \sim \rho^\pi, a \sim \pi_\theta}[\nabla_\theta \log \pi_\theta (s,a) \Psi ]$$</span>
 
 

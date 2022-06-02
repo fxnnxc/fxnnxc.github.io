@@ -5,19 +5,20 @@
 // Typography
 
 
-h1, h2, h3{
+h1, h2, h3,  h4, h5, h6{
   margin-bottom: .9rem;
   margin-top: 1.9rem;
+  font-family: "Cursive";
 }
 
 
 h1, h2, h3, h4, h5, h6, strong, div{
   color: var(--global-text-color);
-  font-family :"Roboto", Helvetica, Arial, sans-serif;
+  // font-family :"Roboto", Helvetica, Arial, sans-serif;
 }
  li, ul{
   color: var(--global-text-color);
-  font-size: 19px;
+  font-size: 17px;
   margin-bottom: .6rem;
 
 }
@@ -36,7 +37,7 @@ p {
   color: var(--global-text-color);
   line-height:  180%;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
-  font-size: 19px;
+  font-size: 17px;
 }
 
 hr {
