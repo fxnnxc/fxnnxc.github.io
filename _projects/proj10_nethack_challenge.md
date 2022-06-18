@@ -11,6 +11,17 @@ category: work
 
 ## Nethack
  
+* Separate Training with Baseline models
+|Tasks| Checkpoint |Steps| 
+|:-:|:-:|
+| Staircase |2022-06-06/14-23-59| 1e8|
+| Eat      |2022-06-06/14-20-54| 1e8|
+| Gold     |                   |
+| Eat      |                   |
+
+
+
+
     
 ## Analysis 
 
