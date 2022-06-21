@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5, h6, strong, div{
 }
  li, ul{
   color: var(--global-text-color);
-  font-size: 17px;
+  font-size: 16px;
   margin-bottom: .6rem;
 
 }
@@ -37,7 +37,7 @@ p {
   color: var(--global-text-color);
   line-height:  180%;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
-  font-size: 17px;
+  font-size: 16px;
 }
 
 hr {
@@ -65,7 +65,7 @@ a, table.table a {
 }
 
 figure, img {
-  max-width: 90vw;
+  max-width: 60vw;
 }
 
 blockquote {
@@ -167,7 +167,7 @@ blockquote {
   box-shadow: none;
   border-bottom: 1px solid var(--global-divider-color);
   background-color: var(--global-bg-color);
-  opacity: 0.95;
+  opacity: 0.8;
 }
 .navbar .dropdown-menu {
   background-color: var(--global-bg-color);
@@ -199,6 +199,7 @@ blockquote {
     color: var(--global-text-color);
   }
   .navbar-nav .nav-item .nav-link {
+    padding-right: 1.5rem;
     color: var(--global-text-color);
     &:hover {
       color: var(--global-hover-color);
@@ -318,16 +319,16 @@ footer.sticky-bottom {
 // Blog
 
 .header-bar {
-  border-bottom: 1px solid var(--global-divider-color);
+  border-bottom: 0.5px solid var(--global-divider-color);
   text-align: center;
-  padding-top: 2rem;
-  padding-bottom: 5rem;
+  padding-top: 1rem;
+  padding-bottom: 0rem;
   h1 {
     color: var(--global-theme-color);
     font-size: 3rem;
   }
   li{
-    font-size:17px;
+    font-size:16px;
   }
 }
 
@@ -581,7 +582,7 @@ code {
   border-radius: 3px;
   padding: 3px 3px;
   font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif; 
-  font-size: 19px;
+  font-size: 16px;
 }
 
 
@@ -625,4 +626,8 @@ html.transition *:after {
   color: var(--global-text-color-light);
   font-size: 0.875rem;
   padding-top: 0.05rem;
+}
+
+.img-fluid{
+  max-width:80%
 }
