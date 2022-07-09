@@ -11,15 +11,6 @@ category: fun
 ## Architecture 
 
 
-### React 
-
-- [ ] Better page constructiion : in design  
-
-### Flask (Python Server)
-
-- [ ] Python module must be added. 
-- [ ] 
-
 ## Model 
 
 

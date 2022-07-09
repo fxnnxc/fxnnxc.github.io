@@ -41,7 +41,7 @@ footer_fixed: true
 # Dimensions
 max_width: 1000px
 
-# TODO: add layout settings (single page vs. multi-page)
+# : add layout settings (single page vs. multi-page)
 
 # -----------------------------------------------------------------------------
 # Open Graph & Schema.org
