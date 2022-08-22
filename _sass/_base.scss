@@ -20,7 +20,7 @@ h1, h2, h3, h4, h5, h6, strong, div{
 }
  li, ul{
   color: var(--global-text-color);
-  font-size: 16px;
+  font-size: 20px;
   margin-bottom: .6rem;
 
 }
@@ -38,9 +38,16 @@ span {
 
 p {
   color: var(--global-text-color);
-  line-height:  165%;
-  font-family:  Optima,Segoe,Segoe UI,Candara,Calibri,Arial,sans-serif; 
-  font-size: 19px;
+  line-height:  170%;
+  // font-family:  Optima,Segoe,Segoe UI,Candara,Calibri,Arial,sans-serif; 
+  // font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
+  font-family: "Cursive";
+  font-weight: 100;
+  font-size: 20px;
+  word-break: keep-all;
+  hyphens: auto;
+  margin-bottom: 1.5rem;
+  // margin-top: 2.0rem;
 }
 
 hr {
@@ -69,6 +76,8 @@ a, table.table a {
 
 figure, img {
   max-width: 60vw;
+  margin-top: 1.0rem;
+
 }
 
 blockquote {
