@@ -14,6 +14,8 @@ h1, h2, h3,  h4, h5, h6{
 
 h1, h2, h3, h4, h5, h6, strong, div{
   color: var(--global-text-color);
+  font-family: "Cursive";
+  // font-family: Didot,Didot LT STD,Hoefler Text,Garamond,Times New Roman,serif; 
   // font-family :"Roboto", Helvetica, Arial, sans-serif;
 }
  li, ul{
@@ -24,7 +26,8 @@ h1, h2, h3, h4, h5, h6, strong, div{
 }
 strong{
   font-weight:700;
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: "Cursive";
+  font-family:  "Cambria, Georgia, serif"; //"Roboto", Helvetica, Arial, sans-serif;
 }
 
 span {
@@ -35,9 +38,9 @@ span {
 
 p {
   color: var(--global-text-color);
-  line-height:  180%;
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  line-height:  165%;
+  font-family:  Optima,Segoe,Segoe UI,Candara,Calibri,Arial,sans-serif; 
+  font-size: 19px;
 }
 
 hr {
