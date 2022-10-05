@@ -25,7 +25,7 @@ h1, h2, h3, h4, h5, h6, strong, div{
 
 }
 strong{
-  font-weight:700;
+  font-weight:900;
   font-family: "Cursive";
   font-family:  "Cambria, Georgia, serif"; //"Roboto", Helvetica, Arial, sans-serif;
 }
@@ -44,7 +44,8 @@ p {
   font-family: "Cursive";
   font-weight: 100;
   font-size: 20px;
-  word-break: keep-all;
+  // word-break: keep-all;
+  word-wrap: normal;
   hyphens: auto;
   margin-bottom: 1.5rem;
   // margin-top: 2.0rem;
