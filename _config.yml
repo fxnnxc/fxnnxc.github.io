@@ -116,7 +116,7 @@ collections:
     output: true
     permalink: /knowledge/:path/
 
-news_limit: 5
+news_limit: 10000
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
