@@ -5,16 +5,39 @@
 // Typography
 
 
+h1{
+  font-size: 30px;
+}
+
+h2{
+  font-size: 22px;
+}
+
+
+h3{
+  font-size: 20px;
+}
+
+
+h4{
+  font-size: 18px;
+}
+
+
+
 h1, h2, h3,  h4, h5, h6{
   margin-bottom: .9rem;
-  margin-top: 1.9rem;
-  font-family: "Cursive";
+  margin-top: 1.0rem;
+  font-family: 'Open Sans', sans-serif; ;
+  font-weight: 400;
+
 }
 
 
 h1, h2, h3, h4, h5, h6, strong, div{
   color: var(--global-text-color);
-  font-family: "Cursive";
+  font-family:'Open Sans', sans-serif; ;
+  font-weight: 400;
   // font-family: Didot,Didot LT STD,Hoefler Text,Garamond,Times New Roman,serif; 
   // font-family :"Roboto", Helvetica, Arial, sans-serif;
 }
@@ -25,8 +48,8 @@ h1, h2, h3, h4, h5, h6, strong, div{
 
 }
 strong{
-  font-weight:900;
-  font-family: "Cursive";
+  font-weight:700;
+  font-family: 'Open Sans', sans-serif; ;
   font-family:  "Cambria, Georgia, serif"; //"Roboto", Helvetica, Arial, sans-serif;
 }
 
@@ -38,12 +61,12 @@ span {
 
 p {
   color: var(--global-text-color);
-  line-height:  170%;
+  line-height:  160%;
   // font-family:  Optima,Segoe,Segoe UI,Candara,Calibri,Arial,sans-serif; 
   // font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
-  font-family: "Cursive";
+  font-family: 'Open Sans', sans-serif; ;
   font-weight: 100;
-  font-size: 20px;
+  font-size: 16px;
   // word-break: keep-all;
   word-wrap: normal;
   hyphens: auto;
@@ -81,9 +104,9 @@ table {
 }
 
 a, table.table a {
-  color: var(--global-theme-color);
+  color: #0070e8;
   &:hover {
-    color: var(--global-theme-color);
+    color: #0070e8;
     text-decoration: underline;
   }
   &:hover:after :not(.nav-item.dropdown) {
@@ -517,7 +540,7 @@ footer.sticky-bottom {
         }
       }
       .title {
-        font-weight: bolder;
+        font-weight: 550;
       }
       .author {
         a {
@@ -599,7 +622,7 @@ pre {
     background-color: transparent;
     border-radius: 0;
     padding: 0;
-    font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif; 
+    font-family: 'Open Sans', sans-serif; 
     line-height: 200%;
 
   }

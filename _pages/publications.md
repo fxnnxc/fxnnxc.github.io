@@ -1,10 +1,10 @@
 ---
 layout: page
 permalink: /publications/
-title: publications
+title: 📃 Paper
 description: these are published papers
 years: [2022, 2021]
-nav: false
+nav: true
 order : 6
 ---
 

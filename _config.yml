@@ -2,7 +2,7 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: 🍁 Creative Rudiment # the website title (if blank, full name will be used instead)
+title: ❄️ Creative Rudiment # the website title (if blank, full name will be used instead)
 first_name: Bumjin
 middle_name: 
 last_name: Park
@@ -109,9 +109,9 @@ collections:
   projects:
     output: true
     permalink: /projects/:path/
-  preprint:
+  paper:
     output: true
-    permalink: /preprint/:path/
+    permalink: /paper/:path/
   knowledge:
     output: true
     permalink: /knowledge/:path/

@@ -2,20 +2,24 @@
 layout: about
 title: 🖌 About Me
 permalink: /
-subtitle: Bumjin Park
-order : 1
+subtitle: Bumjin Park <a href="https://scholar.google.co.kr/citations?user=XzIXaxoAAAAJ&hl=ko"> (Google Scholar) </a>
+order : 1 
 profile:
   align: right
   image: me.JPG
   address: >
-    <p>🇰🇷 Korea</p>
+    <p text-align:center;> 🇰🇷 Korea</p>
 
 news: true  # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-This blog is started by an idea that the fastest way to learn something is taking experiments. `Creative Rudiment` is a personal blog for experiments on various domains including `Reinforcement Learning`, `Vision`, `NLP` and `XAI`. You can check a list of experiments in [experiment](/blog/). The experiments are done by myself. If you have any idea or comments on the experiment, feel free to contact me via `bjp032501@gmail.com`.
+This blog is started by an idea that the fastest way to learn something is taking experiments. `Creative Rudiment` is a personal blog for experiments on various domains including `Reinforcement Learning`, `Vision`, `NLP` and `XAI`. 
+
+You can check a list of experiments in [🔖 rudiment](/blog/). 
+The experiments are done by myself. 
+If you have any idea or comments on the experiment, contact `bjp032501@gmail.com`.
 
 
 <hr/>
