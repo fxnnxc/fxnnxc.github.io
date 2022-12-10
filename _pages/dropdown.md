@@ -8,6 +8,4 @@ children:
     - title: publications
       permalink: /publications/
     - title: divider
-    - title: knowledge
-      permalink: /knowledge/
 ---

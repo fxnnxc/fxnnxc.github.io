@@ -112,9 +112,9 @@ collections:
   paper:
     output: true
     permalink: /paper/:path/
-  knowledge:
+  article:
     output: true
-    permalink: /knowledge/:path/
+    permalink: /article/:path/
 
 news_limit: 10000
 
