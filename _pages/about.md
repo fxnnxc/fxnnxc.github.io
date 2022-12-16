@@ -1,6 +1,6 @@
 ---
 layout: about
-title: 🖌 About Me
+title: 🇰🇷 About Me
 permalink: /
 subtitle: Bumjin Park <a href="https://scholar.google.co.kr/citations?user=XzIXaxoAAAAJ&hl=ko"> (Google Scholar) </a>
 order : 1 
@@ -26,11 +26,10 @@ If you have any idea or comments on the experiment, contact `bjp032501@gmail.com
 
 [🐾 Research Progress](/reserach/)
 
-🧗‍♂️ Experience [(한국어)](/experience_kor/)  
+<!-- 🧗‍♂️ Experience [(한국어)](/experience_kor/)   -->
 <!-- / [(English)](/experience_en/) -->
 
-
-🎓 Education [(한국어)](/grade/)  
+<!-- 🎓 Education [(한국어)](/grade/)   -->
 
 
 

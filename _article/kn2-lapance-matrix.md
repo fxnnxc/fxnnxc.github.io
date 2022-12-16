@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '#2  Laplace Matrix Rudiment (beginner)'
+title: 'Laplace Matrix (beginner)'
 date: 2022-04-29 11:12:00-0400
 description: None
 tags: LinearAlgebra 

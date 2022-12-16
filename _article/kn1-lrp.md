@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '#1 LRP rudiment'
+title: 'Layer-wise Relevance Propagation'
 date: 2022-04-15 11:12:00-0400
 description: an example of a blog post with some math
 tags: RL LRP XAI

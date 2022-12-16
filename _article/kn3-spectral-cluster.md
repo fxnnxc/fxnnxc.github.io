@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '#3 Spectral Clustering'
+title: 'Spectral Clustering'
 date: 2022-04-29 11:12:00-0400
 description: 'Notations and concepts of spectral clustering'
 tags: LinearAlgebra 

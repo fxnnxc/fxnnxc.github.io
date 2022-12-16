@@ -1,9 +1,10 @@
           
   <div class="news">
     {% if site.news != blank -%} 
-    <details><summary>(click to expand) <strong>Knowledge List</strong></summary>
+    <!-- <details><summary>(click to expand) <strong>Knowledge List</strong></summary> -->
 
-      <ul>
+      
+      <!-- <ul>
         <li>Clustering
           <ul>
             <li> Markov  Clustering </li>
@@ -32,12 +33,12 @@
             <li> Thompson sampling </li>
           </ul>
         </li>
-      </ul>
+      </ul> -->
       
-      </details>
+      <!-- </details> -->
     <div class="table-responsive">
       <table class="table table-sm table-borderless">
-      {%- assign news = site.knowledge | reverse -%} 
+      {%- assign news = site.article | reverse -%} 
       {% for item in news limit: site.news_limit %} 
         <tr>
           <th scope="row">{{ item.date | date: "%b %-d, %Y" }}</th>

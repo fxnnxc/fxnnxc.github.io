@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '#4 Torch Hook based Model Debugging'
+title: 'Torch Hook based Model Debugging'
 date: 2022-05-04 11:12:00-0400
 description: 'Functionality of Torch Hook'
 tags: Torch

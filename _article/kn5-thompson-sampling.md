@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '#5 Thomson Sampling'
+title: 'Thomson Sampling'
 date: 2022-05-08 00:00:00-0400
 description: 'Notations and concepts of spectral clustering'
 tags: Stats, RL

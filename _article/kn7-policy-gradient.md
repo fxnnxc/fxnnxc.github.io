@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '#7 Policy Gradient'
+title: 'Policy Gradient'
 date: 2022-05-31 00:00:00-0400
 description: 'policy gradient methods'
 tags: RL 
