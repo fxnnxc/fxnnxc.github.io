@@ -116,7 +116,7 @@ a, table.table a {
 
 figure, img {
   max-width: 60vw;
-  margin-top: 1.0rem;
+  margin-top: 0.0rem;
 
 }
 
@@ -187,6 +187,7 @@ blockquote {
     p {
       display: inline-block;
       margin: 0;
+      text-align: center;
     }
   }
 }

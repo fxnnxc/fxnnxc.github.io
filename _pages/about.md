@@ -6,7 +6,7 @@ subtitle: Bumjin Park <a href="https://scholar.google.co.kr/citations?user=XzIXa
 order : 1 
 profile:
   align: right
-  image: me.JPG
+  image: me.png
   address: >
     <p text-align:center;> 🇰🇷 Korea</p>
 
