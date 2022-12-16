@@ -29,6 +29,9 @@ If you have any idea or comments on the experiment, contact `bjp032501@gmail.com
 <!-- 🧗‍♂️ Experience [(한국어)](/experience_kor/)   -->
 <!-- / [(English)](/experience_en/) -->
 
+📖 [Reading List](/reading_list/)  
+
+
 <!-- 🎓 Education [(한국어)](/grade/)   -->
 
 
