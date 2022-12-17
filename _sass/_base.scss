@@ -50,7 +50,7 @@ h1, h2, h3, h4, h5, h6, strong, div{
 strong{
   font-weight:700;
   font-family: 'Open Sans', sans-serif; ;
-  font-family:  "Cambria, Georgia, serif"; //"Roboto", Helvetica, Arial, sans-serif;
+  // font-family:  "Cambria, Georgia, serif"; //"Roboto", Helvetica, Arial, sans-serif;
 }
 
 span {
@@ -682,6 +682,12 @@ html.transition *:after {
 }
 
 .img-fluid{
+  max-width:50%
+}
+
+
+
+.img-fluid-80{
   max-width:80%
 }
 
