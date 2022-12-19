@@ -20,7 +20,7 @@ The list of subjects and related work
 |---|---|
 |SVCCA: Singular Vector Canonical Correlation Analysis for Deep Learning Dynamics and Interpretability | Raghu et al., 2017, NIPS [🔗](https://arxiv.org/abs/1706.05806)|
 |Similarity of Neural Network Representations Revisited |Kornblith et al., 2019, ICML [🔗](https://arxiv.org/abs/1905.00414)|
- 
+| Canonical Correlation Analysis: An Overview with Application to Learning Methods | Hardoon et al., 2004, Nerual Press [🔗](https://ieeexplore.ieee.org/document/6788402) | 
 
 
 
