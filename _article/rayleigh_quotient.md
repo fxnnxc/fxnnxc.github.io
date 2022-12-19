@@ -33,7 +33,7 @@ $$
 ## Rayleigh Quotient (single matrix)
 
 $$
-R(M, x) = \frac{x^\mathrm{T} M x }{x^\mathrm{T} M x}
+R(M, x) = \frac{x^\mathrm{T} M x }{x^\mathrm{T} x}
 $$
 
 * $R(M, x) \in [\lambda_{min}, \lambda_{max}]$ where each of them is smallest and largest eigenvalues of $M$ respectively. 
