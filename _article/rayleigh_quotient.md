@@ -7,7 +7,7 @@ tags: linear_algebra
 categories: Math
 ---
 
-## Why it is important?
+## Why is it important?
 
 In [1], the authors show the relationship between PCA and CCA with Generalized Eigenproblem with Rayleigh Quotient
 In detail, the problem of finding the extreme points (gradient zero) of Rayleigh Quotients reduces to the the generalized eigenproblem 
