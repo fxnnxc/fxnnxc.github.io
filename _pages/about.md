@@ -32,7 +32,6 @@ If you have any idea or comments on the experiment, contact `bjp032501@gmail.com
 <h3> Paper Reading List </h3>
 
 📖 [Conference List](/reading_list/)  
-
 📖 [Subject List](/subjects_list/)  
 
 
