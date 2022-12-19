@@ -29,7 +29,11 @@ If you have any idea or comments on the experiment, contact `bjp032501@gmail.com
 <!-- 🧗‍♂️ Experience [(한국어)](/experience_kor/)   -->
 <!-- / [(English)](/experience_en/) -->
 
-📖 [Reading List](/reading_list/)  
+<h3> Paper Reading List </h3>
+
+📖 [Conference List](/reading_list/)  
+
+📖 [Subject List](/subjects_list/)  
 
 
 <!-- 🎓 Education [(한국어)](/grade/)   -->

@@ -11,11 +11,10 @@ order : 1
 The list of research progress 
 
 
-<div align=center markdown="1">
+<div align=left markdown="1">
 
 
-
-## NeurIPS 2022
+### NeurIPS 2022
 
 | 📜 Name | 🗂 Keywords | ✔️ Done|
 |---|---|---|
@@ -28,12 +27,29 @@ The list of research progress
 |Make an Omelette with Breaking Eggs: Zero-Shot Learning for Novel Attribute Synthesis, Li et al., 2022 [🔗](https://neurips.cc/virtual/2022/poster/54453)|||
 |Understanding Robust Learning Through the lens, Cianfarani et al., 2022 [🔗](https://neurips.cc/virtual/2022/poster/55106)|||
 
+
+### ICLR 2022
+
+| 📜 Name | 🗂 Keywords | ✔️ Done|
+|---|---|---|
+|The Information Geometry of Unsupervised Reinforcement Learning [🔗](https://arxiv.org/abs/2110.02719)|||
+|AdaRL: What, Where, and How to Adapt in Transfer Reinforcement Learning [🔗](https://arxiv.org/abs/2107.02729)| ||
+
+
+### NeurIPS 2021
+
+| 📜 Name | 🗂 Keywords | ✔️ Done|
+|---|---|---|
+|Improving Computational Efficiency in Visual Reinforcement Learning via Stored Embeddings [🔗](https://arxiv.org/abs/2103.02886)|||  
+
+
+### NeurIPS 2017
+
+| 📜 Name | 🗂 Keywords | ✔️ Done|
+|---|---|---|
+|SVCCA: Singular Vector Canonical Correlation Analysis for Deep Learning Dynamics and Interpretability[🔗](https://arxiv.org/abs/1706.05806)|||
+
+
+
 </div>
 
-
-<!-- | 2022 [🔗]()|||
-| 2022 [🔗]()|||
-| 2022 [🔗]()|||
-| 2022 [🔗]()|||
-| 2022 [🔗]()|||
-| 2022 [🔗]()||| -->
