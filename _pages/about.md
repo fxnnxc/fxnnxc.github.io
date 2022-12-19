@@ -17,7 +17,7 @@ social: true  # includes social icons at the bottom of the page
 
 This blog is started by an idea that the fastest way to learn something is taking experiments. `Creative Rudiment` is a personal blog for experiments on various domains including `Reinforcement Learning`, `Vision`, `NLP` and `XAI`. 
 
-You can check a list of experiments in [🔖 rudiment](/blog/). 
+You can check a list of experiments in [🔖Rudiment](/blog/). 
 The experiments are done by myself. 
 If you have any idea or comments on the experiment, contact `bjp032501@gmail.com`.
 
@@ -31,8 +31,8 @@ If you have any idea or comments on the experiment, contact `bjp032501@gmail.com
 
 <h3> Paper Reading List </h3>
 
-📖 [Conference List](/reading_list/)  
-📖 [Subject List](/subjects_list/)  
+📖 [Conference Reading List](/reading_list/)  
+📖 [Subject Reading List](/subjects_list/)  
 
 
 <!-- 🎓 Education [(한국어)](/grade/)   -->
