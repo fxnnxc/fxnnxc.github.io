@@ -7,27 +7,32 @@ nav: false
 order : 1
 ---
 
-### Coding Todo 
+
+
+## 1. Study  
+
+|Index| Name | Difficulty | Finished Date| Link |
+|---|---|---|---|---| 
+|1| Invariant and Equivariant Space Analysis | 1 | 2023.02.01| [Google Drive](https://drive.google.com/file/d/14qO-wqfnwvG-3PcPzeqOjANPOFopaQ1o/view?usp=share_link) |  
+|2| Energy-Based Model | 2 |  |  |
+
+
+<hr>
+
+## 2. Coding 
 
 |Index| Name| Difficulty |  Finished Date| Link |
 |---|---|---|---|---| 
 |1|  | | | | |
 
 
-### Study Todo 
 
-|Index| Name | Difficulty | Finished Date| Link |
-|---|---|---|---|---| 
-|1| Invariant and Equivariant space analysis | 1 | 2023.02.01| [Google Drive](https://drive.google.com/file/d/14qO-wqfnwvG-3PcPzeqOjANPOFopaQ1o/view?usp=share_link) |  
-|2| Energy-Based Model | 2 |  |  |
+<hr>
 
 
+## 3. Experiment
 
 
-
-The list of research progress 
-
-<div align=center markdown="1">
 
 
 |📆 Date| 🍁 Contents| 🗂 ETC | 
@@ -40,6 +45,4 @@ The list of research progress
 |2022.11.17| Measuring Augmentation Effects with Central Kernel Alignment|[github](https://github.com/fxnnxc/hex/tree/main/experiments/1_measuring_augmentation_effects_with_central_kernel_alignment)|
 |2022.11.12|Finished the experiments on "Explanation on Pretraining Bias of Finetuned ViT" |  |
 
-
-</div>
 
