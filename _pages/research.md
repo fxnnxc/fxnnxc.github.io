@@ -23,8 +23,8 @@ order : 1
 
 |Index| Name| Difficulty |  Finished Date| Link |
 |---|---|---|---|---| 
-|1|  | | | | |
-
+|1|  Inception Score (IS) | 1 | 2023.02.06 | [Code](https://github.com/fxnnxc/rudiment/blob/main/study/gan/metric/inception_score.py)|
+|2| Frechet Inception Distance (FID) | 2 | ||
 
 
 <hr>
