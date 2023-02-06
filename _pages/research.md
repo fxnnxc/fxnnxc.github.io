@@ -15,7 +15,7 @@ order : 1
 |---|---|---|---|---| 
 |1| Invariant and Equivariant Space Analysis | 1 | 2023.02.01| [Google Drive](https://drive.google.com/file/d/14qO-wqfnwvG-3PcPzeqOjANPOFopaQ1o/view?usp=share_link) |  
 |2| Energy-Based Model | 2 |  |  |
-
+|3| Variational Inference | 2 | 2023.02.06 | [Google Drive](https://drive.google.com/file/d/1wt7mrPGWW8bj8LhFvAXGnbj-J46C_dil/view?usp=share_link)|
 
 <hr>
 
