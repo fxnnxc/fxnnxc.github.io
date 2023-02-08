@@ -16,6 +16,10 @@ order : 1
 |1| Invariant and Equivariant Space Analysis | 1 | 2023.02.01| [Google Drive](https://drive.google.com/file/d/14qO-wqfnwvG-3PcPzeqOjANPOFopaQ1o/view?usp=share_link) |  
 |2| Energy-Based Model | 2 |  |  |
 |3| Variational Inference | 2 | 2023.02.06 | [Google Drive](https://drive.google.com/file/d/1wt7mrPGWW8bj8LhFvAXGnbj-J46C_dil/view?usp=share_link)|
+|4| independent component analysis (ICA) | 
+|5| global factor disentanglement | |
+|6| Composible Energy Networks |
+|7| Satisfiability problem, SAT | 
 
 <hr>
 
@@ -25,7 +29,7 @@ order : 1
 |---|---|---|---|---| 
 |1|  Inception Score (IS) | 1 | 2023.02.06 | [Code](https://github.com/fxnnxc/rudiment/blob/main/study/gan/metric/inception_score.py)|
 |2| Frechet Inception Distance (FID) | 2 | ||
-
+|2| Energy-Based Model | 1 |  | [Code]()  |
 
 <hr>
 

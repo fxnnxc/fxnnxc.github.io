@@ -14,6 +14,17 @@ The list of research progress
 <div align=left markdown="1">
 
 
+### Any 
+
+|Name| Key Words|
+|---|---|
+|Learning a Discriminative Null Space for Person Re-identification|  Null Sapce| 
+|implicit Generation and Modeling with Energy-Based Models| Energy based model base paper | 
+|Training products of experts by minimizing contrastive divergence | contrastive learning, Hinton |
+|Unsupervised Learning of Compositional Energy Concepts | Energy Based Model | 
+|Amortized Variational Inference: Towards the Mathematical Foundation and Review | Variational Inference |
+
+
 ### NeurIPS 2022
 
 | 📜 Name | 🗂 Keywords | ✔️ Done|
@@ -26,6 +37,8 @@ The list of research progress
 |Listen to Interpret: Post-hoc Interpretability for Audio Networks with NMF, Parekh et al,. 2022 [🔗](https://neurips.cc/virtual/2022/poster/54064)|||
 |Make an Omelette with Breaking Eggs: Zero-Shot Learning for Novel Attribute Synthesis, Li et al., 2022 [🔗](https://neurips.cc/virtual/2022/poster/54453)|||
 |Understanding Robust Learning Through the lens, Cianfarani et al., 2022 [🔗](https://neurips.cc/virtual/2022/poster/55106)|||
+
+
 
 
 ### ICLR 2022
