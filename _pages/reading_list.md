@@ -64,5 +64,145 @@ The list of research progress
 
 
 
+
+
+
+### Vision Transformer 
+* An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale, ICLR 2021
+* Swin Transformer: Hierarchical Vision Transformer using Shifted Windows, ICCV 2021
+* CvT: Introducing Convolutions to Vision Transformers, ICCV 2021
+* CoAtNet: Marrying Convolution and Attnetion for All Data Sizes
+* Masked Autoencoders are Scalable Vision Learners, CVPR 2022.
+* XCiT: Cross-Covariance Image Transformers, NeurIPS 2021.
+* Deepvit: Towards deeper vision transformer
+* Scaling vision transformers
+* Emerging properties in self-supervised vision transformers
+* Tokens-to-token vit: Training vision transformers from scratch on imagenet
+
+### MultiModality 
+* Learning Transferable Visual Models From Natural Language Supervision (CLIP)
+* Zero-Shot Text-to-Image Generation, ICML 2021, DALLE
+* CogView: Mastering Text-to-Image Generation via Transformers
+* Scaling Autoregressive Models for Content-Rich Text-to-Image Generation
+* Flamingo: a Visual Language Model for Few-Shot Learning
+* Transferring Pre-trained Multimodal Representations with Cross-modal Similarity Matching
+* MACK: Multimodal Aligned Conceptual Knowledge for Unpaired Image-text Matching
+* M-VADER: A Model for Diffusion with Multimodal Context
+* GLIDE: Towards Photorealistic Image Generation and Editing with Text-Guided Diffusion Models (GLIDE)
+* High-Resolution Image Synthesis with Latent Diffusion Models
+* Improving Sample Quality of Diffusion Models Using Self-Attention Guidance
+
+
+### Generator
+* Auto-Encoding Variational Bayes
+* beta-VAE Learning Basic Visual Concepts with a Constrained Variational Framework
+* Understanding disentangling in β-VAE
+* Neural Discrete Representation Learning
+* Chroma-VAE: Mitigating Shortcut Learning with Generative Classifiers
+* Generative Adversarial Nets, NIPS 2014.
+* InfoGAN
+* A Style-Based Generator Architecture for Generative Adversarial Networks, CVPR 2019.
+* Taming Transformers for High-Resolution Image Synthesis (VQGAN)
+* ViTGAN: Training GANs with Vision Transformers, ICLR 2022
+
+
+### Transformer 
+* On Layer Normalization in the Transformer Architecture 
+* Self-attention with relative position representations
+* BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding
+* Language Models are Unsupervised Multitask Learners
+* Longformer: The long-document transformer
+* Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer
+* Big bird: Transformers for longer sequences
+* An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale, ICLR 2021
+* BEiT: BERT Pre-Training of Image Transformers
+* Masked Autoencoders are Scalable Vision Learners, CVPR 2022.
+
+###  Neural Architecture Search  
+* Neural Architecture Search with Reinforcement Learning
+* Large-Scale Evolution of Image Classifiers
+* Hierarchical Representations for Efficient Architecture Search,
+* DARTS: Differentiable Architecture Search
+* BayesNAS: A Bayesian Approach for Neural Architecture Search
+* NAT: Neural Architecture Transformer for Accurate and Compact Architectures
+* Understanding and Robustifying Differentiable Architecture Search
+* Once-for-All: Train One Network and Specialize it for Efficient Deployment,
+* Neural Architecture Search in A Proxy Validation Loss Landscape
+* Neural Architecture Search without Training
+
+# 2023-02
+
+
+# 2023-01
+
+* Locating and Editing Factual Associations in GPT (2023.01.02)
+* Subspace clustering in high-dimensions: Phase transitions \& Statistical-to-Computational gap (2023.01.02)
+*Learning (Very) Simple Generative Models Is Hard (2023.01.02)
+* Learning to Follow Instructions in Text-Based Games
+* Self-Supervised Learning with an Information Maximization Criterion
+* Off-Team Learning
+* Learning to Share in Multi-Agent Reinforcement Learning
+* Decision Trees with Short Explainable Rules
+* Estimating and Explaining Model Performance When Both Covariates and Labels Shift
+* VICE: Variational Interpretable Concept Embeddings
+* Towards Understanding Grokking: An Effective Theory of Representation Learning
+* Chroma-VAE: Mitigating Shortcut Learning with Generative Classifiers
+* The Lipschitz Constant of Self-Attention
+* Invertible Residual Networks
+* Tsetlin Machine Embedding: Representing Words Using Logical Expressions
+* Task-Induced Representation Learning (2023.01.09)
+* Disentangled Explanations of Neural Network Predictions by Finding Relevant Subspaces 
+* A Two-Stage approach for Inference in Neural Networks
+* Full-gradient representation for neural network visualization
+* Towards Automatic Concept-based Explanations
+* Visualizing and Measuring the Geometry of BERT
+* Concept whitening for interpretable image recognition
+* Using p-values for the comparison of classifiers: pitfalls and alternatives
+* Computing valid p-values for image segmentation by selective inference.
+* Confidence Sets and Hypothesis Testing in a Likelihood-Free Inference Setting
+* Hypothesis Testing Using Pairwise Distances and Associated Kernels
+* Scalable and explainable visually-aware recommender systems
+* Learning Probabilistic Models from Generator Latent Spaces with Hat EBM
+* Generating Long Sequences with Sparse Transformers
+* Reformer: The Efficient Transformer
+* Explaining knowledge distillation by quantifying the knowledge
+* Farewell to mutual information: Variational distillation for cross-modal person re-identification
+
+
+* Robustness in deep learning: The good (width), the bad (depth), and the ugly (initialization)
+* S3GC: Scalable Self-Supervised Graph Clustering 
+* A Pattern Discovery Approach to Multivariate Time Series Forecasting
+* Rapidly Mixing Multiple-try Metropolis Algorithms for Model Selection Problems
+* Quantifying Statistical Significance of Neural Network-based Image Segmentation by Selective Inference
+* A Theoretical Understanding of Gradient Bias in Meta-Reinforcement Learning
+* Analyzing Sharpness along GD Trajectory: Progressive Sharpening and Edge of Stability
+* Conformal Frequency Estimation with Sketched Data
+* Self-Consistent Dynamical Field Theory of Kernel Evolution in Wide Neural Networks
+* Learning to Branch with Tree MDPs
+* SageMix: Saliency-Guided Mixup for Point Clouds
+* Wasserstein Logistic Regression with Mixed Features
+* On Embeddings for Numerical Features in Tabular Deep Learning
+* Temporally Disentangled Representation Learning
+* Data-Driven Model-Based Optimization via Invariant Representation Learning
+* Poisson Flow Generative Models
+* On Translation and Reconstruction Guarantees of the Cycle-Consistent Generative Adversarial Networks
+* [Re] Reproducibility Study of “Counterfactual Generative Networks
+* FedAvg with Fine Tuning: Local Updates Lead to Representation Learning
+* Calibrating Deep Neural Networks Using Explicit Regularisation and Dynamic Data Pruning
+* Estimating Information Flow in Deep Neural Networks
+* Using effective dimension to analyze feature transformations in deep neural networks
+* Task-Induced Representation Learning
+
+
+
+### Action Space 
+
+* Learning Action Translator for Meta Reinforcement Learning on Sparse-Reward Tasks
+* Learning Cross-Domain Correspondence for Control with Dynamics Cycle-Consistency (HiP-BMDP)
+* Meta-q-learning (MQL)
+* Efficient off-policy meta-reinforcement learning via probabilistic context variables (PEARL)
+
+
+
 </div>
 
