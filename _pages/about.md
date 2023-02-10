@@ -31,8 +31,8 @@ If you have any idea or comments on the experiment, contact `bjp032501@gmail.com
 
 <h3> Paper Reading List </h3>
 
-📖 [Conference Reading List](/reading_list/)  
-📖 [Subject Reading List](/subjects_list/)  
+📖 [Paper Reading List](/reading_list/)  
+📖 [Code Reading List](/coding_list/)  
 
 
 <!-- 🎓 Education [(한국어)](/grade/)   -->
