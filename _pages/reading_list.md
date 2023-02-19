@@ -23,7 +23,9 @@ The list of research progress
 |Training products of experts by minimizing contrastive divergence | contrastive learning, Hinton |
 |Unsupervised Learning of Compositional Energy Concepts | Energy Based Model | 
 |Amortized Variational Inference: Towards the Mathematical Foundation and Review | Variational Inference |
-
+|Guiding Pretraining in Reinforcement Learning with Large Language Models  | Language model for RPG game, template, goal |
+|Towards Explainable Visual Anomaly Detection | | 
+|ConceptFusion: Open-set Multimodal 3D Mapping | 
 
 ### NeurIPS 2022
 
