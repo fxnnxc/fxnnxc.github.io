@@ -25,6 +25,8 @@ The list of research progress
 |Amortized Variational Inference: Towards the Mathematical Foundation and Review | Variational Inference |
 
 
+|Sim-to-real transfer by adapting the action selected by the simulation policy with a learned inverse dynamics model in the real world||
+
 ### NeurIPS 2022
 
 | 📜 Name | 🗂 Keywords | ✔️ Done|

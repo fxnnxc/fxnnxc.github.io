@@ -22,6 +22,8 @@ order : 1
 |7| Satisfiability problem, SAT | 
 |8| Inference | 1 | 2023.02.09 | [Google Drive](https://drive.google.com/file/d/1m4yiuAQV1Ee2Q4EU_BCcT9ToLayeuYpJ/view?usp=share_link)|
 |9| Linear Basis Functions | 2| ||
+|10| Poincare Embedding |
+|11| Variational Control |
 
 <hr>
 
