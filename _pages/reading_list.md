@@ -26,7 +26,6 @@ The list of research progress
 |Guiding Pretraining in Reinforcement Learning with Large Language Models  | Language model for RPG game, template, goal |
 |Towards Explainable Visual Anomaly Detection | | 
 |ConceptFusion: Open-set Multimodal 3D Mapping | 
-
 |Sim-to-real transfer by adapting the action selected by the simulation policy with a learned inverse dynamics model in the real world||
 
 ### NeurIPS 2022
