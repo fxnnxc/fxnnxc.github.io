@@ -28,6 +28,16 @@ The list of research progress
 |ConceptFusion: Open-set Multimodal 3D Mapping | 
 |Sim-to-real transfer by adapting the action selected by the simulation policy with a learned inverse dynamics model in the real world||
 
+# Meta Learning
+
+|Name| Key Words|
+|---|---|
+|Adaptive Risk Minimization: Learning to Adapt to Domain Shift| 
+|Meta-Learning Symmetries by Reparameterization| 
+|Gradient Surgery for Multi-task Learning |
+
+
+
 ### NeurIPS 2022
 
 | 📜 Name | 🗂 Keywords | ✔️ Done|
