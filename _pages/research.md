@@ -25,7 +25,8 @@ order : 1
 |10| Shannon Channel Capacity | 2 |
 |10| Poincare Embedding |
 |12| Variational Control |
-
+|13| **Factual GPT** | 2 | 2023.03.21 |  [post](https://jrc-park.tistory.com/315)
+ 
 <hr>
 
 ## 2. Coding 
