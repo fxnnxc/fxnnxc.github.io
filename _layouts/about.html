@@ -5,16 +5,16 @@ layout: default
 <!-- about.html -->
       <div class="post">
         <header class="post-header">
-          <h1 class="post-title" style="font-family:Cursive">
+          <h1 class="post-title" style="font-family:Cursive; text-align: center;">
            {% if site.title == "blank" -%}<span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}{%- else -%}{{ site.title }}{%- endif %}
           </h1>
-          <p class="desc">{{ page.subtitle }}</p>
+          <h3 class="desc" style="font-family:Cursive; text-align: center;">{{ page.subtitle }}</h3>
         </header>
 
         <article>
           {% if page.profile -%}
           <div class="profile float-{%- if page.profile.align == 'left' -%}left{%- else -%}right{%- endif -%}">
-            <img src="assets/img/me.png" width="100px">
+            <img src="assets/img/me.png" width="50px">
             {%- if page.profile.address %}
             <div class="address">
               {{ page.profile.address }}

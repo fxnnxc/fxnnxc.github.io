@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /reserach/
+permalink: /research/
 title: Research Progress
 description: 
 nav: false
