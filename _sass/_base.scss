@@ -44,7 +44,7 @@ h1, h2, h3, h4, h5, h6, strong, div{
  li, ul{
   color: var(--global-text-color);
   // font-size: 14px;
-  margin-bottom: .6rem;
+  // margin-bottom: rem;
 
 }
 strong{
@@ -219,9 +219,9 @@ blockquote {
 
 .navbar {
   box-shadow: none;
-  border-bottom: 1px solid var(--global-divider-color);
-  background-color: var(--global-bg-color);
-  opacity: 0.8;
+  border-bottom: 10px solid #4f4f4f;
+  background-color: #f4f4f4; 
+  opacity: 1.0;
 }
 .navbar .dropdown-menu {
   background-color: var(--global-bg-color);
@@ -759,7 +759,7 @@ margin-bottom: .5rem;
 .img-demo{
   max-width:100%;
   padding-left: 10px;
-  // color:#1fd6ff
+  color: #b4ffff;
 
 }
 
@@ -770,7 +770,7 @@ margin-bottom: .5rem;
   border-radius: 2px;
   // font-size: 14px;
   color:black;
-  background: #cce99d;
+  background: #e2e2e2;
   // font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
   // color: #fff  ;
   // width: 220px;

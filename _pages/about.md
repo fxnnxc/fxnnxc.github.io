@@ -36,7 +36,7 @@ If you have any idea or comments on the experiment, contact <tag class="text-box
 
 
 <div>
-🅖 <a class="box-demo-link" href="https://scholar.google.co.kr/citations?user=XzIXaxoAAAAJ&hl=ko" style="background:#; color:#000000;" >Google Scholar</a> | 
+🅖 <a class="box-demo-link" href="https://scholar.google.co.kr/citations?user=XzIXaxoAAAAJ&hl=ko" style="background:#b4ffff; color:#000000;" >Google Scholar</a> | 
 🐾 <a class="box-demo-link" href="/research/" style="background:#e3ff67; color:#000000;" >Research Progress</a> | 
 
 
