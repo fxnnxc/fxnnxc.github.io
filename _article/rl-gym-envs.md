@@ -1,12 +1,13 @@
 ---
 layout: post
-title: 'Gym Environment Information'
+title: 'Gym Environments'
 date: 2023-03-05 11:12:00-0400
 description: gym environment
 tags: RL 
-categories: RL
----
+category: RL
+subcategory : Environments
 
+---
 
 
 ###  Racing Car [Box 2D]

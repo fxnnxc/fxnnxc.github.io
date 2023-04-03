@@ -1,59 +1,57 @@
-          
-  <div class="news">
-    {% if site.news != blank -%} 
-    <!-- <details><summary>(click to expand) <strong>Knowledge List</strong></summary> -->
+        
+  <!-- <details><summary>(click to expand) <strong>Knowledge List</strong></summary> -->
 
-      
-      <!-- <ul>
-        <li>Clustering
-          <ul>
-            <li> Markov  Clustering </li>
-            <li> Spectral  Clustering </li>
-            <li> Affinity Propagation </li>
-            <li> DBSCAN </li>
-            <li> K-means </li>
-          </ul>
-        </li>
-        <li>Linear Algebra
-          <ul>
-            <li> Eigenvectors </li>
-            <li> Positive Definite </li>
-            <li> Power method </li>
-            <li> Expansion and Inflation</li>
-          </ul>
-        </li>
-        <li>Statistics
-          <ul>
-            <li> Distributions </li>
-            <li> Variational Bayes </li>
-          </ul>
-        </li>
-        <li>Sampling
-          <ul>
-            <li> Thompson sampling </li>
-          </ul>
-        </li>
-      </ul> -->
-      
-      <!-- </details> -->
-    <div class="table-responsive">
-      <table class="table table-sm table-borderless">
-      {%- assign news = site.article | reverse -%} 
-      {% for item in news limit: site.news_limit %} 
-        <tr>
-          <th scope="row">{{ item.date | date: "%b %-d, %Y" }}</th>
-          <td>
-            {% if item.inline -%} 
-              {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
-            {%- else -%} 
-              <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
-            {%- endif %} 
-          </td>
-        </tr>
-      {%- endfor %} 
-      </table>
-    </div>
-  {%- else -%} 
-    <p>No news so far...</p>
-  {%- endif %} 
-  </div>
+  {%- assign list='ML XAI RL' | split: ' '  -%}
+  {% for tag in list %}
+
+      <h2> {{tag}} </h2>
+      <div class="table-responsive">
+        <table class="table table-sm table-borderless">
+            {%- assign news = site.article  | sort: "subcategory" -%}
+            {% for item in news %} 
+            {%if item.category == {{tag}}%}
+
+            <tr>
+                <th style="color:rgb(99, 99, 103);  font-size: large;  font-family:Georgia, 'Times New Roman', Times, serif">   {{item.subcategory}} </th>
+                <td>
+                    <a style="color:black; font-size: large; font-family: 'Times New Roman', Times, serif;"  href="{{ item.url | relative_url }}">{{ item.title }}</a>
+                </td>
+                <td scope="row">{{ item.date | date: "%b %-d, %Y" }}</td>
+              </tr>
+            {% endif %}
+            {%- endfor %}  
+        </table>
+      </div>
+  {% endfor %}
+
+            
+
+<!-- <details><summary>(click to expand) <strong>Knowledge List</strong></summary> -->
+
+{%- assign list='TORCH DATA' | split: ' '  -%}
+{% for tag in list %}
+      <h2> {{tag}} </h2>
+      <div class="table-responsive">
+        <table class="table table-sm table-borderless">
+          {% for item in site.article  %} 
+          {%if item.category == {{tag}}%}
+            <tr>
+              <th>   {{item.subcategory}} </th>
+
+              <td>
+                <!-- {% if item.inline -%}  -->
+                  <!-- {{ item.content | remove: '<p>' | remove: '</p>' | emojify }} -->
+                <!-- {{ item.content | item.tags |  }} -->
+                <!-- {%- else -%}  -->
+                  <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+                <!-- {%- endif %}  -->
+              </td>
+              <td scope="row">{{ item.date | date: "%b %-d, %Y" }}</td>
+            </tr>
+          {% endif %}
+          {%- endfor %}  
+        </table>
+      </div>
+{% endfor %}
+
+
