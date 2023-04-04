@@ -7,6 +7,11 @@
       <h2> {{tag}} </h2>
       <div class="table-responsive">
         <table class="table table-sm table-borderless">
+          <tr>
+          <th> Topic </th> 
+          <th> Title </th>
+          <th> Last Update </th>
+        </tr>
             {%- assign news = site.article  | sort: "subcategory" -%}
             {% for item in news %} 
             {%if item.category == {{tag}}%}

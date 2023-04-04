@@ -1,0 +1,24 @@
+        
+  <!-- <details><summary>(click to expand) <strong>Knowledge List</strong></summary> -->
+
+  <h2> NLP </h2>
+  <div class="table-responsive">
+    <table class="table table-sm table-borderless">
+      <tr>
+        <th> Topic </th> 
+        <th> Title </th>
+        <th> Last Update </th>
+      </tr>
+      {%- assign news = site.reviews  | sort: "subcategory" -%}
+        {% for item in news %} 
+
+        <tr>
+            <th style="color:rgb(99, 99, 103);  font-size: large;  font-family:Georgia, 'Times New Roman', Times, serif">   {{item.subcategory}} </th>
+            <td>
+                <a style="color:black; font-size: large; font-family: 'Times New Roman', Times, serif;"  href="{{ item.url | relative_url }}">{{ item.title }}</a>
+            </td>
+            <td scope="row">{{ item.date | date: "%b %-d, %Y" }}</td>
+          </tr>
+        {%- endfor %}  
+    </table>
+  </div>

@@ -14,3 +14,5 @@ order : 7
   <div class="row">
       {% include article.html %}
   </div>
+
+</div>

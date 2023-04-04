@@ -83,6 +83,11 @@ table {
     width: auto;
     border-top: 1px solid #444444;
     border-collapse: collapse;
+    tr:first-child{
+      border-bottom: 1px solid #ffefef;
+      border-top: 2px solid #020b5d;
+      background-color: #fffbe8;
+    }
     td, th {
       font-size: var(--global-text-size);
       color: var(--global-text-color);
@@ -93,6 +98,7 @@ table {
       // border-left: 1px solid #444444;
       // border-right: 1px solid #444444;
     }
+    
     th:first-child, td:first-child {
       border-left: none;
     }
@@ -219,8 +225,8 @@ blockquote {
 
 .navbar {
   box-shadow: none;
-  border-bottom: 10px solid #4f4f4f;
-  background-color: #f4f4f4; 
+  border-bottom: 5px dashed #18009f;
+  background-color: #ffffff; 
   opacity: 1.0;
 }
 .navbar .dropdown-menu {

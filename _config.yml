@@ -115,6 +115,11 @@ collections:
   article:
     output: true
     permalink: /article/:path/
+  reviews:
+    output: true
+    permalink: /reviews/:path/
+
+
 
 news_limit: 10000
 
