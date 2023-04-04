@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 🕋 projects
+title: 🗂 projects
 permalink: /projects/
 description: Still working on it.... Not finished yet. 
 nav: true
