@@ -6,28 +6,31 @@
 
 
 h1{
-  font-size: 30px;
+  margin-top: 3.0rem;
+  font-size: 26px;
 }
 
 h2{
-  font-size: 22px;
+  margin-top: 2.0rem;
+  font-size: 24px;
 }
 
 
 h3{
-  font-size: 20px;
+  margin-top: 2.0rem;
+  font-size: 22px;
 }
 
 
 h4{
-  font-size: 18px;
+  margin-top: 2.0rem;
+  font-size: 20px;
 }
 
 
 
 h1, h2, h3,  h4, h5, h6{
   margin-bottom: .9rem;
-  margin-top: 1.0rem;
   // font-family: 'Open Sans', sans-serif; ;
   font-weight: 400;
 
@@ -37,18 +40,17 @@ h1, h2, h3,  h4, h5, h6{
 h1, h2, h3, h4, h5, h6, strong, div{
   color: var(--global-text-color);
   // font-family:'Open Sans', sans-serif; ;
-  font-weight: 400;
+  // font-weight: 400;
   // font-family: Didot,Didot LT STD,Hoefler Text,Garamond,Times New Roman,serif; 
   // font-family :"Roboto", Helvetica, Arial, sans-serif;
 }
  li, ul{
   color: var(--global-text-color);
-  // font-size: 14px;
-  // margin-bottom: rem;
-
+  font-size: var(--global-text-size);
 }
 strong{
   font-weight:700;
+  font-size: var(--global-text-size);
   // font-family: 'Open Sans', sans-serif; ;
   // font-family:  "Cambria, Georgia, serif"; //"Roboto", Helvetica, Arial, sans-serif;
 }
@@ -56,21 +58,19 @@ strong{
 span {
   color: var(--global-text-color);
   font-family:Arial, Helvetica, sans-serif;
+  font-size: var(--global-text-size);
 }
-
-
 p {
   color: var(--global-text-color);
   line-height:  160%;
-  font-family:  Optima,Segoe,Segoe UI,Candara,Calibri,Arial,sans-serif; 
   // font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
   // font-family: 'Open Sans', sans-serif; ;
   font-weight: 100;
-  // font-size: 14px;
+  font-size: var(--global-text-size);
   // word-break: keep-all;
   word-wrap: normal;
   hyphens: auto;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.7rem;
   // margin-top: 2.0rem;
 }
 
@@ -79,10 +79,12 @@ hr {
 }
 
 table {
+    
     width: auto;
     border-top: 1px solid #444444;
     border-collapse: collapse;
     td, th {
+      font-size: var(--global-text-size);
       color: var(--global-text-color);
       // border: 2px solid #444444;
       border-bottom: 1px solid #444444;
@@ -112,6 +114,7 @@ a, table.table a {
   &:hover:after :not(.nav-item.dropdown) {
     width: 100%;
   }
+  font-size: var(--global-text-size);
 }
 
 figure, img {
@@ -125,7 +128,6 @@ blockquote {
   border-left: 2px solid var(--global-theme-color);
   margin: 1.5em 10px;
   padding: 0.5em 10px;
-  // font-size: 1.2rem;
 }
 
 // Math
@@ -138,7 +140,6 @@ blockquote {
 // Caption
 
 .caption {
-  // font-size: 0.875rem;
   margin-top: 0.75rem;
   margin-bottom: 1.5rem;
   text-align: center;
@@ -204,7 +205,6 @@ blockquote {
 .post-description {
   font-family:Cursive;
   margin-bottom: 2rem;
-  // font-size: 0.875rem;
   a {
     color: inherit;
     &:hover {
@@ -350,6 +350,7 @@ footer.fixed-bottom {
   background-color: var(--global-footer-bg-color);
   font-size: 0.75rem;
   .container {
+
     color: var(--global-footer-text-color);
     padding-top: 9px;
     padding-bottom: 8px;
@@ -638,7 +639,7 @@ code {
   border-radius: 3px;
   padding: 3px 3px;
   font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif; 
-  // font-size: 16px;
+  font-size:  var(--global-text-size);
 }
 
 
@@ -655,12 +656,12 @@ html.transition *:after {
 .post{
   .post-meta{
     color: var(--global-text-color-light);
-    font-size: 0.875rem;
+    font-size: 0.9rem;
     margin-bottom: 0;
   }
   .post-tags{
     color: var(--global-text-color-light);
-    font-size: 0.875rem;
+    font-size: 0.9rem;
     padding-bottom: 0.01rem;
     a {
       color: var(--global-text-color-light);
