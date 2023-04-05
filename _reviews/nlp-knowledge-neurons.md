@@ -17,12 +17,12 @@ Geva [1] argued the key-value memory structure in MLP layer of a transformer.
 
 #### Discovered Properties of Key-Value Memory 
 
-* Lower layers tend to capture shallow patterns, while upper layers learn more semantic ones. 
-* The values complement the keys’ input patterns by inducing output distributions
-* the output of a feed-forward layer is a composition of its memories, which is subsequently refined throughout the model’s layers via residual connections to produce the final output distribution.
+* Lower layers tend to capture **shallow patterns** (existence of specific vocabulary), while upper layers learn more **semantic** ones (topics such as sports or TV shows). 
+* The values complement the keys’ input patterns by inducing output distributions (each key is the weight for each value)
+* the output of a feed-forward layer is **a composition of its memories**, which is subsequently **refined** throughout the model’s layers via residual connections to produce the final output distribution.
 
 
-Motivated by neural memory [2] which consists of $m$ key-value pairs, which we call *memories*. 
+Motivated by `neural memory` [2] which consists of $m$ key-value pairs, which we call *memories*. 
 * `key`: $d$-dimensional vector $\mathbf{k}_i \in \mathbb{R}^d$, and together form the parameter matrix $K \in \mathbb{R}^{m\times d}$. The authors compute memory coefficient by $\text{ReLU}(\mathbf{x}_j^l \cdot \mathbf{k}_i^\ell)$ for a key $k_i^l$ that corresponds to the $i$-th hidden dimension of the $\ell$-th feed-forward layer. To validate the claim, they showed top-25 inputs which triggers the memory. 
 * `value` : paramter $V\in \mathbb{R}^{m\times d}$. The value is directly related to the probability distribution over the vocabulary by multiplying it by  the output embedding matrix $E$:
 
@@ -46,14 +46,16 @@ $$
 * *hidden layer* : $\mathbf{m} = f(\mathbf{x} \cdot K^\top)$
 * *memory coefficient* of the ith memory cell : $\mathbf{m}_i$
 
+#### Composition of Multiple Memories
+
 In the transformer, the role of key is to capture patterns on the input sequence, and value represent distributions of tokens. 
-Multiple values are contribute by composition of memories.
+Multiple memories weighted by keys are combined in a MLP.
 
 $$
 \large{\mathbf{y}^\ell = \sum_i \mathrm{ReLU}(\mathbf{x}^l \cdot \mathbf{k}_i^\ell) \cdot \mathbf{v}_i^\ell + \mathbf{b}^\ell}
 $$
 
-While a single feed-forward layer composes its memories in parallel, a multi-layer model uses the residual connection r to sequentially compose predictions to produce the model’s final output. 
+While a single feed-forward layer composes its memories in parallel, a `multi-layer model` uses the **residual connection** to sequentially compose predictions to produce the model’s final output. 
 
 
 
