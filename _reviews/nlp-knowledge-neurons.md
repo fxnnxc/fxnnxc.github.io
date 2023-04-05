@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Knowledge Neurons in NLP'
-date: 2022-05-08 00:00:00-0400
+date: 2023-04-04 00:00:00-0400
 description: ''
 tags: Neurons
 category: NLP
