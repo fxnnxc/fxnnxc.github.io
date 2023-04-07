@@ -8,12 +8,34 @@ subcategory : NLI
 ---
 
 
+## FEVER (Fact Verification)
+
+claim-evidence pairs 
+
+
+
+* Predicts the relations based on the concatenation of the claim and the evidence with a delimiter token. 
+
+
+## SNLI
+
+
+## MNLI
+
+
+## ChaosNLI
+
+
 ## Clever Hans
 
 
 * Lexical Overlap : Words in the premise are used to construct the hypotheses
 * Subsequence : Hypothesis is a subsequence of a premise
 * Constituent : Hypothesis is a subtree 
+
+
+
+# References 
 
 
 
