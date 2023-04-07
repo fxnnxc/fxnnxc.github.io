@@ -7,6 +7,14 @@ nav: true
 order : 7
 ---
 
+
+🍀 You can see literature reviews for specific research topics in [Literature Reviews](/reviews/) 
+
+
+----
+
+🍀 Here are topic specific contents
+
 <!-- pages/article.md -->
 <div class="article">
   {%- assign sorted_projects = site.article  -%}

@@ -4,7 +4,7 @@
   {%- assign list='ML DL XAI RL' | split: ' '  -%}
   {% for tag in list %}
 
-      <h2> {{tag}} </h2>
+      <h3> {{tag}} </h3>
       <div class="table-responsive">
         <table class="table table-sm table-borderless">
           <tr>
@@ -35,7 +35,7 @@
 
 {%- assign list='TORCH DATA' | split: ' '  -%}
 {% for tag in list %}
-      <h2> {{tag}} </h2>
+      <h3> {{tag}} </h3>
       <div class="table-responsive">
         <table class="table table-sm table-borderless">
           {% for item in site.article  %} 
