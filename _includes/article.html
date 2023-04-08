@@ -7,17 +7,22 @@
       <h3> {{tag}} </h3>
       <div class="table-responsive">
         <table class="table table-sm table-borderless">
+          <colgroup>
+            <col style="width:20%">
+            <col style="width:50%">
+            <col style="width:30%">
+          </colgroup>  
           <tr>
           <th> Topic </th> 
-          <th> Title </th>
-          <th> Last Update </th>
+          <th  style="text-align:left;"> Title </th>
+          <th  style="text-align:left;"> Last Update </th>
         </tr>
             {%- assign news = site.article  | sort: "subcategory" -%}
             {% for item in news %} 
             {%if item.category == {{tag}}%}
 
             <tr>
-                <th style="color:rgb(99, 99, 103);  font-size: large;  font-family:Georgia, 'Times New Roman', Times, serif">   {{item.subcategory}} </th>
+                <th style="color:rgb(32, 99, 73);  font-size: large;  font-family:Georgia, 'Times New Roman', Times, serif">   {{item.subcategory}} </th>
                 <td>
                     <a style="color:black; font-size: large; font-family: 'Times New Roman', Times, serif;"  href="{{ item.url | relative_url }}">{{ item.title }}</a>
                 </td>
@@ -29,7 +34,8 @@
       </div>
   {% endfor %}
 
-            
+
+  <hr>
 
 <!-- <details><summary>(click to expand) <strong>Knowledge List</strong></summary> -->
 
@@ -38,21 +44,25 @@
       <h3> {{tag}} </h3>
       <div class="table-responsive">
         <table class="table table-sm table-borderless">
+          <colgroup>
+            <col style="width:20%">
+            <col style="width:50%">
+            <col style="width:30%">
+          </colgroup>  
+          <tr>
+            <th> Topic </th> 
+            <th  style="text-align:left;"> Title </th>
+            <th  style="text-align:left;"> Last Update </th>
+          </tr>
           {% for item in site.article  %} 
           {%if item.category == {{tag}}%}
-            <tr>
-              <th>   {{item.subcategory}} </th>
-
-              <td>
-                <!-- {% if item.inline -%}  -->
-                  <!-- {{ item.content | remove: '<p>' | remove: '</p>' | emojify }} -->
-                <!-- {{ item.content | item.tags |  }} -->
-                <!-- {%- else -%}  -->
-                  <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
-                <!-- {%- endif %}  -->
-              </td>
-              <td scope="row">{{ item.date | date: "%b %-d, %Y" }}</td>
-            </tr>
+          <tr>
+            <th style="color:rgb(32, 99, 73);  font-size: large;  font-family:Georgia, 'Times New Roman', Times, serif">   {{item.subcategory}} </th>
+            <td>
+                <a style="color:black; font-size: large; font-family: 'Times New Roman', Times, serif;"  href="{{ item.url | relative_url }}">{{ item.title }}</a>
+            </td>
+            <td scope="row">{{ item.date | date: "%b %-d, %Y" }}</td>
+          </tr>
           {% endif %}
           {%- endfor %}  
         </table>

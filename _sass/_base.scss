@@ -83,11 +83,6 @@ table {
     width: auto;
     border-top: 1px solid #444444;
     border-collapse: collapse;
-    tr:first-child{
-      border-bottom: 1px solid #ffefef;
-      border-top: 2px solid #020b5d;
-      background-color: #fffbe8;
-    }
     td, th {
       font-size: var(--global-text-size);
       color: var(--global-text-color);
@@ -108,6 +103,11 @@ table {
       text-align: center;
       margin-left: auto;
       margin-right: auto;
+    }
+    tr:first-child{
+      border-bottom: 2px solid #000000;
+      background-color: #f5fbfa;
+      border-top: 2px solid #000000;
     }
 }
 

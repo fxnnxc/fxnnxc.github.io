@@ -4,10 +4,15 @@
   <h2> NLP </h2>
   <div class="table-responsive">
     <table class="table table-sm table-borderless">
+      <colgroup>
+        <col style="width:20%">
+        <col style="width:50%">
+        <col style="width:30%">
+      </colgroup>  
       <tr>
-        <th> Topic </th> 
-        <th> Title </th>
-        <th> Last Update </th>
+          <th> Topic </th> 
+          <th  style="text-align:left;"> Title </th>
+          <th  style="text-align:left;"> Last Update </th>
       </tr>
       {%- assign news = site.reviews  | sort: "subcategory" -%}
         {% for item in news %} 

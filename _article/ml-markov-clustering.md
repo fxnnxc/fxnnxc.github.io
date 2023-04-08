@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '📌 Markov Clustering'
+title: 'Markov Clustering [📌]'
 date: 2022-05-08 00:00:00-0400
 description: 'Expansion and Inflation'
 tags: Stats, Cluster
