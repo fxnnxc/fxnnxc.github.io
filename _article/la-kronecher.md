@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Kronecher Product'
+title: 'Kronecker Product'
 date: 2023-04-06 11:12:00-0400
 description: None
 tags: LinearAlgebra 
@@ -9,13 +9,13 @@ subcategory : Insertion
 ---
 
 
-# Kronecher Product 
+# Kronecker Product 
 
 For matrix 
 $$
 A = \begin{pmatrix} a_{11} & \cdots & a_{1n} \\ \vdots & \ddots & \vdots \\ a_{m1} & \cdots & a_{mn} \end{pmatrix}
 $$
-Kronecher Product is defined by 
+Kronecker Product is defined by 
 
 $$
 A \otimes B  = \begin{pmatrix} a_{11} B & \cdots & a_{1n}B \\ \vdots & \ddots & \vdots \\ a_{m1}B & \cdots & a_{mn}B \end{pmatrix}
