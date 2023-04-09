@@ -29,14 +29,28 @@ Roy et al. [1] proposed self-talk agent which is an explanatory model.
 
 ### Desiderata for explanatory model 
 
-1. <b style='border:1px; background-color:#FFFFBB;'> Grounded  </b>: the explanatory model should deploy a representation language that is semantically-grounded.   
-2. <b style='border:1px; background-color:#FFBBFF;'> Flexible  </b>  : the explanatory model should be able to produce many different representation forms, agnostic to the base system's input/output modalities.
-3. <b style='border:1px; background-color:#BBFFFF;'> Minimally-interfering  </b> : Training and inference of the model should have as little impact as possible on the training and inference of the base system. 
-4. <b style='border:1px; background-color:#BBBBFF;'> Scalable  </b> : The solution should be adapted to any size network. 
-5. <b style='border:1px; background-color:#BBFFBB;'> Faithful  </b>  : The explanatory model should provide accurate descriptions of the underlying system. 
+<b style='border:1px; background-color:#FFFFBB;'> Grounded  </b>
+* The explanatory model should deploy a representation language that is **semantically-grounded** 
+* (NLP description or One-hot Encoding)
+
+<b style='border:1px; background-color:#FFBBFF;'> Flexible  </b> 
+* Be able to produce many different representation forms, **agnostic to the base system's input/output** modalities.
+* (Most internal representations are not interpretable.)
+
+<b style='border:1px; background-color:#BBFFFF;'> Minimally-interfering  </b> 
+* Training and inference of the model should have as **little impact as possible** on the training and inference of the base system. 
+* (Attribution methods are post-hoc)
+
+<b style='border:1px; background-color:#BBBBFF;'> Scalable  </b>
+* The method should be adapted to **any size network** 
+* (Saliency map can be applied to any differentiable model.) 
+
+<b style='border:1px; background-color:#BBFFBB;'> Faithful  </b>  
+* The explanatory model should provide **accurate descriptions** of the underlying system 
+* (Is saliency map accurate? May be not) 
 
 
-### Common historical solutions 
+### Common historical solutions [1]
 
 |---|---|---| 
 |Method| <tag style='color:green'> Satisfied </tag>| <tag style='color:red'> Unsatisfied </tag>| 
@@ -45,7 +59,7 @@ Roy et al. [1] proposed self-talk agent which is an explanatory model.
 |**Explicitly structuring networks**| <b style='border:1px; background-color:#FFFFBB;'> Grounded  </b>, <b style='border:1px; background-color:#BBFFBB;'> Faithful  </b> | <b style='border:1px; background-color:#BBFFFF;'> Minimally-interfering  </b>, <b style='border:1px; background-color:#FFBBFF;'> Flexible  </b>, <b style='border:1px; background-color:#BBBBFF;'> Scalable  </b> |
 |**Fine-grained mechanistic interpretability**| <b style='border:1px; background-color:#BBFFFF;'> Minimally-interfering  </b>, <b style='border:1px; background-color:#BBFFBB;'> Faithful  </b> |<b style='border:1px; background-color:#BBBBFF;'> Scalable  </b> , <b style='border:1px; background-color:#FFFFBB;'> Grounded  </b>, <b style='border:1px; background-color:#FFBBFF;'> Flexible  </b>|
 |**Decoders**|<b style='border:1px; background-color:#FFFFBB;'> Grounded  </b>,<b style='border:1px; background-color:#FFBBFF;'> Flexible  </b>, <b style='border:1px; background-color:#BBBBFF;'> Scalable  </b> , <b style='border:1px; background-color:#BBFFFF;'> Minimally-interfering  </b> | <b style='border:1px; background-color:#BBFFBB;'> Faithful  </b> |
-|**Causal self-talk**| <b style='border:1px; background-color:#FFFFBB;'> Grounded  </b>,<b style='border:1px; background-color:#FFBBFF;'> Flexible  </b>, <b style='border:1px; background-color:#BBBBFF;'> Scalable  </b> , <b style='border:1px; background-color:#BBFFFF;'> Minimally-interfering  </b>, <b style='border:1px; background-color:#BBFFBB;'> Faithful  </b> | -|
+|**Causal Self-Talk**| <b style='border:1px; background-color:#FFFFBB;'> Grounded  </b>,<b style='border:1px; background-color:#FFBBFF;'> Flexible  </b>, <b style='border:1px; background-color:#BBBBFF;'> Scalable  </b> , <b style='border:1px; background-color:#BBFFFF;'> Minimally-interfering  </b>, <b style='border:1px; background-color:#BBFFBB;'> Faithful  </b> | -|
 
 
 
@@ -61,11 +75,9 @@ Roy et al. [1] proposed self-talk agent which is an explanatory model.
 
 ### Re-routed Decoder
 
-To route the output of the decoder back into the internal representation, e.g. by concatenating $z_t$ with $x_{t+1}$. This amounts to incorporating the decoder output in the state update rule, with $m_{t+1} = f_\theta([x_{t+1}, z_t], m_t)$
+To route the output of the decoder back into the internal representation, e.g. by concatenating $z_t$ with $x_{t+1}$. This amounts to incorporating the decoder output in the state update rule, with $m_{t+1} = f_\theta([x_{t+1}, z_t], m_t)$.
 
-However, there is no guarantee that $f_\theta$ will actually "listen" to $z_t$ when producing $m_{t+1}$. 
-
-The decoder pathway can be viewed as a (externally-grounded) communication channel between the internal state and itself, i.e. a form of "self-talk" or "inner speech" [2].
+However, there is no guarantee that $f_\theta$ will actually "listen" to $z_t$ when producing $m_{t+1}$. The decoder pathway can be viewed as a (externally-grounded) communication channel between the internal state and itself, i.e. a form of "self-talk" or "inner speech" [2].
 
 
 ### Causal self-talk
