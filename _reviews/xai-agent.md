@@ -3,7 +3,7 @@ layout: post
 title: 'Explainable Agent [⚙️]'
 date: 2023-04-08 00:00:00-0400
 description: 'Agent'
-tags: XAI, AGent
+tags: XAI, Agent
 category: XAI
 subcategory : Agent
 ---
