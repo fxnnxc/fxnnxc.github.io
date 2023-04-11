@@ -15,6 +15,26 @@ This is a review of [A Mathematical Framework for Transformer Circuits](https://
 
 # Zero-Transformer 
 
+$$
+T = W_{UN} W_E
+$$
+
+
+
+
+
+# Residual Stream 
+
+
+# Blocks 
+
+The meaning of outputs of each block could be interpreted by weights for the vocabulary in $W_{UN}
+
+
+
+
+
+# MHA
 
 
 
@@ -241,6 +261,11 @@ T^1_\mathrm{attn-only} = \mathrm{Id} \otimes W_U W_E + \sum_{h\in H} A^h \otimes
 $$
 
 There are two operations: Residual connection of Zero Transformer and Block operation.  
+
+
+# MLP
+
+
 
 # Refernces 
 
