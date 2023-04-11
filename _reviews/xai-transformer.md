@@ -8,17 +8,41 @@ category: XAI
 subcategory : Transformer
 ---
 
+### ⚠️ This page is under development. 
+
+
+
 # Introduction 
 
 This is a review of [A Mathematical Framework for Transformer Circuits](https://transformer-circuits.pub/2021/framework/index.html)[1] written by Elhage et al.  
 
 
+
+This formulation includes Kronecker product as we multiply weight for individual tokens and tokens are mixed. See [Kronecker Product with Examples](/article/la-kronecher/) for the practice. 
+
+
+
+
 # Zero-Transformer 
+
+## Embedding and Unembedding Weights 
+
+Token is a discrete representation. To change the one-hot form into a high dimensional representation, we have a embedding matrix $W_E \in \mathbb{R}^{n_{tokens} \times d_{model}}$ where $n_{tokens}$ is the number of tokens and $d_{model}$ is the size of internal representation. In most cases, $n_{tokens} \gg d_{model}\$. The output is again multiplied with unembedding matrix $W_{UN} \in \mathbb{R}^{d_{model} \times n_{tokens} }$.
+
+The zero transformer is the most simplest form of a transformer which does not include the internal blocks and we just embed and unembed a token. 
 
 $$
 T = W_{UN} W_E
 $$
 
+Formally with Kronecker product to spread the weight matrix on tokens, we have  
+
+$$
+T = (\mathrm{Id}_{t} \otimes W_{UN}) \cdot (\mathrm{Id}_{t} \otimes  W_E)
+$$
+
+
+With the assumption that we train a model to predict the next token of a sentence, the zero transformer is same with a bi-gram model. 
 
 
 
@@ -28,7 +52,7 @@ $$
 
 # Blocks 
 
-The meaning of outputs of each block could be interpreted by weights for the vocabulary in $W_{UN}
+The meaning of outputs of each block could be interpreted by weights for the vocabulary in $W_{UN}$
 
 
 
