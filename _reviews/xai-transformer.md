@@ -207,7 +207,31 @@ $$
 
 </div>
 
+# One-Layer Transformer (attention only)
 
+$$
+T^1_\mathrm{attn-only} = (\mathrm{Id} \otimes W_U) \cdot 
+\Big( 
+\mathrm{Id} + \sum_{h\in H_1} A^h \otimes W^h_{OV}
+\Big)
+\cdot 
+(\mathrm{Id}\otimes W_E)
+\cdot
+$$
+
+where Multihead Attention is 
+
+$$
+A^h = \mathrm{softmax}^* \Big( t^\top W_E^\top W_{QK}^h W_E \cdot t  \Big)
+$$ 
+
+with autoregressive masking softmax operation, $\mathrm{softmax}^\*$. By applying distributive property of Kronecker Product, we have
+
+$$
+T^1_\mathrm{attn-only} = \mathrm{Id} \otimes W_U W_E + \sum_{h\in H} A^h \otimes (W_U W_{OV}^h W_E )
+$$
+
+There are two operations: Residual connection of Zero Transformer and Block operation.  
 
 # Refernces 
 
