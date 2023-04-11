@@ -53,7 +53,7 @@ If you have any idea or comments on the experiment, contact <tag class="text-box
 <div class="demolink">
   <a class="box-demo-link" href="https://arxiv.org/abs/2211.15428" style="background:#617143" >Pre-print</a> | 
   <a class="box-demo-link" href="https://github.com/fxnnxc/vision-pretraining-bias" >Code</a> | 
-  <a class="box-demo-link" href="https://fxnnxc.github.io/paper/explaining_pretraining_bias/" style="background:#00B51E;">Project</a>
+  <a class="box-demo-link" href="/paper/explaining_pretraining_bias/" style="background:#00B51E;">Project</a>
   <div class="authors">Bumjin Park and Jaesik Choi, 2022  </div>
 </div>
 
@@ -76,7 +76,7 @@ If you have any idea or comments on the experiment, contact <tag class="text-box
 <div class="demolink">
   <a class="box-demo-link" href="https://www.mdpi.com/2076-3417/12/1/272" style="background:#B77EFA" >Applied Sciences</a> | 
   <a class="box-demo-link" href="https://github.com/fxnnxc/Cooperative-Multi-Robot-Task-Allocation-with-Reinforcement-Learning" >Code</a> | 
-  <a class="box-demo-link" href="https://fxnnxc.github.io/paper/multirobot_allocation/" style="background:#00B51E;" >Project</a>
+  <a class="box-demo-link" href="/paper/multirobot_allocation/" style="background:#00B51E;" >Project</a>
   <div class="authors">Bumjin Park, Cheongwoong Kang, and Jaesik Choi, 2021  </div>
 </div>
 
