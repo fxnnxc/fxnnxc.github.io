@@ -8,6 +8,15 @@ category: XAI
 subcategory : Transformer
 ---
 
+# Introduction 
+
+This is a review of [A Mathematical Framework for Transformer Circuits](https://transformer-circuits.pub/2021/framework/index.html)[1] written by Elhage et al.  
+
+
+# Zero-Transformer 
+
+
+
 
 The MHA operation is defined by 
 
