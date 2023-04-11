@@ -16,15 +16,16 @@ $$
 A = \begin{pmatrix} a_{11} & \cdots & a_{1n} \\ \vdots & \ddots & \vdots \\ a_{m1} & \cdots & a_{mn} \end{pmatrix}
 $$
 Kronecker Product is defined by 
-
 $$
 A \otimes B  = \begin{pmatrix} a_{11} B & \cdots & a_{1n}B \\ \vdots & \ddots & \vdots \\ a_{m1}B & \cdots & a_{mn}B \end{pmatrix}
 $$
 
-For example, 
+<div style='background-color:#F5FFFF; margin:2px;border: dashed; border-color: #4444;'>
+
+ For example, 
 
 $$
-\begin{gather}
+\begin{gather*}
 A = \begin{pmatrix}
   1 & -1 
 \end{pmatrix},
@@ -36,67 +37,58 @@ A \otimes B = \begin{pmatrix}
   1 & 2 & -1 & -2 \\
   3 & 4 & -3 & -4
 \end{pmatrix}
-\end{gather}
-
+\end{gather*}
 $$
-
-
+</div>
 
 # Properties 
 
 ---
 
-<tag class="box-demo-link" style="background:#b4ffff; color:#000000; font-size:18px">Scalar Multiplication</tag>
-
+<tag class="box-demo-link" style="background:#b4ffff; color:#000000; font-size:18px; padding-bottom:0px;">Scalar Multiplication</tag>
 $$
-\Large{(kA) \otimes B = A \otimes (kB) = k (A\otimes B)}
+{(kA) \otimes B = A \otimes (kB) = k (A\otimes B)}
 $$
 
 ---
 
-<tag class="box-demo-link" style="background:#b4ffff; color:#000000; font-size:18px">Distributive</tag>
-
+<tag class="box-demo-link" style="background:#b4ffff; color:#000000; font-size:18px; padding-bottom:0px;">Distributive</tag>
 $$
 \begin{gather*}
-\Large{A \otimes (B+C)= (A \otimes B ) + (B \otimes C )} \\
-\Large{(A+B) \otimes C = (A \otimes C ) + (B \otimes C )}
+{A \otimes (B+C)= (A \otimes B ) + (B \otimes C )} \\
+{(A+B) \otimes C = (A \otimes C ) + (B \otimes C )}
 \end{gather*}
 $$
 
 ---
 
-<tag class="box-demo-link" style="background:#b4ffff; color:#000000; font-size:18px">Associative</tag>
-
-
+<tag class="box-demo-link" style="background:#b4ffff; color:#000000; font-size:18px; padding-bottom:0px;">Associative</tag>
 $$
-\Large{(A \otimes B) \otimes C = A \otimes (B \otimes C )}
+{(A \otimes B) \otimes C = A \otimes (B \otimes C )}
 $$
 
 ---
 
-<tag class="box-demo-link" style="background:#FFAAAA; color:#000000; font-size:18px">Mixed Product Property</tag>
-
+<tag class="box-demo-link" style="background:#FFAAAA; color:#000000; font-size:18px; padding-bottom:0px;">Mixed Product Property</tag>
 $$
-\Large{(A \otimes B ) \cdot (C \otimes D) = (A \cdot B) \otimes (C \cdot D)}
-$$
-
----
-
-<tag class="box-demo-link" style="background:#FFAAAA; color:#000000; font-size:18px">Hadamard Product</tag>
-
-$$
-\Large{(A \otimes B ) \odot (C \otimes D) = (A\odot B) \otimes (C\odot D)}
+{(A \otimes B ) \cdot (C \otimes D) = (A \cdot B) \otimes (C \cdot D)}
 $$
 
 ---
 
-<tag class="box-demo-link" style="background:#FF0000; color:#FFFFFF; font-size:18px">Commutative</tag> (Does not have it!)
-
-In general, commutative property does not hold. 
-
+<tag class="box-demo-link" style="background:#FFAAAA; color:#000000; font-size:18px; padding-bottom:0px;">Hadamard Product</tag>
 $$
-\Large{A \otimes B \ne B \otimes A}
+{(A \otimes B ) \odot (C \otimes D) = (A\odot B) \otimes (C\odot D)}
 $$
+
+---
+
+<tag class="box-demo-link" style="background:#FF0000; color:#FFFFFF; font-size:18px; padding-bottom:0px;">Commutative (X) </tag> 
+$$
+{A \otimes B \ne B \otimes A}
+$$
+
+In general, commutative property does not hold  (Does not have it!).
 
 ---
 
@@ -123,15 +115,19 @@ C = \begin{pmatrix}
 $$
 
 
+<div style='background-color:#F5FFFF; margin:2px;border: dashed; border-color: #4444;'>
+
 $$
-\begin{gather}
+\begin{gather*}
 (kA) \otimes B = 
 \begin{pmatrix}
 k & 2k &  -k  & -2k \\
 3k & 4k & -3k & -4k 
 \end{pmatrix} = k (A\otimes B) = A \otimes (kB)
-\end{gather} 
+\end{gather*} 
 $$
+
+</div>
 
 ---
 
@@ -152,6 +148,8 @@ C = \begin{pmatrix}
   7 & 8    
 \end{pmatrix}
 $$ 
+
+<div style='background-color:#F5FFFF; margin:2px;border: dashed; border-color: #4444;'>
 
 $$
 \begin{align*}
@@ -202,6 +200,8 @@ A \otimes (B + C) &= \begin{pmatrix}
 \end{align*}
 $$
 
+</div>
+
 ---
 
 <tag class="box-demo-link" style="background:#b4ffff; color:#000000; font-size:18px">Associative</tag>
@@ -221,6 +221,7 @@ C = \begin{pmatrix}
 \end{pmatrix}
 $$
 
+<div style='background-color:#F5FFFF; margin:2px;border: dashed; border-color: #4444;'>
 
 $$
 \begin{align*}
@@ -272,6 +273,7 @@ A \otimes (B+C) &=
 \end{align*}
 $$
 
+</div>
 
 ---
 
@@ -288,6 +290,8 @@ D = \begin{pmatrix} 5 \\ 6 \end{pmatrix}
 $$
 
 * Warning $AC,BD$ matrix multiplications must be defined. 
+
+<div style='background-color:#F5FFFF; margin:2px;border: dashed; border-color: #4444;'>
 
 $$
 \begin{align*}
@@ -315,6 +319,8 @@ $$
 \end{gather*}
 $$
 
+</div>
+
 
 ---
 
@@ -339,7 +345,7 @@ D = \begin{pmatrix}
 \end{pmatrix}
 $$
 
-
+<div style='background-color:#F5FFFF; margin:2px;border: dashed; border-color: #4444;'>
 $$
 \begin{align*}
 (A \otimes B ) \odot (C \otimes D) 
@@ -358,12 +364,14 @@ $$
 \end{align*}
 $$
 
+
+
 $$
 \begin{align*}
 (A\odot C) \otimes (B\odot D)  
 &= 
 \Big(
-\begin{pmatrix} 1 & -1 \end{pmatrix} \odot \begin{pmatrix} 3 & 4 \end{pmatrix}
+\begin{pmatrix} 1 & -1 \end{pmatrix} \Big) \odot \Big( \begin{pmatrix} 3 & 4 \end{pmatrix}
 \Big)\otimes
 \Big(
 \begin{pmatrix} 1 \\ 2 \end{pmatrix} \odot \begin{pmatrix} 4 \\ 5 \end{pmatrix}
@@ -371,12 +379,15 @@ $$
 &= \begin{pmatrix} 3 & -4 \end{pmatrix} \otimes \begin{pmatrix} 4 \\ -10 \end{pmatrix} \\
 &= \begin{pmatrix} 12 & -16 \\ -30 & -40 \end{pmatrix} 
 \end{align*}
-
 $$
+
 
 $$
 \Rightarrow (A \otimes B ) \odot (C \otimes D) = (A\odot B) \otimes (C\odot D)
 $$
+
+</div>
+
 
 
 
@@ -397,6 +408,7 @@ B = \begin{pmatrix}
 \end{pmatrix}
 $$
 
+<div style='background-color:#F5FFFF; margin:2px;border: dashed; border-color: #4444;'>
 
 $$
 \begin{gather*}
@@ -420,22 +432,24 @@ B \otimes A = \begin{pmatrix}
 1 & -1 & 2 & -2 \\
 3 & -3 & 4 & -4
 \end{pmatrix} \\ 
-A \otimes B \ne B \otimes A
+\Rightarrow A \otimes B \ne B \otimes A
 \end{gather*}
 $$
+
+</div>
 
 ---
 
 ## Transpose 
 
 $$
-\Large{
+{
 (A \otimes B)^{\top} = A^{\top} \otimes B^{\top}
 }
 $$
 
 $$
-\Large{
+{
 (A \otimes B)^{*} = A^{*} \otimes B^{*}
 }
 $$
@@ -447,7 +461,7 @@ $$
 Assume $A$ and $B$ are both invertible. 
 
 $$
-\Large{
+{
 (A \otimes B)^{-1} = A^{-1} \otimes B^{-1}
 }
 $$
@@ -455,7 +469,7 @@ $$
 ## Moore–Penrose pseudoinverse 
 
 $$
-\Large{
+{
 (A \otimes B)^{+} = A^{+} \otimes B^{+}
 }
 $$
