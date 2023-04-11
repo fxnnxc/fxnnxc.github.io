@@ -53,7 +53,7 @@ If you have any idea or comments on the experiment, contact <tag class="text-box
 <div class="demolink">
   <a class="box-demo-link" href="https://arxiv.org/abs/2211.15428" style="background:#617143" >Pre-print</a> | 
   <a class="box-demo-link" href="https://github.com/fxnnxc/vision-pretraining-bias" >Code</a> | 
-  <a class="box-demo-link" href="https://fxnnxc.github.io/paper/explaining_pretraining_bias/" >Project</a>
+  <a class="box-demo-link" href="https://fxnnxc.github.io/paper/explaining_pretraining_bias/" style="background:#00B51E;">Project</a>
   <div class="authors">Bumjin Park and Jaesik Choi, 2022  </div>
 </div>
 
@@ -68,6 +68,28 @@ If you have any idea or comments on the experiment, contact <tag class="text-box
   </div>
 </div>
 
+<hr/>
+
+<!--  MultiRobot Allocation Bias  -->
+<h3 class="demo-title"> Cooperative Multi-Robot Task Allocation with Reinforcement Learning
+ </h3>
+<div class="demolink">
+  <a class="box-demo-link" href="https://www.mdpi.com/2076-3417/12/1/272" style="background:#B77EFA" >Applied Sciences</a> | 
+  <a class="box-demo-link" href="https://github.com/fxnnxc/Cooperative-Multi-Robot-Task-Allocation-with-Reinforcement-Learning" >Code</a> | 
+  <a class="box-demo-link" href="https://fxnnxc.github.io/paper/multirobot_allocation/" style="background:#00B51E;" >Project</a>
+  <div class="authors">Bumjin Park, Cheongwoong Kang, and Jaesik Choi, 2021  </div>
+</div>
+
+<div class="row">
+  <div class="column-first">
+This paper deals with the concept of multi-robot task allocation, referring to the assignment of multiple robots to tasks such that an objective function is maximized. The performance of existing meta-heuristic methods worsens as the number of robots or tasks increases. To tackle this problem, a novel Markov decision process formulation for multi-robot task allocation is presented for reinforcement learning. The proposed formulation sequentially allocates robots to tasks to minimize the total time taken to complete them. Additionally, we propose a deep reinforcement learning method to find the best allocation schedule for each problem. Our method adopts the cross-attention mechanism to compute the preference of robots to tasks. The experimental results show that the proposed method finds better solutions than meta-heuristic methods, especially when solving large-scale allocation problems.
+  
+  </div>
+  <div class="column-second">
+  {% include figure.html path="assets/img/project_imgs/multirobot-allocation.png" class="img-demo" zoomable=true %}
+        <!-- <img width="100%" src="">   -->
+  </div>
+</div>
 <hr/>
 
 
