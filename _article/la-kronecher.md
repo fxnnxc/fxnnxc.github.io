@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 'Kronecker Product'
-date: 2023-04-06 11:12:00-0400
+title: 'Kronecker Product [📌]'
+date: 2023-04-10 11:12:00-0400
 description: None
 tags: LinearAlgebra 
 category: LA
