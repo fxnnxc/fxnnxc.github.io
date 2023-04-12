@@ -96,6 +96,49 @@ In the case of Joint model, syntactic heuristics and hypothesis only models are 
 <hr/>
 
 
+##
+
+---
+<tag class="box-demo-link" style="background:#b4ffff; color:#000000; font-size:18px">???</tag>
+<tag class="box-demo-link" style="background:#64DE3A; color:#000000; font-size:18px">NeurIPS (Workshop)</tag>
+<tag class="box-demo-link" style="background:#3549F3; color:#FFFFFF; font-size:18px">2022</tag>
+
+Generating Intuitive Fairness Specifications for Natural Language Processing
+
+
+
+---
+<tag class="box-demo-link" style="background:#b4ffff; color:#000000; font-size:18px">???</tag>
+<tag class="box-demo-link" style="background:#64DE3A; color:#000000; font-size:18px">ACL</tag>
+<tag class="box-demo-link" style="background:#3549F3; color:#FFFFFF; font-size:18px">2022</tag>
+
+Perturbation Augmentation for Fairer NLP
+
+
+---
+<tag class="box-demo-link" style="background:#b4ffff; color:#000000; font-size:18px">???</tag>
+<tag class="box-demo-link" style="background:#64DE3A; color:#000000; font-size:18px">ACL</tag>
+<tag class="box-demo-link" style="background:#3549F3; color:#FFFFFF; font-size:18px">2021</tag>
+
+Gender Bias in Machine Translation
+
+
+---
+<tag class="box-demo-link" style="background:#b4ffff; color:#000000; font-size:18px">???</tag>
+<tag class="box-demo-link" style="background:#64DE3A; color:#000000; font-size:18px">AAAI</tag>
+<tag class="box-demo-link" style="background:#3549F3; color:#FFFFFF; font-size:18px">2022</tag>
+
+
+Interpreting gender bias in neural machine translation: Multilingual architecture matters
+
+
+
+---
+<tag class="box-demo-link" style="background:#b4ffff; color:#000000; font-size:18px">???</tag>
+<tag class="box-demo-link" style="background:#64DE3A; color:#000000; font-size:18px">ACL</tag>
+<tag class="box-demo-link" style="background:#3549F3; color:#FFFFFF; font-size:18px">2020</tag>
+
+Fine-tuning neural machine translation on gender-balanced datasets
 
 
 
