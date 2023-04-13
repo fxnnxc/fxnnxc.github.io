@@ -22,6 +22,15 @@ $$
 
 where $\sigma_i \in \{ \pm 1 \}$ are i.i.d. uniform random variables. 
 
+We have hypothesis class $\mathcal{H}$ which includes models to make predictions. 
+For a given random $\sigma$, 
+
+
+
+$$
+{\displaystyle \operatorname {Rad} _{S}(F)=\operatorname {Rad} (F\circ S)}
+$$
+
 
 ## Intuition
 

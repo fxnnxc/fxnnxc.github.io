@@ -135,13 +135,102 @@ Interpreting gender bias in neural machine translation: Multilingual architectur
 
 ---
 <tag class="box-demo-link" style="background:#b4ffff; color:#000000; font-size:18px">???</tag>
+<tag class="box-demo-link" style="background:#64DE3A; color:#000000; font-size:18px">NeurIPS</tag>
+<tag class="box-demo-link" style="background:#3549F3; color:#FFFFFF; font-size:18px">2016</tag>
+
+Man is to computer programmer as woman is to homemaker? debiasing word embeddings
+
+Word embeddings trained on Google News articles exhibit female/male gender streotypes to a disturbing extent. 
+
+
+* Geometrically, gender bias is first shown to be captured by a direction in the word embedding. 
+* Second, gender neutral words are shown to be linearly separable from gender definition words in the word embedding
+
+
+
+
+* Words with similar semantic meanings tend to have vectors that are close together. 
+* The vector differences between words in embeddings have been shown to represent relationships between words
+
+
+
+$$
+\overrightarrow{\mathrm{man}} - \overrightarrow{\mathrm{woman}} \approx \overrightarrow{\mathrm{king}} - \overrightarrow{\mathrm{queen}}
+$$ 
+
+$$
+\overrightarrow{\mathrm{man}} - \overrightarrow{\mathrm{woman}} \approx \overrightarrow{\mathrm{computer~programmer}} - \overrightarrow{\mathrm{homemaker}}
+$$
+
+
+The most extreme occupations as projected on to the she−he gender direction
+
+
+Gender nuetral words : brother, sister, businessman and businesswoman. 
+
+
+
+
+*he* to $x$ as *she* to $y$.
+
+The input into our analogy generator
+is a seed pair of words (a, b) determining a seed direction ~a −~b corresponding to the normalized
+difference between the two seed words. In the task below, we use (a, b) = (she, he). We then score
+all pairs of words x, y by the following metric:
+
+$$
+\mathbf{S}_{(a,b)})(x,y) = 
+\begin{cases}
+\cos \Big( \overrightarrow{a} - \overrightarrow{b}, \overrightarrow{x} - \overrightarrow{y} \Big) & \mathrm{~if~} \lVert \overrightarrow{x} - \overrightarrow{y} \rVert \le \delta \\
+0  & \mathrm{~otherwise}
+\end{cases}
+$$
+where $\delta$ is a threshold for similarity. 
+
+
+gender direction $g \in \mathbb{R}^d $ : $\overrightarrow{\mathrm{man}} - \overrightarrow{\mathrm{woman}}$ or $\overrightarrow{\mathrm{she}} - \overrightarrow{\mathrm{he}}$.
+
+### Debiasing 
+
+* Step1: 
+
+* Step2: 
+
+
+### Debiasing Results
+
+As an example, consider the analogy puzzle, he to doctor is as she to $X$. The original embedding
+returns $X = nurse$ while the hard-debiased embedding finds $X = physician$. Moreover the harddebiasing
+algorithm preserved gender appropriate analogies such as she to *ovarian cancer* is as he
+to *prostate cancer*.
+
+---
+<tag class="box-demo-link" style="background:#b4ffff; color:#000000; font-size:18px">???</tag>
 <tag class="box-demo-link" style="background:#64DE3A; color:#000000; font-size:18px">ACL</tag>
 <tag class="box-demo-link" style="background:#3549F3; color:#FFFFFF; font-size:18px">2020</tag>
 
 Fine-tuning neural machine translation on gender-balanced datasets
 
 
+### The Definition of Gender Bias
 
+
+* (Bolukbasi et al., 2016b)
+
+Assume we have the gender direction $g$. If the projectio of $w$ on $g$ has higher magnitude, the more biased the word is. 
+
+$$
+\frac{1}{|N|} \sum_{w\in N} \vert \cos(w, g) \vert
+$$
+
+
+### List of Biased Words 
+
+* **Definitional** :he/she; boy/girl; father/mother; male/female; his/her; himself/herself; man/woman; son/daughter
+
+* **Biased Words** : diet for female and hero for male
+
+* **Professional** : e.g., accountant, surgeon
 
 
 # References 
