@@ -114,6 +114,55 @@ Generating Intuitive Fairness Specifications for Natural Language Processing
 
 Perturbation Augmentation for Fairer NLP
 
+Qian et al proposed *Perturber* that replaces biased words to demographically perturbed  data.
+
+### the Perturbation Augmentation NLP DAtaset (PANDA)
+
+Inputs of the perturber:
+
+(i) a source text snippet
+
+(ii) a word in the snippet referring to a demographic group
+
+(iii) a new target demographic attribute
+
+
+THe authors find that the perturber generates high quality perturbations, outperforming heuristic alternatives.
+
+
+### Fairscore
+
+The authors define the fairscore as the change in model predictions between the original evaluation dataset and the perturbation augmented version.
+
+Formally, for a perturber model $f_P$ and text snippet $x$, let $\tilde{x} \sim f_P(x)$ be the demographically altered perturber output. A classifier $f_C$ exhibits bias if for some input $x$ and demographically perturbed input $\tilde{x}$, the predictions $f_C(x) \ne f_C(\tilde{x})$.  The fairscore $F_X$ is defined by 
+
+$$
+F_S (f_C, X) = \frac{\vert \{ x\in X \vert f_C(x) \ne f_C(\tilde{x}) \} \vert}{ \vert X \vert}
+$$
+
+
+
+* $D_d$ : dictionary of demographic words 
+* $P_d$ : set of attribute pairs. The authors use $P_d$ to denote the subset of attribute pairs that are udner the demographic axis $d$, where $d \in \{ gender, race, age \}$
+
+$$
+P_{gender} = \{ (man, woman), (woman, non\mathrm{-}binary) \}
+$$
+
+The perturber changes word $w$ if the attribution $a_{w}$ is equal to $a_s$ in $(a_s, a_t) \in P_d$.
+
+
+* original source text : A “black Austin Powers ?” 
+* black race:asian (selected word, target(axis:attribute))
+* perturber output:  A “Asian Austin Powers?”
+
+
+### Fairness Evaluations 
+
+* CrosS-Pairs 
+* Word Embedding Association Test (WEAT)
+* HolisticBias
+
 
 ---
 <tag class="box-demo-link" style="background:#b4ffff; color:#000000; font-size:18px">???</tag>

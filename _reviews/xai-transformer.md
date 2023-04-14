@@ -291,6 +291,23 @@ There are two operations: Residual connection of Zero Transformer and Block oper
 
 
 
+
+
+
+# Transformer Equation
+
+
+Let $x^{(l)}$ be $l$-th output of transformer layers, $(l+1)$-th output is written as 
+
+\begin{align*}
+a^{(l+1)} &= \operatorname{MHA}(\operatorname{LN}(x^{(l)})) \\ 
+m^{(l+1)} &= \operatorname{MLP}(\operatorname{LN}(a^{(l+1)})) \\
+x^{(l+1)}   &= x^{(l)} + m^{(l+1)} 
+\end{align*}
+
+where $\operatorname{MLP}, \operatorname{MHA}$ and  $\operatorname{LN}$ are Multi-Layer Perceptron (MLP), Multi-Head Attention (MHA) and Layer-Norm (LN) each. 
+
+
 # Refernces 
 
 [1] https://transformer-circuits.pub/2021/framework/index.html
