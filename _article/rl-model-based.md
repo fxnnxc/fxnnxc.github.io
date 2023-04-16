@@ -97,9 +97,12 @@ Initialize  $Q  ( s, a ),  M( s, a ), \mathrm{~and~} \textcolor{blue}{\tau (S,A)
 
 
 |:-:|:-:|:-:|:-:|:-:|
-|   |  $v_\pi(s)$  |  $v_*(s)$  | $q_\pi(s,a)$  | $q_*(s,a)$  |
-|Full|  | |$ Q(s,a) \leftarrow \sum_{s', r} \hat{p}(s',r \| s,a) [r(s,a) + \gamma V(s')]$ | $ Q(s,a) \leftarrow \sum_{s', r} \hat{p}(s',r \| s,a) [r + \gamma \max_{a'} Q(s',a')]$ | 
-|Sample| | | | | 
+|   | Full|  Sample | 
+| $v_\pi(s)$  |  $V(s) \leftarrow    $  |
+| $v_*(s)$  | $V(s) \leftarrow \max_a \sum_{s', r} p(s',r \| s,a) [r + \gamma V(s')]$ |
+| $q_\pi(s,a)$  |$ Q(s,a) \leftarrow \sum_{s', r} \hat{p}(s',r \| s,a) [r(s,a) + \gamma V(s')]$ | 
+| $q_*(s,a)$  | $ Q(s,a) \leftarrow \sum_{s', r} \hat{p}(s',r \| s,a) [r + \gamma \max_{a'} Q(s',a')]$ | 
+
 
 # World Model 
 
