@@ -57,8 +57,10 @@ strong{
 
 span {
   color: var(--global-text-color);
-  font-family:Arial, Helvetica, sans-serif;
+  // font-family:Arial, Helvetica, sans-serif;
   font-size: var(--global-text-size);
+  font-weight: 100;
+
 }
 p {
   color: var(--global-text-color);
