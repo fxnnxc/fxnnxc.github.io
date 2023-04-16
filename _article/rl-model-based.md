@@ -29,7 +29,7 @@ subcategory : MBRL
 
 
 <Blockquote>
-<h3 style="margin:0px"> Dyna-Q </h3>
+<h3 style="margin:0px"> Dyna-Q Algorithm </h3>
 <hr>
 Algorithm parameters: step size  $\alpha \in (0 , 1] , \mathrm{discount~rate~} \gamma > 0$     <br> 
 Initialize  $Q  ( s, a ) \mathrm{~and~} M( s, a ) \  \forall s \in S , a \in A ( s )$  <br>
@@ -48,7 +48,7 @@ Initialize  $Q  ( s, a ) \mathrm{~and~} M( s, a ) \  \forall s \in S , a \in A (
 </Blockquote>
 
 
-#### Dyna-Q+
+#### Dyna-Q+ 
 
 
 **Dyna-Q with an exploration bonus that encourages exploration.**
@@ -65,7 +65,7 @@ transition produced a reward of $R + \kappa \sqrt{\tau}$ for some small $\kappa$
 
 
 <Blockquote>
-<h3 style="margin:0px"> Dyna-Q+ </h3>
+<h3 style="margin:0px"> Dyna-Q+ Algorithm </h3>
 <hr>
 Algorithm parameters: step size  $\alpha \in (0 , 1] , \mathrm{discount~rate~} \gamma > 0$, reward bonus $\textcolor{blue}{\kappa}$     <br> 
 Initialize  $Q  ( s, a ),  M( s, a ), \mathrm{~and~} \textcolor{blue}{\tau (S,A)} \ , \forall s \in S , a \in A ( s )$  <br>
@@ -97,12 +97,14 @@ Initialize  $Q  ( s, a ),  M( s, a ), \mathrm{~and~} \textcolor{blue}{\tau (S,A)
 
 
 |:-:|:-:|:-:|:-:|:-:|
-|   | Full|  Sample | 
+|   | Full Backup |  Sample Backup| 
 | $v_\pi(s)$  |  $V(s) \leftarrow    $  |
 | $v_*(s)$  | $V(s) \leftarrow \max_a \sum_{s', r} p(s',r \| s,a) [r + \gamma V(s')]$ |
 | $q_\pi(s,a)$  |$ Q(s,a) \leftarrow \sum_{s', r} \hat{p}(s',r \| s,a) [r(s,a) + \gamma V(s')]$ | 
 | $q_*(s,a)$  | $ Q(s,a) \leftarrow \sum_{s', r} \hat{p}(s',r \| s,a) [r + \gamma \max_{a'} Q(s',a')]$ | 
 
+
+<hr>
 
 # World Model 
 
@@ -110,6 +112,9 @@ Initialize  $Q  ( s, a ),  M( s, a ), \mathrm{~and~} \textcolor{blue}{\tau (S,A)
 * World Model 
 * Dreamer 
 * Dreamer2
+
+
+<hr>
 
 
 
