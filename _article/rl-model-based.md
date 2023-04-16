@@ -84,6 +84,22 @@ Initialize  $Q  ( s, a ),  M( s, a ), \mathrm{~and~} \textcolor{blue}{\tau (S,A)
 </Blockquote>
 
 
+### Full vs Sample Backups
+
+
+* Back up values 
+    * (First Axis) back up state values $v(s)$ or action values $q(s,a)$
+    * (Second Axis) whether they estimate the value for the optimal policy $\pi_*$ or for an arbitrary given policy $\pi$
+
+* Backup Methods
+    * (*full* backup or *sample* backup) The other binary dimension is whether the backups are full backups, considering all possible events that might happen, or sample backups
+
+
+
+|:-:|:-:|:-:|:-:|:-:|
+|   |  $v_\pi(s)$  |  $v_*(s)$  | $q_\pi(s,a)$  | $q_*(s,a)$  |
+|Full|  | |$ Q(s,a) \leftarrow \sum_{s', r} \hat{p}(s',r \| s,a) [r(s,a) + \gamma V(s')]$ | $ Q(s,a) \leftarrow \sum_{s', r} \hat{p}(s',r \| s,a) [r + \gamma \max_{a'} Q(s',a')]$ | 
+|Sample| | | | | 
 
 # World Model 
 
