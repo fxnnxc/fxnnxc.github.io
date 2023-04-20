@@ -12,7 +12,6 @@ categories: vision
 # Knowledge Distillation 
 
 
-
 ```python
 # Define Loss function as KLDiv
 loss_fn = nn.KLDivLoss(log_target=True, reduction='batchmean')
@@ -26,6 +25,12 @@ prediction = student_model(features)
 loss = loss_fn(F.log_softmax(prediction, dim=-1), F.log_softmax(target, dim=-1))
 ```
 
+
+## Hooks 
+
+```python
+
+```
 
 ## Modeling Separate Classifiers
 

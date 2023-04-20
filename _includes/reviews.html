@@ -65,3 +65,36 @@
   
   
   
+  
+  {%- assign list='ICLR ICML AAAI NeurIPS' | split: ' '  -%}
+  {% for tag in list %}
+        <h3> {{tag}} </h3>
+        <div class="table-responsive">
+          <table class="table table-sm table-borderless">
+            <colgroup>
+              <col style="width:20%">
+              <col style="width:50%">
+              <col style="width:30%">
+            </colgroup>  
+            <tr>
+              <th> Topic </th> 
+              <th  style="text-align:left;"> Title </th>
+              <th  style="text-align:left;"> Last Update </th>
+            </tr>
+            {% for item in site.reviews  %} 
+            {%if item.category == {{tag}}%}
+            <tr>
+              <th style="color:rgb(32, 99, 73);  font-size: large;  font-family:Georgia, 'Times New Roman', Times, serif">   {{item.subcategory}} </th>
+              <td>
+                  <a style="color:black; font-size: large; font-family: 'Times New Roman', Times, serif;"  href="{{ item.url | relative_url }}">{{ item.title }}</a>
+              </td>
+              <td scope="row">{{ item.date | date: "%b %-d, %Y" }}</td>
+            </tr>
+            {% endif %}
+            {%- endfor %}  
+          </table>
+        </div>
+  {% endfor %}
+  
+  
+  
