@@ -1,93 +1,23 @@
         
   <!-- <details><summary>(click to expand) <strong>Knowledge List</strong></summary> -->
 
-<h1> Literature Reviews </h1>
 
-<hr>
-    {%- assign list='XAI' | split: ' '  -%}
-    {% for tag in list %}
-          <h3> {{tag}} </h3>
-          <div class="table-responsive">
-            <table class="table table-sm table-borderless">
-              <colgroup>
-                <col style="width:20%">
-                <col style="width:50%">
-                <col style="width:30%">
-              </colgroup>  
-              <tr>
-                <th> Topic </th> 
-                <th  style="text-align:left;"> Title </th>
-                <th  style="text-align:left;"> Last Update </th>
-              </tr>
-              {% for item in site.reviews  %} 
-              {%if item.category == {{tag}}%}
-              <tr>
-                <th style="color:rgb(32, 99, 73);  font-size: large;  font-family:Georgia, 'Times New Roman', Times, serif">   {{item.subcategory}} </th>
-                <td>
-                    <a style="color:black; font-size: large; font-family: 'Times New Roman', Times, serif;"  href="{{ item.url | relative_url }}">{{ item.title }}</a>
-                </td>
-                <td scope="row">{{ item.date | date: "%b %-d, %Y" }}</td>
-              </tr>
-              {% endif %}
-              {%- endfor %}  
-            </table>
-          </div>
-    {% endfor %}
-    
-
-
-    {%- assign list='NLP' | split: ' '  -%}
-    {% for tag in list %}
-          <h3> {{tag}} </h3>
-          <div class="table-responsive">
-            <table class="table table-sm table-borderless">
-              <colgroup>
-                <col style="width:20%">
-                <col style="width:50%">
-                <col style="width:30%">
-              </colgroup>  
-              <tr>
-                <th> Topic </th> 
-                <th  style="text-align:left;"> Title </th>
-                <th  style="text-align:left;"> Last Update </th>
-              </tr>
-              {% for item in site.reviews  %} 
-              {%if item.category == {{tag}}%}
-              <tr>
-                <th style="color:rgb(32, 99, 73);  font-size: large;  font-family:Georgia, 'Times New Roman', Times, serif">   {{item.subcategory}} </th>
-                <td>
-                    <a style="color:black; font-size: large; font-family: 'Times New Roman', Times, serif;"  href="{{ item.url | relative_url }}">{{ item.title }}</a>
-                </td>
-                <td scope="row">{{ item.date | date: "%b %-d, %Y" }}</td>
-              </tr>
-              {% endif %}
-              {%- endfor %}  
-            </table>
-          </div>
-    {% endfor %}
-    
-    
-  <hr>
-  <h1> Topics </h1>
-  <hr>
 
 
   {%- assign list='LA ML DL XAI RL' | split: ' '  -%}
   {% for tag in list %}
 
-      <h3> {{tag}} </h3>
+    <div style="width: 100%; border-radius: 12px; font-size: large; background-color: rgb(255, 229, 125); text-align:center;"> 
+      {{tag}} </div>
+
       <div class="table-responsive">
-        <table class="table table-sm table-borderless">
+        <table class="table table-borderless">
           <colgroup>
             <col style="width:20%">
             <col style="width:50%">
             <col style="width:30%">
           </colgroup>  
-          <tr>
-          <th> Topic </th> 
-          <th  style="text-align:left;"> Title </th>
-          <th  style="text-align:left;"> Last Update </th>
-        </tr>
+
             {%- assign news = site.article  | sort: "subcategory" -%}
             {% for item in news %} 
             {%if item.category == {{tag}}%}
@@ -95,13 +25,14 @@
             <tr>
                 <th style="color:rgb(32, 99, 73);  font-size: large;  font-family:Georgia, 'Times New Roman', Times, serif">   {{item.subcategory}} </th>
                 <td>
-                    <a style="color:black; font-size: large; font-family: 'Times New Roman', Times, serif;"  href="{{ item.url | relative_url }}">{{ item.title }}</a>
+                    <a style="color:black; font-size: large; font-family:Georgia, 'Times New Roman', Times, serif , Times, serif;"  href="{{ item.url | relative_url }}">{{ item.title }}</a>
                 </td>
                 <td scope="row">{{ item.date | date: "%b %-d, %Y" }}</td>
               </tr>
             {% endif %}
             {%- endfor %}  
         </table>
+        <br>
       </div>
   {% endfor %}
 
@@ -110,9 +41,15 @@
 
 <!-- <details><summary>(click to expand) <strong>Knowledge List</strong></summary> -->
 
+  <div style="width:100%"> 
+  <br>
+  <h1> Others </h1>
+  </div>
+
 {%- assign list='TORCH DATA' | split: ' '  -%}
 {% for tag in list %}
-      <h3> {{tag}} </h3>
+<div style="width: 100%; border-radius: 12px; font-size: large; background-color: rgb(168, 252, 196); text-align:center;"> 
+  {{tag}} </div>
       <div class="table-responsive">
         <table class="table table-sm table-borderless">
           <colgroup>
@@ -120,23 +57,24 @@
             <col style="width:50%">
             <col style="width:30%">
           </colgroup>  
-          <tr>
-            <th> Topic </th> 
-            <th  style="text-align:left;"> Title </th>
+          <!-- <tr>
+            <th> {{tag}} </th> 
+            <th  style="text-align:left;">  </th>
             <th  style="text-align:left;"> Last Update </th>
-          </tr>
+          </tr> -->
           {% for item in site.article  %} 
           {%if item.category == {{tag}}%}
           <tr>
             <th style="color:rgb(32, 99, 73);  font-size: large;  font-family:Georgia, 'Times New Roman', Times, serif">   {{item.subcategory}} </th>
             <td>
-                <a style="color:black; font-size: large; font-family: 'Times New Roman', Times, serif;"  href="{{ item.url | relative_url }}">{{ item.title }}</a>
+                <a style="color:black; font-size: large; font-family: Georgia, 'Times New Roman', Times, serif"  href="{{ item.url | relative_url }}">{{ item.title }}</a>
             </td>
             <td scope="row">{{ item.date | date: "%b %-d, %Y" }}</td>
           </tr>
           {% endif %}
           {%- endfor %}  
         </table>
+        <br>
       </div>
 {% endfor %}
 

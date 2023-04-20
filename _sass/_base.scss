@@ -6,24 +6,24 @@
 
 
 h1{
-  margin-top: 3.0rem;
+  margin-top: 1.0rem;
   font-size: 26px;
 }
 
 h2{
-  margin-top: 2.0rem;
+  margin-top: 1.0rem;
   font-size: 24px;
 }
 
 
 h3{
-  margin-top: 2.0rem;
+  margin-top: 1.0rem;
   font-size: 22px;
 }
 
 
 h4{
-  margin-top: 2.0rem;
+  margin-top: 1.0rem;
   font-size: 20px;
 }
 
@@ -81,11 +81,15 @@ hr {
 }
 
 table {
-    
-    width: auto;
-    border-top: 1px solid #444444;
-    border-collapse: collapse;
+
+  border-collapse:separate;
+  border:solid black 1px;
+  border-radius:6px;
+
+
+
     td, th {
+      
       font-size: var(--global-text-size);
       color: var(--global-text-color);
       // border: 2px solid #444444;
@@ -98,17 +102,18 @@ table {
     
     th:first-child, td:first-child {
       border-left: none;
+      border: 1px;
     }
-    th{
-      border-top: 2px solid #444444;
-      border-bottom: 2px solid #444444;
-      text-align: center;
-      margin-left: auto;
-      margin-right: auto;
-    }
+    // th{
+    //   border-top: 2px solid #444444;
+    //   border-bottom: 2px solid #444444;
+    //   text-align: center;
+    //   margin-left: auto;
+    //   margin-right: auto;
+    // }
     tr:first-child{
       border-bottom: 2px solid #000000;
-      background-color: #f5fbfa;
+      background-color: #ffffff;
       border-top: 2px solid #000000;
     }
 }
