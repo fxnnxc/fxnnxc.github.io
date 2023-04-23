@@ -71,3 +71,146 @@ m_{\Delta x_i \Delta t} = \sum_j m_{\Delta x_i \Delta y_j} m_{\Delta y_i \Delta 
 $$
 
 ---
+
+
+# Transformer Interpretability 
+
+<tag class="box-demo-link" style="background:#b4ffff; color:#000000; font-size:18px">Rollout</tag>
+<tag class="box-demo-link" style="background:#64DE3A; color:#000000; font-size:18px">ACL</tag>
+<tag class="box-demo-link" style="background:#3549F3; color:#FFFFFF; font-size:18px">2020</tag>
+<text style='color:#FF0000'> [1]  </text>
+
+
+$$
+E_{rawAttn} = \mathbb{E}_l (\alpha ^{(L)})
+$$
+
+
+$$
+\begin{gather}
+A^{(1)} = I + \mathbb{E}_h (\alpha^{(l)}) \\
+E_{rollout} = A^{(1)} \cdot A^{(2)} \cdots A^{(L)}
+\end{gather}
+$$
+
+---
+<tag class="box-demo-link" style="background:#b4ffff; color:#000000; font-size:18px">Partial LRP</tag>
+<tag class="box-demo-link" style="background:#64DE3A; color:#000000; font-size:18px">ACL</tag>
+<tag class="box-demo-link" style="background:#3549F3; color:#FFFFFF; font-size:18px">2019</tag>
+<text style='color:#FF0000'> [2]  </text>
+
+<text style='color:#FF0000'> /  </text>
+<tag class="box-demo-link" style="background:#b4ffff; color:#000000; font-size:18px">Transformer Attribution</tag>
+<tag class="box-demo-link" style="background:#64DE3A; color:#000000; font-size:18px">CVPR</tag>
+<tag class="box-demo-link" style="background:#3549F3; color:#FFFFFF; font-size:18px">2021</tag>
+<text style='color:#FF0000'> [3]  </text>
+
+
+
+### Partial-LRP
+
+
+$$
+E_{partialLRP} = \mathbb{E}_h (R^{(L)})
+$$
+
+
+### Transformer Attribution
+
+$$
+\begin{gather}
+A^{(l)} = I + \mathbb{E}_h (\alpha^{(l)} \odot R^{(l)})^{+} \\
+E_{TransAttn} = A^{(1)} \cdot A^{(2)} \cdots A^{(L)}
+\end{gather}
+$$
+
+
+
+
+---
+
+<tag class="box-demo-link" style="background:#b4ffff; color:#000000; font-size:18px">Generic</tag>
+<tag class="box-demo-link" style="background:#64DE3A; color:#000000; font-size:18px">CVPR</tag>
+<tag class="box-demo-link" style="background:#3549F3; color:#FFFFFF; font-size:18px">2021</tag> 
+<text style='color:#FF0000'> [4]  </text>
+
+
+$$
+\mathbf{A}^{(l)} = \mathbb{E}_h ((\nabla \alpha^{(l)} \odot \alpha^{(l)} )^{+}) 
+$$
+
+$$
+\begin{gather}
+E_{AttnGrads} = A^{(1)} \cdot A^{(2)} \cdots A^{(L)}
+\end{gather}
+$$
+
+---
+<tag class="box-demo-link" style="background:#b4ffff; color:#000000; font-size:18px">AttGrad</tag>
+<tag class="box-demo-link" style="background:#3549F3; color:#FFFFFF; font-size:18px">2021</tag> 
+<text style='color:#FF0000'> [5]  </text>
+
+
+
+
+$$
+\mathbf{A}^{(l)} = \mathbb{E}_h (\nabla \alpha^{(l)} \odot \alpha^{(l)} ) 
+$$
+
+$$
+\begin{gather}
+E_{AttnGrads} = A^{(1)} \cdot A^{(2)} \cdots A^{(L)}
+\end{gather}
+$$
+
+
+
+---
+
+<tag class="box-demo-link" style="background:#b4ffff; color:#000000; font-size:18px">AttnCAT</tag>
+<tag class="box-demo-link" style="background:#64DE3A; color:#000000; font-size:18px">NeurIPS</tag>
+<tag class="box-demo-link" style="background:#3549F3; color:#FFFFFF; font-size:18px">2022</tag>
+<text style='color:#FF0000'> [6]  </text>
+
+### CAT
+
+$$
+\begin{gather}
+\mathbf{A}^{(l)} = \mathbb{E}_h (\nabla h^{(l)} \odot h^{(l)} )  \\
+E_{AttnGrads} = A^{(1)} + \cdots  + A^{(L)}
+\end{gather}
+$$
+
+### AttnCAT
+
+$$
+\begin{gather}
+\mathbf{A}^{(l)} = \mathbb{E}_h  \alpha^{(l)} \odot (\nabla h^{(l)} \odot h^{(l)} )  \\
+E_{AttnGrads} = A^{(1)} + \cdots  + A^{(L)}
+\end{gather}
+$$
+
+
+---
+
+
+
+
+
+
+
+---
+# References 
+
+
+[1] Abnar, Samira, and Willem Zuidema. "Quantifying Attention Flow in Transformers." Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics. 2020.
+
+[2] Voita, Elena, et al. "Analyzing Multi-Head Self-Attention: Specialized Heads Do the Heavy Lifting, the Rest Can Be Pruned." Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics. 2019.
+
+[3] Chefer, Hila, Shir Gur, and Lior Wolf. "Transformer interpretability beyond attention visualization." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2021.
+
+[4] Chefer, Hila, Shir Gur, and Lior Wolf. "Generic attention-model explainability for interpreting bi-modal and encoder-decoder transformers." Proceedings of the IEEE/CVF International Conference on Computer Vision. 2021.
+
+[5] Barkan, Oren, et al. "Grad-sam: Explaining transformers via gradient self-attention maps." Proceedings of the 30th ACM International Conference on Information & Knowledge Management. 2021.
+
+[6] Qiang, Yao, et al. "Attcat: Explaining transformers via attentive class activation tokens." Advances in Neural Information Processing Systems. 2022.
