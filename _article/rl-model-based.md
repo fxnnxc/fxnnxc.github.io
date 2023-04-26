@@ -118,6 +118,84 @@ Initialize  $Q  ( s, a ),  M( s, a ), \mathrm{~and~} \textcolor{blue}{\tau (S,A)
 
 
 
+--- 
+
+# Survey 
+
+there is always a generalization error between the learned environment model and the real environment. 
+
+Learning the model corresponds to recovering the state transition dynamics $M$ and the reward function $R$.
+
+
+### Tabular MDP
+
+$$
+\hat{M}(s' | s,a) = 
+\begin{cases}
+\frac{C[s,a,s']}{\sum_{s'' \in S}C[s,a,s'']}, & \sum_{s'' \in \mathcal{S}}} C[s,a,s''] >0  \\
+\frac{1}{\mathcal{S}} & \text{otherwise}
+\end{cases}
+$$
+
+$$
+\hat{R}(s,a) = 
+\begin{cases}
+\frac{Sum[s,a]}{C[s,a]}, & C[s,a] > 0 \\
+R_{min} & \text{otherwise}
+\end{cases}
+$$
+
+
+### R-MAX 
+
+R-max encourages exploration by setting the reward of an unexplored state and an action pair as the maximum value. 
+
+
+$$
+\hat{M}(s' | s,a) = 
+\begin{cases}
+\frac{C[s,a,s']}{\sum_{s'' \in S}C[s,a,s'']}, & \sum_{s'' \in \mathcal{S}}} C[s,a,s''] >0  \\
+I[s'=s] & \text{otherwise}
+\end{cases}
+$$
+
+$$
+\hat{R}(s,a) = 
+\begin{cases}
+\frac{Sum[s,a]}{C[s,a]}, & C[s,a] > 0 \\
+R_{max} & \text{otherwise}
+\end{cases}
+$$
+
+R0MAX requires 
+
+$$
+\mathcal{O}\Big( 
+    \frac{\vert \mathcal{S}\vert^2 \vert\mathcal{A} \vert } { \epsilon^3 (1-\gamma)^2}\log \frac{1}{\delta}
+    \Big)
+$$
+episodes to achieve a high accuracy ($\ell_1$ difference on transition $\le \epsilon/2$ )
+
+
+
+### Model Learning by Distribution Matching 
+
+GAIL method [Ho and Ermon,2016]
+
+Discriminator learns to identify whether a state-action pair comes from the expert demonstrations and a generator $\pi$ imitates the expert policy by maximizing the discriminator score. 
+
+
+### Robust Model Learning 
+
+
+
+## Planning
+
+### Model Predictive Control 
+
+### Monte Carlo tree search (MCTS)
+
+
 # References 
 
 [1] Sutton, Richard S., and Andrew G. Barto. Reinforcement learning: An introduction. MIT press, 2018.
