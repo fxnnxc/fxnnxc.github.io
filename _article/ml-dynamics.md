@@ -32,7 +32,7 @@ The Kalman filter is a recursive estimator. This means that only the estimated s
     * $x_k = F_k x_{k-1} + B_k u_k + w_k$ : dynamics 
     * $z_k = H_k x_k + v_k$ : observation at time step $k$
 
-<Blockquote>
+<Blockquote style='background-color:#FFFFEE'>
 <h1> Kalman Filter </h1>
 <h3> Prediction </h3>
 <li>  $\hat{x}_{k\vert k+1} = F_k x_{k-1 \vert k-1} + B_k u_k$ // state estimate mean  </li>  
