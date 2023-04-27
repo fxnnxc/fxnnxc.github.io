@@ -132,7 +132,7 @@ Learning the model corresponds to recovering the state transition dynamics $M$ a
 $$
 \hat{M}(s' | s,a) = 
 \begin{cases}
-\frac{C[s,a,s']}{\sum_{s'' \in S}C[s,a,s'']}, & \sum_{s'' \in \mathcal{S}}} C[s,a,s''] >0  \\
+\frac{C[s,a,s']}{\sum_{s'' \in S}C[s,a,s'']}, & \sum_{s'' \in \mathcal{S}} C[s,a,s''] >0  \\
 \frac{1}{\mathcal{S}} & \text{otherwise}
 \end{cases}
 $$
@@ -154,7 +154,7 @@ R-max encourages exploration by setting the reward of an unexplored state and an
 $$
 \hat{M}(s' | s,a) = 
 \begin{cases}
-\frac{C[s,a,s']}{\sum_{s'' \in S}C[s,a,s'']}, & \sum_{s'' \in \mathcal{S}}} C[s,a,s''] >0  \\
+\frac{C[s,a,s']}{\sum_{s'' \in S}C[s,a,s'']}, & \sum_{s'' \in \mathcal{S}} C[s,a,s''] >0  \\
 I[s'=s] & \text{otherwise}
 \end{cases}
 $$
@@ -167,8 +167,7 @@ R_{max} & \text{otherwise}
 \end{cases}
 $$
 
-R0MAX requires 
-
+R-MAX requires 
 $$
 \mathcal{O}\Big( 
     \frac{\vert \mathcal{S}\vert^2 \vert\mathcal{A} \vert } { \epsilon^3 (1-\gamma)^2}\log \frac{1}{\delta}
@@ -180,7 +179,7 @@ episodes to achieve a high accuracy ($\ell_1$ difference on transition $\le \eps
 
 ### Model Learning by Distribution Matching 
 
-GAIL method [Ho and Ermon,2016]
+GAIL method[3] 
 
 Discriminator learns to identify whether a state-action pair comes from the expert demonstrations and a generator $\pi$ imitates the expert policy by maximizing the discriminator score. 
 
@@ -202,3 +201,5 @@ Discriminator learns to identify whether a state-action pair comes from the expe
 
 
 [2] RL Course by David Silver - Lecture 8: Integrating Learning and Planning ([Youtube](https://www.youtube.com/watch?v=ItMutbeOHtc))
+
+[3] Generative Adversarial Imitation Learning  [Ho and Ermon,2016] 
