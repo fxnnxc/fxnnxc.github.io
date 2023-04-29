@@ -104,23 +104,18 @@ Initialize  $Q  ( s, a ),  M( s, a ), \mathrm{~and~} \textcolor{blue}{\tau (S,A)
 | $q_*(s,a)$  | $ Q(s,a) \leftarrow \sum_{s', r} \hat{p}(s',r \| s,a) [r + \gamma \max_{a'} Q(s',a')]$ | 
 
 
-<hr>
-
-# World Model 
-
-
-* World Model 
-* Dreamer 
-* Dreamer2
-
-
-<hr>
-
-
 
 --- 
 
-# Survey 
+# MBRL Survey 
+
+Based on 
+
+```
+Luo, Fan-Ming, et al. "A survey on model-based reinforcement learning." arXiv preprint arXiv:2206.09328 (2022).
+```
+
+
 
 there is always a generalization error between the learned environment model and the real environment. 
 
