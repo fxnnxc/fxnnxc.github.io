@@ -28,7 +28,7 @@ subcategory : MBRL
 
 
 
-<Blockquote>
+<Blockquote style='background-color:#F0FFEF'>
 <h3 style="margin:0px"> Dyna-Q Algorithm </h3>
 <hr>
 Algorithm parameters: step size  $\alpha \in (0 , 1] , \mathrm{discount~rate~} \gamma > 0$     <br> 
@@ -64,7 +64,7 @@ has not been tried in $\tau$ time steps, then planning backups are done as if th
 transition produced a reward of $R + \kappa \sqrt{\tau}$ for some small $\kappa$.
 
 
-<Blockquote>
+<Blockquote style='background-color:#F0FFEF'>
 <h3 style="margin:0px"> Dyna-Q+ Algorithm </h3>
 <hr>
 Algorithm parameters: step size  $\alpha \in (0 , 1] , \mathrm{discount~rate~} \gamma > 0$, reward bonus $\textcolor{blue}{\kappa}$     <br> 
@@ -105,24 +105,22 @@ Initialize  $Q  ( s, a ),  M( s, a ), \mathrm{~and~} \textcolor{blue}{\tau (S,A)
 
 
 
---- 
+<h1 style="font-family:Georgia; color:#009900; padding-top:100px">  MBRL Survey  </h1>
+<hr>
 
-# MBRL Survey 
+Model-Based Reinforcement Learning (MBRL) Based on 
 
-Based on 
-
-```
+<Blockquote style="border:2px solid; background-color:#DDEEDD;">
 Luo, Fan-Ming, et al. "A survey on model-based reinforcement learning." arXiv preprint arXiv:2206.09328 (2022).
-```
+</Blockquote>
 
 
 
-there is always a generalization error between the learned environment model and the real environment. 
-
-Learning the model corresponds to recovering the state transition dynamics $M$ and the reward function $R$.
+there is always a generalization error between the learned environment model $M_\theta$ and the real environment $M^\*$. Learning the model corresponds to recovering the state transition dynamics $M^\*$ and the reward function $R^\*$.
 
 
-### Tabular MDP
+<h2 style="font-family:Georgia; color:#000099; padding-top:50px"> 1. Tabular MDP  </h2>
+<hr>
 
 $$
 \hat{M}(s' | s,a) = 
@@ -141,7 +139,7 @@ R_{min} & \text{otherwise}
 $$
 
 
-### R-MAX 
+### 1.1 R-MAX 
 
 R-max encourages exploration by setting the reward of an unexplored state and an action pair as the maximum value. 
 
@@ -171,10 +169,10 @@ $$
 episodes to achieve a high accuracy ($\ell_1$ difference on transition $\le \epsilon/2$ )
 
 
+<h2 style="font-family:Georgia; color:#000099; padding-top:50px"> 2. Model Learning  </h2>
+<hr>
 
-# Mode Learning 
-
-### Prediction Loss 
+### 2.1 Prediction Loss 
 
 <Blockquote style='background-color:#FFFFEE'>
 <h3> Simulation Lemma 1</h3>
@@ -197,17 +195,17 @@ V^\pi_{M_\theta} - V^\pi_{M^*} \Vert_\infty \le
 + 
 \frac{1}{1-\gamma} \sqrt{\epsilon_R}
 $$
-
-
 </Blockquote>
 
+
+### 2.2 Transition Distribution Matching 
 
 <Blockquote style='background-color:#FFFFEE'>
 <h3> Simulation Lemma 2</h3>
 
 Given an MDP with reward upper bound $R_{max}$ and transition model with $M^*$, and a data-collecting policy $\pi_D$, and a learned transition model $M_\theta$ with 
 $$
-\mathbb{E}_{(s,a) \sim \rho_{\pi_D}^{M^*}} \Big[ D_{KL}M^*(\cdot \vert s,a), M_\theta(\cdot \vert s, a)) \Big] \le \epsilon_m^{\rho}
+\mathbb{E}_{(s,a) \sim \rho_{\pi_D}^{M^*}} \Big[ D_{KL}(M^*(\cdot \vert s,a), M_\theta(\cdot \vert s, a)) \Big] \le \epsilon_m^{\rho}
 $$
 for an arbitrary policy $\pi$ with bounded divergence, 
 $$
@@ -226,7 +224,7 @@ $$
 
 </Blockquote>
 
-### Distribution Matching 
+### 2.3 Trajectory Distribution Matching 
 
 GAIL method [Ho and Ermon, 2016] that imitates the expert policy in an adversarial manner, where a discriminator $\mathcal{D}$
 learns to identity whether a state-action pair comes from the expert demonstrations and a generator $\pi$ imitates the expert
@@ -264,7 +262,7 @@ D_{JS}(\mu^{M_\theta}, \mu^{M^*}) \le \epsilon_m^{JS}
 $$
 for an arbitrary policy $\pi$ with bounded divergence, 
 $$
-\max_s D_{KL} (\pi(\cdot|s), \pi_D(\cdot|s)) \le \epsilon_pi
+\max_s D_{KL} (\pi(\cdot|s), \pi_D(\cdot|s)) \le \epsilon_\pi
 $$,
 the policy evaluation error is bounded as 
 $$
@@ -273,14 +271,16 @@ V^\pi_{M_\theta} - V^\pi_{M^*} \vert \le
 \frac{2\sqrt{2} R_{max}}{1-\gamma} \sqrt{\epsilon_m^{JS}}
 + 
 \frac{2\sqrt{2} R_{max}}{(1-\gamma)^2} \sqrt{\epsilon_\pi}
-
 $$
+
 remark that the coefficient on the model error $\epsilon^{JS}_m$ is linear w.r.t the effective horizon, .t.m $\frac{1}{1-\gamma}$.
-<strong>The compounding error issue is solved </strong>
+<br>
+
+<strong>📌 The compounding error issue is solved </strong>
 </Blockquote>
 
 
-## Multi Step Prediction 
+### 2.4 Mutli-Step Prediction
 
 Since the compounding error is due to the recursive state-action generation using the one-step transition model, a way of alleviating the issue is to predict many steps at a time, A multistep model [Asadi et al., 2019] takes the current $s_t$ and a sequence of actions $(a_t, a_{t+1), \cdots, a_{t+h-1}$
 
@@ -291,29 +291,82 @@ $$
 
 This modeling can void the compounding error as there is no "fake" input. However, modeling multi-step is complex than single step and the error could be larger. 
 
-## Mujoco Robot Locomotion 
+<h2 style="font-family:Georgia; color:#000099; padding-top:50px"> 3. Complex Environment Modeling  </h2>
+<hr>
+
+
+### 3.1 Mujoco Robot Locomotion 
 The mainstream realization of the environment dynamics model is an ensemble of Gaussian processes where the
 mean vector and covariance matrix for the distribution of the next state are built based on neural networks fed in the
 current state-action pair [Chua et al., 2018]. Such an architecture is shown to work well on MuJuCo robot locomotion
 environments, where the state observations are sufficient statistics for future derivation.
  
 
-## Complex Environments Dynamics
+### 3.2 Complex Environments Dynamics
 
-* World Model [David Ha, 2018 NIPS] <text style='color:red'>[4] </text>: an autoencoder network to encode the latent state that can reconstruct the image.
-* Deep Planning Network (PlaNet) [Hafner et al., 2019a] : Gaussian latent
-* DreamerV1 [Hafner et al. [2020]] : the latent dynamics for visual control tasks, in which an environment model (called world model) with visual encoder and latent dynamics is learned based on collected experience
-* DreamerV2 [Hafner et al. [2021]]: Discrete latent. the discrete latent representation can better fit the aggregate posterior and handle multi-modal cases.
-* IRIS 
+* **☕️ World Model** [David Ha, 2018 NIPS] <text style='color:red'>[4] </text>: an autoencoder network to encode the latent state that can reconstruct the image.
+* **☕️ Deep Planning Network (PlaNet)** [Hafner et al., 2019a] : Gaussian latent
+* **☕️ DreamerV1** [Hafner et al. [2020]] : the latent dynamics for visual control tasks, in which an environment model (called world model) with visual encoder and latent dynamics is learned based on collected experience
+* **☕️ DreamerV2** [Hafner et al. [2021]]: Discrete latent. the discrete latent representation can better fit the aggregate posterior and handle multi-modal cases.
+* **☕️ IRIS** (Imagination with auto-Regression over an Inner Speech)
 
 ---
 
-# Planning
+<h2 style="font-family:Georgia; color:#000099; padding-top:50px"> 4. Planning  </h2>
+<hr>
 
-### Model Predictive Control 
+### 4.1 Model Predictive Control 
 
-### Monte Carlo tree search (MCTS)
+MPC [Camacho and Alba, 2013] is a kind of model-based control method that plans
+an optimized sequence of actions in the model.
 
+
+* Classic
+*  Learning Based : Learning-based MPC [Hewing et al., 2020] has a tight connection with MBRL. In general, at each time step, MPC obtains an optimal action sequence by sampling multiple sequences and applying the first action of the sequence to the environment.
+
+$$
+\Large{\max_{a_{t:t+\tau}} \mathbb{E}_{s_{k+1} \sim p(s_{k+1}|s_{k}, a_{k})} \Big[  \sum_{k=t}^{t+\tau} r(s_k, a_k) \Big]}
+$$
+
+where $\tau$ denotes the planning horizon. Then the agent will choose the first action $a_t$ from the action sequence and apply it to the environment. 
+
+<Blockquote style='background-color:#002200; width:120%; margin-left:-100px'>
+<h3 style='color:#FFFFFF;'> Monte Carlo (MC) method (also known as “random shooting”), </h3>
+<li style='color:#FFFFFF;'><strong style='color:#BBBBBB;'>Step1:</strong>  samples a number of action sequences $a_{t:t_\tau}$ from the space of action sequence uniformly and randomly.  </li>
+<li style='color:#FFFFFF;'><strong style='color:#BBBBCC;'>Step2:</strong>  Applying the action sequences in the model, the current state $s_t$ can be transited to $s_{t+\tau}$ following the transition distribution.  </li>
+<li style='color:#FFFFFF;'><strong style='color:#BBBBEE;'>Step3:</strong>  Evaluate the action sequences with the accumulated returns.  </li>
+<li style='color:#FFFFFF;'><strong style='color:#BBBBFF;'>Step4:</strong>  Choose the action sequence with the highest return.  </li>
+</Blockquote>
+
+
+
+Recent advances in MPC methods focus on altering **the sampling strategies** [Chua et al., 2018, Hafner et al., 2019b] and the sampling space [Wang and Ba, 2020]. Replacing the MC method with CEM [Botev et al., 2013], PETS [Chua et al., 2018], and PlaNet [Hafner et al., 2019b]
+improves the optimization efficiency.
+
+* **CEM**: samples the action sequences from a multivariate normal distribution, which will be adjusted according to the evaluation of the sampled sequences. 
+* **POPLIN-A** [Wang and Ba, 2020] further improves the optimization efficiency by altering the
+sampling space to a space of action bias. Specifically, POPLIN-A seeks a sequence of action residual to adjust an action sequence proposed by a policy.
+* **I2A** [Racanière et al., 2017] integrates Monte Carlo planning results into model-free RL framework as the auxiliary information. Instead of applying the first action of the sequence with the highest return, I2A encodes several rollouts from the model to rollout embeddings. The embeddings will then be aggregated and used to augment the input of the model-free RL agent.
+
+
+### 4.2 Monte Carlo tree search (MCTS)
+
+MCTS adopts a tree-search method.
+
+<Blockquote style='background-color:#000022; width:120%; margin-left:-100px'>
+<h3 style='color:#FFFFFF;'> Monte Carlo Tree Search (MCTS) method </h3>
+<li style='color:#FFFFFF;'> <strong style='color:#BBBBFF;'>Step1:</strong> MCTS incrementally extends a search tree from the current environment state </li>
+<li style='color:#FFFFFF;'> <strong style='color:#BBFFBB;'>Step2 (option 1):</strong> Each node in the tree corresponds to a state, which will be evaluated by some approximated value functions </li>
+<li style='color:#FFFFFF;'> <strong style='color:#BBFFBB;'>Step2 (option 2):</strong> or the return obtained after rollouts in the model with a random policy or a neural network policy.  </li>
+<li style='color:#FFFFFF;'> <strong style='color:#FFBBBB;'>Step3:</strong> Finally, action will be chosen such that the agent can be more likely transited to a state which has a higher evaluated value. </li>
+<text style='color:#FFFFFF'> In MCTS, models are generally used to generate the search tree and evaluate the state.</text>
+</Blockquote>
+
+
+* **AlphaGo** [Silver et al., 2016:  For each decision timestep, AlphaGo uses MCTS to decide where to play the next stone on board.
+* **AlphaGo Zero** [Silver et al., 2017b] : trains a policy to mimic the planning outputs of MCTS, like POPLIN-A. The policy is then used to generate the search tree in MCTS. The procedure of AlphaGo Zero can be regarded as an iteration between improving a policy by planning and enhancing the planning by the policy. 
+* **Value prediction network (VPN)** [Oh et al., 2017b] learns an abstract state transition model. VPN applies MCTS to the learned model to search an action sequence that has the highest bootstrapped environment return.
+* **MuZero** [Schrittwieser et al., 2019] : learns a transition model but additionally learns an abstract policy, which outputs actions with the abstract states as inputs.
 
 # References 
 
