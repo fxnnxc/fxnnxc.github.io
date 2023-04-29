@@ -116,11 +116,13 @@ Luo, Fan-Ming, et al. "A survey on model-based reinforcement learning." arXiv pr
 
 
 
-there is always a generalization error between the learned environment model $M_\theta$ and the real environment $M^\*$. Learning the model corresponds to recovering the state transition dynamics $M^\*$ and the reward function $R^\*$.
 
 
 <h2 style="font-family:Georgia; color:#000099; padding-top:50px"> 1. Tabular MDP  </h2>
 <hr>
+
+there is always a generalization error between the learned environment model $M_\theta$ and the real environment $M^\*$. Learning the model corresponds to recovering the state transition dynamics $M^\*$ and the reward function $R^\*$. One way to model the transition is count based one, that is, we compute how many times state-action-next-state pair $C[s,a,s']$ is encountered. 
+
 
 $$
 \hat{M}(s' | s,a) = 
@@ -134,10 +136,11 @@ $$
 \hat{R}(s,a) = 
 \begin{cases}
 \frac{Sum[s,a]}{C[s,a]}, & C[s,a] > 0 \\
-R_{min} & \text{otherwise}
+\textcolor{blue}{R_{min}} & \text{otherwise}
 \end{cases}
 $$
 
+One limitation of this modeling is the reward function which is set to the minimum $R_{min}$ of the environment. As such, the agent may not prefer the unvisited states. R-MAX solves this issue by setting high reward function on the states with small visitations. 
 
 ### 1.1 R-MAX 
 
@@ -156,7 +159,7 @@ $$
 \hat{R}(s,a) = 
 \begin{cases}
 \frac{Sum[s,a]}{C[s,a]}, & C[s,a] > 0 \\
-R_{max} & \text{otherwise}
+\textcolor{red}{R_{max}} & \text{otherwise}
 \end{cases}
 $$
 
@@ -166,17 +169,30 @@ $$
     \frac{\vert \mathcal{S}\vert^2 \vert\mathcal{A} \vert } { \epsilon^3 (1-\gamma)^2}\log \frac{1}{\delta}
     \Big)
 $$
-episodes to achieve a high accuracy ($\ell_1$ difference on transition $\le \epsilon/2$ )
+episodes to achieve a high accuracy ($\ell_1$ difference on transition $\le \epsilon/2$ ). These count-based methods are impractical if the action and observation space is high-dimensional. as the accuracy depends on the squared term on the state $\vert \mathcal{S} \vert^2$. 
 
 
 <h2 style="font-family:Georgia; color:#000099; padding-top:50px"> 2. Model Learning  </h2>
 <hr>
 
-### 2.1 Prediction Loss 
+Another way to model the transition is using a black-box model which inputs state and action pair and outputs the next state. There are three types of modelings and each of them has a Lemma for generalization bounds. Lemma 1 and Lemma 2 show that the error is bounded by the quadratic to the discount factor. In other words, as the prediction horizon becomes longer, the error exponentially increases.  
 
-<Blockquote style='background-color:#FFFFEE'>
-<h3> Simulation Lemma 1</h3>
-Given an MDP with reward upper bound $R_{max}$ and transition model with $M^*$, and a data-collecting policy $\pi_D$, and a learned transition model $M_\theta$ with 
+
+<Blockquote style='background-color:#002200; width:50%; margin-left:0px'>
+<li style='color:#FFFFFF'> Section 2.1 : deterministic of the transition </li>
+<li style='color:#FFFFFF'> Section 2.2 : stochastic sampling of the transition </li>
+<li style='color:#FFFFFF'> Section 2.3 : matching the trajectory.  </li>
+</Blockquote>
+
+### 2.1 Deterministic 
+
+Assume that the transition is deterministic. 
+
+<Blockquote style='background-color:#334433; width:80%; margin-left:50px; font-color:#FFFFFF'>
+<h3 style='color:#DDDDFF'> Simulation Lemma 1</h3>
+<p style='color:#FFFFFF'>
+Given an MDP with reward upper bound $R_{max}$ and transition model with $M^*$, 
+<br> and a data-collecting policy $\pi_D$, and a learned transition model $M_\theta$ with 
 $$
 \max_{s,a} \Vert M_\theta(s,a) - M^*(s,a) \Vert_1 \le \epsilon_m^{max} 
 $$
@@ -185,25 +201,26 @@ $$
 \max_{s,a} \vert R_\theta(s,a) - R(s,a) \vert \le \epsilon_r 
 $$
 , the value evaluation error of any policy $\pi$ is bounded as 
-
-
-
 $$
 \Vert 
 V^\pi_{M_\theta} - V^\pi_{M^*} \Vert_\infty \le 
-\frac{\gamma R_{max}}{(1-\gamma)^2} \epsilon_m^{max}
+\frac{\gamma R_{max}}{\textcolor{red}{(1-\gamma)^2}} \epsilon_m^{max}
 + 
 \frac{1}{1-\gamma} \sqrt{\epsilon_R}
 $$
+</p>
 </Blockquote>
 
 
-### 2.2 Transition Distribution Matching 
+### 2.2 Transition Distribution Matching (Stochastic)
 
-<Blockquote style='background-color:#FFFFEE'>
-<h3> Simulation Lemma 2</h3>
+The stochastic version matches two output distributions with probabilistic measure KL-divergence.
 
-Given an MDP with reward upper bound $R_{max}$ and transition model with $M^*$, and a data-collecting policy $\pi_D$, and a learned transition model $M_\theta$ with 
+<Blockquote style='background-color:#334433; width:80%; margin-left:50px; font-color:#FFFFFF'>
+<h3 style='color:#DDDDFF'>Simulation Lemma 2</h3>
+<p style='color:#FFFFFF'>
+Given an MDP with reward upper bound $R_{max}$ and transition model with $M^*$, 
+<br> and a data-collecting policy $\pi_D$, and a learned transition model $M_\theta$ with 
 $$
 \mathbb{E}_{(s,a) \sim \rho_{\pi_D}^{M^*}} \Big[ D_{KL}(M^*(\cdot \vert s,a), M_\theta(\cdot \vert s, a)) \Big] \le \epsilon_m^{\rho}
 $$
@@ -216,11 +233,12 @@ $$
 \vert 
 V^\pi_{M_\theta} - V^\pi_{M^*} 
 \vert\le 
-\frac{\sqrt{2} R_{max}\gamma}{1-\gamma} \sqrt{\epsilon_m}
+\frac{\sqrt{2} R_{max}\gamma}{\textcolor{red}{(1-\gamma)^2}} \sqrt{\epsilon_m}
 + 
 \frac{2\sqrt{2} R_{max}}{(1-\gamma)^2} \sqrt{\epsilon_\pi}
 \vert
 $$
+</p>
 
 </Blockquote>
 
@@ -253,10 +271,11 @@ The optimal solution of $M_\theta$ minimizes the JS divergence between $\mu^{M^*
 * [Wu el al., 2019, Wu et al., 2020] kept the data-collecting policy $\pi_D$ fixed during the training process of the transition model 
 * [Shi et al., 2019] optimized the transition model and policy jointly.
 
-
-<Blockquote style='background-color:#FFFFEE'>
-<h3> Simulation Lemma 3 (Xu et al., 2020)</h3>
-Given an MDP with reward upper bound $R_{max}$ and transition model with $M^*$, and a data-collecting policy $\pi_D$, and a learned transition model $M_\theta$ with 
+<Blockquote style='background-color:#334433; width:80%; margin-left:50px; font-color:#FFFFFF'>
+<h3 style='color:#DDDDFF'> Simulation Lemma 3 (Xu et al., 2020)</h3>
+<p style='color:#FFFFFF'>
+Given an MDP with reward upper bound $R_{max}$ and transition model with $M^*$, 
+<br> and a data-collecting policy $\pi_D$, and a learned transition model $M_\theta$ with 
 $$
 D_{JS}(\mu^{M_\theta}, \mu^{M^*}) \le \epsilon_m^{JS}
 $$
@@ -268,15 +287,15 @@ the policy evaluation error is bounded as
 $$
 \vert 
 V^\pi_{M_\theta} - V^\pi_{M^*} \vert \le 
-\frac{2\sqrt{2} R_{max}}{1-\gamma} \sqrt{\epsilon_m^{JS}}
+\frac{2\sqrt{2} R_{max}}{\textcolor{yellow}{1-\gamma}} \sqrt{\epsilon_m^{JS}}
 + 
 \frac{2\sqrt{2} R_{max}}{(1-\gamma)^2} \sqrt{\epsilon_\pi}
 $$
 
 remark that the coefficient on the model error $\epsilon^{JS}_m$ is linear w.r.t the effective horizon, .t.m $\frac{1}{1-\gamma}$.
 <br>
-
-<strong>📌 The compounding error issue is solved </strong>
+<strong style='color:#ffffff'>📌 The compounding error issue is solved as the generalization error is bound with linear term of $1-\gamma$ for model error. </strong>
+</p>
 </Blockquote>
 
 
@@ -330,7 +349,7 @@ $$
 
 where $\tau$ denotes the planning horizon. Then the agent will choose the first action $a_t$ from the action sequence and apply it to the environment. 
 
-<Blockquote style='background-color:#002200; width:120%; margin-left:-100px'>
+<Blockquote style='background-color:#002200; width:120%; margin-left:-100px; padding:20px'>
 <h3 style='color:#FFFFFF;'> Monte Carlo (MC) method (also known as “random shooting”), </h3>
 <li style='color:#FFFFFF;'><strong style='color:#BBBBBB;'>Step1:</strong>  samples a number of action sequences $a_{t:t_\tau}$ from the space of action sequence uniformly and randomly.  </li>
 <li style='color:#FFFFFF;'><strong style='color:#BBBBCC;'>Step2:</strong>  Applying the action sequences in the model, the current state $s_t$ can be transited to $s_{t+\tau}$ following the transition distribution.  </li>
@@ -353,7 +372,7 @@ sampling space to a space of action bias. Specifically, POPLIN-A seeks a sequenc
 
 MCTS adopts a tree-search method.
 
-<Blockquote style='background-color:#000022; width:120%; margin-left:-100px'>
+<Blockquote style='background-color:#000022; width:120%; margin-left:-100px; padding:20px;'>
 <h3 style='color:#FFFFFF;'> Monte Carlo Tree Search (MCTS) method </h3>
 <li style='color:#FFFFFF;'> <strong style='color:#BBBBFF;'>Step1:</strong> MCTS incrementally extends a search tree from the current environment state </li>
 <li style='color:#FFFFFF;'> <strong style='color:#BBFFBB;'>Step2 (option 1):</strong> Each node in the tree corresponds to a state, which will be evaluated by some approximated value functions </li>
