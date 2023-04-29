@@ -177,18 +177,143 @@ episodes to achieve a high accuracy ($\ell_1$ difference on transition $\le \eps
 
 
 
-### Model Learning by Distribution Matching 
+# Mode Learning 
 
-GAIL method[3] 
+### Prediction Loss 
 
-Discriminator learns to identify whether a state-action pair comes from the expert demonstrations and a generator $\pi$ imitates the expert policy by maximizing the discriminator score. 
+<Blockquote style='background-color:#FFFFEE'>
+<h3> Simulation Lemma 1</h3>
+Given an MDP with reward upper bound $R_{max}$ and transition model with $M^*$, and a data-collecting policy $\pi_D$, and a learned transition model $M_\theta$ with 
+$$
+\max_{s,a} \Vert M_\theta(s,a) - M^*(s,a) \Vert_1 \le \epsilon_m^{max} 
+$$
+and a learned reward function with 
+$$
+\max_{s,a} \vert R_\theta(s,a) - R(s,a) \vert \le \epsilon_r 
+$$
+, the value evaluation error of any policy $\pi$ is bounded as 
 
 
-### Robust Model Learning 
+
+$$
+\Vert 
+V^\pi_{M_\theta} - V^\pi_{M^*} \Vert_\infty \le 
+\frac{\gamma R_{max}}{(1-\gamma)^2} \epsilon_m^{max}
++ 
+\frac{1}{1-\gamma} \sqrt{\epsilon_R}
+$$
 
 
+</Blockquote>
 
-## Planning
+
+<Blockquote style='background-color:#FFFFEE'>
+<h3> Simulation Lemma 2</h3>
+
+Given an MDP with reward upper bound $R_{max}$ and transition model with $M^*$, and a data-collecting policy $\pi_D$, and a learned transition model $M_\theta$ with 
+$$
+\mathbb{E}_{(s,a) \sim \rho_{\pi_D}^{M^*}} \Big[ D_{KL}M^*(\cdot \vert s,a), M_\theta(\cdot \vert s, a)) \Big] \le \epsilon_m^{\rho}
+$$
+for an arbitrary policy $\pi$ with bounded divergence, 
+$$
+\max_s D_{KL} (\pi(\cdot|s), \pi_D(\cdot|s)) \le \epsilon_\pi
+$$,
+the policy evaluation error is bounded as 
+$$
+\vert 
+V^\pi_{M_\theta} - V^\pi_{M^*} 
+\vert\le 
+\frac{\sqrt{2} R_{max}\gamma}{1-\gamma} \sqrt{\epsilon_m}
++ 
+\frac{2\sqrt{2} R_{max}}{(1-\gamma)^2} \sqrt{\epsilon_\pi}
+\vert
+$$
+
+</Blockquote>
+
+### Distribution Matching 
+
+GAIL method [Ho and Ermon, 2016] that imitates the expert policy in an adversarial manner, where a discriminator $\mathcal{D}$
+learns to identity whether a state-action pair comes from the expert demonstrations and a generator $\pi$ imitates the expert
+policy by maximizing the discriminator score.
+
+Let $\rho_\pi$  bet the state-action distribution by running the policy $\pi$, and $\pi_E$  be the expert policy. When the discriminator is optimal to the inner objective, the generaotr essentially minimizes the Jensen-Shannon (JS) divergence between $\rho_{\pi_E}$ and $\rho_\pi$ 
+
+$$
+\min_{\pi \in \Pi} D_{JS}(\rho_{\pi_E}, \rho_\pi) := 
+\frac{1}{2} \Big[
+D_{KL}(\rho_{\pi_E}, \frac{\rho_\pi+\rho_{\pi_E}}{2})
++
+D_{KL}(\rho_{\pi}, \frac{\rho_\pi+\rho_{\pi_E}}{2})
+\Big]
+$$
+
+
+Let $\mu^{M}$ be the joint state-action-next-state distributions induced by the data-collecting policy $\pi_D$ in the true environment $M$. Formally,
+
+$$
+\mu^M(s,a,s') = \rho_{\pi_D}^M(s,a) M(s'\vert s,a )
+$$
+The optimal solution of $M_\theta$ minimizes the JS divergence between $\mu^{M^*}$ and $\mu^{M^\pi}$, matching the trajectory distribution. 
+
+* Wu et al, (2019) chose to minimize the Wasserstein distance between $\mu^{M^*}$ and $\mu^{M^\pi}$. 
+* [Wu el al., 2019, Wu et al., 2020] kept the data-collecting policy $\pi_D$ fixed during the training process of the transition model 
+* [Shi et al., 2019] optimized the transition model and policy jointly.
+
+
+<Blockquote style='background-color:#FFFFEE'>
+<h3> Simulation Lemma 3 (Xu et al., 2020)</h3>
+Given an MDP with reward upper bound $R_{max}$ and transition model with $M^*$, and a data-collecting policy $\pi_D$, and a learned transition model $M_\theta$ with 
+$$
+D_{JS}(\mu^{M_\theta}, \mu^{M^*}) \le \epsilon_m^{JS}
+$$
+for an arbitrary policy $\pi$ with bounded divergence, 
+$$
+\max_s D_{KL} (\pi(\cdot|s), \pi_D(\cdot|s)) \le \epsilon_pi
+$$,
+the policy evaluation error is bounded as 
+$$
+\vert 
+V^\pi_{M_\theta} - V^\pi_{M^*} \vert \le 
+\frac{2\sqrt{2} R_{max}}{1-\gamma} \sqrt{\epsilon_m^{JS}}
++ 
+\frac{2\sqrt{2} R_{max}}{(1-\gamma)^2} \sqrt{\epsilon_\pi}
+
+$$
+remark that the coefficient on the model error $\epsilon^{JS}_m$ is linear w.r.t the effective horizon, .t.m $\frac{1}{1-\gamma}$.
+<strong>The compounding error issue is solved </strong>
+</Blockquote>
+
+
+## Multi Step Prediction 
+
+Since the compounding error is due to the recursive state-action generation using the one-step transition model, a way of alleviating the issue is to predict many steps at a time, A multistep model [Asadi et al., 2019] takes the current $s_t$ and a sequence of actions $(a_t, a_{t+1), \cdots, a_{t+h-1}$
+
+
+$$
+(s_{t+1}, \cdots, s_{t+h}) = M_\theta^h(s_t, a_{t}, \cdots, a_{t+h-1})
+$$
+
+This modeling can void the compounding error as there is no "fake" input. However, modeling multi-step is complex than single step and the error could be larger. 
+
+## Mujoco Robot Locomotion 
+The mainstream realization of the environment dynamics model is an ensemble of Gaussian processes where the
+mean vector and covariance matrix for the distribution of the next state are built based on neural networks fed in the
+current state-action pair [Chua et al., 2018]. Such an architecture is shown to work well on MuJuCo robot locomotion
+environments, where the state observations are sufficient statistics for future derivation.
+ 
+
+## Complex Environments Dynamics
+
+* World Model [David Ha, 2018 NIPS] <text style='color:red'>[4] </text>: an autoencoder network to encode the latent state that can reconstruct the image.
+* Deep Planning Network (PlaNet) [Hafner et al., 2019a] : Gaussian latent
+* DreamerV1 [Hafner et al. [2020]] : the latent dynamics for visual control tasks, in which an environment model (called world model) with visual encoder and latent dynamics is learned based on collected experience
+* DreamerV2 [Hafner et al. [2021]]: Discrete latent. the discrete latent representation can better fit the aggregate posterior and handle multi-modal cases.
+* IRIS 
+
+---
+
+# Planning
 
 ### Model Predictive Control 
 
@@ -203,3 +328,6 @@ Discriminator learns to identify whether a state-action pair comes from the expe
 [2] RL Course by David Silver - Lecture 8: Integrating Learning and Planning ([Youtube](https://www.youtube.com/watch?v=ItMutbeOHtc))
 
 [3] Generative Adversarial Imitation Learning  [Ho and Ermon,2016] 
+
+
+[4] Recurrent World Models Facilitate Policy Evaluation
