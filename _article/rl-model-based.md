@@ -368,7 +368,8 @@ MCTS adopts a tree-search method.
 * **Value prediction network (VPN)** [Oh et al., 2017b] learns an abstract state transition model. VPN applies MCTS to the learned model to search an action sequence that has the highest bootstrapped environment return.
 * **MuZero** [Schrittwieser et al., 2019] : learns a transition model but additionally learns an abstract policy, which outputs actions with the abstract states as inputs.
 
-# References 
+<h2 style="font-family:Georgia; color:#009999; padding-top:100px"> References  </h2>
+
 
 [1] Sutton, Richard S., and Andrew G. Barto. Reinforcement learning: An introduction. MIT press, 2018.
 
