@@ -278,7 +278,7 @@ $$
 A^h = \mathrm{softmax}^* \Big( t^\top W_E^\top W_{QK}^h W_E \cdot t  \Big)
 $$ 
 
-with autoregressive masking softmax operation, $\mathrm{softmax}^\*$. By applying distributive property of Kronecker Product, we have
+with autoregressive masking softmax operation, $$\mathrm{softmax}^*$$. By applying distributive property of Kronecker Product, we have
 
 $$
 T^1_\mathrm{attn-only} = \mathrm{Id} \otimes W_U W_E + \sum_{h\in H} A^h \otimes (W_U W_{OV}^h W_E )
@@ -293,19 +293,85 @@ There are two operations: Residual connection of Zero Transformer and Block oper
 
 
 
-
 # Transformer Equation
 
 
 Let $x^{(l)}$ be $l$-th output of transformer layers, $(l+1)$-th output is written as 
 
+$$
 \begin{align*}
 a^{(l+1)} &= \operatorname{MHA}(\operatorname{LN}(x^{(l)})) \\ 
 m^{(l+1)} &= \operatorname{MLP}(\operatorname{LN}(a^{(l+1)})) \\
 x^{(l+1)}   &= x^{(l)} + m^{(l+1)} 
 \end{align*}
+$$
 
 where $\operatorname{MLP}, \operatorname{MHA}$ and  $\operatorname{LN}$ are Multi-Layer Perceptron (MLP), Multi-Head Attention (MHA) and Layer-Norm (LN) each. 
+
+
+
+
+
+# One Layer Transformer Recap 
+
+Attention OV circuits for heads have positive eigenvalues. 
+
+OV circuits determines how the values are transformed after the token representations are mixed. 
+
+
+
+
+# Two Layer Transformer 
+
+$$
+T^2_\mathrm{attn-only} = (\mathrm{Id} \otimes W_U) \cdot 
+\Big( 
+\mathrm{Id} + \sum_{h\in H_2} A^h \otimes W^h_{OV}
+\Big)
+\cdot
+\Big( 
+\mathrm{Id} + \sum_{h\in H_1} A^h \otimes W^h_{OV}
+\Big)
+\cdot 
+(\mathrm{Id}\otimes W_E)
+\cdot
+$$
+
+$$
+T^2_\mathrm{attn-only} = (\mathrm{Id} \otimes W_U W_E)
++ 
+ \sum_{h\in H_1} A^h \otimes (W_U W^h_{OV} W_E)
+ +
+ \sum_{h\in H_2} A^h \otimes (W_U W^h_{OV} W_E)
++
+ \sum_{h_2 \in H_2 } \sum_{h_1 \in H_1} (A^{h_2} A^{h_1}) \otimes (W_U W_{OV}^{h_2} W_{OV}^{h_1} W_E)
+$$
+
+
+Q-composition : $\sum_{h_q \in H_1} {(W_OV^{h_q})}^\top W_{QK}^{h_2}$
+K-composition : $\sum_{h_k \in H_1}  W_{QK}^{h_2} {(W_OV^{h_q})}^\top $
+V-composition : $ W_{OV}^{h_2} (W_OV^{h_1})$
+
+
+* One attention communication (-5.2 nats)
+* Direct Path (-1.3 nats)
+* Virtual Communication is less important (-0.3 nats)
+
+
+* Perturbing layer 1 has little effect. 
+* Perturbing layer 2 has more effect. 
+
+
+Find and copy is possible
+
+
+[a][b] ... [a] -> [b]
+
+Step 1) [a] find [a] in the previous steps 
+Step 2) [b] information is passed to the output. 
+
+If the pattern is not found, the finding goes to the first part. 
+
 
 
 # Refernces 
