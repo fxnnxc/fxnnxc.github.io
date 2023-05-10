@@ -70,6 +70,55 @@ subcategory : Attention
 <tag class="box-demo-link" style="background:#64DE3A; color:#000000; font-size:18px">2019_Rogers</tag>
 
 
+## The list of Topics in BERTology 
+
+### Knowledge
+
+* <strong style='color:blue'> BERT ‘‘naturally’’ learns some syntactic information, although it is not very similar to linguistic annotated resources. </strong>
+  * BERT representa tions are hierarchical rather than linear, that is, there is something akin to syntactic tree structure in addition to the word order information.
+  * syntactic structure is not directly encoded in self-attention weights. (full syntactic subtress could not be recovered with the self-attention weights)
+  * syntactic information can be recovered from BERT token representations.
+* <strong style='color:blue'>  Either BERT’s syntactic knowledge is incomplete, or it does not need to rely on it for solving its tasks. </strong>
+  * BERT does not understand negation and is insensitive to malformed input. In particular, its predictions were not altered even with shuffled word order, truncated sentences, removed subjects and objects (Ettinger, 2019)
+* <strong style='color:blue'> Semantic Knowledge  </strong>
+  * BERT encodes information about entity types, relations, semantic roles, and proto-roles, since this information can be detected with probing classifiers. (Tenney, 2019b)
+  * No evidence from an MLM probing study that BERT has some knowledge of semantic roles (Ettinger, 2019)
+  * BERT struggles with representations of numbers.
+  * The model does not actually form a generic idea of named entities, although its F1 scores on NER probing tasks are high (Tenney et al., 2019a).
+* <strong style='color:blue'> World Knowledge </strong>
+  * BERT struggles with pragmatic inference and role-based event knowledge (Ettinger, 2019). BERT also struggles with abstract attributes of objects, as well as visual and perceptual properties that are likely to be assumed rather than mentioned (Da and Kasai, 2019).
+  * for some relation types, vanilla BERT is cometitive withmethods relying on knowledge bases
+  * BERT cannot reason based on its world knowledge. Forbes et al. (2019) show that BERT can ‘‘guess’’ the affordances and properties of many objects, but cannot reason about the relationship between properties and affordances.
+  * For example, it ‘‘knows’’ that people can walk into houses, and that houses are big, but it cannot infer that houses are bigger than people.
+* <strong style='color:blue'>  </strong>
+
+
+### Embeddings
+
+* Input Embeddings 
+* Output Embeddings (BERT Embeddings)
+
+* Several studies reported that distilled contextualized embeddings better encode lexical semantic information (i.e., they are better at traditional word-level tasks such as word similarity). 
+* The methods to distill a contextualized representation into static include aggregating the information across multiple contexts (Akbik et al., 2019; Bommasani et al., 2020)
+* BERT embeddings occupy a narrow cone in the vector space, and this effect increases from the earlier to later layers. 
+* That is, two randomwords will on average have amuch higher cosine similarity than expected if em- beddings were directionally uniform (isotropic). Because isotropy was shown to be beneficial for static word e beddings (Mu and Viswanath, 2018)
+* the representations of the same word depend on the position of the sentence in which it occurs,
+
+### Heads
+
+* The "heterogeneous" attention pattern could potentially be linguistically interpretable
+* some BERT heads seem to specialize in certain types of syntactic relations. Htut et al. (2019) and Clark et al. (2019) report that there are BERT heads that attended significantly more than a random baseline to words in certain syntactic positions.
+* no single head has the complete syntactic tree information,
+* attention weights are weak indicators of subject-verb agreement and reflexive anaphora. (the interpretation of a representation is differ depending on contexts. )
+* most self-attention heads do not directly encode any non-trivial linguistic information, since only fewer than 50% of heads exhibit the ‘‘heterogeneous’’ pattern.
+
+### Layers
+
+* the lower layers have the most information about linear word order.
+* syntactic information is most prominent in the middle layers of BERT.
+* The final layers of BERT are the most task-specific. (middle layer is transferable (generalizable to any task) and freezing lower layer does not hurt performance. )
+* semantics is spread across the entire model
+
 ---
 
 # What does BERT look at? An Analysis of BERT’s Attention [3]
