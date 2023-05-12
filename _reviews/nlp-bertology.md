@@ -20,6 +20,8 @@ subcategory : Attention
 
 [4] Voita, Elena, et al. "Analyzing Multi-Head Self-Attention: Specialized Heads Do the Heavy Lifting, the Rest Can Be Pruned." Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics. 2019.
 
+
+
 ## Datasets 
 
 * GLUE Benchmark [1] : 
@@ -36,6 +38,9 @@ subcategory : Attention
 * 
 
 
+<!--  ------------------------------------------------------------------------------------------------------------- -->
+<!--  ------------------------------------------------------------------------------------------------------------- -->
+<!--  ------------------------------------------------------------------------------------------------------------- -->
 ---
 
 # Revealing the Dark Secrets of BERT [1]
@@ -62,6 +67,10 @@ subcategory : Attention
 * one head at a time : task specific layer. Most heads could be pruned, but there are some heads which give lower performance. 
 * one layer at a time : task specific layer 
 
+
+<!--  ------------------------------------------------------------------------------------------------------------- -->
+<!--  ------------------------------------------------------------------------------------------------------------- -->
+<!--  ------------------------------------------------------------------------------------------------------------- -->
 ---
 
 # A Primer in BERTology: What We Know About How BERT Works [2] 
@@ -182,9 +191,39 @@ $$
 
 Heads within the same layer are often fairly close to each other, meaning that heads within the layer have similar attention distributions.
 
+<!--  ------------------------------------------------------------------------------------------------------------- -->
+<!--  ------------------------------------------------------------------------------------------------------------- -->
+<!--  ------------------------------------------------------------------------------------------------------------- -->
 
 ---
 <tag class="box-demo-link" style="background:#b4ffff; color:#000000; font-size:18px">  </tag>
 <tag class="box-demo-link" style="background:#64DE3A; color:#000000; font-size:18px">2019_Voita</tag>
 
+
 # Analyzing Multi-Head Self-Attention: Specialized Heads Do the Heavy Lifting, the Rest Can Be Pruned
+
+Identification of imporatnt heads with characterizing them. 
+
+* positional : the head points to an adjacent token 
+* syntactic  : the head points to toens in a specific syntatctic relation
+* rare words : the head points to the least frequent tokens in a sentence. 
+
+Pruned heads with gating mechanism 
+
+$$
+\operatorname{GatedMHA}(Q,K, V) = \operatorname{Concat}_i(g_i \cdot \operatorname{head}_i) W^O
+$$
+
+To disable less important heads completely rather than simply downweighting them, we would ideally apply L0 regularization to the scalars $g_i$.
+
+
+$$
+L_0(g_1, g_2, \cdots, g_h) = \sum_{i=1}^h (1- [[g_i==0]])
+$$
+
+As $L_0$ is non-differentiable, the authors used a stochastic relaxation: each gate $g_i$ is now a random variable drawn independently from a head-specific distribution.5 We use the Hard Concrete distributions
+
+
+$$
+L_C(\phi) = \sum_{i=1}^h (1- P(g_i=0 \vert \phi_i ))
+$$
