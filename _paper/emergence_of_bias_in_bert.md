@@ -51,7 +51,7 @@ Note that every block outputs can be directly mapped to the vocabulary.
 </p>
 
 <center>
-<img src="/assets/img/paper/emergence-of-bias-in-bert/main.png" width=750px>
+<img src="/assets/img/paper/emergence-of-bias-in-bert/main.png" width=900px>
 </center>
 
 <br>
@@ -64,7 +64,7 @@ We observe that the emergences of imbalance are quite different for each democra
 In addition, MLP on [MASK] token has imbalance first than ATTN. 
 </p>
 <center>
-<img src="/assets/img/paper/emergence-of-bias-in-bert/entropy.png" width=750px>
+<img src="/assets/img/paper/emergence-of-bias-in-bert/entropy.png" width=900px>
 </center>
 
 <br>
@@ -82,7 +82,7 @@ Figure below shows the responsibility of bias.
 Figure below shows the MLBs over all layers. As color is close to red, the [MASK] location produces high bias than the bias obtained from other tokens. On the other hand, if the color is close to blue, the [MASK] location mitigate the bias. 
 </p>
 <center>
-<img src="/assets/img/paper/emergence-of-bias-in-bert/mlbs_results.png" width=750px>
+<img src="/assets/img/paper/emergence-of-bias-in-bert/mlbs_results.png" width=900px>
 </center>
 
 
