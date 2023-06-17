@@ -644,7 +644,7 @@ pre {
     background-color: transparent;
     border-radius: 0;
     padding: 0;
-    font-family: 'Open Sans', sans-serif; 
+    font-family: 'Liberation Mono', sans-serif; 
     line-height: 200%;
 
   }
@@ -741,10 +741,13 @@ html.transition *:after {
   
 }
 
+
+
 .column-second {
   float: left;
   width: 30%;
 }
+
 
 
 /* Clear floats after the columns */
