@@ -50,10 +50,17 @@ h1, h2, h3, h4, h5, h6, strong, div{
  li, ul{
   color: var(--global-text-color);
   font-size: var(--global-text-size);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;;
+  // font-weight: 100;
+  font-weight :200;
+  line-height:  180%;
+
 }
 strong{
   font-weight:700;
   font-size: var(--global-text-size);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;;
+
   // font-family: 'Open Sans', sans-serif; ;
   // font-family:  "Cambria, Georgia, serif"; //"Roboto", Helvetica, Arial, sans-serif;
 }
@@ -62,15 +69,15 @@ span {
   color: var(--global-text-color);
   // font-family:Arial, Helvetica, sans-serif;
   font-size: var(--global-text-size);
-  font-weight: 100;
+  font-weight: 200;
 
 }
 p {
   color: var(--global-text-color);
-  line-height:  160%;
+  line-height:  200%;
   // font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
   // font-family: 'Open Sans', sans-serif; ;
-  font-weight: 100;
+  font-weight: 180;
   font-size: var(--global-text-size);
   // word-break: keep-all;
   word-wrap: normal;
