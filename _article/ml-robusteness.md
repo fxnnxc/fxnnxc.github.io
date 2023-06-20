@@ -64,24 +64,31 @@ Similarly, using $\epsilon = 0.1$, we obtain an error rate of $87.15\%$ and
 an average probability of $96.6\%$ assigned to the incorrect labels when using a convolutional maxout
 network on a preprocessed version of the CIFAR-10.
 
-\subsection{Adversarial Training of Linear Models versus Weight Decay}
+## Adversarial Training of Linear Models versus Weight Decay
 
 
 If we train a single model to recognize labels $y \in \{ -1, 1 \}$ with $P(y=1) = \sigma (w^\top x + b)$
 where
+
 $\sigma(z)$ is the logistic sigmoid function, then training consists of gradient descent on 
+$$
 \begin{equation}
     \mathbb{E}_{x, y} \zeta (-y(w^\top x + b))
 \end{equation}
+$$
+
 where $\zeta(z) = \log (1+ \exp(z))$ is the softplus function. We can derive a simple analytical form for
 training on the worst-case adversarial perturbation of $x$ rather than $x$ itself.
 
 Note that the sign of the gradient is just $-\text{sign}(w)$, and that $w^\top sign(w) = \lVert w \rVert_1$.
 The adversarial version of logistic regression is therefore to minimize
 
+$$
 \begin{equation}
     \mathbb{E}_{x, y} \zeta (y(\epsilon \lVert w\rVert_1 - w^\top x - b))
 \end{equation}
+$$
+
 This is somewhat similar to L1 regularization. However, there are some important differences. Most
 significantly, the L1 penalty is subtracted off the model’s activation during training, rather than
 added to the training cost. This means that the penalty can eventually start to disappear if the model
@@ -134,14 +141,17 @@ While we focus on robustness against $\ell_\infty$-bounded attacks in this paper
 comprehensive notions of perceptual similarity are an important direction for future research.
 
 the definition of population risk $\mathbb{E}_D[L]$ by incorporating the above adversary.
+
+$$
 \begin{equation}
     \min_\theta \rho (\theta), ~~~ \text{where}~ \rho(\theta)  = \mathbb{E}_{(x,y) \sim D} \Big[ \max_{\delta \in \mathcal{S}} L(\theta, x+ \delta, y) \Big] 
 \end{equation}
+$$
 
 Our perspective stems from viewing the saddle point problem as the
 composition of an inner maximization problem and an outer minimization problem.
 
-\subsection{A Unified View on Attacks and Defenses}
+## A Unified View on Attacks and Defenses
 
 
 
@@ -155,19 +165,21 @@ One can interpret this attack as a simple one-step scheme for maximizing the inn
 saddle point formulation. A more powerful adversary is the multi-step variant, which is essentially
 projected gradient descent (PGD) on the negative loss function.
 
+$$
 \begin{equation}
     x^{t+1} = \Pi_{x+S}(x^t + \alpha \cdot \text{sgn}(\nabla_x L(\theta, x^{t}, y))) 
 \end{equation}
+$$
 
-\textbf{MNIST}. We run \textbf{40} iterations of projected gradient descent as our adversary, with a step size
-of \textbf{0.01} (we choose to take gradient steps in the $\ell_\infty$-norm, i.e. adding the sign of the gradient,
+$\textbf{MNIST}$. We run $\textbf{40}$ iterations of projected gradient descent as our adversary, with a step size
+of $\textbf{0.01}$ (we choose to take gradient steps in the $\ell_\infty$-norm, i.e. adding the sign of the gradient,
 since this makes the choice of the step size simpler). We train and evaluate against perturbations
 of size  $\epsilon= 0.3$. We use a network consisting of two convolutional layers with 32 and 64 filters
 respectively, each followed by $2 \times 2$ max-pooling, and a fully connected layer of size 1024. When
 trained with natural examples, this network reaches $99.2\%$ accuracy on the evaluation set. However,
 when evaluating on examples perturbed with FGSM the accuracy drops to $6.4\%$.
 
-\textbf{CIFAR10}. For the CIFAR10 dataset, we use the two architectures described in 4 (the original
+$\textbf{CIFAR10}$. For the CIFAR10 dataset, we use the two architectures described in 4 (the original
 ResNet and its 10 $\times$ wider variant). We trained the network against a PGD adversary with $\ell_\infty$
 projected gradient descent again, this time using 7 steps of size 2, and a total $\epsilon = 8$. For our hardest
 adversary we chose 20 steps with the same settings, since other hyperparameter choices didn’t
@@ -197,9 +209,11 @@ robustness attained to attacks from some models transfers to attacks from other 
 
 Single-Step Least-Likely Class Method (Step-LL). This variant of FGSM introduced by Kurakin
 et al. (2017a;b) targets the least-likely class, $y_{LL} = \arg \min {h(x)}$ (logit class):
+$$
 \begin{equation}
     x_{LL}^{adv} = x - \epsilon \cdot \text{sgn}(\nabla_x L(\theta, x, y_{LL}))
 \end{equation}
+$$
 
 Ensemble Adversarial Training, augments a
 model’s training data with adversarial examples crafted on other \textbf{static pre-trained models}. Intuitively,
