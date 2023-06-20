@@ -8,7 +8,7 @@ profile:
   align: right
   image: me.png
   address: >
-    <p text-align:center;> Hello. </p>
+    <p text-align:center;> Research for All People</p>
 
 news: true  # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
@@ -24,26 +24,24 @@ If you have any idea or comments on the experiment, contact <tag class="text-box
  
  
 
- <h1 style="font-family:fantasy"> ⛰ Research Topics of Interest   </h1>
+ <h1 style="font-family:Times New Roman"> Research Topics   </h1>
  
-* 🐉 Selected Inference
-* 🦾 Contextual RL
-* 🐌 Knoweledge Modification
-* 🌍 World Model
-* 3333
+* Explainable AI
+* Mechanistic interpretability
 
 
 
-<div>
-🅖 <a class="box-demo-link" href="https://scholar.google.co.kr/citations?user=XzIXaxoAAAAJ&hl=ko" style="background:#b4ffff; color:#000000;" >Google Scholar</a> | 
-🐾 <a class="box-demo-link" href="/research/" style="background:#e3ff67; color:#000000;" >Research Progress</a> | 
+<div style="line-height:2.0">
+🅖 <a class="box-demo-link" href="https://scholar.google.co.kr/citations?user=XzIXaxoAAAAJ&hl=ko" style="background:#b4ffff; color:#000000;" >Google Scholar</a> 
+<br>
+🐾 <a class="box-demo-link" href="/research/" style="background:#e3ff67; color:#000000;" >Research Progress</a>  
 
 
 
 </div>
 
 <hr>
- <h1 style="font-family:Cursive"> 🖋 Papers   </h1>
+ <h1 style="font-family:Times New Roman"> 🖋 Papers   </h1>
 
   <!--  Emergence of Bias in the circuits of BERT  -->
   <h3 class="demo-title"> Emergence of Bias in the circuits of BERT </h3>

@@ -8,6 +8,31 @@ category: XAI
 subcategory : Circuits
 ---
 
+# Features as basis 
+
+* Decomposition : 
+
+* Linearity :
+
+
+## Privileged Basis
+
+
+## Polysemantic
+
+
+
+## Superposition 
+
+
+
+## Soft Linear Units 
+
+$$ 
+\begin{equation}
+\operatorname{SoLU}(x) = x * \operatorname{Softmax}(x)
+\end{equation}
+$$ 
 
 
 # Singular Value Decomposition 
