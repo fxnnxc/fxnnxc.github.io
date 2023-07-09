@@ -1,11 +1,10 @@
 ---
 layout: default
-title: template 
-description: this is a template
+title: Main Articles
+description : Research Related Articles 
 pagination:
-  test : 33
   enabled: true
-  collection: posts
+  collection: main_articles
   permalink: /page/:num/
   per_page: 10
   sort_field: date
@@ -15,7 +14,6 @@ pagination:
     after: 3  # The number of links after the current page
 ---
 
-
 <div class="post">
   <div class="header-bar">
     <h1>{{ page.title }}</h1>
@@ -24,8 +22,8 @@ pagination:
 
 
   <ul class="post-list">
-    {% for post in paginator.posts %}
-
+    {% for post in paginator.main_articles %}
+    <h1> {{ post.title }}</h1>
     {% assign read_time = post.content | number_of_words | divided_by: 180 | plus: 1 %}
     {% assign year = post.date | date: "%Y" %}
     {% assign tags = post.tags | join: "" %}
@@ -70,5 +68,3 @@ pagination:
   </ul>
 
   {% include pagination.html %}
-
-</div>

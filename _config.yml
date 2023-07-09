@@ -84,8 +84,8 @@ panelbear_analytics:  # panelbear analytics site ID (format: XXXXXXXXX)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: ©® Creative Rudiment  # your blog must have a name for it to show up in the nav bar
-blog_description: try everything by myself. 
+blog_name:  Rudiment  # your blog must have a name for it to show up in the nav bar
+blog_description: small steps for progressive research
 permalink: /blog/:year/:title/
 
 # Pagination
@@ -112,13 +112,25 @@ collections:
   paper:
     output: true
     permalink: /paper/:path/
-  article:
+  main_articles:
     output: true
-    permalink: /article/:path/
-  reviews:
+    permalink: /main_articles/:path/
+  main_projects:
     output: true
-    permalink: /reviews/:path/
-
+    permalink: /main_projects/:path/
+  main_papers:
+    output: true
+    permalink: /main_papers/:path/
+  side_articles:
+    output: true
+    permalink: /side_articles/:path/
+  side_projects:
+    output: true
+    permalink: /side_projects/:path/
+  side_papers:
+    output: true
+    permalink: /side_papers/:path/
+  
 
 
 news_limit: 10000
