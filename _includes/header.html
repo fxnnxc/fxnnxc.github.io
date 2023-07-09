@@ -37,7 +37,23 @@
               {% if site.blog_name %}
               <!-- Blog -->
               <li style="font-size: 17px" class="nav-item {% if page.url contains 'blog' %}active{% endif %}">
-                <a class="nav-link" href="{{ '/blog/' | relative_url }}">🚀 rudiment
+                <a class="nav-link" href="{{ '/main_papers/' | relative_url }}"> 🌱 Papers 
+                  {%- if page.title == "blog" -%}
+                  <span class="sr-only">(current)</span>
+                  {%- endif -%}
+                </a>
+              </li>
+
+              <li style="font-size: 17px" class="nav-item {% if page.url contains 'blog' %}active{% endif %}">
+                <a class="nav-link" href="{{ '/main_articles/' | relative_url }}"> 🌱 Articles 
+                  {%- if page.title == "blog" -%}
+                  <span class="sr-only">(current)</span>
+                  {%- endif -%}
+                </a>
+              </li>
+
+              <li style="font-size: 17px" class="nav-item {% if page.url contains 'blog' %}active{% endif %}">
+                <a class="nav-link" href="{{ '/main_projects/' | relative_url }}"> 🌱 Projects
                   {%- if page.title == "blog" -%}
                   <span class="sr-only">(current)</span>
                   {%- endif -%}
@@ -80,12 +96,12 @@
               {%- if site.enable_darkmode %}
 
               <!-- Toogle theme mode -->
-              <div class = "toggle-container">
+              <!-- <div class = "toggle-container">
                 <a id = "light-toggle">
                   <i class="fas fa-moon"></i>
                   <i class="fas fa-sun"></i>
                 </a>
-              </div>
+              </div> -->
               {%- endif %}
             </ul>
           </div>

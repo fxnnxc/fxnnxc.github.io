@@ -106,12 +106,6 @@ collections:
       layout: post
     output: true
     permalink: /news/:path/
-  projects:
-    output: true
-    permalink: /projects/:path/
-  paper:
-    output: true
-    permalink: /paper/:path/
   main_articles:
     output: true
     permalink: /main_articles/:path/
