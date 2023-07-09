@@ -6,6 +6,7 @@ authors:
         name: KAIST
 bibliography: gym_predator_prey.bib
 giscus_comments: true
+disqus_comments: true
 date: 2022-04-25
 featured: true
 toc:
@@ -15,6 +16,7 @@ toc:
     #   - name: Example Child Subsection 1
     #   - name: Example Child Subsection 2
   - name: Code Examples
+  - name: Basic information in Discrete environment
 title: 'Gym Predator Prey Environment in Terminal'
 description: 'Multi Agent Environment in Terminal'
 img: assets/projects/gym_predator_prey/main.png
@@ -72,19 +74,19 @@ env = env_creator({
 </d-code>
 
 
-## Basic information in *Discrete* environment
+## Basic information in Discrete environment
 
-#### 🦁 Predator
+### Predator 🦁 
 * `action_space` : {no-op, left, bottom, up, right} x [0~max_speed]
 * `observation_space` : full information
 * `reward` : -1 for each time step / 100 when prey is caught
 
-####  🐔 Prey
+###  Prey 🐔 
 * `action_space` : {no-op, left, bottom, up, right} x [0~max_speed]
 * `observation_space` : full information
 * `reward` : 1 for each time step
 
-####  🗺 Map
+###  Map 🗺 
 * Grid size: [0,width] x [0, height]
 
 <center>

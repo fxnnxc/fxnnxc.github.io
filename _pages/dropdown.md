@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 🍀 others
+title: 🍀 side tasks
 nav: true
 dropdown: true
 order : 9

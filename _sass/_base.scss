@@ -27,11 +27,6 @@ h4{
   font-size: 20px;
 }
 
-p {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;;
-}
-
-
 h1, h2, h3,  h4, h5, h6{
   margin-bottom: .9rem;
   // font-family: 'Open Sans', sans-serif; ;
@@ -52,8 +47,9 @@ h1, h2, h3, h4, h5, h6, strong, div{
   font-size: var(--global-text-size);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;;
   // font-weight: 100;
-  font-weight :250;
-  line-height:  160%;
+  // font-weight :250;
+  // line-height:  140%;
+  line-height: 160%;
 
 }
 strong{
@@ -73,10 +69,9 @@ span {
 
 }
 p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;;
   color: var(--global-text-color);
   line-height: 160%;
-  // font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
-  // font-family: 'Open Sans', sans-serif; ;
   font-weight: 250;
   font-size: var(--global-text-size);
   // word-break: keep-all;
@@ -230,7 +225,7 @@ blockquote {
 }
 
 .post-description {
-  font-family:Cursive;
+  // font-family:Cursive;
   margin-bottom: 2rem;
   a {
     color: inherit;
@@ -278,7 +273,7 @@ blockquote {
     }
   }
   .navbar-brand {
-    font-family: cursive;
+    // font-family: cursive;
     color: var(--global-text-color);
   }
   .navbar-nav .nav-item .nav-link {
@@ -573,7 +568,7 @@ footer.sticky-bottom {
       }
       .title {
         font-weight: 550;
-        font-family: cursive;
+        // font-family: cursive;
       }
       .author {
         a {
