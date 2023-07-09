@@ -8,7 +8,7 @@ profile:
   align: right
   image: me.png
   address: >
-    <p text-align:center;> Research for All People</p>
+    <p text-align:center;> AI Researcher </p>
 
 news: true  # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
@@ -16,32 +16,60 @@ social: true  # includes social icons at the bottom of the page
 ---
 
 <p style="text-align: justify;">
-This blog is started by an idea that the fastest way to learn something is taking experiments.  <tag class="text-box">Creative Rudiment</tag> is a personal blog for experiments on various domains including <tag class="text-box">Reinforcement Learning</tag>, <tag class="text-box">Vision</tag>, <tag class="text-box">NLP</tag> and <tag class="text-box">XAI</tag>.  You can check a list of experiments in <tag href="/blog/"> Rudiment</tag>. 
-If you have any idea or comments on the experiment, contact <tag class="text-box">bjp032501@gmail.com</tag>.
-
+Hi, my name is Bumjin Park, a Ph.D student in the Graduate School of AI in KAIST. 
+My research is focused on the understanding of the mechanisms of Artificial Neural Networks. 
+The name <strong> "Rudiment" </strong> represents my steps toward discovering the secrets of ANNs. 
 </p>
- 
- 
- 
-
- <h1 style="font-family:Times New Roman"> Research Topics   </h1>
- 
-* Explainable AI
-* Mechanistic interpretability
-
-
 
 <div style="line-height:2.0">
-🅖 <a class="box-demo-link" href="https://scholar.google.co.kr/citations?user=XzIXaxoAAAAJ&hl=ko" style="background:#b4ffff; color:#000000;" >Google Scholar</a> 
-<br>
-🐾 <a class="box-demo-link" href="/research/" style="background:#e3ff67; color:#000000;" >Research Progress</a>  
+📨 <tag class="box-demo-link" style='color:#000000;background:#ffffff;border-radius: 10px;'>bjp032501@gmail.com</tag> 
+| 📨 <tag class="box-demo-link" style='color:#000000;background:#ffffff;border-radius: 10px;'>bumjin@kaist.ac.kr</tag> 
+| 🅖 <a class="box-demo-link" href="https://scholar.google.co.kr/citations?user=XzIXaxoAAAAJ&hl=ko" >Google Scholar</a> 
+| 🧾 <a class="box-demo-link" href="">  CV (not available now) </a> 
+| 
+</div>
 
+
+<hr>
+<div class="card" style="width:auto;padding:30px;margin-top:20px">
+<h1 style='text-align:left'> 🎓 Research Topics   </h1>
+<!-- <hr style="margin:2px;padding:2px"> -->
+<hr style='margin-top:0px'>
+<li style="list-style-type: none;"> <text class="box-demo-link" style="color:#000000;background:#ffffff;font-size:16px"> Mechanistic interpretability </text> </li>
+<li style="list-style-type: none;"> <text class="box-demo-link" style="color:#000000;background:#ffffff;font-size:16px"> Interpretable AI </text> </li>
+<li style="list-style-type: none;"> <text class="box-demo-link" style="color:#000000;background:#ffffff;font-size:16px"> Explainable AI </text> </li>
+<br>
+<h1> 🤗 Mission </h1>
+<hr style='margin-top:0px'>
 
 
 </div>
 
 <hr>
- <h1 style="font-family:Times New Roman"> 🖋 Papers   </h1>
+
+<h3> Research Products </h3>
+<p>
+These are main results of my research related to the research topics. 
+</p>
+
+
+<li><a class="box-demo-link" href="/main_papers/" style="background:#ffbbee; color:#000000;" >📌 Papers</a> (#0)
+</li>
+<li>  <a class="box-demo-link" href="/main_projects/" style="background:#e3ff67; color:#000000;" > 📌 Projects</a> (#0)
+</li> 
+<li>  <a class="box-demo-link" href="/main_articles/" style="background:#ddeeff; color:#000000;" >📌 Articles </a> (#0) 
+</li>
+
+<p>
+Although, my major interests are interpretable AI, there are products from other fields. Here are the Lists of materials related to side research topics: 
+<br>
+<a class="box-demo-link" href="/side_papers/" style="background:#ffddee; color:#000000;" >☕️ S-Papers (#0) </a>  
+ <a class="box-demo-link" href="/side_projects/" style="background:#eeffee; color:#000000;" >☕️ S-Projects (#0)</a>   
+ <a class="box-demo-link" href="/side_articles/" style="background:#eeeeff; color:#000000;" >☕️ S-Articles (#0) </a> .
+</p>
+
+<hr>
+ <h1 style="font-family:Times New Roman"> 🖋 Selected Papers   </h1>
 
   <!--  Emergence of Bias in the circuits of BERT  -->
   <h3 class="demo-title"> Emergence of Bias in the circuits of BERT </h3>

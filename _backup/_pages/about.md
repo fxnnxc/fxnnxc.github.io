@@ -16,7 +16,7 @@ social: true  # includes social icons at the bottom of the page
 ---
 
 <p style="text-align: justify;">
-This blog is started by an idea that the fastest way to learn something is taking experiments.  <tag class="text-box">Creative Rudiment</tag> is a personal blog for experiments on various domains including <tag class="text-box">Reinforcement Learning</tag>, <tag class="text-box">Vision</tag>, <tag class="text-box">NLP</tag> and <tag class="text-box">XAI</tag>.  You can check a list of experiments in <tag href="/blog/"> Rudiment</tag>. 
+This blog is started by an idea that the fastest way to learn something is taking experiments.  <tag class="text-box"> Rudiment</tag> is a personal blog for experiments on various domains including <tag class="text-box">Reinforcement Learning</tag>, <tag class="text-box">Vision</tag>, <tag class="text-box">NLP</tag> and <tag class="text-box">XAI</tag>.  You can check a list of experiments in <tag href="/blog/"> Rudiment</tag>. 
 If you have any idea or comments on the experiment, contact <tag class="text-box">bjp032501@gmail.com</tag>.
 
 </p>
