@@ -16,9 +16,9 @@ social: true  # includes social icons at the bottom of the page
 ---
 
 <p style="text-align: justify;">
-Hi, my name is Bumjin Park, a Ph.D student in the Graduate School of AI in KAIST. 
-My research is focused on the understanding of the mechanisms of Artificial Neural Networks. 
-The name <strong> "Rudiment" </strong> represents my steps toward discovering the secrets of ANNs. 
+Hi, my name is Bumjin Park, a Ph.D student in <a href="https://gsai.kaist.ac.kr/">the Graduate School of AI</a> in <a href="https://www.kaist.ac.kr/en/">KAIST</a>.  
+My research is focused on the understanding of mechanisms of Artificial Neural Networks. 
+I'm working to discover the secrets of ANNs.
 </p>
 
 <div style="line-height:2.0">
@@ -64,7 +64,7 @@ These are main results of my research related to the research topics.
 Although, my major interests are interpretable AI, there are products from other fields. Here are the Lists of materials related to side research topics: 
 <br>
 <a class="box-demo-link" href="/side_papers/" style="background:#ffddee; color:#000000;" >☕️ S-Papers (#0) </a>  
- <a class="box-demo-link" href="/side_projects/" style="background:#eeffee; color:#000000;" >☕️ S-Projects (#0)</a>   
+ <a class="box-demo-link" href="/side_projects/" style="background:#eeffee; color:#000000;" >☕️ S-Projects (#1)</a>   
  <a class="box-demo-link" href="/side_articles/" style="background:#eeeeff; color:#000000;" >☕️ S-Articles (#0) </a> .
 </p>
 
