@@ -14,6 +14,10 @@ pagination:
     after: 3  # The number of links after the current page
 ---
 
+
+add some texts 
+333
+
 <div class="post">
   <div class="header-bar">
     <h1>{{ page.title }}</h1>

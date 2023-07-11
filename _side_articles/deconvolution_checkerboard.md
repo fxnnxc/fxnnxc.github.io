@@ -4,7 +4,7 @@ authors:
     - name: Bumjin Park
       affiliations:
         name: KAIST
-bibliography: deconvlution_can_make_checker_board_artifacts.bib
+bibliography: deconvolution_checkerboard.bib
 giscus_comments: true
 disqus_comments: true
 date: 2023-07-10
