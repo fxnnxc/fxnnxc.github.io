@@ -22,11 +22,16 @@ importance: 2
 ## Introduction 
 
 
-In the training of a deep neural network, we collect a large amount of data and process the data only for the training purpose. 
-The preprocess mostly decreases the amount of information to abandon irrelevant information. We usually consider only the compact representation for the training data and discard information which is not helpful for the training or unnecessary. The process of filtering information is essential to properly match the training objective <d-footnote> For example, in the classification model, we use correlative features. In the field of NLP, we use natural sentences without meta data. </d-footnote>. Although such filtering can benefit the training, we discard too much information such as **the source of data**. One example would be the copyright of lyrics or contents in a book. For example, can you verify the source of the sentence below? That is, who said the sentence.
-> Creating safe AGI that benefits all of humanity  <br> > Source : ???
+In the training of a deep neural network, we collect a large amount of data and process the data only for training purposes. 
+The pre-process mostly decreases the amount of information to abandon irrelevant information in data and provides compact representations for the training data by discarding information which is not helpful for the training. The process of filtering information is essential to properly match the training objective efficiently and robustly <d-footnote> For example, in the classification model, we use correlative features. In the field of NLP, we use natural sentences without meta data. </d-footnote>. Although such filtering can benefit the training, we discard even necessary meta data which helps to verify the information such as **the source of data**. One example would be the copyright of lyrics or contents in a book. For example, can you verify the source of the sentence below? That is, who said the sentence.
+> Creating safe AGI that benefits all of humanity  <br>   - From : ???
 
-This source of the sentence is [website of OpenAI](https://openai.com/). The source link of the sentence may not required to train neural networks <d-footnote> For example, the causal language modeling of GPT<d-cite key="brown2020language"/> and the masked language modeling of BERT do not require the source link to maximize the training objective. </d-footnote>. However, the source information is highly important when our objective is not performance but tracing the source of the information that the generative model provides. 
+The source of the sentence is [website of OpenAI](https://openai.com/). As the source is entangled with the sentence, we get additional information such as
+* The underlying context of the sentence
+* The factuality of the sentence 
+* The meaning of AGI (if you are in the AI field.)
+
+Even though there are benefits of knowing the source location of the data, the source link of data may not required to train neural networks <d-footnote> For example, the causal language modeling of GPT<d-cite key="brown2020language"/> and the masked language modeling of BERT do not require the source link to maximize the training objective. </d-footnote>. However, the source information is highly important when our objective is not performance but tracing the source of the information that the generative model provides. In short, 
 
 > <text style="color:red"> Only for the training purpose, discarding irrelevant information is beneficial. But, we don't know made the information.  </text>
 
