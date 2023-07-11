@@ -25,7 +25,7 @@ description: 'This is an informal review of a paper. We take computational analy
 
 > Note: This post is a mathematical review of the paper "Deconvolution and Checkerboard Artifacts" [[project link](https://distill.pub/2016/deconv-checkerboard)] <d-cite key="odena2016deconvolution"/>, Intended to  broaden the understanding of operations, convolution and deconvolution. We use © symbol to represent the texts and figures obtained from the paper. <text style="font-style:normal"> 🤗 </text>
 
-> The motivation of this review is Circuits Thread <d-cite key="cammarata2020thread"/>. As modules in NN propagate signals and artifacts are results of the inductive bias of modules, we can broaden the understanding of mechanistic interpretability by analyzing the modules. 
+> The motivation of this review is Circuits Thread <d-cite key="cammarata2020thread"/>. As modules in NN propagate signals, they can make artifacts, which may be the results of the inductive bias. Therefore, we  broaden the understanding of mechanistic interpretability by analyzing the modules in a deeper manner. 
 
 ## Introduction 
 
