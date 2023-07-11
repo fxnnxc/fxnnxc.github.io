@@ -41,8 +41,6 @@ I'm working to discover the secrets of ANNs.
 <br>
 <h1> 🤗 Mission </h1>
 <hr style='margin-top:0px'>
-
-
 </div>
 
 <hr>
