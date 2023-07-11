@@ -26,7 +26,7 @@ add some texts
 
 
   <ul class="post-list">
-    {% for post in paginator.side_articles %}
+    {% for post in paginator.collection %}
     <h1> {{ post.title }}</h1>
     {% assign read_time = post.content | number_of_words | divided_by: 180 | plus: 1 %}
     {% assign year = post.date | date: "%Y" %}
