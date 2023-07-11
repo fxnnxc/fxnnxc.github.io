@@ -1,45 +1,35 @@
 ---
 layout: default
 title: Side Articles
-description : Side Research Related Articles 
+description: Side Articles for several research topics
 permalink: /side_articles/
-pagination:
-  enabled: true
-  collection: side_articles
-  permalink: /page/:num/
-  per_page: 10
-  sort_field: date
-  sort_reverse: true
-  trail:
-    before: 1 # The number of links before the current page
-    after: 3  # The number of links after the current page
 ---
-<h1> > markdown </h1>
 
 <div class="post">
   <div class="header-bar">
     <h1>{{ page.title }}</h1>
     <h2>{{ page.description }}</h2>
   </div>
-
-
   <ul class="post-list">
-    {% for post in paginator.collection %}
-    <h1> {{ post.title }}</h1>
+    {%- assign sorted_pages = site.side_articles | sort: "date" %}
+    {%- assign sorted_pages = sorted_pages | reverse -%} 
+
+    {% for post in sorted_pages %}
+
     {% assign read_time = post.content | number_of_words | divided_by: 180 | plus: 1 %}
     {% assign year = post.date | date: "%Y" %}
     {% assign tags = post.tags | join: "" %}
     {% assign categories = post.categories | join: "" %}
 
-    <li>
-      <h3>
+      <card class="column-first" style="border-bottom:#e4e4e4 solid; padding-left: 0px;" >
+      <h2>
         {% if post.redirect == blank %}
-          <a class="post-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          <a class="post-title" href="{{ post.url | prepend: site.baseurl }}" style="text-decoration:none; font-size: 20px; color:#362f5b ">{{ post.title }}</a>
         {% else %}
         <a class="post-title" href="{% if post.redirect contains '://' %}{{ post.redirect }}{% else %}{{ post.redirect | relative_url }}{% endif %}">{{ post.title }}</a>
         {% endif %}
-      </h3>
-      <p>{{ post.description }}</p>
+      </h2>
+      <p style="line-height: 140%;">{{ post.description }}</p>
       <p class="post-meta"> {{read_time}} min read &nbsp; &middot; &nbsp;
         {{ post.date | date: '%B %-d, %Y' }}
       
@@ -62,18 +52,17 @@ pagination:
               <i class="fas fa-tag fa-sm"></i> {{ category }}</a> &nbsp;
               {% endfor %}
           {% endif %}
+      </p>
     </p>
-  </p>
-    </li>
-
+  </card>
+      <card class="column-second">
+      {% if post.img %}
+          <img src="{{ post.img }}" width="145px" height="145px" style="margin-top:20px;margin-left:40px;border-radius: 20px;"> 
+      {% endif %}
+      </card>
     {% endfor %}
+    
   </ul>
-
   {% include pagination.html %}
 
-
-<!-- ---
-layout: page
-title: side_articles
-permalink: /side_articles/
---- -->
+</div>
