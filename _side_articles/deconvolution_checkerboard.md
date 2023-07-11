@@ -20,7 +20,7 @@ toc:
   - name: Resize Convolution 
   - name: Conclusion 
 title: 'Deconvolution and Checkboard Artifacts'
-description: 'Computational analysis of convolution and deconvolution for artifact generation in generator and gradient based feature visualization'
+description: 'This is an informal review of a paper. We take computational analysis of convolution and deconvolution for artifact generation'
 ---
 
 > Note: This post is a mathematical review of the paper "Deconvolution and Checkerboard Artifacts" [[project link](https://distill.pub/2016/deconv-checkerboard)] <d-cite key="odena2016deconvolution"/>, Intended to  broaden the understanding of operations, convolution and deconvolution. We use © symbol to represent the texts and figures obtained from the paper. <text style="font-style:normal"> 🤗 </text>
