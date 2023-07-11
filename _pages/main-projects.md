@@ -3,8 +3,6 @@ layout: page
 title: main_projects
 permalink: /main_projects/
 ---
-
-
 <!-- pages/projects.md -->
 <div class="projects">
   {%- if site.enable_project_categories and page.display_categories %}

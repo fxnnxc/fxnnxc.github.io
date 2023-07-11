@@ -2,6 +2,7 @@
 layout: default
 title: Side Articles
 description : Side Research Related Articles 
+permalink: /side_articles/
 pagination:
   enabled: true
   collection: side_articles
@@ -13,10 +14,7 @@ pagination:
     before: 1 # The number of links before the current page
     after: 3  # The number of links after the current page
 ---
-
-
-add some texts 
-333
+<h1> > markdown </h1>
 
 <div class="post">
   <div class="header-bar">
