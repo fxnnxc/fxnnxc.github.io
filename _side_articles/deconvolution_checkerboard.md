@@ -184,7 +184,7 @@ Assume that we feed uniform signals $[1,1,\cdots]$ <d-footnote> We assumed that 
 
 The checkerboard artifacts suggest that we have to handle the proper stride and kernel size for better signal propagations. However, a more simple solution is avoiding deconvolution. Instead we can we just "Convolutional Layer" for the generation parts. The underlying assumption would be
 
-> It is more easy to compress information, then spreading information 
+> It is easier to compress information, then spreading information 
 
 Therefore, the authors upsamples the original input and apply convolutional operation to decode the information in the easier way. If we follow the operation with a simple example (see the Figure below), we observe that the magnitude of an input signal is monotonically aligned with the output signal. With upscale (double) and padding for preserving the shape, we can ensure that the latent size progressively increases.
 
