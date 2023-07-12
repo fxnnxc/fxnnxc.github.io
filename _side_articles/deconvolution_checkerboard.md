@@ -37,8 +37,8 @@ The most widely used form of generative models is "Convolution - Deconvolution" 
 </figcaption>
 </figure>
 
-The impact of deconvolution has been studied by Odena et al. in the paper "Deconvolution and Checkerboard Artifacts" [[project link](https://distill.pub/2016/deconv-checkerboard)]. The major problem is the overlapping signals from deconvolution operation. That is, deconvolution layers produce checkerboard artifacts in the output. Checkerboard artifacts are not representative features of an image because these are high frequency signals repeated locally which are unusual natural representations. 
-The interpretable reason of the checkerboard patterns is the deconvolution layer which spreads the input signals with convolutional filters. Note that deconvolution is a reverse operation of a convolutional layer which distributes the output signals to the input regions. In the process of distribution, the imbalance of signal distribution happens. 
+The impact of deconvolution has been studied by Odena et al. in the paper "Deconvolution and Checkerboard Artifacts" [[project link](https://distill.pub/2016/deconv-checkerboard)]. The major problem is the overlapping signals from deconvolution operation. That is, deconvolution layers produce checkerboard artifacts in the output. Checkerboard artifacts are not representative features of an image because these are high frequency signals repeated locally which are unnatural representations. 
+The interpretable reason of the checkerboard patterns is the deconvolution layer which spreads the input signals with convolutional filters. Note that **deconvolution is a reverse operation of a convolutional layer which distributes the output signals to the input regions**. In the process of distribution, the imbalance of signal distribution happens. 
 To better understand the reasons of checkerboard artifacts, we analyze how convolutional and deconvolutional layers propagate the input signals. In addition, we review the "Resize-Convolution"  which is an alternative operation for deconvolution. 
 
 
@@ -47,10 +47,10 @@ To better understand the reasons of checkerboard artifacts, we analyze how convo
 
 ## Convolution and Deconvolution 
 
-We first analyze how convolution and deconvolution 
+We first analyze how convolution and deconvolution work 
 
-* **Convolution** : Gathers the input signals
-* **Deconvolution** : :star:Spreads the input signals
+* **Convolution** : :star: Gathers the input signals  : $$(a,b,c) @ (x,y,z) \rightarrow (ax+by+cz)$$
+* **Deconvolution** : :star: Spreads the input signals :  $$(a) @ (x,y,z) \rightarrow  (ax, ay, az)$$
 
 See the Figures below for 1D examples. 
 
@@ -117,8 +117,8 @@ $$
 ### Deconvolution 
 
 Decovolution spreads the input signal to neighbor regions. Unlike the convolution which has preserves the signal magnitude in monotonic manner, the deconvolution can 
-* Spike on a local region  
-* Make checkerboard patterns
+* 👾 **Spike** on a local region  
+* 👾 **Make** checkerboard patterns
 
 When we analyze the operation of deconv, we can see that the middle part sums three components. This difference with conv <d-footnote> Conv has equal number of components</d-footnote>, can make a biased output signal on the specific location.   
 
@@ -246,13 +246,13 @@ For experiments, the authors show that the inclusion and exclusion of deconvolut
 
 ## Conclusion 
 
-In this post, we review the paper Deconvolution and Checkerboard Artifacts  [[Distill](https://distill.pub/2016/deconv-checkerboard)] which found the reasons of checkerboard artifacts and proposed solutions for it. By reviewing this paper, we found that computational link is not perfect and the inductive bias could be wrong. (That is, the inductive bias of deconvolution is not suitable for the image generation). Therefore, it is truly important to understand the operational meaning of components including "convolution, deconvolution, pooling, attention, MLP")
+In this post, we review the paper Deconvolution and Checkerboard Artifacts  [[Distill](https://distill.pub/2016/deconv-checkerboard)] which found the reasons of checkerboard artifacts and proposed solutions for it. By reviewing this paper, we found that **understanding the computational meaning of a module is important** and **the inductive bias could be wrong** <d-footnote> The deconvolution module is an inductive bias of spreading signals with inverse process of convolution.  </d-footnote>. (That is, the inductive bias of deconvolution is not suitable for the image generation). Therefore, it is truly important to understand the operational meaning of components including "convolution, deconvolution, pooling, attention, MLP")
 Many researchers have studied to investigate the reasons of artifacts and I guess there are at least four approaches
 
 * Insufficient Training 
 * Insufficient Dataset 
 * Memorization and not generalization, including overfitting
-* Wrong Inductive Bias (Deconvolutional Layer)
+* **Wrong Inductive Bias (Deconvolutional Layer)**
 
 For me, a researcher in the field of interpretable AI, the most important approach is the last one. Most of tasks mostly care the training performances and do not deeply interpret the operational meaning of modules. 
 
