@@ -193,6 +193,7 @@ We can visualize the matrix with red colors.
 
 ### NMF Result
 When we run the NMF with Sklearn, we have the following result. 
+
 $$
 M = W (\text{weight}) \cdot H (\text{components})
 $$
