@@ -63,7 +63,7 @@ Although, my major interests are interpretable AI, there are products from other
 <br>
 <a class="box-demo-link" href="/side_papers/" style="background:#ffddee; color:#000000;" >☕️ S-Papers (#0) </a>  
  <a class="box-demo-link" href="/side_projects/" style="background:#eeffee; color:#000000;" >☕️ S-Projects (#1)</a>   
- <a class="box-demo-link" href="/side_articles/" style="background:#eeeeff; color:#000000;" >☕️ S-Articles (#0) </a> .
+ <a class="box-demo-link" href="/side_articles/" style="background:#eeeeff; color:#000000;" >☕️ S-Articles (#1) </a> .
 </p>
 
 <hr>

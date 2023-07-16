@@ -49,9 +49,10 @@ h1, h2, h3, h4, h5, h6, strong, div{
   // font-weight: 100;
   // font-weight :250;
   // line-height:  140%;
-  line-height: 110%;
+  line-height: 90%;
   margin-top:10px;
   margin-bottom:10px;
+  font-weight: 400;
   // margin-bottom: 10px;
 }
 strong{
@@ -79,7 +80,8 @@ p {
   // word-break: keep-all;
   word-wrap: normal;
   hyphens: auto;
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
   // margin-top: 2.0rem;
 }
 
@@ -149,9 +151,11 @@ figure, img {
 
 blockquote {
   background: var(--global-bg-color);
-  border-left: 2px solid var(--global-theme-color);
-  margin: 1.5em 10px;
-  padding: 0.0em 10px;
+  border-left: 3px solid var(--global-theme-color);
+  // margin: 1.5em 10px;
+  padding-top: 4px;
+  color: #5e5e5e;
+  background-color:#f0f0f053;
 }
 
 // Math
@@ -659,12 +663,14 @@ pre {
 }
 
 code {
-  color: var(--global-theme-color);
-  background-color: var(--global-code-bg-color);
-  border-radius: 7px;
-  padding: 1px 1px;
+  color: #000000;
+  background-color: #ffe2fe;
+  border-radius: 10px;
+  // padding: 1px 1px;
   font-family:  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
   font-size:  var(--global-text-size);
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 
