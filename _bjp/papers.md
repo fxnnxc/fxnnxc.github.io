@@ -24,6 +24,10 @@ importance: 2
 
 * Info <d-cite key="houlsby2019parameter" /> :  [[Github](https://github.com/google-research/adapter-bert)], `Efficiency`, 
 
+* PEFT  [[github](https://github.com/huggingface/peft)] : State-of-the-art Parameter-Efficient Fine-Tuning (PEFT) methods
+
+
+
 
 ### Injecting Domain Knowledge in Language Models for Task-oriented Dialogue Systems
 

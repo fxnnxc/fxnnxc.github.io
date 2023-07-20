@@ -9,7 +9,7 @@ giscus_comments: true
 disqus_comments: true
 date: 2023-07-15
 featured: true
-img: /assets/side_articles/nmf/selection.png
+# img: /assets/side_articles/nmf/selection.png
 toc:
   - name: Introduction
 title: 'Neurons Analogous to Neurons'
