@@ -1,0 +1,369 @@
+---
+layout: distill
+authors: 
+    - name: Bumjin Park
+      affiliations:
+        name: KAIST
+bibliography: all.bib
+giscus_comments: true
+disqus_comments: true
+date: 2023-07-23
+featured: true
+# img: /assets/side_articles/nmf/selection.png
+toc:
+  - name: 1. 소개
+  - name: 2. 신경학적 뉴런 
+    subsections:
+      - name : 2-1 뉴런 
+      - name : 2-2 시냅스
+      - name : 2-3신경학적 신호전달 
+  - name: 3. 딥러닝적 뉴런 
+    subsections:
+      - name : 3-1 뉴런과 시냅스
+      - name : 3-2 MLP 뉴런 
+      - name : 3-3 CNN 뉴런
+      - name : 3-4 GPT 뉴런 
+title: '신경망의 뉴런은 얼마나 신경세포와 닮았는가'
+description: '종종 딥러닝의 뉴런은 신경세포에 비유된다. 수많은 뉴런들이 결정을 내리는 것이 신경세포와 닮았있기 때문이다. 그러나, 그 둘의 메커니즘이 어디까지 똑같은지 우리는 자세히 모른다. 이 글은 신경학적인 방식으로 딥러닝을 해석하는 글이다.'
+---
+
+# 1. 소개
+
+인간을 이해하기 위한 수많은 시도들은 생물학, 신경학, 동물행동학, 철학등 다양한 분야에서 이루어졌다. 
+그 중에서 인간의 인지과정을 이해하는 것은 인간이 고차원적인 의식을 가지고 있다는 믿음하에 뇌에 존재하는 수많은 뉴런들의 역할을 찾는 방식으로 신경학적 분석이 가능했다. 
+의심의 여지없이 뉴런이 더 많으면 연결고리인 시냅스의 수가 더 많아지고 생물의 지능은 오른다. 그러나 수많은 뉴런들을 제대로 이해하는 것은 뉴런 간의 조합이 너무 많기 때문에 쉽지 않다. 그럼에도 불구하고 신경세포들을 이해하는 것은 인간이 가지고 있는 메커니즘을 이해하는데 도움을 준다. 
+
+ 딥러닝을 연구하는 내가 이 글을 적는 것은 신경학적 뉴런보다는 딥러닝적 뉴런에 대해서 고민하였고, 그들을 해석하는 방법이 **신경학적 뉴런의 매커니즘**을 제대로 이해하는 게 도움이 되는 것을 알게 되었기 때문이다. 두 가지는 서로 너무 닮아있지만, 분명한 차이를 지니고 있다. 이 글에서는 그들을 분석하여, 딥러닝과 신경학 모두에 뉴런을 바라보는 새로운 관점을 알리고자 한다. 신경학적 뉴런과 딥러닝적 뉴런이 얼마나 닮아있는지, 어떠한 차이점이 딥러닝 모델과 유기체를 구분하는지 살펴보자. 
+
+딥러닝 분야는 인간을 모델링 하는데 초점을 맞췄으며, 인간이 할 수 있는 것이 모델이 가능한지 여전히 궁금증으로 남아있다. 이러한 꿈으로부터 사람의 인지적 행동의 근원인 뉴런을 딥러닝에 비유한다. 그러나, 비유에 대한 근거는 사람의 뇌와 몸에 있는 수 많은 신경세포들이 딥러닝의 파라미터들과 유사하다는 것으로 정확한 뉴런의 정의가 애매하다. 적어도 내가 아는 수준에서 딥러닝적 뉴런의 정의는 명확하지 않은데, 왜냐하면 딥러닝 내부는 수많은 값들이 존재하며 정확히 어떤 부분을 뉴런이라고 칭해야 하는지 불분명하기 때문이다. 예를 들어서, 3개의 `Linear` 레어어를 쌓는 경우 정확히 어느 부분을 뉴런으로 칭해야 하는지 불명확하다<d-footnote> 딥러닝 모델은 `Weight` 와 `Activation` 함수 $\sigma$ 로 다음과 같이 표현할 수 있는데, 해당 부분에서 뉴런이 몇개인지 불명확하다.  $f(x) = \sigma(W_1\sigma(W_2\sigma(W_3 x)))$  </d-footnote>. 
+
+딥러닝을 뉴런과 시냅스들로 이해하기 위해서는 먼저 신경학적 뉴런의 계산과정을 명확하게 파악하고, 이로부터 딥러닝이 신경세포와 **동일하게 계산하는 부분을 밝혀내는 과정**이 필요하다. 
+이 글은 **신경학적 뉴런**으로부터 **딥러닝적 뉴런**을 정의하고, 두 뉴런 정의들간의 공통점과 차이점을 밝히며, 딥러닝 내부를 해석하는 다양한 용어들에 대해서 그 의미를 제시한다. 
+
+# 2. 신경학적 뉴런 
+
+인간의 몸에는 수많은 세포들이 있는데, 세포들 중에서 신경의 전달을 목적으로 하는 신경세포, `뉴런`이 있다. 뉴런들은 서로 의사소통을 하며 전기적인 신호가 전파되는데, 두 뉴런이 연결됨으로써 생기는 접합지점은 `시냅스`라고 한다. 
+* `뉴런` : 개별 세포.
+* `시냅스` : 두 개의 뉴런이 연결된 부분 
+인간의 뇌에는 약 8,600억개의 뉴런이 존재하며, 하나의 뉴런은 7,000 개의 다른 뉴런들과 연결되는 시냅스를 가진다. 따라서, 뇌에 존재하는 전체 시냅스의 수는 다음과 같이 계산된다. 
+$$
+\begin{gather}
+\text{뉴런 수} \times \text{뉴런 당 시냅스 수} \approx \text{전체 시냅수 수} \\ 
+\Rightarrow 8600 \text{억} \times 7,000 \approx 600 \text{조} \\ 
+\Rightarrow  8.6 \cdot 10^{12} \times 7 \cdot 10^3 \approx 6.0 \cdot 10^{15}  \text{(⭐️)}
+\end{gather}
+$$
+
+(⭐️) 이 개수를 기억하자. 나중에 GPT3 <d-cite key="brown2020language"/> 랑 사람의 시냅스 수를 비교하기 위해서!
+
+## 2-1 뉴런 
+
+
+<div>
+<iframe width="340" height="315"
+src="https://www.youtube.com/embed/SczOfOXY17U">
+</iframe>
+<iframe width="340" height="315"
+src="https://www.youtube.com/embed/GIGqp6_PG6k">
+</iframe>
+</div>
+
+
+뉴런들이 서로 통신하는 방법은 **화학적 물질을 전달하여, 전기적 상태를 변경하는 방식**이다. 이를 이해하기 위해서 먼저, 뉴런이 어떤식으로 구성되는지 살펴보자. 
+뉴런은 다음과 같은 요소들로 구성되어 있다.
+
+
+<figure style="text-align:center; display:block;" >
+<img src="/assets/kor/neurons_as_neurons/neuron.png" style="width:100%">
+<figcaption>
+  Abstraction of a neuron. 
+</figcaption>
+</figure>
+
+* `Dendrites` : 다른 뉴런들로부터 화학물질을 받는 부분으로 송신을 맡는다.
+* `SOMA` (Nuclear) : 뉴런의 핵
+* `Axon` : 긴 허리로 `Dendrites` 와 `Axon Terminal` 을 연결하는 부위이다. 전기적 신호를 전달한다. 
+* `Axon Terminals` : 다른 뉴런들로 화학물질을 전달하는 부분으로 발신을 맡는다. 
+
+
+뉴런은 기본적으로 음전하(Negative Ion) -70mv 를 띄고 있으며, `Dendrite` 에 $Cl^{-}$ 음이온이 전달될 경우, 그대로 음전하를 띈다. 
+만일 `Dendrite`에 $Na^{+}$와 같은 양이온이 전달되는 경우, 음전하를 띄던 `Dendrite` 부분은 양전하를 띄게 된다. 그리고, 전하를 일정하게 유지하는 `Neutral Charge Equilibrium`  상태를 만족하기 위해서, 양전하는 음전하 방향으로 값이 전달된다. 이 때 지나는 통로를 `Axon`이라고 부르며, `Axon Terminal` 이 양전하 상태가 되어 화학물질을 내보내는 상태로 변경된다. 
+
+<figure style="text-align:center; display:block; grid-column:middle; " >
+<img src="/assets/kor/neurons_as_neurons/neuron_state.png" style="width:120%">
+<figcaption>
+  Abstraction of a neuron. 
+</figcaption>
+</figure>
+
+
+> **요약** : 뉴런이 다른 뉴런들로부터 화학물질을 받아서 양전하 상태가 되면 화학물질을 내보내고, 결과적으로 연쇄적인 상태변화가 일어난다. 
+
+
+> **(Option)** 전달하는 화학물질 
+위에서 음이온과 양이온을 전달한다고 하였지만, 사실 정확하게는 다양한 종류의 화학물질이 있으며, 그 역할에 대해서 신경학에서는 더 자세히 다룬다. 여기서는 단순히 활성화 관점에서만 살피므로 필요한 내용은 아니다.
+* Amino Acids (Most Functions)
+  * Glutamate (가장 흔한) (**excitatory**)
+  * GABA (Gamma-Aminobutyric acid) -  (brain)  (**inhibitory**)
+  * Glycine  - (spine) (**inhibitory**)
+* Monoamines (Attention, Cognition, Emotion)
+  * Serotonin 
+  * Histamine
+  * Catecholamines
+    * Dopamine
+    * Epinephrine (Adrenaline)
+    * Norepinephrine (Peripheral nervous system)
+* Peptides (chain of amino acids) (Pain)
+  * Opioids
+    * Endorphin (Pain)
+* Others 
+  * Acetylcholine (Autonomic Nervous System, muscles)
+
+## 2-2 시냅스
+
+정보를 받는 뉴런에게는 Dendrite 가, 정보를 전달하는 뉴런에는 Axon Terminal 이 관여하며 이 두가지가 연결된 부분을 `시냅스`라고 부른다. 
+따라서 시냅스는 두 개의 뉴런이 연결되어 발생하는 지점이며, 신호를 전달해주는 쪽과 받는 쪽을 구분하여 다음과 같이 부른다. 
+* **Presynaptic Neuron** : `Axon Terminal`로 신호를 전달하는 뉴런
+* **Postynaptic Neuron** : `Dendrite`으로 신호를 전달받는 뉴런
+
+<figure style="text-align:center; display:block;width:100;" >
+<img src="/assets/kor/neurons_as_neurons/synapse.png" style="width:100%">
+<figcaption>
+  Abstraction of a neuron. 
+</figcaption>
+</figure>
+
+하나의 뉴런이 전달하는 전기적 상태는 단순히 (+) 혹은 (-) 이지만 뉴런이 받는 화학물질은 여러 개의 `Dendrite` 으로부터 발생한다. 따라서, 여러 뉴런의 전기적 신호의 합이 최종적으로 `Axon` 을 통해서 전달하는 전기적 신호로 생각될 수 있다. 이는 각 Dendrite 들이 전달받은 음이온 또는 양이온의 신경전달물질 (Neurotransmitters) $T_1, T_2, \cdots$ 로부터 전기적 신호가 결정됨을 나타낸다. 
+
+$$
+\text{전기적 신호} = T_1 + T_2 + T_3 + T_4 + \cdots
+$$
+
+따라서, 뉴런이 전달하는 전기적 신호는 **무조건 1개**이다. 그리고 이 상태는 여러 개의 `Axon Terminal`에 영향을 미치므로, 전파된 정보는 여러 뉴런들에 연결되어 전파된다. 
+
+<figure style="text-align:center; display:block;width:100;" >
+<img src="/assets/kor/neurons_as_neurons/transmission.png" style="width:100%">
+<figcaption>
+  Abstraction of a neuron. 
+</figcaption>
+</figure>
+
+
+만일 전달받은 화학물질들 Neurotransmitters 의 전기적 상태에 대해서 3가지 가능성이 존재한다. 
+ 1. **모두 양이온들이라면, 뉴런은 활성화된다.** 
+ 2. **모두 음이온들이라면, 뉴런은 비활성화된다.**  
+ 3. **만일 음이온과 양이온이 적절하게 섞여있다면, 활성화될수도 안될수도 있다.** 
+
+그렇다면 전달하는 화학물질들 Neurotransmitters의 상태에 대해서 받는 쪽 뉴런을 활성화시키는지, 억제시키는지에 따라서 물질을 구분할 수 있다. 이러한 뉴런이 전달하는 물질의 구분은 딥러닝의 뉴런을 Excitatory 와 Inhibitory로 구분한 **Thread: Circuits** <d-cite key="cammarata2020thread"/> [[post](https://distill.pub/2020/circuits/)] 에서도 나타나는 개념으로, 뉴런들간의 관계를 파악하는데 아주 중요한 역할을 한다. 
+
+> **흥분과 억제 신경전달물질, Excitatory and Inhibitory Neurotransmitters**
+* 🔥 흥분 신경전달물질 (Excitatory Neurotransmitters)
+  * Na+ 
+  * Acetylcholine
+  * Noradrenaline 
+  * Glutamate 
+* ❄️ 억제 신경전달물질 (Inhibitory Neurotransmitters)
+  * Glycine
+  * GABA (gamma-aminobutyric acid)
+  * Cl-
+
+<figure style="text-align:center; display:block;width:100;grid-column:middle;" class='transform'>
+<img src="/assets/kor/neurons_as_neurons/excitation_and_inhibition.png" style="width:100%">
+<figcaption>
+  Abstraction of a neuron. 
+</figcaption>
+</figure>
+
+## 2-3  신경학적 신호전달체계
+
+신경세포들은 화학적 물질들을 통해서 전기적 상태가 바뀌고 화학물질을 내보냄으로써 연결되어있는 신경세포들에게 통신을 하는 방식이다. 
+인간 신경의 30% 이상을 차지하는 시신경으로 처리과정을 생각해보면, 다음과 같은 예시를 생각할 수 있다. 
+
+1. 망막으로부터 빛에 대한 정보를 입력받는다. (**강아지 입력** 🦮)  
+2. 시신경세포들이 활성화되고 정보를 뇌에 전달한다. (**시신경 뉴런** 👀)
+3. 뇌에 존재하는 세포들이 활성화됨으로써 여러가지 생각이 일어난다. 
+  * 강아지 그림을 보고 강아지라는 단어를 떠올린다. (**강아지 뉴런** 🐶)
+  * 강아지 단어가 떠올라 고양이 단어가 떠오른다. (**고양이 뉴런** 😸)
+  * 강아지가 앞으로 움직일 방향을 예측한다. (**미래예측 뉴런** ⌛️)
+  * 강아지에 대한 트라우마가 떠오른다. (**장기기억 뉴런** 🐾)
+  * 트라우마가 떠올라 불편한 기분이 든다. (**감정 뉴런** 😢)
+
+사람은 수많은 인지과정을 거치므로 정확히 어떤 뉴런이 어떤 역할을 가지는지, 현재 뇌는 어떤 정보를 처리하고 있는지 명확하지 않다. 또한, 뉴런들의 값을 모두 추적하기 위해서도 많은 현대기술들이 필요하다. 그러나 이와 다르게 딥러닝 모델들은 입력에 대해서 딥러닝 모델의 뉴런들이 어떤식으로 반응하는지 값을 추적할 수 있으며, 반응을 확인할 수 있다. 또한 뉴런들간의 연결이 존재한다면 이를 정량적으로 디버깅할 수 있다. 만일 딥러닝의 뉴런이 신경세포의 통신과정과 비슷하게 정보를 저장하고 전달한다면, 딥러닝의 뉴런을 분석하는 것이 신경학의 뉴런을 분석하는 열쇠가 될 수 있다. 그런데, *딥러닝에서 뉴런이라는 것은 정확하게 뭘까?* 이에 대한 답을 내려보고자 한다. 
+
+
+# 3. 딥러닝적 뉴런 
+
+딥러닝 모델의 내부에 대해서 가지고 있는 생각은 대부분 다음과 같을 것이다.  
+
+> 수많은 파라미터들이 레어이마다 존재하며, 입력과 출력을 End-to-End 로 계산하는 블랙박스 모델 
+
+모델 내부를 분석하는 것은 너무 어려운 일이며, 내부에서 어떤 일이 일어나는지, 파라미터들이 어떤 역활이 있는지 명확하지 않다. 
+그러나 딥러닝적 뉴런에 대한 이해한다면, 모델의 내부를 뉴런들의 통신으로 생각할 수 있고 딥러닝 모델에 대해서 다음과 같은 관점이 생긴다. 
+
+> 각 레이어마다 뉴런들이 독립적으로 입력의 활성화 정도를 계산하는 신경학적 신경구조 
+
+## 3-1  뉴런과 시냅스
+
+신경학적 뉴런에서 하나의 뉴런은 여러개의 `Dendrite` 을 가져서 정보를 받고, 출력으로 하나의 전기적 신호가 생긴다고 설명하였다. 
+이 과정은 딥러닝에서 입력벡터에 대해서 파라미터를 내적을 계산하는 것과 동일한 계산이다. 
+
+<figure style="text-align:center; display:block;width:100;grid-column:middle;">
+<img src="/assets/kor/neurons_as_neurons/neuron_as_neuron.png" style="width:100%">
+<figcaption>
+  Abstraction of a neuron. 
+</figcaption>
+</figure>
+
+* 신경학적 뉴런의 연산
+  * **뉴런의 `Dendrites에` 연결된 뉴런들**: $N_1, N_2, N_3, \cdots, N_k $
+  * **각 뉴런들의 활성화값**: $a_1, a_2, a_3, \cdots, a_k $ (플러스 정도, 뉴런이 음전하 상태이면 0)
+  * **각 뉴런들 Axon Terminal의 상태**: $w_1, w_2, w_3, \cdots, w_k $ (내보내는 신경전달물질 음전하~양전하)
+  * **각 뉴런들이 전파하는 값**: $w_1 \cdot a_1 , w_2 \cdot a_2, w_3 \cdot a_3, \cdots, w_k \cdot a_k $
+  * **하나의 뉴런에 활성화 정도** : $w_1 \cdot a_1 + w_2 \cdot a_2 + w_3 \cdot a_3 + \cdots + w_k \cdot a_k $
+* 딥러닝 연산 (`Weight` - `Activation` 내적)
+  * **파라미터** :  $w_1, w_2, w_3, \cdots, w_k $
+  * **Representation** : $a_1, a_2, a_3, \cdots, a_k $ 
+  * **Output** : $w_1 \cdot a_1 + w_2 \cdot a_2 + w_3 \cdot a_3 + \cdots + w_k \cdot a_k $
+
+신경학적 뉴런의 역할이 신호들을 결합하여, 새로운 신호를 내보내는 것으로 고려한다면 딥러닝에서 `Linear Sum` 을 하는 Weight들의 결합이 뉴런이다. 따라서, 정의하기로 Neuron 은 다음과 같다. 
+
+> **🚀 정의: 딥러닝적 뉴런** : Weight 들의 집합 (입력에 대해서 결합을 하는 Weight) <br>
+**🚀 정의: 딥러닝적 시냅스** : 개별 Weight
+
+> Tip: 위에서 사람의 시냅스 개수는 600조 개수라고 하였는데 (⭐️), GPT3 의 파라미터 개수는 1750억개이다. 따라서, GPT3 가 사람보다 시냅스의 개수가 더 적을 것을 알 수 있다. 
+
+딥러닝적 뉴런의 정의를 내렸으니, 이제 실제 딥러닝 모듈들에서 몇 개의 뉴런과 시냅스가 존재하는지 살펴보자. 
+
+### 3-2 MLP 뉴런 
+가장 간단한 형태인 $W \in \mathbb{R}^{m\times n}$ 매트릭스를 곱하는 선형 모델을 살펴보자. 
+
+$$y=Wx$$
+
+선형모델은 입력 벡터 $x\in \mathbb{R}^{n}$ 에 대해서 $m$ 개의 독립적인 weight vector 들이 각각 내적한 결과물로 생각할 수 있다. 
+
+* 📌 뉴런 개수 : $m$
+* 📌 뉴런 당 시냅스 개수 : $n$  
+* 📌 전체 시냅스 개수 : $m\times n$
+
+<figure style="text-align:center; display:block;width:100;" >
+<img src="/assets/kor/neurons_as_neurons/linear.png" style="width:100%">
+<figcaption>
+  Abstraction of a neuron. 
+</figcaption>
+</figure>
+
+
+<figure style="text-align:center; display:block;width:100;">
+<img src="/assets/kor/neurons_as_neurons/mlp.png" style="width:100%">
+<figcaption>
+  Abstraction of a neuron. 
+</figcaption>
+</figure>
+
+
+### 3-3 CNN 뉴런
+
+> 가정: 모델 Weight 형태 2D Conv (**out_channels**, in_channels, kernel, kernel)
+
+2D convolutional layer의 경우 weight 벡터를 다음과 같은 형태를 띈다. 여기서 **out_channel** 이 뉴런을 구분하는 역할을 하며, **kernel**은 입력에 대한 2차원적 위치 정보를 담는 역할을 한다. 선형모델의 뉴런과는 다르게 합성곱 연산을 하므로, 입력의 부분들을 Stride 만큼 돌리면서 활성화를 한다. 그러나 뉴런의 개수는 단순히 **out_channel** 개수이다. 극단적으로 아웃채널의 개수가 1개라면, 입력 채널의 개수에 상관없이 뉴런의 개수는 1개이다. 
+
+* 📌 뉴런 개수 : **out_channels**
+* 📌 뉴런 당 시냅스 개수 : $\text{out_channels} \times \text{kernel} \times \text{kernel}$  
+* 📌 전체 시냅스 개수 : $\text{out_channels} \times \text{out_channels} \times \text{kernel} \times \text{kernel}$  
+
+
+### 3-4 GPT Block 뉴런 
+
+GPT Block 에는 크게 두 가지 모듈이 있다. `MLP` 와 `Attention` 
+
+`MLP` 를 해석하는 방법은 위에서 Linear 를 한 것과 동일하나, 2개를 연속적으로 쌓았다. 두 개의 레이어는 서로 다른 역할을 하는 것으로 알려져 있는데, 
+첫 번째 레이어는 Key, 두 번째 레이어는 Value이다. Weight의 크기는 GPT 잠재벡터 크기의 4배를 가진다. 예를 들어서, 
+GPT3 175B는 12,288 의 잠재백터 크기를 가지고 Key Weight은 (49,152, 12,288) 사이즈, Value Weight은 (12,288 * 49,152) 사이즈이다. 
+이로부터 계산되는 `MLP`의 뉴런 수는 다음과 같다. 
+
+* 📌 (`MLP`) 뉴런 개수 : **61,440** = 49,152 (K) + 12,288 (V)
+* 📌 (`MLP`) 뉴런 당 시냅스 개수  : **12,288** (K), 49,152 (V)
+* 📌 (`MLP`) 전체 시냅스 개수 : **1,207,959,552** = 49,152 $\times$ 12,288 (K) +  12,288 $\times$ 49,152 (V)
+
+이제 Attention 을 해석해보자. 
+
+Query, Key, Value, Output Matrix 의 사이즈는 모두 잠재벡터사이즈이다. <d-footnote> QK, OV  circuits 을 가정하는 경우 파라미터는 더 줄어들어야 한다. 그러나, 여기서는 단순히 Q와 K를 따로, O 와 V를 따로 고려하였다.  </d-footnote>
+
+* 📌 (`ATTN`) 뉴런 개수 : **61,440** = 12,288 $\times$ 4 (Q, K, V, O)
+* 📌 (`ATTN`) 뉴런 당 시냅스 개수  : **12,288** (Q, K, V, O)
+* 📌 (`ATTN`) 전체 시냅스 개수 : **603,979,776** = (12,288 $\times$ 4) $\times$ 12,288
+
+블럭 수는 96개이다. 따라서, 블록들로만 구성된 GPT3의 시냅스 수는 다음과 같다. 
+
+* 📌 (`GPT3`) 시냅스 : **193B** (173,946,175,488 = 96 $\times$ (1,207,959,552 + 603,979,776)) <d-footnote>  195B가 아닌 이유: 블록에 포함된 모듈 중에서 LayerNorm이 Affine Transform 에 파라미터가 존재하고, Embedding과 Unembedding에 파라미터가 존재한다. </d-footnote>
+* 📌 (`GPT3`) 뉴런 :  **11M** (11,796,480 = 96 $\times$(61,440+61,440))
+* 📌 (`GPT3`) 뉴런 당 시냅스 수 : **14,745** 
+
+사람의 뉴런당 시냅스의 개수가 7,000개인 것을 가정하면, GPT3 의 경우 뉴런당 시냅스가 2배 정도 더 많은 것을 볼 수 있다. 뉴런당 시냅스의 수가 Hidden dimension 에 비례한 것을 토대로 볼 때, GPT3는 뉴런의 수가 사람보다 적지만 더 많은 뉴런들이 커뮤니케이션을 하는 것으로 생각할 수 있다.  
+
+
+# 4. 연산의 유사점 및 차별점 
+
+신경학적 뉴런과 딥러닝적 뉴런은 정보통신의 측면에서는 유사하다. 여러 가지 정보를 받고 더해서 최종적으로 아웃풋을 내보내는 구조이다. 그러나, 연산의 과정에서 몇 가지 차이가 존재한다. 
+
+
+## 4-1 Forward 방식
+
+ Circular Signal 
+
+## 4-2 피드백 방식 
+
+## 4-3 명확한 모듈의 구분 
+
+
+# 5. 딥러닝이 가진 신경학적 특징 
+
+## 5.1 Branch Specialization 
+
+
+
+# 6. 딥러닝이 가지지 못한 신경학적 특징 
+
+## 6.1 물리적 몸의 상태
+
+## 6.2 추상적 연산의 상태 
+
+
+
+# 7. 파생되는 정의들
+
+
+## 7.1 Activation 
+
+
+## 7.2 Decision Boundary 
+
+
+## 7.3  Manifold 
+
+### Single Neuron
+
+### Multiple Neurons 
+
+
+
+## 7.4 Key-value
+
+
+<figure style="text-align:center; display:block;width:100;">
+<img src="/assets/kor/neurons_as_neurons/key-value.png" style="width:100%">
+<figcaption>
+  Abstraction of a neuron. 
+</figcaption>
+</figure>
+
+<figure style="text-align:center; display:block;width:100;grid-column:middle;">
+<img src="/assets/kor/neurons_as_neurons/key-value-interpretation.png" style="width:120%">
+<figcaption>
+  Abstraction of a neuron. 
+</figcaption>
+</figure>
+
+
+
+## 결론 
