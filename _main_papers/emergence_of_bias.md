@@ -1,10 +1,11 @@
 ---
 layout: header
-title: ""
-description:  
 importance: 1
+img : "/assets/main_papers/emergence-of-bias-in-bert/main.png"
+date : 2023-06-31
+title: "Emergence of Bias"
+description: we hypothesize that even debiased model can have biased representation in internal blocks. To demonstrate the hypothesis, we measure the biases of internal blocks and quantitatively show "where" the bias occurs and how the debiased models still have biased knowledge.
 ---
-
 
 <header style='background:#000040; text-align: center; padding:40px; width:100%;'>
 <h1 style="font-family:'Open Sans', sans-serif; color:white;"> Emergence of Bias in the circuits of BERT </h1>
@@ -59,7 +60,7 @@ Note that every block outputs can be directly mapped to the vocabulary.
 3. Measuring entropy of logits
 </h2>
 <p>
-To quantitatively measure the bias (imbalance of logits), we use entropy of probabilities over the democratic words such as $\{he, she, woman, man\}$ for <it> Gender </it> democratic axis.  Figure below shows the entropy over attention modules and MLP modules over all layers. 
+To quantitatively measure the bias (imbalance of logits), we use entropy of probabilities over the democratic words such as $\{he, she, woman, man\}$ for <it> Gender </it> democratic axis. Figure below shows the entropy over attention modules and MLP modules over all layers. 
 We observe that the emergences of imbalance are quite different for each democratic axis. 
 In addition, MLP on [MASK] token has imbalance first than ATTN. 
 </p>
@@ -92,7 +93,7 @@ Figure below shows the MLBs over all layers. As color is close to red, the [MASK
 </h2>
 <p>
 We conjecture that the bias of logit-lens for the selected layer only debias locally. That is, the logits of other layers are still biased. 
-Figure below shows the marginal contributions of layers before debias and after debias. Note that when we select the debias location early, the logits of upper layers are still remaining.  On the other hand, the debias of upper layers results in the survival of biases in the lower layers. 
+Figure below shows the marginal contributions of layers before debias and after debias. Note that when we select the debias location early, the logits of upper layers are still remaining. On the other hand, the debias of upper layers results in the survival of biases in the lower layers. 
 One important observation is that they are sum to zero and the final output is also zero. 
 Therefore, the observation (prediction) is debiased, while the internal layers still have biases. 
 </p>

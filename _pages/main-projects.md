@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: main_projects
 permalink: /main_projects/
 ---

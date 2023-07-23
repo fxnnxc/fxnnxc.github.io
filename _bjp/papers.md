@@ -13,7 +13,6 @@ toc:
   - name: Problems
 title: 'Papers'
 description: 'All the papers...'
-# img: /assets/side_articles/deconvolution/checkboard_example.png
 importance: 2 
 ---
 
@@ -82,3 +81,23 @@ importance: 2
 
 
 
+
+### The Future of Fundamental Science Led by Generative Closed-Loop Artificial Intelligence
+
+* 2023.07 
+
+Regarding the the contribution of generative models on scientific discoveries. 
+
+
+### StyleDrop: Text-To-Image Generation in Any Style
+
+* 2023.06 [[pdf](https://arxiv.org/abs/2306.00983)]
+
+Non-autoregressive modeling, `Muse` + `Style` 
+
+
+### Muse:Text-To-Image Generation via Masked Generative Transformers
+
+* 2023.01 [[pdf](https://arxiv.org/abs/2301.00704)]
+
+Non-autoregressive modeling

@@ -1,16 +1,17 @@
 ---
 layout: default
-description: Main Papers for Interpretability Research
-title: Main Papers
-permalink: /side_papers/
+title: Posts
+description: Posts written in Korean
+permalink: /kor/
 ---
+
 <div class="post">
   <div class="header-bar">
     <h1>{{ page.title }}</h1>
     <h2>{{ page.description }}</h2>
   </div>
   <ul class="post-list">
-    {%- assign sorted_pages = site.side_papers | sort: "date" %}
+    {%- assign sorted_pages = site.kor | sort: "date" %}
     {%- assign sorted_pages = sorted_pages | reverse -%} 
 
     {% for post in sorted_pages %}

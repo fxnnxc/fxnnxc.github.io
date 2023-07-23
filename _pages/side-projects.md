@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: side_projects
 permalink: /side_projects/
 ---

@@ -13,7 +13,7 @@ toc:
   - name: Problems
 title: 'Source Identification for Generative Models'
 description: 'Can we provide the source of generation?'
-img: /assets/side_articles/deconvolution/checkboard_example.png
+img: /assets/bjp/source_identification/sip_main_figure.png
 importance: 2 
 ---
 
@@ -175,9 +175,36 @@ $$
 
 
 
-# About Training 
+
+# Methods
+
+<figure style="display:block; grid-column:middle; width:100%;">
+<img src="/assets/bjp/source_identification/mapping.png">
+<figcaption>
+
+</figcaption>
+</figure>
+
+We propose Source generation fine-tuning framework to learn the auxiliary task. 
 
 
+
+<figure style="display:block; grid-column:middle; width:100%" >
+<img src="/assets/bjp/source_identification/sip_token_attention.png">
+<figcaption>
+  Figure 1. An illustration of token communication in fine-tuned GPT for source generative task. In this example, the generated texts are composed by two texts of sources Wikipedia and Oxford dictionary. 
+</figcaption>
+</figure>
+
+
+<figure style="display:block; grid-column:middle; width:100%;">
+<img src="/assets/bjp/source_identification/sip_main_figure.png">
+<figcaption>
+  Figure 2. Framework of Source Generative Task.  (1) pre-training data is prepared without source tags. (2) A GPT model is trained with pre-training data by language modeling. (3) The pre-training data is tagged with source information. (4) The GPT model is fine-tuned to generate source of the generated texts.
+</figcaption>
+</figure>
+
+  
 
 ## Related Work 
 

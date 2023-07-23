@@ -127,6 +127,9 @@ collections:
   bjp:
     output: true
     permalink: /bjp/:path/
+  kor:
+    output: true
+    permalink: /kor/:path/
 
 
 news_limit: 10000

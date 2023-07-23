@@ -5,9 +5,6 @@ inline: true
 ---
 
 📜 Paper is published in [ICCAS](http://2021.iccas.org/) 
-
-<br/>
-
 2021 International Conference on Control, Automation and Systems
 
 <br/>
