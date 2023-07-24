@@ -73,11 +73,11 @@
           <nav class="l-text figcaption">
           <h3>Contents</h3>
             {% for section in page.toc -%}
-            <div style="margin-bottom:0.1em;"><a href="#{{ section.name | slugify }}">{{ section.name }}</a></div>
+            <div style="margin:0.0em; margin-bottom: 10px;"><a style="margin:0.0em;" href="#{{ section.name | slugify }}">{{ section.name }}</a></div>
             {% if section.subsections -%}
-            <ul>
+            <ul  style="margin:0.0em; ">
               {% for subsection in section.subsections -%}
-              <li><a href="#{{ subsection.name | slugify }}">{{ subsection.name }}</a></li>
+              <li  style="margin:0.0em; margin-bottom: 1px;"><a style="margin:0.0em;"  href="#{{ subsection.name | slugify }}">{{ subsection.name }}</a></li>
               {% endfor %}
             </ul>
             {%- endif -%}
