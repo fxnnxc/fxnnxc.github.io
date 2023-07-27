@@ -101,3 +101,29 @@ Non-autoregressive modeling, `Muse` + `Style`
 * 2023.01 [[pdf](https://arxiv.org/abs/2301.00704)]
 
 Non-autoregressive modeling
+
+
+
+## A toy model of universality: Reverse engineering how networks learn group operations 
+
+
+* 2023.07 <d-cite key="chughtai2023toy">
+
+
+A representation is a homomorphism (weight matrix) which maps input vector to the output vector. 
+The paper deals the universality<d-footnote> Universality: whether different models have similar features </d-footnote> with one-layer transformer as *Transformers learn group theoretic automata* <d-cite key="liu2022transformers">. 
+
+## Acquisition of chess knowledge in alphazero
+* * 2022.11 <d-cite key="mcgrath2022acquisition">
+
+
+##  Emergent world representations: Exploring a sequence model trained on a synthetic task
+
+* 2022 <d-cite key="li2022emergent">
+
+
+
+---
+
+
+---

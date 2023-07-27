@@ -127,6 +127,9 @@ collections:
   bjp:
     output: true
     permalink: /bjp/:path/
+  share:
+    output: true
+    permalink: /share/:path/
   kor:
     output: true
     permalink: /kor/:path/
