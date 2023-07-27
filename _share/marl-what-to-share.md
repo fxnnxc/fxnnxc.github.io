@@ -54,6 +54,7 @@ Before proceeding, we review the previous methods in MARL.
 Note that our problem is in the field of **Communication Skills** and **Modeling What to Share**, and is orthogonal to the previous methods as we design the package style rather than communication styles. 
 
 
+
 # Proposed Method 
 
 
@@ -65,6 +66,16 @@ We believe that the simplicity of the observation is necessary for the message, 
 
 
 <figure style="text-align:center">
+<img align src="/assets/bjp/marl-what-to-share/subjectivity.png" style="width:100%">
+<figcaption>
+Comparison between the previous message passing and the subjectivity-based message passing. 
+The previous method generate messages with a deep neural network and passed the information to the next agent. On the other hand, the subjectivity-based message pass a message which is gathered representations leveled by subjectivity. 
+</figcaption>
+</figure>
+
+
+
+<figure style="text-align:center">
 <img align src="/assets/bjp/marl-what-to-share/simple_communication.png" style="width:100%">
 <figcaption>
 The two levels communication packages. The raw observation and the processed information of the agent are passed to the second agent. The second agent process the information with gating mechanism to determine the necessary information. 
@@ -72,13 +83,13 @@ The two levels communication packages. The raw observation and the processed inf
 </figure>
 
 
+# Why Subjectivity 
 
-<figure style="text-align:center">
-<img align src="/assets/bjp/marl-what-to-share/subjectivity.png" style="width:100%">
-<figcaption>
+The general belief  of a DNN is that the hidden representation is a compact representation of the input. Therefore, it may not be necessary to gather information based on the subjectivity. 
+However, the recent progress in the interpretability field have found that the internal neurons are activated by specific patterns and they form circuits for complex features <d-cite key="olah2020zoom"/><d-cite key="cammarata2021curve"/>. 
+Therefore, it is natural to think that  two models can capture the very different concepts if their circuits are differently formed. In addition, the last output of a model is a complex feature of the input and could not encode enough information of the input. Therefore, the hidden representation have neither full input information nor common information between other models. 
 
-</figcaption>
-</figure>
+
 
 
 
