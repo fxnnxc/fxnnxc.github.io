@@ -70,12 +70,12 @@
       <d-article>
         {% if page.toc -%}
         <d-contents>
-          <nav class="l-text figcaption">
+          <nav class="l-text figcaption" style="line-height: 15px;">
           <h3>Contents</h3>
             {% for section in page.toc -%}
-            <div style="margin:0.0em; margin-bottom: 10px;"><a style="margin:0.0em;" href="#{{ section.name | slugify }}">{{ section.name }}</a></div>
+            <div style="margin:0.0em; margin-bottom: 10px;margin-top: 10px;"><a style="margin:0.0em;" href="#{{ section.name | slugify }}">{{ section.name }}</a></div>
             {% if section.subsections -%}
-            <ul  style="margin:0.0em; ">
+            <ul  style="margin:0.0em;margin-bottom: 5px; ">
               {% for subsection in section.subsections -%}
               <li  style="margin:0.0em; margin-bottom: 1px;"><a style="margin:0.0em;"  href="#{{ subsection.name | slugify }}">{{ subsection.name }}</a></li>
               {% endfor %}

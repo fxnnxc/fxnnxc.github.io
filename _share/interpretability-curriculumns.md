@@ -30,6 +30,12 @@ img:
 |:------:|-----------|---------------|
 | **Chaper 1. Neuron** | Neurons in Neuroscience |
 |     |  Neurons in Deep Learning |
+|     |  Interpret Neurons in MLP |
+|     |  Interpret Neurons in CNN |
+|     |  Interpret Neurons in RNN |
+|     |  Interpret Neurons in Transformer |
+|     | Probing Neurons | 
+|     | Class Activation Vector |  
 |||
 |  ???   |  Logit Lens |
 | **CNN** | Channels | 
@@ -52,25 +58,35 @@ img:
 
 | Tool | Tag |   Summary  | Related Papers |
 |-----:|-----------|---------------|:---| 
-| CAV (Concept Activation Vector) |  - |  <d-cite key="mcgrath2022acquisition"/> |
+| Linear Probing | `` |  |   <d-cite key="mcgrath2022acquisition"/><d-cite key="li2022emergent"/>  | 
+| Non-Linear Probing | `` |  |   <d-cite key="li2022emergent"/>  | 
+| CAV (Concept Activation Vector) |  - - | - |  <d-cite key="mcgrath2022acquisition"/> |
 | Logit Lens | - | - | 
 | NMF (Non-negative Matrix Factorization) | `Dimension Reduction`  | - | 
 | Feature Visualization (Deep Dream) |  `Neuron` |
-| Activation Atlas |   
+| Activation Atlas |   ? | Summary | - |
 | Decision Boundary |  `Neuron`  | 
 | What-When-Where visualization  | `Neuron` | CAV Test accuracy  for all layers, training epoch and concept    | <d-cite key="mcgrath2022acquisition"/> | 
 | Network Dissect | `Neuron`  | Find neurons via heatmap overlapping | |
-| CCD (Concept Confidence Deviation) |`Metric` |  | <d-cite key="patel2023conceptbed">
-| Integrated Gradient | `Attribution`| 
+| CCD (Concept Confidence Deviation) |`Metric` |  | <d-cite key="patel2023conceptbed"/>| 
+| Integrated Gradient | `Attribution`| Summary | - | 
+| Latent Saliency Maps | `Attribution` |  Summary  | <d-cite key="li2022emergent"/>  | 
+| Activation Intervention <br> Activation Patch | `Neuron` | Summary | <d-cite key="li2022emergent"/><d-cite key="meng2022locating"/>  | 
+
+
 
 </div>
 
 
 # Concepts 
 
+<div style="display:block; grid-column:middle; width:120%;margin-left:-40px;padding-right:50px;" markdown="1" >
+
 | Concept | Summary | Related Papers | 
 | --------|--------|--------|
 | Grokking | The phenomena that generalization is slower than training performance|  -- |
-| 
+| Surface Statistics | Model relies on spurious correlations.  <br> A long list of correlations that do not reflect a causal model of the process generating the sequence. |  <d-cite key="li2022emergent"/> | 
 
+
+</div>
 
