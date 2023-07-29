@@ -1,5 +1,5 @@
 ---
-layout: distill
+layout: share-distill
 authors: 
     - name: Bumjin Park
       affiliations:
