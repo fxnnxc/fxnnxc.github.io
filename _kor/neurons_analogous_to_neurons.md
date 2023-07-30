@@ -361,4 +361,4 @@ Figure. 명시적으로 나뉜 두 개의 브랜치의 뉴런들이 어떤 정�
 
 ## Acknowledgement 
 
-I'm especially thank Yeonjea Kim for the ideas on the neurons in neuroscience 🙂
+I especially thank Yeonjea Kim for the ideas on the neurons in neuroscience 🙂
