@@ -40,8 +40,8 @@ permalink: /side_articles/
           {% if tags != "" %}
           &nbsp; &middot; &nbsp;
             {% for tag in post.tags %}
-            <a href="{{ tag | prepend: '/blog/tag/' | prepend: site.baseurl}}">
-              <i class="fas fa-hashtag fa-sm"></i> {{ tag }}</a> &nbsp;
+            
+              <i class="fas fa-hashtag fa-sm"></i> {{ tag }} &nbsp;
               {% endfor %}
           {% endif %}
 

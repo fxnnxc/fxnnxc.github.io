@@ -9,8 +9,8 @@ giscus_comments: true
 disqus_comments: true
 date: 2023-07-28
 featured: true
-# img: /assets/side_articles/nmf/selection.png
-title: '뉴런을 해석하는 뉴런'
+img: /assets/kor/neurons_as_neurons/transmission.png
+title: '뉴런 - 3. 뉴런을 해석하는 뉴런'
 description: '딥러닝 모델의 뉴런을 해석하는 방식은 여러가지가 있지만, Probing은 뉴런의 아웃풋을 기반으로 특징을 추론할 수 있다면 특징을 가지는 뉴런으로 인식하는 방법이다.'
 ---
 

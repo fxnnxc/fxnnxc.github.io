@@ -108,7 +108,7 @@ img:
 | Concept | Summary | Related Papers | 
 | --------|--------|--------|
 | Grokking | The phenomena that generalization is slower than training performance|  -- |
-| Surface Statistics | Model relies on spurious correlations.  <br> A long list of correlations that do not reflect a causal model of the process generating the sequence. |  <d-cite key="li2022emergent"/> | 
+| Surface Statistics | Model relies on spurious correlations.  <br> A long list of correlations that do not reflect a causal model of the process generating the sequence. |  <d-cite  key="li2022emergent"/>| 
 
 
 </div>

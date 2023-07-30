@@ -8,8 +8,9 @@ bibliography: all.bib
 giscus_comments: true
 disqus_comments: true
 date: 2023-07-29
+img: /assets/kor/neurons_as_neurons/decision_boundary.png
 featured: true
-title: '다중 뉴런 분석'
+title: '뉴런 - 4. 다중 뉴런 분석'
 description: '여러 개의 뉴런의 활성화를 동시에 고려하는 방법에 대하여'
 ---
 딥러닝 내부는 많은 파라미터들로 이루어져 있다. 이 파라미터를 좀더 큰 단위로 묶는다면 뉴런이라는 개념을 생각할 수 있는데, 뉴런은 특정한 컨셉이나 패턴에 반응하는 것이 알려져 있다 <d-cite key="mcgrath2022acquisition"/><d-cite key="cammarata2020thread"/><d-cite key="leike2023language"/>. 뉴런이 어떤 정보에 대해서 반응하는지 알아내는 방법은 최근에 많이 연구가 되었는데, 특정한 컨셉에 대해서 활성화되는 식으로 뉴런의 의미를 파악한다. 이러한 개별 뉴런의 분석과는 다르게 딥러닝 내부는 수많은 뉴런들의 상호작용으로부터 결과가 도출되며, 개별 뉴런의 의미를 넘어서 다수의 뉴런의 활성화가 의미를 지닐 수 있다. 이러한 가정을 검증하기 위해서는 우선적으로 **개별뉴런을 분석하는 시스템을 넘어서, 다중 뉴런을 분석하는 방법론**에 대한 연구가 필요하며, 이 글은 다중 뉴런의 활성화를 동시에 분석하는 시각화에 대해서 이야기한다. 

@@ -9,8 +9,8 @@ giscus_comments: true
 disqus_comments: true
 date: 2023-07-23
 featured: true
-# img: /assets/side_articles/nmf/selection.png
-title: '신경망의 뉴런은 얼마나 신경세포와 닮았는가'
+img: /assets/kor/neurons_as_neurons/transmission.png
+title: '뉴런 - 1. 신경망의 뉴런은 얼마나 신경세포와 닮았는가'
 description: '종종 딥러닝의 뉴런은 신경세포에 비유된다. 수많은 뉴런들이 결정을 내리는 것이 신경세포와 닮았있기 때문이다. 그러나, 그 둘의 메커니즘이 어디까지 똑같은지 우리는 자세히 모른다. 이 글은 신경학적인 방식으로 딥러닝을 해석하는 글이다.'
 toc:
   - name: 1. 소개
@@ -20,25 +20,11 @@ toc:
       - name : 2-2 시냅스
       - name : 2-3신경학적 신호전달 
   - name: 3. 딥러닝적 뉴런 
-    subsections:
-      - name : 3-1 뉴런과 시냅스
-      - name : 3-2 MLP 뉴런 
-      - name : 3-3 CNN 뉴런
-      - name : 3-4 GPT 뉴런
   - name: 4. 신호전달 방식 비교 
     subsections:
       - name : 4-1 신호 전달 방식
       - name : 4-2 피드백 방식
-  - name: 5. 딥러닝 뉴런에게 있는 것 
-  - name: 6. 딥러닝 뉴런에게 없는 것
-    subsections:
-      - name : 6.1 물리적 몸의 상태
-      - name : 6.2 추상적 연산의 상태 
-  - name: 7. 딥러닝적 뉴런 해석  
-    subsections:
-      - name : 7.1 Activation
-      - name : 7.2 Decision Boundary
-      - name : 7.3  Manifold 
+  - name: 5. 결여된 인지방식
 ---
 
 # 1. 소개
@@ -229,7 +215,7 @@ $$
 
 > 각 레이어마다 뉴런들이 독립적으로 입력의 활성화 정도를 계산하는 신경학적 구조 
 
-## 3-1 뉴런과 시냅스
+## 뉴런과 시냅스
 
 신경학적 뉴런에서 하나의 뉴런은 여러개의 `Dendrite` 을 가져서 정보를 받고, 출력으로 하나의 전기적 신호가 생긴다고 설명하였다. 
 이 과정은 딥러닝에서 입력벡터에 대해서 파라미터를 내적을 계산하는 것과 동일한 계산이다. 
@@ -240,7 +226,6 @@ $$
   Abstraction of a neuron. 
 </figcaption>
 </figure>
-
 
 
 신경학적 뉴런의 역할이 신호들을 결합하여, 새로운 신호를 내보내는 것으로 고려한다면 딥러닝에서 `Linear Sum` 을 하는 Weight들의 결합이 뉴런이다. 따라서, 정의하기로 Neuron 은 다음과 같다. 
@@ -264,86 +249,6 @@ $$
 
 ---
 
-### 3-2 MLP 뉴런 
-가장 간단한 형태인 $W \in \mathbb{R}^{m\times n}$ 매트릭스를 곱하는 선형 모델을 살펴보자. 
-
-$$y=Wx$$
-
-선형모델은 입력 벡터 $x\in \mathbb{R}^{n}$ 에 대해서 $m$ 개의 독립적인 weight vector 들이 각각 내적한 결과물로 생각할 수 있다. 
-
-* 📌 뉴런 개수 : $m$
-* 📌 뉴런 당 시냅스 개수 : $n$  
-* 📌 전체 시냅스 개수 : $m\times n$
-
-<figure style="text-align:center; display:block;width:100;" >
-<img src="/assets/kor/neurons_as_neurons/linear.png" style="width:100%">
-<figcaption>
-  Abstraction of a neuron. 
-</figcaption>
-</figure>
-
-
-<figure style="text-align:center; display:block;width:100;">
-<img src="/assets/kor/neurons_as_neurons/mlp.png" style="width:100%">
-<figcaption>
-  Abstraction of a neuron. 
-</figcaption>
-</figure>
-
----
-
-### 3-3 CNN 뉴런
-
-> 가정: 모델 Weight 형태 2D Conv (**out_channels**, in_channels, kernel, kernel)
-
-2D convolutional layer의 경우 weight 벡터를 다음과 같은 형태를 띈다. 여기서 **out_channel** 이 뉴런을 구분하는 역할을 하며, **kernel**은 입력에 대한 2차원적 위치 정보를 담는 역할을 한다. 선형모델의 뉴런과는 다르게 합성곱 연산을 하므로, 입력의 부분들을 Stride 만큼 돌리면서 활성화를 한다. 그러나 뉴런의 개수는 단순히 **out_channel** 개수이다. 극단적으로 아웃채널의 개수가 1개라면, 입력 채널의 개수에 상관없이 뉴런의 개수는 1개이다. 
-
-* 📌 뉴런 개수 : **out_channels**
-* 📌 뉴런 당 시냅스 개수 : $\text{out_channels} \times \text{kernel} \times \text{kernel}$  
-* 📌 전체 시냅스 개수 : $\text{out_channels} \times \text{out_channels} \times \text{kernel} \times \text{kernel}$  
-
-
----
-
-### 3-4 GPT Block 뉴런 
-
-GPT Block 에는 크게 두 가지 모듈이 있다. `MLP` 와 `Attention` 
-
-
-#### MLP 
-`MLP` 를 해석하는 방법은 위에서 Linear 를 한 것과 동일하나, 2개를 연속적으로 쌓았다. 두 개의 레이어는 서로 다른 역할을 하는 것으로 알려져 있는데, 
-첫 번째 레이어는 Key, 두 번째 레이어는 Value이다. Weight의 크기는 GPT 잠재벡터 크기의 4배를 가진다. 예를 들어서, 
-GPT3 175B는 12,288 의 잠재백터 크기를 가지고 Key Weight은 (49,152, 12,288) 사이즈, Value Weight은 (12,288 * 49,152) 사이즈이다. 
-이로부터 계산되는 `MLP`의 뉴런 수는 다음과 같다. 
-
-* 📌 (`MLP`) 뉴런 개수 : **61,440** = 49,152 (K) + 12,288 (V)
-* 📌 (`MLP`) 뉴런 당 시냅스 개수  : **12,288** (K), 49,152 (V)
-* 📌 (`MLP`) 전체 시냅스 개수 : **1,207,959,552** = 49,152 $\times$ 12,288 (K) +  12,288 $\times$ 49,152 (V)
-
-----
-#### ATTN
-이제 Attention 을 해석해보자. 
-Query, Key, Value, Output Matrix 의 사이즈는 모두 잠재벡터 사이즈와 동일하다 <d-footnote> QK, OV  circuits 을 가정하는 경우 파라미터는 더 줄어들어야 한다. 그러나, 여기서는 단순히 Q와 K를 따로, O 와 V를 따로 고려하였다.  </d-footnote>. 따라서 ATTN 모듈 내에 존재하는 파라미터 개수는 다음과 같이 계산할 수 있다. 
-
-* 📌 (`ATTN`) 뉴런 개수 : **61,440** = 12,288 $\times$ 4 (Q, K, V, O)
-* 📌 (`ATTN`) 뉴런 당 시냅스 개수  : **12,288** (Q, K, V, O)
-* 📌 (`ATTN`) 전체 시냅스 개수 : **603,979,776** = (12,288 $\times$ 4) $\times$ 12,288
-
-블럭 수는 96개이다. 따라서, 블록들로만 구성된 GPT3의 시냅스 수는 다음과 같다. 
-
----
-#### GPT3  
-
-GPT3 는 96개의 GPT Block을 쌓은 결과물이므로 MLP 와 ATTN 을 96개만큼 쌓으면 모델에 존재하는 뉴런과 시냅스 개수를 측정할 수 있다. 
-
-* 📌 (`GPT3`) 시냅스 : **193B** (173,946,175,488 = 96 $\times$ (1,207,959,552 + 603,979,776)) <d-footnote>  195B가 아닌 이유: 블록에 포함된 모듈 중에서 LayerNorm이 Affine Transform 에 파라미터가 존재하고, Embedding과 Unembedding에 파라미터가 존재한다. </d-footnote>
-* 📌 (`GPT3`) 뉴런 :  **11M** (11,796,480 = 96 $\times$(61,440+61,440))
-* 📌 (`GPT3`) 뉴런 당 시냅스 수 : **14,745** 
-
-사람의 뉴런당 시냅스의 개수가 7,000개인 것을 생각하면, GPT3 의 경우 뉴런당 시냅스가 2배 정도 더 많은 것을 볼 수 있다. 뉴런당 시냅스의 수가 Hidden dimension 에 비례한 것을 토대로 볼 때, GPT3는 뉴런의 수가 사람보다 적지만 더 많은 뉴런들이 커뮤니케이션을 하는 것으로 생각할 수 있다.  
-
-
----
 
 # 4. 신호전달 방식 비교
 
@@ -368,12 +273,6 @@ GPT3 는 96개의 GPT Block을 쌓은 결과물이므로 MLP 와 ATTN 을 96개�
 </figure>
 
 
-
-# 5. 딥러닝 뉴런에게 있는 것
-
-
-## 5.1 Branch Specialization 
-
 뇌의 각 부분들이 역할을 나누는 것처럼 딥러닝도 뉴런들의 역할이 나뉘어져 있다. 
 Classifier 는 
 
@@ -391,7 +290,7 @@ Branch Specialization<d-cite key="voss2021branch"/> [[link](https://distill.pub/
 
 
 
-# 6. 딥러닝 뉴런에게 없는 것
+# 5. 결여된 인지방식
 
 
 
@@ -407,39 +306,6 @@ Branch Specialization<d-cite key="voss2021branch"/> [[link](https://distill.pub/
 신경학적 뇌는 입력이 없더라도 추상적인 상태가 존재한다. 
 그러나, 딥러닝은 입력을 처리하고 나면 끝난다. 
 
-
-# 7. 딥러닝적 뉴런 해석
-
-
-## 7.1 Activation 
-
-
-## 7.2 Decision Boundary 
-
-## 7.3  Manifold 
-
-### Single Neuron
-
-### Multiple Neurons 
-
-
-
-## 7.4 Key-value
-
-
-<figure style="text-align:center; display:block;width:100;">
-<img src="/assets/kor/neurons_as_neurons/key-value.png" style="width:100%">
-<figcaption>
-  Abstraction of a neuron. 
-</figcaption>
-</figure>
-
-<figure style="text-align:center; display:block;width:100;grid-column:middle;">
-<img src="/assets/kor/neurons_as_neurons/key-value-interpretation.png" style="width:120%">
-<figcaption>
-  Abstraction of a neuron. 
-</figcaption>
-</figure>
 
 
 ## 결론 
