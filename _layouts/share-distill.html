@@ -97,6 +97,8 @@
         <d-citation-list></d-citation-list>
       </d-appendix>
 
+
+      <hr>
 <!-- 
       {%- if site.disqus_shortname and page.disqus_comments -%}
       {% include disqus.html %}
@@ -104,7 +106,9 @@
       {%- if site.giscus.repo and page.giscus_comments -%}
         {% include giscus.html %}
       {%- endif -%} -->
-
+      {%- if site.giscus.repo and page.giscus_comments -%}
+      {% include giscus.html %}
+      {%- endif -%}
 
 
     </div>
