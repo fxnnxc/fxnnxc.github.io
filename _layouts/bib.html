@@ -75,6 +75,8 @@
             {%- capture entrytype -%}<em>{{entry.journal}}</em>{%- endcapture -%}
           {%- elsif entry.type == "inproceedings" -%}
             {%- capture entrytype -%}<em>In {{entry.booktitle}}</em> {%- endcapture -%}
+          {%- elsif entry.type == "misc" -%}
+            {%- capture entrytype -%}<em>url:{{entry.url}}</em> {%- endcapture -%}
           {%- else -%}
             {%- capture entrytype -%}{%- endcapture -%}
           {%- endif -%}

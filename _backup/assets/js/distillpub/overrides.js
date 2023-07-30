@@ -21,4 +21,17 @@ $(document).ready(function() {
         cite.shadowRoot.querySelector("d-hover-box").shadowRoot.querySelector("style").sheet
             .insertRule(".panel {border-color: var(--global-divider-color) !important;}");
     });
+    // Override styles of the citations.
+    document.querySelectorAll("table > tr > td > d-cite").forEach(function(cite) {
+        cite.shadowRoot.querySelector("div > span")
+            .setAttribute("style", "color: var(--global-theme-color);");
+        cite.shadowRoot.querySelector("style").sheet
+            .insertRule("ul li a {color: var(--global-text-color) !important; text-decoration: none;}");
+        cite.shadowRoot.querySelector("style").sheet
+            .insertRule("ul li a:hover {color: var(--global-theme-color) !important;}");
+        cite.shadowRoot.querySelector("d-hover-box").shadowRoot.querySelector("style").sheet
+            .insertRule(".panel {background-color: var(--global-bg-color) !important;}");
+        cite.shadowRoot.querySelector("d-hover-box").shadowRoot.querySelector("style").sheet
+            .insertRule(".panel {border-color: var(--global-divider-color) !important;}");
+    });
 })

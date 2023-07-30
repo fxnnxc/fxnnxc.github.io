@@ -22,7 +22,6 @@ description: 'Contents to follow the learning of interpretability. '
 img:
 ---
 
-
 # Curriculum 
 
 
@@ -53,29 +52,53 @@ img:
 
 # Tools 
 
+## 🪴 Neuron Interpretation
+
 <div style="display:block; grid-column:middle; width:120%;margin-left:-40px;padding-right:50px;" markdown="1" >
-<!-- <div style="display:block;  width:100%" markdown="1" > -->
 
-| Tool | Tag |   Summary  | Related Papers |
-|-----:|-----------|---------------|:---| 
-| Linear Probing | `` |  |   <d-cite key="mcgrath2022acquisition"/><d-cite key="li2022emergent"/>  | 
-| Non-Linear Probing | `` |  |   <d-cite key="li2022emergent"/>  | 
-| CAV (Concept Activation Vector) |  - - | - |  <d-cite key="mcgrath2022acquisition"/> |
-| Logit Lens | - | - | 
-| NMF (Non-negative Matrix Factorization) | `Dimension Reduction`  | - | 
-| Feature Visualization (Deep Dream) |  `Neuron` |
-| Activation Atlas |   ? | Summary | - |
-| Decision Boundary |  `Neuron`  | 
-| What-When-Where visualization  | `Neuron` | CAV Test accuracy  for all layers, training epoch and concept    | <d-cite key="mcgrath2022acquisition"/> | 
-| Network Dissect | `Neuron`  | Find neurons via heatmap overlapping | |
-| CCD (Concept Confidence Deviation) |`Metric` |  | <d-cite key="patel2023conceptbed"/>| 
-| Integrated Gradient | `Attribution`| Summary | - | 
-| Latent Saliency Maps | `Attribution` |  Summary  | <d-cite key="li2022emergent"/>  | 
-| Activation Intervention <br> Activation Patch | `Neuron` | Summary | <d-cite key="li2022emergent"/><d-cite key="meng2022locating"/>  | 
-
-
+* **Linear Probing** : determine whether a neuron has concept with a linear classifier <d-cite key="mcgrath2022acquisition"/> <d-cite key="li2022emergent"/>.
+* **Non-Linear Probing** : probing with a non-linear classifier <d-cite key="li2022emergent"/>. 
+* **CAV** (Concept Activation Vector) : probing with concept labels <d-cite key="mcgrath2022acquisition"/>.
+* **Logit Lens**: directly maps neuron to the logits <d-cite key="leike2023language"/>.
+* **Feature Visualization** (Deep Dream) gradient ascent input to maximize the neuron <d-cite key="mordvintsev2015inceptionism"/><d-cite key="olah2018the"/>.
+* **Activation Atlas**: applying U-Map on the activation vectors and put feature visualization on each points  <d-cite key="carter2019activation"/><d-cite key="olah2018the"/>.
+* **What-When-Where visualization**: CAV test accuracy  for all layers, training epoch and concept <d-cite key="mcgrath2022acquisition"/>.
+* **Network Dissect**: find neurons via heatmap overlapping.
+* **CCD** (Concept Confidence Deviation) : <d-cite key="patel2023conceptbed"/>.
+* **Latent Saliency Maps**: <d-cite key="li2022emergent"/>.
+* **Integrated Gradient** : 
 
 </div>
+
+## 🪴  Representation Interpretation
+
+<div style="display:block; grid-column:middle; width:120%;margin-left:-40px;padding-right:50px;" markdown="1" >
+
+* **NMF** (Non-negative Matrix Factorization) : reducing the number of items to the defined numbers <d-cite key="schubert2021high-low"/><d-cite key="olah2018the"/>.
+* **Activation Intervention** (Activation Patch) :  <d-cite key="li2022emergent"/><d-cite key="meng2022locating"/> 
+* **t-SNE** : <d-cite key="wattenberg2016how"/>
+* **U-MAP**
+
+</div>
+
+
+## 🪴  Architecture Interpretation
+
+<div style="display:block; grid-column:middle; width:120%;margin-left:-40px;padding-right:50px;" markdown="1" >
+
+* **Transformer** 
+* **Attention** 
+* **Self-Attention**
+* **Cross-Attention**
+* **CNN** 
+* **RNN** 
+* **Gated RNN**
+* **MLP**
+* **Linear Layer**
+* **Pooling** 
+
+</div>
+
 
 
 # Concepts 
