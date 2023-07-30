@@ -1,5 +1,5 @@
 ---
-layout: distill
+layout: share-distill
 authors: 
     - name: Bumjin Park
       affiliations:
@@ -7,7 +7,7 @@ authors:
 bibliography: all.bib
 giscus_comments: true
 disqus_comments: true
-date: 2023-07-23
+date: 2023-07-30
 featured: true
 img: /assets/kor/neurons_as_neurons/transmission.png
 title: '뉴런 - 1. 신경망의 뉴런은 얼마나 신경세포와 닮았는가'
