@@ -10,7 +10,7 @@ disqus_comments: true
 date: 2023-07-30
 featured: true
 img: /assets/kor/neurons_as_neurons/transmission.png
-title: '뉴런 - 1. 신경망의 뉴런은 얼마나 신경세포와 닮았는가'
+title: '뉴런 - 1. 신경망의 뉴런은  신경세포와 얼마나 닮았는가'
 description: '종종 딥러닝의 뉴런은 신경세포에 비유된다. 수많은 뉴런들이 결정을 내리는 것이 신경세포와 닮았있기 때문이다. 그러나, 그 둘의 메커니즘이 어디까지 똑같은지 우리는 자세히 모른다. 이 글은 신경학적인 방식으로 딥러닝을 해석하는 글이다.'
 toc:
   - name: 1. 소개
