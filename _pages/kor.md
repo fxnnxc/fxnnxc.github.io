@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Posts
-description: Posts written in Korean
+title: 한국인을 위한 포스팅
+description: 이곳은 국어로 적힌 포스트를 모아둔 곳 입니다.. 
 permalink: /kor/
 ---
 
