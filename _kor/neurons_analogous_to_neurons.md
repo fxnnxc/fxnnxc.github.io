@@ -20,11 +20,16 @@ toc:
       - name : 2-2 시냅스
       - name : 2-3신경학적 신호전달 
   - name: 3. 딥러닝적 뉴런 
-  - name: 4. 신호전달 방식 비교 
+  - name: 4. 신호전달 방식 
     subsections:
       - name : 4-1 신호 전달 방식
       - name : 4-2 피드백 방식
-  - name: 5. 결여된 인지방식
+      - name : 4-3 모듈
+  - name: 5. 정보의 종류
+    subsections:
+      - name : 5-1 상태의 부재
+      - name : 5-2 생물의 상태
+  - name: 6. 결론
 ---
 
 # 1. 소개
@@ -95,7 +100,7 @@ src="https://www.youtube.com/embed/GIGqp6_PG6k">
 <figure style="text-align:center; display:block;" >
 <img src="/assets/kor/neurons_as_neurons/neuron.png" style="width:100%">
 <figcaption>
-  Abstraction of a neuron. 
+Figure. 뉴런의 기본 구조. 입력을 받는 부분인 dendrite과 전하를 이동하는 axon, 그리고 출력을 내보내는 axon terminal 로 이루어져 있다. 
 </figcaption>
 </figure>
 
@@ -111,10 +116,10 @@ src="https://www.youtube.com/embed/GIGqp6_PG6k">
 뉴런은 기본적으로 음전하(Negative Ion) -70mv 를 띄고 있으며, `Dendrite` 에 $Cl^{-}$ 음이온이 전달될 경우, 그대로 음전하를 띈다. 
 만일 `Dendrite`에 $Na^{+}$와 같은 양이온이 전달되는 경우, 음전하를 띄던 `Dendrite` 부분은 양전하를 띄게 된다. 그리고, 전하를 일정하게 유지하는 `Neutral Charge Equilibrium`  상태를 만족하기 위해서, 양전하는 음전하 방향으로 값이 전달된다. 이 때 지나는 통로를 `Axon`이라고 부르며, `Axon Terminal` 이 양전하 상태가 되어 화학물질을 내보내는 상태로 변경된다. 
 
-<figure style="text-align:center; display:block; grid-column:middle; " >
-<img src="/assets/kor/neurons_as_neurons/neuron_state.png" style="width:120%">
+<figure style="text-align:center; display:block; grid-column:middle;">
+<img src="/assets/kor/neurons_as_neurons/neuron_state.png" style="width:180%">
 <figcaption>
-  Abstraction of a neuron. 
+  뉴런이 전기적 신호를 dendrite에서 axon terminal 로 보내는 과정. 뉴런의 내부는 기본적으로 (-)를 띄는데, 활성화가 되는 부분은 상대적으로 (+)를 띈다. 
 </figcaption>
 </figure>
 
@@ -151,7 +156,7 @@ src="https://www.youtube.com/embed/GIGqp6_PG6k">
 <figure style="text-align:center; display:block;width:100;" >
 <img src="/assets/kor/neurons_as_neurons/synapse.png" style="width:100%">
 <figcaption>
-  Abstraction of a neuron. 
+  Figure. 두 뉴런과 이들의 연결로 인해서 생기는 시냅스. 신호를 주는 쪽은 axon terminal을 통해서, 받는 쪽은 dendrite을 통해서 통신한다. 
 </figcaption>
 </figure>
 
@@ -189,8 +194,8 @@ $$
   * GABA (gamma-aminobutyric acid)
   * Cl-
 
-<figure style="text-align:center; display:block;width:100;grid-column:middle;" class='transform'>
-<img src="/assets/kor/neurons_as_neurons/excitation_and_inhibition.png" style="width:100%">
+<figure style="text-align:center; display:block;width:100;grid-column:middle;">
+<img src="/assets/kor/neurons_as_neurons/excitation_and_inhibition.png" style="width:120%">
 <figcaption>
   Excitatory Neuron 은 다음 뉴런을 흥분시키는 역할을 하고, Inhibitory Neuron 은 다음 뉴런을 억제시키는 역할을 한다. 
 </figcaption>
@@ -220,10 +225,10 @@ $$
 신경학적 뉴런에서 하나의 뉴런은 여러개의 `Dendrite` 을 가져서 정보를 받고, 출력으로 하나의 전기적 신호가 생긴다고 설명하였다. 
 이 과정은 딥러닝에서 입력벡터에 대해서 파라미터를 내적을 계산하는 것과 동일한 계산이다. 
 
-<figure style="text-align:center; display:block;width:100;grid-column:middle;">
-<img src="/assets/kor/neurons_as_neurons/neuron_as_neuron.png" style="width:120%">
+<figure style="text-align:center;">
+<img src="/assets/kor/neurons_as_neurons/neuron_as_neuron.png" style="width:100%">
 <figcaption>
-  Abstraction of a neuron. 
+  Figure. 신경학적 뉴런과 딥러닝 뉴런의 연산의 유사성. 신경학적 뉴런이 전하를 바꾸는 neurotransmitter들로 인해서 출력이 생기는 것과 유사하게, 딥러닝적 뉴런도 입력들을 결합하여 전하상태를 내보낸다.
 </figcaption>
 </figure>
 
@@ -233,79 +238,128 @@ $$
 > **🚀 정의: 딥러닝적 뉴런** : Weight 들의 집합 (입력에 대해서 결합을 하는 Weight) <br>
 **🚀 정의: 딥러닝적 시냅스** : 개별 Weight
 
-위에서 사람의 시냅스 개수는 600조 개수라고 하였는데 (⭐️), GPT3 의 파라미터 개수는 1750억개이다. 따라서, GPT3 가 사람보다 시냅스의 개수가 더 적을 것을 알 수 있다. 딥러닝적 뉴런의 정의를 바탕으로 실제 딥러닝 모듈들에서 몇 개의 뉴런과 시냅스가 존재하는지 살펴보자. 
-대표적으로 Multi-Layer Perceptron (MLP), Convolutional Neural Network (CNN) 그리고 GPT3 모델의 뉴런들을 분석한다. 
- 
+위에서 사람의 시냅스 개수는 600조 개수라고 하였는데 (⭐️), GPT3 의 파라미터 개수는 1750억개이다. 따라서, GPT3 가 사람보다 시냅스의 개수가 더 적을 것을 알 수 있다. 딥러닝적 뉴런의 정의를 바탕으로 실제 딥러닝 모듈들에서 몇 개의 뉴런과 시냅스가 존재하는지 살펴볼 수 있는데, 가장 기본이되는 Linear Weight 에 대해서 해석하면 다음과 같다<d-footnote> 더 복잡한 모듈들인 Multi-Layer Perceptron (MLP), Convolutional Neural Network (CNN) 그리고 GPT3 모델의 뉴런들에 대한 분석은 [뉴런 - 4. 다중 뉴런 분석] 을 참고.
+</d-footnote>.
 
-> **(Optional)** Mathematical Formulation 
+
+신경학적 뉴런은 K개의 화학적신호를 바탕으로 1개의 전기적 신호를 만들어낸다. 그리고 전기적 신호는 다시 결합되어 있는 다른 뉴런들에게 화학물질을 전달하는 역할을 한다. 입력과 출력의 관점에서 신경학적 뉴런은 여러개의 입력과 출력을 가진다. 그리고 여러 개의 출력은 다시 여러 개의 뉴런들과 연결되는데, 이 과정에서 출력과 다음 입력은 서로 맞물려서 결과물을 내는 것으로 생각할 수 있다. 이 때, 결과물을 출력하는 쪽이 아니라, 입력으로 받는 쪽에서 처리하는 것으로 고려한다면, 뉴런의 출력은 단 1개로 생각할 수 있다. 
+
 * 신경학적 뉴런의 연산
-  * **각 뉴런들의 활성화값**: $a_1, a_2, a_3, \cdots, a_k $ (플러스 정도, 뉴런이 음전하 상태이면 0)
-  * **Axon Terminal의 상태**: $w_1, w_2, w_3, \cdots, w_k $ (내보내는 신경전달물질 음~양전하)
-  * **신경전달 물질을 받는 뉴런에 활성화 정도** : $\sum_k w_k \cdot a_k$
+  * **뉴런이 받은 K개의 신호들**: $a_1, a_2, a_3, \cdots, a_k $ (플러스 정도, 뉴런이 음전하 상태이면 0)
+  * **뉴런의 K개 Dendrite**: $w_1, w_2, w_3, \cdots, w_k $ (내보내는 신경전달물질 음~양전하)
+  * **신경전달 물질을 받는 뉴런의 활성화 정도** : $\sum_k w_k \cdot a_k$
+
 * 딥러닝적 뉴런의 연산 (`Weight` 와 `Activation` 내적)
-  * **파라미터** :  $w_1, w_2, w_3, \cdots, w_k $
-  * **Representation** : $a_1, a_2, a_3, \cdots, a_k $ 
-  * **Output** : $\sum_k w_k \cdot a_k$
+  * **뉴런 파라미터** :  $w_1, w_2, w_3, \cdots, w_k $
+  * **뉴런 입력** : $a_1, a_2, a_3, \cdots, a_k $ 
+  * **뉴런 출력** : $\sum_k w_k \cdot a_k$
+
+여기서 선형레이어가 가지는 두 가지 Weight $W\in \mathbb{R}^{N\times K}$과 Bias $\mathbf{b}\in \mathbb{R}^{N}$를 해석하면 $K$개의 뉴런이 있으며, 각 뉴런은 $K$ 개의 신호를 종합하여 1개의 아웃풋을 내보낸다. 총 $N$개의 뉴런들이 신호를 1개씩 내보내므로, 결과적으로 $N$ 차원의 출력이다. 
+
+$$
+\begin{gather}
+\mathbf{y} = W\mathbf{x} + \mathbf{b}  \\
+\begin{bmatrix}
+  y_1 \\ 
+  y_2 \\
+  \vdots \\ 
+  y_N
+\end{bmatrix}
+=
+\begin{bmatrix}
+  w_{11} & w_{12}& \cdots & w_{1K} \\ 
+  w_{21} & w_{22}& \cdots & w_{2K} \\ 
+  \vdots \\ 
+  w_{N1} & w_{N2}& \cdots & w_{NK} \\ 
+\end{bmatrix}
+\cdot 
+\begin{bmatrix}
+  x_1 \\ 
+  x_2 \\
+  \vdots \\ 
+  x_K
+\end{bmatrix}
++ 
+\begin{bmatrix}
+  b_1 \\ 
+  b_2 \\
+  \vdots \\ 
+  b_N
+\end{bmatrix}
+\end{gather}
+$$
+
+* 뉴런의 개수 : $N$ (Dimension of Output)
+* 시냅스의 개수 : $N\times K$ (Number of Weights)
 
 ---
 
+# 4. 신호전달 방식
 
-# 4. 신호전달 방식 비교
-
-신경학적 뉴런과 딥러닝적 뉴런은 정보통신의 측면에서는 유사하다. 여러 가지 정보를 받고 더해서 최종적으로 아웃풋을 내보내는 구조이다. 그러나, 연산의 과정에서 몇 가지 차이가 존재한다. 
-
+딥러닝적 뉴런은 신경학적 뉴런과 유사한 방식으로 정보를 처리하며, 유사점으로 수많은 뉴런들이 서로 연결되어 정보를 주고 받는 것까지 유사하다. 
+그러나 단순히 연산의 유사성을 넘어서 뉴런들이 학습하고 통신하는 방식에는 차이점이 존재하고 이로부터 딥러닝은 본질적으로 인간이 지니는 특징을 가지지 못할 수 있다. 
+뉴런의 학습에는 두 가지 연산이 필요한다. 정보를 전달하는 forward 와 피드백을 받는 backward 이다. 딥러닝 모델들은 명확하게 forward 로 계산한 결과에 대해서 피드백을 받고, 이를 backward로 전달시킨다. 이로부터 뉴런의 파리미터들이 변화하면서 뉴런 간의 forward 구조가 바뀌는 것이다. 전반적인 학습을 관장하는 두 가지 전파 forward 와 backward에 대해서 좀더 자세하게 알아보자. 
 
 <h2 id="4-1-신호-전달-방식"> 4-1 신호 전달 방식 (Forward) </h2> 
 
+딥러닝 뉴런의 경우 forward는 서로 연결되어 있는 뉴런들끼리 전달하며, 일반적으로 한 번 연산을 거친 뉴런은 다시 연산하지 않는다. 하나의 뉴런이 두 번 이상의 연산을 하게 된다면, 이는 `parameter sharing` 으로 해석되는데, 대부분은 파라미터 수를 줄이기 위해서 이다. RNN의 경우 뉴런이 연속적으로 정보를 처리하는 것으로 생각할 수 있지만, 이는 뉴런들간의 커뮤니케이션에 대한 결과라기보다는 순차적인 입력과 잠재표현을 순환적으로 처리하는 것이다<d-footnote> RNN에서 두 번 이상의 연산을 거치지만 이는 연속적인 데이터를 연속적으로 처리하는 것이므로 단일 입력에 대한 복수 개의 연산으로 해석하지 않았다. RNN의 경우, N개의 입력에 대해서 뉴런이 N번 연산하며, Parameter Sharing은 1개의 입력에 대해서 여러 번 계산한다.</d-footnote>.  따라서 뉴런들은 보통 하나의 정보를 처리하도록 설계되었으며 그들의 커뮤니케이션은 순차적이다. 좀더 명확하게 순차적인 이유는 그들의 axon terminal 과 dendrite 이 단일 방향으로 구성되었기 때문이다. 
 
-
-<h2 id="4-2-피드백-방식"> 4-2 피드백 방식 (Backward) </h2> 
-
-
-
- Circular Signal 
+그러나 신경학적 뉴런의 경우, axon terminal 과 dendrite 이 동일한 방향으로 정렬되어 있는지는 미지수이다. 이는, 연산이 반드시 한쪽 방향으로 이루어지지 않을 수 있다는 것이다. 아래 그림처럼 뉴런들이 45도 각도로 구성되어있다면, 본인이 내보낸 시그널은 7개의 뉴런들을 거쳐서 다시 본인에게 돌아온다. 이러한 현산이 가능한 이유는 그들의 신호전달매체(axon terminal 과 dendrite)가 일렬로 정렬되어 있지 않기 때문이다. 
 
 <figure style="text-align:center; display:block;width:100;">
 <img src="/assets/kor/neurons_as_neurons/communication.png" style="width:100%">
 <figcaption>
-  Abstraction of a neuron. 
+  Figure. 신경학적 뉴런과 딥러닝적 뉴런이 커뮤니케이션을 하는 방법. 신경학적 뉴런은 axon terminal 와 dendrite 의 연결이 일자가 아니므로, 본인의 시그널이 다시 돌아올 수 있다. 반면에 딥러닝의 Computational Graph 는 순차적인 계산이고, 뉴런들이 정렬되어 있다. 
 </figcaption>
 </figure>
 
+<h2 id="4-2-피드백-방식"> 4-2 피드백 방식 (Backward) </h2> 
 
-뇌의 각 부분들이 역할을 나누는 것처럼 딥러닝도 뉴런들의 역할이 나뉘어져 있다. 
-Classifier 는 
+뉴런들은 지속적으로 업데이트 되며, 이러한 업데이트에는 외부자극이 큰 영향을 미친다. 가장 큰 차이는 파라미터 변화의 원인이다. 딥러닝의 파라미터 변환은 대부분 `loss`에 대한 gradient descent로부터 이루어지나, 신경학적 뉴런은 반드시 `loss`가 존재하지 않을 수 있다. 물론 사람은 피드백으로부터 행동을 업데이트 하며, 점차적으로 뉴런들이 행동에 대해서 강화된다. 그러나, 이는 필요조건이 아니며 시그널이 없어도 뉴런은 변화할 수 있다. 예를 들어서, 그들의 통신에 가장 큰 영향을 미치는 화학적 물질이 결핍된다면 뉴런들의 연결은 약해지고 통신이 되지 않는다. 또한 신호전달로 인해서 화학물질들이 변화하기 때문에, 단순히 `forward` 과정에서도 뉴런들은 변한다고 볼 수 있다. 그러나, 딥러닝 모델은 forward 과정에서 파라미터들이 고정이고 오직 `backward`로 인해서 뉴런들의 정보가 변화한다. 
 
-Branch Specialization<d-cite key="voss2021branch"/> [[link](https://distill.pub/2020/circuits/branch-specialization/)]
+인간의 학습하는 가장 효율적인 방법은 반복하는 것으로, 연습을 통해서 새로운 테스크에 적응하는 능력이 뛰어나다. 이러한 과정은 사용한 뉴런을 강화하는 것으로 근육을 단련하는 것철머 연결을 강화하는 것이다. 따라서, 뉴런은 반복적인 `forwrad` 과정으로부터 학습한다. 이에 대한 근거로 딥러닝의 뉴런은 axon terminal 과 dendrite 모두 시그널을 전파하는 역할을 하지만, 신경학적 뉴런은 명확하게 한 방향으로만 정보가 전달된다는 것을 들 수 있다. 이러한 직감을 잘 반영한 연구는 Geoffrey Hinton [[scholar](https://scholar.google.com/citations?user=JicYPdAAAAAJ&hl=ko&oi=ao)] 의 forward-forward algorithm <d-cite key="hinton2022forward"/> 으로 생물이 오직 전파를 통해서만 학습이 된다는 사실을 반영하여 모델링을 제안하였다. 
 
 
+<h2 id="4-3-모듈"> 4-3 모듈 </h2> 
+
+인간의 뇌에 대한 가장 큰 특징 중 하나는 뇌의 영역마다 서로 다른 역할을 하는 뉴런들이 있다는 것이다. 신경세포가 본인이 포함되어 있는 그룹에 따라서 역할이 달라지며, 이는 인간이 지닌 다양한 면을 해석하는데 도움을 준다. 예를 들어서 변연계는 보다 감성적인 역할을 하는 것으로 알려져있으며 전두엽은 논리와 계산과 같은 과정을 담당한다. 또한 장기기억은 뇌의 안쪽에 저장되며, 단기기억은 전두엽 부분에 저장된다. 뉴런들은 동일한 생물체일지라도 그 위치에 따라서 본인이 처리하는 정보가 서로 다르다. 딥러닝이 이러한 모듈화를 진행하는지는 수수께끼로 남아있다. 물론 뉴런을 역할을 명시적으로 구분한 *Inductive Bias*를 추가하는 경우, 그 뉴런의 역할을 우리가 원하는 대로 설계할 수 있다. 최근에 밝혀진 바로는 명확하게 모듈을 설계하는 것이 아닌, 회로를 그룹별로 묶는 것이 모듈화를 진행한다는 연구가 있다. Branch Specialization<d-cite key="voss2021branch"/> [[link](https://distill.pub/2020/circuits/branch-specialization/)] 연구는 두 개의 서로 다른 브랜치에서 학습된 뉴런들은 각 그룹에서 비슷한 특징을 가지게 된다는 사실을 보여줬다. 
 
 <figure style="text-align:center; display:block;width:100;">
 <img src="https://distill.pub/2020/circuits/branch-specialization/images/Figure_1.png" style="width:70%">
 <figcaption>
+Figure. 명시적으로 나뉜 두 개의 브랜치의 뉴런들이 어떤 정보를 담고 있는지 보면, 브랜치 내 뉴런들의 정보가 유사한 것을 볼 수 있다. 이러한 결과는 우연이라고 보기 어려운 결과이다. 
   © Image From branch specialization [<a href="https://distill.pub/2020/circuits/branch-specialization/" > link </a>]
 </figcaption>
 </figure>
 
+# 5. 정보의 종류
+
+딥러닝이 인간과 비교했을 때 가지는 가장 불공평한 것은 입력의 차이이다. 
+사람은 눈은 매 순간 정보를 입력으로 받는데, 1초에 200장 정도의 이미지를 높은 해상도로 받고 있다. 딥러닝은 빈약하게 이미지 한장 정도의 수준의 입력을 받는다. GPT 모델에게 이후 텍스트를 생성해달라고 할 때, 굉장히 적은 길이의 입력을 넣는 것으로 긴 문장을 생성하는 것은 주어진 상황에 대한 정보량이 인간과 딥러닝이 차이가 심하다는 것을 상기시킨다. 최근에 나온 GPT4 <d-cite key="openai2023gpt4"/> 나 GPT3.5는 굉장히 긴 문장을 입력으로 받기도 하는데, 이는 점점 인간이 입력으로 받는 정보량에 딥러닝이 근접한다는 것을 나타낸다. 요약하자면, 예전에는 딥러닝 모델이 하나의 입력에 대해서 적응을 잘하는 목표로 연구했다면, 최근에는 좀더 다양하고 많은 입력을 모델에게 연산시킨다. 그러나, 딥러닝의 가장 큰 단점은 입력이 주어져야 반응한다는 것이다. 바꿔말하면, 입력이 없다면 딥러닝은 무엇을 할 수 있는가? 
 
 
+## 5-1 상태의 부재
 
-# 5. 결여된 인지방식
-
-
-
-
-## 6.1 물리적 몸의 상태
-
-신체는 몸의 상태로부터 정보를 주기적으로 받으면서 반응한다. 입력이 순간적이기보다 지속적이며 반응이 연속적으로 들어오기 때문에 정보처리량이 많다. 
-이와는 반대로 딥러닝 뉴런들은 입력에 대해서 반응하지만, 입력에 순간적으로 반응하는 경향이 있다. 
-
-## 6.2 추상적 연산의 상태 
-
-사람은 지속적으로 생각을 하며, 새로운 입력이 없더라도 뉴런이 지속적으로 활성화 된다. 
-신경학적 뇌는 입력이 없더라도 추상적인 상태가 존재한다. 
-그러나, 딥러닝은 입력을 처리하고 나면 끝난다. 
+인간은 입력이 주어지지 않아도 뉴런들이 반응하고 정보를 처리할 수 있다. 예를 들어서, 머릿속으로 사진을 하나 상기시키고 해당 사진으로부터 결론에 도달하거나 새로운 생각을 만들어낼 수 있다. 이러한 정보는 뇌의 장기기억에 보관된 정보들을 꺼내는 과정으로 컴퓨터로 치면 하드디스크에 저장된 정보를 꺼내는 것이다. 그러나, 딥러닝 파라미터는 주어진 입력에 대한 연산을 진행하도록 구성될 뿐, 메모리가 부재하다. 물론 Neural Turing Machine<d-cite key="graves2014neural"/>처럼 메모리를 명시적으로 사용한다면 가능하지만, 이들의 반응성 또한 입력에 의존적으로 이루어진다. 
 
 
+## 5-2 생물의 상태
 
-## 결론 
+또 다른 차이점은 입력의 종류이다. 딥러닝 모델은 입력으로 받는 공간이 고정되어 있으며, 시각적인, 언어적인, 기호적인, 음성적인 정보들이 입력 레이어를 통해서 들어온다. 사람으로 비유하면 눈과 귀를 통해서 정보를 전달받는 것이다. 따라서 딥러닝이 처리하는 정보는 오직 입력과 내부 뉴런들의 연산 방법에 의해서 처리된 결과물이다. 그러나, 사람이 뉴런을 활성화하는 과정에는 입력으로 받는 정보 이외에 추가적인 정보가 있다. 바로 몸 또는 인지의 상태이다. 
+
+### 몸의 상태
+동일한 입력을 받을지라도, 현재 호르몬 분비에 의해서 처리결과는 바뀔 수 있는데, 본인의 감정이 슬프다면, 동일한 사진을 봐도 다른 해석이 가능한 것이다. 이는 몸의 호르몬으로부터 뉴런의 처리가 달라질 수 있다는 것을 암시한다. 피곤할 때 의사결정을 내리는 것을 조심해야 하는 이유도 뉴런의 상태가 달라지기 때문이고, 뉴런의 상태가 최적이 아니라면 연산의 결과가 크게 달라질 수 있기 때문이다. 딥러닝 모델 파라미터에 노이즈가 많이 껴있는데, 중요한 의사결정을 하는데 사용하면 안되는 것처럼 말이다. 
+
+
+### 인지의 상태
+또 다른 변수는 뇌가 현재 처리하고 있는 정보에 따라서  결과가 달라질 수 있다는 점이다. 대표적으로 "인지적 대조 원리"를 예로 들 수 있다. 인지적 대조 원리는 먼저 본 정보에 의해서 두 번째로 본 정보가 왜곡되어 해석되는 원리이다. 동물의 크기를 예로 든다면, 코끼리 옆에 있는 호랑이를 작다고 인지하게 되는데, 이는 코끼리가 크기 때문이다. 과연 딥러닝 뉴런은 이러한 인지적 대조 원리를 기반으로 사물을 분석할 수 있는지 확신할 수 없다. 또 다른 예로 연봉을 8000을 받다가 5000으로 줄어드면 적게 받는 것으로 사람은 인지하는데, 딥러닝 모델이 연봉 5000이라는 정보를 주어졌을 때, 단순히 5000이라는 정보에 의존적인 해석을 내릴 가능성이 높다. 
+
+## 6. 결론 
+
+딥러닝과 인간을 비교하는 것은 두 분야에 모두 긍정적으로 작용한다. 딥러닝 모델을 설계하면서 인지적인 영감으로 모델링 및 해석을 진행한 연구들은 셀 수 없이 많으며 <d-cite key="wijmans2023emergence"/>, 반대로 인간이 인사이트를 얻기 위해서나 뇌를 이해하고 위해서 딥러닝을 활용하는 것 또한 적지 않다. 두 분야 모두 인지적인 부분을 다룰 수 있기 때문이다. 이 글을 쓰면서, 뇌를 이해하는 것은 딥러닝을 마치 생물로 이해하는 것처럼 도움이 되었는데, 보다 복잡한 모델의 내부를 명시적인 뉴런들로 해석하여 딥러닝에 대하여 더 많이 이해했던 것 같다. 
+
+뉴런 뿐만 아니라 딥러닝과 사람은 실제로 더 많은 부분에서 유사점이 존재할 것 같다. 예를 들어서, 사람은 학습을 위해서 유년기 시절을 보내고 시행착오를 겪고 나면 성인이 되어서 많은 것들을 빠르게 배울 수 있으며, 별다른 노력없이 건설적인 일들을 할 수 있다. 비슷하게 딥러닝 모델들로 학습을 위해서는 수 많은 데이터셋과 학습시간이 필요하지만, 하나의 연산을 위해서 사용하는 에너지는 적다. 이러한 배움에서 유사점도 그 부분을 명확하게 이해한다면 배움이라는 것을 이해하는데 또다른 도움을 줄 수 있을 것으로 보인다. 그리고, 딥러닝이 배우는 방식으로부터 사람이 배우는 과정을 더욱 견고하고 빠르게 만들 수 있을 것으로 보인다. 딥러닝은 배움의 분야이고, 개인적으로 딥러닝이 배우는 방식을 통해서 개인적인 공부 방식에도 큰 도움이 되었던 것 같다<d-footnote> 예를 들어서, 강화학습은 순간적인 보상보다 장기적인 보상까지 고려해서 행동하라고 알려주는데, 이러한 사고방식은 오늘 무엇을 공부할지 결정하는데 도움을 줬다.</d-footnote>.  
+
+수많은 과학적인 발견들은 비유를 통해서 발견된다. 자연으로부터 모방은 생물이 진화하고 적응하는데 있어서 중요한 역할을 하였다. 딥러닝의 뉴런이 생물학적인 뉴런과 얼마나 비슷할지 그 끝은 알 수 없지만, 지속적으로 모방하는 것이 인지과학, 신경과학, 딥러닝 분야들이 발전하는 가장 빠른 방법이라는 생각이 든다. 
+
+
