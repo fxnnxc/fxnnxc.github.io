@@ -362,3 +362,10 @@ Figure. 명시적으로 나뉜 두 개의 브랜치의 뉴런들이 어떤 정�
 ## Acknowledgement 
 
 I especially thank Yeonjea Kim for the ideas on the neurons in neuroscience 🙂
+
+
+## 몇 가지 궁금증 
+
+1. **뉴런이 적어도 인지가 가능한가?** 닭도 뉴런은 있으나, 그 수가 적을 뿐이다. 사람은 뉴런이 많이 있다. 따라서 인지의 정도는 뉴런의 개수로 나뉠 수 있는 것인가? 
+
+2. 사람처럼 딥러닝의 뉴런들은 그래프 형태로 정렬 되어야 할까? (From *Yeonjea Kim*)
