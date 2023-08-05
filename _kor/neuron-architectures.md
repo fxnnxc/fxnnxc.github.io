@@ -30,7 +30,7 @@ $$y=Wx$$
 <figure style="text-align:center; display:block;width:100;" >
 <img src="/assets/kor/neurons_as_neurons/linear.png" style="width:100%">
 <figcaption>
-  Abstraction of a neuron. 
+  There are 2 neurons in each layer and 4 neurons in total. The number of synapses are 
 </figcaption>
 </figure>
 
