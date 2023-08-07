@@ -832,3 +832,39 @@ margin-bottom: .5rem;
   transform: scale(1.2); 
   transform-origin: 50% 10%;
 }
+
+
+ul.timeline {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+ul.timeline li {
+  position: relative;
+  min-height: 2.2rem;
+  color: #003670;
+  list-style-position: inside;
+}
+
+ul.timeline li::before {
+  content: "";
+  min-height: 3.5rem;
+  width: 1px;
+  background: var(--global-text-color);
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 2px;
+  top: -0.5rem;
+}
+
+
+span.badge-toc {
+  color: var(--global-bg-color);
+  background-color: var(--global-theme-color);
+  border-radius: 0.125rem;
+  padding: 0.125rem 0.5rem 0.125rem 0.5rem;
+  font-weight: 700 !important;
+  display: inline-block;
+  inline-size: fit-content;
+}
