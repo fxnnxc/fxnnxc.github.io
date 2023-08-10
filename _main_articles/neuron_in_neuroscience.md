@@ -13,10 +13,12 @@ authors:
 bibliography: all.bib
 giscus_comments: true
 disqus_comments: true
-date: 2023-08-4
+date: 2023-08-04
 featured: true
 title: 'Neuron in Neuroscience and Deep Learning'
-description: ''
+description: 'How can we compare neurons in neuroscience and deep learning? <br> [📚 Neuron Series 1]'
+img: /assets/kor/neurons_as_neurons/communication.png
+tags: neuron
 ---
 
 ## Introduction 
