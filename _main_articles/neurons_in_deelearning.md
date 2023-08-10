@@ -7,11 +7,11 @@ authors:
 bibliography: all.bib
 giscus_comments: true
 disqus_comments: true
-date: 2023-08-11
+date: 2023-08-10
 featured: true
 title: 'Neurons in Deep Learning'
 description: 'How can we interpret neurons in deep learning? <br> [📚 Neuron Series 2]'
-img: /assets/kor/neurons_as_neurons/communication.png
+img: /assets/kor/neurons_as_neurons/linear.png
 tags: neuron
 ---
 
