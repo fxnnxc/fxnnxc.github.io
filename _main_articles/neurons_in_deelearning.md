@@ -98,7 +98,6 @@ Consider $d_{model} = 12,288$ which is the hidden dimension size of GPT3 (175B).
 
 Finally, we count the number of neurons and synapses in GPT3 (175B) blocks with the above interpretation<d-footnote> Caveats: We do not count the layer-norm in a block and the number of weights would not exactly match with the number of synapses in this case. Also, bias is a parameter in GPT, but is not counted for neuron and synapse. </d-footnote>.   GPT3 has 96 blocks and each block has MLP whose number synapses is **1,207,959,552** and ATTN whose number of synapses is **603,979,776**. We can simply add these two and multiply 96 to compute the total number of synapses.
 
-GPT3 는 96개의 GPT Block을 쌓은 결과물이므로 MLP 와 ATTN 을 96개만큼 쌓으면 모델에 존재하는 뉴런과 시냅스 개수를 측정할 수 있다. 
 
 * 🍀 (`GPT3`) number of synapses : **173B**  <br> (173,946,175,488 = 96 $\times$ (1,207,959,552 + 603,979,776)) <d-footnote>  2B difference (175B and 173B) is due to bias, embedding, layer-norm and LM heads modules. </d-footnote>
 * ☘️ (`GPT3`) number of neurons :  **11M** <br> (11,796,480 = 96 $\times$(61,440+61,440))
