@@ -56,7 +56,7 @@ permalink: /main_articles/
   </card>
       <card class="column-second">
       {% if post.img %}
-          <img src="{{ post.img }}" width="220px" height="155px" style="margin-top:10px;margin-left:20px;border-radius: 20px;border:solid 1px;"> 
+          <img src="{{ post.img }}" width="220px" height="145px" style="margin-top:10px;margin-left:20px;border-radius: 20px;border:solid 1px;"> 
       {% endif %}
       </card>
     {% endfor %}
