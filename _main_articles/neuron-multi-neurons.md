@@ -11,7 +11,7 @@ date: 2023-08-11
 img: /assets/kor/neurons_as_neurons/decision_boundary.png
 featured: true
 title: 'Multi-neuron Analysis'
-description: 'Regarding a method to interpret multiple neurons simultaneously.'
+description: 'Regarding a method to interpret multiple neurons simultaneously.<br> [📚 Neuron Series 3]'
 ---
 
 
