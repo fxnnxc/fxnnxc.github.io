@@ -58,6 +58,31 @@ Figure 2. 뉴런들이 입력에 대해서 반응하는 정도에 대한 가이�
 </figcaption>
 </figure>
 
+
+---
+
+## Input Boundary 
+
+<figure>
+<iframe src="{{ '/assets/plotly/decision_boundary_1d.html' | relative_url }}" frameborder='1' scrolling='no' height="520px" width="100%" style="border:0px dashed grey;"></iframe>
+
+<iframe  src="{{ '/assets/plotly/decision_boundary_1d_input.html' | relative_url }}" frameborder='0' scrolling='no' height="520px" width="100%" style="border:0px dashed grey;"></iframe>
+<figcaption>
+
+</figcaption>
+</figure>
+
+
+<figure>
+<iframe src="{{ '/assets/plotly/decision_boundary_2d.html' | relative_url }}" frameborder='1' scrolling='no' height="520px" width="100%" style="border:0px dashed grey;"></iframe>
+
+<iframe  src="{{ '/assets/plotly/decision_boundary_2d_input.html' | relative_url }}" frameborder='0' scrolling='no' height="520px" width="100%" style="border:0px dashed grey;"></iframe>
+<figcaption>
+
+</figcaption>
+</figure>
+
+
 ---
 
 ## 시각화로부터 얻는 정보들

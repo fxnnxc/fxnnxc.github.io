@@ -191,4 +191,3 @@ Figure. (left and middle) 3️⃣ How can a neuron be used to separate a concept
 ### Rank by the variance of activations
 
 
----
