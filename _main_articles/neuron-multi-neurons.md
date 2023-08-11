@@ -54,7 +54,7 @@ In this section, we provide visualization results of neurons for all positive in
 * `input 1`  is small signal  0.3  
 * `input 2`  is large signal : 0.7
 
-The visualization pilots individual neurons as a line 
+The visualization shows individual neurons as a line 
 $$
 y = w_n x +b_n
 $$
