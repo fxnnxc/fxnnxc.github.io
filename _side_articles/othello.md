@@ -10,7 +10,7 @@ disqus_comments: true
 date: 2023-07-31
 featured: true
 title: 'Understand the interpretation of Othello '
-description: ''
+description: 'Discussion on the Othello GPT'
 ---
 
 > This post is a personal analysis of a paper: Emergent World Representations: Exploring a Sequence Model Trained on a Synthetic Task. 
