@@ -9,7 +9,7 @@ giscus_comments: true
 disqus_comments: true
 date: 2022-07-20
 featured: true
-img: /assets/side_articles/nmf/selection.png
+img: /assets/side_articles/vqvae/forward.png
 toc:
   - name: Introduction
 title: 'Understanding VQVAE'
