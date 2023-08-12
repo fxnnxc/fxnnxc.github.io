@@ -1,7 +1,7 @@
 ---
 layout: default
-description: Main Papers for Interpretability Research
-title: Main Papers
+description: Side Papers for My Research
+title: Side Papers
 permalink: /side_papers/
 ---
 <div class="post">
@@ -19,7 +19,7 @@ permalink: /side_papers/
     {% assign year = post.date | date: "%Y" %}
     {% assign tags = post.tags | join: "" %}
     {% assign categories = post.categories | join: "" %}
-
+    <div style="padding-bottom:170px;">
       <card class="column-first" style="border-bottom:#e4e4e4 solid; padding-left: 0px;" >
       <h2>
         {% if post.redirect == blank %}
@@ -59,9 +59,10 @@ permalink: /side_papers/
           <img src="{{ post.img }}" width="145px" height="145px" style="margin-top:20px;margin-left:40px;border-radius: 20px;"> 
       {% endif %}
       </card>
+  </div>
     {% endfor %}
-    
   </ul>
   {% include pagination.html %}
 
+    {%- include footer.html %}
 </div>

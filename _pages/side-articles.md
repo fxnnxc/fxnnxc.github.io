@@ -12,7 +12,7 @@ permalink: /side_articles/
   </div>
   <ul class="post-list">
     {%- assign sorted_pages = site.side_articles | sort: "date" %}
-    {%- assign sorted_pages = sorted_pages | reverse -%} 
+   {%- assign sorted_pages = sorted_pages | reverse -%} 
 
     {% for post in sorted_pages %}
 
@@ -20,8 +20,8 @@ permalink: /side_articles/
     {% assign year = post.date | date: "%Y" %}
     {% assign tags = post.tags | join: "" %}
     {% assign categories = post.categories | join: "" %}
-
-      <card class="column-first" style="border-bottom:#e4e4e4 solid; padding-left: 0px;" >
+  <div style="padding-bottom:170px;">
+      <div class="column-first" style="border-bottom:#e4e4e4 solid;  " >
       <h2>
         {% if post.redirect == blank %}
           <a class="post-title" href="{{ post.url | prepend: site.baseurl }}" style="text-decoration:none; font-size: 20px; color:#362f5b ">{{ post.title }}</a>
@@ -54,15 +54,21 @@ permalink: /side_articles/
           {% endif %}
       </p>
     </p>
-  </card>
-      <card class="column-second">
+  </div>
+      <div class="column-second">
       {% if post.img %}
           <img src="{{ post.img }}" width="210px" height="135px" style="margin-top:10px;margin-left:20px;border-radius: 20px;border:solid 1px;"> 
       {% endif %}
-      </card>
+    </div>
+  </div>
+
     {% endfor %}
-    
   </ul>
+
+
   {% include pagination.html %}
 
+</div>
+<div>
+{%- include footer.html %}
 </div>
