@@ -145,6 +145,9 @@ collections:
   kor:
     output: true
     permalink: /kor/:path/
+  neuron:
+    output: true
+    permalink: /neuron/:path/
 
 
 news_limit: 10000
