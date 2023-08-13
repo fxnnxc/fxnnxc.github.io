@@ -10,7 +10,7 @@ disqus_comments: false
 date: 2023-08-12
 featured: true
 img: /assets/side_papers/subjectivitiy_information/cartpole_messages.png
-title: 'Investigating Instability of Messages in Multi-agent Reinforcement Learning [한국어]'
+title: 'Investigating Instability of Messages in <br> Multi-agent Reinforcement Learning [한국어]'
 description: 'Analysis of stability of hidden representation messages in multi-agent.'
 tags: MARL RL RepresentationLearning
 ---
