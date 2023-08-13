@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 뉴런
-description: 사람을 이해하는 과정 (인공사람 포함🤖)
+description: 사람을 이해하는 과정 (인공로봇 포함🤖)
 permalink: /neuron/
 ---
 
