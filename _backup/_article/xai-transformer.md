@@ -47,7 +47,7 @@ $$
 $$
 
 [Torch LayerNorm](https://pytorch.org/docs/stable/generated/torch.nn.LayerNorm.html) supports element-wise affine transform.
-
+n
 ```python
 d=2
 m = torch.nn.LayerNorm(d, elementwise_affine=False)
