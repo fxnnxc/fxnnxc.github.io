@@ -22,7 +22,7 @@ Feel free to contact for discussions on discovering the secrets of ANNs 🤗.
 </p>
 
 <div style="line-height:2.0">
-📨 <tag class="box-demo-link" style='color:#000000;background:#ffffff;border-radius: 10px;'>bjp032501@gmail.com</tag> 
+📨 <tag class="box-demo-link" style='color:#000000;background:#ffffff;border-radius: 10px;'>bumjin.research@gmail.com</tag> 
 | 📨 <tag class="box-demo-link" style='color:#000000;background:#ffffff;border-radius: 10px;'>bumjin@kaist.ac.kr</tag> 
 | 🅖 <a class="box-demo-link" href="https://scholar.google.co.kr/citations?user=XzIXaxoAAAAJ&hl=ko" >Google Scholar</a> 
 | 🧾 <a class="box-demo-link" href="">  CV (not available now) </a> 
