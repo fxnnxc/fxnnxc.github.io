@@ -89,5 +89,5 @@ description: '사람은 사물을 있는 그대로 본다고 착각한다. <br> 
 인지를 분석한 것도 실은 인공지능에 대한 이해를 위해서 한 것도 없지 않다. 
 결국은 이해하는 수준이겠지만 말이다.
 
-<blockquote style='background-color:#DDFFFF'> 우리는 서로를 이해할 수는 있으나, <br> 해설할 수 있는 것은 오직 자기 자신뿐이다.  <br> - 헤르만 헤세
+<blockquote style='background-color:#DDFFFF' markdown="1"> 우리는 서로를 이해할 수는 있으나, <br> **해석할 수 있는 것은 오직 자기 자신뿐이다.**  <br> - 헤르만 헤세
 </blockquote>
