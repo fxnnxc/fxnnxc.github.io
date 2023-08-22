@@ -148,7 +148,9 @@ collections:
   neuron:
     output: true
     permalink: /neuron/:path/
-
+  experiment:
+    output: true
+    permalink: /experiment/:path/
 
 news_limit: 10000
 
