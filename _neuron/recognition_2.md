@@ -9,7 +9,7 @@ giscus_comments: true
 disqus_comments: true
 date: 2023-08-23
 featured: true
-img: /assets/kor/인지/tree.png
+img: /assets/kor/인지/cookie_and_moon.png
 title: '인지 2'
 description: '인지를 활용하는 법 - 상상력 <br> 📚 Series: 인지를 이해하는 길 1' 
 ---
