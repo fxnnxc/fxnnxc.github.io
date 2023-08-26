@@ -18,7 +18,7 @@ description: '동일성 - 무서운 부작용 <br> 📚 Series: 인지를 이해
 
 > \<나는 인지과학자가 아니고 뇌과학자도 아니다.\> <br> 다만 AI를 연구하는 과학자이고 이 글은 AI에 빗대어 사람의 인식을 분석한 것이다. 
 
-세상을 인식하는 단순히 뉴런의 활성화이다. 이전 글에서 이 단순한 명제로부터 상상력을 키우는 방법에 대해서 이야기 했다면 [[인지1](https://fxnnxc.github.io/neuron/recognition_1/), [인지2](https://fxnnxc.github.io/neuron/recognition_2/)], 이 글에서는 좀더 무서운 이야기를 나누고자 한다. **우리는 서로 다른 사물을 실제로는 같게 보고 있다.** 왜냐하면 동일성이 있기 때문이다. 대표적인 예시로 하나의 대상이 움직이는 모습을 여러 형태로 나타낸 경우, 이 객체들은 뇌에서 하나로 인식된다. 
+우리 뇌가 세상을 인식하는 방법은 뉴런의 활성화이다. 이전 글 [[인지1](https://fxnnxc.github.io/neuron/recognition_1/), [인지2](https://fxnnxc.github.io/neuron/recognition_2/)]에서 이 단순한 명제로부터 상상력을 키우는 방법에 대해서 이야기 했다면 , 이 글에서는 좀더 무서운 이야기를 나누고자 한다. **우리는 서로 다른 사물을 실제로는 같게 보고 있다.** 왜냐하면 동일성이 있기 때문이다. 하나의 예시로 아래 그림을 인식해보자.
 
 <figure style="text-align:center; display:block;width:100;">
 <img src="/assets/kor/인지/one.png" style="width:70%">
