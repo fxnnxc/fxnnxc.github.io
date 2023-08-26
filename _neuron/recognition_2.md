@@ -11,7 +11,7 @@ date: 2023-08-23
 featured: true
 img: /assets/kor/인지/cookie_and_moon.png
 title: '인지 2'
-description: '인지를 활용하는 법 - 상상력 <br> 📚 Series: 인지를 이해하는 길 1' 
+description: '인지를 활용하는 법 - 상상력 <br> 📚 Series: 인지를 이해하는 길 2' 
 ---
 
 ## 인지 활용법
