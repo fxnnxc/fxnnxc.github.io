@@ -72,7 +72,7 @@ We use MoblineNet-v2 model trained on ImageNet1k dataset. The model is trained f
 ### trained model 
 
 
-<iframe src="https://api.wandb.ai/links/bumjin/9r7xwq8y"  style="border:1px solid #000000;height:512px;width:100%">
+<iframe src="https://api.wandb.ai/links/bumjin/9r7xwq8y"  style="border:1px solid #000000;height:512px;width:100%"/>
 
 
 ### probing classifier 
@@ -90,3 +90,12 @@ We use labels in the form of `prob-<neurons>-<classifier type>`.
 
 
 ## Results 
+
+<style>
+    body {
+      /* Show scrollbars */
+    }
+</style>
+<figure>
+<iframe  src="{{ '/assets/plotly/concepts.html' | relative_url }}" frameborder='0' scrolling='yes' height="700px" width="100%" style="border:1px solid #EE00DD55;"></iframe>
+</figure>
