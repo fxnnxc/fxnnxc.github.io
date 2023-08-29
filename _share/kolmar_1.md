@@ -39,7 +39,8 @@ description: 기본적인 머신러닝/딥러닝 프레임워크 및 실험 과�
 
 ## 3. 데이터셋 예시 
 
-데이터셋은 버전으로 관리되며, `dataset_v1` 와 같은 이름으로 버전을 관리한다. 예시로, `example_excel` 을 살펴보자. 해당 데이터셋은 다음과 같은 구조를 지닌다. 
+데이터셋은 버전으로 관리되며, `dataset_v1` 와 같은 이름으로 버전을 관리한다. 예시로, `example_excel` 을 살펴보자. 
+해당 데이터셋은 다음과 같이 입력과 출력을 위한 폴더가 따로 존재하며, 각 폴더 내에는 샘플들을 액셀파일로 저장되어 있다.  
 
 <d-code block language="bash" style='font-size:`15px'>
 - input (폴더📂)
@@ -54,8 +55,9 @@ description: 기본적인 머신러닝/딥러닝 프레임워크 및 실험 과�
     ...
 </d-code>
 
-입력 (input) 과 출력 (output)은 다음과 같은 형태이다. 
-
+각 샘플의 입력 (input) 과 출력 (output)은 다음과 같은 형태이다. 
+해당 형태는 임의로 작성된 것으로 실제 데이터셋은 실무자와 회의를 거쳐서 선택된다. 
+총 9개의 랜덤 샘플을 생성한 데이터는 [[drive link](https://drive.google.com/drive/folders/1jKcLQoga0ScRa5mvJqkbMmgpWscJU3-i?usp=sharing)]에서 확인할 수 있다. 
 
 <center>
     <table>
@@ -71,12 +73,21 @@ description: 기본적인 머신러닝/딥러닝 프레임워크 및 실험 과�
     </table>
 </center>
 
+## 추가적인 발전 사항 (확장성)
+
+딥러닝으로부터 인사이트를 얻기 위해서는 모델을 활용하여 다양한 Task<d-footnote> 학습과 테스트는 모델을 다루는 한 가지 방법이다. </d-footnote>를 생성해야 한다. 본 소프트웨어 소개에서는 학습-테스트에 초점을 맞춰서 소프트웨어를 설명하였지만, 실제 소프트웨어는 더욱 다양한 기능들을 포함할 수 있다. 예시는 다음과 같다. 
 
 
+* Domain Adaptation 
+* Transfer Learning 
+* Representation Learning 
+* hierarchical feature learning 
+* XAI (설명가능인공지능)
+* Interpretability (딥러닝 모델 해석)
 
 
+이러한 테스크들을 지원하기 위해서 본 소프트웨어는 학습과 테스트에 대해서 (학습-테스크) 및 (테스트-테스크)로 명칭하며, 이후 추가적인 테스크들이 필요성을 의논하고 개발될 예정이다. 
+
+---
 
 
-
-
-총 9개의 랜덤 샘플을 생성한 데이터는 [[drive link](https://drive.google.com/drive/folders/1jKcLQoga0ScRa5mvJqkbMmgpWscJU3-i?usp=sharing)]에서 확인할 수 있다. 
