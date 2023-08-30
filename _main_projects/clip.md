@@ -83,39 +83,26 @@ There are two types of classifiers; linear and nonlinear. Following the work in 
 
 
 
-### Linear-GAP
+### What-Where-When Plot
 
-<style>
-    body {
-      /* Show scrollbars */
-    }
-</style>
-<figure>
-<iframe  src="{{ '/assets/plotly/linear_gap_concepts.html' | relative_url }}" frameborder='0' scrolling='yes' height="700px" width="100%" style="border:1px solid #EE00DD55;"></iframe>
-</figure>
-
-
-
-### Non-Linear-Non-GAP
-
-<style>
-    body {
-      /* Show scrollbars */
-    }
-</style>
-<figure>
-<iframe  src="{{ '/assets/plotly/non_linear_non_gap_concepts.html' | relative_url }}" frameborder='0' scrolling='yes' height="700px" width="100%" style="border:1px solid #EE00DD55;"></iframe>
-</figure>
-
-
-
+<div style="width:900px;">
+    <div style="float:left; width:450px;" >
+        <hr>
+        <h3> 🏖️ Linear-GAP </h3>
+        <iframe  src="{{ '/assets/plotly/linear_gap_concepts.html' | relative_url }}" frameborder='0' scrolling='yes' height="800px" width="100%" style="border:1px solid #EE00DD55;"></iframe>
+    </div>
+  <div style="float:right; width:450px;">
+    <hr>
+    <h3> 🏖️ Non-Linear-None-GAP </h3>
+    <iframe  src="{{ '/assets/plotly/non_linear_non_gap_concepts.html' | relative_url }}" frameborder='0' scrolling='yes' height="800px" width="100%" style="border:1px solid #EE00DD55;"></iframe>
+    </div>
+  <div style="clear:both;"></div>
+</div>
 
 
 
 ## Tables (Test Acc)
 
-
-<hr>
 <h3> red </h3>
 
 |layer| linear_gap | non_linear_gap | non_linear_non_gap |
