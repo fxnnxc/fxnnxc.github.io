@@ -1,13 +1,20 @@
 ---
 layout: distill
 title: 'Probing Neurons with CLIP Concepts'
-date: 2023-08-25
-description: Project
+date: 2023-08-29
+description: pipeline for probing
 img: 'https://drive.google.com/uc?export=view&id=1FnJ-NHGqqCgAC6XoNJJCSeOjfUU-TeTc'
 authors: 
     - name: Bumjin Park
       affiliations:
         name: KAIST
+    - name: Enver Menadjiev
+      affiliations:
+        name: KAIST
+    - name: Youngju Joung
+      affiliations:
+        name: KAIST
+    
 bibliography: all.bib
 giscus_comments: true
 disqus_comments: false
@@ -86,7 +93,7 @@ Probing classifiers are for the identification of neurons which are already trai
 
 ### Probing Classifier 
 
-Probing classifiers can be categorized by linearity. A linear probing  classifier directly learns to map activation of neurons to concepts, while a non-linear probing classifier learns the non-linear interaction between activations to verify the relationship between neurons. Following the work <d-cite key="othello"/> we use ReLU architecture for nonlinear probing classifiers.  
+Probing classifiers can be categorized by linearity. A linear probing  classifier directly learns to map activation of neurons to concepts, while a non-linear probing classifier learns the non-linear interaction between activations to verify the relationship between neurons. Following the work <d-cite key="li2022emergent"/> we use ReLU architecture for nonlinear probing classifiers.  
 
 Additional consideration is the choice of neurons in CNN models. We can directly map the receptive field of CNN outputs or reduce them to make a single scalar in a channel. We separate these two cases as “gap” and “non-gap” which indicates the global average pooled representation or not. 
 
