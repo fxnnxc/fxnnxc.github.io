@@ -3,6 +3,10 @@ layout: share-distill
 title: 'Kolmar Software Overview'
 date: 2023-08-28
 description: 기본적인 머신러닝/딥러닝 프레임워크 및 실험 과정
+authors: 
+    - name: Bumjin Park
+      affiliations:
+        name: KAIST
 ---
 
 ## 1. 소프트웨어 목적

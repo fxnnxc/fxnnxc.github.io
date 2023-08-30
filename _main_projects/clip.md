@@ -4,6 +4,10 @@ title: 'Probing Neurons with CLIP Concepts'
 date: 2023-08-25
 description: Project
 img: 'https://drive.google.com/uc?export=view&id=1FnJ-NHGqqCgAC6XoNJJCSeOjfUU-TeTc'
+authors: 
+    - name: Bumjin Park
+      affiliations:
+        name: KAIST
 ---
 
 
