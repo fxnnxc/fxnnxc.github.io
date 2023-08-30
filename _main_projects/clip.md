@@ -77,19 +77,13 @@ We use MoblineNet-v2 model trained on ImageNet1k dataset. The model is trained f
 
 ### probing classifier 
 
-
 There are two types of classifiers; linear and nonlinear. Following the work in <d-cite key=”othello”> we use ReLU architecture for nonlinear probing classifiers. 
-We use labels in the form of `prob-<neurons>-<classifier type>`.
 
-* prob-neuron-linear
-* prob-layer-linear
-* prob-full-linear
-* prob-neuron-nonlinear
-* prob-layer-nonlinear
-* prob-full-nonlinear
+## Results
 
 
-## Results 
+
+### Linear-GAP
 
 <style>
     body {
@@ -97,5 +91,251 @@ We use labels in the form of `prob-<neurons>-<classifier type>`.
     }
 </style>
 <figure>
-<iframe  src="{{ '/assets/plotly/concepts.html' | relative_url }}" frameborder='0' scrolling='yes' height="700px" width="100%" style="border:1px solid #EE00DD55;"></iframe>
+<iframe  src="{{ '/assets/plotly/linear_gap_concepts.html' | relative_url }}" frameborder='0' scrolling='yes' height="700px" width="100%" style="border:1px solid #EE00DD55;"></iframe>
 </figure>
+
+
+
+### Non-Linear-Non-GAP
+
+<style>
+    body {
+      /* Show scrollbars */
+    }
+</style>
+<figure>
+<iframe  src="{{ '/assets/plotly/non_linear_non_gap_concepts.html' | relative_url }}" frameborder='0' scrolling='yes' height="700px" width="100%" style="border:1px solid #EE00DD55;"></iframe>
+</figure>
+
+
+
+
+
+
+## Tables (Test Acc)
+
+
+<hr>
+<h3> red </h3>
+
+|layer| linear_gap | non_linear_gap | non_linear_non_gap |
+|---|---|---|---|
+module:0|0.862|0.919|**0.981**|
+module:1|**0.990**|**0.990**|0.986|
+module:2|0.910|0.929|**0.981**|
+module:3|0.910|0.929|**0.981**|
+module:4|0.924|0.919|**0.981**|
+module:5|0.919|0.919|**0.971**|
+module:6|0.929|0.929|**0.962**|
+module:7|0.933|0.952|**0.981**|
+module:8|0.924|**0.971**|**0.971**|
+module:9|0.929|**0.976**|0.962|
+module:10|0.929|**0.976**|0.962|
+module:11|0.938|**0.981**|0.952|
+module:12|0.938|**0.976**|0.967|
+module:13|0.948|**0.976**|0.967|
+module:14|0.971|**0.986**|0.971|
+module:15|0.981|**0.990**|0.976|
+module:16|0.981|**0.986**|0.971|
+module:17|**0.990**|**0.990**|0.986|
+module:18|**0.990**|**0.990**|0.981|
+
+<hr>
+<h3> blue </h3>
+
+|layer| linear_gap | non_linear_gap | non_linear_non_gap |
+|---|---|---|---|
+module:0|0.686|0.829|**0.971**|
+module:1|0.962|**0.981**|0.971|
+module:2|0.748|0.838|**0.957**|
+module:3|0.743|0.876|**0.957**|
+module:4|0.790|0.871|**0.952**|
+module:5|0.829|0.871|**0.952**|
+module:6|0.824|0.886|**0.952**|
+module:7|0.852|0.895|**0.957**|
+module:8|0.848|0.919|**0.962**|
+module:9|0.824|0.919|**0.957**|
+module:10|0.810|0.938|**0.967**|
+module:11|0.843|**0.957**|0.952|
+module:12|0.852|0.938|**0.957**|
+module:13|0.876|0.948|**0.962**|
+module:14|0.876|**0.976**|0.971|
+module:15|0.848|**0.967**|0.962|
+module:16|0.881|**0.971**|0.962|
+module:17|0.962|**0.981**|0.971|
+module:18|0.962|**0.967**|0.957|
+
+<hr>
+<h3> green </h3>
+
+|layer| linear_gap | non_linear_gap | non_linear_non_gap |
+|---|---|---|---|
+module:0|0.671|0.881|**0.962**|
+module:1|0.962|**0.981**|**0.981**|
+module:2|0.852|0.910|**0.938**|
+module:3|0.862|0.895|**0.952**|
+module:4|0.876|0.924|**0.967**|
+module:5|0.886|0.938|**0.962**|
+module:6|0.890|0.948|**0.967**|
+module:7|0.919|0.943|**0.981**|
+module:8|0.919|0.933|**0.948**|
+module:9|0.895|0.948|**0.952**|
+module:10|0.881|**0.962**|0.952|
+module:11|0.900|0.957|**0.976**|
+module:12|0.914|0.943|**0.967**|
+module:13|0.910|**0.962**|0.933|
+module:14|0.929|0.967|**0.981**|
+module:15|0.905|**0.962**|0.948|
+module:16|0.914|**0.967**|**0.967**|
+module:17|0.962|**0.967**|**0.967**|
+module:18|0.962|**0.981**|0.943|
+
+<hr>
+<h3> yellow </h3>
+
+|layer| linear_gap | non_linear_gap | non_linear_non_gap |
+|---|---|---|---|
+module:0|0.757|0.819|**0.948**|
+module:1|0.976|**0.981**|0.962|
+module:2|0.800|0.829|**0.933**|
+module:3|0.805|0.810|**0.933**|
+module:4|0.819|0.819|**0.924**|
+module:5|0.814|0.843|**0.933**|
+module:6|0.833|0.838|**0.924**|
+module:7|0.824|0.833|**0.943**|
+module:8|0.829|0.852|**0.933**|
+module:9|0.843|0.886|**0.933**|
+module:10|0.857|0.886|**0.943**|
+module:11|0.814|**0.919**|**0.919**|
+module:12|0.857|0.905|**0.924**|
+module:13|0.848|0.905|**0.910**|
+module:14|0.919|**0.981**|0.952|
+module:15|0.933|**0.962**|0.952|
+module:16|0.933|**0.976**|0.933|
+module:17|**0.971**|0.957|0.962|
+module:18|0.976|**0.981**|0.962|
+
+<hr>
+<h3> striped </h3>
+
+|layer| linear_gap | non_linear_gap | non_linear_non_gap |
+|---|---|---|---|
+module:0|0.667|0.671|**0.890**|
+module:1|0.995|**1.000**|0.995|
+module:2|0.800|0.800|**0.933**|
+module:3|0.805|0.810|**0.924**|
+module:4|0.838|0.871|**0.952**|
+module:5|0.838|0.862|**0.948**|
+module:6|0.843|0.886|**0.924**|
+module:7|0.890|0.943|**0.957**|
+module:8|0.900|0.914|**0.971**|
+module:9|0.914|0.938|**0.962**|
+module:10|0.910|**0.957**|**0.957**|
+module:11|0.905|0.952|**0.967**|
+module:12|0.905|0.967|**0.976**|
+module:13|0.938|**0.976**|0.948|
+module:14|0.957|0.986|**0.990**|
+module:15|0.976|**0.990**|0.986|
+module:16|0.995|**1.000**|0.990|
+module:17|**0.995**|0.990|0.990|
+module:18|0.990|**1.000**|0.995|
+
+<hr>
+<h3> zigzagged </h3>
+
+|layer| linear_gap | non_linear_gap | non_linear_non_gap |
+|---|---|---|---|
+module:0|0.667|0.676|**0.900**|
+module:1|0.981|**0.986**|0.976|
+module:2|0.714|0.719|**0.914**|
+module:3|0.705|0.743|**0.895**|
+module:4|0.786|0.795|**0.929**|
+module:5|0.800|0.795|**0.905**|
+module:6|0.795|0.800|**0.919**|
+module:7|0.814|0.857|**0.924**|
+module:8|0.814|0.886|**0.933**|
+module:9|0.843|0.886|**0.938**|
+module:10|0.833|0.905|**0.943**|
+module:11|0.871|0.933|**0.943**|
+module:12|0.886|0.938|**0.943**|
+module:13|0.890|0.938|**0.957**|
+module:14|0.924|**0.952**|0.948|
+module:15|0.914|0.952|**0.957**|
+module:16|0.938|0.957|**0.976**|
+module:17|0.971|**0.986**|0.976|
+module:18|**0.981**|0.976|0.957|
+
+<hr>
+<h3> dotted </h3>
+
+|layer| linear_gap | non_linear_gap | non_linear_non_gap |
+|---|---|---|---|
+module:0|0.667|0.695|**0.905**|
+module:1|0.976|**0.995**|**0.995**|
+module:2|0.719|0.767|**0.933**|
+module:3|0.724|0.748|**0.952**|
+module:4|0.757|0.867|**0.976**|
+module:5|0.781|0.867|**0.981**|
+module:6|0.790|0.881|**0.976**|
+module:7|0.838|0.929|**0.971**|
+module:8|0.852|0.924|**0.995**|
+module:9|0.795|0.929|**0.990**|
+module:10|0.752|0.952|**0.976**|
+module:11|0.767|0.952|**0.995**|
+module:12|0.805|0.962|**0.990**|
+module:13|0.848|0.967|**0.995**|
+module:14|0.833|0.986|**0.995**|
+module:15|0.905|0.986|**0.995**|
+module:16|0.924|0.986|**0.995**|
+module:17|0.933|0.990|**0.995**|
+module:18|0.976|**0.995**|**0.995**|
+
+<hr>
+<h3> male </h3>
+
+|layer| linear_gap | non_linear_gap | non_linear_non_gap |
+|---|---|---|---|
+module:0|0.681|0.733|**0.943**|
+module:1|0.976|**0.981**|0.971|
+module:2|0.781|0.824|**0.924**|
+module:3|0.810|0.824|**0.943**|
+module:4|0.829|0.838|**0.929**|
+module:5|0.871|0.824|**0.933**|
+module:6|0.876|0.838|**0.943**|
+module:7|0.871|0.881|**0.938**|
+module:8|0.876|0.900|**0.943**|
+module:9|0.867|0.914|**0.943**|
+module:10|0.881|0.952|**0.957**|
+module:11|0.886|0.933|**0.943**|
+module:12|0.890|**0.943**|**0.943**|
+module:13|0.895|0.938|**0.952**|
+module:14|0.924|**0.962**|0.952|
+module:15|0.938|0.952|**0.967**|
+module:16|0.948|**0.971**|0.962|
+module:17|0.976|**0.981**|0.971|
+module:18|**0.971**|0.967|0.967|
+
+<hr>
+<h3> female </h3>
+
+|layer| linear_gap | non_linear_gap | non_linear_non_gap |
+|---|---|---|---|
+module:0|0.667|0.686|**0.848**|
+module:1|0.938|0.938|**0.952**|
+module:2|0.724|0.729|**0.881**|
+module:3|0.752|0.729|**0.914**|
+module:4|0.724|0.752|**0.881**|
+module:5|0.729|0.757|**0.886**|
+module:6|0.729|0.767|**0.886**|
+module:7|0.757|0.810|**0.905**|
+module:8|0.771|0.852|**0.895**|
+module:9|0.776|0.852|**0.895**|
+module:10|0.776|0.848|**0.890**|
+module:11|0.800|0.843|**0.905**|
+module:12|0.814|0.843|**0.886**|
+module:13|0.833|0.910|**0.914**|
+module:14|0.843|**0.933**|0.924|
+module:15|0.852|**0.938**|0.910|
+module:16|0.895|**0.929**|**0.929**|
+module:17|0.938|0.938|**0.952**|
+module:18|0.929|0.929|**0.943**|

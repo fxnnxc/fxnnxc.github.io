@@ -106,8 +106,8 @@ Figure. Training Perplexity ($\downarrow$). We compare prompt tuning and prefix 
 #### 4.1.2 Model Size
 
 <figure>
-<iframe  src="{{ '/assets/plotly/prompt_train_ppl.html'  relative_url }}" frameborder='0' scrolling='no' height="380px" width="100%"  style="border:0px dashed grey; padding-bottom:0px"></iframe>
-<iframe  src="{{ '/assets/plotly/prefix_train_ppl.html'  relative_url }}" frameborder='0' scrolling='no' height="380px" width="100%" style="border:0px dashed grey;"></iframe>
+<iframe src="{{ '/assets/plotly/prompt_train_ppl.html'  relative_url }}" frameborder='0' scrolling='no' height="380px" width="100%"  style="border:0px dashed grey; padding-bottom:0px"></iframe>
+<iframe src="{{ '/assets/plotly/prefix_train_ppl.html'  relative_url }}" frameborder='0' scrolling='no' height="380px" width="100%" style="border:0px dashed grey;"></iframe>
 </figure>
 
 
