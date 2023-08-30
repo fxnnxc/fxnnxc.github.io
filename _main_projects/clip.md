@@ -129,6 +129,10 @@ We observe that the when (training epoch) has no difference for the test accurac
 
 ## Tables (Test Acc)
 
+### Color Concepts
+
+<div class="table-slider" markdown="1" style="width:60rem">
+<div markdown="1">
 <h3> Red </h3>
 
 |layer| linear_gap | non_linear_gap | non_linear_non_gap |
@@ -153,7 +157,9 @@ module:16|0.981|**0.986**|0.971|
 module:17|**0.990**|**0.990**|0.986|
 module:18|**0.990**|**0.990**|0.981|
 
-<hr>
+</div>
+
+<div markdown="1">
 <h3> Blue </h3>
 
 |layer| linear_gap | non_linear_gap | non_linear_non_gap |
@@ -178,7 +184,9 @@ module:16|0.881|**0.971**|0.962|
 module:17|0.962|**0.981**|0.971|
 module:18|0.962|**0.967**|0.957|
 
-<hr>
+</div>
+
+<div markdown="1">
 <h3> Green </h3>
 
 |layer| linear_gap | non_linear_gap | non_linear_non_gap |
@@ -203,7 +211,9 @@ module:16|0.914|**0.967**|**0.967**|
 module:17|0.962|**0.967**|**0.967**|
 module:18|0.962|**0.981**|0.943|
 
-<hr>
+</div>
+
+<div markdown="1">
 <h3> Yellow </h3>
 
 |layer| linear_gap | non_linear_gap | non_linear_non_gap |
@@ -228,7 +238,16 @@ module:16|0.933|**0.976**|0.933|
 module:17|**0.971**|0.957|0.962|
 module:18|0.976|**0.981**|0.962|
 
+</div>
+</div>
+
 <hr>
+
+### Pattern Concepts
+
+<div class="table-slider" markdown="1" style="width:60rem">
+
+<div markdown="1">
 <h3> Striped </h3>
 
 |layer| linear_gap | non_linear_gap | non_linear_non_gap |
@@ -253,7 +272,9 @@ module:16|0.995|**1.000**|0.990|
 module:17|**0.995**|0.990|0.990|
 module:18|0.990|**1.000**|0.995|
 
-<hr>
+</div>
+
+<div markdown="1">
 <h3> Zigzagged </h3>
 
 |layer| linear_gap | non_linear_gap | non_linear_non_gap |
@@ -278,7 +299,10 @@ module:16|0.938|0.957|**0.976**|
 module:17|0.971|**0.986**|0.976|
 module:18|**0.981**|0.976|0.957|
 
+</div>
+
 <hr>
+<div markdown="1">
 <h3> Dotted </h3>
 
 |layer| linear_gap | non_linear_gap | non_linear_non_gap |
@@ -303,7 +327,15 @@ module:16|0.924|0.986|**0.995**|
 module:17|0.933|0.990|**0.995**|
 module:18|0.976|**0.995**|**0.995**|
 
+</div>
+</div>
+
 <hr>
+
+### Gender Concepts
+
+<div class="table-slider" markdown="1" style="width:60rem">
+<div markdown="1">
 <h3> Male </h3>
 
 |layer| linear_gap | non_linear_gap | non_linear_non_gap |
@@ -328,7 +360,9 @@ module:16|0.948|**0.971**|0.962|
 module:17|0.976|**0.981**|0.971|
 module:18|**0.971**|0.967|0.967|
 
-<hr>
+</div>
+
+<div markdown="1">
 <h3> female </h3>
 
 |layer| linear_gap | non_linear_gap | non_linear_non_gap |
@@ -352,6 +386,9 @@ module:15|0.852|**0.938**|0.910|
 module:16|0.895|**0.929**|**0.929**|
 module:17|0.938|0.938|**0.952**|
 module:18|0.929|0.929|**0.943**|
+
+</div>
+</div>
 
 
 ## Conclusion 

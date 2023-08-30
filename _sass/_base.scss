@@ -868,3 +868,13 @@ span.badge-toc {
   display: inline-block;
   inline-size: fit-content;
 }
+
+.table-slider{
+  overflow-x:auto;
+  display: flex;
+
+  & > div{
+    margin-right: 2rem;
+    background-color:#f9f9f9;
+  }
+}
