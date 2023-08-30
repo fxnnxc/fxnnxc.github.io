@@ -151,6 +151,9 @@ collections:
   experiment:
     output: true
     permalink: /experiment/:path/
+  Pkolmar:
+    output: true
+    permalink: /Pkolmar/:path/
 
 news_limit: 10000
 

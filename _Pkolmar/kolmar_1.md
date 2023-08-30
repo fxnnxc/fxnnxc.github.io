@@ -7,6 +7,8 @@ authors:
     - name: Bumjin Park
       affiliations:
         name: KAIST
+
+img: https://drive.google.com/uc?export=view&id=1AjinezaQqG-mRg4IhT4QZzHjFX7w_v8X
 ---
 
 ## 1. 소프트웨어 목적
