@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Project with Kolmar
+title: Project with Kolmar 🫗
 description: 
 permalink: /Pkolmar/
 ---
