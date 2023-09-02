@@ -7,7 +7,7 @@ authors:
 bibliography: all.bib
 giscus_comments: true
 disqus_comments: true
-date: 2023-08-24
+date: 2023-09-02
 featured: true
 img: "https://drive.google.com/uc?export=view&id=1fEEfroouMEgeP5sztR3H9fuA5kEM9xuL"
 title: '인지 4'
