@@ -2,6 +2,7 @@
 layout: share-distill
 title: 'Kolmar Software Overview'
 date: 2023-08-28
+giscus_comments : true
 description: 기본적인 머신러닝/딥러닝 프레임워크 및 실험 과정
 authors: 
     - name: Bumjin Park
@@ -10,6 +11,13 @@ authors:
 
 img: https://drive.google.com/uc?export=view&id=1AjinezaQqG-mRg4IhT4QZzHjFX7w_v8X
 ---
+
+
+#### 요구사항
+
+* **데이터셋 형태** : [3.데이터셋_예시](#3-데이터셋-예시) 참조 ✅
+* **기본 딥러닝 프레임워크** : [1.소프트웨어 목적](#1-소프트웨어-목적) 참조 ✅
+* **딥러닝 실험 관리 방침** : [2.버전관리](#2-versioning-다양한-데이터-종류-모델-종류-학습-결과-보고서) 참조 ✅
 
 ## 1. 소프트웨어 목적
 
@@ -42,6 +50,7 @@ img: https://drive.google.com/uc?export=view&id=1AjinezaQqG-mRg4IhT4QZzHjFX7w_v8
 *  <code style='background-color:#FFFFDD'>데이터셋</code> : 학습과 평가에 사용되는 데이터셋의 버전을 나타낸다. 
 *  <code style='background-color:#DDFFDD'>모델</code>: 모델과 모델 학습에 사용되는 Trainer의 버전을 나타낸다. 
 *  <code style='background-color:#DDEEFF'>평가</code> : 평가 및 레포트의 버전을 나타낸다. 
+
 
 ## 3. 데이터셋 예시 
 
