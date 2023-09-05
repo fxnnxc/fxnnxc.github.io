@@ -49,7 +49,12 @@ We have initial weight $w_0$ which is further rewritten with another weights $\D
 
 <figure>
 <img src="https://drive.google.com/uc?export=view&id=1m8m0GHn7NAgDJNjIieVSuyomec1M18-d">
+<figcaption>
+Figure from the paper "Rewriting a deep generative model"
+</figcaption>
 </figure>
+
+
 
 ## Formulation of Editing 
 
@@ -140,6 +145,9 @@ The below example shows the editing of convolutional layer which produces $$v = 
 
 <figure>
 <img src="https://drive.google.com/uc?export=view&id=1GfMXX5JbJJ6q4TswUhcNjL-zgyEGKJu7" >
+<figcaption>
+Figure from the paper "Rewriting a deep generative model"
+</figcaption>
 </figure>
 
 
@@ -271,3 +279,44 @@ $$
 where $$D_S = [d_1 \vert d_2 \vert \cdots \vert d_S]$$.
 
 ---
+
+## Editing Classifier 
+
+I summarized briefly the core mechanism of  [📃  *Editing a classifier by rewriting its prediction rules*]<d-cite key="santurkar2021editing"/>
+
+
+
+### Method 
+
+Given an original image $x$, the original output $y$ is produced by the classifier and the internal representation value $v$ which may have semantic meaning. This value $v$ is the representation that already mapped to the correct label $y$. 
+
+Now assume that we have modified input $x'$ and we want to map it to the value $v$ to produce label $y$. To do this, the *linear association memory* is applied to map the new key to desired the value 
+
+
+<div style="width:100%; overflow-x:clip; overflow-y:clip;">
+$$
+\begin{align}
+k_* \rightarrow v_*
+\end{align}
+$$
+</div>
+
+For example, the original car image has semantic wheel which is mapped to the label *Car* or *Bicycle* and leaves the value $v^\*$ from the *wheel* concept. When we want edit the wheel concept to *wooden wheel*, but preserves the prediction as *Car* and *Bicycle*, the new key *wooden wheel* needs to be mapped to the value $v^*$.
+
+<figure>
+<img src="https://drive.google.com/uc?export=view&id=1X-qMZZv5IWQZuCu0U5SWms2AL2DTa5HU" style="width:120%"  >
+<figcaption>
+Figure from the paper "Editing a classifier by rewriting its prediction rules"
+</figcaption>
+</figure>
+
+### Why We Edit Association (Key $\rightarrow$ Value)? 
+
+Because there is spurious correlation between backgrounds in classification, the prediction could be biased. For example, **snow** concept should be mapped to the value of **road** to be invariant to the backgrounds.  
+
+<figure>
+<img src="https://drive.google.com/uc?export=view&id=1GqxOKT_w5DatOa-Z77RJqrGwBOlG9-tW" style="width:120%" >
+<figcaption>
+Figure from the paper "Editing a classifier by rewriting its prediction rules"
+</figcaption>
+</figure>
