@@ -14,14 +14,16 @@ disqus_comments: false
 
 ---
 
-This post is a summary of work done by Rafael et al.
+This post represents a summary of work DPO done by Rafael et al.
 
 ## Summary
 
-Previous human feedback (HF) fine-tuning of GPT is **done with reinforcement learning (RL)**. In RL, a **reward model** predicts the preference score of a generated text and the language models (LMs) such as GPT are optimized to maximize rewards with RL algorithms such as PPO. This method **requires a reward model** which is trained with paired score sentences $y_{win}$ and $y_{lose}$.  The authors in this work conjectured that the reward model may not required as we can directly optimize with preference differences. 
-The proposed method direct preference optimization (DPO) <d-cite key="rafailov2023direct"/> showed better results with faster convergence. 
+Previously, reinforcement learning (RL) is applied to human feedback (HF) fine-tuning of GPT. In RL, a **reward model** predicts the preference scores of a generated sentence and the language models (LMs) such as GPT are optimized to maximize the rewards with RL algorithms like PPO. 
 
-> That is, the previous HF methods trains a reward model which returns a preference score (scalar), but the proposed method, DPO can skip the training of the reward model.  
+The previous framework **requires a reward model** which is trained with paired sentences $y_{win}$ and $y_{lose}$.  The authors in this work conjectured that the reward model may not be required as we can **directly optimize with preference differences**. 
+The proposed method which is termed as direct preference optimization (DPO) <d-cite key="rafailov2023direct"/> generated better sentences with faster convergence speed. 
+
+> That is, the previous HF methods train a reward model which returns a preference score (scalar), but the proposed method, DPO can not require the reward model.  
 
 ---
 
@@ -29,13 +31,29 @@ The proposed method direct preference optimization (DPO) <d-cite key="rafailov20
 
 **Summary** : Comparison between previous method (RLHF) and DPO which does not require the reward model. DPO  maximizes the likelihood of $y_{win}$ and minimizes the likelihood of $y_{lose}$. 
 
+$$ 
+
+\mathcal{L}_\mathrm{DPO}(\pi_\theta ; \pi_\mathrm{ref}) = 
+- \mathbb{E}_{(x,y_w, y_l)\sim \mathcal{D}} \Big[ 
+    \log \sigma 
+        \Big( 
+            \beta \log \frac{\pi_\theta (y_w|x)}{\pi_\mathrm{ref}(y_w | x)}
+            -
+            \beta \log \frac{\pi_\theta (y_l|x)}{\pi_\mathrm{ref}(y_l | x)}
+        \Big)
+    \Big]
+$$  
+
+
+
+
 <img src="https://drive.google.com/uc?export=view&id=17_lVnUT031VFvMMQLhrkEY6lyShWAOoQ" style="width:150%;margin-left:-5rem;" onClick="window.open(this.src)" >
 
 ---
 
-### Preference Tuning Result 
+### Preference Tuning Results 
 
-**Summary** : DPO generates more positive sentiment reviews and better summarization.  See <span style="color:#FFFF00;background-color:#000000">Yellow </span>. 
+**Summary** : DPO generates more positive reviews and shows better summarization results.  See <span style="color:#FFFF00;background-color:#000000">Yellow </span>. 
 
 <img src="https://drive.google.com/uc?export=view&id=1QsfKdSPXM7u50h-0lcFT6NF1RRVGdJdI" style="width:150%;margin-left:-5rem;" onClick="window.open(this.src)" >
 
@@ -43,7 +61,7 @@ The proposed method direct preference optimization (DPO) <d-cite key="rafailov20
 
 ### GPT4 Win Rate
 
-**Summary** : DPO generates better Helpful and Harmless dialog compared to dialogs in test dataset. 
+**Summary** : DPO generates more **Helpful and Harmless (HH)** dialog compared to dialogs in test sets. 
 
 
 <img src="https://drive.google.com/uc?export=view&id=16EqWM8d2QEgne5yinSMIFmy4ECArmlM6" style="width:150%;margin-left:-5rem;" onClick="window.open(this.src)" >
