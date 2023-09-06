@@ -77,7 +77,7 @@ Equation 2 ensures little difference between two operations $(G(z;\theta_0)$ and
 However, this technique requires the modification of all weight $\theta$ and the novel idea proposed by Bau is the modification of only one layer<d-footnote> In the paper, the authors said "we reduce the degrees of freedom by modifying weights at only one layer." </d-footnote>.
 
 
-Let $v = f_l(k;W_0)$ denote the computation of layer $L$ with weights $W_0$. For each exemplar latent $z_i$, theses layers produce features $$k_i^*$$ and $$v_i^* = f_l(k_i^*;W_0)$$ Here, $$v_i^*$$ is the latent for the desired image $$x_i^*$$ which could be obtained via such as GAN inversion. The objective Equation 1 becomes
+Let $v = f_l(k;W_0)$ denote the computation of layer $L$ with weights $W_0$. For each exemplar latent $z_i$, The layer produce features $$k_i^*$$ and $$v_i^* = f_l(k_i^*;W_0)$$ Here, $$v_i^*$$ is the latent for the desired image $$x_i^*$$ which could be obtained via such as GAN inversion. The objective Equation 1 becomes
 
 <div style="width:100%; overflow-x:clip; overflow-y:clip;">
 
