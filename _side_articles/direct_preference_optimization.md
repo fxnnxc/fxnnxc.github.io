@@ -16,15 +16,6 @@ disqus_comments: false
 
 This post represents a summary of work DPO done by Rafael et al.
 
-## Summary
-
-Previously, reinforcement learning (RL) is applied to human feedback (HF) fine-tuning of GPT. In RL, a **reward model** predicts the preference scores of a generated sentence and the language models (LMs) such as GPT are optimized to maximize the rewards with RL algorithms like PPO. 
-
-The previous framework **requires a reward model** which is trained with paired sentences $y_{win}$ and $y_{lose}$.  The authors in this work conjectured that the reward model may not be required as we can **directly optimize with preference differences**. 
-The proposed method which is termed as direct preference optimization (DPO) <d-cite key="rafailov2023direct"/> generated better sentences with faster convergence speed. 
-
-> That is, the previous HF methods train a reward model which returns a preference score (scalar), but the proposed method, DPO can not require the reward model.  
-
 ---
 
 ### Overview 
@@ -65,6 +56,19 @@ $$
 
 
 <img src="https://drive.google.com/uc?export=view&id=16EqWM8d2QEgne5yinSMIFmy4ECArmlM6" style="width:150%;margin-left:-5rem;" onClick="window.open(this.src)" >
+
+
+---
+
+
+## Summary
+
+Previously, reinforcement learning (RL) is applied to human feedback (HF) fine-tuning of GPT. In RL, a **reward model** predicts the preference scores of a generated sentence and the language models (LMs) such as GPT are optimized to maximize the rewards with RL algorithms like PPO. 
+
+The previous framework **requires a reward model** which is trained with paired sentences $y_{win}$ and $y_{lose}$.  The authors in this work conjectured that the reward model may not be required as we can **directly optimize with preference differences**. 
+The proposed method which is termed as direct preference optimization (DPO) <d-cite key="rafailov2023direct"/> generated better sentences with faster convergence speed. 
+
+> That is, the previous HF methods train a reward model which returns a preference score (scalar), but the proposed method, DPO can not require the reward model.  
 
 
 ---
