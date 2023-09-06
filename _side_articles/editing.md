@@ -157,7 +157,7 @@ Figure from the paper "Rewriting a deep generative model"
 Orthogonal keys have at most $N$ number of keys where $N$ is length of columns. In other words, only $N$ number of semantic keys are possible. However, the semantic space could have more number of semantic keys and nonorthogonal encode more key-value pairs with 🌟**superpositions**.
 
 
-Let $N'$ be the number of nonorthogonal keys $\{k_i\}. We choose $W_0$ to minimize error:
+Let $N'$ be the number of nonorthogonal keys $\{k_i\}$. We choose $W_0$ to minimize error:
 
 
 <div style="width:100%; overflow-x:clip; overflow-y:clip;">
