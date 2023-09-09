@@ -227,7 +227,7 @@ Strongly connected components (SCCs) can be identified, but not every node is pa
 
 ### Eigenvector Centrality 
 
-Let $v$ be a node of a graph with $v = 1, 2, \cdots, N$. `The eigenvector centrality` $c_v$ of node $v$ is defined by  $c_v = \frac{1}{\lambda} \sum_{w\in N(v)} c_w$. As $c_v$ is determined by other $c_w$ which is also determined by other centrality scores, this equation makes **simultaneous equations for centrality score $c_v$ with all $v\in V$** where $V$ is the set of nodes. As the neighbors $N(v)$ determines adjacency vector $A_v$ of node $v$, summation part $\sum_{w\in N(v)}$ could be replaced by adjacency vector such as $[1,0,1,0,0,\cdots]$. As such, we obtain the following simultaneous equation with the adjacency matrix $A$ of the graph : 
+Let $v$ be a node of a graph $\mathcal{G}$ with $v = 1, 2, \cdots, N$. `The eigenvector centrality` $c_v$ of node $v$ is defined by  $c_v = \frac{1}{\lambda} \sum_{w\in N(v)} c_w$. As $c_v$ is determined by other $c_w$ which is also determined by other centrality scores, this equation makes **simultaneous equations for centrality score $c_v$ with all $v\in V$** where $V$ is the set of nodes. As the neighbors $N(v)$ determines adjacency vector $A_v$ of node $v$, summation part $\sum_{w\in N(v)}$ could be replaced by adjacency vector such as $[1,0,1,0,0,\cdots]$. As such, we obtain the following **simultaneous equation of centrality scores** with the adjacency matrix $A$ of graph $\mathcal{G}$ : 
 
 $$
 \begin{align}
