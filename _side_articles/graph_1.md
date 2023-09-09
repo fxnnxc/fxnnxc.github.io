@@ -213,7 +213,7 @@ Strongly connected components (SCCs) can be identified, but not every node is pa
 ----
 
 
-## Lecture 2.1 
+## Lecture 2
 
 * Node degree : the number of edges the node has. 
 * Node centrality : take the node importance in a graph into account 
@@ -250,8 +250,6 @@ Graphlet Degree Vector (GDV) : a count vector of graphlets rooted at a given nod
 Importance-based Features vs Structure-based Features 
 * I  : node degree, centrality measures 
 * S  : node degree, clustering, graphlets 
-
-## Lecture 2.1 
 
 
 
