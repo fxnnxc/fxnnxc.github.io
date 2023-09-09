@@ -208,3 +208,50 @@ Strongly connected components (SCCs) can be identified, but not every node is pa
 
 * In-component: nodes that can reach the SCC
 * Out-component: nodes that can be reached from the SCC. <br> (starting from SCC node to the component)
+
+
+----
+
+
+## Lecture 2.1 
+
+* Node degree : the number of edges the node has. 
+* Node centrality : take the node importance in a graph into account 
+  * Eigenvector centrality  $c_v = \frac{1}{\lambda} \sum_{u \in N(v)} c_u 
+  * Betweenness centrality : if a node lies on many shortest paths between other nodes (used for a path)
+  * Closeness : shortest path is smaller than other nodes. (close to other nodes)
+* Clustering coefficient : how connected v's neighboring nodes are (for all combination of neighboring nodes, how many of them are connected. )
+* Graphlets : isomorphic components in graph. 
+
+$$
+\begin{equation}
+
+\lambda \cdot \begin{bmatrix}
+c_1 \\
+c_2 \\ 
+\vdots \\ 
+c_N
+\end{bmatrix} = A
+ \begin{bmatrix}
+c_1 \\
+c_2 \\ 
+\vdots \\ 
+c_N
+\end{bmatrix}
+\end{equation}
+$$
+
+The eigenvector with the largest eigenvalue is the desired centrality measure. seed [[wiki](https://en.wikipedia.org/wiki/Eigenvector_centrality)]
+The elements of the eigenvectors are the centrality scores for each node from 1 to $N$. 
+
+
+Graphlet Degree Vector (GDV) : a count vector of graphlets rooted at a given node. For example, [2,1,0,0] where each index is the isomorphic graphlet. 
+
+Importance-based Features vs Structure-based Features 
+* I  : node degree, centrality measures 
+* S  : node degree, clustering, graphlets 
+
+## Lecture 2.1 
+
+
+
