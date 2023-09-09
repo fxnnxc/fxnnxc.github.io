@@ -223,6 +223,12 @@ Strongly connected components (SCCs) can be identified, but not every node is pa
 * Clustering coefficient : how connected v's neighboring nodes are (for all combination of neighboring nodes, how many of them are connected. )
 * Graphlets : isomorphic components in graph. 
 
+---
+
+### Eigenvector Centrality 
+
+Let $1, 2, \cdots, N$ be the indices of nodes. `The eigenvector centrality` $c_v$ of node $v$ is $c_v = \frac{1}{\lambda} \sum_{w\in N(v)} c_w$. As $c_v$ is determined by other $c_w$ which is also determined by other nodes, this equation makes **simultaneous equations for centrality score $c$**. As the neighbor $N(v)$ determines adjacency matrix $A$, summation part $\sum_{w\in N(v)}$ could be replaced by adjacency such as $[1,0,1,0,0,\cdots]$. With the adjacency matrix, we obtain the following simultaneous equation: 
+
 $$
 \begin{equation}
 
@@ -241,8 +247,14 @@ c_N
 \end{equation}
 $$
 
-The eigenvector with the largest eigenvalue is the desired centrality measure. seed [[wiki](https://en.wikipedia.org/wiki/Eigenvector_centrality)]
-The elements of the eigenvectors are the centrality scores for each node from 1 to $N$. 
+Solving this equation is equal to finding an eigenvector. 
+Note that the equation requires only **finding a single eigenvector** and **each element of the vector is the centrality score of each node**. 
+
+
+> The eigenvector with the largest eigenvalue is the desired centrality measure. See [[wiki](https://en.wikipedia.org/wiki/Eigenvector_centrality)]
+
+---
+
 
 
 Graphlet Degree Vector (GDV) : a count vector of graphlets rooted at a given node. For example, [2,1,0,0] where each index is the isomorphic graphlet. 
