@@ -217,7 +217,7 @@ Strongly connected components (SCCs) can be identified, but not every node is pa
 
 * Node degree : the number of edges the node has. 
 * Node centrality : take the node importance in a graph into account 
-  * Eigenvector centrality  $c_v = \frac{1}{\lambda} \sum_{u \in N(v)} c_u 
+  * Eigenvector centrality  $c_v = \frac{1}{\lambda} \sum_{u \in N(v)} c_u$ 
   * Betweenness centrality : if a node lies on many shortest paths between other nodes (used for a path)
   * Closeness : shortest path is smaller than other nodes. (close to other nodes)
 * Clustering coefficient : how connected v's neighboring nodes are (for all combination of neighboring nodes, how many of them are connected. )
@@ -227,25 +227,39 @@ Strongly connected components (SCCs) can be identified, but not every node is pa
 
 ### Eigenvector Centrality 
 
-Let $1, 2, \cdots, N$ be the indices of nodes. `The eigenvector centrality` $c_v$ of node $v$ is $c_v = \frac{1}{\lambda} \sum_{w\in N(v)} c_w$. As $c_v$ is determined by other $c_w$ which is also determined by other nodes, this equation makes **simultaneous equations for centrality score $c$**. As the neighbor $N(v)$ determines adjacency matrix $A$, summation part $\sum_{w\in N(v)}$ could be replaced by adjacency such as $[1,0,1,0,0,\cdots]$. With the adjacency matrix, we obtain the following simultaneous equation: 
+Let $v$ be a node of a graph with $v = 1, 2, \cdots, N$. `The eigenvector centrality` $c_v$ of node $v$ is defined by  $c_v = \frac{1}{\lambda} \sum_{w\in N(v)} c_w$. As $c_v$ is determined by other $c_w$ which is also determined by other centrality scores, this equation makes **simultaneous equations for centrality score $c_v$ with all $v\in V$** where $V$ is the set of nodes. As the neighbors $N(v)$ determines adjacency vector $A_v$ of node $v$, summation part $\sum_{w\in N(v)}$ could be replaced by adjacency vector such as $[1,0,1,0,0,\cdots]$. As such, we obtain the following simultaneous equation with the adjacency matrix $A$ of the graph : 
 
 $$
-\begin{equation}
+\begin{align}
 
 \lambda \cdot \begin{bmatrix}
 c_1 \\
 c_2 \\ 
 \vdots \\ 
 c_N
-\end{bmatrix} = A
+\end{bmatrix} =
+ \begin{bmatrix}
+ & A_1 & \\
+ & A_2 & \\
+& \vdots & \\ 
+ & A_N &
+\end{bmatrix} & 
  \begin{bmatrix}
 c_1 \\
 c_2 \\ 
 \vdots \\ 
 c_N
-\end{bmatrix}
-\end{equation}
+\end{bmatrix} \\ 
+ = \begin{bmatrix} & &  \\&  A  &  \\  & & \end{bmatrix}
+ & \begin{bmatrix}
+c_1 \\
+c_2 \\ 
+\vdots \\ 
+c_N
+\end{bmatrix} 
+\end{align}
 $$
+
 
 Solving this equation is equal to finding an eigenvector. 
 Note that the equation requires only **finding a single eigenvector** and **each element of the vector is the centrality score of each node**. 
