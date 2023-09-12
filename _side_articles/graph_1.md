@@ -245,7 +245,7 @@ c_N
 \end{bmatrix} \Big)
 $$
 
-As the neighbors $N(v)$ determines adjacency vector $A_v$ of node $v$, summation part $\sum_{w\in N(v)}$ could be replaced by adjacency vector such as $[1,0,1,0,0,\cdots]$. As such, we obtain the following **simultaneous equation of centrality scores** with the adjacency matrix $A$ of graph $\mathcal{G}$ : 
+As the neighbors $N(v)$ determines adjacency vector $A_v$ of node $v$, summation part $\sum_{w\in N(v)}$ could be replaced by an adjacency vector such as $[1,0,1,0,0,\cdots]$. As such, we obtain the following **simultaneous equation of centrality scores** with the adjacency matrix $A$ of graph $\mathcal{G}$ : 
 
 $$
 \begin{align}

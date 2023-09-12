@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  jekyll_custom:
+    build: .
+    image: al-folio-local-docker
+    ports:
+      - 8089:8089
+    volumes:
+      - .:/srv/jekyll

@@ -5,125 +5,63 @@ authors:
       affiliations:
         name: KAIST
 bibliography: all.bib
-giscus_comments: true
-disqus_comments: true
-date: 2023-07-10
+disqus_comments: false
+giscus_comments: false
+date: 2023-09-10
 featured: true
-toc:
-  - name: Problems
 title: 'Papers'
 description: 'All the papers...'
 importance: 2 
 ---
 
+### How to Protect Copyright Data in Optimization of Large Language Models? 
 
-### End-to-end memory networks.
+* Authors : Timothy Chu, Zhao Song, Chiwun Yang
+* Published Date : 2023.08.23 (Arxiv) 
+* Record Date : 2023.09.11 
 
-### Parameter-Efficient Transfer Learning for NLP  
+<button onclick="myFunction(1)" style="background-color:#FFFFDD;border-radius:10px">Details</button>
 
-* Info <d-cite key="houlsby2019parameter" /> :  [[Github](https://github.com/google-research/adapter-bert)], `Efficiency`, 
 
-* PEFT  [[github](https://github.com/huggingface/peft)] : State-of-the-art Parameter-Efficient Fine-Tuning (PEFT) methods
+<div id="1" style="display:none;border:3px solid #DDDDDD;padding:1rem;" markdown="1">
 
+LLMs are built on the transformer neural network architecture, which in turn relies on a mathematical computation called Attention that uses the softmax function. \
 
+To solve copyright regression for the softmax function, we show that the objective function of the softmax copyright regression is convex, and that its Hessian is bounded. 
 
+* [Gil 19 ] investigates copyright infringement in AI-generated artwork and argues that using copyrighted works during the training phase of AI programs does not result in infringement liability. 
 
-### Injecting Domain Knowledge in Language Models for Task-oriented Dialogue Systems
+* [VKB23] proposes a frameowkr that provides stronger protection against sampling protected content, by defining near access-freeness (NAF)
 
-### Memorizing Transformers 
+--- 
 
-### LoRA: Low-Rank Adaptation of Large Language Models
 
-* Info <d-cite key="hu2021lora"/> :  
+<blockquote>
+($\tau$-Copyright-Protected )
+<br>
 
+If there is a trained model $f_\theta$ with parameter $\theta$ that satisfies 
 
+$$
+\frac{L(f_\theta(A_1), b_1)}{n_1} \ge \tau + \frac{L(f_\theta(A_2)), b_2}{n_2}
+$$
 
-### Chain-of-Thought Prompting Elicits Reasoning in Large Language Models
+then we say this model $f_\theta$ is $\tau$-Copyright-Protected. 
+</blockquote>
 
 
-### Locating and Editing Factual Associations in GPT
-* Info : `FactualGPT`
+<button onclick="myFunction(1)" style="background-color:#DDDDDD;border-radius:10px">Close Details</button>
 
+</div>
 
 
-### Mass Editing Memory in a Transformer (MEMIT)
-
-
-
-### Memory-Based Model Editing at Scale
-
-
-
-### Attcat: Explaining transformers via attentive class activation tokens
-
-### Quantifying attention flow in transformers
-
-### Transformer interpretability beyond attention visualization
-
-### Scaling Transformer to 1M tokens and beyond with RMT
-
-
-### On Provable Copyright Protection for Generative Models
-
-
-### Poisoning Language Models During Instruction Tuning
-
-
-### Bag of Tricks for Training Data Extraction from Language Models,
-
-
-### Tree-Ring Watermarks: Fingerprints for Diffusion Images that are Invisible and Robust
-
-
-### CLIP-Dissect: Automatic Description of Neuron Representations in Deep Vision NetworksDownload 
-
-* Info  <d-cite key="oikarinen2022clip"/> : [[pdf](https://openreview.net/forum?id=iPWiwWHc1V)],  `CLIP`, `Network Dissection`, 
-
-
-
-
-### The Future of Fundamental Science Led by Generative Closed-Loop Artificial Intelligence
-
-* 2023.07 
-
-Regarding the the contribution of generative models on scientific discoveries. 
-
-
-### StyleDrop: Text-To-Image Generation in Any Style
-
-* 2023.06 [[pdf](https://arxiv.org/abs/2306.00983)]
-
-Non-autoregressive modeling, `Muse` + `Style` 
-
-
-### Muse:Text-To-Image Generation via Masked Generative Transformers
-
-* 2023.01 [[pdf](https://arxiv.org/abs/2301.00704)]
-
-Non-autoregressive modeling
-
-
-
-## A toy model of universality: Reverse engineering how networks learn group operations 
-
-
-* 2023.07 <d-cite key="chughtai2023toy">
-
-
-A representation is a homomorphism (weight matrix) which maps input vector to the output vector. 
-The paper deals the universality<d-footnote> Universality: whether different models have similar features </d-footnote> with one-layer transformer as *Transformers learn group theoretic automata* <d-cite key="liu2022transformers">. 
-
-## Acquisition of chess knowledge in alphazero
-* * 2022.11 <d-cite key="mcgrath2022acquisition">
-
-
-##  Emergent world representations: Exploring a sequence model trained on a synthetic task
-
-* 2022 <d-cite key="li2022emergent">
-
-
-
----
-
-
----
+<script>
+function myFunction(n) {
+  var x = document.getElementById(n);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
