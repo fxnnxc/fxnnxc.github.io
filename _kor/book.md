@@ -14,6 +14,27 @@ description: ''
 ---
 
 
+### 생각의 탄생 
+
+* 저자 : 로버트 루트번스타인, 미쉘 루트번스타인 
+* 날짜 : 2023.09.11 
+
+<button onclick="myFunction(2)" style="background-color:#FFFFDD;border-radius:10px">Details</button>
+
+<div id="2" style="display:none;border:3px solid #DDDDDD;padding:1rem;" markdown="1">
+
+물리적인 시간, 생리적인 시간, 정신적인 시간은 각각 다르게 나타난다. 이를 단초로 하면 어떤 생각이라도 가능해진다. 아마 시간에도 다른 차원이 있을 것이라고 생각하게 되는 것이다. 
+
+평면적 시각이미지는 한 가지 관점에서만 유효하며 오직 한 사람의 감상자만을 염두에 두고 있다. 
+반면에 조소나 디자인은 감상자의 위치에 구애받지 않아야 하며 여러 사람이 동시에 감상하는 것을 고려해야 한다. 
+
+우리가 지금 당장의 위치에만 얽매이지 않고 가능한 모든 위치에서 사물을 보려고 한다면, 즉 보편적으로 사물을 보기 시작하는 순간 우리는 더 이상 단 한 가지의 관점에서 사물을 보게 되지 않는다. 
+
+사고의 독창성을 기른다는 취지에서 내가 좀더 배웠으면 하는 주제들이 있다. 나는 이 중에 두 가지를 말하고 싶은데, 하나는 차원적 분석이다. 
+이로 인해서 문제의 핵심에 빨리 도달할 수 있다. 또 다른 하나는 투영법인데, 이는 상상력 넘치는 방식으로 데이터를 열거하는 것을 말한다. 
+
+
+</div>
 
 ---
 
@@ -27,7 +48,7 @@ description: ''
 
 <button onclick="myFunction(1)" style="background-color:#FFFFDD;border-radius:10px">Details</button>
 
-<p id="1" style="display:none;border:3px solid #DDDDDD;padding:1rem;" markdown="1">
+<div id="1" style="display:none;border:3px solid #DDDDDD;padding:1rem;" markdown="1">
 
 p. 116 <strong> 어리석은 자가 친구에게서 얻는 유익보다 지혜자가 적에게서 얻는 유익이 더 크다 </strong>
 <br>
@@ -90,7 +111,7 @@ p. 181. **조언이 필요하지 않을 만큼 완벽한 사람은 없다.**
 아무도 막지 못해 신세를 망치는 사람들이 있다. 
 지혜라는 비밀의 방에는 의지할 수 있고 실수를 바로잡도록 평가해주는 친구라는 믿음직한 거울을 두어야 한다. 
 
-</p>
+</div>
 
 ---
 
