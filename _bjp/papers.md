@@ -14,10 +14,106 @@ description: 'All the papers...'
 importance: 2 
 ---
 
+---
+
+### Template
+
+
+* Authors : 
+* Published Date : 
+* Record Date : 
+
+<button onclick="myFunction(10000)" style="background-color:#FFFFDD;border-radius:10px">Details</button>
+
+<div id="10000" style="display:none;border:3px solid #DDDDDD;padding:1rem;" markdown="1">
+
+<button onclick="myFunction(10000)" style="background-color:#DDDDDD;border-radius:10px">Close Details</button>
+</div>
+
+
+Content Provenance and Watermarking
+
+
+
+---
+
+<span class="spanbox"> Copyright </span>
+
+
+### Evading Water mark based Detection of AI-Generated Content
+
+
+
+* Authors : Zhengyuan Jiang, Jinghuai Zhang, Neil Zhenqiang Gong 
+* Published Date : 2023.08.22  (Arvix) / ACM Conference on Computer and Communications Security (CCS), 2023
+* Record Date : 2023.09.12 
+
+<button onclick="myFunction(3)" style="background-color:#FFFFDD;border-radius:10px">Details</button>
+
+<div id="3" style="display:none;border:3px solid #DDDDDD;padding:1rem;" markdown="1">
+
+<button onclick="myFunction(3)" style="background-color:#DDDDDD;border-radius:10px">Close Details</button>
+</div>
+
+
+
+
+
+---
+
+<span class="spanbox"> Copyright </span>
+
+### Confidence-Building Measures for Artificial Intelligence: <br> Workshop Proceedings 
+
+
+* Authors : Sara Shoker, Andrew Reddie, et al., 
+* Published Date : 2023.08.03 (Arxiv) <d-cite key="shoker2023confidencebuilding"/>
+* Record Date : 2023.09.12 
+
+<button onclick="myFunction(2)" style="background-color:#FFFFDD;border-radius:10px">Details</button>
+
+<div id="2" style="display:none;border:3px solid #DDDDDD;padding:1rem;" markdown="1">
+
+
+Provenance and watermarking methods can improve **traceability**, alleviate concerns about **the origin of the AI generated or edited content**, and promote trust among parties. 
+
+If properly vetted against adversarial manipulation, they can also help states use AI-generated products more confidently, knowing that **the outcomes can be traced back to their source**. 
+
+
+Coalition for Content Provenance and Authenticity (C2PA), whose members include Adobe, Microsoft, Intel, and so on, is an industry-led initiative that develops technical standards for establishing **the source and history of media content**.
+
+C2PA specifications, provenance methods can be split between "hard" and "soft" binding
+
+* **SOFT** : Watermarking (they are more easily undermined with modification of contents)
+* **HARD** : methods for applying unique identifiers to data assets and other cryptographic methods. (using cryptographically-bound provenance can include information about the origin of a piece of content such as AI model or version used to create it. )
+
+More Info on *[PAI's Responsible Practices for Synthetic Media](https://syntheticmedia.partnershiponai.org/#learn_more)* 
+
+Watermarking can serve as a verification mechanism to confirm the authenticity and integrity of AI generations. 
+Watermarking involves embedding low probability sequences of tokens into the outputs produced by AI systems. 
+
+* **Drawbacks** : Watermarks are not <span class="spanbox" style='background-color:#FFEEEE;'> tamper-proof </span> (변조 방지). Bad actors can use "paraphrasing attacks" to **(1) remove text watermarks**, **(2) spoofing to infer hidden watermark signatures**, or even **(3) add watermarks to authentic content**. 
+
+* Removal of Watermark **Evading Watermark based Detection of AI-Generated Content**  <d-cite key="jiang2023evading"/> [[Arvix](https://arxiv.org/abs/2305.03807)].
+
+
+Open provenance standards and open sourcing **AI detection technologies** should be encouraged to help reduce the cost of security. 
+
+The proliferation of foundation models means that provenance and watermarking is unlikely to be applied evenly by all developers.
+
+
+<button onclick="myFunction(2)" style="background-color:#DDDDDD;border-radius:10px">Close Details</button>
+</div>
+
+---
+
+
+<span class="spanbox"> Copyright </span>
+
 ### How to Protect Copyright Data in Optimization of Large Language Models? 
 
 * Authors : Timothy Chu, Zhao Song, Chiwun Yang
-* Published Date : 2023.08.23 (Arxiv) 
+* Published Date : 2023.08.23 (Arxiv) <d-cite key="chu2023protect"/>
 * Record Date : 2023.09.11 
 
 <button onclick="myFunction(1)" style="background-color:#FFFFDD;border-radius:10px">Details</button>
@@ -53,6 +149,21 @@ then we say this model $f_\theta$ is $\tau$-Copyright-Protected.
 <button onclick="myFunction(1)" style="background-color:#DDDDDD;border-radius:10px">Close Details</button>
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <script>
