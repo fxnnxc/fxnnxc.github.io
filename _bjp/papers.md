@@ -16,6 +16,8 @@ importance: 2
 
 ---
 
+
+
 ### Template
 
 
@@ -30,8 +32,108 @@ importance: 2
 <button onclick="myFunction(10000)" style="background-color:#DDDDDD;border-radius:10px">Close Details</button>
 </div>
 
+---
 
-Content Provenance and Watermarking
+
+
+### Robust Multi-bit Natural Language Watermarking through Invariant Features 
+
+
+* Authors : KiYoon Yoo, Wonhyuk Ahn, Jiho Jang, Nojun Kwak
+* Published Date : ACL 2023 
+* Record Date : 2023.09.15
+
+<button onclick="myFunction(7)" style="background-color:#FFFFDD;border-radius:10px">Details</button>
+
+<div id="7" style="display:none;border:3px solid #DDDDDD;padding:1rem;" markdown="1">
+
+This calls for a secure watermarking system to guarantee copyright protection through leakage tracing or ownership identification. 
+
+Our full method improves upon the previous work on robustness by +16.8% point on average on four datasets, three corruption types, and two corruption ratios. 
+
+Digital watermarking is a technology that enables the embedding of information into multimedia in an unnoticeable way without degrading the original utility of the content. 
+
+Deep watermarking has emerged as a new paradigm that improves the three key aspects of watermarking: payload (i.e., the number of bits embedded), robustness (i.e., the number of bits embedded), robustness (i.e., accuracy of the extracted message), and quality of embedded media. 
+
+Previous research has focused on techniques such as lexical substitution with predefined rules and dictionaries or structural transformation. 
+
+Recent work have either replaced the predefined set of rules with learning-based methodology, thereby removing heuristics or vastly improved the quality of lexical substitutions. 
+
+A well-known proposition of a classical image watermarking work: That watermarks should *"be placed explicitly in the perceptually most significant components"*  of an image. If this is achieved, the adversary must corrupt the content's fundamental structure to destroy the watermark. This degrades the utility of the original content, rendering the purpose of pirating futile. 
+
+Modification in individual pixels is much more imperceptible than on individual 
+
+
+
+
+<button onclick="myFunction(7)" style="background-color:#DDDDDD;border-radius:10px">Close Details</button>
+</div>
+
+
+---
+
+
+### CodeIPPrompt: Intellectual Property Infringement Assessment of Code Language Models 
+
+* Authors : Zhiyuan Yu, Yuhao Wu, Ning Zhang, Chenguang Wang, Yevgeny Vorobeychik, Chaowei Xiao. 
+* Published Date : 
+* Record Date : 
+
+<button onclick="myFunction(6)" style="background-color:#FFFFDD;border-radius:10px">Details</button>
+
+<div id="6" style="display:none;border:3px solid #DDDDDD;padding:1rem;" markdown="1">
+
+<button onclick="myFunction(6)" style="background-color:#DDDDDD;border-radius:10px">Close Details</button>
+</div>
+
+
+
+---
+
+
+### A Watermark for Large Language Models 
+
+* Authors : John Kirchenbauer, Jonas Geiping, Yuxin Wen, Jonathan Katz, Ian Miers, Tom Goldstein 
+* Published Date : 2023 ICML
+* Record Date : TBD 
+
+<button onclick="myFunction(5)" style="background-color:#FFFFDD;border-radius:10px">Details</button>
+
+<div id="5" style="display:none;border:3px solid #DDDDDD;padding:1rem;" markdown="1">
+
+<button onclick="myFunction(5)" style="background-color:#DDDDDD;border-radius:10px">Close Details</button>
+</div>
+
+
+---
+
+<span class="spanbox"> Metric:Repetition </span>  <span class="spanbox"> Rep-n </span>
+
+### Neural Text Generation with Unlikelihood Training
+
+* Authors : Sean Welleck, Ilia Kulikov, Stephen Roller, Emily Dinan, Kyunghyun Cho, Jason Weston
+* Published Date : 2019.08
+* Record Date : 2023.09.12 
+
+<button onclick="myFunction(4)" style="background-color:#FFFFDD;border-radius:10px">Details</button>
+
+<div id="4" style="display:none;border:3px solid #DDDDDD;padding:1rem;" markdown="1">
+
+sequence-level repetition as the portion of duplicate n-grams in the generated text.  For a generation text $x$, Rep-n can be formulated as: 
+
+$$
+
+\operatorname{Rep}_{\operatorname{n}} = 100 \times \Big( 1.0 - \frac{ \operatorname{unique n gram}(x)}{\operatorname{total n gram}(x)} \Big)
+
+$$
+
+MAUVE: Measuring the Gap Between Neural Text and Human Text using Divergence Frontiers
+
+MAUVE, ( Pillutla et al., 2021)  + Factor 2.0 used in Su et al., 2022, Krishna et al., 2022) 
+
+
+<button onclick="myFunction(4)" style="background-color:#DDDDDD;border-radius:10px">Close Details</button>
+</div>
 
 
 
@@ -42,15 +144,36 @@ Content Provenance and Watermarking
 
 ### Evading Water mark based Detection of AI-Generated Content
 
-
-
 * Authors : Zhengyuan Jiang, Jinghuai Zhang, Neil Zhenqiang Gong 
-* Published Date : 2023.08.22  (Arvix) / ACM Conference on Computer and Communications Security (CCS), 2023
+* Published Date : 2023.08.22  (Arvix) / ACM Conference on Computer and Communications Security (CCS), 2023 <d-cite key="jiang2023evading"/>
 * Record Date : 2023.09.12 
 
 <button onclick="myFunction(3)" style="background-color:#FFFFDD;border-radius:10px">Details</button>
 
 <div id="3" style="display:none;border:3px solid #DDDDDD;padding:1rem;" markdown="1">
+
+
+
+The watermark enables proactive detection of Ai-generated content in the future: a content is AI-generated if a similar watermark can be extracted from it. 
+
+* DALL-E  : visible watermark at the bottom right corner of its generated images.
+* Stable Diffusion  : non-learning-based watermarking method 
+* Meta : learning-based watermarking methods 
+
+---
+
+* image, watermark (bitstring)
+* encoder : given an image and a watermark, an encoder embeds the watermark into the image to produce a *watermarked image*
+* decoder : given a *watermarked image* generates the watermark inside of it. 
+
+An image is predicted as AI-generated if the bitwise accuracy of the decoded watermark is larger than a threshold $\tau$, where bitwise accuracy is the fraction of matched bits in the decoded watermark and the ground-truth one.
+The threshold should be larger than 0.5 since the bitwise accuracy of original images without watermarks would be around 0.5. 
+
+Robustness against *post-processing*, which post-processes an AI-generated image, is crucial for a watermark-based detector. 
+
+
+See [ML-False Positive Rate](/side_articles/ml/#false-positive-rate)
+
 
 <button onclick="myFunction(3)" style="background-color:#DDDDDD;border-radius:10px">Close Details</button>
 </div>

@@ -14,9 +14,52 @@ title: 'GPT Math Domain Experiment'
 description: 'pretraining and finetuning GPT models with math symbols'
 ---
 
+* **Code**: <a href="https://github.com/fxnnxc/bumjin_research/tree/main/bumjin_research/labs/gpt_math_domains">  <img src="/assets/github.png" style="width:1.2em;" > </a> (Private) 
+
+
 ## Introduction 
 
-* Code (Private) [Github](https://github.com/fxnnxc/bumjin_research/tree/main/bumjin_research/labs/gpt_math_domains). 
+
+GPT is known to be effective for causal language modeling. 
+In this work, we present training results of GPT on mathematical symbols. 
+There are two types of datasets and two configurations respecrtively. 
+
+We trained GPT models of three sizes. 
+
+
+
+
+#### Models 
+
+version | **num layers** | **num heads** | $d_{model}$ | 
+|:-:|:-:|:-:|:-:|
+2 | 1     |      8    |      128  |
+4 | 2     |      8    |      128  |
+6 | 8     |      8    |      512  |
+
+
+#### Datasets 
+
+Version |  **Digits** (0~N) | **Modulo** (2~N)
+|:-:|:-:|:-:|
+1 |10 | 5 
+3 |20 | 5 
+
+
+#### Training Configuration
+
+<d-code block language='python'>
+# training configuration
+# variants = 1000 / 5000 / 10000 for model sizes respectively. 
+"num_train_epochs": variants,
+"eval_steps": 1_000,
+"batch_size":32,
+"learning_rate":5e-4,
+"gradient_accumulation_steps":1,
+"weight_decay":0.1,
+"num_warmup_steps":1_000,
+</d-code>
+
 
 
 ## Math Symbol Prediction
