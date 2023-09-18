@@ -20,6 +20,8 @@ description: 'pretraining and finetuning GPT models with math symbols'
 ## Introduction 
 
 
+
+
 GPT is known to be effective for causal language modeling. 
 In this work, we present training results of GPT on mathematical symbols. 
 There are two types of datasets and two configurations respecrtively. 

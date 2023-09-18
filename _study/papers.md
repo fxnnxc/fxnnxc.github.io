@@ -16,8 +16,6 @@ importance: 2
 
 ---
 
-
-
 ### Template
 
 
@@ -30,6 +28,22 @@ importance: 2
 <div id="10000" style="display:none;border:3px solid #DDDDDD;padding:1rem;" markdown="1">
 
 <button onclick="myFunction(10000)" style="background-color:#DDDDDD;border-radius:10px">Close Details</button>
+</div>
+
+---
+
+### Watermarking Text Data on Large Language Models for Dataset Copyright Protection
+
+
+* Authors : Yixin Liu, Hongsheng Hu, Xuyun Zhang, Lichao Sun
+* Published Date : 2023.05.22, Arxiv 
+* Record Date : 
+
+<button onclick="myFunction(8)" style="background-color:#FFFFDD;border-radius:10px">Details</button>
+
+<div id="8" style="display:none;border:3px solid #DDDDDD;padding:1rem;" markdown="1">
+
+<button onclick="myFunction(8)" style="background-color:#DDDDDD;border-radius:10px">Close Details</button>
 </div>
 
 ---
@@ -61,8 +75,7 @@ Recent work have either replaced the predefined set of rules with learning-based
 
 A well-known proposition of a classical image watermarking work: That watermarks should *"be placed explicitly in the perceptually most significant components"*  of an image. If this is achieved, the adversary must corrupt the content's fundamental structure to destroy the watermark. This degrades the utility of the original content, rendering the purpose of pirating futile. 
 
-Modification in individual pixels is much more imperceptible than on individual 
-
+Modification in individual pixels is much more imperceptible than on individual words. But to this, while we adhere to the gist of the proposition, we do not embed directly on the most significant component. Instead, we identify features that are semantically or syntactically fundamental components of the text and thus, invariant to minor modifications in texts. 
 
 
 
@@ -94,12 +107,18 @@ Modification in individual pixels is much more imperceptible than on individual
 ### A Watermark for Large Language Models 
 
 * Authors : John Kirchenbauer, Jonas Geiping, Yuxin Wen, Jonathan Katz, Ian Miers, Tom Goldstein 
-* Published Date : 2023 ICML
-* Record Date : TBD 
+* Published Date : 2023 ICML (Best Paper Award)
+* Record Date : 2023.09.18
 
 <button onclick="myFunction(5)" style="background-color:#FFFFDD;border-radius:10px">Details</button>
-
 <div id="5" style="display:none;border:3px solid #DDDDDD;padding:1rem;" markdown="1">
+
+
+
+
+
+
+
 
 <button onclick="myFunction(5)" style="background-color:#DDDDDD;border-radius:10px">Close Details</button>
 </div>

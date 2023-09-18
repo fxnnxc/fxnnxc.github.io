@@ -154,6 +154,9 @@ collections:
   Pkolmar:
     output: true
     permalink: /Pkolmar/:path/
+  study:
+    output: true
+    permalink: /study/:path/
 
 news_limit: 10000
 

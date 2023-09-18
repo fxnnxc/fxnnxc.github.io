@@ -297,3 +297,26 @@ Importance-based Features vs Structure-based Features
 
 
 
+## Node Representation 
+
+Goal : Efficient task-independent feature learning 
+
+Task: map nodes into an embedding space 
+* Similarity of embeddings between nodes indicates their similarity in the network. 
+
+* DeepWalk : Online learning of social representations. (KDD2014)
+
+Goal : similarity $(u, v) \approx z_v^\top z_u$
+1. Encoder : maps from notes to embeddings  $ENC(v) = z_v$ (just embedding-lookup) (very large as the parameter increases as the number of nodes.)
+2. Decoder : maps from embeddings to the similarity score $\operatorname{similarity(u,v)} \approx z_v^\top z_u $
+
+#### Random Walk Embedding
+
+* Negative Sampling : 
+
+$$
+\log (\frac{\exp (z_u^\top z_v)}{\sum_{n\in V} \exp (z_u^\top z_n)}) \\ 
+\log\Big( \sigma(z_u^\top z_v) \Big) - \sum_{i=1}^k \log \Big( \sigma(z_u^\top z_{n_i}) \Big)
+$$
+
+ 

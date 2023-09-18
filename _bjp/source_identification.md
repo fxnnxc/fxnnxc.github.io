@@ -206,9 +206,44 @@ We propose Source generation fine-tuning framework to learn the auxiliary task.
 
   
 
-## Related Work 
+## Watermark 
+
+### Defender: Watermark 🌊
+
+For content $x$, watermark $b$ is given to protect the content. The defender encode an invisible watermark in the content 
+with encoder $E$ takes the content and watermark to  generate a watermarked information $x_{wm}$: 
+
+$$ 
+x_{wm} = E(x,b) 
+$$
+
+The decoder $D$ takes $x_{wm}$ and recovers the watermark $b$.  
+
+### Attacker : Distort Watermark  👾
+
+The attacker tries to modify the watermarked $w_{wm}$ image by attacked content $\tilde{x}_{wm}$ with modifier $g$ to remove the encoded information $b$ in it. 
+
+$$
+\tilde{x}_{wm} = g(w_{wm})
+$$
+
+The goal of the attacker is to minimize the recovery of watermark in the content.
+
+$$
+\min L(b, D(\hat{x}_{wm}))
+$$
+
+where $L$ is a matching loss such as bitwise accuracy. 
 
 
+## Provenance Detection 
+
+---
+
+
+### Watermark videos
+
+pseudorandom function $f(w_{t-c+1}, \cdots, w_{t-1}, i)$ maps the latest token $c$ to $r_{t,i} \in [0,1]$. This is pseudo probability distribution. 
 
 ### Parameter Efficient Fine-tuning 
 
