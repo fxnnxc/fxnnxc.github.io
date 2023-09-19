@@ -13,7 +13,63 @@ title: 'Data Provenance'
 description: 'Study of Provenance.'
 ---
 
+
+## List of Papers 
+
+* Membership Inference Attacks on Sequence-to-Sequence Models: Is My Data In Your Machine Translation System? [🔗](#membership-inference-attacks-on-sequence-to-sequence-models-is-my-data-in-your-machine-translation-system) <d-cite key="hisamoto2020membership"/>
+* Membership Inference Attacks Against Machine Learning Models [🔗](#membership-inference-attacks-against-machine-learning-models)  <d-cite key="shokri2017membership"/>
+* Watermarking Text Data on Large Language Models for Dataset Copyright Protection [🔗](#watermarking-text-data-on-large-language-models-for-dataset-copyright-protection) <d-cite key="liu2023watermarking"/>
+* Robust Multi-bit Natural Language Watermarking through Invariant Features [🔗](#robust-multi-bit-natural-language-watermarking-through-invariant-features) <d-cite key="yoo2023robust"/>
+* CodeIPPrompt: Intellectual Property Infringement Assessment of Code Language Models  [🔗](#codeipprompt-intellectual-property-infringement-assessment-of-code-language-models) <d-cite key="yu2023codeipprompt"/>
+* A Watermark for Large Language Models [🔗](#a-watermark-for-large-language-models) <d-cite key="kirchenbauer2023watermark"/>
+* Evading Water mark based Detection of AI-Generated Content [🔗](#evading-water-mark-based-detection-of-ai-generated-content)  <d-cite key="jiang2023evading"/>
+* How to Protect Copyright Data in Optimization of Large Language Models?  [🔗] <d-cite key="shoker2023confidence"/> (#how-to-protect-copyright-data-in-optimization-of-large-language-models) <d-cite key="chu2023protect"/>
+* Confidence-Building Measures for Artificial Intelligence: [🔗](#confidence-building-measures-for-artificial-intelligence-workshop-proceedings) 
+* ContextLS  <d-cite key="yang2022tracing"/>
+* AWT  <d-cite key="abdelnabi2021adversarial"/>
+
+
+
+
+## Short Summary 
+
+*  Paper <d-cite key="hisamoto2020membership"/> :  The authors propose MI framework on sequence-to-sequence generation and shows similar private data leakage with classification problems.
+* [2] : The Membership Inference problem which determines whether a private data is used in the training of LMs, firstly proposed in [2]. 
+* [3] : The backdoor attack approach, which makes a desired output with a stealthy included trigger, is applied to watermark input sequence. 
+* [4] : 
+
+* []
+
+--- 
+
 <img src="https://drive.google.com/uc?export=view&id=1DaSSF2dSi46Vgt5c2rogKTIlGEwyX8Le" style="margin-left:-7rem;width:140%">
+
+
+
+
+---
+
+### Membership Inference Attacks Against Machine Learning Models 
+
+Membership inference: given a machine learning model and a record, determine whether this record was used as part of the model's training dataset or not. 
+
+The adversary's access wto the model is limited to black-box queries that return the model's output oon a given input. 
+
+
+> Backdoor Attack : lead a model to infer the desired output with a stealthy included trigger.  As backdoor attack can output the desired pattern, it could be used for watermarks. 
+
+---
+
+### Membership Inference Attacks on Sequence-to-Sequence Models: Is My Data In Your Machine Translation System? 
+
+MI : given a machine learning model and a record, determine whether this record was used as part of the model's training dataset or not.
+
+MI+Seq-to-Seq : Given black-box access to an MT model, is it possible to determine whether a particular sentence pair was in the training set for that model? 
+
+
+Simple one-off attacks based on shadow models, which proved successful in classification problems, are not successful on sequence generation problems: this is a result that favors the defender. Nevertheless, we describe the specific conditions where sequence-to-sequence models still leak private information. 
+
+A training set for MT consists of a set of sentence pairs $\{ (f_i^{(d)}, e_i^{(d)})\}$. We use a label $d\in \{ \ell_1, \ell_2, \cdots, \}$ to indicate the domain (the subcorpus or the data source). 
 
 
 ---
@@ -25,12 +81,12 @@ description: 'Study of Provenance.'
 * Published Date : 2023.05.22, Arxiv 
 * Record Date : 
 
-<button onclick="myFunction(8)" style="background-color:#FFFFDD;border-radius:10px">Details</button>
 
-<div id="8" style="display:block;border:3px solid #DDDDDD;padding:1rem;" markdown="1">
+Specifically, there is a potential risk to individual's privacy if their private data is used to train these LLMs without any authorization. This has incited significant apprehension regarding both data privacy and copyright protection. 
 
-<button onclick="myFunction(8)" style="background-color:#DDDDDD;border-radius:10px">Close Details</button>
-</div>
+
+To prevent the illegal or unauthorized usage of private text data in LLMs, individuals should be able to verify whether or not a company used their personal text to train a model.
+
 
 ---
 
@@ -42,10 +98,6 @@ description: 'Study of Provenance.'
 * Authors : KiYoon Yoo, Wonhyuk Ahn, Jiho Jang, Nojun Kwak
 * Published Date : ACL 2023 
 * Record Date : 2023.09.15
-
-<button onclick="myFunction(7)" style="background-color:#FFFFDD;border-radius:10px">Details</button>
-
-<div id="7" style="display:block;border:3px solid #DDDDDD;padding:1rem;" markdown="1">
 
 This calls for a secure watermarking system to guarantee copyright protection through leakage tracing or ownership identification. 
 
@@ -65,9 +117,6 @@ Modification in individual pixels is much more imperceptible than on individual 
 
 
 
-<button onclick="myFunction(7)" style="background-color:#DDDDDD;border-radius:10px">Close Details</button>
-</div>
-
 
 ---
 
@@ -77,13 +126,6 @@ Modification in individual pixels is much more imperceptible than on individual 
 * Authors : Zhiyuan Yu, Yuhao Wu, Ning Zhang, Chenguang Wang, Yevgeny Vorobeychik, Chaowei Xiao. 
 * Published Date : 
 * Record Date : 
-
-<button onclick="myFunction(6)" style="background-color:#FFFFDD;border-radius:10px">Details</button>
-
-<div id="6" style="display:block;border:3px solid #DDDDDD;padding:1rem;" markdown="1">
-
-<button onclick="myFunction(6)" style="background-color:#DDDDDD;border-radius:10px">Close Details</button>
-</div>
 
 
 
@@ -95,10 +137,6 @@ Modification in individual pixels is much more imperceptible than on individual 
 * Authors : John Kirchenbauer, Jonas Geiping, Yuxin Wen, Jonathan Katz, Ian Miers, Tom Goldstein 
 * Published Date : 2023 ICML (Best Paper Award)
 * Record Date : 2023.09.18
-
-<button onclick="myFunction(5)" style="background-color:#FFFFDD;border-radius:10px">Details</button>
-<div id="5" style="display:block;border:3px solid #DDDDDD;padding:1rem;" markdown="1">
-
 
 ### Detecting the watermark
 
@@ -122,27 +160,16 @@ $$
 </blockquote>
 
 
-
-
-<button onclick="myFunction(5)" style="background-color:#DDDDDD;border-radius:10px">Close Details</button>
-</div>
-
-
 ---
 
 <span class="spanbox"> Copyright </span>
 
 
-### Evading Water mark based Detection of AI-Generated Content
+### Evading Watermark based Detection of AI-Generated Content
 
 * Authors : Zhengyuan Jiang, Jinghuai Zhang, Neil Zhenqiang Gong 
 * Published Date : 2023.08.22  (Arvix) / ACM Conference on Computer and Communications Security (CCS), 2023 <d-cite key="jiang2023evading"/>
 * Record Date : 2023.09.12 
-
-<button onclick="myFunction(3)" style="background-color:#FFFFDD;border-radius:10px">Details</button>
-
-<div id="3" style="display:block;border:3px solid #DDDDDD;padding:1rem;" markdown="1">
-
 
 
 The watermark enables proactive detection of Ai-generated content in the future: a content is AI-generated if a similar watermark can be extracted from it. 
@@ -216,27 +243,18 @@ $$
 
 
 
-<button onclick="myFunction(3)" style="background-color:#DDDDDD;border-radius:10px">Close Details</button>
-</div>
-
-
-
 
 
 ---
 
 <span class="spanbox"> Copyright </span>
 
-### Confidence-Building Measures for Artificial Intelligence: <br> Workshop Proceedings 
+### Confidence-Building Measures for Artificial Intelligence: Workshop Proceedings 
 
 
 * Authors : Sara Shoker, Andrew Reddie, et al., 
 * Published Date : 2023.08.03 (Arxiv) <d-cite key="shoker2023confidencebuilding"/>
 * Record Date : 2023.09.12 
-
-<button onclick="myFunction(2)" style="background-color:#FFFFDD;border-radius:10px">Details</button>
-
-<div id="2" style="display:block;border:3px solid #DDDDDD;padding:1rem;" markdown="1">
 
 
 Provenance and watermarking methods can improve **traceability**, alleviate concerns about **the origin of the AI generated or edited content**, and promote trust among parties. 
@@ -266,8 +284,6 @@ Open provenance standards and open sourcing **AI detection technologies** should
 The proliferation of foundation models means that provenance and watermarking is unlikely to be applied evenly by all developers.
 
 
-<button onclick="myFunction(2)" style="background-color:#DDDDDD;border-radius:10px">Close Details</button>
-</div>
 
 ---
 
@@ -280,10 +296,7 @@ The proliferation of foundation models means that provenance and watermarking is
 * Published Date : 2023.08.23 (Arxiv) <d-cite key="chu2023protect"/>
 * Record Date : 2023.09.11 
 
-<button onclick="myFunction(1)" style="background-color:#FFFFDD;border-radius:10px">Details</button>
 
-
-<div id="1" style="display:block;border:3px solid #DDDDDD;padding:1rem;" markdown="1">
 
 LLMs are built on the transformer neural network architecture, which in turn relies on a mathematical computation called Attention that uses the softmax function. \
 
@@ -292,8 +305,6 @@ To solve copyright regression for the softmax function, we show that the objecti
 * [Gil 19 ] investigates copyright infringement in AI-generated artwork and argues that using copyrighted works during the training phase of AI programs does not result in infringement liability. 
 
 * [VKB23] proposes a frameowkr that provides stronger protection against sampling protected content, by defining near access-freeness (NAF)
-
---- 
 
 
 <blockquote>
@@ -310,42 +321,3 @@ then we say this model $f_\theta$ is $\tau$-Copyright-Protected.
 </blockquote>
 
 
-<button onclick="myFunction(1)" style="background-color:#DDDDDD;border-radius:10px">Close Details</button>
-
-</div>
-
-
----
-
-### Template
-
-
-* Authors : 
-* Published Date : 
-* Record Date : 
-
-<button onclick="myFunction(10000)" style="background-color:#FFFFDD;border-radius:10px">Details</button>
-
-<div id="10000" style="display:block;border:3px solid #DDDDDD;padding:1rem;" markdown="1">
-
-<button onclick="myFunction(10000)" style="background-color:#DDDDDD;border-radius:10px">Close Details</button>
-</div>
-
----
-
-
-
-
-
-
-
-<script>
-function myFunction(n) {
-  var x = document.getElementById(n);
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-</script>
