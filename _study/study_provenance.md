@@ -33,11 +33,12 @@ description: 'Study of Provenance.'
 
 ## Short Summary 
 
-*  Paper <d-cite key="hisamoto2020membership"/> :  The authors propose MI framework on sequence-to-sequence generation and shows similar private data leakage with classification problems.
-* [2] : The Membership Inference problem which determines whether a private data is used in the training of LMs, firstly proposed in [2]. 
-* [3] : The backdoor attack approach, which makes a desired output with a stealthy included trigger, is applied to watermark input sequence. 
-* [4] : 
-
+* Paper <d-cite key="hisamoto2020membership"/> :  The authors propose MI framework on sequence-to-sequence generation and shows similar private data leakage with classification problems.
+* Paper <d-cite key="shokri2017membership"/>  : The Membership Inference problem which determines whether a private data is used in the training of LMs, firstly proposed in this work. 
+* Paper  <d-cite key="liu2023watermarking"/> : The backdoor attack approach, which makes a desired output with a stealthy included trigger, is applied to watermark input sequence. 
+* Paper <d-cite key="yu2023codeipprompt"/> : This work shows that LM based code generators memorize the code beyond the licensed usage.
+* Paper <d-cite key="kirchenbauer2023watermark"/> : This work proposed watermark framework based on the distribution of selected tokens. This work is the firts work which utilizes the watermark on the distribution of tokens in generation. 
+* Paper <d-cite key="jiang2023evading"/> : T
 * []
 
 --- 
