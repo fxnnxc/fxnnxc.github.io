@@ -1,5 +1,5 @@
 ---
-layout: distill
+layout: share-distill
 title: 'Kolmar Software Overview'
 date: 2023-08-28
 giscus_comments : true
