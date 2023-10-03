@@ -251,3 +251,18 @@ pseudorandom function $f(w_{t-c+1}, \cdots, w_{t-1}, i)$ maps the latest token $
 
 
 ---
+
+
+## 2023.09.23 : Given A Language Model and Any Text, Verify the Source Prediction Performance 
+
+Let $f$ be a generative language model and  $\theta$ be the trained parameters with large corpus. 
+Our goal is to verify the source $y$ of text tokens $x=(x_1, x_2, \cdots, x_n)$.  To decode the source of text, we use the logits of decoder outputs which we call 
+*traced logits of text $x$*. 
+
+$$ 
+T(x) = (\hat{p}_2, \hat{p}_3, \cdots, \hat{p}_{n+1})
+$$
+
+where $\hat{p}_i =  P( \cdot \vert  x_1, x_2, \cdots, x_i  ; \theta) \in \mathbb{R}^{V}$ is the conditional probability distribution over vocabulary $V$ given previous tokens.
+
+This logits are different from previous watermark based data provenance. As the watermark assumes that the generated text is decoded output of the generative model, while our method does not have such assumption. Therefore, we consider how a generative model encodes any text. 

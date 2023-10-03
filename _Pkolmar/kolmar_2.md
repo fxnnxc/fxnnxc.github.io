@@ -1,0 +1,193 @@
+---
+layout: distill
+title: 'Kolmar 데이터 EDA 및 초기 학습 결과'
+date: 2023-10-01
+giscus_comments : true
+description: "첫 데이터 분석 및 Decision Tree 모델 학습"
+authors: 
+    - name: Bumjin Park
+      affiliations:
+        name: KAIST
+img: https://drive.google.com/uc?export=view&id=1AjinezaQqG-mRg4IhT4QZzHjFX7w_v8X
+toc:
+  - name: 1. Report Info   
+  - name: '2. Raw 데이터 : FirstReceipt'
+    subsections:
+      - name: '2-1 코드 등장 횟수'  
+      - name: '2-2 랩에 존재하는 코드 개수' 
+      - name: 2-3 출력 목표값 
+      - name: 2-4 출력 랩 넘버 중복 여부
+  - name: 3 최종 데이터셋 
+  - name: 4. 데이터 관련 질문 
+  - name: 5. 코드값과 점도의 선형관계 
+---
+
+
+
+[](#3)
+
+## 1. Report Info   
+
+* 👨🏻‍💻 Code Release Tag [v23.10.05](https://github.com/fxnnxc/kolmar/tree/v23.10.05)
+* 📂 Raw Data :  (1, `raw_data:first_receipt`)
+* 🗂️ Datasets :  (2, `ds:first_receipt_ml`)
+* 📌 Related Notebook [eda_first_receipt.ipynb](https://github.com/fxnnxc/kolmar/blob/v23.10.05/notebooks/eda_first_receipt.ipynb)
+
+## 2. Raw 데이터 : FirstReceipt
+
+|입력 | 출력| 
+|---|---|
+|<img src="https://drive.google.com/uc?export=view&id=1dS2L1XkpxPhj82fivfpD2bcyfxDsKnFp"> | <img src="https://drive.google.com/uc?export=view&id=1M8GNRvbFqAMW2cy93IWxT0EGnZt5Qa2n">|
+
+
+
+* Unique input lab names: 1573
+* Unique output lab names : 979
+* non-existing output labels:  595 (레올로지 결과 없음)
+* non-existing input  labels:  1 개 (레올로지 입력이 없음['CC2195-FB2'])
+
+* Unique formula   : 1979
+<img src="https://drive.google.com/uc?export=view&id=16AFEm7CgrUe5xBNVmd_45ML6qaGMan-J" style='width:100%'>
+
+코드 길이 
+* length 6: 1887
+* length 7: 85
+* length 8: 6
+* length 10: 1
+
+
+### 2-1 코드 등장 횟수  
+
+<d-code language='python' style='border:1px dashed;padding:1em;'>
+# 많은 순서대로
+MMM000    2571
+RTY966    1288
+FFF001    1187
+BDD001    1101
+JKL430    1034
+GHJ213     921
+ASD574     905
+QWE831     690
+FGH202     675
+BNM174     668
+BNM248     657
+
+
+# 적은 순서대로 
+FGH334    1
+FGH336    1
+JMI006    1
+RTY964    1
+RVP002    1
+</d-code>
+
+<img src="https://drive.google.com/uc?export=view&id=1rzhsIh0RKx5R3uI16U5BDnOt3q3UrOF2" style='width:80%'>
+ 
+
+### 2-2 랩에 존재하는 코드 개수 
+
+
+<d-code language='python' style='border:1px dashed;padding:1em;'>
+# 많은 순서대로
+CC2229-AF       64
+CC2145-LA       61
+CC1708-QE1      60
+CCA08101-TAA    56
+CC1641-EC       49
+CC2217-OB       48
+CC2169-OB       48
+
+# 적은 순서대로
+CC1413-TA     13
+CC1706-NZ     12
+CC7109-JE1    11
+CC1808-PA     10
+CC7191-WF      2
+</d-code >
+
+
+<img src="https://drive.google.com/uc?export=view&id=1IE7OKSOCEZVMp6aGBAxD_hZ8UyGl4yGq" style='width:80%'>
+
+
+### 2-3 출력 목표값 
+
+<d-code language='python' style='border:1px dashed;padding:1em;'>
+# Invalid outputs
+MAX.350                                           
+MAX. 300                                           ['.', '300']
+MAX. 100                                           ['.', '100']
+MAX 500                                           
+total output:988
+valid output:984
+invalid output:4
+</d-code>
+
+<img src="https://drive.google.com/uc?export=view&id=1U5UxfVMJCCq0xbbGXzRNtlfsirNJccvG" style='width:100%'>
+
+
+### 2-4 출력 랩 넘버 중복 여부
+
+<d-code language='python' style='border:1px dashed;padding:1em;'>
+# 출력값 랩넘버 수 984개 중에서 중복 모두 제외시 967 개 랩넘버 존재 
+랩넘버	개수 
+CC7802-JB	3
+CC7533-MA	2
+CCB06001-FAE	2
+CC1928-VZBT	2
+CC2163-WA	2
+CC2193-FA	2
+CC2156-KZHH	2
+CC9085-CB	2
+CC2206-MG	1
+CC2206-AH	1
+
+</d-code>
+
+---
+
+## 3. 최종 데이터셋
+
+
+<d-code language='python' style='border:1px dashed;padding:1em;'>
+# 총 랩넘버 967 개
+# 총 코드 개수 1979
+# 제외 코드는 Feature 에 위치에는 포함되지만, 값이 0으로 할당된다. 
+[INFO] 🗂️ Dataset: FirstReceiptDatasetML X:(967, 1979)  Y:(967,)
+Train: (676, 1979) (676,)
+Valid: (96, 1979) (96,)
+Test: (195, 1979) (195,)
+
+</d-code>
+
+
+* **제외 랩넘버** : ['CC7802-JB', 'CC7533-MA', 'CCB06001-FAE', 'CC1928-VZBT', 'CC2163-WA', 'CC2193-FA', 'CC2156-KZHH', 'CC9085-CB']
+* **제외 코드 (값 0 할당)** : [(0, 'MMM000'), (2, 'FFF001'), (4, 'JKL430'), (7, 'QWE831'), (8, 'FGH202'), (17, 'ZXC086'), (20, 'FGH377'), (23, 'QWE830'), (27, 'RTY1107'), (29, 'JKL037'), (35, 'RTY827'), (36, 'XCV272'), (39, 'BNM325'), (41, 'SDF045'), (56, 'SDF241'), (90, 'SDF024'), (93, 'ASD854'), (103, 'SDF139'), (104, 'FGH395'), (116, 'VBN651'), (135, 'DFG071'), (136, 'TYU089'), (141, 'NAT016'), (142, 'SDF165'), (168, 'QWE947'), (190, 'GHJ401'), (232, 'NAT011'), (251, 'SDF180'), (267, 'ASD714'), (275, 'QWE512'), (317, 'NEP003'), (365, 'RTY1126'), (416, 'RTY642'), (493, 'RTY109'), (509, 'FGH396'), (538, 'JKL852'), (586, 'JKL680'), (600, 'DGP012'), (614, 'ZXC219'), (646, 'IOP278'), (692, 'JKL833'), (980, 'RTY348'), (1018, 'JKL871'), (1252, 'DFG252'), (1342, 'KSC002')]
+
+
+## 4. 데이터 관련 질문 
+
+1. 랩넘버가 일치하지 않는 데이터에 대한 이유 
+2. Max 100 과 같은 형태의 데이터 처리 방안 (다른 데이터는 1만~8만 범위값)
+3. `40.000` 마침표로 이루어진 데이터는 `40,000` 콤마와 같은지
+4. Output의 랩넘버가 중복된 데이터는 사용가능한지 
+
+
+## 5. 코드값과 점도의 선형관계 
+
+점도를 에측하는데 있어서, 가장 기본이 되는 것은 단 하나의 변수(코드)를 사용하여 예측하는 방법이다. 선형모델로 예측 모델을 만들었을 때, 상관관계가 있다면, 양 또는 음의 기울기를 가지게 된다. 1900 여 개의 코드에 대해서 점도값에 대한 선형 모델을 학습시키는 결과를 반영하여 모델링 하여, 각 코드가 지니는 상관관계를 파악한다.  
+
+* x축: 변수값 (코드값) 
+* y축: 예측 항목값
+
+📔 [Codebook link](https://drive.google.com/drive/folders/1lLVdMUGp0U1z3et3KhPeWcSFtFMQNM18?usp=drive_link)
+
+🔗 Codebook Page 1 (64개) [google drive](https://drive.google.com/uc?export=view&id=17fK06-k4OiziWDr7MB8EvvCHGaOP5nqQ)
+
+🔗 Codebook Page 2 (64개) [google drive](https://drive.google.com/uc?export=view&id=1ZND8_ACLiuaH8SJfRDV5N8ImMIDA-oDL)
+
+
+단 한 번 나타난 코드에 대해서 선형모델을 학습시킨 결과, 0에 분포되있는 값은, 코드 값이 할당되지 않은 코드=0 값을 나타낸다. 
+
+<embed src="https://drive.google.com/uc?export=view&id=1Jw2iadSZGFXW19a6xZ33M2CUGuECE-ey" width="150%" height="1000"  style='margin-left:-5rem' type="application/pdf">
+
+

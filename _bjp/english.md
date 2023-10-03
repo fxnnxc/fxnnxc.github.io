@@ -14,6 +14,41 @@ description: 'sentences'
 importance: 2 
 ---
 
+| Vocab | Ex|
+|---|:---|
+|progress | |Remarkable Progress |
+|elicited |concurrently elicited various concerns |
+|endeavor |This survey endeavors to furnish |
+|
+
+
+
+
+### Problem 
+
+* Determining A is fundamentally hard because B
+* While producing A requires access to B, detecting A does not. 
+* A third party with knowledge of the A and B can re-produce the C. 
+
+### Related Work 
+
+* Recently, A announced that he is studying cryptographic approaches to watermarking in collaboration with OpenAI. Their preliminary method is based only on biasing of the LM output, as opposed to complete determination as in B. While details are not currently available, the description suggests that hashing of n-gram sequences is involved. 
+
+* Note that a separate line of work investigates watermarking model parameters themselves. This would not be used to watermark model output (as in this work), but to defend against model stealing (B; C). Approaches, such as D, implant backdoor triggers through a finetuning process to cause biased responses to specific inputs. 
+
+* In contrast to other currently published works, we want to focus on strategies that are simultaneously minimally restrictive to a language model, leverage the LMs own understanding of natural text, require no usage of the LM to decode the watermark, and can be theoretically analyzed and validated. 
+
+### Questioning 
+
+* What is the best way to test for the watermark in a streaming context, or in a context where a short span of watermarked text lives inside a  longer non-watermarked span?
+* Are there simple sensitivity bounds that are more accurate than those presented above for large A and small B?
+
+
+### Future work
+
+* There are still a number of remaining open questions regarding watermarking. 
+* There is one more important property of the proposed method that we have not discussed: AAA
+
 
 
 * Our prayers have been answered
