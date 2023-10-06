@@ -38,12 +38,12 @@ description: Project
 
 --- 
 
-### 2023.10.06: Rosbot Gazebo 
+### 2023.10.06.1: Rosbot Gazebo 
 
-* 🗳️ code release  : [v23.10.06.1](https://github.com/fxnnxc/add_cps/tree/v23.10.06.1)
-* 👨🏻‍💻 runnable Code : see `/robots/rosbot/README.md`
+* 🗳️ release  : [v23.10.06.1](https://github.com/fxnnxc/add_cps/tree/v23.10.06.1)
+* 👨🏻‍💻 code : see `/robots/rosbot/README.md`
 
-로스봇 세팅 코드 클린 버전 구현 [Doc](https://github.com/fxnnxc/add_cps/tree/v23.10.06.1/robots/rosbot)
+로스봇 세팅 코드 클린 버전 구현 [[Document](https://github.com/fxnnxc/add_cps/tree/v23.10.06.1/robots/rosbot)]
 
 Terminal 패널 정보:
 1. roscore 
@@ -52,6 +52,24 @@ Terminal 패널 정보:
 4. keyboard Control 
 
 <img src="https://drive.google.com/uc?export=view&id=1Zw9gg6PlNxSGJ9Yfg1Xjer3j3ufiLiSL"> 
+
+
+--- 
+
+### 2023.10.06.2: Rosbot Environment Sample Collection 
+
+* 🗳️ release  : [v23.10.06.2](https://github.com/fxnnxc/add_cps/tree/v23.10.06.2)
+* 👨🏻‍💻 code : see `/labs/rosbot_collect_samples/run.py`
+
+로스복 강화학습 환경 랜덤 액션을 통한 샘플 획득 [[Document](https://github.com/fxnnxc/add_cps/tree/v23.10.06.2/labs/rosbot_collect_samples)]
+
+데모 비디오 [google drive](https://drive.google.com/file/d/11E2sRsafGk8bjPlP1MqxnjlAbJ52ZDmt/view?usp=sharing)
+<video controls width="550">
+  <source src="https://drive.google.com/uc?export=view&id=11E2sRsafGk8bjPlP1MqxnjlAbJ52ZDmt" type="video/webm" />
+
+</video>
+
+
 
 
 
