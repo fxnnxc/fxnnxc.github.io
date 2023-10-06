@@ -32,3 +32,26 @@ description: Project
 <li><span class="badge-toc">12. SCI Paper: </span> TBD</li>
 </ul>
 
+
+
+## History 
+
+--- 
+
+### 2023.10.06: Rosbot Gazebo 
+
+* 🗳️ code release  : [v23.10.06.1](https://github.com/fxnnxc/add_cps/tree/v23.10.06.1)
+* 👨🏻‍💻 runnable Code : see `/robots/rosbot/README.md`
+
+로스봇 세팅 코드 클린 버전 구현 [Doc](https://github.com/fxnnxc/add_cps/tree/v23.10.06.1/robots/rosbot)
+
+Terminal 패널 정보:
+1. roscore 
+2. gazebo map load
+3. Rosbot spawn
+4. keyboard Control 
+
+<img src="https://drive.google.com/uc?export=view&id=1Zw9gg6PlNxSGJ9Yfg1Xjer3j3ufiLiSL"> 
+
+
+
