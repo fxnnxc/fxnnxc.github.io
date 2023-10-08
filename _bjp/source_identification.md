@@ -266,3 +266,12 @@ $$
 where $\hat{p}_i =  P( \cdot \vert  x_1, x_2, \cdots, x_i  ; \theta) \in \mathbb{R}^{V}$ is the conditional probability distribution over vocabulary $V$ given previous tokens.
 
 This logits are different from previous watermark based data provenance. As the watermark assumes that the generated text is decoded output of the generative model, while our method does not have such assumption. Therefore, we consider how a generative model encodes any text. 
+
+
+--- 
+
+2023.10.09 
+
+모델이 문장에 대한 정보를 암기하고 있으면서, 특정 레이블에 대한 확률값이 높은 경우, 해당 원천 소스에 대한 출처의 확신이 높아진다. 
+
+네거티브 샘플의 종류에 대해서 정보를 판단해야 한다. 예로, 완벽하게 일치하는 문장만 포함하는 경우부터, 문장의 의미가 비슷한 경우, 그리고 사용하는 어휘가 비슷한 경우를 생각할 수 있다. 또한, 해당 원천 데이터에 대해서 원본과 GPT 이 샘플링을 한 것을 비교하는 경우도 가능하다. 이는 원천소스 탐지에 대해서 일반화의 수준이 요구하는 정도에 따라서 다르며, 이로 인해서 예측 모델의 종류와 성능도 달라져야 한다는 것을 의미한다. Soft한 Negative Sample 을 사용하는 경우 단순한 모델로도 원천소스를 탐지할 수 있다. 그러나, 원천소스가 비슷한 데이터라면, 두 클래스를 구분하는 것은 쉬운 일이 아니며, 어떠한 특징으로부터 구분할지 고민해야 한다. 클래시파이어는 결국, 
