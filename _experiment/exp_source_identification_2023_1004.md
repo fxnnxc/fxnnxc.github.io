@@ -61,8 +61,6 @@ Probing에 사용된 방식은 GPT 모델에 문장을 넣고 나오는 Next Tok
 </figure>
 
 
-
-
 ---
 
 
