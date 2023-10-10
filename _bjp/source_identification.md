@@ -275,3 +275,38 @@ This logits are different from previous watermark based data provenance. As the 
 모델이 문장에 대한 정보를 암기하고 있으면서, 특정 레이블에 대한 확률값이 높은 경우, 해당 원천 소스에 대한 출처의 확신이 높아진다. 
 
 네거티브 샘플의 종류에 대해서 정보를 판단해야 한다. 예로, 완벽하게 일치하는 문장만 포함하는 경우부터, 문장의 의미가 비슷한 경우, 그리고 사용하는 어휘가 비슷한 경우를 생각할 수 있다. 또한, 해당 원천 데이터에 대해서 원본과 GPT 이 샘플링을 한 것을 비교하는 경우도 가능하다. 이는 원천소스 탐지에 대해서 일반화의 수준이 요구하는 정도에 따라서 다르며, 이로 인해서 예측 모델의 종류와 성능도 달라져야 한다는 것을 의미한다. Soft한 Negative Sample 을 사용하는 경우 단순한 모델로도 원천소스를 탐지할 수 있다. 그러나, 원천소스가 비슷한 데이터라면, 두 클래스를 구분하는 것은 쉬운 일이 아니며, 어떠한 특징으로부터 구분할지 고민해야 한다. 클래시파이어는 결국, 
+
+
+--- 
+
+2023.10.10
+
+학습데이터의 확장 : XML 데이터 분석 및 추가
+
+* code release [v23.10.10](https://github.com/fxnnxc/source_identification_problem/tree/v23.10.10.1)
+* XML [README](https://github.com/fxnnxc/source_identification_problem/tree/v23.10.10.1/xml)
+* SIP Dataset [Notebook](https://github.com/fxnnxc/source_identification_problem/blob/v23.10.10.1/test/dataset.ipynb) 
+
+```bash 
+====================
+** INCLUDE **
+LF-Amazon-131K
+trn
+From label 294805 131073
+294805it [00:00, 1010858.06it/s]
+294805it [00:00, 2783772.85it/s]
+num inputs: 294805
+num outputs: 294805
+['Methodical Bible study: A new ', 'GeoPuzzle U.S.A. and Canada - ']
+['4315:1.0\n', '112532:1.0 113827:1.0\n']
+====================
+Wikipedia-500K
+trn
+From label 1813391 501070
+1813391it [00:11, 163675.08it/s]
+1813391it [00:00, 2942573.18it/s]
+num inputs: 1813391
+num outputs: 1813391
+['Anarchism {{redirect2|anarchis', 'Albedo {{other uses}} {{use dm']
+['81199:1.0 83757:1.0 83805:1.0 ', '144177:1.0 144212:1.0 182348:1']
+```
