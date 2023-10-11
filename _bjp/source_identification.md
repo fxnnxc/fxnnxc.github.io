@@ -279,9 +279,7 @@ This logits are different from previous watermark based data provenance. As the 
 
 --- 
 
-2023.10.10
-
-학습데이터의 확장 : XML 데이터 분석 및 추가
+### 2023.10.10 : 학습데이터의 확장 : XML 데이터 분석 및 추가
 
 * code release [v23.10.10](https://github.com/fxnnxc/source_identification_problem/tree/v23.10.10.1)
 * XML [README](https://github.com/fxnnxc/source_identification_problem/tree/v23.10.10.1/xml)
@@ -307,6 +305,7 @@ From label 1813391 501070
 1813391it [00:00, 2942573.18it/s]
 num inputs: 1813391
 num outputs: 1813391
-['Anarchism {{redirect2|anarchis', 'Albedo {{other uses}} {{use dm']
+['Anarchism redirect2|anarchis', 'Albedo other uses use dm']
 ['81199:1.0 83757:1.0 83805:1.0 ', '144177:1.0 144212:1.0 182348:1']
+
 ```
