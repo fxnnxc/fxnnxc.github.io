@@ -309,3 +309,85 @@ num outputs: 1813391
 ['81199:1.0 83757:1.0 83805:1.0 ', '144177:1.0 144212:1.0 182348:1']
 
 ```
+
+----
+
+### 2023.10.11 : 추가적인 실험
+
+단순하게, Classifier 를 학습한 결과를 일단 모으고, 학습 방법을 점진적으로 개선해야 한다. 결국 SIP 문제를 XML 문제에 가깝기 때문이다. 그 전에, 단순 Classifier 에 대해서 학습한 결과를 Report하는 것은  필요하다. 이 때, CrossEntropy Loss 를 한 것과 Binary Cross Entropy Loss 를 사용한 것을 비교해야 한다. 
+
+
+Let $S_i$ be the set of positive labels and negative labels in a shortlist $N_i$ 
+
+Binary cross entropy loss is defined as follows: 
+
+$$
+\mathcal{L}_{BCE} = \sum_i^N \sum_{\ell \in S_i} y_{i\ell} \log (\sigma (W_{\ell} z_i )) + (1-y_{i\ell}) \log (1- \sigma (W_{\ell} z_i ))
+$$
+
+where  $\sigma$ is sigmoid function $\sigma(x) = \frac{1}{1+\exp{(-x)}}$.  
+
+
+Another option is to learn cross entropy loss directly for the labels. Although, it is not suitable for the scalability of the labels, we report the accuracy. 
+Cross entropy loss is defined as follows:
+
+$$
+\mathcal{L}_{CE} = \sum_i^N  \sum_{\ell \in S_i} y_{i\ell} \log \frac{\exp{(W_{\ell} z_i)}}{\sum_{\ell' } \exp{ (W_{\ell'} z_i) }}
+$$
+
+
+**중요질문** : 학습이 가능한 것은 단어에 대한 유의미한 Feature 이기 때문인가? 아니면, Class 에 대해서 구분된 표현 공간을 지니기 때문인가? 즉, 문장을 기억하지 않더라도, 단순히 표현이 다르기 때문에 원천 소스를 찾는 게 가능한가? 
+
+GPT 모델이 원천 소스에 대해서 학습을 해서, 이후에 나오는 단어에 대해서 특징을 가지면서, 클래스별로 구분될 수 있다면, 원천소스를 찾는데 사용될 수 있다. 
+만일, GPT 모델이 해당 문장에 대해서 원천소스를 기억할만큼 정보량을 지니고 있다면, 
+
+즉, 논문에서 보여야 하는 것은, GPT 모델이 원천소스에 대해서 원천을 맵핑할만큼 유의미한 표현 공간을 지니는가? 
+
+1. 원천을 나눠서 기억할만큼 서로 다른 표현 공간이다. 
+2. 원천을 기억할만큼 유의미한 표현이다. 
+
+
+모델 사이즈가 클수록 성능이 향상된다. 
+
+문장에 대해서 인코딩된 정보는 무슨 정보인가? 다음 단어에 대해서 GPT 모델이 생각하는 정보이다. 
+
+
+## 학습 세팅 
+
+### 단순 학습
+
+BCE / CE에 대해서 논의하면서 두 학습 결과를 비교한다. 
+
+Increasing Number of Labels 
+Increasing Number of Words 
+Increasing Model Size 
+
+### XML 세팅 
+
+BCE에 대해서 추가적인 추가적인 학습을 진행할 경우 성능을 체크한다. 추가적인 학습은 1. 클러스터링을 통한 가짜 레이블 학습  2. Hard Negative Sampling 3. Training (DeepXML Framework)
+
+Increasing Number of Labels 
+Increasing Number of Words 
+Increasing Model Size 
+
+* Note 1 : 모든 원천 데이터에 대해서 1차적인 학습을 진행할 수 있다. 
+* Note 2 : 이후, 추가적인 원천 데이터에 대해서 Finetuning 할 수 있다. 
+
+### Encoder Ablation
+
+* Simplest 
+* Deep MLP 
+* RNN
+* Transformer Encoder 
+
+### 추가적인 인코딩 학습 
+
+
+## Verification of Sources 
+
+1. Perplexity : Memorization이 되는가?
+2. 원천을 높을 확률로 찾는가? : Classifier 에 대해서 의존. False Positive를 줄여야 한다. 
+
+
+### XML Survey Results 
+
