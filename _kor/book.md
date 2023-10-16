@@ -238,8 +238,6 @@ p. 181. **조언이 필요하지 않을 만큼 완벽한 사람은 없다.**
 ---
 
 
-
-
 <script>
 function myFunction(n) {
   var x = document.getElementById(n);

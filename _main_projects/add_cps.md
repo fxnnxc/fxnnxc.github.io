@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: distill
 title: 'CPS (Cyber Physical System)'
 date: 2023-07-01
 description: Project
@@ -116,3 +116,48 @@ $$
 
 
 ---
+
+### Rosbot Goal Control
+
+
+* **관찰공간** : 로봇 상태 / 목표할당시 로봇 상태 / 상대 위치 / 목표 전달 시간
+* **행동공간** : 전방속도, 좌우회전속도 (continuous)
+* **보상값** : world frame의 목표 위치와 world frame의 로봇 위치 차이 
+* **종료** : 1) timestep*60*control_hz 초과 / 2) 목표 거리 0.1 이하 
+* **목표할당** : Reset 시 -5~5 범위의 목표위치 생성 
+
+<d-code language='python'>
+# 관찰 공간의 각 Dimension 에 해당하는 값은 다음과 같다. 
+feature_names = [  #현재 상태 
+            'linear_velocity_1',
+            'linear_velocity_2',
+            'linear_velocity_3',
+            'linear_acceleration_1',
+            'linear_acceleration_2',
+            'linear_acceleration_3',
+            'raw',
+            'pitch',
+            'yaw',
+            'angular_velocity_1',
+            'angular_velocity_2',
+            'angular_velocity_3',
+        ]  + [  # 목표 할당시 상태 
+            'prev_linear_velocity_1',
+            'prev_linear_velocity_2',
+            'prev_linear_velocity_3',
+            'prev_linear_acceleration_1',
+            'prev_linear_acceleration_2',
+            'prev_linear_acceleration_3',
+            'prev_raw',
+            'prev_pitch',
+            'prev_yaw',
+            'prev_angular_velocity_1',
+            'prev_angular_velocity_2',
+            'prev_angular_velocity_3',
+        ] + [ # 목표 상대 위치 정보
+            'rel_x', 
+            'rel_y',
+            'duration'
+        ]
+        
+</d-code>
