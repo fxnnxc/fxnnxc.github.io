@@ -312,7 +312,7 @@ num outputs: 1813391
 
 ----
 
-### 2023.10.11 : 추가적인 실험
+### 2023.10.11 : Cross Entropy with Increasing Number of Labels 실험
 
 단순하게, Classifier 를 학습한 결과를 일단 모으고, 학습 방법을 점진적으로 개선해야 한다. 결국 SIP 문제를 XML 문제에 가깝기 때문이다. 그 전에, 단순 Classifier 에 대해서 학습한 결과를 Report하는 것은  필요하다. 이 때, CrossEntropy Loss 를 한 것과 Binary Cross Entropy Loss 를 사용한 것을 비교해야 한다. 
 
