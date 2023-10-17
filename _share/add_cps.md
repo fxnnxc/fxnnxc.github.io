@@ -1,5 +1,5 @@
 ---
-layout: distill
+layout: share-distill
 title: 'CPS (Cyber Physical System)'
 date: 2023-07-01
 description: Project
@@ -51,7 +51,7 @@ Terminal 패널 정보:
 3. Rosbot spawn
 4. keyboard Control 
 
-<img src="https://drive.google.com/uc?export=view&id=1Zw9gg6PlNxSGJ9Yfg1Xjer3j3ufiLiSL"> 
+<img src="https://drive.google.com/uc?export=view&id=1Zw9gg6PlNxSGJ9Yfg1Xjer3j3ufiLiSL" style='width:100%'>  
 
 
 --- 
@@ -117,7 +117,7 @@ $$
 
 ---
 
-### Rosbot Goal Control
+## Rosbot Goal Control
 
 
 * **관찰공간** : 로봇 상태 / 목표할당시 로봇 상태 / 상대 위치 / 목표 전달 시간
@@ -126,7 +126,7 @@ $$
 * **종료** : 1) timestep*60*control_hz 초과 / 2) 목표 거리 0.1 이하 
 * **목표할당** : Reset 시 -5~5 범위의 목표위치 생성 
 
-<d-code language='python'>
+<d-code language='python' style='border:2px dashed gray;border-radius:10px;padding-left:5px;'>
 # 관찰 공간의 각 Dimension 에 해당하는 값은 다음과 같다. 
 feature_names = [  #현재 상태 
             'linear_velocity_1',
@@ -162,8 +162,85 @@ feature_names = [  #현재 상태
         
 </d-code>
 
+## SAC Training Results 2023.10.17
+
+* 🗳️ code release: [v23.10.17.1](https://github.com/fxnnxc/add_cps/tree/v23.10.17.1)
+* 🔗 300K SAC 학습모델 / 분석 그림들 [link](https://drive.google.com/drive/folders/1pexb0a5R9WzmyJXHpyNv47KKprHUfNHV?usp=drive_link)
+
+`rosbot_goal_control` 환경에 SAC으로 300K 시간에 대해서 학습한 모델의 구조는 다음과 같다. 
+Actor 와 Critic은 서로 파라미터를 공유하지 않으며, Critic 의 값은 (관찰값과 행동)에 대해서 $V$ 를 반환한다. 
+ 
+
+
+<d-code language="python" style='border:2px dashed gray;border-radius:10px;padding-left:5px;'>
+Actor(
+  (mlp): Sequential(
+    (0): Linear(in_features=27, out_features=64, bias=True)
+    (1): Tanh()
+    (2): Linear(in_features=64, out_features=64, bias=True)
+    (3): Tanh()
+    (4): Linear(in_features=64, out_features=64, bias=True)
+    (5): Tanh()
+  )
+  (fc_mean): Linear(in_features=64, out_features=2, bias=True)
+  (fc_logstd): Linear(in_features=64, out_features=2, bias=True)
+)
+Critic(
+  (mlp): Sequential(
+    (0): Linear(in_features=29, out_features=64, bias=True)
+    (1): GELU(approximate='none')
+    (2): Linear(in_features=64, out_features=64, bias=True)
+    (3): GELU(approximate='none')
+    (4): Linear(in_features=64, out_features=1, bias=True)
+  )
+)
+</d-code>
+
+학습 과정에서 episode의 return 값은 다음과 같다. 학습결과 100K 수준에서 보상이 수렴한 것을 확인할 수 있다. 
+성능이 -30 이후로 성능이 개선되지 않았는데, 이에 대해서 Upperbound 여부를 확인해봐야 한다.
+
+
+<center>
+<img src="https://drive.google.com/uc?export=view&id=15D4Izk8FA_Sl0sY-x_S5vSXin8OgnpLX" style="width:80%">
+</center>
 
 ---
+
+로봇의 컨트롤 $action = (\beta, \alpha)$ 에 대해서 $\beta$는 전진하는 속도, $\alpha$는 회전 값으로 범위는 다음과 같다. $\beta \in [0,1]$ 과 $\alpha \in (-1, 1)$ 회전값은 $-1$ 의 경우 왼쪽, $+1$의 경우 오른쪽으로 나타낸다. 학습 완료된 모델에 대해서 목표로 하는 상대위치 $(rx,ry)$ 를 줬을 때 로봇의 행동을 분석해 보면 다음과 같다. 
+
+* 입력값: $[0,0,\cdots,0, rx,ry,0]$ 
+* 출력 : $(\beta, \alpha)$
+
+<center>
+<img src="https://drive.google.com/uc?export=view&id=1_8nnH7TRBk-YsR5Tpssn7YBBYnOPPDER" style="width:49%">
+<img src="https://drive.google.com/uc?export=view&id=17Ui29wMO2AJY2Dvn9Y6JOb0sFoNa8yZ0" style="width:49%">
+</center>
+
+*  회전값 $\alpha$가 y축을 기준으로 왼쪽과 오른쪽에 대해서 극단적인 회전으로 구분되는 것을 확인할 수 있다. 
+* 가속도 $\beta$는 전방 좌우에 대해서 1값으로 높은 것을 볼 수 있으며, (-2, 2) 부근에서는 상대적으로 낮은 속도를 내는 것을 확인한다. 이는 학습이 불충분하게 되었기 때문으로 사료된다. 
+
+로봇의 실제 방향 $(dx,dy)$의 값을 $(\beta, \alpha)$ 로부터 다음과 같은 식으로 유도될 수 있다. 
+
+$$
+\begin{gather}
+\theta = (1-\alpha)/2 \pi \\
+dx = \beta \cdot \cos{\theta}  \\
+dy = \beta \cdot \sin{\theta}
+\end{gather}
+$$ 
+
+방향벡터를 목표 위치 $(rx, ry) \in [-3,3] \times [-3,3]$ 의 위치에서 표시해보면 다음과 같은 로봇의 이동 선호도를 볼 수 있다.  
+
+<center>
+<img src="https://drive.google.com/uc?export=view&id=1g7BEhpLTit7VEp4991lxrvJmVnfLNuF3" style="width:80%">
+</center>
+
+
+
+---
+
+
+
 
 
 ### Benchmark 
