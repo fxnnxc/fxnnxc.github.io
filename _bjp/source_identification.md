@@ -416,7 +416,7 @@ Increasing Model Size
 
 **최근 연구된 XML에 대해서 내용을 정리하고, SIP 논문에 적을 내용을 소개한다.** 
 
-As the training of source identification is not scalable with CE loss, the alternative loss is binary cross entropy loss (BCE) which is widely used in one-versus-all training framework [1,2,3] and in the field of extreme classification (EC) or  extreme multi-label classification (XML). Deep learning-based XML methods have three properties in common : feature learning, negative label shortlisting, and classifier training [3]. 
+As the training of source identification is not scalable with CE loss, the alternative loss is binary cross entropy loss (BCE) which is widely used in one-versus-all training framework [1,2,3] and in the field of extreme classification (EC) or  extreme multi-label classification (XML). Deep learning-based XML methods have three properties in common : feature learning, negative label shortlisting, and classifier training [3]. We follow the XML training framework to train the source identification problem with integer labels. We do not utilize the label features, for example, the book name is not used.   
 Although recent works utilizes the label features to handle the lack of training samples [5,6,7], source identification could not directly use label features. As the input embedding GPT hidden representations are not sentence embeddings and the similarity between the labels and inputs are not guaranteed.  Therefore, SIP problem is EC problem without label features. 
 
 AttentionXML forms a tree for label features [6]. SiameseXML enhanced zero-shot Siamese architecture to few-shot classification problem [7].
