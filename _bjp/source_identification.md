@@ -270,7 +270,7 @@ This logits are different from previous watermark based data provenance. As the 
 
 --- 
 
-2023.10.09 
+### 2023.10.09 
 
 모델이 문장에 대한 정보를 암기하고 있으면서, 특정 레이블에 대한 확률값이 높은 경우, 해당 원천 소스에 대한 출처의 확신이 높아진다. 
 
@@ -317,7 +317,39 @@ num outputs: 1813391
 단순하게, Classifier 를 학습한 결과를 일단 모으고, 학습 방법을 점진적으로 개선해야 한다. 결국 SIP 문제를 XML 문제에 가깝기 때문이다. 그 전에, 단순 Classifier 에 대해서 학습한 결과를 Report하는 것은  필요하다. 이 때, CrossEntropy Loss 를 한 것과 Binary Cross Entropy Loss 를 사용한 것을 비교해야 한다. 
 
 
-Let $S_i$ be the set of positive labels and negative labels in a shortlist $N_i$ 
+Let $S_i$ be the set of positive labels and negative labels in a shortlist $N_i$. The standard training loss for classification problem is cross entropy loss (CE). Cross entropy loss is defined as follows:
+
+$$
+\mathcal{L}_{CE} = \sum_i^N  \sum_{\ell \in S_i} y_{i\ell} \log \frac{\exp{(W_{\ell} z_i)}}{\sum_{\ell' } \exp{ (W_{\ell'} z_i) }}
+$$
+
+With the PG19 datasets with 100 samples per label each, we evaluate the basic ReLU based encoder for the classification problem. 
+
+<d-code language='python' style='border:2px dashed gray;border-radius:10px;padding-left:5px;'>  
+# Model Spec
+linear_hidden_size=1024
+linear_activation=relu
+linear_n_layers=2
+
+</d-code>
+
+We observe that the training is not scalable with the increasing number of labels. We conclude two things in this experiment
+
+* (Suitable Loss) CE loss architecture is not suitable for source identification problem with increased number of sources. 
+* (Model Scalability) As the model size increases, the classification training is better on average. 
+* (Generalization) Generalization over source identification may not be feasible. 
+
+#### Training 
+
+ <img src="https://drive.google.com/uc?export=view&id=1KJ7ra-D_OGfkuZ5R6iW0PD_5TzC28-at"> 
+
+
+#### Evaluation
+
+ <img src="https://drive.google.com/uc?export=view&id=1Q-jg7hHsSxeFeSRV40TCXoJBgufddOUV"> 
+
+
+### 변경된 Loss : CE --> BCE 
 
 Binary cross entropy loss is defined as follows: 
 
@@ -328,33 +360,25 @@ $$
 where  $\sigma$ is sigmoid function $\sigma(x) = \frac{1}{1+\exp{(-x)}}$.  
 
 
-Another option is to learn cross entropy loss directly for the labels. Although, it is not suitable for the scalability of the labels, we report the accuracy. 
-Cross entropy loss is defined as follows:
-
-$$
-\mathcal{L}_{CE} = \sum_i^N  \sum_{\ell \in S_i} y_{i\ell} \log \frac{\exp{(W_{\ell} z_i)}}{\sum_{\ell' } \exp{ (W_{\ell'} z_i) }}
-$$
-
+### 입력값 (GPT Hiddens)에 대한 고민 
 
 **중요질문** : 학습이 가능한 것은 단어에 대한 유의미한 Feature 이기 때문인가? 아니면, Class 에 대해서 구분된 표현 공간을 지니기 때문인가? 즉, 문장을 기억하지 않더라도, 단순히 표현이 다르기 때문에 원천 소스를 찾는 게 가능한가? 
 
 GPT 모델이 원천 소스에 대해서 학습을 해서, 이후에 나오는 단어에 대해서 특징을 가지면서, 클래스별로 구분될 수 있다면, 원천소스를 찾는데 사용될 수 있다. 
-만일, GPT 모델이 해당 문장에 대해서 원천소스를 기억할만큼 정보량을 지니고 있다면, 
-
-즉, 논문에서 보여야 하는 것은, GPT 모델이 원천소스에 대해서 원천을 맵핑할만큼 유의미한 표현 공간을 지니는가? 
+만일, GPT 모델이 해당 문장에 대해서 원천소스를 기억할만큼 정보량을 지니고 있다면 GPT 모델이 원천소스에 대해서 원천을 맵핑할만큼 유의미한 표현 공간을 지니는가? 
 
 1. 원천을 나눠서 기억할만큼 서로 다른 표현 공간이다. 
 2. 원천을 기억할만큼 유의미한 표현이다. 
 
 
-모델 사이즈가 클수록 성능이 향상된다. 
+--- 
 
-문장에 대해서 인코딩된 정보는 무슨 정보인가? 다음 단어에 대해서 GPT 모델이 생각하는 정보이다. 
+### 2023.10.13 논문 학습 구조 확정 
 
+```
+1. 학습 세팅에 따른 성능 비교 
 
-## 학습 세팅 
-
-### 단순 학습
+1.1 단순 학습
 
 BCE / CE에 대해서 논의하면서 두 학습 결과를 비교한다. 
 
@@ -362,9 +386,14 @@ Increasing Number of Labels
 Increasing Number of Words 
 Increasing Model Size 
 
-### XML 세팅 
+1.2 DeepXML 세팅 
 
-BCE에 대해서 추가적인 추가적인 학습을 진행할 경우 성능을 체크한다. 추가적인 학습은 1. 클러스터링을 통한 가짜 레이블 학습  2. Hard Negative Sampling 3. Training (DeepXML Framework)
+BCE에 대해서 추가적인 추가적인 학습을 진행할 경우 성능을 체크한다. 
+
+추가적인 학습은 
+1. 클러스터링을 통한 가짜 레이블 학습 
+2. Hard Negative Sampling 
+3. Training (DeepXML Framework)
 
 Increasing Number of Labels 
 Increasing Number of Words 
@@ -373,21 +402,77 @@ Increasing Model Size
 * Note 1 : 모든 원천 데이터에 대해서 1차적인 학습을 진행할 수 있다. 
 * Note 2 : 이후, 추가적인 원천 데이터에 대해서 Finetuning 할 수 있다. 
 
-### Encoder Ablation
+2. Encoder Ablation
 
 * Simplest 
 * Deep MLP 
 * RNN
 * Transformer Encoder 
+```
 
-### 추가적인 인코딩 학습 
+---
+
+### 2023.10.13 : XML Literature Review 
+
+**최근 연구된 XML에 대해서 내용을 정리하고, SIP 논문에 적을 내용을 소개한다.** 
+
+As the training of source identification is not scalable with CE loss, the alternative loss is binary cross entropy loss (BCE) which is widely used in one-versus-all training framework [1,2,3] and in the field of extreme classification (EC) or  extreme multi-label classification (XML). Deep learning-based XML methods have three properties in common : feature learning, negative label shortlisting, and classifier training [3]. 
+Although recent works utilizes the label features to handle the lack of training samples [5,6,7], source identification could not directly use label features. As the input embedding GPT hidden representations are not sentence embeddings and the similarity between the labels and inputs are not guaranteed.  Therefore, SIP problem is EC problem without label features. 
+
+AttentionXML forms a tree for label features [6]. SiameseXML enhanced zero-shot Siamese architecture to few-shot classification problem [7].
+Renee propose optimization loss to stablize the training and increase the size of training to the fart more extreme number of labels (1B) [2]. 
+DEXA [4] use additional parameters to complement the gap of pure label feature embeddings. 
 
 
-## Verification of Sources 
+[1] Rifkin, Ryan, and Aldebaro Klautau. "In defense of one-vs-all classification." The Journal of Machine Learning Research 5 (2004): 101-141.
 
-1. Perplexity : Memorization이 되는가?
-2. 원천을 높을 확률로 찾는가? : Classifier 에 대해서 의존. False Positive를 줄여야 한다. 
+[2] Jain, Vidit, et al. "Renee: END-TO-END TRAINING OF EXTREME CLASSIFICATION MODELS." Proceedings of Machine Learning and Systems 5 (2023). (Renee)
+
+[3] Dahiya, Kunal, et al. "Deepxml: A deep extreme multi-label learning framework applied to short text documents." Proceedings of the 14th ACM International Conference on Web Search and Data Mining. 2021. (DeepXML)
+
+[4] Dahiya, Kunal, et al. "Deep Encoders with Auxiliary Parameters for Extreme Classification." Proceedings of the 29th ACM SIGKDD Conference on Knowledge Discovery and Data Mining. 2023. DEXA 
+
+[5] Jiang, Ting, et al. "Lightxml: Transformer with dynamic negative sampling for high-performance extreme multi-label text classification." Proceedings of the AAAI Conference on Artificial Intelligence. Vol. 35. No. 9. 2021. (LightXML)
+
+[6] You, Ronghui, et al. "Attentionxml: Label tree-based attention-aware deep model for high-performance extreme multi-label text classification." Advances in Neural Information Processing Systems 32 (2019). (AttentionXML)
+
+[7] Dahiya, Kunal, et al. "Siamesexml: Siamese networks meet extreme classifiers with 100m labels." International Conference on Machine Learning. PMLR, 2021. (SiameseXML)
+
+[8] @Misc{Bhatia16,
+          author    = {Bhatia, K. and Dahiya, K. and Jain, H. and Kar, P. and Mittal, A. and Prabhu, Y. and Varma, M.},
+          title     = {The extreme classification repository: Multi-label datasets and code},
+          url       = {http://manikvarma.org/downloads/XC/XMLRepository.html},
+          year      = {2016}
+        }
 
 
-### XML Survey Results 
 
+
+--- 
+
+### 2023.10.16 : Gathering Hiddens
+
+GPT Hidden의 분포에 대한 분석/원천소스 맵핑을 학습하므로, **일단 GPT Hiddens (Vocab 전 마지막 표현)를 모아두고**, prediction task 만 따로 학습한다. 
+XMl과 GPT Hiddens 를 결합하는 경우 메모리가 너무 많이 사용된다. 예로 PG19 데이터의 경우, 20000개가 넘는 레이블이 있는데, 레이블 당 100개씩 데이터를 얻는 경우,  `(2,000,000, Tokens, Dims)` 사이즈의 메모리를 저장해야 한다. 따라서 레이블 1000개에 대해서 100개의 샘플을 모으고, CE Loss를 Binary CE 로 변경한 것과, Renee 에서 제안한 Loss까지 써본다. 
+
+| Models             | Amazon131K  | PG19 | Wikipedia500 
+|--------------------|-------------|------|---|
+|`Pythia-70m`        | ✅          |  ✅
+|`Pythia-160m`       | ✅          |  - | 
+|`Pythia-410m`       | ✅          |  - |
+|`Pythia-1b`         | ✅  |
+|`Pythia-1.4b`       | ✅  |
+|`Pythia-2.8b`       | ✅  |
+|`Pythia-6.9b`       | ✅  |
+|`Pythia-12b`        | ✅  | 
+|`LLama-chat-7b`    | -  | 
+|`LLama-7b`         | -  |
+|`LLama-chat-13b`   | -  |
+|`LLama-13b`        | -  |
+|`GPT2-XL`         | -  | 
+|`GPT2-XL`         | -  | 
+|`OPT-350m`        | -  | 
+
+
+
+---
