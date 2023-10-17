@@ -235,18 +235,20 @@ $$
 <img src="https://drive.google.com/uc?export=view&id=1g7BEhpLTit7VEp4991lxrvJmVnfLNuF3" style="width:80%">
 </center>
 
+---
+
+### 2023.10.17 : 문제점 : Real Trajectory 가 완벽하지 않음. 
+
+* Reward 가 제대로된 것과 별개로 모든 상태에 대해서 제대로 동작하는지 확실하지 않음. 
+* Real Trajectory 가 더욱 제대로 되도록 학습되어야 함. 
+* (**필요**) 학습 데이터를 더욱 일반화가 되도록 다양화 (입력의 속도/각도 등에 대해서 다양한 상태에서 시작해야 함. )
+
+<center>
+<img src="https://drive.google.com/uc?export=view&id=1GV5Xc5smpryb4KXlCtjDpLWeLsCJ8wMM" style="width:50%">
+</center>
+* 해당 그림은 CPU에서 학습된 모델로, Return 값이 좀더 낮긴 했음
 
 
 ---
 
 
-
-
-
-### Benchmark 
-
-* Waypoint Tracking Benchmark 
-  * number of points 
-  * duration 
-  * success rate 
-  * curve 
