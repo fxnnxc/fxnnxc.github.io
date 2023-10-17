@@ -476,13 +476,14 @@ XMl과 GPT Hiddens 를 결합하는 경우 메모리가 너무 많이 사용된�
 
 
 ### Data stats
-* PG19 (pythia pretraining data)
- * labels: 28,602 (raw data)
- * inputs : each book 
-* Amazon131K (classification dataset)
+
+* **PG19** (pythia pretraining data)
+  * labels: 28,602 (raw data)
+  * inputs : each book 
+* **Amazon131K** (classification dataset)
   * labels: 131,073
   * inputs:  294,805
-* Wikipedia500 (classification dataset)
+* **Wikipedia500** (classification dataset)
   * labels: 501,070
   * inputs: 1,813,391
 
