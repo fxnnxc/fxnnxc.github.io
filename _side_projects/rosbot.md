@@ -11,7 +11,14 @@ featured: true
 title: 'Rosbot'
 description: 'instruction of rosbot control'
 importance: 2
+img: https://drive.google.com/uc?export=view&id=1eJtwS8059D38zAYAwOzqmu1vjsP5nrU7
 ---
+
+
+<center>
+<img src="https://drive.google.com/uc?export=view&id=1tBMBZODkl4I817B8UEwhuQ8PwqRbODgZ" style="width:48%">
+<img src="https://drive.google.com/uc?export=view&id=1eJtwS8059D38zAYAwOzqmu1vjsP5nrU7" style="width:48%">
+</center>
 
 ---
 
@@ -24,7 +31,6 @@ importance: 2
 <img src="https://drive.google.com/uc?export=view&id=1hf5Rw1VG6usfvOSpCxiSnrM76LjQd3Oy" style="width:48%">
 <img src="https://drive.google.com/uc?export=view&id=1xiDN8CLW6Bcs5lfw77ou5Poxax2LNgdp" style="width:48%">
 </center>
-
 
 
 
@@ -46,6 +52,9 @@ importance: 2
   * 스위치 껐다가 켜보는 중
   * 갑자기 로그인 커맨드 : ID/PW: `husarion` / `husarion`
   * 배터리가 없어서 화면이 깜빡이는 것은 아닌듯. (전원이 아닌 일부 충전된 배터리로 다시 켜보는 중)
+
+* 해결: MicroSD 에 문제가 있었고, 문제가 없는 MicroSD로 바꿔 끼우니 해결됨. 
+   * 혹시 필요한 경우, OS 재설치 요망. [[link](https://husarion.com/manuals/rosbot/operating-system-reinstallation/), [link](https://husarion.com/software/os/installation/) ]
 
 
 USB serial port used for debugging the firmware on CORE2-ROS controller

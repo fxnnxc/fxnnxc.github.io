@@ -3,7 +3,7 @@ layout: distill
 title: 'Domain Neurons'
 date: 2023-09-21
 description: . 
-img: ''
+img: 'https://drive.google.com/uc?export=view&id=1dYAfhcE7NUj-qqqKEF8s04HrlHHa1ube'
 authors: 
     - name: Bumjin Park
       affiliations:
