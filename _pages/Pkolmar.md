@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Project with Kolmar 🫗
+title: Kolmar Project 🍯 
 description: 
 permalink: /Pkolmar/
 ---
@@ -57,7 +57,7 @@ permalink: /Pkolmar/
   </card>
       <card class="column-second">
       {% if post.img %}
-          <img src="{{ post.img }}" width="145px" height="145px" style="margin-top:20px;margin-left:40px;border-radius: 20px;"> 
+          <img src="{{ post.img }}" width="190px" height="145px" style="margin-top:0px;margin-left:0px;border-radius: 20px; border:1px solid gray;"> 
       {% endif %}
       </card>
     {% endfor %}
