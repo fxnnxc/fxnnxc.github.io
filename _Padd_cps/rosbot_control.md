@@ -7,6 +7,9 @@ img : 'https://drive.google.com/uc?export=view&id=1mK_N4wltjVcj7K1sHIF63QedCtpZF
 ---
 ## 연구목적 
 
+물리적 Rosbot 의 컨트롤을 연구하여, 해당 연구를 Drone에도 확장하여 최종시연을 위한 로봇 컨트롤 환경을 구축하는 것을 목표로 한다. 
+요구사항은 특정좌표를 입력하면, body frame 에서 해당 위치로 이동. 이동 알고리즘은 룰기반과 강화학습 기반 두 가지로 제공한다. 
+
 ## 연구 내용 
 
 
