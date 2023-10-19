@@ -96,8 +96,7 @@ There are also products from other fields in <strong>Side research topics (S-) <
 
 
 <!--  MultiRobot Allocation Bias  -->
-<h3 class="demo-title"> Cooperative Multi-Robot Task Allocation with Reinforcement Learning
- </h3>
+<h3 class="demo-title"> Cooperative Multi-Robot Task Allocation with Reinforcement Learning </h3>
 <div class="demolink">
   <a class="box-demo-link" href="https://www.mdpi.com/2076-3417/12/1/272" style="background:#B77EFA" >Applied Sciences</a> | 
   <a class="box-demo-link" href="https://github.com/fxnnxc/Cooperative-Multi-Robot-Task-Allocation-with-Reinforcement-Learning" >Code</a> | 

@@ -8,7 +8,7 @@ giscus_comments: true
 disqus_comments: true
 date: 2022-10-16
 featured: true
-title: 'Rosbot'
+title: 'Rosbot Device'
 description: 'instruction of rosbot control'
 importance: 2
 img: https://drive.google.com/uc?export=view&id=1eJtwS8059D38zAYAwOzqmu1vjsP5nrU7

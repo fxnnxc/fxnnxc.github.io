@@ -154,6 +154,9 @@ collections:
   Pkolmar:
     output: true
     permalink: /Pkolmar/:path/
+  Padd_cps:
+    output: true
+    permalink: /Padd_cps/:path/
   study:
     output: true
     permalink: /study/:path/
