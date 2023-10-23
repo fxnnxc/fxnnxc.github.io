@@ -9,8 +9,9 @@ disqus_comments: false
 giscus_comments: false
 date: 2023-09-17
 featured: true
-title: 'Data Provenance'
-description: 'Study of Provenance.'
+title: '[2] Related Work for SIP [Data Provenance]'
+description: 'Literature Review of Provenance.'
+img: https://drive.google.com/uc?export=view&id=1DaSSF2dSi46Vgt5c2rogKTIlGEwyX8Le
 ---
 
 

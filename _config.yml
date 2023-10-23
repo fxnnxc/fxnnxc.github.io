@@ -160,6 +160,10 @@ collections:
   study:
     output: true
     permalink: /study/:path/
+  Rsip:
+    output: true
+    permalink: /Psip/:path/
+  
 
 news_limit: 10000
 

@@ -9,8 +9,8 @@ giscus_comments: false
 disqus_comments: false
 date: 2023-08-24
 featured: true
-img: 
-title: '[Experiment Note] <br> Prompt Tuning of Pre-trained GPT <br> with Twitter Complaints Dataset '
+img: /assets/experiments/gpt_sip_twitter/70m_train_ppl.png
+title: '[1] Prompt Tuning of Pre-trained GPT <br> with Twitter Complaints Dataset '
 description: 'Series of experiments conducted for SIP for GPT'
 _styles: >
     .table {

@@ -9,9 +9,9 @@ giscus_comments: false
 disqus_comments: false
 date: 2023-10-04
 featured: true
-img: 
-title: '[🧪 EXP Note] <br> Source Identification Problem <br> GPT last hidden representation probing '
-description: 'GPT 모델 파라미터로 문장을 인코딩하여, 다음 단어 예측 표현으로 원천소스를 맵핑한다. '
+img: https://drive.google.com/uc?export=view&id=1A-QHI96khQt84rwlSE6judHweaPby4pF
+title: '[3] SIP with wikitext for 10 classes'
+description: 'GPT 모델 파라미터로 문장을 인코딩하여, 다음 단어 예측 표현으로 원천소스를 맵핑한다. 모델 사이즈별로 유의미한 차이가 있음을 발견하였다. '
 _styles: >
     .table {
         padding-top:200px;
