@@ -76,3 +76,12 @@ img: https://drive.google.com/uc?export=view&id=1eJtwS8059D38zAYAwOzqmu1vjsP5nrU
 ---
 
 <img src="https://husarion.com/assets/images/block_diagram_2R-41708707bbba386b14ee88ca93323c7c.png" style='width:100%'>
+
+
+--- 
+
+### 2023.10.24 
+
+부팅 이후 twist 커맨드로 조종이 안되는 현상 
+
+* 특정 파일을 실행해야 하는가?
