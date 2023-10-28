@@ -30,7 +30,7 @@ description: '100개의 클래스를 넘어서 1000개의 클래스에 대해서
 
 
 1. Pseudo Label Feature Learning. 
-
+   
 * Sentence Similarity 기반 Pseudo Label : 추가적인 Similarity 값이 필요하다. 
 * Vector Representation 기반 클러스터 형성 
 
