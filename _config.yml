@@ -162,7 +162,7 @@ collections:
     permalink: /study/:path/
   Rsip:
     output: true
-    permalink: /Psip/:path/
+    permalink: /Rsip/:path/
   Rparchgrad:
     output: true
     permalink: /Rparchgrad/:path/

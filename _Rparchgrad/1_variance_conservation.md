@@ -9,7 +9,7 @@ giscus_comments: false
 disqus_comments: false
 date: 2023-08-24
 featured: true
-img: /assets/experiments/gpt_sip_twitter/70m_train_ppl.png
+img: /assets/experiments/gpt_sip_twitter/100m_train_ppl.png
 title: '[1] Motivation of The Problem.'
 description: 'Series of experiments conducted for SIP for GPT'
 _styles: >
@@ -25,23 +25,56 @@ _styles: >
 ---
 
 
-[2023.11.05]  The impact of large number of small signal channels. 
-
-Let H be a group of 10  random gradients whose first entry is sampled from N(0, 0.1) and the second entry is sampled from N(0.0, 1.0) and L be a group of 100 random gradients  whose elements are both sampled from  N(0, 0.1). The summed vector in each group and the combined group is shown in Figure below. Although H group is dominant in Dim2 (0,1), the summed vector of L group is dominant in Dim1 (1,0)  because of large number of vectors. Consequently, the final direction is (1,1) direction (black). This experiment shows the impact of large number of irrelevant channels (red).
+📌 Code Release : [parchgrad/v23.11.07.1](https://github.com/fxnnxc/parchgrad/tree/v23.11.07.1)
 
 
+## Gradient Aggregation Phenomena 
 
-<img src="https://drive.google.com/uc?export=view&id=14RK0ctQBWL5c9VPVxmxKlF4DXZzVCdPV" style="width:70%">
+[2023.11.05]  **The impact of large number of small magnitude gradients.** 
 
-<img src="https://drive.google.com/uc?export=view&id=1KJMlSNbBJJNz2D3YFF5Uza4eRW5nr2-F" style="width:70%">
+As the sign of gradients are changed by the normally distributed weights, the impact of multiple gradients are be magnified by the variance computation in the summation of multiple random variables. As a result, large number of small signals has high impact. The Figure below shows an example of the impact. We sample 10 high magnitude gradients $\mathcal{H}$ (blue) and 100 gradients $\mathcal{L}$ of 10 times smaller magnitude. Unlike our intuition that the dominance of $\mathcal{H}$ should be obtained, the resulted direction is highly affected by $\mathcal{L}$ (see Appendix for details). 
 
-<img src="https://drive.google.com/uc?export=view&id=1KJMlSNbBJJNz2D3YFF5Uza4eRW5nr2-F" style="width:70%">
 
+<center>
+<img src="https://drive.google.com/uc?export=view&id=14RK0ctQBWL5c9VPVxmxKlF4DXZzVCdPV" style="width:60%">
+<figcaption> Although random gradients from $\mathcal{L}$ group has small magnitude, the large number of gradients results in high magnitude that change the direction from the blue arrow to the black arrow. 
+</figcaption>
+</center>
+
+Let $\mathcal{H}$ be a group of 10 random gradients whose first entry is sampled from $\mathcal{N}(0, 0.1)$ and the second entry is sampled from $\mathcal{N}(0.0, 1.0)$ and $\mathcal{L}$ be a group of 100 random gradients  whose elements are both sampled from  $\mathcal{N}(0, 0.1)$. The summed vector in each group and the combined group is shown in Figure below. Although \mathcal{H} group is dominant in Dim2 $(0,1)$, the summed vector of $\mathcal{L}$ group is dominant in Dim1 $(1,0)$  because of large number of vectors. Consequently, the final direction is $(1,1)$ direction (black). This experiment shows the impact of large number of irrelevant channels (red).
+
+
+## Conserve Magnitude
+
+<center>
+<img src="https://drive.google.com/uc?export=view&id=1hmYELKr6i3ZFl7MtCZW_E6vc30cTCaWd" style="width:100%">
+</center>
+
+
+#### ResNet18 
+
+<center>
+<img src="https://drive.google.com/uc?export=view&id=1ExjOnUQfTXtF2lzc6uO1iY7XeSY1-iuZ" style="width:70%">
+</center>
+
+#### VGG16 
+
+<center>
 <img src="https://drive.google.com/uc?export=view&id=1ThpX5NAEhbUEEByTTSwL84Xc2YMZA2Oh" style="width:70%">
+</center>
 
-<img src="https://drive.google.com/uc?export=view&id=1hmYELKr6i3ZFl7MtCZW_E6vc30cTCaWd" style="width:70%">
+#### EfficientNetB0
+
+<center>
+<img src="https://drive.google.com/uc?export=view&id=1KJMlSNbBJJNz2D3YFF5Uza4eRW5nr2-F" style="width:70%">
+</center>
 
 
+
+
+https://drive.google.com/file/d/1ExjOnUQfTXtF2lzc6uO1iY7XeSY1-iuZ/view?usp=drive_link
+
+### Experimental Setting 
 
 
 <d-code language='python'>
