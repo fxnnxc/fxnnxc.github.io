@@ -12,6 +12,7 @@ img : ''
 
 [Pettingzoo MPE](https://pettingzoo.farama.org/environments/mpe/)
 
+<div style='border:1px solid #DDDDDD;padding:10px; border-radius:10px;' >
 <d-code language="python">
 simple_adversary_v3
 simple_crypto_v3
@@ -22,12 +23,10 @@ simple_spread_v3
 simple_tag_v3
 simple_world_comm_v3
 </d-code>
+</div>
 
 
 <img src="https://drive.google.com/uc?export=view&id=16PSyOaKjSIvgYLotuIeVeFTdWPmHqIg_" style='width:100%'>  
-
-
-
 
 
 <img src="https://drive.google.com/uc?export=view&id=1bWnAGL3xnr-5Xg1Uk4Z9Yy7FcjO3fLCB" style='width:100%'>  
