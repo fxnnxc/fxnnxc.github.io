@@ -35,6 +35,7 @@ simple_world_comm_v3
 
 
 
+<div style='border:1px solid #DDDDDD;padding:10px; border-radius:10px;' >
 <d-code language='python'>
 
 ------------------------------------
@@ -85,8 +86,9 @@ simple_world_comm_v3
  - [size] raw action: (4,)
  - [size] raw next obs, reward: (4, 16) (4,)
 
+<div style='border:1px solid #DDDDDD;padding:10px; border-radius:10px;' >
 </d-code>
-
+</div>
 
 ### Direct step in environment for rendering 
 
@@ -125,3 +127,4 @@ obs length:   [11, 11, 11, 7] | act length:   [5, 5, 5, 5]
 input action:   [0, 1, 2, 1]
 
 </d-code>
+</div>
