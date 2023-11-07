@@ -53,30 +53,39 @@ Let $\mathcal{H}$ be a group of 10 random gradients whose first entry is sampled
 
 #### ResNet18 
 
+For the ResNet18, conservation of variance results in gradient signals on more bounding box regions. As the small number of channels are used in the convolutional modules, more gap is more obtained.  
+
 <center>
-<img src="https://drive.google.com/uc?export=view&id=1ExjOnUQfTXtF2lzc6uO1iY7XeSY1-iuZ" style="width:70%">
+<img src="https://drive.google.com/uc?export=view&id=1ExjOnUQfTXtF2lzc6uO1iY7XeSY1-iuZ" style="width:80%">
 </center>
 
 #### VGG16 
 
+As VGG16 has only sequential gradient computation the conservation of gradient variance has no effect. 
+
 <center>
-<img src="https://drive.google.com/uc?export=view&id=1ThpX5NAEhbUEEByTTSwL84Xc2YMZA2Oh" style="width:70%">
+<img src="https://drive.google.com/uc?export=view&id=1ThpX5NAEhbUEEByTTSwL84Xc2YMZA2Oh" style="width:80%">
 </center>
 
 #### EfficientNetB0
 
+ResNet has more submodules with different kernel size. We conjecture that filtering convolutions in EfficientNet requires more discussions. 
+
 <center>
-<img src="https://drive.google.com/uc?export=view&id=1KJMlSNbBJJNz2D3YFF5Uza4eRW5nr2-F" style="width:70%">
+<img src="https://drive.google.com/uc?export=view&id=1KJMlSNbBJJNz2D3YFF5Uza4eRW5nr2-F" style="width:80%">
 </center>
 
 
 
 
-https://drive.google.com/file/d/1ExjOnUQfTXtF2lzc6uO1iY7XeSY1-iuZ/view?usp=drive_link
+
 
 ### Experimental Setting 
 
+The above experiment is done with filtering sequential convolutions. However, in the paper, we filter only upper parts to remove unrelated concepts. 
 
+<div style='border:1px solid #DDDDDD;padding:10px; border-radius:10px;' >
+<span> Hook Modules </span>
 <d-code language='python'>
 # ResNet18
 selected_convolutions = []
@@ -105,3 +114,4 @@ for num in [6,7]:
     selected_convolutions.append(conv)
 selected_convolutions.append(self.model.features[8][0])
 </d-code >
+</div>
