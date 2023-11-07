@@ -86,3 +86,42 @@ simple_world_comm_v3
  - [size] raw next obs, reward: (4, 16) (4,)
 
 </d-code>
+
+
+### Direct step in environment for rendering 
+
+* masking sampling is required when sampling actions (for listener_v4)
+* observation requires zero padding when computing 
+* input of environment is a list of discrete  actions. 
+
+<d-code language="bash">
+------------------------
+simple_adversary_v3
+obs length:   [11, 7, 7] | act length:   [5, 5, 5]
+input action:   [4, 3, 2]
+------------------------
+simple_crypto_v3
+obs length:   [5, 5, 7] | act length:   [4, 4, 4]
+input action:   [3, 0, 3]
+------------------------
+simple_push_v3
+obs length:   [11, 7] | act length:   [5, 5]
+input action:   [1, 1]
+------------------------
+simple_reference_v3
+obs length:   [7, 7] | act length:   [50, 50]
+input action:   [48, 31]
+------------------------
+simple_speaker_listener_v4
+obs length:   [9, 10] | act length:   [3, 5]
+input action:   [2, 3]
+------------------------
+simple_spread_v3
+obs length:   [7, 7, 7] | act length:   [5, 5, 5]
+input action:   [4, 2, 2]
+------------------------
+simple_tag_v3
+obs length:   [11, 11, 11, 7] | act length:   [5, 5, 5, 5]
+input action:   [0, 1, 2, 1]
+
+</d-code>
