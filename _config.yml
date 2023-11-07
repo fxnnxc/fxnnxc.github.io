@@ -163,6 +163,9 @@ collections:
   Rsip:
     output: true
     permalink: /Psip/:path/
+  Rparchgrad:
+    output: true
+    permalink: /Rparchgrad/:path/
   
 
 news_limit: 10000
