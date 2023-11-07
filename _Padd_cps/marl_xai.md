@@ -85,7 +85,7 @@ simple_world_comm_v3
  - [size] raw action: (4,)
  - [size] raw next obs, reward: (4, 16) (4,)
 
-<div style='border:1px solid #DDDDDD;padding:10px; border-radius:10px;' >
+
 </d-code>
 </div>
 
@@ -95,6 +95,7 @@ simple_world_comm_v3
 * observation requires zero padding when computing 
 * input of environment is a list of discrete  actions. 
 
+<div style='border:1px solid #DDDDDD;padding:10px; border-radius:10px;' >
 <d-code language="bash">
 ------------------------
 simple_adversary_v3
@@ -125,5 +126,47 @@ simple_tag_v3
 obs length:   [11, 11, 11, 7] | act length:   [5, 5, 5, 5]
 input action:   [0, 1, 2, 1]
 
+</d-code>
+</div>
+
+---
+
+
+<div style='border:1px solid #DDDDDD;padding:10px; border-radius:10px;' >
+<d-code language="bash">
+
+### Direct step in environment with Communication Model 
+
+
+------------------------------------
+   simple_crypto_v3
+actions: tensor([[3, 1, 3]]) | obs_size: (3, 8) | termination: [0 0 0]
+actions: tensor([[3, 2, 2]]) | obs_size: (3, 8) | termination: [0 0 0]
+actions: tensor([[0, 1, 1]]) | obs_size: (3, 8) | termination: [0 0 0]
+------------------------------------
+   simple_push_v3
+actions: tensor([[1, 4]]) | obs_size: (2, 19) | termination: [0 0]
+actions: tensor([[3, 0]]) | obs_size: (2, 19) | termination: [0 0]
+actions: tensor([[0, 2]]) | obs_size: (2, 19) | termination: [0 0]
+------------------------------------
+   simple_reference_v3
+actions: tensor([[29, 22]]) | obs_size: (2, 21) | termination: [0 0]
+actions: tensor([[17, 38]]) | obs_size: (2, 21) | termination: [0 0]
+actions: tensor([[41,  7]]) | obs_size: (2, 21) | termination: [0 0]
+------------------------------------
+   simple_speaker_listener_v4
+actions: tensor([[1, 0]]) | obs_size: (2, 11) | termination: [0 0]
+actions: tensor([[1, 2]]) | obs_size: (2, 11) | termination: [0 0]
+actions: tensor([[0, 1]]) | obs_size: (2, 11) | termination: [0 0]
+------------------------------------
+   simple_spread_v3
+actions: tensor([[3, 2, 3]]) | obs_size: (3, 18) | termination: [0 0 0]
+actions: tensor([[3, 2, 3]]) | obs_size: (3, 18) | termination: [0 0 0]
+actions: tensor([[2, 1, 4]]) | obs_size: (3, 18) | termination: [0 0 0]
+------------------------------------
+   simple_tag_v3
+actions: tensor([[0, 0, 4, 4]]) | obs_size: (4, 16) | termination: [0 0 0 0]
+actions: tensor([[3, 1, 1, 0]]) | obs_size: (4, 16) | termination: [0 0 0 0]
+actions: tensor([[0, 1, 3, 1]]) | obs_size: (4, 16) | termination: [0 0 0 0]
 </d-code>
 </div>
