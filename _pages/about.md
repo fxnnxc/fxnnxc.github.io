@@ -119,3 +119,8 @@ This paper deals with the concept of multi-robot task allocation, referring to t
 <!-- <a class="box-demo-link" href="/reading_list/" style="background:#617143 " >🐾 Research Progress</a> | 
 
 <a class="box-demo-link" href="/reading_list/" style="background:#617143 " >🐾 Research Progress</a> |  -->
+
+
+<iframe src="/assets/html/sail_research.drawio.html" width="100%" height="500px"></iframe>
+
+<hr>
