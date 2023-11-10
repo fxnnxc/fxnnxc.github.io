@@ -9,7 +9,7 @@ giscus_comments: false
 disqus_comments: false
 date: 2023-08-24
 featured: true
-img: /assets/experiments/gpt_sip_twitter/100m_train_ppl.png
+img: https://drive.google.com/uc?export=view&id=14RK0ctQBWL5c9VPVxmxKlF4DXZzVCdPV
 title: '[1] Motivation of The Problem.'
 description: 'Series of experiments conducted for SIP for GPT'
 _styles: >
