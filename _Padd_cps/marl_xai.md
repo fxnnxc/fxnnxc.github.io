@@ -25,12 +25,13 @@ simple_world_comm_v3
 </d-code>
 </div>
 
+<center>
+<img src="https://drive.google.com/uc?export=view&id=16PSyOaKjSIvgYLotuIeVeFTdWPmHqIg_" style='width:70%'>  
+</center>
 
-<img src="https://drive.google.com/uc?export=view&id=16PSyOaKjSIvgYLotuIeVeFTdWPmHqIg_" style='width:100%'>  
-
-
-<img src="https://drive.google.com/uc?export=view&id=1bWnAGL3xnr-5Xg1Uk4Z9Yy7FcjO3fLCB" style='width:100%'>  
-
+<center>
+<img src="https://drive.google.com/uc?export=view&id=1bWnAGL3xnr-5Xg1Uk4Z9Yy7FcjO3fLCB" style='width:50%'>  
+</center>
 
 
 
@@ -171,56 +172,68 @@ actions: tensor([[0, 1, 3, 1]]) | obs_size: (4, 16) | termination: [0 0 0 0]
 </d-code>
 </div>
 
-
------ 
-
-<img src="https://drive.google.com/uc?export=view&id=16PSyOaKjSIvgYLotuIeVeFTdWPmHqIg_" style='width:100%'>  
+---
 
 
-simple adversary
-* adversary
-agents= [adversary_0, agent_0,agent_1]
-<img src="https://drive.google.com/uc?export=view&id=1bDbSMhWvSzNv8aZH8WRPjaC-vmNKyyns" style='width:100%'>
 
-simple push 
-* adversary
-agents= [adversary_0, agent_0]
+### simple adversary
+* <span style="background-color:#FFBBBB;padding:5px;font-weight:700;border-radius:10px;"> adversary </span>
+* agents= [adversary_0, agent_0,agent_1]
+<center>
+<img src="https://pettingzoo.farama.org/_images/mpe_simple_adversary.gif" style="width:200px; border:1px solid #000000">
+
+
+#### Trained Model's Return
+<img src="https://drive.google.com/uc?export=view&id=1bDbSMhWvSzNv8aZH8WRPjaC-vmNKyyns" style='width:100%;border:1px solid #000000'>
+</center>
+
+
+### simple push 
+* <span style="background-color:#FFBBBB;padding:5px;font-weight:700;border-radius:10px;"> adversary </span>
+* agents= [adversary_0, agent_0]
+
+#### Trained Model's Return
 <img src="https://drive.google.com/uc?export=view&id=1Y07jVmmApRG_wMXG8aqcPs7fAAaegMqA" style='width:100%'>
 
-simple crypto 
-* adversary
-agents= [eve_0, bob_0, alice_0]
+### simple crypto 
+* <span style="background-color:#FFBBBB;padding:5px;font-weight:700;border-radius:10px;"> adversary </span>
+* agents= [eve_0, bob_0, alice_0]
+
+#### Trained Model's Return
 <img src="https://drive.google.com/uc?export=view&id=1x2z3SgHBnj-Yc4odLdU6fhHhwcG6xQlq" style='width:100%'>
 
 
-simple reference
-* adversary
-agents= [adversary_0, agent_0,agent_1]
+### simple reference
+* <span style="background-color:#FFBBBB;padding:5px;font-weight:700;border-radius:10px;"> adversary </span>
+* agents= [adversary_0, agent_0,agent_1]
+
+#### Trained Model's Return
 <img src="https://drive.google.com/uc?export=view&id=1znUgJ_XmLzhWmGCgpezUjK338k_mugDL" style='width:100%'>
 
 
-simple speaker and listener
-* cooperate
-agents=[speaker_0, listener_0]
+### simple speaker and listener
+* <span style="background-color:#BBBBFF;padding:5px;font-weight:700;border-radius:10px;"> cooperative </span>
+* agents=[speaker_0, listener_0]
+
+#### Trained Model's Return
 <img src="https://drive.google.com/uc?export=view&id=1XeYHyOJD5e3FzOk8fcOr1bJIORdMlgWB" style='width:100%'>
 
 
 
-simple spread 
-* cooperate
-agents= [agent_0, agent_1, agent_2]
+### simple spread 
+* <span style="background-color:#BBBBFF;padding:5px;font-weight:700;border-radius:10px;"> cooperative </span>
+* agents= [agent_0, agent_1, agent_2]
+
 <img src="https://drive.google.com/uc?export=view&id=1TFzXTBfnQeRBY7uZ3ufIm7XhYHLp_j8w" style='width:100%'>
 
 
-simple tag 
-* adversary
+### simple tag 
+* <span style="background-color:#FFBBBB;padding:5px;font-weight:700;border-radius:10px;"> adversary </span>
 * predator-prey
-
-agents= [adversary_0, adversary_1, adversary_2, agent_0]
+* agents= [adversary_0, adversary_1, adversary_2, agent_0]
 
 <img src="https://drive.google.com/uc?export=view&id=1icQXDjS2Jx_eg1FznkBXpyJHwODNK7Xd" style='width:100%'>
 
-simple communication world 
-* adversary
-
-agents=[leadadversary_0, adversary_0, adversary_1, adversary_3, agent_0, agent_1]
+### simple communication world 
+* <span style="background-color:#FFBBBB;padding:5px;font-weight:700;"> adversary </span>
+* agents=[leadadversary_0, adversary_0, adversary_1, adversary_3, agent_0, agent_1]
