@@ -180,12 +180,12 @@ actions: tensor([[0, 1, 3, 1]]) | obs_size: (4, 16) | termination: [0 0 0 0]
 * <span style="background-color:#FFBBBB;padding:5px;font-weight:700;border-radius:10px;"> adversary </span>
 * agents= [adversary_0, agent_0,agent_1]
 <center>
-<img src="https://pettingzoo.farama.org/_images/mpe_simple_adversary.gif" style="width:200px; border:1px solid #000000">
-
+<img src="https://pettingzoo.farama.org/_images/mpe_simple_adversary.gif" style="width:200px; border:1px solid #000000;">
+</center>
 
 #### Trained Model's Return
 <img src="https://drive.google.com/uc?export=view&id=1bDbSMhWvSzNv8aZH8WRPjaC-vmNKyyns" style='width:100%;border:1px solid #000000'>
-</center>
+
 
 
 ### simple push 
