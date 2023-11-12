@@ -170,3 +170,41 @@ actions: tensor([[3, 1, 1, 0]]) | obs_size: (4, 16) | termination: [0 0 0 0]
 actions: tensor([[0, 1, 3, 1]]) | obs_size: (4, 16) | termination: [0 0 0 0]
 </d-code>
 </div>
+
+
+----- 
+
+<img src="https://drive.google.com/uc?export=view&id=16PSyOaKjSIvgYLotuIeVeFTdWPmHqIg_" style='width:100%'>  
+
+
+simple adversary
+* adversary
+<img src="https://drive.google.com/uc?export=view&id=1bDbSMhWvSzNv8aZH8WRPjaC-vmNKyyns" style='width:100%'>
+
+simple push 
+* adversary
+<img src="https://drive.google.com/uc?export=view&id=1Y07jVmmApRG_wMXG8aqcPs7fAAaegMqA" style='width:100%'>
+
+simple reference
+* adversary
+<img src="https://drive.google.com/uc?export=view&id=1znUgJ_XmLzhWmGCgpezUjK338k_mugDL" style='width:100%'>
+
+simple spread 
+* cooperate
+<img src="https://drive.google.com/uc?export=view&id=1TFzXTBfnQeRBY7uZ3ufIm7XhYHLp_j8w" style='width:100%'>
+
+simple speaker and listener
+* cooperate
+<img src="https://drive.google.com/uc?export=view&id=1XeYHyOJD5e3FzOk8fcOr1bJIORdMlgWB" style='width:100%'>
+
+simple crypto 
+* adversary
+<img src="https://drive.google.com/uc?export=view&id=1x2z3SgHBnj-Yc4odLdU6fhHhwcG6xQlq" style='width:100%'>
+
+simple tag 
+* adversary
+* predator-prey
+<img src="https://drive.google.com/uc?export=view&id=1icQXDjS2Jx_eg1FznkBXpyJHwODNK7Xd" style='width:100%'>
+
+simple communication world 
+* adversary
