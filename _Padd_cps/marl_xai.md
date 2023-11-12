@@ -173,9 +173,8 @@ actions: tensor([[0, 1, 3, 1]]) | obs_size: (4, 16) | termination: [0 0 0 0]
 </div>
 
 ---
-
-
-
+---
+ 
 ### simple adversary
 * <span style="background-color:#FFBBBB;padding:5px;font-weight:700;border-radius:10px;"> adversary </span>
 * agents= [adversary_0, agent_0,agent_1]
@@ -186,54 +185,73 @@ actions: tensor([[0, 1, 3, 1]]) | obs_size: (4, 16) | termination: [0 0 0 0]
 #### Trained Model's Return
 <img src="https://drive.google.com/uc?export=view&id=1bDbSMhWvSzNv8aZH8WRPjaC-vmNKyyns" style='width:100%;border:1px solid #000000'>
 
+---
 
-
-### simple push 
+## simple push 
 * <span style="background-color:#FFBBBB;padding:5px;font-weight:700;border-radius:10px;"> adversary </span>
 * agents= [adversary_0, agent_0]
 
 #### Trained Model's Return
 <img src="https://drive.google.com/uc?export=view&id=1Y07jVmmApRG_wMXG8aqcPs7fAAaegMqA" style='width:100%'>
 
-### simple crypto 
+
+---
+
+
+## simple crypto 
 * <span style="background-color:#FFBBBB;padding:5px;font-weight:700;border-radius:10px;"> adversary </span>
 * agents= [eve_0, bob_0, alice_0]
 
 #### Trained Model's Return
 <img src="https://drive.google.com/uc?export=view&id=1x2z3SgHBnj-Yc4odLdU6fhHhwcG6xQlq" style='width:100%'>
 
+---
 
-### simple reference
+## simple reference
 * <span style="background-color:#FFBBBB;padding:5px;font-weight:700;border-radius:10px;"> adversary </span>
 * agents= [adversary_0, agent_0,agent_1]
+
 
 #### Trained Model's Return
 <img src="https://drive.google.com/uc?export=view&id=1znUgJ_XmLzhWmGCgpezUjK338k_mugDL" style='width:100%'>
 
+---
 
-### simple speaker and listener
+## simple speaker and listener
 * <span style="background-color:#BBBBFF;padding:5px;font-weight:700;border-radius:10px;"> cooperative </span>
 * agents=[speaker_0, listener_0]
+
 
 #### Trained Model's Return
 <img src="https://drive.google.com/uc?export=view&id=1XeYHyOJD5e3FzOk8fcOr1bJIORdMlgWB" style='width:100%'>
 
+---
 
-
-### simple spread 
+## simple spread 
 * <span style="background-color:#BBBBFF;padding:5px;font-weight:700;border-radius:10px;"> cooperative </span>
 * agents= [agent_0, agent_1, agent_2]
 
+
+#### Trained Model's Return
 <img src="https://drive.google.com/uc?export=view&id=1TFzXTBfnQeRBY7uZ3ufIm7XhYHLp_j8w" style='width:100%'>
 
+---
 
-### simple tag 
+## simple tag 
 * <span style="background-color:#FFBBBB;padding:5px;font-weight:700;border-radius:10px;"> adversary </span>
 * predator-prey
 * agents= [adversary_0, adversary_1, adversary_2, agent_0]
 
+#### Trained Model's Return
+
 <img src="https://drive.google.com/uc?export=view&id=1icQXDjS2Jx_eg1FznkBXpyJHwODNK7Xd" style='width:100%'>
 
-### simple communication world 
+---
+
+## simple communication world 
 * <span style="background-color:#FFBBBB;padding:5px;font-weight:700;"> adversary </span>
 * agents=[leadadversary_0, adversary_0, adversary_1, adversary_3, agent_0, agent_1]
+
+#### Trained Model's Return
+
+----
