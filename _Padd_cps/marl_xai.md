@@ -191,6 +191,11 @@ actions: tensor([[0, 1, 3, 1]]) | obs_size: (4, 16) | termination: [0 0 0 0]
 * <span style="background-color:#FFBBBB;padding:5px;font-weight:700;border-radius:10px;"> adversary </span>
 * agents= [adversary_0, agent_0]
 
+<center>
+<img src="https://pettingzoo.farama.org/_images/mpe_simple_push.gif" style="width:200px; border:1px solid #000000;">
+</center>
+
+
 #### Trained Model's Return
 <img src="https://drive.google.com/uc?export=view&id=1Y07jVmmApRG_wMXG8aqcPs7fAAaegMqA" style='width:100%'>
 
@@ -202,6 +207,10 @@ actions: tensor([[0, 1, 3, 1]]) | obs_size: (4, 16) | termination: [0 0 0 0]
 * <span style="background-color:#FFBBBB;padding:5px;font-weight:700;border-radius:10px;"> adversary </span>
 * agents= [eve_0, bob_0, alice_0]
 
+<center>
+<img src="https://pettingzoo.farama.org/_images/mpe_simple_crypto.gif" style="width:200px; border:1px solid #000000;">
+</center>
+
 #### Trained Model's Return
 <img src="https://drive.google.com/uc?export=view&id=1x2z3SgHBnj-Yc4odLdU6fhHhwcG6xQlq" style='width:100%'>
 
@@ -211,8 +220,13 @@ actions: tensor([[0, 1, 3, 1]]) | obs_size: (4, 16) | termination: [0 0 0 0]
 * <span style="background-color:#FFBBBB;padding:5px;font-weight:700;border-radius:10px;"> adversary </span>
 * agents= [adversary_0, agent_0,agent_1]
 
+<center>
+<img src="https://pettingzoo.farama.org/_images/mpe_simple_reference.gif" style="width:200px; border:1px solid #000000;">
+</center>
+
 
 #### Trained Model's Return
+
 <img src="https://drive.google.com/uc?export=view&id=1znUgJ_XmLzhWmGCgpezUjK338k_mugDL" style='width:100%'>
 
 ---
@@ -220,6 +234,11 @@ actions: tensor([[0, 1, 3, 1]]) | obs_size: (4, 16) | termination: [0 0 0 0]
 ## simple speaker and listener
 * <span style="background-color:#BBBBFF;padding:5px;font-weight:700;border-radius:10px;"> cooperative </span>
 * agents=[speaker_0, listener_0]
+
+
+<center>
+<img src="https://pettingzoo.farama.org/_images/mpe_simple_reference.gif" style="width:200px; border:1px solid #000000;">
+</center>
 
 
 #### Trained Model's Return
@@ -230,6 +249,11 @@ actions: tensor([[0, 1, 3, 1]]) | obs_size: (4, 16) | termination: [0 0 0 0]
 ## simple spread 
 * <span style="background-color:#BBBBFF;padding:5px;font-weight:700;border-radius:10px;"> cooperative </span>
 * agents= [agent_0, agent_1, agent_2]
+
+<center>
+<img src="https://pettingzoo.farama.org/_images/mpe_simple_spread.gif" style="width:200px; border:1px solid #000000;">
+</center>
+
 
 
 #### Trained Model's Return
@@ -242,6 +266,10 @@ actions: tensor([[0, 1, 3, 1]]) | obs_size: (4, 16) | termination: [0 0 0 0]
 * predator-prey
 * agents= [adversary_0, adversary_1, adversary_2, agent_0]
 
+<center>
+<img src="https://pettingzoo.farama.org/_images/mpe_simple_tag.gif" style="width:200px; border:1px solid #000000;">
+</center>
+
 #### Trained Model's Return
 
 <img src="https://drive.google.com/uc?export=view&id=1icQXDjS2Jx_eg1FznkBXpyJHwODNK7Xd" style='width:100%'>
@@ -251,6 +279,8 @@ actions: tensor([[0, 1, 3, 1]]) | obs_size: (4, 16) | termination: [0 0 0 0]
 ## simple communication world 
 * <span style="background-color:#FFBBBB;padding:5px;font-weight:700;"> adversary </span>
 * agents=[leadadversary_0, adversary_0, adversary_1, adversary_3, agent_0, agent_1]
+
+
 
 #### Trained Model's Return
 
