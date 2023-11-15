@@ -285,3 +285,75 @@ actions: tensor([[0, 1, 3, 1]]) | obs_size: (4, 16) | termination: [0 0 0 0]
 #### Trained Model's Return
 
 ----
+
+## Three types of models and training results 
+
+* *written in 23.11.15* 
+
+환경별, 모델 복잡도에 따른 메시지의 혼잡도를 분석하기 위해서 일차적으로 모델을 학습하고 성능을 평가한다. 
+환경은 크게 세 가지 요소 good, adversary, obstacle 가 있으며, 이들의 개수를 설정하여 환경의 복잡도를 올릴 수 있다. 
+본 실험에서는 다음 개수를 설정하여 에이전트들을 학습하였다. 
+
+* num_adversaries : [2 3 4]
+* num_goods : [1 2]
+* num_obstacles : [0 2 4]
+
+```
+num_steps=128
+update_epochs=4
+num_layers=4
+total_timesteps=1000000
+hidden_dim=128 
+env_max_cycles=50
+seed=0
+msg_activation in Sigmoid 
+message_dim : 1 2 4 8 16
+activation : [ReLU,  Sigmoid]
+num_layers : 3
+update_epochs : 4 
+```
+
+
+### Model  V1 
+
+메시지를 생성하지 않고, 관찰값으로만 행동을 취한다. 
+
+```
+def step1(self, obs):
+   message = None 
+   return message
+
+def step2(self, obs, messages):
+   combined = obs 
+   return combined
+
+def forward(self, obs):
+   message = self.step1(obs)
+   combined = self.step2(obs, message)
+   return combined
+```
+
+### Model V2 
+
+메시지를 생성하고, 생성된 아군 메시지들을 결합한다.
+결합하는 방법은 average pooling이다. 
+
+```
+pooled_message = torch.stack(gathered_messages, dim=0).mean(dim=0)
+```
+
+### Model  V3 
+
+메시지를 생성하고, 생성된 아군 메시지들을 결합한다.
+결합하는 방법은 query 에 대해서 attention을 취하는 방법이다. 
+
+
+```
+query = self.queries[group_id](agent_obs).unsqueeze(1)
+gathered_messages = torch.stack(gathered_messages, dim=1)
+pooled_message, scores = self.attentions[group_id](query, gathered_messages, gathered_messages)
+pooled_message = pooled_message.squeeze(1)
+```
+
+
+학습결과 : [google drive](https://drive.google.com/drive/folders/1AlFY4NYgROSEUVSzASegM5ayxx2givJ8?usp=sharing)
