@@ -357,3 +357,8 @@ pooled_message = pooled_message.squeeze(1)
 
 
 학습결과 : [google drive](https://drive.google.com/drive/folders/1AlFY4NYgROSEUVSzASegM5ayxx2givJ8?usp=sharing)
+
+<center>
+<img src="https://drive.google.com/uc?export=view&id=1er2X_SleblXHkehaoDr9hvw0PNSr-oVa" style="width:200px; border:1px solid #000000;">
+</center>
+
