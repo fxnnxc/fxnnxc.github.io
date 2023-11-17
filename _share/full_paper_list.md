@@ -14,6 +14,26 @@ description: ''
 
 ---
 
+### 2024
+
+### 2023 
+
+* ParchGrad :
+
+* Source Identification Problem : 
+
+* 멀티 에이전트 강화학습에서의 게이트 기반 메시지 교환. 제어.로봇.시스템학회 논문지, 29(11), 847-853. **박범진**, 강천웅 and 최재식. [[journal](https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003013340)] [[paper](https://drive.google.com/file/d/1icI0qQpRqa1pQPypUuVgmG7xhvlXmlQv/view)]
+
+### 2022
+
+* Explanation on Pretraining Bias of Finetuned Vision Transformer. **Bumjin Park** and Jaesik Choi. arXiv preprint arXiv:2211.15428 (2022).
+
+### 2021
+
+* Cooperative multi-robot task allocation with reinforcement learning, **Bumjin Park**, Cheongwoong Kang, and Jaesik Choi. Applied Sciences 12.1 (2021): 272.
+
+* Generating Multi-agent Patrol Areas by Reinforcement Learning, **Bumjin, Park**, Cheongwoong Kang, and Jaesik Choi.  2021 21st International Conference on Control, Automation and Systems (ICCAS). IEEE, 2021.
+
 ## NLP 
 
 <h3 style="padding-bottom:0px;margin-bottom:0px;"> Emergence of Bias in the circuits of BERT </h3>

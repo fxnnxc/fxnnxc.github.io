@@ -27,15 +27,17 @@ Feel free to contact for discussions on discovering the secrets of ANNs 🤗.
 <div style="line-height:2.0">
 📨 <tag class="box-demo-link" style='color:#000000;background:#ffffff;border-radius: 10px;'>bumjin.research@gmail.com</tag> <br>
  📨 <tag class="box-demo-link" style='color:#000000;background:#ffffff;border-radius: 10px;'>bumjin@kaist.ac.kr</tag> 
- <li> 🧑🏻‍🎓 Ph.D Student at  <a class="box-demo-link" href="http://sail.kaist.ac.kr/" style="background:#0000AA"> SAIL.KAIST  </a>  </li>
+ <li> Currently, 🧑🏻‍🎓 Ph.D Student at  <a class="box-demo-link" href="http://sail.kaist.ac.kr/" style="background:#0000AA"> SAIL.KAIST  </a>  </li>
 <li> 🅖 <a class="box-demo-link" href="https://scholar.google.co.kr/citations?user=XzIXaxoAAAAJ&hl=ko" >Google Scholar</a>  </li>
 <li> ⛳️ <a class="box-demo-link" href="">  CV (not available now) </a>  </li>
-<li> 📝 <a class="box-demo-link" href="/share/full_paper_list"> Paper List </a>  </li>
-
+<li> 📝 <a class="box-demo-link" href="/share/full_paper_list" style="background:#00AA33"> Paper List </a>  </li>
 <li> 🚀   <a class="box-demo-link" href="/main_projects/" style="background:#0000AA"> Project List </a>  </li>
+<li>   </li>
+<li>   </li>
+<li>   </li>
 </div>
 <div>
-  <img src="assets/common/me.png" width="100%" > 
+  <img src="assets/common/me.png" width="100%;" style="border-radius:20%;" > 
 </div>
 </div>
 
