@@ -68,15 +68,13 @@ There are also products from other fields in <strong>Side research topics (S-) <
 
 </center>
 
-
-
 <hr>
  <h2 style="font-family:Times New Roman"> 🖋 Selected Papers   </h2>
 
   <!--  ParchGrad: Controlled Internal Gradients for Reliable Saliency Map  -->
   <h3 class="demo-title"> ParchGrad: Controlled Internal Gradients for Reliable Saliency Map </h3>
-  <div class="authors">Bumjin Park, Artyom Stitsyuk, and Jaesik Choi, 2023  </div>
-  <div> {% include figure.html path="/assets/main_papers/emergence-of-bias-in-bert/main.png" class="img-demo" zoomable=true %} </div>
+  <div class="authors">Bumjin Park, Giyeong Jeon, and Jaesik Choi, 2023  </div>
+  <div> {% include figure.html path="https://drive.google.com/uc?export=view&id=1kJwgA-XPdP0k3cd60R8H7jdqtgLbLJ44" class="img-demo" zoomable=true %} </div>
   <center>
   <div class="demolink">
     <a class="box-demo-link" href="https://drive.google.com/file/d/1v3q8HBThVcIXzr0eADwiXHXB2tV2JR_m/view?usp=sharing" style="background:#617143" >Pre-print</a> | 
