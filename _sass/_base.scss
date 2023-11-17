@@ -881,10 +881,48 @@ span.badge-toc {
 
 .spanbox{
   // display:none;
-  border:2px solid #DDDDDD;
   border-color:#DDDDDD;
   padding-left:5px;
   padding-right:5px;
   font-weight:600;
   border-radius:10px;
+}
+
+.tooltip-wrap {
+  position: relative;
+  border-radius: 5px;
+  font-size: 14px;
+  background: #f2f0f1;
+  font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  // color: #fff  ;
+  // width: 220px;
+  padding: 3px;
+  margin: 0;
+}
+.tooltip-wrap .tooltip-content {
+  display: none;
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  right: 5%;
+  border:#003670 2px solid;
+  background-color: #DDDDDD;
+  border-radius: 20px;
+  padding: .5em;
+  min-width: 30rem;
+}
+.tooltip-wrap:hover .tooltip-content {
+  display: block;
+  float:right;
+}
+
+.tooltip-span {
+  background-color: #7b0000;
+  // border:2px solid #7b0000;
+  border-radius: 5px;
+  padding: 3px;
+  font-size: 14px;
+  color:#FFFF00;
+  margin: 0;
+
 }
