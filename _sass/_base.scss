@@ -740,6 +740,8 @@ html.transition *:after {
   color: #fff  ;
   // width: 220px;
   padding: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
   margin: 0;
 }
 
@@ -905,15 +907,16 @@ span.badge-toc {
   bottom: 5%;
   left: 5%;
   right: 5%;
-  border:#003670 2px solid;
-  background-color: #DDDDDD;
+  border:#3b0000 5px solid;
+  background-color: #ffffff;
   border-radius: 20px;
   padding: .5em;
-  min-width: 30rem;
+  min-width: 40rem;
 }
 .tooltip-wrap:hover .tooltip-content {
   display: block;
   float:right;
+  text-align:left;
 }
 
 .tooltip-span {
@@ -924,5 +927,6 @@ span.badge-toc {
   font-size: 14px;
   color:#FFFF00;
   margin: 0;
+  text-align:left;
 
 }
