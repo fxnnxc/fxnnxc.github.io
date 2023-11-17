@@ -23,17 +23,24 @@ My research is focused on the understanding of mechanisms of Artificial Neural N
 Feel free to contact for discussions on discovering the secrets of ANNs 🤗.
 </p>
 <!-- --------------------  Links -------------------- -->
+<div style="display: grid;grid-template-columns: 3fr 2fr;border:1px solid #DDDDFF;border-radius:10px;padding:10px;align-items:center;">
 <div style="line-height:2.0">
-📨 <tag class="box-demo-link" style='color:#000000;background:#ffffff;border-radius: 10px;'>bumjin.research@gmail.com</tag> 
-| 📨 <tag class="box-demo-link" style='color:#000000;background:#ffffff;border-radius: 10px;'>bumjin@kaist.ac.kr</tag> 
+📨 <tag class="box-demo-link" style='color:#000000;background:#ffffff;border-radius: 10px;'>bumjin.research@gmail.com</tag> <br>
+ 📨 <tag class="box-demo-link" style='color:#000000;background:#ffffff;border-radius: 10px;'>bumjin@kaist.ac.kr</tag> 
+ <li> 🧑🏻‍🎓 Ph.D Student at  <a class="box-demo-link" href="http://sail.kaist.ac.kr/" style="background:#0000AA"> SAIL.KAIST  </a>  </li>
 <li> 🅖 <a class="box-demo-link" href="https://scholar.google.co.kr/citations?user=XzIXaxoAAAAJ&hl=ko" >Google Scholar</a>  </li>
 <li> ⛳️ <a class="box-demo-link" href="">  CV (not available now) </a>  </li>
-<li> 📝 <a class="box-demo-link" href="/share/full_paper_list">  Full Paper List </a>  </li>
+<li> 📝 <a class="box-demo-link" href="/share/full_paper_list"> Paper List </a>  </li>
+
+<li> 🚀   <a class="box-demo-link" href="/main_projects/" style="background:#0000AA"> Project List </a>  </li>
 </div>
-<hr style='margin-bottom:50px;'>
+<div>
+  <img src="assets/common/me.png" width="100%" > 
+</div>
+</div>
 
 
-<h1 style="font-family:Times New Roman"> 🖋 Selected Papers   </h1>
+<h1 style="font-family:Times New Roman;padding-top:2rem;"> 📌 Selected Papers   </h1>
 <!-- -------------------- --------------------  Papers -------------------- -------------------- -->
 <hr>
   <!--  ParchGrad: Controlled Internal Gradients for Reliable Saliency Map  -->
@@ -81,46 +88,9 @@ Feel free to contact for discussions on discovering the secrets of ANNs 🤗.
 <a class="box-demo-link" href="/reading_list/" style="background:#617143 " >🐾 Research Progress</a> |  -->
 
 
-<iframe src="/assets/html/sail_research.drawio.html" width="100%" height="500px"></iframe>
+<!-- <iframe src="/assets/html/sail_research.drawio.html" width="100%" height="500px"></iframe> -->
 
 <hr>
 
 
 
-<center>
-<h1 style='font-weight: 800;'> Research Products </h1>
-<hr>
-<div class="card" style="width:auto;padding:30px;margin-top:20px;width:50%;">
-<h2 style='text-align:left'> 🎓 Research Topic Keywords   </h2>
-<!-- <hr style="margin:2px;padding:2px"> -->
-<hr style='margin-top:0px'>
-<li style="list-style-type: none;"> <text class="box-demo-link" style="color:#000000;background:#ffffff;font-size:16px;"> Interpretable AI </text> </li> 
-<li style="list-style-type: none;"> <text class="box-demo-link" style="color:#000000;background:#ffffff;font-size:16px"> Explainable AI </text> </li>
-<li style="list-style-type: none;"> <text class="box-demo-link" style="color:#000000;background:#ffffff;font-size:16px"> + Mechanistic interpretability </text> </li>
-<br>
-
-<h2> 🚀 Mission </h2>
-<hr style='margin-top:0px'>
-</div>
-
-
-<p>
-Products from <strong> main research topics (M-) </strong> for my main research topics. <br>
-There are also products from other fields in <strong>Side research topics (S-) </strong>.
-</p>
-
-
-<li> 
-📌 <a class="box-demo-link" href="/main_papers/" style="background:#ffbbee; color:#000000;" > M-Papers</a> (# 1) / 
-🧢 <a class="box-demo-link" href="/side_papers/" style="background:#ffbbee; color:#000000;" > S-Papers</a>  (# 1) 
-</li>
-<li> 
-📌 <a class="box-demo-link" href="/main_projects/" style="background:#e3ff67; color:#000000;" > M-Projects</a> (# 0) / 
-🧢 <a class="box-demo-link" href="/side_projects/" style="background:#e3ff67; color:#000000;" >S-Projects</a> (# 1)  
-</li> 
-<li>  
-📌 <a class="box-demo-link" href="/main_articles/" style="background:#ddeeff; color:#000000;" >M-Articles</a> (# 0) / 
-🧢 <a class="box-demo-link" href="/side_articles/" style="background:#ddeeff; color:#000000;" >S-Articles</a>  (# 3)
-</li>
-
-</center>
