@@ -1,13 +1,16 @@
 ---
 layout: default
 description: Main Papers for Interpretability Research
-title: Main Papers
+title: Papers
 permalink: /main_papers/
 ---
 <div class="post">
   <div class="header-bar">
     <h1>{{ page.title }}</h1>
-    <h2>{{ page.description }}</h2>
+    <!-- <h2>{{ page.description }}</h2> -->
+    <p>
+    You can find the list of full papers in <a href="http://localhost:4000/share/full_paper_list/"> full papers </a> 
+    </p>
   </div>
   <ul class="post-list">
     {%- assign sorted_pages = site.main_papers | sort: "date" %}
@@ -19,8 +22,8 @@ permalink: /main_papers/
     {% assign year = post.date | date: "%Y" %}
     {% assign tags = post.tags | join: "" %}
     {% assign categories = post.categories | join: "" %}
-    <div style="padding-bottom:170px;">
-      <card class="column-first" style="border-bottom:#e4e4e4 solid; padding-left: 0px;" >
+      <div style="border-bottom:#e4e4e4 solid;display: grid;grid-template-columns: 3fr 2fr; " >
+      <div>
       <h2>
         {% if post.redirect == blank %}
           <a class="post-title" href="{{ post.url | prepend: site.baseurl }}" style="text-decoration:none; font-size: 20px; color:#362f5b ">{{ post.title }}</a>
@@ -53,12 +56,12 @@ permalink: /main_papers/
           {% endif %}
       </p>
     </p>
-  </card>
-      <card class="column-second">
+    </div>
+  <div>
       {% if post.img %}
-          <img src="{{ post.img }}" width="145px" height="145px" style="margin-top:20px;margin-left:40px;border-radius: 20px;"> 
+          <img src="{{ post.img }}" width="100%" style="margin-top:10px;margin-bottom:10px;margin-left:40px;border-radius: 20px;"> 
       {% endif %}
-      </card>
+  </div>
   </div>
     {% endfor %}
   </ul>
