@@ -18,53 +18,100 @@ img: https://pettingzoo.farama.org/_images/mpe_simple_tag.gif
 
 * [v23.11.21.1](https://github.com/fxnnxc/marl_xai/tree/v23.11.21.1)
 
+최근 메시지 기반 멀티에이전트 강화학습으 심층공간의 표현력에 힘업어 높은 성능을 보였다. 
+사람이 명시적인 언어로 메시지를 전달하는 것, 혹은 암호처럼 의미가 명확한 메시지를 전달하는 것과 다르게, 
+심층 표현 메시지는 벡터형태로 명확한 메시지가 명확하지 않다. 
 
-## 성능 (적 개수, 모델 타입에 따른 성능 )
+본 연구는 메시지에 대해서 고민해야 하는 다양한 주제에 대해서, 그 중 몇 가지에 대한 해답을 제시하고 추가적인 연구 방향에 대해서 논한다. 
+
+1. 메시지 형성에 더 도움이 되는 activation은 무엇인가? (ReLU or Sigmoid) : **Sigmoid** 
+2. 메시지를 공유하지 않은 모델보다 메시지 공유 모델은 더 빠르게 학습하는가? : **환경마다 다르지만, 에이전트가 3개 이상인 경우, 메시지 공유가 더 성능이 좋다** 
+3. 메시지를 공유하지 않은 모델보다 메시지 공유 모델은 더 높은 성능으로 학습되는가? **환경마다 다르지만, 에이전트가 2개인 경우 더 높은 성능을 보일 때도 있다.** 
+4. 메시지를 공유하면 에이전트 수가 늘어남에 따라 성능도 증가하는가? **모델마다 다르지만, 단순한 메시지 전달 모델은 증가한다** 
+5. 메시지의 차원의 크기는 모델 성능에 긍정적으로 작용하는가? **일반적으로 차원이 클수록 성능은 향상된다. 그러나 너무 큰 경우, 더 성능이 낮은 경우가 있었다**
+
+
+포식자 개수 및 장애물 개수에 따른 모델별 성능은 다음과 같다. 여러 포식자가 하나의 에이전트를 쫓는 환경에서 메시지 공유는 포식자들간의 위치를 결정하는데 중요한 역할을 하기에 통신하지 않는 (v1)보다 v2가 더 높은 성능을 지니고 있다. 
+
 
 <img src="https://drive.google.com/uc?export=view&id=1DbXfME3gHf_OFAIB1Tj_jXoTFVw942Pw" style='width:100%'>  
+<figcaption>
+모델, 에이전트 개수, 장애물 개수에 따른 성능차이. X: 에이전트 수, Y: 성능, legend: 장애물 수. V2모델이 선형적으로 증가하는 성능을 보였으며, 장애물 개수에 따른 성능 저하를 명확하게 보여줬다. 이 결과는 환경 복잡도-에이전트 통신 수에 따른 직관적인 상관관계를 그대로 보여줬다. 어텐션 기반인 V3의 경우, V2보다 성능이 낮은데, 통신을 위한 표현학습이 오래걸리기 때문으로 추정된다. 
+</figcaption>
+
+## Training Dynamics 
 
 
-## Predator 개수 : 2
-
-<img src="https://drive.google.com/uc?export=view&id=15ypRtqA1aFdNsZjszIcgXadcqJb74hLm" style='width:45%'>  
-<img src="https://drive.google.com/uc?export=view&id=19WrFUcBKIIYf0Bjc6v1m0Q0KtlrACwmL" style='width:45%'>  
-
-
-## Predator 개수 : 3
-
-<img src="https://drive.google.com/uc?export=view&id=1Iz3rURcmZIYI76SrnGEB70vQvh_xg2cn" style='width:45%'>  
-<img src="https://drive.google.com/uc?export=view&id=1APSohTZjA-vIc6FQFUYKHO21N7HKVLtN" style='width:45%'>  
+학습 과정에서 성능 그래프는 다음과 같다. 해당 그래프는 모든 하이퍼파라미터에 대해서 평균을 낸 점수이다. 
+해당 그래프를 기반으로 학습과정에서 성능이 어떻게 변화하는지 확인할 수 있다. 
+대표적으로 기울기를 측정하는 경우, 메시지가 발생하는 시점을 특정할 수 있을 것이라는 기대가 있다.  
 
 
-
-## Predator 개수 : 4
-
-<img src="https://drive.google.com/uc?export=view&id=1bih9MnHHCs7fK8jZPfRxcyOLHAD6o2eQ" style='width:45%'>  
-<img src="https://drive.google.com/uc?export=view&id=1mhze42N5HchE-VLC9EXnna7-sToeR5q2" style='width:45%'>  
+#### Predator 개수 : 2
 
 
+<div style="display:grid;grid-template-columns: 1fr 1fr;border:1px solid #000000;" >
+<div style="border:1px solid #000000; text-align:center;">
+Obstacle 0 
+</div>
+<div style="border:1px solid #000000;  text-align:center;">
+Obstacle 2
+</div>
+<div style="border:1px solid #000000;">
+<img src="https://drive.google.com/uc?export=view&id=19WrFUcBKIIYf0Bjc6v1m0Q0KtlrACwmL" style='width:100%'>
+</div>
+<div style="border:1px solid #000000;">
+ <img src="https://drive.google.com/uc?export=view&id=15ypRtqA1aFdNsZjszIcgXadcqJb74hLm" style='width:100%'>  
+</div>
+</div>
+
+#### Predator 개수 : 3
+
+<div style="display:grid;grid-template-columns: 1fr 1fr;border:1px solid #000000;" >
+<div style="border:1px solid #000000; text-align:center;">
+Obstacle 0 
+</div>
+<div style="border:1px solid #000000;  text-align:center;">
+Obstacle 2
+</div>
+<div style="border:1px solid #000000;">
+<img src="https://drive.google.com/uc?export=view&id=1Iz3rURcmZIYI76SrnGEB70vQvh_xg2cn" style='width:100%'>
+</div>
+<div style="border:1px solid #000000;">
+ <img src="https://drive.google.com/uc?export=view&id=1APSohTZjA-vIc6FQFUYKHO21N7HKVLtN" style='width:100%'>  
+</div>
+</div>
+
+#### Predator 개수 : 4
 
 
 
-
-```
-name	return	seed	agent	step	goods	enemies	obstacles	model	act	msg_dim
-0	comm_v1_ReLU_3_4_M_Sigmoid_8_E_2_1_2.pkl	0.000000	0	0	0	1	2	2	v1	ReLU	8
-1	comm_v1_ReLU_3_4_M_Sigmoid_8_E_2_1_2.pkl	0.000000	0	1	0	1	2	2	v1	ReLU	8
-2	comm_v1_ReLU_3_4_M_Sigmoid_8_E_2_1_2.pkl	-4.217245	0	2	0	1	2	2	v1	ReLU	8
-3	comm_v1_ReLU_3_4_M_Sigmoid_8_E_2_1_2.pkl	0.000000	1	0	0	1	2	2	v1	ReLU	8
-4	comm_v1_ReLU_3_4_M_Sigmoid_8_E_2_1_2.pkl	0.000000	1	1	0	1	2	2	v1	ReLU	8
-...	...	...	...	...	...	...	...	...	...	...	...
-484195	comm_v3_ReLU_3_4_M_Sigmoid_2_E_3_2_2.pkl	0.000000	19	0	9	2	3	2	v3	ReLU	2
-484196	comm_v3_ReLU_3_4_M_Sigmoid_2_E_3_2_2.pkl	0.000000	19	1	9	2	3	2	v3	ReLU	2
-484197	comm_v3_ReLU_3_4_M_Sigmoid_2_E_3_2_2.pkl	0.000000	19	2	9	2	3	2	v3	ReLU	2
-484198	comm_v3_ReLU_3_4_M_Sigmoid_2_E_3_2_2.pkl	0.000000	19	3	9	2	3	2	v3	ReLU	2
-484199	comm_v3_ReLU_3_4_M_Sigmoid_2_E_3_2_2.pkl	0.000000	19	4	9	2	3	2	v3	ReLU	2
-484200 rows × 11 columns
-```
+<div style="display:grid;grid-template-columns: 1fr 1fr;border:1px solid #000000;" >
+<div style="border:1px solid #000000; text-align:center;">
+Obstacle 0 
+</div>
+<div style="border:1px solid #000000;  text-align:center;">
+Obstacle 2
+</div>
+<div style="border:1px solid #000000;">
+<img src="https://drive.google.com/uc?export=view&id=1bih9MnHHCs7fK8jZPfRxcyOLHAD6o2eQ" style='width:100%'>
+</div>
+<div style="border:1px solid #000000;">
+ <img src="https://drive.google.com/uc?export=view&id=1mhze42N5HchE-VLC9EXnna7-sToeR5q2" style='width:100%'>  
+</div>
+</div>
 
 
  --- 
+
+## 세부적인 하이퍼파라미터 테스트 
+
+Predator Prey 환경에서 Sigmoid 는 ReLU보다 월등하게 높은 성능을 보이며, 메시지 dimension도 증가하면 성능이 증가하는 경향성을 보인다. 
+그러나 몇몇 실험의 경우, message dimension이 증가할수록 성능이 저하되는 경우도 존재하였다. 이는 메시지 공간 자체의 불안정성 때문으로 판단되는데, 
+최적의 bottleneck 사이즈에 대해서 고민이 필요한 부분이다. **너무 넢은 공간의 경우, 노이즈 dimension은 없는지, 노이즈 representation은 없는지 연구할 필요성이 느껴진다.**
+
+물론 reward를 기준으로 dimension을 고를 수 있지만, 이는 메시지 공간에 대한 해석 및 특징을 기반으로 고른 것이 아니기에 
+추후 안정적인 사용과 메시지에 대한 분석을 어렵게 만든다. 
 
 ### ENV: 2_1_0 Enemies / Goods / Obstacles
 
@@ -659,6 +706,8 @@ model | 0 | 1 | 2 | 3 | 4 | 5 |
  --- 
 
 ENV: 4_2_2 Enemies / Goods / Obstacles
+
+
 model | 0 | 1 | 2 | 3 | 4 | 5 | 
 |---|---|---|---|---|---|---
 ('v1', 'ReLU', 1) |    19 |    19 |    19 |    19 |   -16 |   -17 | 
