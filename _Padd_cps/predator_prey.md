@@ -66,7 +66,8 @@ name	return	seed	agent	step	goods	enemies	obstacles	model	act	msg_dim
 
  --- 
 
-ENV: 2_1_0 Enemies / Goods / Obstacles
+### ENV: 2_1_0 Enemies / Goods / Obstacles
+
 model | 0 | 1 | 2 | 
 |---|---|---|---
 ('v1', 'ReLU', 1) |     5 |     5 |    -8 | 
@@ -102,7 +103,8 @@ model | 0 | 1 | 2 |
 
  --- 
 
-ENV: 2_1_2 Enemies / Goods / Obstacles
+### ENV: 2_1_2 Enemies / Goods / Obstacles
+
 model | 0 | 1 | 2 | 
 |---|---|---|---
 ('v1', 'ReLU', 1) |     5 |     5 |    -9 | 
@@ -138,9 +140,10 @@ model | 0 | 1 | 2 |
 
  --- 
 
-ENV: 2_1_4 Enemies / Goods / Obstacles
-model | 0 | 1 | 2 | 
-|---|---|---|---
+###  ENV: 2_1_4 Enemies / Goods / Obstacles
+
+|model | 0 | 1 | 2 | 
+|---|---|---|---|
 ('v1', 'ReLU', 1) |     5 |     5 |    -8 | 
 ('v1', 'ReLU', 2) |     5 |     5 |    -8 | 
 ('v1', 'ReLU', 4) |     5 |     5 |    -8 | 
@@ -174,7 +177,8 @@ model | 0 | 1 | 2 |
 
  --- 
 
-ENV: 2_2_0 Enemies / Goods / Obstacles
+### ENV: 2_2_0 Enemies / Goods / Obstacles
+
 model | 0 | 1 | 2 | 3 | 
 |---|---|---|---|---
 ('v1', 'ReLU', 1) |    10 |    10 |    -8 |    -6 | 
@@ -210,7 +214,8 @@ model | 0 | 1 | 2 | 3 |
 
  --- 
 
-ENV: 2_2_2 Enemies / Goods / Obstacles
+### ENV: 2_2_2 Enemies / Goods / Obstacles
+
 model | 0 | 1 | 2 | 3 | 
 |---|---|---|---|---
 ('v1', 'ReLU', 1) |     7 |     7 |    -4 |    -5 | 
@@ -246,7 +251,8 @@ model | 0 | 1 | 2 | 3 |
 
  --- 
 
-ENV: 2_2_4 Enemies / Goods / Obstacles
+###  ENV: 2_2_4 Enemies / Goods / Obstacles
+
 model | 0 | 1 | 2 | 3 | 
 |---|---|---|---|---
 ('v1', 'ReLU', 1) |    11 |    11 |    -6 |   -10 | 
@@ -282,7 +288,8 @@ model | 0 | 1 | 2 | 3 |
 
  --- 
 
-ENV: 3_1_0 Enemies / Goods / Obstacles
+###  ENV: 3_1_0 Enemies / Goods / Obstacles
+
 model | 0 | 1 | 2 | 3 | 
 |---|---|---|---|---
 ('v1', 'ReLU', 1) |    18 |    18 |    18 |   -22 | 
@@ -318,7 +325,8 @@ model | 0 | 1 | 2 | 3 |
 
  --- 
 
-ENV: 3_1_2 Enemies / Goods / Obstacles
+###  ENV: 3_1_2 Enemies / Goods / Obstacles
+
 model | 0 | 1 | 2 | 3 | 
 |---|---|---|---|---
 ('v1', 'ReLU', 1) |    16 |    16 |    16 |   -22 | 
@@ -354,7 +362,8 @@ model | 0 | 1 | 2 | 3 |
 
  --- 
 
-ENV: 3_1_4 Enemies / Goods / Obstacles
+###  ENV: 3_1_4 Enemies / Goods / Obstacles
+
 model | 0 | 1 | 2 | 3 | 
 |---|---|---|---|---
 ('v1', 'ReLU', 1) |    12 |    12 |    12 |   -19 | 
@@ -390,7 +399,8 @@ model | 0 | 1 | 2 | 3 |
 
  --- 
 
-ENV: 3_2_0 Enemies / Goods / Obstacles
+###  ENV: 3_2_0 Enemies / Goods / Obstacles
+
 model | 0 | 1 | 2 | 3 | 4 | 
 |---|---|---|---|---|---
 ('v1', 'ReLU', 1) |    13 |    13 |    13 |    -8 |    -9 | 
@@ -426,7 +436,8 @@ model | 0 | 1 | 2 | 3 | 4 |
 
  --- 
 
-ENV: 3_2_2 Enemies / Goods / Obstacles
+###  ENV: 3_2_2 Enemies / Goods / Obstacles
+
 model | 0 | 1 | 2 | 3 | 4 | 
 |---|---|---|---|---|---
 ('v1', 'ReLU', 1) |    13 |    13 |    13 |   -11 |    -7 | 
@@ -462,7 +473,8 @@ model | 0 | 1 | 2 | 3 | 4 |
 
  --- 
 
-ENV: 3_2_4 Enemies / Goods / Obstacles
+###  ENV: 3_2_4 Enemies / Goods / Obstacles
+
 model | 0 | 1 | 2 | 3 | 4 | 
 |---|---|---|---|---|---
 ('v1', 'ReLU', 1) |    17 |    17 |    17 |   -13 |   -10 | 
@@ -498,7 +510,8 @@ model | 0 | 1 | 2 | 3 | 4 |
 
  --- 
 
-ENV: 4_1_0 Enemies / Goods / Obstacles
+###  ENV: 4_1_0 Enemies / Goods / Obstacles
+
 model | 0 | 1 | 2 | 3 | 4 | 
 |---|---|---|---|---|---
 ('v1', 'ReLU', 1) |    22 |    22 |    22 |    22 |   -29 | 
@@ -534,7 +547,8 @@ model | 0 | 1 | 2 | 3 | 4 |
 
  --- 
 
-ENV: 4_1_2 Enemies / Goods / Obstacles
+###  ENV: 4_1_2 Enemies / Goods / Obstacles
+
 model | 0 | 1 | 2 | 3 | 4 | 
 |---|---|---|---|---|---
 ('v1', 'ReLU', 1) |    15 |    15 |    15 |    15 |   -23 | 
@@ -570,7 +584,8 @@ model | 0 | 1 | 2 | 3 | 4 |
 
  --- 
 
-ENV: 4_1_4 Enemies / Goods / Obstacles
+### ENV: 4_1_4 Enemies / Goods / Obstacles
+
 model | 0 | 1 | 2 | 3 | 4 | 
 |---|---|---|---|---|---
 ('v1', 'ReLU', 1) |    15 |    15 |    15 |    15 |   -31 | 
@@ -606,7 +621,8 @@ model | 0 | 1 | 2 | 3 | 4 |
 
  --- 
 
-ENV: 4_2_0 Enemies / Goods / Obstacles
+### ENV: 4_2_0 Enemies / Goods / Obstacles
+
 model | 0 | 1 | 2 | 3 | 4 | 5 | 
 |---|---|---|---|---|---|---
 ('v1', 'ReLU', 1) |    20 |    20 |    20 |    20 |   -10 |   -15 | 
@@ -678,7 +694,9 @@ model | 0 | 1 | 2 | 3 | 4 | 5 |
 
  --- 
 
-ENV: 4_2_4 Enemies / Goods / Obstacles
+### ENV: 4_2_4 Enemies / Goods / Obstacles
+
+
 model | 0 | 1 | 2 | 3 | 4 | 5 | 
 |---|---|---|---|---|---|---
 ('v1', 'ReLU', 1) |    26 |    26 |    26 |    26 |   -26 |   -20 | 
