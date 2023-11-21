@@ -1,3 +1,23 @@
+---
+layout: distill
+authors: 
+    - name: Bumjin Park
+      affiliations:
+        name: KAIST
+giscus_comments: true
+disqus_comments: true
+date: 2022-11-20
+featured: true
+title: 'Predator Prey (Simple Tag)'
+description: 'We study the message passing performance in MARL '
+importance: 2
+img: https://pettingzoo.farama.org/_images/mpe_simple_tag.gif
+---
+
+
+
+
+
 ```
 name	return	seed	agent	step	goods	enemies	obstacles	model	act	msg_dim
 0	comm_v1_ReLU_3_4_M_Sigmoid_8_E_2_1_2.pkl	0.000000	0	0	0	1	2	2	v1	ReLU	8
