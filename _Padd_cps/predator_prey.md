@@ -14,6 +14,35 @@ importance: 2
 img: https://pettingzoo.farama.org/_images/mpe_simple_tag.gif
 ---
 
+## Predator Prey Environment 
+
+* [v23.11.21.1](https://github.com/fxnnxc/marl_xai/tree/v23.11.21.1)
+
+
+## 성능 (적 개수, 모델 타입에 따른 성능 )
+
+<img src="https://drive.google.com/uc?export=view&id=1DbXfME3gHf_OFAIB1Tj_jXoTFVw942Pw" style='width:100%'>  
+
+
+## Predator 개수 : 2
+
+<img src="https://drive.google.com/uc?export=view&id=15ypRtqA1aFdNsZjszIcgXadcqJb74hLm" style='width:45%'>  
+<img src="https://drive.google.com/uc?export=view&id=19WrFUcBKIIYf0Bjc6v1m0Q0KtlrACwmL" style='width:45%'>  
+
+
+## Predator 개수 : 3
+
+<img src="https://drive.google.com/uc?export=view&id=1Iz3rURcmZIYI76SrnGEB70vQvh_xg2cn" style='width:45%'>  
+<img src="https://drive.google.com/uc?export=view&id=1APSohTZjA-vIc6FQFUYKHO21N7HKVLtN" style='width:45%'>  
+
+
+
+## Predator 개수 : 4
+
+<img src="https://drive.google.com/uc?export=view&id=1bih9MnHHCs7fK8jZPfRxcyOLHAD6o2eQ" style='width:45%'>  
+<img src="https://drive.google.com/uc?export=view&id=1mhze42N5HchE-VLC9EXnna7-sToeR5q2" style='width:45%'>  
+
+
 
 
 
