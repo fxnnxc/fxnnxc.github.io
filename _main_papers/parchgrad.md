@@ -14,11 +14,10 @@ authors:
 img: https://drive.google.com/uc?export=view&id=1kJwgA-XPdP0k3cd60R8H7jdqtgLbLJ44
 ---
 
-
-
-<h3 class="demo-title"> TDLR; </h3>
-  <div class="authors">Bumjin Park, Giyeong Jeon, and Jaesik Choi, 2023  
-  </div>
+**ParchGrad: Controlled Internal Gradients for Reliable Saliency Map 🚀**
+<div class="authors">Bumjin Park, Giyeong Jeon, and Jaesik Choi, 2023  
+</div>
+<h3 class="demo-title"> TDLR; </h3>  
   <div style="display: grid;grid-template-columns: 1fr 1fr;border:1px solid #DDDDFF;border-radius:10px;padding:10px;align-items:center;">
     <div>
     <ul>
@@ -33,17 +32,32 @@ img: https://drive.google.com/uc?export=view&id=1kJwgA-XPdP0k3cd60R8H7jdqtgLbLJ4
 
   <center>
   <div class="demolink" style='padding-bottom:1rem;padding-top:0.5rem;'>
-    <a class="box-demo-link" href="https://drive.google.com/file/d/1i4o9I2DwrN-XEJr0_WHmVEmX4i_3N3rT/view?usp=drive_link" style="background:#AA00AA" >Pre-print (currently google drive)</a>  <br>
+    <a class="box-demo-link" href="https://drive.google.com/file/d/1i4o9I2DwrN-XEJr0_WHmVEmX4i_3N3rT/view?usp=drive_link" style="background:#AA00AA" >Pre-print (currently google drive)</a>  
       <a class="box-demo-link" href="https://github.com/fxnnxc/Parchgrad" style="background:#000000;">Code</a> 
-    <a class="tooltip-wrap"><br>
+    <a class="tooltip-wrap">
       <span class="tooltip-span"> Abstract </span>
-      <div class="tooltip-content"> 
+      <div class="tooltip-content" style="line-height:1.0rem"> 
       <strong> Abstract </strong> <br>
       Explaining the decision of neural networks is crucial to ensure their reliability in various image tasks. Among several input attribution methods, the saliency map explains the decision with the propagated gradients on pixels. One of the fundamental problems of the saliency map is gradient shattering which leaves noise on pixels and hinders the interpretation of attribution maps. To provide a clear explanation, controlling the internal gradient signals is essential. However, to the best of our knowledge, there is no work on modifying the internal gradient signals so that the saliency map provides reliable explanations. To initialize the control of internal gradient signals in the saliency map, we provide theoretical analysis on the controllable modification of gradients in multiple convolutional channels and propose ParchGrad, which prunes channels by partitioning multiple channels into two groups. In addition, we propose a class-wise selection method based on statistical tests to select which channels to magnify or reduce the impact of gradients.
       </div>
     </a> 
   </div> 
     </center>
+
+## Visualization of ParchGrad vs Gradient 
+
+<div style="border:1px solid #DDDDFF;border-radius:10px;padding:10px;" >
+<center>
+<img src="https://drive.google.com/uc?export=view&id=1OFHpMBm16EmzpfJMHgvITQIoXwdr9vL0" style="width:100%">
+<img src="https://drive.google.com/uc?export=view&id=1Ez2Vra_1PFtw1uynMuIeaF9Skz2Agb9C" style="width:100%">
+<img src="https://drive.google.com/uc?export=view&id=12zZ48LavQK3HCKOTEERTGf8vmrvTSuap" style="width:100%">
+<img src="https://drive.google.com/uc?export=view&id=1XqsOv2ZrZV0H3dnySdKTI1Pz8mk__fuQ" style="width:100%">
+<img src="https://drive.google.com/uc?export=view&id=1bSZS_DjN9qXNW2DooNPxwkPdwbRhCg6z" style="width:100%">
+<img src="https://drive.google.com/uc?export=view&id=1bdkQmtOvIOtXQbDtACKQcBiOWron-lw5" style="width:100%">
+</center>
+</div>
+
+
 
 ## Introduction 
 
@@ -118,20 +132,13 @@ The artifacts are due to the fact that multiple multiple modules are interact to
 
 ## Methods : $\gamma$-dominance and variance conservation
 
-To theoretically understand the pruning and impact of gradients, we define $\gamma$-dominance and provides theorems to preserve the magnitude of the gradients. 
-Please see the paper for the detailed definition and the theorems. 
-
-## Experiments 
-
-
-### Qualitative 
-
-<img src="https://drive.google.com/uc?export=view&id=1p9-NL-buI_lqy7nTNg7Jvhc2z_L8Y-Si" style="width:100%">
-
-
-### Quantitative
-
-<img src="https://drive.google.com/uc?export=view&id=1ZX9REnQ7Cw4Mnqzk2Q8afkedXDrX9o6U" style="width:100%">
+To theoretically understand the pruning and impact of gradients, we define $\gamma$-dominance and provides theorems to preserve the magnitude of the gradients. Please see the paper for the detailed definition and the theorems. 
 
 
 ## Conclusion
+
+Gradient signal is crucial in explainable AI for various reasons including training and explaining. As the saliency map is model-agnostic, gradient signals are the first option to explain models. However, as gradients are noisy, users cannot believe easily whether the attribution is reliable. To provide a more reliable saliency map, tackling the internal mechanism of gradients and controlling the signals is essential. This paper provides a theoretical and empirical analysis of the gradients so that the XAI community can clarify how the gradients impact the saliency map and how to control them. In detail, this paper shows the impact of variance over many channels and provides a solution to safely turn off the channel impact while conserving the magnitude with other modules.  
+
+We also propose class-wise channel selection, which selects channels based on the statistical importance of GAP. This selection could be understood as adding a forward bias in the backward (adding activation information to gradient computation). We acknowledge that class-wise selection bias is not the best option, but possibly a good option when there is no knowledge of channels. For the ongoing research, we will study other channel selection methods, such as CLIP-based or circuit-based channel selection, so that constructing proper channel propagation paths improves the explainability of the saliency maps. 
+
+We believe ParchGrad can broaden the overall understanding of saliency maps in many image application fields where obtaining a reliable saliency map is important. 
