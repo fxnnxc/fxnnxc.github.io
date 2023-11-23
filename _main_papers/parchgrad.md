@@ -92,6 +92,7 @@ SmoothGrad <d-cite key="smilkov2017smoothgrad" >  </d-cite>  | Saliency | O | X 
 
 ### 1. Gradients Are Noisy
 
+Gradients are noisy to be interpreted as large number of small signals could exists on a input. A toy experiment below shows the impact of noisy gradients, which are randomly distributed.  
 
 <center>
 <img src="https://drive.google.com/uc?export=view&id=14RK0ctQBWL5c9VPVxmxKlF4DXZzVCdPV" style="width:40%">
