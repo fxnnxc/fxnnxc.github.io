@@ -166,7 +166,10 @@ collections:
   Rparchgrad:
     output: true
     permalink: /Rparchgrad/:path/
-  
+  no_room_for_others:
+    output: true
+    permalink: /no_room_for_others/:path/
+
 
 news_limit: 10000
 
@@ -372,3 +375,4 @@ popper:
 medium_zoom:
   version: "1.0.6"
   integrity: "sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM="
+
