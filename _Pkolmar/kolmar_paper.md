@@ -42,7 +42,6 @@ img:
 1. 원료의 의미를 사전에 정의하는 대신, 각 원료가 임의의 표현이라는 가정. 
 2. 임의의 원료와 여러 물성을 동시에 처리하여 예측할 수 있는 구조적 방법론 
 
-
 ###  3. 실험 
 
 1. 단순한 모델부터, 복잡한 모델까지 모델의 복잡도는 물성 예측의 성능을 높이는가? (+머신러닝, 다른 approach와 제안하는 구조 성능 비교)
@@ -54,10 +53,9 @@ img:
 
 ---
 
-
 ## Survey 
 
 ### Accurate prediction of dynamic viscosity of polyalpha-olefin boron nitride nanofluids using machine learning <d-cite key="abushanab2023accurate"></d-cite> 
-* 
+ 
 
 
