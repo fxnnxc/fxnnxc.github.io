@@ -1,9 +1,9 @@
 ---
 layout: share-distill
-title: '[연구] 논문 연구: 확장가능한 인공지능 기반 처방 물성 예측'
+title: '논문 연구: 확장가능한 인공지능 기반 처방 물성 예측'
 date: 2024-01-10
 giscus_comments : true
-description: "논문 연구 서술 내용"
+description: "처방 정보를 기반으로 다양한 물성 예측하는 방법론"
 authors: 
     - name: Bumjin Park
       affiliations:
