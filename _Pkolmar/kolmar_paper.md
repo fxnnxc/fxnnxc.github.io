@@ -12,7 +12,7 @@ bibliography: kolmar.bib
 img: 
 ---
 
-## Scalable Materiality Prediction of Cosmetic Recipe in Artificial Intelligence
+## Scalable Materiality Prediction of Cosmetic Recipe with Artificial Intelligence
 
 ### 소개
 
