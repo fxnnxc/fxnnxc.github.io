@@ -47,7 +47,7 @@ img: https://drive.google.com/uc?export=view&id=1K6nvmbzhEsk2aSZyRh98l7ZaeilIPMA
 <figure style="width:70%">
 <img src="https://drive.google.com/uc?export=view&id=1K6nvmbzhEsk2aSZyRh98l7ZaeilIPMAr" style="width:100%">
 <figcaption>
-Figure 1. 심층신경망은 처방과 예측하는 물성에 대한 표현 벡터를 바탕으로 예측값을 내보낸다. 처방의 원료 개수는 제한이 없으며, 물질의 양을 다 더해서 1을 만족한다.  
+Figure 1. 심층신경망은 처방과 예측하는 물성에 대한 표현 벡터를 바탕으로 예측값을 내보낸다. 처방의 원료 개수는 제한이 없으며, 물질의 양은 다 더해서 1을 만족한다.  
 </figcaption>
 </figure>
 </center>
