@@ -16,7 +16,10 @@ description: ''
 
 #### 2024
 
-* ParchGrad: 
+* ParchGrad: TBD
+* Memorizing Documents with Guidance in Large Language Models [[pdf](https://drive.google.com/file/d/1eMXQKlSGJEFmdn1lmz0jGbGTKtSwKzpa/view?usp=sharing)]
+* Identifying the Source of Generation for Large Language Models [[pdf](https://drive.google.com/file/d/1pdtxDgWIBN5shBs7_-ORUay0DilsK_sS/view?usp=drive_link)]
+
 
 #### 2023 
 
@@ -97,7 +100,7 @@ description: ''
 <p> This work provides mixed integer programming formulation and transformer allocations. </p>
 </div>
 <center>
-<img src="https://drive.google.com/uc?export=view&id=1MEWgyM_-jzjs9pBCz42i8JEuEst7djg4" style="width:50%; padding:1rem; border:1px #AAAAFF solid;border-radius:10px;">
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%21837&authkey=%21AFs-hGVjFuf__MU&width=994&height=694" style="width:50%; padding:1rem; border:1px #AAAAFF solid;border-radius:10px;">
 </center>
 
 
@@ -138,7 +141,7 @@ on the assumption that the encoded information is a rather subjective informatio
 handling objective and subjective information in MARL.
   </div>
     <div class="column-second" style="width:25%" >
-  <img src="https://drive.google.com/uc?export=view&id=1RHDg7DxJ0ZwQfUUTfXeF4WSYkWntxtl3" height="80%" width="100%" style='border:1px solid #DDDDDD;border-radius:10px;' >
+  <img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%21841&authkey=%21ALyABygszlzSIOc&width=322&height=192" height="80%" width="100%" style='border:1px solid #DDDDDD;border-radius:10px;' >
   </div>
 </div>
 
@@ -156,7 +159,7 @@ based on teacher Q-error quantiles. We evaluate the framework in control tasks a
 proper samples not only increases performance but also reduces the training time.
   </div>
   <div class="column-second" style="width:34%;margin-left:15px;" >
-  <img src="https://drive.google.com/uc?export=view&id=1WLIFKnE6nH8W8F72NfdGfMCib80aD-NV" height="80%" width="100%" style='border:1px solid #DDDDDD;border-radius:10px;' >
+  <img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%21843&authkey=%21AEwDbrtOYalf4Is&width=252&height=99" height="80%" width="100%" style='border:1px solid #DDDDDD;border-radius:10px;' >
   </div>
 </div>
 
@@ -176,7 +179,7 @@ decision-making processes of reinforcement learning models. Specifically, we ide
 for a decision through layer-wise relevance propagation.
   </div>
   <div class="column-second" style="width:34%;margin-left:15px;" >
-  <img src="https://drive.google.com/uc?export=view&id=1lvHF9k4bKGLmptf2hURyzJq9sSFVQRsc" height="80%" width="100%" style='border:1px solid #DDDDDD;border-radius:10px;' >
+  <img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%21848&authkey=%21AEcD_SSiBU8ZmOo&width=236&height=152" height="80%" width="100%" style='border:1px solid #DDDDDD;border-radius:10px;' >
   </div>
 </div>
 
@@ -194,7 +197,7 @@ for a decision through layer-wise relevance propagation.
 In this paper, we build a target tracking system based on deep reinforcement learning. Then, we analyze the trade-offs between target following and obstacle avoidance by training the model with varying weights of two objectives. We perform experiments in a virtual simulation environment. The experimental results show that the model exhibits different behaviors depending on the weights of the objectives. 
   </div>
   <div class="column-second" style="width:34%;margin-left:15px;" >
-  <img src="https://drive.google.com/uc?export=view&id=1rr2OzSgbfIDFSIotOVhTBFXBGuUxFHYD" height="80%" width="100%" style='border:1px solid #DDDDDD;border-radius:10px;' >
+  <img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%21844&authkey=%21AIcjYzgNx9KvQVM&width=225&height=155" height="80%" width="100%" style='border:1px solid #DDDDDD;border-radius:10px;' >
   </div>
 </div>
 
@@ -220,6 +223,6 @@ In this paper, we build a target tracking system based on deep reinforcement lea
     </span> 
 <p> This work provides quantitative analysis on the recognition of sentences for LLMs  </p>
 </div>
-<img src="https://drive.google.com/uc?export=view&id=1tetyj1zydsusepfASuCrPmuKnQ5AgAIk" style="width:100%; padding:1rem; border:1px #AAAAFF solid;border-radius:10px;">
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%21846&authkey=%21AELuI16sUaueQ5k&width=1015&height=321" style="width:100%; padding:1rem; border:1px #AAAAFF solid;border-radius:10px;">
 
 ---

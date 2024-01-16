@@ -23,7 +23,7 @@ My research is focused on the understanding of mechanisms of Artificial Neural N
 Feel free to contact for discussions on discovering the secrets of ANNs 🤗.
 </p>
 <!-- --------------------  Links -------------------- -->
-<div style="display: grid;grid-template-columns: 3fr 2fr;border:1px solid #DDDDFF;border-radius:10px;padding:10px;align-items:center;">
+<div style="display: grid;grid-template-columns: 3fr 2fr;border:5px solid #00AAFF;border-radius:10px;padding:10px;align-items:center;">
 <div style="line-height:2.0">
 📨 <tag class="box-demo-link" style='color:#000000;background:#ffffff;border-radius: 10px;'>bumjin.research@gmail.com</tag> <br>
  📨 <tag class="box-demo-link" style='color:#000000;background:#ffffff;border-radius: 10px;'>bumjin@kaist.ac.kr</tag> 
@@ -32,12 +32,12 @@ Feel free to contact for discussions on discovering the secrets of ANNs 🤗.
 <li> ⛳️ <a class="box-demo-link" href="">  CV (not available now) </a>  </li>
 <li> 📝 <a class="box-demo-link" href="/share/full_paper_list" style="background:#00AA33"> Paper List </a>  </li>
 <li> 🚀   <a class="box-demo-link" href="/main_projects/" style="background:#0000AA"> Project List </a>  </li>
+<!-- <li>   </li>
 <li>   </li>
-<li>   </li>
-<li>   </li>
+<li>   </li> -->
 </div>
 <div>
-  <img src="assets/common/me.png" width="100%;" style="border-radius:20%;" > 
+  <img src="assets/common/me.png" width="80%;" style="border-radius:20%;" > 
 </div>
 </div>
 
@@ -59,7 +59,7 @@ Feel free to contact for discussions on discovering the secrets of ANNs 🤗.
     <li> <strong> Keywords </strong> : saliency map, channel pruning </li>
     </ul>
       </div>
-    <div> {% include figure.html path="https://drive.google.com/uc?export=view&id=1kJwgA-XPdP0k3cd60R8H7jdqtgLbLJ44" class="img-demo" zoomable=true %} 
+    <div> {% include figure.html path="https://onedrive.live.com/embed?resid=AE042A624064F8CA%21835&authkey=%21ABDn33HR1njl1fM&width=1035&height=565" class="img-demo" zoomable=true %} 
     </div>
   </div>
   <center>
