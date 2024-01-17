@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Kolmar Project 🍯 
-description: 
+description: 이미지 호스팅 서버 문제로 이미지 옮기는 중...
 permalink: /Pkolmar/
 ---
 
