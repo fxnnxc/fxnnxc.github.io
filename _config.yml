@@ -169,6 +169,9 @@ collections:
   no_room_for_others:
     output: true
     permalink: /no_room_for_others/:path/
+  notes:
+    output: true
+    permalink: /notes/:path/
 
 
 news_limit: 10000
