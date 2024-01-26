@@ -15,12 +15,16 @@ img : ''
 
 <img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%21900&authkey=%21AN3mJJl1JF5cWZI&width=853&height=480" width="853" height="480" />
 
+[gif rendering issue.. GIF 이미지 링크](https://1drv.ms/i/s!Asr4ZEBiKgSuhwVxE_iNwBLoepP8?e=wgyqkv)
+
 ---
 
+## 1. 메시지 어뎁터 방식 
 
-## 메시지 정의
+어뎁터는 기존 에이전트의 행동에 대한 정보를 바탕으로 이를 보정하는 메시지 기반 모듈을 추가학습하여 모델을 개선한다. 
 
-메시지에 대한 명확한 정의는 
+
+## 2. 액션 메시지 정의
 
 1. 기존 : 에이전트가 다른 에이전트에게 전달할 메시지를 만든다. 
 2. 본 연구 : 에이전트가 본인의 행동과 관찰에 대해서 다른 메시지에게 전달한다. 
@@ -36,38 +40,51 @@ $$
 m_i = (h_i, a_i, p_{a_{i}}, P_{a_{i}})
 $$
 
-## 메시지 어뎁터 방식 
 
-어뎁터는 기존 에이전트의 행동에 대한 정보를 바탕으로 이를 보정하는 메시지 기반 모듈을 추가학습하여 모델을 개선한다. 
-
-
-### Processing Methods 
+### 3. Processing Multiagent Messages 
 
 임의의 개수의 에이전트가 주는 메시지를 처리하기 위해서는 데이터를 pooling하는 것보다 RNN 으로 처리하여 정보를 최대한 보존하는 게 유리하다. 따라서 GRU 방식으로 메시지를 처리하였다. 
+(단, action_v1 만 구현된 상태고, message_v은 RNN이 아닌 Pooling 방식이다) 
 
-* Pooling Message 
-* RNN Hidden Message 
+### 4. 실험 결과 
 
+#### 최종 보상 
 
+학습은 각 에이전트가 관찰로부터 보상을 최대화 하는 Step1 이후, 통신메시지를 결합하는 Step2를 진행하였다. 
+학습 시간은 2.5M이다. 아래 표는 학습 완료된 모델에 대해서 100 에피소드에 대한 보상의 평균과 분산을 나타낸다. 
+spread 환경에서는 통신을 통해서 모두 성능이 개선되었다. 그러나, reference 환경에서는 통신을 하는 것이 오히려 불안정성을 높혔는데, 이는 reference 에서는 이미 Step1에서 필요한 정보가 모두 존재하며, Step2는 보상최대를 위해 필요한 정보가 추가되지 않기 때문이다. Simple Tag 에서는 기존 Step1보다 성능이 저하되는 경우도 존재하였기에, 메시지 종류에 따라서 다른 성능을 보이는 것으로 확인된다. 
+
+| Environment |Model| Step1 Return| Step2 Return|
+|---|---|---|---|
+mpe.simple_tag_v3  |  message_v1 | $34.30 \pm(26.73)$ | $\textcolor{green}{36.20 \pm(29.56)}$ | 
+mpe.simple_tag_v3  |  action_v1 | $33.60 \pm(28.76)$ | $\textcolor{red}{31.00 \pm(23.94)}$ | 
+mpe.simple_reference_v3  |  message_v1 | $-40.36 \pm(14.91)$ | $\textcolor{red}{-46.29 \pm(19.25)}$ | 
+mpe.simple_reference_v3  |  action_v1 | $-39.76 \pm(14.39)$ | $\textcolor{red}{-54.57 \pm(19.13)}$ | 
+mpe.simple_spread_v3  |  message_v1 | $-65.79 \pm(35.68)$ | $\textcolor{green}{-54.89 \pm(18.29)}$ | 
+mpe.simple_spread_v3  |  action_v1 | $-64.76 \pm(32.98)$ | $\textcolor{green}{-54.85 \pm(18.22)}$ | 
 
 ### 학습 다이나믹스
 
-
-### 최종 보상 
-
-#### mpe.simple_spread_v3
-
-|Model| Step1 Return| Step2 Return|
-|---|---|---|
-|message_v1  |  $-150.91 \pm(106.00)$ | $-112.38 \pm(47.35)$
-| action_v1  |   $-173.25 \pm(147.43)$ |  **$-111.77 \pm(38.51)$**
-
-
 #### Step2: Adaptor 학습 비교 
 
-<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%21899&authkey=%21ACPyZ9dgwToCcLw&width=660" width="660" height="auto" />
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%21899&authkey=%21ACPyZ9dgwToCcLw&width=660" style='border:1px solid #000000' width="660" height="auto" />
+
+
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%21901&authkey=%21AAPm-_KxLiklRNQ&width=806&height=246" style='border:1px solid #000000'>
+
+## 결론
+
+메세지 adaptation은 일반적으로 더 높은 성능이 나오도록 학습된다. 
+그러나 어떤 메시지를 주는 지에 따라서 학습 성능이 다르다. 따라서 각 환경에 적합한 메시지의 형태를 고려할 필요가 있다. 
+논문의 주제는 message adaption framework의 제안. 메시지의 다양한 형태에 대한 제안이다. 
+
+1. 심층 메시지는 항상 효율적인가? 아니다. 정보가 많은 것은 그만큼 많은 처리를 필요로하고, MARL에서 더 오랜 시간 학습을 필요로 하고, 불안정성이 높다. 
+2. 심층 메시지의 효과를 나눠서 확인하는 방법은 무엇인가?, Message Adaptor framework
+3. 심층 메시지의 효과를 개선하는 방법은 무엇인가? Action Information Message 
 
 --- 
+
+
 
 ## 정리 안됨 
 
