@@ -16,32 +16,89 @@ description: ''
 
 #### 2024
 
-* ParchGrad: TBD
-* Memorizing Documents with Guidance in Large Language Models [[pdf](https://drive.google.com/file/d/1eMXQKlSGJEFmdn1lmz0jGbGTKtSwKzpa/view?usp=sharing)]
-* Identifying the Source of Generation for Large Language Models [[pdf](https://drive.google.com/file/d/1pdtxDgWIBN5shBs7_-ORUay0DilsK_sS/view?usp=drive_link)]
+Document Memory Allocation with Set Intersections in Large Language Models, <i> Bumjin Park and Jaesik Choi </i> 
+
+Memorizing Documents with Guidance in Large Language Models, <i> Bumjin Park and Jaesik Choi </i> [[pdf](https://drive.google.com/file/d/1eMXQKlSGJEFmdn1lmz0jGbGTKtSwKzpa/view?usp=sharing)]
+
+Identifying the Source of Generation for Large Language Models, <i> Bumjin Park and Jaesik Choi </i> [[pdf](https://drive.google.com/file/d/1pdtxDgWIBN5shBs7_-ORUay0DilsK_sS/view?usp=drive_link)]
+
+ParchGrad: TBD
 
 
 #### 2023 
 
-* 대형 언어 모델의 문장 표현의 설명가능적 해석, KSC 2023
+대형 언어 모델의 문장 표현의 설명가능적 해석, KSC 2023
 
-* 멀티 에이전트 강화학습에서의 게이트 기반 메시지 교환. 제어.로봇.시스템학회 논문지, 29(11), 847-853. **박범진**, 강천웅 and 최재식. [[journal](https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003013340)] [[paper](https://drive.google.com/file/d/1icI0qQpRqa1pQPypUuVgmG7xhvlXmlQv/view)]
+멀티 에이전트 강화학습에서의 게이트 기반 메시지 교환. 제어.로봇.시스템학회 논문지, 29(11), 847-853. **박범진**, 강천웅 and 최재식. [[journal](https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003013340)] [[paper](https://drive.google.com/file/d/1icI0qQpRqa1pQPypUuVgmG7xhvlXmlQv/view)]
 
 #### 2022
 
-* Explanation on Pretraining Bias of Finetuned Vision Transformer. **Bumjin Park** and Jaesik Choi. arXiv preprint arXiv:2211.15428 (2022).
+Explanation on Pretraining Bias of Finetuned Vision Transformer. **Bumjin Park** and Jaesik Choi. arXiv preprint arXiv:2211.15428 (2022).
 
 #### 2021
 
-* Cooperative multi-robot task allocation with reinforcement learning, **Bumjin Park**, Cheongwoong Kang, and Jaesik Choi. Applied Sciences 12.1 (2021): 272.
+Cooperative multi-robot task allocation with reinforcement learning, **Bumjin Park**, Cheongwoong Kang, and Jaesik Choi. Applied Sciences 12.1 (2021): 272.
 
-* Generating Multi-agent Patrol Areas by Reinforcement Learning, **Bumjin, Park**, Cheongwoong Kang, and Jaesik Choi.  2021 21st International Conference on Control, Automation and Systems (ICCAS). IEEE, 2021.
+Generating Multi-agent Patrol Areas by Reinforcement Learning, **Bumjin, Park**, Cheongwoong Kang, and Jaesik Choi.  2021 21st International Conference on Control, Automation and Systems (ICCAS). IEEE, 2021.
 
 
 ---
 
 
 ## NLP 
+
+<h3 style="padding-bottom:0px;margin-bottom:0px;"> Document Memory Allocation with <br> Set Intersections in Large Language Models </h3>
+<i> <strong>Bumjin Park</strong> and Jaesik Choi </i>
+<div> <a class="box-demo-link" href="" style="background:#617143" >Pre-print</a> 
+<a class="box-demo-link" href="" style="background:#0000FF;" >Project</a><br>
+<span class="box-demo-link"  style="background:#000000;"><i>NLP, Copyright-Protection</i></span>
+<span class="box-demo-link"  style="background:#000000;" ><i>2024</i></span>
+<!-- <p> This work provides quantitative analysis on the bias circuits. </p> -->
+</div>
+
+<div style="display: grid;grid-template-columns: 3fr 2fr;border:2px solid #00AAFF;border-radius:10px;padding:10px;align-items:center;">
+<div> To design reliable memories, we propose SimSet, which makes transformer memories simulating set intersections of documents. SimSet utilizes minHash and locality-sensitive hashing for memory allocations, which theoretically guarantees that the probability of the generation of shared memory is equal to the Jaccard similarity with documents. 
+</div>
+<div> 
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%21922&authkey=%21AGByvFvlpwDVwS0&width=1024" style="width:100%; padding:1rem; border:1px #AAAAFF solid;border-radius:10px;">
+</div>
+</div>
+
+<h3 style="padding-bottom:0px;margin-bottom:0px;"> Memorizing Documents with Guidance in Large Language Models </h3>
+<i> <strong>Bumjin Park</strong> and Jaesik Choi </i>
+<div> <a class="box-demo-link" href="" style="background:#617143" >Pre-print</a> 
+<a class="box-demo-link" href="" style="background:#0000FF;" >Project</a><br>
+<span class="box-demo-link"  style="background:#000000;"><i>NLP, Copyright-Protection</i></span>
+<span class="box-demo-link"  style="background:#000000;" ><i>2024</i></span>
+<!-- <p> This work provides quantitative analysis on the bias circuits. </p> -->
+</div>
+
+<div style="display: grid;grid-template-columns: 3fr 2fr;border:2px solid #00AAFF;border-radius:10px;padding:10px;align-items:center;">
+<div> we propose document guidance loss, which increases the likelihood of document contents with the conditional generation of the document while preventing memorization with other conditions. This work shows how the guidance loss separates document memories and analyzes the relationship between the document and memory selection space with the Lipschitz continuity assumption in metric spaces.
+</div>
+<div> 
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%21919&authkey=%21AAxr6jX0AkYRCCQ&width=930&height=676" style="width:100%; padding:1rem; border:1px #AAAAFF solid;border-radius:10px;">
+</div>
+</div>
+
+<h3 style="padding-bottom:0px;margin-bottom:0px;"> Identifying the Source of Generation for Large Language Models </h3>
+<i> <strong>Bumjin Park</strong> and Jaesik Choi </i>
+<div> <a class="box-demo-link" href="" style="background:#617143" >Pre-print</a> 
+<a class="box-demo-link" href="" style="background:#0000FF;" >Project</a><br>
+<span class="box-demo-link"  style="background:#000000;"><i>NLP, Copyright-Protection</i></span>
+<span class="box-demo-link"  style="background:#000000;" ><i>2024</i></span>
+<!-- <p> This work provides quantitative analysis on the bias circuits. </p> -->
+</div>
+
+<div style="display: grid;grid-template-columns: 1fr;border:2px solid #00AAFF;border-radius:10px;padding:10px;align-items:center;">
+<div> This work introduces token-level source identification in the decoding step, which maps the token representation to the reference document. We propose a bi-gram source identifier, a multi-layer perceptron with two successive token representations as input for better generalization. We conduct extensive experiments on Wikipedia and PG19 datasets with several LLMs, layer locations, and identifier sizes.
+</div>
+<div> 
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%21920&authkey=%21ANh9goVERFiH4Ow&width=660" style="width:100%; padding:1rem; border:1px #AAAAFF solid;border-radius:10px;">
+</div>
+</div>
+
+
 
 <h3 style="padding-bottom:0px;margin-bottom:0px;"> Emergence of Bias in the circuits of BERT </h3>
 <i> <strong>Bumjin Park</strong>, Artyom Stitsyuk, and Jaesik Choi </i>
