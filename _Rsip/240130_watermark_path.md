@@ -60,5 +60,15 @@ _styles: >
 
 ## 실험 결과 
 
+실험 결과 watermark 의 타입에 따라서 학습 결과가 다르지 않았다. 
+
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%21938&authkey=%21AFRB9oGa3CnicWM&width=805&height=594" width="805" height="594" />
+
+이 결과에 대해서 두 가지 설명 방식이 있다.
+
+1. watermark 타입에 따라서 큰 차이가 없다. 
+2. watermark prediction 모델은 3레이어 모델이다. 따라서 충분한 표현 공간을 가지고 있다. 
 
 ## 결론 
+
+본 실험으로 watermark prediction을 진행하면서 language modeling 이 가능한 것을 확인하였다. 또한 watermark loss alpha 에 따라서 CE Loss가 크게 변하지 않았던 것은 두 개의 Object를 동시에 만족하면서 학습하는 게 가능할 것으로 판단된다. 
