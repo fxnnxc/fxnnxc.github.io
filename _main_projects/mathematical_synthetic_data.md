@@ -3,7 +3,7 @@ layout: distill
 title: 'Mathematical Synthetic Token Dataset'
 date: 2023-09-04
 description: How I make synthetic dataset for GPT training. 
-img: 'https://drive.google.com/uc?export=view&id=1m3GJfGpet3kyijkHRVr-5QK23ijtcKxh'
+img: 'https://onedrive.live.com/embed?resid=AE042A624064F8CA%211025&authkey=%21AGdMehjvryebHoM&width=493&height=363'
 authors: 
     - name: Bumjin Park
       affiliations:

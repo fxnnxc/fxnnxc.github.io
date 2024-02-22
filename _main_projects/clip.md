@@ -3,7 +3,7 @@ layout: distill
 title: 'Probing Neurons with CLIP Concepts'
 date: 2023-08-29
 description: pipeline for probing
-img: 'https://drive.google.com/uc?export=view&id=1FnJ-NHGqqCgAC6XoNJJCSeOjfUU-TeTc'
+img: 'https://onedrive.live.com/embed?resid=AE042A624064F8CA%211027&authkey=%21ANyRzboJ89UAX64&width=500&height=400'
 authors: 
     - name: Bumjin Park
       affiliations:

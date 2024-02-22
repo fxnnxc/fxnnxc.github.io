@@ -10,7 +10,9 @@ permalink: /main_projects/
     {%- for category in page.display_categories %}
     <h2 class="category">{{ category }}</h2>
     {%- assign categorized_projects = site.main_projects | where: "category", category -%}
-    {%- assign sorted_projects = categorized_projects | sort: "importance" %}
+    {%- assign sorted_projects = categorized_projects | sort: "date" %}
+    {%- assign sorted_projects = sorted_projects | reverse %}
+
     <!-- Generate cards for each project -->
     {% if page.horizontal -%}
     <div class="container">
@@ -31,7 +33,9 @@ permalink: /main_projects/
   
   {%- else -%}
   <!-- Display projects without categories -->
-    {%- assign sorted_projects = site.main_projects | sort: "importance" -%}
+    {%- assign sorted_projects = site.main_projects | sort: "date" -%}
+    {%- assign sorted_projects = sorted_projects | reverse %}
+
     <!-- Generate cards for each project -->
     {% if page.horizontal -%}
     <div class="container">

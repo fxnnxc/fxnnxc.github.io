@@ -11,7 +11,7 @@ date: 2023-09-06
 featured: true
 title: 'BERT Korean Symbol Representation Comparison'
 description: 'Multi Agent Environment in Terminal'
-img: 'https://drive.google.com/uc?export=view&id=1KDAdhib_6QdlRkkgFhFC9LPWcWk_3UfO'
+img: 'https://onedrive.live.com/embed?resid=AE042A624064F8CA%211023&authkey=%21AA9m3GURpAxuLss&width=527&height=438'
 github : 'https://github.com/deep-ing/gym-predator-prey'
 ---
 
@@ -52,19 +52,19 @@ For example, if we have a word "Apple" and the word embedding for it, the positi
 #### Consonants (자음)
 
 
-<img src="https://drive.google.com/uc?export=view&id=1ZlitOLhCaw68WKPS3gfmiK0Nplz3c_yP" style="width:140%;margin-left:0rem;border:1px;"  >
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%211022&authkey=%21ADpNs4WRFasrCSE&width=1378&height=396" style="width:140%;margin-left:0rem;border:1px;"  >
 
 
 #### Vowels (모음)
 
 
-<img src="https://drive.google.com/uc?export=view&id=1pft7IP-ZSRlcTE4Q-_xxULXmG9n5LmG-" style="width:140%;margin-left:0rem;border:1px;"  >
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%211020&authkey=%21AOkQbKD62FLw9wE&width=1379&height=396" style="width:140%;margin-left:0rem;border:1px;"  >
 
 
 #### Both Together (자음 + 모음)
 
 
-<img src="https://drive.google.com/uc?export=view&id=1KDAdhib_6QdlRkkgFhFC9LPWcWk_3UfO" style="width:140%;margin-left:0rem;border:1px;"  >
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%211021&authkey=%21AGySUqLKAnNrpkM&width=1378&height=396" style="width:140%;margin-left:0rem;border:1px;"  >
 
 
 ---
