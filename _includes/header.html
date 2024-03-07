@@ -1,10 +1,15 @@
 <header>
-
+      
       <!-- Nav Bar -->
-      <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}">
-        <div class="container">
+      <nav id="navbar"  style="background-image: url('/assets/friends.png'); 
+      background-size: 15%; background-repeat: no-repeat;
+      background-position:5%; backdrop-filter: blur(10px);
+      background-position-y: 95%;"
+      class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}">
+        <div class="container"">
+          <img >
           {% if page.title != "about" -%}
-            <img src="/assets/common/KAIST-hi.gif" width="40px" style="margin-right:0px; padding-bottom: 3px;">
+            <!-- <img src="/assets/common/KAIST-hi.gif" width="40px" style="margin-right:0px; padding-bottom: 3px;"> -->
           
           <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl | prepend: site.url }}/"
              style="margin-left:20px ;">
@@ -39,7 +44,7 @@
               {% if site.blog_name %}
               <!-- Blog -->
               <li style="font-size: 17px" class="nav-item {% if page.url contains 'blog' %}active{% endif %}">
-                <a class="nav-link" href="{{ '/main_papers/' | relative_url }}"> 🐟 Papers 
+                <a class="nav-link" href="{{ '/main_papers/' | relative_url }}"> 😮 Papers 
                   {%- if page.title == "blog" -%}
                   <span class="sr-only">(current)</span>
                   {%- endif -%}
@@ -47,7 +52,7 @@
               </li>
 
               <li style="font-size: 17px" class="nav-item {% if page.url contains 'blog' %}active{% endif %}">
-                <a class="nav-link" href="{{ '/main_articles/' | relative_url }}"> 🐟 Articles 
+                <a class="nav-link" href="{{ '/main_articles/' | relative_url }}"> 🤗 Articles 
                   {%- if page.title == "blog" -%}
                   <span class="sr-only">(current)</span>
                   {%- endif -%}
@@ -55,7 +60,7 @@
               </li>
 
               <li style="font-size: 17px" class="nav-item {% if page.url contains 'blog' %}active{% endif %}">
-                <a class="nav-link" href="{{ '/main_projects/' | relative_url }}"> 🐟 Projects
+                <a class="nav-link" href="{{ '/main_projects/' | relative_url }}"> 😎 Projects
                   {%- if page.title == "blog" -%}
                   <span class="sr-only">(current)</span>
                   {%- endif -%}
