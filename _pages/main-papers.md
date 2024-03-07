@@ -9,7 +9,7 @@ permalink: /main_papers/
     <h1>{{ page.title }}</h1>
     <!-- <h2>{{ page.description }}</h2> -->
     <p>
-    You can find the list of full papers in <a href="http://localhost:4000/share/full_paper_list/"> full papers </a> 
+    You can find the list of full papers in <a href="../share/full_paper_list/"> full papers </a> 
     </p>
   </div>
   <ul class="post-list">
