@@ -11,7 +11,7 @@ authors:
         name: KAIST
 
 
-img: https://drive.google.com/uc?export=view&id=1kJwgA-XPdP0k3cd60R8H7jdqtgLbLJ44
+img: https://onedrive.live.com/embed?resid=AE042A624064F8CA%21835&authkey=%21ABDn33HR1njl1fM&width=1035&height=565
 ---
 
 **ParchGrad: Controlled Internal Gradients for Reliable Saliency Map 🚀**

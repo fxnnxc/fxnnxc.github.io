@@ -5,41 +5,61 @@ authors:
       affiliations:
         name: KAIST
 bibliography: all.bib
-date: 2024-01-05
+date: 2024-03-07
 featured: true
-# toc:
-#   - name: Problems
-title: 'Full Paper List'
+toc:
+  - name: '2024'
+  - name: '2023'
+  - name: '2022'
+  - name: '2021'
+title: 'Research Paper List'
 description: ''
 
 ---
+<style>
+  ul { list-style-type: "- "; }
+  li {color:#6f1000; font-weight:400;}
+  strong {font-weight:400}
+  </style>
 
-#### 2024
+<h4 id='2024' >2024 🌸 </h4>
 
-Document Memory Allocation with Set Intersections in Large Language Models, <i> Bumjin Park and Jaesik Choi </i> 
+* Message based Action Adpater Framework in Multiagent Reinforcement Learning
+   *  <strong> <i> Bumjin Park and Jaesik Choi </i> [[pdf](https://drive.google.com/file/d/1hX2616u-BdJ-04cUnDq2FAfan7mxlmaT/view?usp=sharing)]</strong>
+* Document Memory Allocation with Set Intersections in Large Language Models, 
+   * <strong> <i> Bumjin Park and Jaesik Choi </i> [[pdf](https://drive.google.com/file/d/1LtM3HetpCO6O_exr99UQdpFGUXe5oN6V/view?usp=sharing)]  </strong>
+* Memorizing Documents with Guidance in Large Language Models
+   * <strong> <i> Bumjin Parkand Jaesik Choi </i>  [pdf](https://drive.google.com/file/d/1eMXQKlSGJEFmdn1lmz0jGbGTKtSwKzpa/view?usp=sharing)] </strong>
+* Identifying the Source of Generation for Large Language Models
+   *  <strong> <i> Bumjin Park and Jaesik Choi </i> [[pdf](https://drive.google.com/file/d/1pdtxDgWIBN5shBs7_-ORUay0DilsK_sS/view?usp=drive_link)] </strong>
+* ParchGrad: Controlled Internal Gradients for Reliable Saliency Map 
+   * <strong> <i> Bumjin Park, Giyoung Jeon, and Jaesik Choi </i> [[pdf](https://drive.google.com/file/d/1E_7MIQFcM3livmezMwD1fHmz6gwHm4j1/view?usp=sharing)] </strong>
 
-Memorizing Documents with Guidance in Large Language Models, <i> Bumjin Park and Jaesik Choi </i> [[pdf](https://drive.google.com/file/d/1eMXQKlSGJEFmdn1lmz0jGbGTKtSwKzpa/view?usp=sharing)]
 
-Identifying the Source of Generation for Large Language Models, <i> Bumjin Park and Jaesik Choi </i> [[pdf](https://drive.google.com/file/d/1pdtxDgWIBN5shBs7_-ORUay0DilsK_sS/view?usp=drive_link)]
-
-ParchGrad: TBD
+<h4 id='2023' > 2023 🌧️ </h4>
 
 
-#### 2023 
+* 대형 언어 모델의 문장 표현의 설명가능적 해석, KSC 2023
+  * <strong> <i> 박범진, 최재식 </i> </strong>
+* 멀티 에이전트 강화학습에서의 게이트 기반 메시지 교환. 제어.로봇.시스템학회 논문지, 29(11), 847-853. 
+  * <strong> <i> 박범진, 강천웅 and 최재식 </i>  [[journal](https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003013340)] [[paper](https://drive.google.com/file/d/1icI0qQpRqa1pQPypUuVgmG7xhvlXmlQv/view)] </strong>
 
-대형 언어 모델의 문장 표현의 설명가능적 해석, KSC 2023
+<h4 id='2022' > 2022 📖 </h4>
 
-멀티 에이전트 강화학습에서의 게이트 기반 메시지 교환. 제어.로봇.시스템학회 논문지, 29(11), 847-853. **박범진**, 강천웅 and 최재식. [[journal](https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003013340)] [[paper](https://drive.google.com/file/d/1icI0qQpRqa1pQPypUuVgmG7xhvlXmlQv/view)]
+* Explanation on Pretraining Bias of Finetuned Vision Transformer. 
+  *  <strong> <i> Bumjin Park and Jaesik Choi. </i>  [[pdf](https://arxiv.org/abs/2211.15428)] </strong>
 
-#### 2022
+<h4 id='2021' > 2021 🌱 </h4>
 
-Explanation on Pretraining Bias of Finetuned Vision Transformer. **Bumjin Park** and Jaesik Choi. arXiv preprint arXiv:2211.15428 (2022).
 
-#### 2021
+* Cooperative multi-robot task allocation with reinforcement learning<d-cite key="park2021cooperative" ></d-cite>
+  * <strong> <i> Bumjin Park, Cheongwoong Kang, and Jaesik Choi </i>  </strong>  
+  * <strong style='color:#0000AA;'> Published in Applied Sciences 12.1 (2021): 272. </strong> 
+  * 🔗 <strong style='color:#00AAAA;'>  [[paper link](https://www.mdpi.com/2076-3417/12/1/272)] </strong>  <strong style='color:#00AAAA;'>  [[project page](https://fxnnxc.github.io/side_papers/multirobot_allocation//)] </strong> 
 
-Cooperative multi-robot task allocation with reinforcement learning, **Bumjin Park**, Cheongwoong Kang, and Jaesik Choi. Applied Sciences 12.1 (2021): 272.
-
-Generating Multi-agent Patrol Areas by Reinforcement Learning, **Bumjin, Park**, Cheongwoong Kang, and Jaesik Choi.  2021 21st International Conference on Control, Automation and Systems (ICCAS). IEEE, 2021.
+* Generating Multi-agent Patrol Areas by Reinforcement Learning, 
+  * <strong>  <i>  Bumjin, Park, Cheongwoong Kang, and Jaesik Choi </i>  </strong>  
+  * <strong style='color:#0000AA;'> 2021 21st International Conference on Control, Automation and Systems (ICCAS). IEEE, 2021.</strong> 
 
 
 ---
