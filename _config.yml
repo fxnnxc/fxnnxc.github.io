@@ -166,6 +166,10 @@ collections:
   Rparchgrad:
     output: true
     permalink: /Rparchgrad/:path/
+  book:
+    output: true
+    permalink: /book/:path/
+
 
 
 news_limit: 10000

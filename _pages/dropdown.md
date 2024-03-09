@@ -5,10 +5,10 @@ nav: true
 dropdown: true
 order : 9
 children: 
-    - title: side-paper
+    - title: 🗂️ side-paper
       permalink: /side_papers/  
-    - title: side-projects
-      permalink: /side_projects/  
+    - title: 📚 book (korean)
+      permalink: /book/  
     - title: side-articles
       permalink: /side_articles/  
     
