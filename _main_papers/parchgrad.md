@@ -3,7 +3,7 @@ layout: distill
 title:   ' ParchGrad: Controlled Internal Gradients for Reliable Saliency Map 🚀' 
 date: 2023-11-15
 giscus_comments : true
-description: 
+description: "We prune gradient signals in convolutional layer while preserving the variance of gradient magnitudes to balance interaction between combined modules. We propose ParChGrad to obtain more reliable saliency map!"
 bibliography: all.bib
 authors: 
     - name: Bumjin Park
