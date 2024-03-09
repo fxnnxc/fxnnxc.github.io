@@ -17,7 +17,7 @@ date: 2023-09-08
 featured: true
 title: '2.1 Introduction to Transformer'
 description: '📕 Chapter 2. GPT <br> <em>Computational Interpretation of Circuits</em> '
-img: "https://drive.google.com/uc?export=view&id=1vcRdgWcqydwCs90_0c_PjLPi18LofMNa"
+img: "https://onedrive.live.com/embed?resid=AE042A624064F8CA%211230&authkey=%21AO9pKX8DtFdJnWU&width=1821&height=863"
 ---
 
 ## Introduction
@@ -47,7 +47,7 @@ The topics described in this article are as follows:
 GPT is an autoregressive token generator. 
 
 <figure>
-<img src="https://drive.google.com/uc?export=view&id=1vcRdgWcqydwCs90_0c_PjLPi18LofMNa">
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%211230&authkey=%21AO9pKX8DtFdJnWU&width=1821&height=863">
 </figure>
 
 
@@ -57,10 +57,10 @@ GPT is an autoregressive token generator.
 The most simplest form of token generation is done by embedding the current token and unembed the next token.
 
 <figure>
-<img src="https://drive.google.com/uc?export=view&id=1kYZqPC5ACfpV1lk7lBjeZgxzPS_TXXfn">
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%211229&authkey=%21AK8ktMXEvRsUbe8&width=1736&height=642">
 </figure>
 
-
+<!-- 
 ---
 
 ## 1. Streams 
@@ -73,7 +73,7 @@ The most simplest form of token generation is done by embedding the current toke
     <figcaption style='text-align:center;color:AAAAFF;font-size:1.4rem;'>
     <strong> [1/3]</strong> Transformer  Architecture Overview
     </figcaption>
-    <img src="https://drive.google.com/uc?export=view&id=1kmhnEEVpwv-OGNHHYtt1KMYanoyxcjRj" style="width:40rem;padding-right:5rem;padding-left:5rem;border:2px #DDDDFF solid;">
+    <img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%211228&authkey=%21AFMCx1hgl4GVDtk&width=688&height=625" style="width:40rem;padding-right:5rem;padding-left:5rem;border:2px #DDDDFF solid;">
     
   </div>
 
@@ -81,14 +81,14 @@ The most simplest form of token generation is done by embedding the current toke
     <figcaption style='text-align:center;color:AAAAFF;font-size:1.4rem;'>
     <strong> [2/3]</strong> Multi Layer Perceptron Architecture Overview
     </figcaption>
-    <img src="https://drive.google.com/uc?export=view&id=14EQfiVFGBlNoBEy7RXgzMfT6HoaMQDVs" style="width:40rem;padding-right:5rem;padding-left:5rem;border:2px #DDDDFF solid;">
+    <img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%211227&authkey=%21ACTgYM18WFSPVJc&width=508&height=416" style="width:40rem;padding-right:5rem;padding-left:5rem;border:2px #DDDDFF solid;">
   </div>
 
   <div class="mySlides">
     <figcaption style='text-align:center;color:AAAAFF;font-size:1.4rem;'>
     <strong> [3/3]</strong> Multi Head Attention Architecture Overview
     </figcaption>
-    <img src="https://drive.google.com/uc?export=view&id=1zNSJL-c0tTG26YppqLggb-JpDNavhAXv" style="width:40rem;padding-right:5rem;padding-left:5rem;border:2px #DDDDFF solid;">
+    <img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%211226&authkey=%21ALIez9lD-dcrIG4&width=684&height=351" style="width:40rem;padding-right:5rem;padding-left:5rem;border:2px #DDDDFF solid;">
   </div>
 
   <!-- Next and previous buttons -->
@@ -104,7 +104,7 @@ The most simplest form of token generation is done by embedding the current toke
 </div>
 </div>
 
----
+--- -->
 
 
 ## 2. Residual Spaces
@@ -140,7 +140,7 @@ $$
 <figcaption style='text-align:center;color:#8888FF;'>
 Figure. 
 </figcaption>
-<img src="https://drive.google.com/uc?export=view&id=1lGBOmIDAdCi7GHbUgCl6zNQvjbu8vXmc" style="width:auto;height:30rem;border:2px #DDDDFF solid;">
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%211224&authkey=%21ALYx4PD6PtalR30&width=510&height=455" style="width:auto;height:30rem;border:2px #DDDDFF solid;">
 </figure>
 </center>
 
@@ -155,7 +155,7 @@ By combining the idea that the final hidden representation is further mapped to 
 
 <div style="display:flex;justify-content:center; overflow: show;">
 <figure style="width:70rem;">
-<img src="https://drive.google.com/uc?export=view&id=1JA8OUQNXn0cHftv3804UooPlTyzdzNRc">
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%211225&authkey=%21AGaBzLs1C31PeNA&width=952&height=613">
 <figcaption style='text-align:center;color:#8888FF;'>
 Figure. 
 </figcaption>
@@ -294,7 +294,7 @@ $$
 
 Intuitively, as $\alpha$ changes from $0$ to $1$, by integrating the gradients, $Attr(w_i^{(l)})$ accumulates the output probability change caused by the change of $w_i^{(l)}$.
 
-
+<!-- 
 
 ### Patching
 
@@ -325,4 +325,4 @@ Figure. Results [Meng et al., 2022](https://arxiv.org/abs/2202.05262).
 
 To analyze the results, the AIE score is used as a metric. It can be computed by $Avg(P_{replaced}[o] - P_{corrupted}[o])$ where $o$ denotes the correct output. As we can see in the figure, the last token of the subject has a significant impact on the causal relationship in the early site layer. In addition, the MLP of the early site and the attention mechanism of the late site appear to play an important role in calculating the final prediction.
 
-<script src="/assets/js/curriculum_2_1.js">
+<script src="/assets/js/curriculum_2_1.js"> -->

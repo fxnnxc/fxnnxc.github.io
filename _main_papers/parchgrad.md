@@ -32,7 +32,7 @@ img: https://onedrive.live.com/embed?resid=AE042A624064F8CA%21835&authkey=%21ABD
 
   <center>
   <div class="demolink" style='padding-bottom:1rem;padding-top:0.5rem;'>
-    <a class="box-demo-link" href="https://drive.google.com/file/d/1i4o9I2DwrN-XEJr0_WHmVEmX4i_3N3rT/view?usp=drive_link" style="background:#AA00AA" >Pre-print (currently google drive)</a>  
+    <a class="box-demo-link" href="https://drive.google.com/file/d/1E_7MIQFcM3livmezMwD1fHmz6gwHm4j1/view?usp=drive_link" style="background:#AA00AA" >Pre-print (currently google drive)</a>  
       <a class="box-demo-link" href="https://github.com/fxnnxc/Parchgrad" style="background:#000000;">Code</a> 
     <a class="tooltip-wrap">
       <span class="tooltip-span"> Abstract </span>
@@ -48,12 +48,9 @@ img: https://onedrive.live.com/embed?resid=AE042A624064F8CA%21835&authkey=%21ABD
 
 <div style="border:1px solid #DDDDFF;border-radius:10px;padding:10px;" >
 <center>
-<img src="https://drive.google.com/uc?export=view&id=1XqsOv2ZrZV0H3dnySdKTI1Pz8mk__fuQ" style="width:100%">
-<img src="https://drive.google.com/uc?export=view&id=1OFHpMBm16EmzpfJMHgvITQIoXwdr9vL0" style="width:100%">
-<img src="https://drive.google.com/uc?export=view&id=1Ez2Vra_1PFtw1uynMuIeaF9Skz2Agb9C" style="width:100%">
-<img src="https://drive.google.com/uc?export=view&id=12zZ48LavQK3HCKOTEERTGf8vmrvTSuap" style="width:100%">
-<img src="https://drive.google.com/uc?export=view&id=1bSZS_DjN9qXNW2DooNPxwkPdwbRhCg6z" style="width:100%">
-<img src="https://drive.google.com/uc?export=view&id=1bdkQmtOvIOtXQbDtACKQcBiOWron-lw5" style="width:100%">
+<img src="https://github.com/fxnnxc/parchgrad/blob/main/labs/visualize/13220.gif?raw=true" style="width:100%">
+<img src="https://github.com/fxnnxc/parchgrad/blob/main/labs/visualize/797.gif?raw=true" style="width:100%">
+<img src="https://github.com/fxnnxc/parchgrad/blob/main/labs/visualize/16298.gif?raw=true" style="width:100%">
 </center>
 </div>
 
@@ -78,7 +75,7 @@ selection method based on statistical tests to select which channels to magnify 
 reduce the impact of gradients.
 
 <center>
-<img src="https://drive.google.com/uc?export=view&id=1kJwgA-XPdP0k3cd60R8H7jdqtgLbLJ44" style="width:70%">
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%211231&authkey=%21AFo75M5GaaMDuvw&width=1866&height=730" style="width:100%">
 </center>
 
 
@@ -109,7 +106,7 @@ SmoothGrad <d-cite key="smilkov2017smoothgrad" >  </d-cite>  | Saliency | O | X 
 Gradients are noisy to be interpreted as large number of small signals could exists on a input. A toy experiment below shows the impact of noisy gradients, which are randomly distributed.  
 
 <center>
-<img src="https://drive.google.com/uc?export=view&id=14RK0ctQBWL5c9VPVxmxKlF4DXZzVCdPV" style="width:40%">
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%211233&authkey=%21AHInAoRba6oIE1s&width=1024" style="width:100%">
 </center>
 
 Let $\mathcal{H}$ be a group of 10  random gradients whose first entry is sampled from $\mathcal{N}(0, 0.1)$ and the second entry is sampled from $\mathcal{N}(0.0, 1.0)$ and $\mathcal{L}$ be a group of 100 random gradients  whose elements are both sampled from  N(0, 0.1). The summed vector in each group and the combined group is shown in Figure below. Although H group is dominant in Dim2 (0,1), the summed vector of L group is dominant in Dim1 (1,0)  because of large number of vectors. Consequently, the final direction is (1,1) direction (black). This experiment shows the impact of large number of irrelevant channels (red).
@@ -121,14 +118,10 @@ Let $\mathcal{H}$ be a group of 10  random gradients whose first entry is sample
 One trivial method to remove noisy gradients is to set zero. However, we observe that the zero gradient signals on selected channels results in artifacts. 
 
 <center>
-<img src="https://drive.google.com/uc?export=view&id=14o_c9CdgiRQTrdKcgwoFOltODIvDoRPT" style="width:60%">
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%211232&authkey=%21AGrj9LB69JwcO18&width=2926&height=944" style="width:100%">
 </center>
 
 The artifacts are due to the fact that multiple multiple modules are interact to make gradient signal. When zero pruning is applied to the gradients in a convolutional layer, the impact of the convolutional layer is **reduced** and lost the dominance over other modules. 
-
-<center>
-<img src="https://drive.google.com/uc?export=view&id=1YF7QIJh1S8LjvxrFt1lCKQIEPkpEw0xl" style="width:80%">
-</center>
 
 ## Methods : $\gamma$-dominance and variance conservation
 
