@@ -123,7 +123,6 @@ description: ''
 </div>
 
 
-
 <h3 style="padding-bottom:0px;margin-bottom:0px;"> Emergence of Bias in the circuits of BERT </h3>
 <i> <strong>Bumjin Park</strong>, Artyom Stitsyuk, and Jaesik Choi </i>
 <div> <a class="box-demo-link" href="https://drive.google.com/file/d/1v3q8HBThVcIXzr0eADwiXHXB2tV2JR_m/view?usp=sharing" style="background:#617143" >Pre-print</a> 
