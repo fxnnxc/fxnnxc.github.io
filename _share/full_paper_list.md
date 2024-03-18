@@ -36,14 +36,6 @@ description: ''
    * <strong> <i> Bumjin Park, Giyoung Jeon, and Jaesik Choi </i> [[pdf](https://drive.google.com/file/d/1E_7MIQFcM3livmezMwD1fHmz6gwHm4j1/view?usp=sharing)] </strong>
 
 
-<h4 id='2023' > 2023 🌧️ </h4>
-
-
-* 대형 언어 모델의 문장 표현의 설명가능적 해석, KSC 2023
-  * <strong> <i> 박범진, 최재식 </i> </strong>
-* 멀티 에이전트 강화학습에서의 게이트 기반 메시지 교환. 제어.로봇.시스템학회 논문지, 29(11), 847-853. 
-  * <strong> <i> 박범진, 강천웅 and 최재식 </i>  [[journal](https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003013340)] [[paper](https://drive.google.com/file/d/1icI0qQpRqa1pQPypUuVgmG7xhvlXmlQv/view)] </strong>
-
 <h4 id='2022' > 2022 📖 </h4>
 
 * Explanation on Pretraining Bias of Finetuned Vision Transformer. 
@@ -61,6 +53,18 @@ description: ''
   * <strong>  <i>  Bumjin, Park, Cheongwoong Kang, and Jaesik Choi </i>  </strong>  
   * <strong style='color:#0000AA;'> 2021 21st International Conference on Control, Automation and Systems (ICCAS). IEEE, 2021.</strong> 
 
+
+---
+
+### 🇰🇷  Korean 
+
+* 대형 언어 모델의 문장 표현의 설명가능적 해석, KSC 2023
+  * <strong> <i> 박범진, 최재식 </i> </strong>
+* 멀티 에이전트 강화학습에서의 게이트 기반 메시지 교환. 제어.로봇.시스템학회 논문지, 29(11), 847-853. 
+  * <strong> <i> 박범진, 강천웅 and 최재식 </i>  [[journal](https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003013340)] [[paper](https://drive.google.com/file/d/1icI0qQpRqa1pQPypUuVgmG7xhvlXmlQv/view)] </strong>
+
+* 대형언어모델 생성 텍스트의 원천 문서 추적 
+    * <strong> <i> 박범진, 최재식 </i> [[pdf](https://drive.google.com/file/d/1P_PNXe1vjrrlVOQdvJ0H8DnH6ncY-xTf/view?usp=drive_link)] </strong>
 
 ---
 
@@ -279,27 +283,3 @@ In this paper, we build a target tracking system based on deep reinforcement lea
 </div>
 
 
-
-
-
-
-## Korean 
-
-<h3 style="padding-bottom:0px;margin-bottom:0px;"> 대형 언어 모델의 문장 표현의 설명가능적 해석 </h3>
-<i> <strong>Bumjin Park</strong>, and Jaesik Choi </i>
-<div> <a class="box-demo-link" href="https://drive.google.com/file/d/11pKshP3Ldk7cYybX4U0pB224cL2k3nT4/view?usp=drive_link" style="background:#617143" >Paper</a> 
-<a class="box-demo-link" href="https://drive.google.com/file/d/1kvVJpg-QC_EoUOiWjWKkkoG4ghKbZ4pz/view?usp=drive_link" style="background:#017143" >Poster</a> <br>
-<span class="box-demo-link"  style="background:#000000;"><i>NLP, XAI</i></span>
-<span class="box-demo-link"  style="background:#000000;" ><i>KSC 2023</i></span>
- <span class="tooltip-wrap">
-      <span class="tooltip-span"> Abstract </span>
-      <div class="tooltip-content">
-      <strong> Abstract </strong> <br>
-      ChatGPT를 포함한 대형 언어 모델의 학술적 및 산업적 연구와 이로 인한 영향력은 최근 들어 빠르게 증가하고 있다. 더 많은 데이터와 파라미터를 활용하여 인간을, 지능을 뛰어넘는 넘어서는 모델이 나오면서 보다 안정한 사용을 위해 모델을 이 해하는 것은 필수적이다. 이를 위해 본 논문은 언어 모델이 문장을 인식한 것을 해석하는 방법론 1) 군집 분석, 2) Probing의 사용을 검증한다. 실험적으로 410M 부터 12B 크기까지 8개의 모델 크기에 대한 인식의 해석 결과는 모델마다 문장 인 식에 유의미한 차이가 있음을 보였고, 제안하는 방법들이 일관된 능력 검증 결과를 보였다.
-      </div>
-    </span> 
-<p> This work provides quantitative analysis on the recognition of sentences for LLMs  </p>
-</div>
-<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%21846&authkey=%21AELuI16sUaueQ5k&width=1015&height=321" style="width:100%; padding:1rem; border:1px #AAAAFF solid;border-radius:10px;">
-
----
