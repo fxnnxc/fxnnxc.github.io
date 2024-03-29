@@ -16,8 +16,13 @@ description: '정보 암기를 위한 추가적인 내부 메모리는 모델 �
 ## Does Adaptation of Neural Memory help factual prediction? 
 
 * 🗓️ **Experiment Date** : 24.03.28 
-* 🌸 **Scope** : Few-shot classification for large language models with memorization adaptation. We use FEVER dataset 99 pages and related validation question (#3045). 
+* 🌸 **Scope** : Few-shot classification for large language models with memorization adaptation. We use FEVER dataset 99 pages and related validation question <br> (#samples: 3045). 
 * 🧑🏻‍💻 **Code**:[llm:v24.03.29_memorization](https://github.com/fxnnxc/llm/tree/v24.03.29_memorization)
+* 😮 **Status** : Running Experiments 
+  - [x] &nbsp; *Documentation of Settings*
+  - [ ] &nbsp; *Running Experiments*
+  - [ ] &nbsp; *Record Results*
+  - [ ] &nbsp; *Analysis Results* 
 
 ---
 
@@ -133,10 +138,6 @@ We answer the following questions.
 
 ### 1. Fever  Pages F1 Score (Pretrained)
 
-* Reproduce 
-  * `experiments/240329_hook_mem/train_gpt_fever_llama2.sh`
-  * `experiments/240329_hook_mem/train_gpt_fever_pythia.sh`
-
 ⚠️ This result will be updated as we had typo
 
 |Model       |  zero-shot   | 1-shot    | 2-shot     | 3-shot     | 4-shot     | 5-shot     |
@@ -197,6 +198,16 @@ We answer the following questions.
 
 
 ---
+
+## Reproducibility 
+
+* **Pretrained Models**
+  * `benchmark/fever/llama2_n_100.sh`
+  * `benchmark/fever/pythia_n_100.sh`
+* **Llama2 Memorization**:`experiments/240329_hook_mem/train_gpt_fever_llama2.sh`
+* **Pythia Memorization**: `experiments/240329_hook_mem/train_gpt_fever_pythia.sh`
+  <br> (we exclude Pythia with documentation memorization only.)
+
 
 ## Full Results 
 
