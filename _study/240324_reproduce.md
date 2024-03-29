@@ -17,6 +17,9 @@ description: '트랜스포머에 추가적인 입력을 같이 넣어서 생성�
 ## Neural Memories in Transformers 
 
 
+
+
+
 ## Task Definition 
 
 Given a transformer architecture and external memories. 
@@ -66,7 +69,6 @@ The hidden representation of encoder is adapted to the memory-based representati
 | T5 FLAN     | base   |
 | T5 FLAN     | large  |
 | T5 FLAN     | 3B     |
-
 
 
 ---

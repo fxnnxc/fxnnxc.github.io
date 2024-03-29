@@ -141,3 +141,9 @@ In the SuperGLUE, and GLUE, the task description is added and all the training d
 * Construction of few-shot examples
     * (random) GPT3: superGLUE use 32 randomly sampled examples in the training set for all tasks. 
     * (context) GPT3: MultiRC, WSC uses same problem in the context
+
+
+## Todo 
+
+* Make Few-shot sampling code in training 
+* Evaluation Code with few-shot learning with few-shot learning  
