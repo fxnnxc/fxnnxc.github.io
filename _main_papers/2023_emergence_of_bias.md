@@ -3,8 +3,9 @@ layout: header
 importance: 1
 img : "/assets/main_papers/emergence-of-bias-in-bert/main.png"
 date : 2023-06-31
-title: "Emergence of Bias"
+title: "Emergence of Bias in the Circuits of BERT <strong>[KCC2023 XAI Workshop] </strong>"
 description: we hypothesize that even debiased model can have biased representation in internal blocks. To demonstrate the hypothesis, we measure the biases of internal blocks and quantitatively show "where" the bias occurs and how the debiased models still have biased knowledge.
+author_names: <tag style="font-weight:800">Bumjin Park</tag>, Artyom Stitsyuk, and Jaesik Choi
 ---
 
 <header style='background:#000040; text-align: center; padding:40px; width:100%;'>

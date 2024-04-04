@@ -5,5 +5,4 @@ inline: true
 ---
 
 <li style='margin-top:0px'> Submit a paper to ECCV 2024 </li>
-<li style='margin-top:0px'> Submit a paper to ICML 2024  </li>
 <li style='margin-top:0px'> Submit a paper to TNNLS  </li>

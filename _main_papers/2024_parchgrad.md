@@ -1,6 +1,6 @@
 ---
 layout: distill
-title:   ' ParchGrad: Controlled Internal Gradients for Reliable Saliency Map 🚀' 
+title:   ' ParchGrad: Controlled Internal Gradients for Reliable Saliency Map <strong> [Preprint] </strong>' 
 date: 2023-11-15
 giscus_comments : true
 description: "We prune gradient signals in convolutional layer while preserving the variance of gradient magnitudes to balance interaction between combined modules. We propose ParChGrad to obtain more reliable saliency map!"
@@ -9,9 +9,8 @@ authors:
     - name: Bumjin Park
       affiliations:
         name: KAIST
-
-
-img: https://onedrive.live.com/embed?resid=AE042A624064F8CA%21835&authkey=%21ABDn33HR1njl1fM&width=1035&height=565
+author_names: <tag style="font-weight:800">Bumjin Park</tag>, Giyeong Jeon, Jaesik Choi
+img: https://github.com/fxnnxc/parchgrad/blob/main/labs/visualize/797.gif?raw=true
 ---
 
 **ParchGrad: Controlled Internal Gradients for Reliable Saliency Map 🚀**

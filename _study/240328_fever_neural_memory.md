@@ -210,6 +210,7 @@ pythia 70m   |  0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 |
 * **Pythia Memorization**: `experiments/240329_hook_mem/train_gpt_fever_pythia.sh`
   <br> (we exclude Pythia with documentation memorization only.)
 
+---
 
 ## Full Results 
 
@@ -307,5 +308,17 @@ pythia | 70m | 5 | 0.000 | 0.000 | 0.000 |
 
 ### Memorization - Template
 
+
+### Memorization - Document + Template 
+
+
+
+## Full Results (half precision)
+
+### Pretrained Models
+
+### Memorization - Document 
+
+### Memorization - Template
 
 ### Memorization - Document + Template 
