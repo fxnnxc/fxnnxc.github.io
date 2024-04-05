@@ -20,8 +20,8 @@ description: '정보 암기를 위한 추가적인 내부 메모리는 모델 �
 * 🧑🏻‍💻 **Code**:[llm:v24.03.29_memorization](https://github.com/fxnnxc/llm/tree/v24.03.29_memorization)
 * 😮 **Status** : Running Experiments 
   - [x] &nbsp; *Documentation of Settings*
-  - [ ] &nbsp; *Running Experiments*
-  - [ ] &nbsp; *Record Results*
+  - [x] &nbsp; *Running Experiments*
+  - [x] &nbsp; *Record Results*
   - [ ] &nbsp; *Analysis Results* 
 
 ---
@@ -161,9 +161,9 @@ pythia 70m   |  0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 |
 
 |Model            |  1-shot (base) | Document      | Template   | Doc + Template  |
 |-----------------|----------------|---------------|------------|-----------------|
-llama2 13b        |  0.460         | 0.476 | 0.465 | 0.462 |
-llama2 7b         |  0.435         | 0.439 | 0.445 | 0.438 |
-llama2_chat 13b   |  0.556         | 0.561 | 0.562 | 0.558 | 
+llama2 13b        |  0.460         | **0.476** | 0.465 | 0.462 |
+llama2 7b         |  0.435         | 0.439 | **0.445** | 0.438 |
+llama2_chat 13b   |  0.556         | 0.561 | **0.562** | 0.558 | 
 llama2_chat 7b    |  0.636         | **0.650** | 0.647 | 0.646 |
 |---|---|---|---|---|
 pythia 12b   | 0.366 | 0.366 | 0.366 | 0.366 | 
