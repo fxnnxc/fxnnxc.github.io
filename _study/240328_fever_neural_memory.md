@@ -138,8 +138,6 @@ We answer the following questions.
 
 ### 1. Fever  Pages F1 Score (Pretrained)
 
-⚠️ This result will be updated as we had typo
-
 |Model            |  zero-shot| 1-shot    | 2-shot     | 3-shot     | 4-shot     | 5-shot     |
 |-----------------|-----------|-----------|------------|------------|------------|------------|
 llama2 13b        |  0.013    | 0.460 | 0.410 | 0.417 | 0.472 | 0.476 | 
