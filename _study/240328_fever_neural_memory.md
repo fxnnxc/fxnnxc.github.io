@@ -157,46 +157,23 @@ pythia 160m  |  0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 |
 pythia 70m   |  0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 
 
 
-#### Fever 99 Pages F1 Score (template memo)
+#### Fever 99 Pages F1 Score (template memo - 1 shot)
 
-|Model       |  (zero) | 1-shot  | 2-shot  | 3-shot  | 4-shot  |
-|------------|---------|---------|---------|---------|---------|
-|Llama2 7b   | 
-|Llama2 13b  |
-|Pythia 70m  |
-|Pythia 410m |
-|Pythia 1b   |
-|Pythia 1.4b |
-|Pythia 6.9b |
-|Pythia 12b  |
-
-
-#### Fever 99 Pages F1 Score (wikipage memo)
-
-|Model       |  (zero) | 1-shot  | 2-shot  | 3-shot  | 4-shot  |
-|------------|---------|---------|---------|---------|---------|
-|Llama2 7b   | 
-|Llama2 13b  |
-|Pythia 70m  |
-|Pythia 410m |
-|Pythia 1b   |
-|Pythia 1.4b |
-|Pythia 6.9b |
-|Pythia 12b  |
-
-
-#### Fever 99 Pages F1 Score (+wikipage + template memo)
-
-|Model       |  (zero) | 1-shot  | 2-shot  | 3-shot  | 4-shot  |
-|------------|---------|---------|---------|---------|---------|
-|Llama2 7b   | 
-|Llama2 13b  |
-|Pythia 70m  |
-|Pythia 410m |
-|Pythia 1b   |
-|Pythia 1.4b |
-|Pythia 6.9b |
-|Pythia 12b  |
+|Model            |  1-shot (base) | Document      | Template   | Doc + Template  |
+|-----------------|----------------|---------------|------------|-----------------|
+llama2 13b        |  0.460         | 0.476 | 0.465 | 0.462 |
+llama2 7b         |  0.435         | 0.439 | 0.445 | 0.438 |
+llama2_chat 13b   |  0.556         | 0.561 | 0.562 | 0.558 | 
+llama2_chat 7b    |  0.636         | **0.650** | 0.647 | 0.646 |
+|---|---|---|---|---|
+pythia 12b   | 0.366 | 0.366 | 0.366 | 0.366 | 
+pythia 6.9b  | 0.163 | 0.163 | 0.163 | 0.163 |  
+pythia 2.8b  | 0.026 | 0.026 | 0.026 | 0.026 |
+pythia 1.4b  | 0.009 | 0.009 | 0.009 | 0.009 |
+pythia 1b    | 0.000 | 0.000 | 0.000 | 0.000 |
+pythia 410m  | 0.010 | 0.010 | 0.010 | 0.010 |
+pythia 160m  | 0.000 | 0.000 | 0.000 | 0.000 |
+pythia 70m   | 0.000 | 0.000 | 0.000 | 0.000 |
 
 
 ---
@@ -303,22 +280,43 @@ pythia | 70m | 4 | 0.000 | 0.000 | 0.000 |
 pythia | 70m | 5 | 0.000 | 0.000 | 0.000 | 
 
 
-### Memorization - Document 
+### Memorization
 
+We use one-shot for training and evaluation
 
-### Memorization - Template
-
-
-### Memorization - Document + Template 
-
-
-
-## Full Results (half precision)
-
-### Pretrained Models
-
-### Memorization - Document 
-
-### Memorization - Template
-
-### Memorization - Document + Template 
+llama2_chat | 13b | 0.562 | gpt_template | 
+llama2_chat | 13b | 0.561 | gpt_wikipage | 
+llama2_chat | 13b | 0.558 | gpt_wikipage_and_template |
+llama2_chat | 7b | 0.647 | gpt_template | 
+llama2_chat | 7b | 0.650 | gpt_wikipage | 
+llama2_chat | 7b | 0.646 | gpt_wikipage_and_template | 
+llama2 | 13b | 0.465 | gpt_template | 
+llama2 | 13b | 0.476 | gpt_wikipage | 
+llama2 | 13b | 0.462 | gpt_wikipage_and_template | 
+llama2 | 7b | 0.445 | gpt_template | 
+llama2 | 7b | 0.439 | gpt_wikipage | 
+llama2 | 7b | 0.438 | gpt_wikipage_and_template | 
+pythia | 12b | 0.366 | gpt_template | 
+pythia | 12b | 0.366 | gpt_wikipage | 
+pythia | 12b | 0.366 | gpt_wikipage_and_template | 
+pythia | 6.9b | 0.163 | gpt_template | 
+pythia | 6.9b | 0.163 | gpt_wikipage | 
+pythia | 6.9b | 0.163 | gpt_wikipage_and_template | 
+pythia | 2.8b | 0.026 | gpt_template | 
+pythia | 2.8b | 0.026 | gpt_wikipage | 
+pythia | 2.8b | 0.026 | gpt_wikipage_and_template | 
+pythia | 1.4b | 0.009 | gpt_template | 
+pythia | 1.4b | 0.009 | gpt_wikipage | 
+pythia | 1.4b | 0.009 | gpt_wikipage_and_template | 
+pythia | 1b | 0.000 | gpt_template | 
+pythia | 1b | 0.000 | gpt_wikipage | 
+pythia | 1b | 0.000 | gpt_wikipage_and_template | 
+pythia | 160m | 0.000 | gpt_template | 
+pythia | 160m | 0.000 | gpt_wikipage | 
+pythia | 160m | 0.000 | gpt_wikipage_and_template | 
+pythia | 410m | 0.010 | gpt_template | 
+pythia | 410m | 0.010 | gpt_wikipage | 
+pythia | 410m | 0.010 | gpt_wikipage_and_template | 
+pythia | 70m | 0.000 | gpt_template | 
+pythia | 70m | 0.000 | gpt_wikipage | 
+pythia | 70m | 0.000 | gpt_wikipage_and_template | 
