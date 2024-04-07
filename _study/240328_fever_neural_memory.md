@@ -131,10 +131,18 @@ memory_module location=70~80% location of transformer blocks
 ## 5. 학습 결과 
 
 We answer the following questions.
-1. Does few-shot examples help the factual prediction without memorization fine tuning?
+1. Does few-shot examples help the factual prediction without memorization fine tuning? 
 2. Does memorization of document pages help the prediction?
 3. Does memorization of templates help the prediction?
 4. Does memorization of both show the best performance?
+
+
+Answers 
+1. 모델별로 차이는 있지만 대부분 1-shot 방식이 높은 성능을 보인다. 이는 문제의 의미를 제대로 파악하는데 많은 샘플이 필요하지 않다는 점을 나타내는 것 같다. 
+2. 문서 Memorization 을 진행하는 경우 기존보다 성능향상이 일어났다. 차이가 크진 않지만 정보를 생각하는 게 도움이 되는 것으로 확인된다. (추가적으로 prompt 와 LoRA방식도 잘 작동하는지 확인해야 한다. 다만 지금은 문서 메모리에 초점을 맞추기 때문에 적절한 비교대상은 아닐 수 있다. )
+3. 일부 모델에서는 template 방식이 문서 memorization보다 더 높은 성능을 보였는데, 이는 두 정보 중에 특정 레이어에 더 효율적인 정보가 존재함을 나타내는 것 같다. 
+4. 두 정보를 모두 암기하는 것은 높은 성능을 보이지 않았는데, 이는 특정레이어에 두 가지 정보를 모두 넣었기 때문인 것으로 보인다. 추가적인 구조적 개선 (데이터 타입 마다 다른 메모리를 둔다던지..)하는 방식을 사용하지 않으면 두 정보를 모두 하나의 레이어에 넣는 것은 효율적이지 못하다. 
+
 
 ### 1. Fever  Pages F1 Score (Pretrained)
 
