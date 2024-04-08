@@ -1,5 +1,5 @@
 ---
-layout: share-distill
+layout: distill
 authors: 
     - name: Bumjin Park
       affiliations:
@@ -15,6 +15,10 @@ description: '정보 암기를 위한 추가적인 내부 메모리는 모델 �
 
 ## Does Adaptation of Neural Memory help factual prediction? 
 
+<blockquote>
+✔️ **This experiment is finished and archived.** 
+</blockquote>
+
 * 🗓️ **Experiment Date** : 24.03.28 
 * 🌸 **Scope** : Few-shot classification for large language models with memorization adaptation. We use FEVER dataset 99 pages and related validation question <br> (#samples: 3045). 
 * 🧑🏻‍💻 **Code**:[llm:v24.03.29_memorization](https://github.com/fxnnxc/llm/tree/v24.03.29_memorization)
@@ -22,7 +26,7 @@ description: '정보 암기를 위한 추가적인 내부 메모리는 모델 �
   - [x] &nbsp; *Documentation of Settings*
   - [x] &nbsp; *Running Experiments*
   - [x] &nbsp; *Record Results*
-  - [ ] &nbsp; *Analysis Results* 
+  - [x] &nbsp; *Analysis Results* 
 
 ---
 
