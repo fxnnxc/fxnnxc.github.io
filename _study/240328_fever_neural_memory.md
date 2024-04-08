@@ -190,9 +190,8 @@ pythia 70m   | 0.000 | 0.000 | 0.000 | 0.000 |
 |Model            |  1-shot (base) | Best Performance with 0.05 Weight Decay | Document      | Template (Train Q-A)   | Doc + Template  |
 |-----------------|----------------|---------------|------------|-----------------|
 llama2 13b        |  0.460         | 0.476 | **0.488** | 0.483 | 0.472|
-llama2 7b         |  0.435         | **0.445** | - | - | -|
 llama2_chat 13b   |  0.556         | **0.562** | 0.557 | 0.549 | 0.561 |
-llama2_chat 7b    |  0.636         | **0.650** | 0.639 | - | - |
+llama2_chat 7b    |  0.636         | **0.650** | 0.639 | 0.650 | 0.642 |
 
 #### Pythia Full weight update (no memory module)
 
