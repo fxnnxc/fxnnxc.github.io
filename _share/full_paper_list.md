@@ -60,13 +60,18 @@ description: ''
 
 ### 🇰🇷  Korean 
 
-* 대형 언어 모델의 문장 표현의 설명가능적 해석, KSC 2023
+* 자연어 명령어 기반 군집 로봇 제어 프레임워크 [[pdf](https://1drv.ms/b/s!Asr4ZEBiKgSuiywOixrreWotSWL9?e=bKGOaC)] 
+  *  <i><strong> 박범진</strong>, 최재식 </i>
+  * <tag style='color:#0000AA;'> 군사과학기술학회 종합학술대회 2024 (제출) </tag>
+* 대형 언어 모델의 문장 표현의 설명가능적 해석, 
   *  <i><strong> 박범진</strong>, 최재식 </i> 
-* 멀티 에이전트 강화학습에서의 게이트 기반 메시지 교환. 제어.로봇.시스템학회 논문지, 29(11), 847-853. 
-  * <i><strong> 박범진</strong>, 강천웅 and 최재식 </i>  [[journal](https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003013340)] [[paper](https://drive.google.com/file/d/1icI0qQpRqa1pQPypUuVgmG7xhvlXmlQv/view)] 
-
+  * <tag style='color:#0000AA;'> KSC 2023 (Accepted) </tag>
+* 멀티 에이전트 강화학습에서의 게이트 기반 메시지 교환.[[pdf]](https://drive.google.com/file/d/1icI0qQpRqa1pQPypUuVgmG7xhvlXmlQv/view)
+  * <i><strong> 박범진</strong>, 강천웅 and 최재식 </i>  
+  * <tag style='color:#0000AA;'> 제어.로봇.시스템학회 논문지, 29(11), 847-853.  </tag>  [[journal](https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003013340)]
 * 대형언어모델 생성 텍스트의 원천 문서 추적 
     * <i> <strong> 박범진 </strong>, 최재식 </i> [[pdf](https://drive.google.com/file/d/1P_PNXe1vjrrlVOQdvJ0H8DnH6ncY-xTf/view?usp=drive_link)] 
+    * <tag style='color:#0000AA;'> KCC 특직원고 2023 </tag>
 
 ---
 
