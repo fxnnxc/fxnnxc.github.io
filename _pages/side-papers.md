@@ -6,7 +6,6 @@ permalink: /side_papers/
 ---
 <div class="post">
   <div class="header-bar">
-    <h1>{{ page.title }}</h1>
     <h2>{{ page.description }}</h2>
   </div>
   <ul class="post-list">
