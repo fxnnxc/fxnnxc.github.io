@@ -72,8 +72,8 @@ We use the following Simset settings
 학습 시간 및 레이어에 따른 에러는 다음과 같다. 마지막 레이어에 가까워질수록 loss와 가깝기 때문에 더 낮은 에러에서 시작한다. 그러나 학습이 오래 진행될수록 일반화 성능은 떨어지는 것을 확인할 수 있다. 
 중간 레이어를 수정하는 것은 모델의 state에 대해서 수정하기 때문에 장기적으로 봤을 때 에러가 더 낮은 것으로 보인다. 따라서 중간 레이어에 대해서 추가 메모리 구조를 적용하는 것은 **GPT 내부 state에 대한 변화를 주는 것이다.** 
 
-<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%211520&authkey=%21ANxTllKjra8N740&width=716&height=726" width="500" height="500" style="width:49%" />
-<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%211521&authkey=%21AASIkNN2b464Wsw&width=704&height=700" width="500" height="500"  style="width:49%"/>
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%211520&authkey=%21ANxTllKjra8N740&width=716&height=726" width="500" height="300" style="width:49%" />
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%211521&authkey=%21AASIkNN2b464Wsw&width=704&height=700" width="500" height="300"  style="width:49%"/>
 
 #### FEVER 정확도 
 
