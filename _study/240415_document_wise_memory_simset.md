@@ -53,18 +53,17 @@ We use the following Simset settings
 2. 2-shingling 
 
 
-⚠️ 햐당 결과는 memory 와 simset의 메모리 구조가 다르다. memory 는 layer_norm 과 gating을 추가로 사용하였다. 
+⚠️ 해당 결과는 memory 와 simset의 메모리 구조가 다르다. memory 는 layer_norm 과 gating을 추가로 사용하였다. 
+
+해당 결과는 [코드실수](https://github.com/fxnnxc/llm/commit/7e98fdbda22c250dd4d8d5a16ae26c18d3ea7664#diff-11b35a9339f1d97e709083bb0f43c9a7c1e06b9ab5afc67e935785175f147c36)로 결과가 맞지 않다. 
+메모리는 문서에 대해서 학습한 게 맞지만, Simset은 FEVER template에 대해서 학습하였다. 따라서, Simset은 메모리별로 문서 정보가 아니라 FEVER 학습 데이터로 업데이트 되었다. 
 
 |Model            |  Pretrained Weights | Memory (24th)  |  1-shin (24th-dim) | 1-shin (24th-token)   |    2-shin (24th-dim) | 2-shin (24th-token) |
 |-----------------|---------------------|----------------|--------------------|-----------------------| -------------------- | --------------------|
-|llama2_chat 7b   |        0.644        |  0.652         |   0.640            |        0.641          | 0.640                | 0.653               |
+|llama2_chat 7b   |        0.644        |  0.652         |   0.640 (template) |       0.641 (template)| 0.640 (template)    | 0.653 (template)     |
+|layernorm+gate   |        0.644        |  0.652         |   0.649 (template) |       0.641(template) | 0.639 (template)    | 0.653 (template)     |
+|document memo.   |        0.644        |  0.652         |                | | | |
 
-
-아래 결과는 simset에 대해서 memory와 동일한 모델 구조를 사용한 결과이다. 
-
-|Model            |  Pretrained Weights | Memory (24th)  |  1-shin (24th-dim) | 1-shin (24th-token)   |    2-shin (24th-dim) | 2-shin (24th-token) |
-|-----------------|---------------------|----------------|--------------------|-----------------------| -------------------- | --------------------|
-|llama2_chat 7b   |        0.644        |  0.652         |
 
 
 #### 문서 암기 학습 에러
@@ -113,3 +112,13 @@ SimSet-Dimension의 경우 Loss 자체는 높은 수준을 보였기에 저장�
 단순하게 저장하는 것이 도움이 된다는 점은 naive 하다. 추가적으로 저장된 정보를 활용하는 방법을 연구해야 한다.  저장 자체만으로는 부족하다. 
 정보 저장의 관점에서는 전체 메모리를 사용하는 것과 동일한 수준으로 암기력을 보이고 있다. 그러나 해당 정보가 실제로 더욱 도움이 되는지는 아직 부족하다. 
 따라서, Neural 메모리의 효율을 올리기 위한 구조적인, 알고리즘적인 방법을 찾아야 한다. 
+
+
+-----
+
+## Update on 240416
+
+FEVER 학습 데이터에 대해서 Layer-norm과 gating을 추가하는 경우, Simset-1에 대해서 성능이 향상되었다.  SimSet2에 대해서는 성능이 저하되었다. 
+
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%211554&authkey=%21ALv2uupMChkiWQ4&width=867&height=570" width="867" height="570" />
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%211555&authkey=%21APA0p3_k7nNOeHI&width=887&height=726" width="887" height="726" />
