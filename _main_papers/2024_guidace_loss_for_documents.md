@@ -13,5 +13,6 @@ img: /assets/main_papers/2024_guidance_loss_fig.png
 author_names: <tag style="font-weight:800">Bumjin Park</tag>, Jaesik Choi
 ---
 
+To be written 
 
-To be written...
+Author Response [[pdf link](https://1drv.ms/b/s!Asr4ZEBiKgSujBZozaWGnG5RTfOy?e=HNG8cz)]
