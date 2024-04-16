@@ -29,6 +29,7 @@ description: ''
    *  <i>  <strong>Bumjin Park</strong> and Jaesik Choi </i> [[pdf](https://drive.google.com/file/d/1hX2616u-BdJ-04cUnDq2FAfan7mxlmaT/view?usp=sharing)]
 * Document Memory Allocation with Set Intersections in Large Language Models, 
    *  <i> <strong>Bumjin Park</strong> and Jaesik Choi </i> [[pdf](https://drive.google.com/file/d/1LtM3HetpCO6O_exr99UQdpFGUXe5oN6V/view?usp=sharing)] 
+   *  <tag style='color:#0000AA;'>  Published in Conference IJCAI 2024 </tag>
 * Memorizing Documents with Guidance in Large Language Models
    * <i><strong>Bumjin Park</strong> and Jaesik Choi </i>  [pdf](https://drive.google.com/file/d/1eMXQKlSGJEFmdn1lmz0jGbGTKtSwKzpa/view?usp=sharing)] 
 * Identifying the Source of Generation for Large Language Models
