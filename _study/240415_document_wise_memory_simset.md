@@ -121,7 +121,7 @@ SimSet-Dimension의 경우 Loss 자체는 높은 수준을 보였기에 저장�
 ### 코드 오류 발생! 
 
 FEVER 학습 데이터에 대해서 Layer-norm과 gating을 추가하는 경우, Simset-1에 대해서 성능이 향상되었다.  SimSet2에 대해서는 성능이 저하되었다. 
-
+학습 다이나믹은 Simset의 경우, Template에 대한 다니아믹, Memory는 문서 학습에 대한 다이나믹이라서 큰 차이를 보인다. 
 <img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%211554&authkey=%21ALv2uupMChkiWQ4&width=867&height=570" width="867" height="570" />
 <img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%211555&authkey=%21APA0p3_k7nNOeHI&width=887&height=726" width="887" height="726" />
 
