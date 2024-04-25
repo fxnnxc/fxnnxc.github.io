@@ -25,16 +25,19 @@ description: ''
 
 <h4 id='2024' >2024 🌸 </h4>
 
-* Message based Action Adpater Framework in Multiagent Reinforcement Learning
-   *  <i>  <strong>Bumjin Park</strong> and Jaesik Choi </i> [[pdf](https://drive.google.com/file/d/1hX2616u-BdJ-04cUnDq2FAfan7mxlmaT/view?usp=sharing)]
-* Document Memory Allocation with Set Intersections in Large Language Models, 
-   *  <i> <strong>Bumjin Park</strong> and Jaesik Choi </i> [[pdf](https://drive.google.com/file/d/1LtM3HetpCO6O_exr99UQdpFGUXe5oN6V/view?usp=sharing)] 
-   *  <tag style='color:#0000AA;'>  Published in Conference IJCAI 2024 </tag>
+
 * Memorizing Documents with Guidance in Large Language Models
+   *  <tag style='color:#0000AA;'>  Published in Conference IJCAI 2024 </tag>
    * <i><strong>Bumjin Park</strong> and Jaesik Choi </i>  [pdf](https://drive.google.com/file/d/1eMXQKlSGJEFmdn1lmz0jGbGTKtSwKzpa/view?usp=sharing)] 
 * Identifying the Source of Generation for Large Language Models
    *   <i> <strong>Bumjin Park</strong> and Jaesik Choi </i> [[pdf](https://drive.google.com/file/d/1pdtxDgWIBN5shBs7_-ORUay0DilsK_sS/view?usp=drive_link)]  
    *  <tag style='color:#0000AA;'>  Published in Conference ICPRAI 2024 </tag>
+
+
+* Message based Action Adpater Framework in Multiagent Reinforcement Learning
+   *  <i>  <strong>Bumjin Park</strong> and Jaesik Choi </i> [[pdf](https://drive.google.com/file/d/1hX2616u-BdJ-04cUnDq2FAfan7mxlmaT/view?usp=sharing)]
+* Document Memory Allocation with Set Intersections in Large Language Models, 
+   *  <i> <strong>Bumjin Park</strong> and Jaesik Choi </i> [[pdf](https://drive.google.com/file/d/1LtM3HetpCO6O_exr99UQdpFGUXe5oN6V/view?usp=sharing)] 
 * ParchGrad: Controlled Internal Gradients for Reliable Saliency Map 
    * <i>  <strong>Bumjin Park </strong>, Giyoung Jeon, and Jaesik Choi </i> [[pdf](https://drive.google.com/file/d/1E_7MIQFcM3livmezMwD1fHmz6gwHm4j1/view?usp=sharing)]
 
