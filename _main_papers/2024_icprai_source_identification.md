@@ -72,7 +72,7 @@ One interesting observation is that the bigram representation generalize better 
 
 <br>
 <p align="center" >
-<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%212370&authkey=%21AAD0ACPktw_zwfs&width=1610&height=650" width="80%" />
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%212370&authkey=%21AAD0ACPktw_zwfs&width=1610&height=650" width="100%" />
 </p> 
 
 The paper includes more experiments and discussion on the token-level prediction. 
