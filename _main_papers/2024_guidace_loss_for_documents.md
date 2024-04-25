@@ -12,7 +12,7 @@ authors:
     - name: Jaesik Choi
       affiliations:
         name: KAIST
-img: /assets/main_papers/2024_guidance_loss_fig_update.png.png
+img: /assets/main_papers/2024_guidance_loss_fig_update.png
 author_names: <tag style="font-weight:800">Bumjin Park</tag>, Jaesik Choi
 ---
 
