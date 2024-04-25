@@ -46,7 +46,7 @@ Here is an example of the source identification from [Llama2 model](https://hugg
 The proposed method includes the two steps. 
 1. GPT is trained to memorize documents <d-footnote> This work assumes that the Wiki pages are already memorized in the pretrained state of open sourced LLMs </d-footnote>.  
 2. A source identifier, which is a multi-layer MLP is trained to predict the labels from the hidden representation of tokens. 
-
+<br>
 <p align="center" >
 <img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%212368&authkey=%21AMnw4HaL72CIXRU&width=1596&height=989" width="90%"/>
 </p> 
@@ -70,7 +70,7 @@ Our prediction problem is a token-level rather than sentence-level. That means, 
 
 One interesting observation is that the bigram representation generalize better than unigram or trigram representations. This observation shed light on the possibility of token-level source identification of AI generation.
 
-
+<br>
 <p align="center" >
 <img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%212370&authkey=%21AAD0ACPktw_zwfs&width=1610&height=650" width="80%" />
 </p> 
