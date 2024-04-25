@@ -1,7 +1,7 @@
 ---
 layout: distill
 title:   'Identifying the Source of Generation  for Large Language Models <strong>[ICPRAI 2024]</strong>' 
-date: 2024-04-03
+date: 2024-04-25
 giscus_comments : true
 description: This work introduces token-level source identification in the decoding step, which maps the token representation to the reference document. We propose a bi-gram source identifier which has two successive token representations as input.
 bibliography: all.bib
@@ -16,7 +16,8 @@ img: /assets/main_papers/2024_icprai_source_identification.png
 author_names: <tag style="font-weight:800">Bumjin Park</tag>, Jaesik Choi
 ---
 
-This post is a brief summary of the paper [ Identifying the Source of Generation for Large Language Models](). 
+This post is a brief summary of the paper <br>
+<it> <strong> [ Identifying the Source of Generation for Large Language Models](). </strong> </it>
 
 * 🆒 Code is available at [Github:fxnnxc/source_identification_of_llm](https://github.com/fxnnxc/source_identification_of_llm)
 * This work is accepted at [ICPRAI 2024](https://brain.korea.ac.kr/icprai2024/)
@@ -32,7 +33,13 @@ Learning text distribution is already hard work<d-footnote> Requires many parame
 This work reveals that the inference of document label from the hidden representation of GPT is a trainable connection of two distributions, hiddens and labels.  
 
 Here is an example of the source identification from [Llama2 model](https://huggingface.co/docs/transformers/main/model_doc/llama2). 
+
+<p align="center" >
 <img src="/assets/main_papers/2024_icprai_source_identification.png" width="80%">
+</p> 
+
+
+
 
 ## Proposed Approach
 
@@ -40,7 +47,12 @@ The proposed method includes the two steps.
 1. GPT is trained to memorize documents <d-footnote> This work assumes that the Wiki pages are already memorized in the pretrained state of open sourced LLMs </d-footnote>.  
 2. A source identifier, which is a multi-layer MLP is trained to predict the labels from the hidden representation of tokens. 
 
+<p align="center" >
 <img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%212368&authkey=%21AMnw4HaL72CIXRU&width=1596&height=989" width="90%"/>
+</p> 
+
+
+
 
 ## Proposed Methods
 
@@ -49,11 +61,19 @@ Our prediction problem is a token-level rather than sentence-level. That means, 
 1. Token-level identification of documents 
 2. Bi-gram representation of predict token-level document. 
 
+
+<p align="center" >
 <img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%212369&authkey=%21AAgFi2h27rNHXxU&width=1568&height=734" width="100%"/>
+</p> 
+
+
 
 One interesting observation is that the bigram representation generalize better than unigram or trigram representations. This observation shed light on the possibility of token-level source identification of AI generation.
 
+
+<p align="center" >
 <img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%212370&authkey=%21AAD0ACPktw_zwfs&width=1610&height=650" width="80%" />
+</p> 
 
 The paper includes more experiments and discussion on the token-level prediction. 
 
