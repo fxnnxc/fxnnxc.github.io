@@ -1,7 +1,7 @@
 ---
 layout: distill
 title:   'Memorizing Documents with Guidance in Large Language Models <strong>[IJCAI 2024]</strong>' 
-date: 2024-04-17
+date: 2024-04-25
 giscus_comments : true
 description: 
 bibliography: all.bib
@@ -13,6 +13,10 @@ img: /assets/main_papers/2024_guidance_loss_fig.png
 author_names: <tag style="font-weight:800">Bumjin Park</tag>, Jaesik Choi
 ---
 
-To be written 
+This post is a brief summary of the paper <br>
+*"[Memorizing Documents with Guidance in Large Language Models]()":*. 
 
-Author Response [[pdf link](https://1drv.ms/b/s!Asr4ZEBiKgSujBZozaWGnG5RTfOy?e=HNG8cz)]
+* 🍊 Code is available at [Github:fxnnxc/document_guidance_loss_for_llm](https://github.com/fxnnxc/document_guidance_loss_for_llm)
+* This work is accepted at [IJCAI 2024](https://ijcai24.org/)
+* Supplementary Materials [[pdf]()]
+* We release Author Response [[pdf ](https://1drv.ms/b/s!Asr4ZEBiKgSujBZozaWGnG5RTfOy?e=HNG8cz) ] for the readers interested in detailed discussions 

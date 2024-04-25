@@ -1,7 +1,7 @@
 ---
 layout: distill
 title:   'Identifying the Source of Generation  for Large Language Models <strong>[ICPRAI 2024]</strong>' 
-date: 2024-04-25
+date: 2024-04-24
 giscus_comments : true
 description: This work introduces token-level source identification in the decoding step, which maps the token representation to the reference document. We propose a bi-gram source identifier which has two successive token representations as input.
 bibliography: all.bib
