@@ -14,6 +14,7 @@ authors:
         name: KAIST
 img: /assets/main_papers/2024_guidance_loss_fig_update.png
 author_names: <tag style="font-weight:800">Bumjin Park</tag>, Jaesik Choi
+description: Memorizing documents with known location of GPT is an urgent task for the reliable and faithful generation. This work proposes document guidance loss to disentangle document knowledge in LLM. 
 ---
 
 This post is a brief summary of the paper <br>

@@ -13,9 +13,6 @@ title: 'Causal Variables and Distributed Neural Representations'
 description: ''
 ---
 
-
-
-
 ## interchange intervention (also known as activation patching)
 
 in which a neural network is provided a ‘base’ input, and sets of neurons are forced to take on the values they would have if different ‘source’ inputs were processed
