@@ -48,7 +48,7 @@ We have initial weight $w_0$ which is further rewritten with another weights $\D
 
 
 <figure>
-<img src="https://drive.google.com/uc?export=view&id=1m8m0GHn7NAgDJNjIieVSuyomec1M18-d">
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%212446&authkey=%21AG1O4N7rV_e9YOA&width=1024" width="1024" height="auto" />
 <figcaption>
 Figure from the paper "Rewriting a deep generative model"
 </figcaption>
@@ -144,7 +144,7 @@ The below example shows the editing of convolutional layer which produces $$v = 
 * Value $v$ : **rendered shape semantic** (`256 x 3 x 3` dim / reshaped: `2304`)
 
 <figure>
-<img src="https://drive.google.com/uc?export=view&id=1GfMXX5JbJJ6q4TswUhcNjL-zgyEGKJu7" >
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%212447&authkey=%21AIpClIcZ01mDp4g&width=1024" width="1024" height="auto" />
 <figcaption>
 Figure from the paper "Rewriting a deep generative model"
 </figcaption>
@@ -304,7 +304,7 @@ $$
 For example, the original car image has semantic wheel which is mapped to the label *Car* or *Bicycle* and leaves the value $v^\*$ from the *wheel* concept. When we want edit the wheel concept to *wooden wheel*, but preserves the prediction as *Car* and *Bicycle*, the new key *wooden wheel* needs to be mapped to the value $v^*$.
 
 <figure>
-<img src="https://drive.google.com/uc?export=view&id=1X-qMZZv5IWQZuCu0U5SWms2AL2DTa5HU" style="width:120%"  >
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%212449&authkey=%21AEG0f28C7pukc7M&width=1024" width="1024" height="auto" />
 <figcaption>
 Figure from the paper "Editing a classifier by rewriting its prediction rules"
 </figcaption>
@@ -315,7 +315,7 @@ Figure from the paper "Editing a classifier by rewriting its prediction rules"
 Because there is spurious correlation between backgrounds in classification, the prediction could be biased. For example, **snow** concept should be mapped to the value of **road** to be invariant to the backgrounds.  
 
 <figure>
-<img src="https://drive.google.com/uc?export=view&id=1GqxOKT_w5DatOa-Z77RJqrGwBOlG9-tW" style="width:120%" >
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%212448&authkey=%21AH2SNnmY6dpphEs&width=1024" width="1024" height="auto" />
 <figcaption>
 Figure from the paper "Editing a classifier by rewriting its prediction rules"
 </figcaption>
