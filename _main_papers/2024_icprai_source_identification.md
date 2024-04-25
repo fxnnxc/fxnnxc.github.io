@@ -17,7 +17,7 @@ author_names: <tag style="font-weight:800">Bumjin Park</tag>, Jaesik Choi
 ---
 
 This post is a brief summary of the paper <br>
-<it> <strong> [ Identifying the Source of Generation for Large Language Models](). </strong> </it>
+*"[Identifying the Source of Generation for Large Language Models]()":*. 
 
 * 🆒 Code is available at [Github:fxnnxc/source_identification_of_llm](https://github.com/fxnnxc/source_identification_of_llm)
 * This work is accepted at [ICPRAI 2024](https://brain.korea.ac.kr/icprai2024/)
