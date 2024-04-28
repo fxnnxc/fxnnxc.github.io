@@ -9,7 +9,7 @@ disqus_comments: false
 giscus_comments: false
 date: 2024-04-28
 featured: true
-title: 'Gated Sparse Autoencoding (GSAE)'
+title: '[Draft] Gated Sparse Autoencoding (GSAE)'
 description: '[baseline] 실험 구현 및 평가'
 ---
 
