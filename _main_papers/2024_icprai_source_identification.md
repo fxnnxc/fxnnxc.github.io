@@ -39,8 +39,6 @@ Here is an example of the source identification from [Llama2 model](https://hugg
 </p> 
 
 
-
-
 ## Proposed Approach
 
 The proposed method includes the two steps. 
@@ -50,8 +48,6 @@ The proposed method includes the two steps.
 <p align="center" >
 <img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%212368&authkey=%21AMnw4HaL72CIXRU&width=1596&height=989" width="90%"/>
 </p> 
-
-
 
 
 ## Proposed Methods
@@ -65,7 +61,6 @@ Our prediction problem is a token-level rather than sentence-level. That means, 
 <p align="center" >
 <img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%212369&authkey=%21AAgFi2h27rNHXxU&width=1568&height=734" width="100%"/>
 </p> 
-
 
 
 One interesting observation is that the bigram representation generalize better than unigram or trigram representations. This observation shed light on the possibility of token-level source identification of AI generation.
