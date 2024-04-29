@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: distill
 authors: 
     - name: Bumjin Park
       affiliations:
@@ -7,11 +7,13 @@ authors:
 bibliography: all.bib
 disqus_comments: false
 giscus_comments: false
-date: 2024-05-01
+date: 2024-04-29
 featured: true
 title: '[Draft] Sally-Anne Test and Indirect Effect with Hook'
 description: '[baseline] 실험 구현 및 평가'
 ---
+
+
 
 
 * Code for ToM : [github](https://github.com/fxnnxc/llm/tree/v24.04.29_ToM)
@@ -24,7 +26,7 @@ description: '[baseline] 실험 구현 및 평가'
 입출력 값이 편향적으로 생성되는 경우, 예측 결과를 신빙할 수 없다. 예를 들어서, 90:10으로 데이터의 분포가 이루어지는 경우, 90으로 찍어서 정확도 90%가 나오는지, 아니면 balance를 비슷하게 유지한 상태에서 90%가 나오는지 알기 어렵다. 따라서 모델의 정확도를 측정하기 위해서 정답은 될 수 있는한 찍기 어렵게 만들어야 한다. 그러나 QA 형태로 closed answer를 하는 경우 제대로 된 예측이 어렵다. 이를 해결하기 위해서 ToMChallenge 논문<d-cite key="ma2023tomchallenges"></d-cite>에서도 autograder라는 방식으로 도입했다. 이 방식은 GPT4를 사용하기에 실요성이 낮지만, ToM을 평가하기 위해서 필요한 방법인 것 같다. ToM은 일반적으로 인간의 높은 인지 수준을 요구한다. 따라서 레이블을 사람이 직관적으로 한 눈에 예측하기 어렵다. 
 
 
-## 믿을만한 ToM
+## 믿을만한 ToM 결과 
 
 일반 적어도 모델이 어느 부분에 있어서 어느정도 ToM을 보여야 한다. 
 그런데 context도 길고 모델이 제대로 이해하고 대답하는지 잘 모르겠다. 
@@ -35,13 +37,43 @@ description: '[baseline] 실험 구현 및 평가'
 
 한 가지 방법은 정답에 대해서 다양한 형태로 예측을 하여 gold answers 를 생성하고 가장 높은 정확도를 사용하는 것이다. 
 
-<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%218754&authkey=%21AFIV4a_yAo05pR8&width=1024" width="1024" height="auto" />
-
-Reality와 First A에 대해서는 정확도가 상대적으로 높은 것을 볼 수 있다. 반대로 1stB와 2nd에 대해서는 정확도가 대단히 낮다. 
-
 * 예시: A,B 모두 타월이 바구니에 있는 것을 확인하였고, B가 없을 때 A는 타월을 쓰레기통에 넣었다. 
 
 * 1stA: A는 현재 타월이 어디 있다고 생각하는가? (쓰레기통)
 * 1stB: B는 현재 타월이 어디 있다고 생각하는가? (바구니)
 * 2ndA: A가 생각하는 B의 타월 추정 위치는? (바구니)
 * 2ndB: B가 생각하는 A의 타월 추정 위치는? (바구니) 
+
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%218756&authkey=%21AOcn77RvPEvB8wo&width=785&height=661" width="785" height="661" />
+
+Reality와 First A에 대해서는 정확도가 상대적으로 높은 것을 볼 수 있다. 반대로 1stB와 2nd에 대해서는 정확도가 대단히 낮다. 
+
+<blockquote>
+사실 이 부분을 제대로 측정하기 위해서는 정답의 반대 레이블에 대한 믿음이 높은지 확인해야 한다. 해당 점수에서는 틀린 것에 대해서 hallucination을 포함하고 있기 때문이다. 
+즉, 0% 정확도가 나오는 부분이 ToM을 실패해서 나온 것인지 모델의 예측이 포맷이 안 맞아서 그런 것인지 확인해야 한다. 
+</blockquote>
+
+---
+
+## Hook and Indirect Effect 
+
+1. 모델에 대해서 제대로 예측된 샘플들을 가져온다. 
+2. Hook을 걸고 forward 를 진행하면서 특정 레이어를 끈다. 
+3. 데이터에 대해서 평균적으로 레이블을 바꾸는 부분을 찾는다. (hallucination이 나오는 것은 실패로 간주.)
+
+스코어는 $h^*$ 로 값을 바꿨을 때, 평균적으로 레이블이 바뀌는 정도로 측정한다. 
+
+$$
+S=\frac{1}{M} \sum_{\mathcal{D}}{\mathbb{1}(p(o) \ne p_{h*}(o))}
+$$
+
+###  (1stA)
+
+해당 결과는 단순하게 암기를 지우는 방식을 연구한다. 모델 내부의 특정 레이어는 데이터에 대해서 평균적으로 
+
+###  (2ndA)
+
+위 실험에서 second-order에 대한 성능은 저조하였다. 이 경우는 반대로 모델 예측을 제대로 하게 만들 수 있는 뉴런이 존재하는지 여부를 찾고자 한다. 
+First-order 와는 반대로 뉴런을 키는 방식으로 연구를 진행한다.
+
+

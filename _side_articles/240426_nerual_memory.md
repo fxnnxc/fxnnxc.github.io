@@ -18,12 +18,33 @@ description: 'This article is a review of several papers related to the neural m
 | Date | Venue|  Title |
 |------|------|------|
 | 2017 | ICLR | Learning to Remember Rare Events
-| 2023 | AAAI | Memory-Augmented Theory of Mind Network  
 | 2019 | ICCV | Memorizing Normality to Detect Anomaly: Memory-augmented Deep Autoencoder (MemAE) for Unsupervised Anomaly Detection
 | 2020 | ICLR | Generalization through memorization: Nearest neighbor language models
+| 2023 | AAAI | Memory-Augmented Theory of Mind Network  
+| 2023 | NeurIPS | Neural Priming for Sample-Efficient Adaptation 
+| 2023 | NeurIPS | Monitor-Guided Decoding of Code LMs with Static Analysis of Repository Context
+| 2024 | Arxiv   | TransformerFAM: Feedback attention is working memory
+| 2024 | Arxiv   | Leave No Context Behind: Efficient Infinite Context Transformers with Infini-attention
+
+## TransformerFAM: Feedback attention is working memory
 
 
+## Leave No Context Behind: Efficient Infinite Context Transformers with Infini-attention
 
+
+## Monitor-Guided Decoding of Code LMs with Static Analysis of Repository Context
+
+해당 방식은 Code generation LLM에 대해서 마지막 Logit을 가릴 mask를 기반으로 generation을 guide 하는 방식이다 watermark에서 다음 단어에 대한 분포를 수정하여 추후 예측을 위해서 사용했던 것처럼 해당 연구도 Valid code를 생성하기 위해서 샘플하는 단어를 제약하는 것이다. 
+
+
+## Neural Priming for Sample-Efficient Adaptation 
+
+Pretraining 데이터에 대해서 유사한 이미지 description을 가져와서 예측에 활용하는 neural priming pool을 제안하였다. 
+pretraining 당시 사용했던 학습 데이터는 이후 예측을 하는데 있어서 임베딩을 활용한다. 이러한 방식은 MT에서 활용하는 kNN search기반 예측에 대해서 
+pretraining 데이터를 활용하는 방식이다. 이는 모델이 데이터에 대해서 학습하며 생긴 bias를 활용하는 것과도 연관되어 있다. (이전에 기영님이 모델이 생각하는 것과 실제 레이블에  대해서 input attribution이 다르다는 것처럼, pretraining 데이터에 대한 임베딩 활용)
+
+1. 특정 레이블을 가지고 있는 데이터를 묶어서 클러스터를 형성한다. 
+2. 예측할 때, 해당 클러스터로 형성된 임베딩 벡터를 활용한다. 
 
 
 ## Memory-Augmented Theory of Mind Network
@@ -43,20 +64,6 @@ $$
 이러한 방식은 trajectory가 여러 state 들로 구성되어있기에 hierarchical하게 메모리를 뽑는 구조이다. 이 과정에서 attention으로 정보를 섞는 것은 두 번 나타난다. 
 key-value를 생성하는 방식은 LSTM의 hidden state로부터 forward 함수를 이용해서 연산한 것이다. 
 
-
-
-* hierarchical attention to selectively retrieve information about others.
-* rapid, selective querying of distal related past behaviours of others to deliberatively reason about their current mental state, beliefs and future behaviours
-* learn the memory mechanisms to build the computational ToM capability into artificial social agents.
-* ToMMY (Theory of Mind with MemorY)
-
-
-* Learning memory-augmented neural networks is a powerful technique for multi-step reasoning (Sukhbaatar et al. 2015; Graves et al. 2016), handling rare events (Kaiser et al. 2017), meta-learning (Santoro et al. 2016) and rapid reinforcement learning (Le et al. 2021). 
-* false-belief test to evaluate the ToM ability under high reasoning demand. False-belief tasks determine if the actor is maintaining an outdated belief about something that no longer
-holds. A classic example is the Sally-Anne Test (Wimmer and Perner 1983; Baron-Cohen, Leslie, and Frith 1985), in which Anne secretly moves a toy out of the original box, causing Sally to falsely believe that the toy is still there.  A
-version of the Sally-Anne Test for testing artificial theory of
-mind agents introduced in (Rabinowitz et al. 2018; Nguyen
-and Gonzalez 2021) take the form of grid-worlds. **When the actor tries to achieve the sub-task before reaching a goal, the position of the goal will be changed, a so-called swap event**. This event induces a false belief in the actor, and the observer needs to take the actor’s perspective to understand the actor’s false belief.
 
 
 ## Learning to Remember Rare Events
@@ -96,7 +103,7 @@ Autoencoder에 대해서 임베딩을 생성하고 key-value로부터 값을 선
 제안한 방식은 key에 대한 weight을 설정하는 부분에서 hard shrinking 을 사용하여 sparsity를 강제하였다. 
 
 $$
-\hat{w} = h(w_i;\lambda) = \begin{cases} w_i & \text{if} w_i > \lambda \\ 0 & \text{othderwise} \end{cases}
+\hat{w} = h(w_i;\lambda) = \begin{cases} w_i & \text{if} ~ w_i > \lambda \\ 0 & \text{othderwise} \end{cases}
 $$
 
 이 식은 ReLU에 의해서 다시 쓰여질 수 있다. 
