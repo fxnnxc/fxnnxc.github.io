@@ -61,9 +61,7 @@ and Gonzalez 2021) take the form of grid-worlds. **When the actor tries to achie
 
 ## Learning to Remember Rare Events
 
-Rare event를 사용하고 확인하는 것은 쉽지 않다. 특히나 neural network는 long-range나 긴 데이터에 대해서 사용하기 쉽지 않다. 
-
-메모리를 업데이트 하는 부분에 대해서 추가적으로 공부해야 한다. 
+Rare event를 사용하고 확인하는 것은 쉽지 않다. 특히나 neural network는 long-range나 긴 데이터에 대해서 사용하기 쉽지 않다. 메모리를 업데이트 하는 부분에 대해서 추가적으로 공부해야 한다. 
 
 
 ## Generalization Through Memorization: Nearest Neighbor Language Models 
