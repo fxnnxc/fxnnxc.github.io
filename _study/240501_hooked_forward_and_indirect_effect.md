@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: distill
 authors: 
     - name: Bumjin Park
       affiliations:
@@ -9,8 +9,8 @@ disqus_comments: false
 giscus_comments: false
 date: 2024-04-30
 featured: true
-title: '[Draft] Indirect Effect with Hook and Sally-Anne Test'
-description: '[baseline] 실험 구현 및 평가'
+title: 'Theory of Mind for LLM early experiments'
+description: 'ToM은 1st order에 대해서 작동하지만, 2nd order에 대해서는 제대로 작동하지 않는다.'
 ---
 
 * Code for ToM : [github](https://github.com/fxnnxc/llm/tree/v24.04.29_ToM)
