@@ -16,12 +16,15 @@ description: '[baseline] 실험 구현 및 평가'
 * Code for ToM : [github](https://github.com/fxnnxc/llm/tree/v24.04.29_ToM)
 * Code for ToM Hook
 
+---
+
 ## 모델 평가 Reproducibility 
 
 일단 데이터를 믿기 어렵다. 생성하는 방식 및 평가하는 방식에 따라서 결과값이 계속 달라지게 된다. 데이터에 문제가 있었다. 특정 레이블 (B) 값이 정답으로 사용되었는데, LLM이 단순히 B값을 예측하게 되는 경우 정답율이 100% 가까이 나왔다. 이를 개선하기 위해서 레이블을 섞었고, 정확도는 떨어지게 되었다. 데이터에 대해서 모델의 결과를 평가하는 경우 입력과 출력이 공정하게 형성되었는지 파악하는 것이 중요하다. 
 
 입출력 값이 편향적으로 생성되는 경우, 예측 결과를 신빙할 수 없다. 예를 들어서, 90:10으로 데이터의 분포가 이루어지는 경우, 90으로 찍어서 정확도 90%가 나오는지, 아니면 balance를 비슷하게 유지한 상태에서 90%가 나오는지 알기 어렵다. 따라서 모델의 정확도를 측정하기 위해서 정답은 될 수 있는한 찍기 어렵게 만들어야 한다. 그러나 QA 형태로 closed answer를 하는 경우 제대로 된 예측이 어렵다. 이를 해결하기 위해서 ToMChallenge 논문<d-cite key="ma2023tomchallenges"></d-cite>에서도 autograder라는 방식으로 도입했다. 이 방식은 GPT4를 사용하기에 실요성이 낮지만, ToM을 평가하기 위해서 필요한 방법인 것 같다. ToM은 일반적으로 인간의 높은 인지 수준을 요구한다. 따라서 레이블을 사람이 직관적으로 한 눈에 예측하기 어렵다. 
 
+---
 
 ## 믿을만한 ToM 결과 
 
@@ -41,7 +44,10 @@ description: '[baseline] 실험 구현 및 평가'
 * 2ndA: A가 생각하는 B의 타월 추정 위치는? (바구니)
 * 2ndB: B가 생각하는 A의 타월 추정 위치는? (바구니) 
 
+<br>
 <img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%218802&authkey=%21AKGhQEmd1TKHrlA&width=1024" width="1024" height="auto" />
+<br>
+
 
 Reality와 First A에 대해서는 정확도가 상대적으로 높은 것을 볼 수 있다. 반대로 1stB와 2nd에 대해서는 정확도가 대단히 낮다. 
 
@@ -50,6 +56,7 @@ Reality와 First A에 대해서는 정확도가 상대적으로 높은 것을 �
 즉, 0% 정확도가 나오는 부분이 ToM을 실패해서 나온 것인지 모델의 예측이 포맷이 안 맞아서 그런 것인지 확인해야 한다. 
 </blockquote>
 
+---
 
 ## Generation Results 
 
