@@ -41,7 +41,7 @@ description: '[baseline] 실험 구현 및 평가'
 * 2ndA: A가 생각하는 B의 타월 추정 위치는? (바구니)
 * 2ndB: B가 생각하는 A의 타월 추정 위치는? (바구니) 
 
-<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%218756&authkey=%21AOcn77RvPEvB8wo&width=785&height=661" width="785" height="661" />
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%218802&authkey=%21AKGhQEmd1TKHrlA&width=1024" width="1024" height="auto" />
 
 Reality와 First A에 대해서는 정확도가 상대적으로 높은 것을 볼 수 있다. 반대로 1stB와 2nd에 대해서는 정확도가 대단히 낮다. 
 
@@ -50,3 +50,474 @@ Reality와 First A에 대해서는 정확도가 상대적으로 높은 것을 �
 즉, 0% 정확도가 나오는 부분이 ToM을 실패해서 나온 것인지 모델의 예측이 포맷이 안 맞아서 그런 것인지 확인해야 한다. 
 </blockquote>
 
+
+```
+=====================================================
+question type: REALITY
+=====================================================
+LLAMA2_CHAT_HF/7B 
+
+🚕 Prompt <s> Choose the correct answer from A or B for the following question:
+Question:
+Sabra and Hillary were hanging out in the bedroom. They saw a briefcase and a bucket. They found a mitten in the briefcase. Hillary left the bedroom. Sabra moved the mitten to the bucket. After Hillary came back to the bedroom, where would Sabra think Hillary would look for the mitten?
+
+A. bucket
+B. briefcase
+
+Answer:
+🦕 Gold Answer B.briefcase.
+🍊 Prediction A. bucket
+
+Explanation: Sabra moved the mitten to the bucket, so she would think Hillary would look for it there
+------------------------------------------
+LLAMA2_CHAT_HF/13B 
+
+🚕 Prompt <s> Choose the correct answer from A or B for the following question:
+Question:
+Sabra and Hillary were hanging out in the bedroom. They saw a briefcase and a bucket. They found a mitten in the briefcase. Hillary left the bedroom. Sabra moved the mitten to the bucket. After Hillary came back to the bedroom, where would Sabra think Hillary would look for the mitten?
+
+A. bucket
+B. briefcase
+
+Answer:
+🦕 Gold Answer B.briefcase.
+🍊 Prediction A. bucket
+------------------------------------------
+LLAMA2_HF/7B 
+
+🚕 Prompt <s> Choose the correct answer from A or B for the following question:
+Question:
+Sabra and Hillary were hanging out in the bedroom. They saw a briefcase and a bucket. They found a mitten in the briefcase. Hillary left the bedroom. Sabra moved the mitten to the bucket. After Hillary came back to the bedroom, where would Sabra think Hillary would look for the mitten?
+
+A. briefcase
+B. bucket
+
+Answer:
+🦕 Gold Answer A.briefcase.
+🍊 Prediction A. briefcase
+
+Explanation:
+
+Sabra moved the mitten to the bucket. After Hillary came back
+------------------------------------------
+LLAMA2_HF/13B 
+
+🚕 Prompt <s> Choose the correct answer from A or B for the following question:
+Question:
+Sabra and Hillary were hanging out in the bedroom. They saw a briefcase and a bucket. They found a mitten in the briefcase. Hillary left the bedroom. Sabra moved the mitten to the bucket. After Hillary came back to the bedroom, where would Sabra think Hillary would look for the mitten?
+
+A. briefcase
+B. bucket
+
+Answer:
+🦕 Gold Answer A.briefcase.
+🍊 Prediction The answer is B.
+
+Explanation:
+
+Sabra moved the mitten to the bucket. After Hillary came
+------------------------------------------
+LLAMA3/8B 
+
+🚕 Prompt <|begin_of_text|>Choose the correct answer from A or B for the following question:
+Question:
+Sabra and Hillary were hanging out in the bedroom. They saw a briefcase and a bucket. They found a mitten in the briefcase. Hillary left the bedroom. Sabra moved the mitten to the bucket. After Hillary came back to the bedroom, where would Sabra think Hillary would look for the mitten?
+
+A. briefcase
+B. bucket
+
+Answer:
+🦕 Gold Answer A.briefcase.
+🍊 Prediction B
+------------------------------------------
+=====================================================
+question type: MEMORY
+=====================================================
+LLAMA2_CHAT_HF/7B 
+
+🚕 Prompt <s> Choose the correct answer from A or B for the following question:
+Question:
+Sabra and Hillary were hanging out in the bedroom. They saw a briefcase and a bucket. They found a mitten in the briefcase. Hillary left the bedroom. Sabra moved the mitten to the bucket. After Hillary came back to the bedroom, where would Sabra think Hillary would look for the mitten?
+
+A. bucket
+B. briefcase
+
+Answer:
+🦕 Gold Answer B.briefcase.
+🍊 Prediction A. bucket
+
+Explanation: Sabra moved the mitten to the bucket, so she would think Hillary would look for it there
+------------------------------------------
+LLAMA2_CHAT_HF/13B 
+
+🚕 Prompt <s> Choose the correct answer from A or B for the following question:
+Question:
+Sabra and Hillary were hanging out in the bedroom. They saw a briefcase and a bucket. They found a mitten in the briefcase. Hillary left the bedroom. Sabra moved the mitten to the bucket. After Hillary came back to the bedroom, where would Sabra think Hillary would look for the mitten?
+
+A. bucket
+B. briefcase
+
+Answer:
+🦕 Gold Answer B.briefcase.
+🍊 Prediction A. bucket
+------------------------------------------
+LLAMA2_HF/7B 
+
+🚕 Prompt <s> Choose the correct answer from A or B for the following question:
+Question:
+Sabra and Hillary were hanging out in the bedroom. They saw a briefcase and a bucket. They found a mitten in the briefcase. Hillary left the bedroom. Sabra moved the mitten to the bucket. After Hillary came back to the bedroom, where would Sabra think Hillary would look for the mitten?
+
+A. briefcase
+B. bucket
+
+Answer:
+🦕 Gold Answer A.briefcase.
+🍊 Prediction A. briefcase
+
+Explanation:
+
+Sabra moved the mitten to the bucket. After Hillary came back
+------------------------------------------
+LLAMA2_HF/13B 
+
+🚕 Prompt <s> Choose the correct answer from A or B for the following question:
+Question:
+Sabra and Hillary were hanging out in the bedroom. They saw a briefcase and a bucket. They found a mitten in the briefcase. Hillary left the bedroom. Sabra moved the mitten to the bucket. After Hillary came back to the bedroom, where would Sabra think Hillary would look for the mitten?
+
+A. briefcase
+B. bucket
+
+Answer:
+🦕 Gold Answer A.briefcase.
+🍊 Prediction The answer is B.
+
+Explanation:
+
+Sabra moved the mitten to the bucket. After Hillary came
+------------------------------------------
+LLAMA3/8B 
+
+🚕 Prompt <|begin_of_text|>Choose the correct answer from A or B for the following question:
+Question:
+Sabra and Hillary were hanging out in the bedroom. They saw a briefcase and a bucket. They found a mitten in the briefcase. Hillary left the bedroom. Sabra moved the mitten to the bucket. After Hillary came back to the bedroom, where would Sabra think Hillary would look for the mitten?
+
+A. briefcase
+B. bucket
+
+Answer:
+🦕 Gold Answer A.briefcase.
+🍊 Prediction B
+------------------------------------------
+=====================================================
+question type: 1STB
+=====================================================
+LLAMA2_CHAT_HF/7B 
+
+🚕 Prompt <s> Choose the correct answer from A or B for the following question:
+Question:
+Sabra and Hillary were hanging out in the bedroom. They saw a briefcase and a bucket. They found a mitten in the briefcase. Hillary left the bedroom. Sabra moved the mitten to the bucket. After Hillary came back to the bedroom, where would Sabra think Hillary would look for the mitten?
+
+A. bucket
+B. briefcase
+
+Answer:
+🦕 Gold Answer B.briefcase.
+🍊 Prediction A. bucket
+
+Explanation: Sabra moved the mitten to the bucket, so she would think Hillary would look for it there
+------------------------------------------
+LLAMA2_CHAT_HF/13B 
+
+🚕 Prompt <s> Choose the correct answer from A or B for the following question:
+Question:
+Sabra and Hillary were hanging out in the bedroom. They saw a briefcase and a bucket. They found a mitten in the briefcase. Hillary left the bedroom. Sabra moved the mitten to the bucket. After Hillary came back to the bedroom, where would Sabra think Hillary would look for the mitten?
+
+A. bucket
+B. briefcase
+
+Answer:
+🦕 Gold Answer B.briefcase.
+🍊 Prediction A. bucket
+------------------------------------------
+LLAMA2_HF/7B 
+
+🚕 Prompt <s> Choose the correct answer from A or B for the following question:
+Question:
+Sabra and Hillary were hanging out in the bedroom. They saw a briefcase and a bucket. They found a mitten in the briefcase. Hillary left the bedroom. Sabra moved the mitten to the bucket. After Hillary came back to the bedroom, where would Sabra think Hillary would look for the mitten?
+
+A. briefcase
+B. bucket
+
+Answer:
+🦕 Gold Answer A.briefcase.
+🍊 Prediction A. briefcase
+
+Explanation:
+
+Sabra moved the mitten to the bucket. After Hillary came back
+------------------------------------------
+LLAMA2_HF/13B 
+
+🚕 Prompt <s> Choose the correct answer from A or B for the following question:
+Question:
+Sabra and Hillary were hanging out in the bedroom. They saw a briefcase and a bucket. They found a mitten in the briefcase. Hillary left the bedroom. Sabra moved the mitten to the bucket. After Hillary came back to the bedroom, where would Sabra think Hillary would look for the mitten?
+
+A. briefcase
+B. bucket
+
+Answer:
+🦕 Gold Answer A.briefcase.
+🍊 Prediction The answer is B.
+
+Explanation:
+
+Sabra moved the mitten to the bucket. After Hillary came
+------------------------------------------
+LLAMA3/8B 
+
+🚕 Prompt <|begin_of_text|>Choose the correct answer from A or B for the following question:
+Question:
+Sabra and Hillary were hanging out in the bedroom. They saw a briefcase and a bucket. They found a mitten in the briefcase. Hillary left the bedroom. Sabra moved the mitten to the bucket. After Hillary came back to the bedroom, where would Sabra think Hillary would look for the mitten?
+
+A. briefcase
+B. bucket
+
+Answer:
+🦕 Gold Answer A.briefcase.
+🍊 Prediction B
+------------------------------------------
+=====================================================
+question type: 1STA
+=====================================================
+LLAMA2_CHAT_HF/7B 
+
+🚕 Prompt <s> Choose the correct answer from A or B for the following question:
+Question:
+Sabra and Hillary were hanging out in the bedroom. They saw a briefcase and a bucket. They found a mitten in the briefcase. Hillary left the bedroom. Sabra moved the mitten to the bucket. After Hillary came back to the bedroom, where would Sabra think Hillary would look for the mitten?
+
+A. bucket
+B. briefcase
+
+Answer:
+🦕 Gold Answer B.briefcase.
+🍊 Prediction A. bucket
+
+Explanation: Sabra moved the mitten to the bucket, so she would think Hillary would look for it there
+------------------------------------------
+LLAMA2_CHAT_HF/13B 
+
+🚕 Prompt <s> Choose the correct answer from A or B for the following question:
+Question:
+Sabra and Hillary were hanging out in the bedroom. They saw a briefcase and a bucket. They found a mitten in the briefcase. Hillary left the bedroom. Sabra moved the mitten to the bucket. After Hillary came back to the bedroom, where would Sabra think Hillary would look for the mitten?
+
+A. bucket
+B. briefcase
+
+Answer:
+🦕 Gold Answer B.briefcase.
+🍊 Prediction A. bucket
+------------------------------------------
+LLAMA2_HF/7B 
+
+🚕 Prompt <s> Choose the correct answer from A or B for the following question:
+Question:
+Sabra and Hillary were hanging out in the bedroom. They saw a briefcase and a bucket. They found a mitten in the briefcase. Hillary left the bedroom. Sabra moved the mitten to the bucket. After Hillary came back to the bedroom, where would Sabra think Hillary would look for the mitten?
+
+A. briefcase
+B. bucket
+
+Answer:
+🦕 Gold Answer A.briefcase.
+🍊 Prediction A. briefcase
+
+Explanation:
+
+Sabra moved the mitten to the bucket. After Hillary came back
+------------------------------------------
+LLAMA2_HF/13B 
+
+🚕 Prompt <s> Choose the correct answer from A or B for the following question:
+Question:
+Sabra and Hillary were hanging out in the bedroom. They saw a briefcase and a bucket. They found a mitten in the briefcase. Hillary left the bedroom. Sabra moved the mitten to the bucket. After Hillary came back to the bedroom, where would Sabra think Hillary would look for the mitten?
+
+A. briefcase
+B. bucket
+
+Answer:
+🦕 Gold Answer A.briefcase.
+🍊 Prediction The answer is B.
+
+Explanation:
+
+Sabra moved the mitten to the bucket. After Hillary came
+------------------------------------------
+LLAMA3/8B 
+
+🚕 Prompt <|begin_of_text|>Choose the correct answer from A or B for the following question:
+Question:
+Sabra and Hillary were hanging out in the bedroom. They saw a briefcase and a bucket. They found a mitten in the briefcase. Hillary left the bedroom. Sabra moved the mitten to the bucket. After Hillary came back to the bedroom, where would Sabra think Hillary would look for the mitten?
+
+A. briefcase
+B. bucket
+
+Answer:
+🦕 Gold Answer A.briefcase.
+🍊 Prediction B
+------------------------------------------
+=====================================================
+question type: 2NDA
+=====================================================
+LLAMA2_CHAT_HF/7B 
+
+🚕 Prompt <s> Choose the correct answer from A or B for the following question:
+Question:
+Sabra and Hillary were hanging out in the bedroom. They saw a briefcase and a bucket. They found a mitten in the briefcase. Hillary left the bedroom. Sabra moved the mitten to the bucket. After Hillary came back to the bedroom, where would Sabra think Hillary would look for the mitten?
+
+A. bucket
+B. briefcase
+
+Answer:
+🦕 Gold Answer B.briefcase.
+🍊 Prediction A. bucket
+
+Explanation: Sabra moved the mitten to the bucket, so she would think Hillary would look for it there
+------------------------------------------
+LLAMA2_CHAT_HF/13B 
+
+🚕 Prompt <s> Choose the correct answer from A or B for the following question:
+Question:
+Sabra and Hillary were hanging out in the bedroom. They saw a briefcase and a bucket. They found a mitten in the briefcase. Hillary left the bedroom. Sabra moved the mitten to the bucket. After Hillary came back to the bedroom, where would Sabra think Hillary would look for the mitten?
+
+A. bucket
+B. briefcase
+
+Answer:
+🦕 Gold Answer B.briefcase.
+🍊 Prediction A. bucket
+------------------------------------------
+LLAMA2_HF/7B 
+
+🚕 Prompt <s> Choose the correct answer from A or B for the following question:
+Question:
+Sabra and Hillary were hanging out in the bedroom. They saw a briefcase and a bucket. They found a mitten in the briefcase. Hillary left the bedroom. Sabra moved the mitten to the bucket. After Hillary came back to the bedroom, where would Sabra think Hillary would look for the mitten?
+
+A. briefcase
+B. bucket
+
+Answer:
+🦕 Gold Answer A.briefcase.
+🍊 Prediction A. briefcase
+
+Explanation:
+
+Sabra moved the mitten to the bucket. After Hillary came back
+------------------------------------------
+LLAMA2_HF/13B 
+
+🚕 Prompt <s> Choose the correct answer from A or B for the following question:
+Question:
+Sabra and Hillary were hanging out in the bedroom. They saw a briefcase and a bucket. They found a mitten in the briefcase. Hillary left the bedroom. Sabra moved the mitten to the bucket. After Hillary came back to the bedroom, where would Sabra think Hillary would look for the mitten?
+
+A. briefcase
+B. bucket
+
+Answer:
+🦕 Gold Answer A.briefcase.
+🍊 Prediction The answer is B.
+
+Explanation:
+
+Sabra moved the mitten to the bucket. After Hillary came
+------------------------------------------
+LLAMA3/8B 
+
+🚕 Prompt <|begin_of_text|>Choose the correct answer from A or B for the following question:
+Question:
+Sabra and Hillary were hanging out in the bedroom. They saw a briefcase and a bucket. They found a mitten in the briefcase. Hillary left the bedroom. Sabra moved the mitten to the bucket. After Hillary came back to the bedroom, where would Sabra think Hillary would look for the mitten?
+
+A. briefcase
+B. bucket
+
+Answer:
+🦕 Gold Answer A.briefcase.
+🍊 Prediction B
+------------------------------------------
+=====================================================
+question type: 2NDB
+=====================================================
+LLAMA2_CHAT_HF/7B 
+
+🚕 Prompt <s> Choose the correct answer from A or B for the following question:
+Question:
+Sabra and Hillary were hanging out in the bedroom. They saw a briefcase and a bucket. They found a mitten in the briefcase. Hillary left the bedroom. Sabra moved the mitten to the bucket. After Hillary came back to the bedroom, where would Sabra think Hillary would look for the mitten?
+
+A. bucket
+B. briefcase
+
+Answer:
+🦕 Gold Answer B.briefcase.
+🍊 Prediction A. bucket
+
+Explanation: Sabra moved the mitten to the bucket, so she would think Hillary would look for it there
+------------------------------------------
+LLAMA2_CHAT_HF/13B 
+
+🚕 Prompt <s> Choose the correct answer from A or B for the following question:
+Question:
+Sabra and Hillary were hanging out in the bedroom. They saw a briefcase and a bucket. They found a mitten in the briefcase. Hillary left the bedroom. Sabra moved the mitten to the bucket. After Hillary came back to the bedroom, where would Sabra think Hillary would look for the mitten?
+
+A. bucket
+B. briefcase
+
+Answer:
+🦕 Gold Answer B.briefcase.
+🍊 Prediction A. bucket
+------------------------------------------
+LLAMA2_HF/7B 
+
+🚕 Prompt <s> Choose the correct answer from A or B for the following question:
+Question:
+Sabra and Hillary were hanging out in the bedroom. They saw a briefcase and a bucket. They found a mitten in the briefcase. Hillary left the bedroom. Sabra moved the mitten to the bucket. After Hillary came back to the bedroom, where would Sabra think Hillary would look for the mitten?
+
+A. briefcase
+B. bucket
+
+Answer:
+🦕 Gold Answer A.briefcase.
+🍊 Prediction A. briefcase
+
+Explanation:
+
+Sabra moved the mitten to the bucket. After Hillary came back
+------------------------------------------
+LLAMA2_HF/13B 
+
+🚕 Prompt <s> Choose the correct answer from A or B for the following question:
+Question:
+Sabra and Hillary were hanging out in the bedroom. They saw a briefcase and a bucket. They found a mitten in the briefcase. Hillary left the bedroom. Sabra moved the mitten to the bucket. After Hillary came back to the bedroom, where would Sabra think Hillary would look for the mitten?
+
+A. briefcase
+B. bucket
+
+Answer:
+🦕 Gold Answer A.briefcase.
+🍊 Prediction The answer is B.
+
+Explanation:
+
+Sabra moved the mitten to the bucket. After Hillary came
+------------------------------------------
+LLAMA3/8B 
+
+🚕 Prompt <|begin_of_text|>Choose the correct answer from A or B for the following question:
+Question:
+Sabra and Hillary were hanging out in the bedroom. They saw a briefcase and a bucket. They found a mitten in the briefcase. Hillary left the bedroom. Sabra moved the mitten to the bucket. After Hillary came back to the bedroom, where would Sabra think Hillary would look for the mitten?
+
+A. briefcase
+B. bucket
+
+Answer:
+🦕 Gold Answer A.briefcase.
+🍊 Prediction B
+------------------------------------------
+```
