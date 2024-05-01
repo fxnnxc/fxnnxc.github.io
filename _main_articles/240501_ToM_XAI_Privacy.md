@@ -26,13 +26,11 @@ _styles: >
 
 세상에 우연은 없다. 뉴럴 메모리 관련해서 자료를 조사하던 중 발견했던 `Theory of Mind`의 Sally-Anne Test를 확인하고자 LLama2, 3 모델에 대해서 실험한 월요일 바로 다음 날 콜로키움에서 `ToM` 관련 연구를 들었다. 가끔씩 나는 중요하다고 생각되는 연구들을 미리 공부하거나 Youtube에서 찾아보는 경향성이 있는데, 향후 내가 미리 공부한 내용이 세상에 나타날 때 깜짝 놀라곤 한다. 이번에도 ToM을 흥미로부터 공부하고 콜로키움을 들으면서 `ToM`과 `설명가능인공지능` 그리고 `데이터의 보호` 입장에서 앞으로 AI에 중요한 기술을 생각하게 되었다. 
 
-<p align="center">
-<figure>
-<img src="/assets/articles/ai_ToM.jpg" width="50%">
+<figure align="center">
+<img src="/assets/articles/ai_ToM.jpg" style="width:50%">
 <figcaption> AI는 앞뒤가 똑같을까? 
 </figcaption>
 </figure>
-</p>
 
 ## Theory of Mind and XAI
 
