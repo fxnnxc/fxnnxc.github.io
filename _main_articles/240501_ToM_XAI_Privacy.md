@@ -28,7 +28,7 @@ _styles: >
 
 <p align="center">
 <figure>
-<img src="/assets/articles/ai_ToM.jpg" width="70%">
+<img src="/assets/articles/ai_ToM.jpg" width="50%">
 <figcaption> AI는 앞뒤가 똑같을까? 
 </figcaption>
 </figure>
