@@ -44,7 +44,7 @@ description: '[baseline] 실험 구현 및 평가'
 * 2ndA: A가 생각하는 B의 타월 추정 위치는? (바구니)
 * 2ndB: B가 생각하는 A의 타월 추정 위치는? (바구니) 
 
-<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%218756&authkey=%21AOcn77RvPEvB8wo&width=785&height=661" width="785" height="661" />
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%218756&authkey=%21AOcn77RvPEvB8wo&width=785&height=661" />
 
 Reality와 First A에 대해서는 정확도가 상대적으로 높은 것을 볼 수 있다. 반대로 1stB와 2nd에 대해서는 정확도가 대단히 낮다. 
 
