@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6, strong, div{
   color: var(--global-text-color);
   font-size: var(--global-text-size);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;;
-  line-height: 140%;
+  line-height: 150%;
   margin-top:10px;
   margin-bottom:10px;
   font-weight: 420;
@@ -71,7 +71,7 @@ span {
 p {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;;
   color: var(--global-text-color);
-  line-height: 140%;
+  line-height: 150%;
   font-weight: 420;
   font-size: var(--global-text-size);
   // word-break: keep-all;
@@ -615,7 +615,7 @@ footer.sticky-bottom {
         transition: all 0.15s ease;
 
         p {
-          line-height: 140%;
+          line-height: 150%;
           margin: 10px;
         }
         pre {
