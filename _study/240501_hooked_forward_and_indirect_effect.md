@@ -1,7 +1,7 @@
 ---
 layout: distill
 authors: 
-    - name: Bumjin Park
+    - name: Bumjin[믕] Park
       affiliations:
         name: KAIST
 bibliography: all.bib
