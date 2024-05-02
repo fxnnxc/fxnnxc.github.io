@@ -5,7 +5,7 @@ authors:
       affiliations:
         name: KAIST
 bibliography: all.bib
-giscus_comments: false
+giscus_comments: true
 disqus_comments: false
 date: 2024-05-01
 featured: true
@@ -21,13 +21,18 @@ _styles: >
     .p {
         font-size:20px;
     }
-
+    .center{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
 ---
 
 세상에 우연은 없다. 뉴럴 메모리 관련해서 자료를 조사하던 중 발견했던 `Theory of Mind`의 Sally-Anne Test를 확인하고자 LLama2, 3 모델에 대해서 실험한 월요일 바로 다음 날 콜로키움에서 `ToM` 관련 연구를 들었다. 가끔씩 나는 중요하다고 생각되는 연구들을 미리 공부하거나 Youtube에서 찾아보는 경향성이 있는데, 향후 내가 미리 공부한 내용이 세상에 나타날 때 깜짝 놀라곤 한다. 이번에도 ToM을 흥미로부터 공부하고 콜로키움을 들으면서 `ToM`과 `설명가능인공지능` 그리고 `데이터의 보호` 입장에서 앞으로 AI에 중요한 기술을 생각하게 되었다. 
 
 <figure align="center">
-<img src="/assets/articles/ai_ToM.jpg" style="width:50%">
+<img src="/assets/articles/ai_ToM.jpg" class='center'>
 <figcaption> AI는 앞뒤가 똑같을까? 
 </figcaption>
 </figure>
@@ -102,7 +107,7 @@ Mind of Theory를 위해서 두 개의 독립적인 독립적인 스트림을 �
 아래 ToM 실험 결과에서 2nd Order의 ToM은 모두 실패하였다. 이는 A가 B의 생각을 묻는 질문이었고, 상대방의 생각을 모델링하는 부분이 없다는 것을 보였다. 
 
 <br>
-<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%218802&authkey=%21AKGhQEmd1TKHrlA&width=1024" style="padding:10px; border:2px solid #AAAAFF; border-radius:10px" />
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%218802&authkey=%21AKGhQEmd1TKHrlA&width=1024" style="padding:10px; border:2px solid #AAAAFF; border-radius:10px" class='center' />
 <br>
 
 지속적으로 발전하는 AI모델은 더 많은 것을 모델링하고 정보를 저장하고 활용할 것이다. 그리고 그 과정에서 정보들이 혼재되어 jailbreak 현상이 나타나거나 이상한 대답이 나오지 않는다는 보장이 없다. AI를 인간과 동일하게 모델링하기 위해서는 사람이 정보의 흐름을 만드는 것처럼 AI 내부 정보처리의 흐름을 만들고, 그 흐름을 설명할 수 있는 기술이 필요하다. 
