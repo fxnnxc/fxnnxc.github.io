@@ -9,8 +9,8 @@ disqus_comments: false
 giscus_comments: false
 date: 2024-04-30
 featured: true
-title: 'Sally-Anne Test and Indirect Effect with Hook'
-description: 'LLM 모델은 ToM에 대해서 실패했다. (Llama2, Llama3)'
+title: 'Theory of Mind for LLM early experiments'
+description: 'ToM은 1st order에 대해서 작동하지만, 2nd order에 대해서는 제대로 작동하지 않는다.'
 ---
 
 
@@ -43,7 +43,7 @@ description: 'LLM 모델은 ToM에 대해서 실패했다. (Llama2, Llama3)'
 * 2ndB: B가 생각하는 A의 타월 추정 위치는? (바구니) 
 
 <br>
-<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%218802&authkey=%21AKGhQEmd1TKHrlA&width=1024" width="1024" height="auto" />
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%218802&authkey=%21AKGhQEmd1TKHrlA&width=1024" />
 <br>
 
 
