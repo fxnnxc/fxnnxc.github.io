@@ -9,7 +9,7 @@ disqus_comments: false
 giscus_comments: false
 date: 2024-04-29
 featured: true
-title: 'Early Experiments on Sparse Autoencoding (SAE)'
+title: '📌 Early Experiments on Sparse Autoencoding (SAE)'
 description: '신경망의 표현에 숨어있는 수많은 특징들을 찾아내기 위해서 최근 연구되는 SAE 기법을 추종하기 위해 실험을 진행하였다. '
 ---
 
