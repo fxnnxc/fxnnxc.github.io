@@ -42,14 +42,9 @@ AI 모델은 인류에 해가 되는 문장을 말하면 안된다. 최근 연�
     * Towards Monosemanticity: Decomposing Language Models With Dictionary Learning
     * Mapping the Mind of a Large Language Model
 
-
 ---
 
-
-
 ## Abstract 
-
-
 
 
 ## Introduction 
@@ -62,6 +57,26 @@ AI 모델은 인류에 해가 되는 문장을 말하면 안된다. 최근 연�
 
 ## Method
 
+We consider a set of concepts $\mathcal{C} = (z_1, z_2, \cdots)$ where each concept $c$ is related to a human-oriented concepts, such as harmless and safety. 
+Each concept $z$ has examples as a set of passages $$\mathcal{Y}_{c}$$, where passage $$y = (y_1, y_2, \cdots) \in \mathcal{Y}_{c}$$ consists of tokens $y_i$ and includes the semantic meaning of concept $c$. We use a notation $c \perp c'$ when two concepts $c$ and $c'$ can not exist together, e.g., safety concept and violence concept.
+
+We define two terms *phase* and *phase transition$ as follows. 
+
+> Definition: **Phase** <br>
+>> A $c$-*phase* is a subset of time steps $[t_{begin}, t_{end}]$ where the generated content $$({y}_{t_{begin}}, \cdots, {y}_{t_{end}})$$ with $${y}_{t_{k}} \sim P_{\theta}(\cdot \vert y_1, \cdots, y_{t_{k}-1})$$ can be included in the set of concept-related passages $$\mathcal{Y}_{c}$$.
+
+The definition of *phase* assumes a passage $y$. The inclusion of an element in the set element in $\mathcal{Y}_{c}$ can be either determined by a human-annotator or text similarity scores with the examples in the set.  
+
+<!-- We define *safe phase* which generates safety related passes $\mathcal{Y}_{safety}$   -->
+
+> Definition: **Phase Emergence**   <br>
+>> A *phase emergence* is the time step when the generation includes new concept $c'$ as a phase$. 
+
+> Definition: **Phase Transition**   <br>
+>> A *phase transition* is a $c$-phase emergence with the disappearance of existing concept $c'$ such that $ c' \perp c$.  
+
+
+Rigorously, the definition of phase transition 
 
 ## Experiments 
 
