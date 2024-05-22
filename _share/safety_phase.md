@@ -70,7 +70,7 @@ The definition of *phase* assumes a passage $y$. The inclusion of an element in 
 <!-- We define *safe phase* which generates safety related passes $\mathcal{Y}_{safety}$   -->
 
 > Definition: **Phase Emergence**   <br>
->> A *phase emergence* is the time step when the generation includes new concept $c'$ as a phase$. 
+>> A *phase emergence* is the time step when the generation includes new concept $c'$ as a phase. 
 
 > Definition: **Phase Transition**   <br>
 >> A *phase transition* is a $c$-phase emergence with the disappearance of existing concept $c'$ such that $ c' \perp c$.  
