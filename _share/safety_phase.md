@@ -57,8 +57,8 @@ AI 모델은 인류에 해가 되는 문장을 말하면 안된다. 최근 연�
 
 ## Method
 
-We consider a set of concepts $\mathcal{C} = (z_1, z_2, \cdots)$ where each concept $c$ is related to a human-oriented concepts, such as harmless and safety. 
-Each concept $z$ has examples as a set of passages $$\mathcal{Y}_{c}$$, where passage $$y = (y_1, y_2, \cdots) \in \mathcal{Y}_{c}$$ consists of tokens $y_i$ and includes the semantic meaning of concept $c$. We use a notation $c \perp c'$ when two concepts $c$ and $c'$ can not exist together, e.g., safety concept and violence concept.
+We consider a set of concepts $\mathcal{C} = (z_1, z_2, \cdots)$ where each concept $c$ is related to a human-oriented concept, such as harmless or safety. 
+Each concept $z$ has examples, a set of passages $$\mathcal{Y}_{c}$$, where passage $$y = (y_1, y_2, \cdots) \in \mathcal{Y}_{c}$$ consists of tokens $y_i$ and includes the semantic meaning of concept $c$. We use notation $c \perp c'$ when two concepts $c$ and $c'$ can not exist together, e.g., safety concept and violence concept.
 
 We define two terms *phase* and *phase transition$ as follows. 
 
