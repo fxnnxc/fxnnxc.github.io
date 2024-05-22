@@ -7,7 +7,7 @@ authors:
 bibliography: all.bib
 date: 2024-05-21
 giscus_comments: true
-title: 'Safety Phase Explanation in Large Language Models'
+title: 'Explanation on Safety Phase Transition in Large Language Models'
 description: '안전장치로 학습된 모델의 phase transition에 대한 체계적 연구. ' 
 ---
 
