@@ -30,6 +30,13 @@ AI 모델은 인류에 해가 되는 문장을 말하면 안된다. 최근 연�
 
 대규모 언어 모델은 사회의 규약과 정보에 맞춰서 지속적으로 기존 정보를 지우고 새롭게 덮어쓴다. 또한 부정적인 정보들은 생성을 막도록 추가적인 학습이 되며 사회규범과 법의 변화에 맞추어 모델의 작동 방식은 바뀐다. 본 연구에서 탐구하는 *safety phase transition*은 안전 문구와 관련된 LLM의 생성과정을 분석함으로써 실험적 관찰을 바탕으로한 더욱 안전한 모델 구조에 대한 영감을 제시한다. 
 
+## Big Picture 
+
+- safety transition in LLM
+    -  📌 (3) safety transition의 정의. Complete and incomplete sentence 정의. Harmful sentence 정의
+    -  📌 (3.1, 4.1) template-base evaluation of safety-phase transition (Yeonji, Jinsil)
+    -  📌 (3.2, 4.2) activation-base evaluation of safety-phase transition (Bumjin, Youngju)
+
 ## Collection of Papers 
 
 * **Safety finetuning + deceiving** 
