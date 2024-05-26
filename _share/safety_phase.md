@@ -27,15 +27,15 @@ AI 모델은 인류에 해가 되는 문장을 말하면 안된다. 최근 연�
 
 **📌 1) 모델은 어떠한 상황에서 safety phase가 발생하는가.**: 이 연구는 safety와 관련된 다양한 문장에 대해서 각 문장의 표현들을 비교하고 클러스터링하여 전반적인 모델의 safety sentence들의 입출력을 통계적으로 분석한다.  
 **📌 2) Safety phase는 어떤 방식으로 trigger 되는가?**: 모델 내부에서는 safety와 관련된 문장을 생성하도록 유도하는 특징 혹은 뉴런이 존재한다. Safety를 유발하는 모델 내부를 탐구하여 해당 구조의 조작으로 safety와 관련된 문장들의 변화를 탐구한다. 
-
+s
 대규모 언어 모델은 사회의 규약과 정보에 맞춰서 지속적으로 기존 정보를 지우고 새롭게 덮어쓴다. 또한 부정적인 정보들은 생성을 막도록 추가적인 학습이 되며 사회규범과 법의 변화에 맞추어 모델의 작동 방식은 바뀐다. 본 연구에서 탐구하는 *safety phase transition*은 안전 문구와 관련된 LLM의 생성과정을 분석함으로써 실험적 관찰을 바탕으로한 더욱 안전한 모델 구조에 대한 영감을 제시한다. 
 
 ## Big Picture 
 
 - safety transition in LLM
-    -  📌 (3) safety transition의 정의. Complete and incomplete sentence 정의. Harmful sentence 정의
-    -  📌 (3.1, 4.1) template-base evaluation of safety-phase transition (Yeonji, Jinsil)
-    -  📌 (3.2, 4.2) activation-base evaluation of safety-phase transition (Bumjin, Youngju)
+    -  (3) safety transition의 정의. Complete and incomplete sentence 정의. Harmful sentence 정의
+    -  🥕 (3.1, 4.1) template-base evaluation of safety-phase transition (Yeonji, Jinsil)
+    -  🍊 (3.2, 4.2) activation-base evaluation of safety-phase transition (Bumjin, Youngju)
 
 ## Collection of Papers 
 
