@@ -34,7 +34,7 @@ s
 
 - safety transition in LLM
     -  (3) safety transition의 정의. Complete and incomplete sentence 정의. Harmful sentence 정의
-    -  🥕 (3.1, 4.1) template-base evaluation of safety-phase transition (Yeonji, Jinsil)
+    -  🥕 (3.1, 4.1) template-base evaluation of safety-phase transition (Yeonjea, Jinsil)
     -  🍊 (3.2, 4.2) activation-base evaluation of safety-phase transition (Bumjin, Youngju)
 
 ## Collection of Papers 
