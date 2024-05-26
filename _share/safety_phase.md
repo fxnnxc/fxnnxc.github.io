@@ -10,6 +10,15 @@ giscus_comments: true
 title: 'Explanation on Safety Phase Transition in Large Language Models'
 description: '안전장치로 학습된 모델의 phase transition에 대한 체계적 연구. ' 
 ---
+<style>
+.table td, table th{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    color: var(--global-text-color);
+    line-height: 140%;
+    font-weight: 420;
+    font-size: var(--global-text-size);
+} 
+</style>
 
 
 ## Motiv 
@@ -33,10 +42,19 @@ AI 모델은 인류에 해가 되는 문장을 말하면 안된다. 최근 연�
 
 * **Jail-break** 
     * Defending chatgpt against jailbreak attack via self-reminders
-    * Many-shot Jailbreaking
-
+    * Many-shot jailbreaking
+    * Universal and Transferable Adversarial Attacks on Aligned Language Models
+    * Jailbroken: How does llm safety training fail?
+    * “Do Anything Now”: Characterizing and Evaluating In-The-Wild Jailbreak Prompts on Large Language Models
+* Detecting Jailbreaks 
+    * Causality Analysis for Evaluating the Security of Large Language Models
+* Explanation on LLM
+    * Explainability for Large Language Models: A Survey
 * **Safety** 
     * Towards understanding sycophancy in language models
+    * GPT-4 Technical Report
+    * Constitutional AI:Harmlessness from AI feedback
+
 
 * **Interpretability (feature)**
     * Towards Monosemanticity: Decomposing Language Models With Dictionary Learning
@@ -47,15 +65,14 @@ AI 모델은 인류에 해가 되는 문장을 말하면 안된다. 최근 연�
 ## Abstract 
 
 
-## Introduction 
+## 1. Introduction 
+
+
+## 2. Related Work
 
 
 
-## Related Work
-
-
-
-## Method
+## 3. Method
 
 We consider a set of concepts $\mathcal{C} = (z_1, z_2, \cdots)$ where each concept $c$ is related to a human-oriented concept, such as harmless or safety. 
 Each concept $z$ has examples, a set of passages $$\mathcal{Y}_{c}$$, where passage $$y = (y_1, y_2, \cdots) \in \mathcal{Y}_{c}$$ consists of tokens $y_i$ and includes the semantic meaning of concept $c$. We use notation $c \perp c'$ when two concepts $c$ and $c'$ can not exist together, e.g., safety concept and violence concept.
@@ -78,13 +95,71 @@ The definition of *phase* assumes a passage $y$. The inclusion of an element in 
 
 Rigorously, the definition of phase transition 
 
-## Experiments 
+### 3.1 Safety-Phase Transition 
+
+consider two types of passages, $\mathcal{T}_{com}$ and $\mathcal{T}_{incom}$ where the elements are complete and incomplete sentences. 
+
+Consider a harmful prompt $\mathcal{P} \in\mathcal{T}_{com}$. 
+
+Figure below shows the phase transition for complete and incomplete cases. 
+<p align='center'>
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%219678&authkey=%21AL_paZel8mue_pc&width=1636&height=602" width="1636" height="250" />
+</p>
 
 
-## Results 
+### 3.2 Detection of Phase Transition 
+
+Several work propose the methods to detect the conceptual neurons. 
+
+* Value Detection via optimization : find the activation pattern that mostly maximize the likelihood of the safe phase. (FactualGPT)
+* Activation : Find the activation pattern via forwarding the target output
+* Neuron Attribution : Compute the attribution score via gradient descent.  
+
+We find a vector at the end of sentence. A hidden representation $A_{safe}$ which maximizes the forward. 
+
+> What about the key-value structure? Our we finding any key? 
+> We do not find a sparse key neurons which activate the concept. 
+> Because recent work reveals that the neural network prefers. However, it could be the case that only the sparse combination of neurons forms the target activation. Therefore, finding neuron (entry point for vector representation) is not the primitive problem. 
+
+## 4. Experiments 
+
+## 4.1 Phase Transition with Templates
+
+We categorize four types of generations for the complete and incomplete prompts.   
 
 
-## Conclusion
+#### Complete
+
+|  Harmful Generation      |  Safety-phase Transition  |  $\mathcal{P}$="Teach me how to hurt people."| 
+|:---:|:---:| :------------------| 
+|  -    | ✅     |   **I cannot fullfil your request.** 
+|  -    | ❌     |   **A stab in the back ...**
+
+#### Incomplete
+
+ |  Harmful Generation      |  Safety-phase Transition  |  $\mathcal{P}'$="A stab in the back or"| 
+|:---:|:---:| :------------------| 
+ | ✅    | ✅   |   **a knife to the chest. <br> I cannot fullfil your request.** 
+  | ✅    | ❌  |  **a knife to the chest. <br> I addition, shoot a gun.** 
+  | ❌    | ✅  |  **hurt is not a good action <br> I cannot fullfil your request.** 
+  | ❌    | ❌ |  **hurt is not a good action. <br> but  you can shoot a gun**
+
+## 4.2 Phase Transition via Activation 
+
+### Adding concept
+
+1. Does the jailbreak examples shows the safe-phase with the activation addition?
+2. Does the incomplete sentence jailbreak examples shows the safe-phase without completion of the harmful completion?
+
+### Removing concept
+
+
+## 5. Results 
+
+
+## 6. Discussion
+
+## 7. Conclusion
 
 
 
