@@ -90,49 +90,69 @@ hr {
 }
 
 table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+th {
+  background-color: #f8f8f8;
+  font-weight: bold;
+}
+tr:hover {
+  background-color: #f1f1f1;
+}
 
-  // border-collapse:separate;
-  border:solid black 1px;
-  // border-radius:6px;
+// table {
 
-    th{
-      background-color: #eaf4ff;
-    }
-    tr{
-      border-bottom: 1px solid #000000;
-      // border-right: 0.5px dashed #03054e;
-      // border-left: 0.5px dashed #03054e;
-      background-color: #ffffff;
-      // border-top: 2px solid #000000;
-  }
+//   // border-collapse:separate;
+//   border:solid black 1px;
+//   // border-radius:6px;
+
+//     th{
+//       background-color: #eaf4ff;
+//     }
+//     tr{
+//       border-bottom: 1px solid #000000;
+//       // border-right: 0.5px dashed #03054e;
+//       // border-left: 0.5px dashed #03054e;
+//       background-color: #ffffff;
+//       // border-top: 2px solid #000000;
+//   }
   
 
-    td, th {
-      font-size: var(--global-text-size);
-      color: var(--global-text-color);
-      // border: 2px solid #444444;
-      // border-bottom: 1px solid #444444;
-      border-left: 0.5px dashed #444444;
-      padding: 10px;
-      // border-left: 1px solid #444444;
-      // border-right: 1px solid #444444;
-    }
+//     td, th {
+//       font-size: var(--global-text-size);
+//       color: var(--global-text-color);
+//       // border: 2px solid #444444;
+//       // border-bottom: 1px solid #444444;
+//       border-left: 0.5px dashed #444444;
+//       padding: 10px;
+//       // border-left: 1px solid #444444;
+//       // border-right: 1px solid #444444;
+//     }
     
-    // th:first-child, td:first-child {
-    //   border-left: none;
-    //   border-bottom: 2px solid #000000;
-    //   border-top: 2px solid #000000;
-    //   border: 1px;
-    // }
-    th{
-      border-top: 2.5px solid #03054e;
-      border-bottom: 2.5px solid #2227b5;
-      text-align: center;
-      margin-left: auto;
-      margin-right: auto;
-    }
+//     // th:first-child, td:first-child {
+//     //   border-left: none;
+//     //   border-bottom: 2px solid #000000;
+//     //   border-top: 2px solid #000000;
+//     //   border: 1px;
+//     // }
+//     th{
+//       border-top: 2.5px solid #03054e;
+//       border-bottom: 2.5px solid #2227b5;
+//       text-align: center;
+//       margin-left: auto;
+//       margin-right: auto;
+//     }
 
-}
+// }
 
 a, table.table a {
   color: #0070e8;
