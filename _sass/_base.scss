@@ -74,7 +74,7 @@ span {
 p {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;;
   color: var(--global-text-color);
-  line-height: 140%;
+  line-height: 160%;
   font-weight: 420;
   font-size: var(--global-text-size);
   // word-break: keep-all;
@@ -638,7 +638,7 @@ footer.sticky-bottom {
         transition: all 0.15s ease;
 
         p {
-          line-height: 140%;
+          line-height: 160%;
           margin: 10px;
         }
         pre {
@@ -689,7 +689,7 @@ pre {
 
 code {
   color: #ffffff;
-  background-color: #005f7f;
+  background-color: #006e49;
   font-family: 'Liberation Mono', sans-serif; 
   border-radius: 5px;
   // border: 5px solid #005f7f; 

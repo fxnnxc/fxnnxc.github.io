@@ -9,7 +9,7 @@ giscus_comments: true
 disqus_comments: true
 date: 2023-08-13
 featured: true
-img: /assets/kor/인지/tree.png
+img: https://onedrive.live.com/embed?resid=AE042A624064F8CA%2111078&authkey=%21AG5aKy26wLQ4SvU&height=660
 title: '인지 1'
 description: '사람은 사물을 있는 그대로 본다고 착각한다. <br> 📚 Series: 인지를 이해하는 길 1' 
 ---
@@ -20,7 +20,7 @@ description: '사람은 사물을 있는 그대로 본다고 착각한다. <br> 
 
 
 <figure style="text-align:center; display:block;width:100;">
-<img src="/assets/kor/인지/tree.png" style="width:35%">
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%2111078&authkey=%21AG5aKy26wLQ4SvU&height=660" style="width:35%">
 <figcaption>
   어쩌면, 나무로 인지할지도 모르겠다. 난 그저 검정색 선을 그었을 뿐인데 말이다.  <br> 
   어쩌면, 오른쪽 밑에 웃는 이모티콘은 인식했는지도 모르겠다. 무의식은 이미 알고 있었을까? <br>
@@ -38,7 +38,7 @@ description: '사람은 사물을 있는 그대로 본다고 착각한다. <br> 
 물론 본인이 스스로 정한 한계 때문에 못하는 경우가 많겠지만 말이다. "나는 못하는 속독을 못하는 사람이라고 인식하는 것처럼 말이다". 
 
  
-* 📚 대부분의 읽기: 시신경 → [글자 뉴런] + [글자 뉴런] + [글자 뉴런] + [글자 뉴런] → [**문장 의미 뉴런**] 
+* 📚 대부분의 읽기: 시신경 → [글자 뉴런] + [글자 뉴런] + [글자 뉴런] → [**문장 의미 뉴런**] 
 * 📚 속독: 시신경 → [**문장 의미 뉴런**] 
 
 
