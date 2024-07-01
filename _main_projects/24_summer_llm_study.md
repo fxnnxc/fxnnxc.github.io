@@ -90,7 +90,7 @@ THe scope of this study consists of two parts:
     </thead>
     <tbody>
             <tr>
-                <td class="custom">07/03 <br> (10:00 pm) <br> Bumjin </td>
+                <td class="custom">07/03 <br> (8:00 pm) <br> Bumjin </td>
                 <td class="custom">
                 <strong> Tech </strong>:  Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet, Anthropic 2024.  <a href="https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html"> [link] </a> 
                 <br>
