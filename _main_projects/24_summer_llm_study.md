@@ -99,7 +99,9 @@ THe scope of this study consists of two parts:
             </tr>
             <tr>
                 <td class="custom">07/10 <br> (08:00 pm)</td>
-                <td class="custom"> </td>
+                <td class="custom"> 
+                <strong> Tech </strong>: Identifying Linear Relational Concepts in Large Language Models<br>
+                </td>
             </tr>
             <tr>
                 <td class="custom">07/10 <br> (08:00 pm)</td>
@@ -160,7 +162,15 @@ THe scope of this study consists of two parts:
 
 * **ICML 2024** :The list of selected papers in [openreview](https://openreview.net/group?id=ICML.cc/2024/Conference#tab-accept-oral). 
   * Monitoring AI-Modified Content at Scale: A Case Study on the Impact of ChatGPT on AI Conference Peer Reviews, ICML 2024.  <a href="https://openreview.net/forum?id=bX3J7ho18S">[link]</a>
-  * 
+
+
+* The Remarkable Robustness of LLMs: Stages of Inference?
+* A Systematic Comparison of Sparse Autoencoder Variants for Model Steering on the IOI Task
+* Investigating How Large Language Models Leverage Internal Knowledge to Perform Complex Reasoning
+* Memory Augmented Language Models through Mixture ofWord Experts
+* LLM Critics Help Catch LLM Bugs (OpenAI)
+
+
 
 ## External Items
 
