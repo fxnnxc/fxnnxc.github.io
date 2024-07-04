@@ -48,7 +48,7 @@ Currently,
 <ul>
 <li> 📨 <tag class="box-demo-link" style='color:#000000;background:#ffffff;border-radius: 10px;'>bumjin@kaist.ac.kr</tag> </li>
 <li> <a href="/share/full_paper_list"> Papers </a>  </li>
-<li> <a href="/share/main_projects"> Projects </a>  </li>
+<li> <a href="/main_projects"> Projects </a>  </li>
 <li> CV: [<a href="/share/cv"> English </a>]    [<a href="/share/cv_korean"> Korean </a>]  </li>
 <li> 🅖 <a class="box-demo-link" href="https://scholar.google.co.kr/citations?user=XzIXaxoAAAAJ&hl=ko" style='color:#0f06f0; background:#EEEEEE;' >Google Scholar</a>  </li>
 </ul>
