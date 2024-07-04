@@ -5,7 +5,7 @@ authors:
       affiliations:
         name: KAIST
 bibliography: all.bib
-date: 2024-04-03
+date: 2024-07-03
 featured: true
 toc:
   - name: '2024'
@@ -17,28 +17,44 @@ description: ''
 
 ---
 <style>
-  ul { list-style-type: "- "; }
-  li {color:#6f1000; font-weight:400;}
-  strong {font-weight:700}
+  ul { list-style-type: ""; }
+  li {color:#000000; font-weight:400;}
+  ul > li  {
+            font-weight: bold;
+            color: #000000;
+            font-size: 1.10rem;
+        }
+  ul ul > li {
+            font-weight: normal;
+            color: gray;
+            font-size: 0.9rem;
+        }
+  strong {
+        font-weight:700;
+        font-size: 0.9rem;
+        }
   i {color:black}
+  span {
+    color:#123123;
+  }
   </style>
 
 <h4 id='2024' >2024 🌸 </h4>
 
 
-* Memorizing Documents with Guidance in Large Language Models
-   *  <tag style='color:#0000AA;'>  Published in Conference IJCAI 2024 </tag>
-   * <i><strong>Bumjin Park</strong> and Jaesik Choi </i>  [pdf](https://drive.google.com/file/d/1eMXQKlSGJEFmdn1lmz0jGbGTKtSwKzpa/view?usp=sharing)] 
-* Identifying the Source of Generation for Large Language Models
+* <span> [IJCAI 2024] </span> Memorizing Documents with Guidance in Large Language Models
+   * <i><strong>Bumjin Park</strong> and Jaesik Choi </i>  [[pdf](https://drive.google.com/file/d/1eMXQKlSGJEFmdn1lmz0jGbGTKtSwKzpa/view?usp=sharing)] 
+* <span> [ICPRAI 2024] </span> Identifying the Source of Generation for Large Language Models
    *   <i> <strong>Bumjin Park</strong> and Jaesik Choi </i> [[pdf](https://drive.google.com/file/d/1pdtxDgWIBN5shBs7_-ORUay0DilsK_sS/view?usp=drive_link)]  
-   *  <tag style='color:#0000AA;'>  Published in Conference ICPRAI 2024 </tag>
-
-
-* Message based Action Adpater Framework in Multiagent Reinforcement Learning
+* <span> [Arxiv] </span> Representation Interpretation of Refusal Mechanism In Large Language Models
+  * <i><strong>Bumjin Park</strong>, Yeonjea Kim, Jinsil Lee, Youngju Joung and Jaesik Choi</i> [[html](https://room1805.github.io/room1806/)]
+* <span> [Arxiv] </span> Incomplete Prompt Jailbreak
+  * <i>Yeonjea Kim, Jinsil Lee, <strong>Bumjin Park</strong>, Youngju Joung and Jaesik Choi </i>  [[html](https://room1805.github.io/room1805/)]
+* <span> [Arxiv] </span> Message based Action Adpater Framework in Multiagent Reinforcement Learning
    *  <i>  <strong>Bumjin Park</strong> and Jaesik Choi </i> [[pdf](https://drive.google.com/file/d/1hX2616u-BdJ-04cUnDq2FAfan7mxlmaT/view?usp=sharing)]
-* Document Memory Allocation with Set Intersections in Large Language Models, 
+* <span> [Arxiv] </span> Document Memory Allocation with Set Intersections in Large Language Models, 
    *  <i> <strong>Bumjin Park</strong> and Jaesik Choi </i> [[pdf](https://drive.google.com/file/d/1LtM3HetpCO6O_exr99UQdpFGUXe5oN6V/view?usp=sharing)] 
-* ParchGrad: Controlled Internal Gradients for Reliable Saliency Map 
+* <span> [Arxiv] </span> ParchGrad: Controlled Internal Gradients for Reliable Saliency Map 
    * <i>  <strong>Bumjin Park </strong>, Giyoung Jeon, and Jaesik Choi </i> [[pdf](https://drive.google.com/file/d/1E_7MIQFcM3livmezMwD1fHmz6gwHm4j1/view?usp=sharing)]
 
 

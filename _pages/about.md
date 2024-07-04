@@ -33,12 +33,10 @@ Feel free to contact for discussions on discovering the secrets of ANNs 🤗.
 <div style="display: grid;grid-template-columns: 4fr 2fr;padding:10px;align-items:center;">
 <div style="line-height:2.0;border:2px dashed #222222;border-radius:5px;padding:10px;">
 <!-- 📨 <tag class="box-demo-link" style='color:#000000;background:#ffffff;border-radius: 10px;'>bumjin.research@gmail.com</tag> <br> -->
- <li> Currently, 🧑🏻‍🎓 Ph.D Student in  <a class="box-demo-link" href="https://gsai.kaist.ac.kr/" style="background:#0000AA;color:#ffe600;"> KAIST  </a>  </li>
-<li> 🅖 <a class="box-demo-link" href="https://scholar.google.co.kr/citations?user=XzIXaxoAAAAJ&hl=ko" style='color:#ffe600;' >Google Scholar</a>  </li>
+Currently, 
+ <li> 🧑🏻‍🎓 Ph.D Student in  <a class="box-demo-link" href="https://gsai.kaist.ac.kr/" style="color:#0f06f0; background:#EEEEEE;"> KAIST  </a> </li>
+ <li> Working on Document Memory Structure in LLMs...</li>
 <!-- <li> ⛳️ <a class="box-demo-link" href="">  CV (not available now) </a>  </li> -->
-<li> 📝 <a class="box-demo-link" href="/share/full_paper_list" style="background:#000560;color:#ffe600;"> Paper List </a>  </li>
-<li> 🚀   <a class="box-demo-link" href="/main_projects/" style="background:#000560;color:#ffe600;"> Project List </a>  </li>
- 📨 contact: <tag class="box-demo-link" style='color:#000000;background:#ffffff;border-radius: 10px;'>bumjin@kaist.ac.kr</tag> 
 </div>
 <div style='margin-left:20%;'>
   <img src="assets/common/me.png" width="90%;" style="align:right; border-radius:10%;border:0px solid;" > 
@@ -46,9 +44,26 @@ Feel free to contact for discussions on discovering the secrets of ANNs 🤗.
 </div>
 
 
+<h2> Research / Project </h2>
+<ul>
+<li> 📨 <tag class="box-demo-link" style='color:#000000;background:#ffffff;border-radius: 10px;'>bumjin@kaist.ac.kr</tag> </li>
+<li> <a href="/share/full_paper_list"> Papers </a>  </li>
+<li> <a href="/share/main_projects"> Projects </a>  </li>
+<li> CV: [<a href="/share/cv"> English </a>]    [<a href="/share/cv_korean"> Korean </a>]  </li>
+<li> 🅖 <a class="box-demo-link" href="https://scholar.google.co.kr/citations?user=XzIXaxoAAAAJ&hl=ko" style='color:#0f06f0; background:#EEEEEE;' >Google Scholar</a>  </li>
+</ul>
 
 <!-- -------------------- --------------------  Papers -------------------- -------------------- -->
-    
+
+
+<h2> Korean Channels </h2>
+<ul>
+<li> <a href="https://www.youtube.com/@bumjini">  <img src="/assets/icon_youtube.png" width=20px> Youtube </a> </li>
+<li> <a href="https://brunch.co.kr/@bumjini">  <img src="/assets/icon_brunch.png"  width=20px>  Brunch </a> </li>
+<li> <a href="https://room1805.github.io">  🔗  Room1805 </a> </li>
+</ul>
+
+
 
 
 
