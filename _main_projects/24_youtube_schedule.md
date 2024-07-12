@@ -64,6 +64,12 @@ img: 'assets/char.png'
 </style>
 
 
+<div class="inline-container">
+        <img src="/assets/char.png" alt="Description" width="50" height="50">
+        <span>영상 업로드 일정입니다 :) </span>
+</div>
+
+
 <table>
     <colgroup>
         <col>
@@ -80,18 +86,25 @@ img: 'assets/char.png'
                 <td class="custom">07/13 </td>
                 <td class="custom"> The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits <br>
                 <a href="https://arxiv.org/abs/2402.17764"> [pdf] </a>
-                <a href=""> [youtube] </a>
                 </td>
-            
+            </tr>
+            <tr>
+                <td class="custom">07/17 </td>
+                <td class="custom"> Mechanistic Interpretability in ICML 2024<br>
+                Measuring Progress in Dictionary Learning for Language Model Interpretability with Board Game Models <br>
+                <a href="https://openreview.net/group?id=ICML.cc/2024/Workshop/MI#tab-accept-oral"> [OpenReview] </a>
+                </td>
+            </tr>
+            <tr>
+                <td class="custom">07/20 </td>
+                <td class="custom"> Mechanistic Interpretability in ICML 2024<br>
+                The Geometry of Categorical and Hierarchical Concepts in Large Language Models <br>
+                <a href="https://openreview.net/group?id=ICML.cc/2024/Workshop/MI#tab-accept-oral"> [OpenReview] </a>
+                </td>
+            </tr>
     </tbody>
 </table>
 
 
-
-
-
-<p>
-영상 업로드 일정입니다 :) 
-</p>
 
 
