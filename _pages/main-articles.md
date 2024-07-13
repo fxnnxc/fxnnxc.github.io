@@ -146,6 +146,22 @@ a {
                     <div class="article-type">Literature Review</div>
                     <div class="access-type">Mechanistic Interpretability</div>
                     <div class="date">13 Jul 2024</div> <br>
+                    <a class="link" href="/main_articles/240713_mi2" > [Post] </a> 
+                    <a class="link" href="https://openreview.net/forum?id=qzsDKwGJyB" > [OpenReview] </a> <br>
+                </td>
+                <td class="content">
+                    <a class="link" href="/main_articles/240713_mi2" > 
+                    <h2 class="content-title">Review on dictionary learning for mechanistic interpretability in ICML 2024 
+                    </h2></a> 
+                    <p class="description">Literature reviews on ICML 2024 mechanistic interpretability workshop oral and spotlight papers.</p>
+                    <p class="authors">Bumjin Park</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="meta-data">
+                    <div class="article-type">Literature Review</div>
+                    <div class="access-type">Mechanistic Interpretability</div>
+                    <div class="date">13 Jul 2024</div> <br>
                     <a class="link" href="/main_articles/240713_mi1" > [Post] </a> 
                     <a class="link" href="https://openreview.net/forum?id=pJs3ZiKBM5" > [OpenReview] </a> <br>
                 </td>
