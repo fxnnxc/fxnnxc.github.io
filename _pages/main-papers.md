@@ -4,48 +4,189 @@ description: Main Papers for Interpretability Research
 title: Papers
 permalink: /main_papers/
 ---
-<div class="post">
-  <div class="header-bar">
-    <!-- <h2>{{ page.description }}</h2> -->
-    <p align='left'>
-    You can find the list of full papers in <strong> <a href="../share/full_paper_list/"> the full paper list </a>  </strong>
-    </p>
-  </div>
-  <ul class="post-list">
-    {%- assign sorted_pages = site.main_papers | sort: "date" %}
-    {%- assign sorted_pages = sorted_pages | reverse -%} 
 
-    {% for post in sorted_pages %}
-    {% assign read_time = post.content | number_of_words | divided_by: 180 | plus: 1 %}
-    {% assign year = post.date | date: "%Y" %}
-    {% assign tags = post.tags | join: "" %}
-    {% assign categories = post.categories | join: "" %}
-      <h2>
-        {% if post.redirect == blank %}
-          <a class="post-title" href="{{ post.url | prepend: site.baseurl }}" style="text-decoration:none; font-size: 20px; color:#362f5b ">{{ post.title }}</a>
-        {% else %}
-        <a class="post-title" href="{% if post.redirect contains '://' %}{{ post.redirect }}{% else %}{{ post.redirect | relative_url }}{% endif %}">{{ post.title }}</a>
-        {% endif %}
-      </h2>
-      <div style="border-bottom:#e4e4e4 solid;display: grid;grid-template-columns: 3fr 3fr; " >
-        <div>
-      {% if post.img %}
-          <img src="{{ post.img }}" width="100%" style="margin-top:10px;margin-bottom:10px;margin-left:0px;border-radius: 0px;padding-right:5px;"> 
-      {% endif %}
-      </div>
-      <div>
-<tag style="line-height: 120%;color:#00004B;font-family:Times New Roman; background-color:#F5F5FF;padding:5px; border-radius:15px;">{{ post.author_names }}</tag>
-<p style="line-height: 140%;color:#00004B;font-family:Times New Roman;">{{ post.description }}</p>
-      
-      <p class="post-meta"> {{read_time}} min read &nbsp; &middot; &nbsp;
-        {{ post.date | date: '%B %-d, %Y' }}
-      </p>
-    </div>
+<style>
 
-  </div>
-    {% endfor %}
-  </ul>
-  {% include pagination.html %}
+body {
+    font-family: Arial, sans-serif;
+}
 
-    {%- include footer.html %}
+.table-container {
+    /* overflow-x: auto; 테이블이 컨테이너 밖으로 나가지 않도록 스크롤 생성 */
+    width: 100%; /* 필요한 경우 컨테이너 너비 조절 */
+    display: flex; /* 컨테이너를 flex로 설정 */
+    justify-content: center; /* 수평 가운데 정렬 */
+}
+
+table {
+    border-collapse: collapse;
+    table-layout: fixed; 컬럼 길이 고정
+    width: auto; /* 테이블 너비를 내용에 맞게 자동 조정 */
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+    width: 400px; /* 컬럼 길이 고정 */
+
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+th:nth-child(1), td:nth-child(1) {
+    width: 150px; /* 첫 번째 컬럼의 너비 */
+}
+
+th:nth-child(2), td:nth-child(2) {
+    width: 750px; /* 두 번째 컬럼의 너비 */
+}
+
+th:nth-child(3), td:nth-child(3) {
+    width: 300px; /* 세 번째 컬럼의 너비 */
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+}
+
+.styled-table tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table td {
+    word-wrap: break-word;   
+    overflow-wrap: break-word;
+    vertical-align: top;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+
+.meta-data {
+    width: 120px;
+    padding: 20px;
+    vertical-align: top;
+    font-size: 14px;
+    color: #333333;
+}
+
+.article-type {
+    font-weight: bold;
+}
+
+.access-type {
+    color: red;
+}
+
+.link {
+    color: #F95893;
+    font-size: 14px;
+}
+
+
+.date {
+    color: #666666;
+}
+
+.content {
+    padding: 20px;
+    vertical-align: top;
+}
+
+.content-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 10px;
+}
+
+.description {
+    margin: 0 0 10px;
+    color: #555555;
+}
+
+a {
+  margin: 0 0 0 0;
+}
+
+.authors {
+    margin: 0;
+    color: #999999;
+}
+
+.thumbnail {
+    width: 150px;
+    padding: 20px;
+    vertical-align: top;
+    text-align: center;
+}
+
+.thumbnail img {
+    width: 260px;
+    height: 150px;
+    display: block;
+    object-fit: cover;
+}
+
+</style>
+
+<div class="table-container">
+        <table class="styled-table">
+            <tr>
+                <td class="meta-data">
+                    <div class="article-type">Workshop</div>
+                    <div class="access-type">KCC XAI</div>
+                    <div class="date">28 June 2024</div> <br>
+                    <a class="link" href="https://1drv.ms/b/s!Asr4ZEBiKgSu31uRiEXSMlhorkei?e=iuAz1Z" > [pdf] </a> <br>
+                    <a class="link" href="https://room1805.github.io/" > room 1805 🔗 </a> 
+                </td>
+                <td class="content">
+                    <h2 class="content-title">Representation Interpretation of Refusal Mechanism In Large Language Models</h2>
+                    <p class="description">We adapt mechanistic interpretability on the refusal mechanism by proposing Prompt and Location-based Refusal Analysis (PLoRA), which compares refusal feature vectors generated from the specific prompts and at the locations of tokens.</p>
+                    <p class="authors">Bumjin Park, Yeonjea Kim, Jinsil Lee, Youngju Joung and Jaesik Choi</p>
+                </td>
+                <td class="thumbnail">
+                    <img src="https://room1805.github.io/assets/img/room1806/2.png" alt="Article Image">
+                </td>
+            </tr>
+            <tr>
+                <td class="meta-data">
+                    <div class="article-type">Conference</div>
+                    <div class="access-type">IJCAI</div>
+                    <div class="date">09 Aug 2024</div> <br>
+                    <a class="link" href="/main_papers/2024_guidace_loss_for_documents" > [project] </a> <br>
+                    <a class="link" href="https://arxiv.org/abs/2406.15996" > [arxiv] </a>
+                </td>
+                <td class="content">
+                    <h2 class="content-title">Memorizing Documents with Guidance in Large Language Models </h2>
+                    <p class="description">We propose document-wise memories, which makes document-wise locations for neural memories in training. The proposed architecture maps document representation to memory entries and filters memory selections in the forward process of LLMs.</p>
+                    <p class="authors">Bumjin Park and Jaesik Choi</p>
+                </td>
+                <td class="thumbnail">
+                    <img src="/assets/main_papers/2024_guidance_loss_fig_update2.png" alt="Article Image">
+                </td>
+            </tr>
+            <tr>
+                <td class="meta-data">
+                    <div class="article-type">Conference</div>
+                    <div class="access-type">ICPRAI</div>
+                    <div class="date">12 June 2024</div>
+                    <br>
+                    <a class="link" href="/main_papers/2024_icprai_source_identification" > [project] </a>
+                </td>
+                <td class="content">
+                    <h2 class="content-title">Identifying the Source of Generation  for Large Language Models</h2>
+                    <p class="description">This work introduces token-level source identification in the decoding step, which maps the token representation to the reference document. We propose a bi-gram source identifier which has two successive token representations as input.</p>
+                    <p class="authors">Bumjin Park and Jaesik Choi</p>
+                </td>
+                <td class="thumbnail">
+                    <img src="/assets/main_papers/2024_icprai_source_identification.png" alt="Article Image">
+                </td>
+            </tr>
+        </table>
 </div>

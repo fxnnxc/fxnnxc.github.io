@@ -18,7 +18,7 @@ social: true  # includes social icons at the bottom of the page
 ---
 <style>
   ul { list-style-type: "- "; }
-  li {color:#00003A; font-weight:400;  list-style-type: "- "; }
+  li {color:#00003A; font-weight:400;  list-style-type: " "; }
   /* strong {font-weight:400} */
   </style>
 

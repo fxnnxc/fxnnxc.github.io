@@ -5,64 +5,159 @@ description: 이곳은 국어로 적힌 포스트를 모아둔 곳 입니다..
 permalink: /kor/
 ---
 
-<div class="post">
-  <div class="header-bar">
-    <h1>{{ page.title }}</h1>
-    <h2>{{ page.description }}</h2>
-  </div>
-  <ul class="post-list">
-    {%- assign sorted_pages = site.kor | sort: "date" %}
-    {%- assign sorted_pages = sorted_pages | reverse -%} 
+<style>
 
-    {% for post in sorted_pages %}
 
-    {% assign read_time = post.content | number_of_words | divided_by: 180 | plus: 1 %}
-    {% assign year = post.date | date: "%Y" %}
-    {% assign tags = post.tags | join: "" %}
-    {% assign categories = post.categories | join: "" %}
+body {
+    font-family: Arial, sans-serif;
+}
 
-      <card class="column-first" style="border-bottom:#e4e4e4 solid; padding-left: 0px;" >
-      <h2>
-        {% if post.redirect == blank %}
-          <a class="post-title" href="{{ post.url | prepend: site.baseurl }}" style="text-decoration:none; font-size: 20px; color:#362f5b ">{{ post.title }}</a>
-        {% else %}
-        <a class="post-title" href="{% if post.redirect contains '://' %}{{ post.redirect }}{% else %}{{ post.redirect | relative_url }}{% endif %}">{{ post.title }}</a>
-        {% endif %}
-      </h2>
-      <p style="line-height: 140%;">{{ post.description }}</p>
-      <p class="post-meta"> {{read_time}} min read &nbsp; &middot; &nbsp;
-        {{ post.date | date: '%B %-d, %Y' }}
-      
-      <p class="post-tags">
-        <a href="{{ year | prepend: '/blog/' | prepend: site.baseurl}}">
-          <i class="fas fa-calendar fa-sm"></i> {{ year }} </a>
+.table-container {
+    /* overflow-x: auto; 테이블이 컨테이너 밖으로 나가지 않도록 스크롤 생성 */
+    width: 100%; /* 필요한 경우 컨테이너 너비 조절 */
+    display: flex; /* 컨테이너를 flex로 설정 */
+    justify-content: center; /* 수평 가운데 정렬 */
+}
 
-          {% if tags != "" %}
-          &nbsp; &middot; &nbsp;
-            {% for tag in post.tags %}
-            
-              <i class="fas fa-hashtag fa-sm"></i> {{ tag }} &nbsp;
-              {% endfor %}
-          {% endif %}
+table {
+    border-collapse: collapse;
+    table-layout: fixed; 컬럼 길이 고정
+    width: auto; /* 테이블 너비를 내용에 맞게 자동 조정 */
+}
 
-          {% if categories != "" %}
-          &nbsp; &middot; &nbsp;
-            {% for category in post.categories %}
-            <a href="{{ category | prepend: '/blog/category/' | prepend: site.baseurl}}">
-              <i class="fas fa-tag fa-sm"></i> {{ category }}</a> &nbsp;
-              {% endfor %}
-          {% endif %}
-      </p>
-    </p>
-  </card>
-      <card class="column-second">
-      {% if post.img %}
-          <img src="{{ post.img }}" width="145px" height="145px" style="margin-top:20px;margin-left:40px;border-radius: 20px;"> 
-      {% endif %}
-      </card>
-    {% endfor %}
-    
-  </ul>
-  {% include pagination.html %}
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+    width: 400px; /* 컬럼 길이 고정 */
 
-</div>
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+th:nth-child(1), td:nth-child(1) {
+    width: 150px; /* 첫 번째 컬럼의 너비 */
+}
+
+th:nth-child(2), td:nth-child(2) {
+    width: 750px; /* 두 번째 컬럼의 너비 */
+}
+
+th:nth-child(3), td:nth-child(3) {
+    width: 300px; /* 세 번째 컬럼의 너비 */
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+}
+
+.styled-table tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table td {
+    word-wrap: break-word;   
+    overflow-wrap: break-word;
+    vertical-align: top;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+
+.meta-data {
+    width: 120px;
+    padding: 20px;
+    vertical-align: top;
+    font-size: 14px;
+    color: #333333;
+}
+
+.article-type {
+    font-weight: bold;
+}
+
+.access-type {
+    color: red;
+}
+
+.date {
+    color: #666666;
+}
+
+.content {
+    padding: 20px;
+    vertical-align: top;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 10px;
+}
+
+.description {
+    margin: 0 0 10px;
+    color: #555555;
+}
+
+.authors {
+    margin: 0;
+    color: #999999;
+}
+
+.thumbnail {
+    width: 150px;
+    padding: 20px;
+    vertical-align: top;
+    text-align: center;
+}
+
+.thumbnail img {
+    width: 260px;
+    height: 150px;
+    display: block;
+    object-fit: cover;
+}
+
+</style>
+
+<div class="table-container">
+        <table class="styled-table">
+            <tr>
+                <td class="meta-data">
+                    <div class="article-type">Article</div>
+                    <div class="access-type">Open Access</div>
+                    <div class="date">10 Jul 2024</div>
+                </td>
+                <td class="content">
+                    <h2 class="title">The quantum transition of the two-dimensional Ising spin glass</h2>
+                    <p class="description">We find that, in the quantum transition of Ising spin glass, the closing of the gap at the critical point can remain algebraic by restricting the symmetry of possible excitations, which is crucial for quantum annealing.</p>
+                    <p class="authors">Massimo Bernaschi, Isidoro González-Adalid Pemartín ... Giorgio Parisi</p>
+                </td>
+                <td class="thumbnail">
+                    <img src="/assets/char.png" alt="Article Image">
+                </td>
+            </tr>
+            <tr>
+                <td class="meta-data">
+                    <div class="article-type">Article</div>
+                    <div class="access-type">Open Access</div>
+                    <div class="date">10 Jul 2024</div>
+                </td>
+                <td class="content">
+                    <h2 class="title">A liver immune rheostat regulates CD8 T cell immunity in chronic HBV infection</h2>
+                    <p class="description">A liver-intrinsic mechanism is presented that suppresses effective anti-hepatitis virus B responses in mice and humans by rendering virus-specific CD8 T cells refractory to activation causing loss of effector functions.</p>
+                    <p class="authors">Miriam Bosch, Nina Kallin ... Percy A. Knolle</p>
+                </td>
+                <td class="thumbnail">
+                    <img src="/assets/char.png" alt="Article Image">
+                </td>
+            </tr>
+        </table>
+    </div>
+
