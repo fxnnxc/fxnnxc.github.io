@@ -5,72 +5,155 @@ title: Main Articles
 permalink: /main_articles/
 ---
 
-<body class="sticky-bottom">
-<div class="post">
-  <div class="header-bar">
-    <h2>{{ page.description }}</h2>
-  </div>
-  <ul class="post-list">
-    {%- assign sorted_pages = site.main_articles | sort: "date" %}
-    {%- assign sorted_pages = sorted_pages | reverse -%} 
-
-    {% for post in sorted_pages %}
-
-    {% assign read_time = post.content | number_of_words | divided_by: 180 | plus: 1 %}
-    {% assign year = post.date | date: "%Y" %}
-    {% assign tags = post.tags | join: "" %}
-    {% assign categories = post.categories | join: "" %}
-  <div style="padding-bottom:170px;">
-      <div class="column-first" style="border-bottom:#e4e4e4 solid;  " >
-      <h2>
-        {% if post.redirect == blank %}
-          <a class="post-title" href="{{ post.url | prepend: site.baseurl }}" style="text-decoration:none; font-size: 20px; color:#362f5b ">{{ post.title }}</a>
-        {% else %}
-        <a class="post-title" href="{% if post.redirect contains '://' %}{{ post.redirect }}{% else %}{{ post.redirect | relative_url }}{% endif %}">{{ post.title }}</a>
-        {% endif %}
-      </h2>
-      <p style="line-height: 140%;">{{ post.description }}</p>
-      <p class="post-meta"> {{read_time}} min read &nbsp; &middot; &nbsp;
-        {{ post.date | date: '%B %-d, %Y' }}
-      
-      <p class="post-tags">
-        <a href="{{ year | prepend: '/blog/' | prepend: site.baseurl}}">
-          <i class="fas fa-calendar fa-sm"></i> {{ year }} </a>
-
-          {% if tags != "" %}
-          &nbsp; &middot; &nbsp;
-            {% for tag in post.tags %}
-            
-              <i class="fas fa-hashtag fa-sm"></i> {{ tag }} &nbsp;
-              {% endfor %}
-          {% endif %}
-
-          {% if categories != "" %}
-          &nbsp; &middot; &nbsp;
-            {% for category in post.categories %}
-            <a href="{{ category | prepend: '/blog/category/' | prepend: site.baseurl}}">
-              <i class="fas fa-tag fa-sm"></i> {{ category }}</a> &nbsp;
-              {% endfor %}
-          {% endif %}
-      </p>
-    </p>
-  </div>
-      <div class="column-second">
-      {% if post.img %}
-          <img src="{{ post.img }}" width="210px" height="135px" style="margin-top:10px;margin-left:20px;border-radius: 20px;border:solid 1px;"> 
-      {% endif %}
-    </div>
-  </div>
-
-    {% endfor %}
-  </ul>
 
 
-  {% include pagination.html %}
+<style>
 
-</div>
+body {
+    font-family: Arial, sans-serif;
+}
 
-</body>
-<div>
-{%- include footer.html %}
+.table-container {
+    /* overflow-x: auto; 테이블이 컨테이너 밖으로 나가지 않도록 스크롤 생성 */
+    width: 100%; /* 필요한 경우 컨테이너 너비 조절 */
+    display: flex; /* 컨테이너를 flex로 설정 */
+    justify-content: center; /* 수평 가운데 정렬 */
+}
+
+table {
+    /* border-collapse: collapse; */
+    table-layout: fixed; 컬럼 길이 고정
+    width: auto; /* 테이블 너비를 내용에 맞게 자동 조정 */
+    border: none; /* 테이블 셀의 테두리를 제거 */
+    box-shadow: none;
+
+}
+
+th, td {
+    /* border: 1px solid #dddddd; */
+    text-align: left;
+    padding: 8px;
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+    width: 400px; /* 컬럼 길이 고정 */
+    border: none; /* 테이블 셀의 테두리를 제거 */
+}
+
+tr {
+  border-bottom: 1px solid #999999;
+  border-top: 1px solid #999999;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+th:nth-child(1), td:nth-child(1) {
+    width: 250px; /* 첫 번째 컬럼의 너비 */
+}
+
+th:nth-child(2), td:nth-child(2) {
+    width: 850px; /* 두 번째 컬럼의 너비 */
+}
+
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+}
+
+.styled-table tr {
+    /* border-bottom: 1px solid #dddddd; */
+}
+
+.styled-table td {
+    word-wrap: break-word;   
+    overflow-wrap: break-word;
+    vertical-align: top;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+
+.meta-data {
+    width: 120px;
+    padding: 20px;
+    vertical-align: top;
+    font-size: 14px;
+    color: #333333;
+}
+
+.article-type {
+    font-weight: bold;
+    color: #009900;
+    font-size: 18px;
+
+}
+
+.access-type {
+    color: #009900;
+    font-size: 17px;
+
+}
+
+.link {
+    color: #F95893;
+    font-size: 16px;
+}
+
+
+.date {
+    color: #666666;
+}
+
+.content {
+    padding: 20px;
+    vertical-align: top;
+}
+
+.content-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 10px;
+}
+
+.description {
+    margin: 0 0 10px;
+    color: #555555;
+}
+
+a {
+  margin: 0 0 0 0;
+}
+
+.authors {
+    margin: 0;
+    color: #999999;
+}
+
+.thumbnail {
+    width: 150px;
+    padding: 20px;
+    vertical-align: top;
+    text-align: center;
+}
+
+</style>
+
+<div class="table-container">
+        <table class="styled-table">
+            <tr>
+                <td class="meta-data">
+                    <div class="article-type">Literature Review</div>
+                    <div class="access-type">Mechanistic Interpretability</div>
+                    <div class="date">13 Jul 2024</div> <br>
+                    <a class="link" href="/main_articles/240713_mi" > [pdf] </a> <br>
+                </td>
+                <td class="content">
+                    <h2 class="content-title">Recent works on Mechanistic Interpretability in 2024 (ICML 2024 MI Workshop)</h2>
+                    <p class="description">Literature reviews on ICML 2024 mechanistic interpretability workshop oral and spotlight papers.</p>
+                    <p class="authors">Bumjin Park</p>
+                </td>
+            </tr>
+        </table>
 </div>

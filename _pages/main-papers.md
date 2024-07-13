@@ -6,7 +6,6 @@ permalink: /main_papers/
 ---
 
 <style>
-
 body {
     font-family: Arial, sans-serif;
 }
@@ -19,24 +18,31 @@ body {
 }
 
 table {
-    border-collapse: collapse;
+    /* border-collapse: collapse; */
     table-layout: fixed; 컬럼 길이 고정
     width: auto; /* 테이블 너비를 내용에 맞게 자동 조정 */
+    border: none; /* 테이블 셀의 테두리를 제거 */
+    box-shadow: none;
+
 }
 
 th, td {
-    border: 1px solid #dddddd;
+    /* border: 1px solid #dddddd; */
     text-align: left;
     padding: 8px;
     white-space: nowrap; /* 텍스트 줄바꿈 방지 */
     width: 400px; /* 컬럼 길이 고정 */
+    border: none; /* 테이블 셀의 테두리를 제거 */
+}
 
+tr {
+  border-bottom: 1px solid black;
 }
 
 th {
     background-color: #f2f2f2;
 }
-
+  
 th:nth-child(1), td:nth-child(1) {
     width: 150px; /* 첫 번째 컬럼의 너비 */
 }
@@ -56,7 +62,7 @@ th:nth-child(3), td:nth-child(3) {
 }
 
 .styled-table tr {
-    border-bottom: 1px solid #dddddd;
+    /* border-bottom: 1px solid #dddddd; */
 }
 
 .styled-table td {
