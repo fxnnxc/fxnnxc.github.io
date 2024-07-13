@@ -34,7 +34,6 @@ th, td {
     text-align: left;
     padding: 8px;
     white-space: nowrap; /* 텍스트 줄바꿈 방지 */
-    width: 400px; /* 컬럼 길이 고정 */
     border: none; /* 테이블 셀의 테두리를 제거 */
 }
 
@@ -147,10 +146,13 @@ a {
                     <div class="article-type">Literature Review</div>
                     <div class="access-type">Mechanistic Interpretability</div>
                     <div class="date">13 Jul 2024</div> <br>
-                    <a class="link" href="/main_articles/240713_mi" > [pdf] </a> <br>
+                    <a class="link" href="/main_articles/240713_mi1" > [Post] </a> 
+                    <a class="link" href="https://openreview.net/forum?id=pJs3ZiKBM5" > [OpenReview] </a> <br>
                 </td>
                 <td class="content">
-                    <h2 class="content-title">Recent works on Mechanistic Interpretability in 2024 (ICML 2024 MI Workshop)</h2>
+                    <a class="link" href="/main_articles/240713_mi1" > 
+                    <h2 class="content-title">Review on causality for mechanistic interpretability in ICML 2024 
+                    </h2></a> 
                     <p class="description">Literature reviews on ICML 2024 mechanistic interpretability workshop oral and spotlight papers.</p>
                     <p class="authors">Bumjin Park</p>
                 </td>
