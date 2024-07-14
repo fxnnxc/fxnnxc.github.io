@@ -146,6 +146,22 @@ a {
                     <div class="article-type">Literature Review</div>
                     <div class="access-type">Mechanistic Interpretability</div>
                     <div class="date">13 Jul 2024</div> <br>
+                    <a class="link" href="/main_articles/240714_m3" > [Post] </a> 
+                    <a class="link" href="https://openreview.net/forum?id=qzsDKwGJyB" > " > [Arxiv] </a> <br>
+                </td>
+                <td class="content">
+                    <a class="link" href="/main_articles/240714_m3" > 
+                    <h2 class="content-title">Review on Explicit Memory for Language Modeling ($\text{Memory}^3$) 
+                    </h2></a> 
+                    <p class="description">Literature reviews for memory architecture in neural networks </p>
+                    <p class="authors">Bumjin Park</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="meta-data">
+                    <div class="article-type">Literature Review</div>
+                    <div class="access-type">Mechanistic Interpretability</div>
+                    <div class="date">13 Jul 2024</div> <br>
                     <a class="link" href="/main_articles/240713_mi2" > [Post] </a> 
                     <a class="link" href="https://openreview.net/forum?id=qzsDKwGJyB" > [OpenReview] </a> <br>
                 </td>
