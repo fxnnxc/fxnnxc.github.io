@@ -81,15 +81,11 @@ To say that regurgitation is copying does not necessarily mean that it is copyri
 
 Means that when regurgitation happens, the model memorized the content. The model stored information in any means 
 
-memorization takes place when a piece of training data can be emitted from a model by any means, and prompting is one such means. But there is a deeper point here. The definitions of extraction and regurgitation focus attention on the generation of outputs.
+Memorization takes place when a piece of training data can be emitted from a model by any means, and prompting is one such means. But there is a deeper point here. The definitions of extraction and regurgitation focus attention on the generation of outputs.
 
 “repeat after me” is not useful evidence of memorization. Here, the model repeats the text from the monologue in the opening credits of Star Trek: The Next Generation. Interaction produced by the authors.
 
 
-For example, OpenAI has claimed
-that its alignment techniques successfully trained its ChatGPT models to
-avoid memorization.92 But in late 2023, a team led by Google DeepMind researchers
-developed a new technique and conducted a large-scale measurement
-study that showed the ChatGPT 3.5 (turbo endpoint) model memorized
-significantly more training data than any other model they tested.
+For example, OpenAI has claimed that its alignment techniques successfully trained its ChatGPT models to
+avoid memorization.92 But in late 2023, a team led by Google DeepMind researchers developed a new technique and conducted a large-scale measurement study that showed the ChatGPT 3.5 (turbo endpoint) model memorized significantly more training data than any other model they tested.
 
