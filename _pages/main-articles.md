@@ -146,11 +146,11 @@ a {
                     <div class="article-type">Literature Review</div>
                     <div class="access-type">Copyright Issue</div>
                     <div class="date">15 Jul 2024</div> <br>
-                    <a class="link" href="/240715_copyright_memo" > [Post] </a> 
-                    <a class="link" href="https://scholar.google.com/scholar_url?url=https://www.researchgate.net/profile/A-Cooper-2/publication/381963290_The_Files_are_in_the_Computer_Copyright_Memorization_and_Generative-AI_Systems/links/66864e060a25e27fbc2422dc/The-Files-are-in-the-Computer-Copyright-Memorization-and-Generative-AI-Systems.pdf&hl=en&sa=X&d=301181645666268126&ei=vXCUZt6pKZGP6rQPjKeIiAs&scisig=AFWwaeZH2oG23U8MG2IXUN-14OUF&oi=scholaralrt&hist=XzIXaxoAAAAJ:9420160871089282663:AFWwaeZtekeyAIg982M8R1D4WSk9&html=&pos=0&folt=cit" > " > [Scholar] </a> <br>
+                    <a class="link" href="/main_articles/240715_copyright_memo" > [Post] </a> 
+                    <a class="link" href="https://scholar.google.com/scholar_url?url=https://www.researchgate.net/profile/A-Cooper-2/publication/381963290_The_Files_are_in_the_Computer_Copyright_Memorization_and_Generative-AI_Systems/links/66864e060a25e27fbc2422dc/The-Files-are-in-the-Computer-Copyright-Memorization-and-Generative-AI-Systems.pdf&hl=en&sa=X&d=301181645666268126&ei=vXCUZt6pKZGP6rQPjKeIiAs&scisig=AFWwaeZH2oG23U8MG2IXUN-14OUF&oi=scholaralrt&hist=XzIXaxoAAAAJ:9420160871089282663:AFWwaeZtekeyAIg982M8R1D4WSk9&html=&pos=0&folt=cit" > [Scholar] </a> <br>
                 </td>
                 <td class="content">
-                    <a class="link" href="/240715_copyright_memo" > 
+                    <a class="link" href="/main_articles/240715_copyright_memo" > 
                     <h2 class="content-title">Review on "The Files are in the Computer: Copyright, Memorization, and Generative-AI Systems" 
                     </h2></a> 
                     <p class="description">Copyright is one of the most important issues in the realm of generative AI. </p>
@@ -163,7 +163,7 @@ a {
                     <div class="access-type">Mechanistic Interpretability</div>
                     <div class="date">14 Jul 2024</div> <br>
                     <a class="link" href="/main_articles/240714_m3" > [Post] </a> 
-                    <a class="link" href="https://openreview.net/forum?id=qzsDKwGJyB" > " > [Arxiv] </a> <br>
+                    <a class="link" href="https://openreview.net/forum?id=qzsDKwGJyB" > [Arxiv] </a> <br>
                 </td>
                 <td class="content">
                     <a class="link" href="/main_articles/240714_m3" > 
