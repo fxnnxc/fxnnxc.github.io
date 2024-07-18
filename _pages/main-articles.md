@@ -139,8 +139,26 @@ a {
 
 </style>
 
+
+
 <div class="table-container">
         <table class="styled-table">
+            <tr>
+                <td class="meta-data">
+                    <div class="article-type">Literature Review</div>
+                    <div class="access-type">Copyright Issue</div>
+                    <div class="date">16 Jul 2024</div> <br>
+                    <a class="link" href="/main_articles/240716_induction_heads" > [Post] </a> 
+                    <a class="link" href="https://arxiv.org/abs/2404.07129"> [Arxiv] </a> <br>
+                </td>
+                <td class="content">
+                    <a class="link" href="/main_articles/240716_induction_heads" > 
+                    <h2 class="content-title">Review on "What needs to go right for an induction head? A mechanistic study of in-context learning circuits and their formation"
+                    </h2></a> 
+                    <p class="description">The emergence of induction heads in training GPT.</p>
+                    <p class="authors">Bumjin Park</p>
+                </td>
+            </tr>
             <tr>
                 <td class="meta-data">
                     <div class="article-type">Literature Review</div>

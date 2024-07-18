@@ -9,8 +9,7 @@ giscus_comments: true
 disqus_comments: false
 date: 2024-07-15
 featured: true
-title: 'Review on "What needs to go right for an induction head?
-A mechanistic study of in-context learning circuits and their formation"'
+title: 'Review on What needs to go right for an induction head? A mechanistic study of in-context learning circuits and their formation'
 description: 'The emergence of induction heads in training GPT.'
 _styles: >
     .table {
@@ -30,8 +29,6 @@ _styles: >
 ---
 
 
-
-
 ### The field of optogenetics in neuroscience
 
 This field combines **genetic** and **optical** methods to precisely target and manipulate specific neurons within the brain, enabling detailed studies of neural circuits and brain functions.
@@ -44,6 +41,7 @@ Optogenetics allows for the real-time control of behavior by manipulating neural
 clamping (causal manipulations of activations throughout training)
 
 ### “induction strength” of a head
+
 A difference in attention weights from the query token
 
 For two label tokens, measure the attention difference. 
