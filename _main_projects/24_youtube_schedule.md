@@ -157,6 +157,12 @@ img: 'assets/char.png'
                 <a href="https://www.Youtube.com/watch?v=jKAENcR_HDk"> [Youtube] </a>
                 </td>
             </tr>
+            <tr>
+                <td class="custom">  Nature </td>
+                <td class="custom"> Theory of Mind in 2024 
+                <a href="https://youtu.be/c9TFbHE8M8c"> [Youtube] </a>
+                </td>
+            </tr>
             <tr style='background-color:#DFDDDA'> <td> 📌 </td><td>  <strong> Diffusion </strong> </td></tr>
             <tr>
                 <td class="custom">   </td>
@@ -166,6 +172,7 @@ img: 'assets/char.png'
             </tr>
     </tbody>
 </table>
+
 
 
 
