@@ -11,7 +11,7 @@ date: 2024-07-18
 featured: true
 title: '2024 Youtube Contents'
 description: ''
-img: 'assets/char.png'
+img: 'assets/projects/youtube.png'
 ---
 <style>
         body {
