@@ -95,7 +95,20 @@ img: 'assets/projects/youtube.png'
                 <a href="https://www.Youtube.com/watch?v=v4GE8Rnrffo"> [Youtube] </a>
                 </td>
             </tr>
+            <tr style='background-color:#DFDDDA'> <td> 📌 </td><td>  <strong> LLMs </strong> </td></tr>
+            <tr>
+                <td class="custom">   </td>
+                <td class="custom"> Prover-Verifier Games Improve Legibility of LLM Outputs
+                <a href=""> [Youtube] </a>
+                </td>
+            </tr>
             <tr style='background-color:#DFDDDA'> <td> 📌 </td><td>  <strong> Mechanistic Interpretability</strong>  </td></tr>
+            <tr>
+                <td class="custom">  Arxiv </td>
+                <td class="custom"> Model Surgery: Modulating LLM’s Behavior Via Simple Parameter Editing
+                <a href=""> [Youtube] </a>
+                </td>
+            </tr>
             <tr>
                 <td class="custom">  Anthropic </td>
                 <td class="custom"> Transformer Induction Head 
@@ -141,6 +154,24 @@ img: 'assets/projects/youtube.png'
                 <td class="custom">NeurIPS 2022  </td>
                 <td class="custom"> Indirect Effect and Locating Factuality in GPT 
                 <a href="https://www.Youtube.com/watch?v=RdtJ-0OYGRM"> [Youtube] </a>
+                </td>
+            </tr>
+            <tr>
+                <td class="custom">  Causal Learning and Reasoning </td>
+                <td class="custom"> Distributed Alignment Search (Intuition)
+                <a href=""> [Youtube] </a>
+                </td>
+            </tr>
+            <tr>
+                <td class="custom">  Causal Learning and Reasoning </td>
+                <td class="custom"> Distributed Alignment Search (Mathematical Formulation)
+                <a href=""> [Youtube] </a>
+                </td>
+            </tr>
+            <tr>
+                <td class="custom">  NeurIPS 2023 </td>
+                <td class="custom"> Distributed Alignment Search (Application with Alpaca)
+                <a href=""> [Youtube] </a>
                 </td>
             </tr>
             <tr style='background-color:#DFDDDA'> <td> 📌 </td><td>  <strong> Quantization</strong> </td></tr>
