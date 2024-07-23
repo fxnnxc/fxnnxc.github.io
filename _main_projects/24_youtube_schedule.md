@@ -159,31 +159,31 @@ img: 'assets/projects/youtube.png'
             <tr>
                 <td class="custom">  CLR  </td>
                 <td class="custom"> Distributed Alignment Search (Intuition)
-                <a href=""> [Youtube](https://youtu.be/j7lVtzn7_QA?feature=shared) </a>
+                <a href="https://youtu.be/j7lVtzn7_QA?feature=shared"> [Youtube] </a>
                 </td>
             </tr>
             <tr>
                 <td class="custom">  CLR  </td>
                 <td class="custom"> Distributed Alignment Search (Detailed Mathematical Formulation)
-                <a href=""> [Youtube](https://youtu.be/NWWIMO3QYdA?feature=shared) </a>
+                <a href="https://youtu.be/NWWIMO3QYdA?feature=shared"> [Youtube] </a>
                 </td>
             </tr>
             <tr>
                 <td class="custom">  CLR  </td>
                 <td class="custom"> Distributed Alignment Search (Philosophy)
-                <a href=""> [Youtube](https://www.youtube.com/watch?v=6j3gYyEoRzg) </a>
+                <a href="https://www.youtube.com/watch?v=6j3gYyEoRzg"> [Youtube] </a>
                 </td>
             </tr>
             <tr>
                 <td class="custom">  CLR  </td>
                 <td class="custom"> Distributed Alignment Search (Easy Math)
-                <a href=""> [Youtube TBD]() </a>
+                <a href=""> [Youtube TBD] </a>
                 </td>
             </tr>
             <tr>
                 <td class="custom">  NeurIPS 2023 </td>
                 <td class="custom"> Distributed Alignment Search (Application with Alpaca)
-                <a href=""> [Youtube TBD]() </a>
+                <a href=""> [Youtube TBD] </a>
                 </td>
             </tr>
             <tr style='background-color:#DFDDDA'> <td> 📌 </td><td>  <strong> Quantization</strong> </td></tr>
