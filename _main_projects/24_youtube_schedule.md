@@ -7,7 +7,7 @@ authors:
 bibliography: all.bib
 giscus_comments: false
 disqus_comments: true
-date: 2024-07-18
+date: 2024-07-27
 featured: true
 title: '2024 Youtube Contents'
 description: ''
@@ -82,7 +82,32 @@ img: 'assets/projects/youtube.png'
                 </tr>
     </thead>
     <tbody>
-            <tr style='background-color:#DFDDDA'> <td> 📌 </td><td> <strong>  Machine Learning</strong> </td></tr>
+            <tr style='background-color:#DFDDEA'> <td> 📌 </td><td> <strong>  AI </strong> </td></tr>
+            <tr>
+                <td class="custom">  Nature  </td>
+                <td class="custom"> AI 생성물로 다양성은 0으로 수렴한다.  (2024년 7월 Nature 논문)
+                <a href="https://youtu.be/UkAWzLH7RDs"> [Youtube] </a>
+                </td>
+            </tr>
+            <tr>
+                <td class="custom">  ACL 2024  </td>
+                <td class="custom"> GPT 모델은 랜덤한 지식에 접근할 수 없다. 
+                <a href="https://youtu.be/xXSr3T6zvXk"> [Youtube] </a>
+                </td>
+            </tr>
+            <tr>
+                <td class="custom">  ICLR 2023 </td>
+                <td class="custom"> 격자세포, 장소세포, and Blind Agent  
+                <a href="https://www.Youtube.com/watch?v=jKAENcR_HDk"> [Youtube] </a>
+                </td>
+            </tr>
+            <tr>
+                <td class="custom">  Nature </td>
+                <td class="custom"> 인공지능의 마음이론 (Theory of Mind in 2024 )
+                <a href="https://youtu.be/c9TFbHE8M8c"> [Youtube] </a>
+                </td>
+            </tr>
+            <tr style='background-color:#DFDDEA'> <td> 📌 </td><td> <strong>  Machine Learning</strong> </td></tr>
             <tr>
                 <td class="custom">    </td>
                 <td class="custom"> Jensen's Inequality 
@@ -95,20 +120,14 @@ img: 'assets/projects/youtube.png'
                 <a href="https://www.Youtube.com/watch?v=v4GE8Rnrffo"> [Youtube] </a>
                 </td>
             </tr>
-            <tr style='background-color:#DFDDDA'> <td> 📌 </td><td>  <strong> LLMs </strong> </td></tr>
+            <tr style='background-color:#DFDDEA'> <td> 📌 </td><td>  <strong> LLMs </strong> </td></tr>
             <tr>
                 <td class="custom">   </td>
                 <td class="custom"> Prover-Verifier Games Improve Legibility of LLM Outputs
                 <a href=""> [Youtube] </a>
                 </td>
             </tr>
-            <tr style='background-color:#DFDDDA'> <td> 📌 </td><td>  <strong> Mechanistic Interpretability</strong>  </td></tr>
-            <tr>
-                <td class="custom">  Arxiv </td>
-                <td class="custom"> Model Surgery: Modulating LLM’s Behavior Via Simple Parameter Editing
-                <a href=""> [Youtube] </a>
-                </td>
-            </tr>
+            <tr style='background-color:#DFDDEA'> <td> 📌 </td><td>  <strong> Mechanistic Interpretability</strong>  </td></tr>
             <tr>
                 <td class="custom">  Anthropic </td>
                 <td class="custom"> Transformer Induction Head 
@@ -149,7 +168,14 @@ img: 'assets/projects/youtube.png'
                 <a href="https://openreview.net/group?id=ICML.cc/2024/Workshop/MI#tab-accept-oral" style='color:#AAAAAA'> [OpenReview] </a>
                 </td>
             </tr>
-            <tr style='background-color:#DFDDDA'> <td> 📌 </td><td>  <strong> Causality</strong> </td></tr>
+            <tr>
+                <td class="custom">ICML 2024 </td>
+                <td class="custom"> 
+                Model Surgery: Modulating LLM's Behavior Via Simple Parameter Editing
+                <a href="https://youtu.be/53sVzNb127o" > [Youtube] </a>
+                </td>
+            </tr>
+            <tr style='background-color:#DFDDEA'> <td> 📌 </td><td>  <strong> Causality</strong> </td></tr>
             <tr>
                 <td class="custom">NeurIPS 2022  </td>
                 <td class="custom"> Indirect Effect and Locating Factuality in GPT 
@@ -186,31 +212,24 @@ img: 'assets/projects/youtube.png'
                 <a href=""> [Youtube TBD] </a>
                 </td>
             </tr>
-            <tr style='background-color:#DFDDDA'> <td> 📌 </td><td>  <strong> Quantization</strong> </td></tr>
+            <tr style='background-color:#DFDDEA'> <td> 📌 </td><td>  <strong> Quantization</strong> </td></tr>
             <tr>
                 <td class="custom">  </td>
                 <td class="custom"> The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits 
                 <a href="https://www.Youtube.com/watch?v=IPVE9WhWZzk"> [Youtube] </a>
                 </td>
             </tr>
-            <tr style='background-color:#DFDDDA'> <td> 📌 </td><td>  <strong> Neuroscience </strong> </td></tr>
-            <tr>
-                <td class="custom">  ICLR 2023 </td>
-                <td class="custom"> 격자세포, 장소세포, and Blind Agent  
-                <a href="https://www.Youtube.com/watch?v=jKAENcR_HDk"> [Youtube] </a>
-                </td>
-            </tr>
-            <tr>
-                <td class="custom">  Nature </td>
-                <td class="custom"> Theory of Mind in 2024 
-                <a href="https://youtu.be/c9TFbHE8M8c"> [Youtube] </a>
-                </td>
-            </tr>
-            <tr style='background-color:#DFDDDA'> <td> 📌 </td><td>  <strong> Diffusion </strong> </td></tr>
+            <tr style='background-color:#DFDDEA'> <td> 📌 </td><td>  <strong> Diffusion </strong> </td></tr>
             <tr>
                 <td class="custom">   </td>
                 <td class="custom"> Anomaly Detection with Diffusion
                 <a href="https://www.Youtube.com/watch?v=vhXxL3-YZjo"> [Youtube] </a>
+                </td>
+            </tr>
+            <tr>
+                <td class="custom">   </td>
+                <td class="custom"> Rectified Flow (Flow Straight and Fast)
+                <a href="https://youtu.be/pmzBNBmRmeM"> [Youtube] </a>
                 </td>
             </tr>
     </tbody>
