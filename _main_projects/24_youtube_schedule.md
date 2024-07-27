@@ -7,7 +7,7 @@ authors:
 bibliography: all.bib
 giscus_comments: false
 disqus_comments: true
-date: 2024-07-27
+date: 2024-07-26
 featured: true
 title: '2024 Youtube Contents'
 description: ''
