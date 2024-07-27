@@ -124,7 +124,13 @@ img: 'assets/projects/youtube.png'
             <tr>
                 <td class="custom">   </td>
                 <td class="custom"> Prover-Verifier Games Improve Legibility of LLM Outputs
-                <a href=""> [Youtube] </a>
+                <a href=""> [TBD] </a>
+                </td>
+            </tr>
+            <tr>
+                <td class="custom">   </td>
+                <td class="custom"> Probabilistic Inference for LLM (ICML 2024 Best Paper를 읽기 위한 준비)
+                <a href="https://www.youtube.com/watch?v=2YJhoM4uYEA&list=PLLDS5R3mMLgzXUcWsKtM-V4cm9NAbb2n9&index=1"> [Youtube] </a>
                 </td>
             </tr>
             <tr style='background-color:#DFDDEA'> <td> 📌 </td><td>  <strong> Mechanistic Interpretability</strong>  </td></tr>
