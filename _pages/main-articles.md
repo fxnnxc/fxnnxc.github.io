@@ -228,7 +228,6 @@ a {
 <h3> Theorem Collection </h3>
 
 <ul>
-    <li> <a href="/main_articles/taylor_s_theorem.md"> Taylor's Theorem </a> (you can bound a function by polynomial approximation and residual)  </li>
-    <li>  </li>
-
+    <li> <a href="/main_articles/taylor_s_theorem"> Taylor's Theorem </a> (you can bound a function by polynomial approximation and residual)  </li>
+    <li> <a href="/main_articles/hoeffding"> Hoeffding's Lemma and Inequality </a></li>
 </ul>
