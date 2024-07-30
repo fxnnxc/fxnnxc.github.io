@@ -79,7 +79,8 @@ $$
 $$
 
 * <a href="/main_articles/geometry" > AM-GM inequality </a>
-
+<br>
+<br>
 
 We see that $$f''(h) \le 1/4$$ for all $h$, thus, from <a href="/main_articles/taylor_s_theorem" > Taylor's theorem </a>, there is some $0 \le \theta \le 1$ such that 
 
