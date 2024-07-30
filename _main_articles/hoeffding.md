@@ -48,12 +48,14 @@ So,
 $$
 \begin{align}
 \mathbb{E}[e^{\lambda X}] &\le \frac{b-\mathbb{E}[x]}{b-a}e^{\lambda a} + \frac{\mathbb{E}[x]-a}{b-a}e^{\lambda b} \\
-&= \frac{b}{b-a}e^{\lambda a} + \frac{-a}{b-a}e^{\lambda b}
+&= \frac{b}{b-a}e^{\lambda a} + \frac{-a}{b-a}e^{\lambda b} \\
 &= e^{f(\lambda (b-a))}
 \end{align}
 $$
 
-where $f(h)$ = \frac{ha}{b-a} + \ln (1 + \frac{a - e^h a}{b-a})$. By computing derivates, we find
+where $f(h) = \frac{ha}{b-a} + \ln (1 + \frac{a - e^h a}{b-a})$. 
+
+By computing derivates, we find
 
 $$
 f(0) = f'(0) = 0 
@@ -77,7 +79,7 @@ $$
 $$
 
 
-We see that $f''(h) \le 1/4$$ for all $h$, thus, from Taylor's theorem, there is some $0 \le \theta \le 1$ such that 
+We see that $$f''(h) \le 1/4$$ for all $h$, thus, from Taylor's theorem, there is some $0 \le \theta \le 1$ such that 
 
 $$
 f(x) = f(0) + f'(0)x + \frac{1}{2}h^2 f''(h\theta) \le \frac{1}{8}h^2
