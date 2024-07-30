@@ -34,6 +34,7 @@ $$
 $$ 
 
 </blockquote>
+
 <blockquote>
 Proof
 
@@ -95,15 +96,56 @@ $$
 
 </blockquote>
 
+#### Remark 
 
+This bounds the average of functional form $$e^{\lambda x}$$ by the expectation $$\mathbb{E}[x]$$ in interval $$[a,b]$$. 
 
-
-
-
+<hr>
 
 ## Hoeffding's Inequality 
 
+<blockquote>
+Let $X_1, \cdots, X_n$ be independent random variables such that $a_i \le X_i \le b_i$, almost surely. Consider the sum of there random variables, 
+$$
+S_n = X_1 + X_2 + \cdots + X_n
+$$
+Then Hoeffding's theorem states that, for all $t>0$, 
 
+$$
+P(S_n - \mathbb{E}[S_n] \ge t) \le \exp \Big(  -frac{2t^2}{\sum_{i=1}^n} (b_i - a_i)^2 \Big) \\ 
+P(|S_n - \mathbb{E}[S_n]| \ge t) \le 2 \exp \Big(  -frac{2t^2}{\sum_{i=1}^n} (b_i - a_i)^2 \Big)
+$$
+
+where $\mathbb{E}[S_n]$ is the expected value of $S_n$. 
+</blockquote>
+
+
+<blockquote>
+<strong>Proof</strong>
+
+For s,t >0, Markov inequality and the independence of $X_i$ implies:
+
+$$
+\begin{aligned}
+P(S_n -\mathbb{E}[S_n] \ge t) 
+&= P\Big(\exp(s(S_n -\mathbb{E}[S_n])) \ge \exp(st)\Big)  ~~~~ (\because \text{exp() results in the same prob.}) \\
+&\le \exp(-st) \mathbb{E}[\exp(s(S_n -\mathbb{E}[S_n]))] ~~~~ (\because \text{Markov Inequality})  \\
+&= \exp(-st) \prod_{i=1}^n \mathbb{E}[\exp(s(X_i -\mathbb{E}[X_i]))]  ~~~~ (\because e^X \text{ and independence}) \\
+&\le \exp(-st) \prod_{i=1}^n \exp \Big( \frac{s^2(b_i - a_i)^2}{8} \Big)   ~~~~ (\because \text{Hoeffding's inequality}) \\ 
+&= \exp \Big( -st + \frac{1}{8} s^2 \sum_{i=1}^n (b_i - a_i)^2 \Big) ~~~~ (\because e^X \cdot e^Y = e^{X+Y})
+\end{aligned}
+$$
+Upperbound of the right hand side is the quadratic function of $s$. We have
+
+$s^{*} = \frac{4t}{\sum_{i=1}^n (b_i - a_i)^2}$.
+
+Writing the above bound for this value of $s=s^*$, we get the desired bound:
+
+$$
+P(S_n - \mathbb{E}[S_n] \ge t) \le \exp \Big( -frac{2t^2}{\sum_{i=1}^n (b_i - a_i)^2} \Big).
+$$
+
+</blockquote>
 
 
 ## Application
