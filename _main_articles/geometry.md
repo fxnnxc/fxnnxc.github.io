@@ -21,7 +21,11 @@ _styles: >
         font-size:20px;
     }
 ---
-
+<style>
+blockquote {
+    width: 150%; 
+}
+</style>
 
 ## AM–GM inequality
 

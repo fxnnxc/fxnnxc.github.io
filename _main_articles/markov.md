@@ -23,6 +23,13 @@ _styles: >
 
 ---
 
+<style>
+blockquote {
+    width: 150%; 
+}
+</style>
+
+
 ## Markov Inequality 
 
 <blockquote>
