@@ -123,13 +123,13 @@ where $\mathbb{E}[S_n]$ is the expected value of $S_n$.
 <blockquote>
 <strong>Proof</strong>
 
-For s,t >0, Markov inequality and the independence of $X_i$ implies:
+For s,t >0, [*Markov inequality](/main_articles/markov) and the independence of $X_i$ implies:
 
 $$
 \begin{aligned}
 P(S_n -\mathbb{E}[S_n] \ge t) 
 &= P\Big(\exp(s(S_n -\mathbb{E}[S_n])) \ge \exp(st)\Big)  ~~~~ (\because \text{exp() results in the same prob.}) \\
-&\le \exp(-st) \mathbb{E}[\exp(s(S_n -\mathbb{E}[S_n]))] ~~~~ (\because \text{Markov Inequality})  \\
+&\le \exp(-st) \mathbb{E}[\exp(s(S_n -\mathbb{E}[S_n]))] ~~~~ (\because \text{*Markov Inequality})  \\
 &= \exp(-st) \prod_{i=1}^n \mathbb{E}[\exp(s(X_i -\mathbb{E}[X_i]))]  ~~~~ (\because e^X \text{ and independence}) \\
 &\le \exp(-st) \prod_{i=1}^n \exp \Big( \frac{s^2(b_i - a_i)^2}{8} \Big)   ~~~~ (\because \text{Hoeffding's inequality}) \\ 
 &= \exp \Big( -st + \frac{1}{8} s^2 \sum_{i=1}^n (b_i - a_i)^2 \Big) ~~~~ (\because e^X \cdot e^Y = e^{X+Y})
