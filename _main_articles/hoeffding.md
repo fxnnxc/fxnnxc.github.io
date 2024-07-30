@@ -24,7 +24,7 @@ _styles: >
 ---
 <style>
 blockquote {
-    width: 150%
+    width: 150%; 
 }
 </style>
 
