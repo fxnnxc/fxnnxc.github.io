@@ -54,6 +54,7 @@ $$
 $$
 
 where $f(h)$ = \frac{ha}{b-a} + \ln (1 + \frac{a - e^h a}{b-a})$. By computing derivates, we find
+
 $$
 f(0) = f'(0) = 0 
 $$
