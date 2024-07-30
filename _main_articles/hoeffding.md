@@ -34,6 +34,56 @@ $$
 $$ 
 
 </blockquote>
+<blockquote>
+Proof
+
+Without loss of generality, we replace $X$ by $X- \mathbb{E}[X]$, and we can assume $\mathbb{E}[X]$, so that $a \ge 0 \ge b$.
+Since $e^{\lambda x}$ is convex function of $x$, by Jensen's inequality, we have that for all $x \in [a,b]$,
+
+$$
+e^{\lambda X} \le \frac{b-x}{b-a}e^{\lambda a} + \frac{x-a}{b-a}e^{\lambda b}
+$$
+
+So, 
+$$
+\begin{align}
+\mathbb{E}[e^{\lambda X}] &\le \frac{b-\mathbb{E}[x]}{b-a}e^{\lambda a} + \frac{\mathbb{E}[x]-a}{b-a}e^{\lambda b} \\
+&= \frac{b}{b-a}e^{\lambda a} + \frac{-a}{b-a}e^{\lambda b}
+&= e^{f(\lambda (b-a))}
+\end{align}
+$$
+
+where $f(h)$ = \frac{ha}{b-a} + \ln (1 + \frac{a - e^h a}{b-a})$. By computing derivates, we find
+$$
+f(0) = f'(0) = 0 
+$$
+
+and 
+
+$$
+f''(h) = - \frac{ab e^h}{(b-a e^h)^2}
+$$
+
+With replacement $A = ae^h$ and $B=b$, we have 
+
+$$
+\begin{align}
+\frac{ab e^h}{(b-a e^h)^2} =& - \frac{AB}{(B-A)^2}  \\
+ =& \frac{AB}{B^2 -2AB + B^2} \\
+ \le& \frac{AB}{4AB}  (\because <a href="/main_articles/geometry" > AM-GM inequality </a> ) \\
+ =& \frac{1}{4} \\
+\end{align}
+$$
+
+
+
+
+</blockquote>
+
+
+
+
+
 
 
 ## Hoeffding's Inequality 
