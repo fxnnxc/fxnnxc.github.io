@@ -79,7 +79,7 @@ $$
 $$
 
 
-We see that $$f''(h) \le 1/4$$ for all $h$, thus, from Taylor's theorem, there is some $0 \le \theta \le 1$ such that 
+We see that $$f''(h) \le 1/4$$ for all $h$, thus, from <a href="/main_articles/taylor_s_theorem" > Taylor's theorem </a>, there is some $0 \le \theta \le 1$ such that 
 
 $$
 f(x) = f(0) + f'(0)x + \frac{1}{2}h^2 f''(h\theta) \le \frac{1}{8}h^2
