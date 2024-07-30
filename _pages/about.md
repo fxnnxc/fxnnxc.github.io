@@ -2,7 +2,7 @@
 layout: about
 title: 🇰🇷 About Me
 permalink: /
-subtitle: Bumjin Park
+subtitle: Bumjini
 order : 1 
 profile:
   align: right
