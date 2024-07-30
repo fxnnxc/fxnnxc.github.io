@@ -140,7 +140,6 @@ a {
 </style>
 
 
-
 <div class="table-container">
         <table class="styled-table">
             <tr>
@@ -225,3 +224,11 @@ a {
             </tr>
         </table>
 </div>
+
+<h3> Theorem Collection </h3>
+
+<ul>
+    <li> <a href="/main_articles/taylor_s_theorem.md"> Taylor's Theorem </a> (you can bound a function by polynomial approximation and residual)  </li>
+    <li>  </li>
+
+</ul>
