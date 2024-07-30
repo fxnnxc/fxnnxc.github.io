@@ -73,10 +73,12 @@ $$
 \begin{align}
 \frac{ab e^h}{(b-a e^h)^2} =& - \frac{AB}{(B-A)^2}  \\
  =& \frac{AB}{B^2 -2AB + B^2} \\
- \le& \frac{AB}{4AB}  (\because <a href="/main_articles/geometry" > AM-GM inequality </a> ) \\
+ \le& \frac{AB}{4AB}  (\because AM-GM inequality* ) \\
  =& \frac{1}{4} \\
 \end{align}
 $$
+
+* <a href="/main_articles/geometry" > AM-GM inequality </a>
 
 
 We see that $$f''(h) \le 1/4$$ for all $h$, thus, from <a href="/main_articles/taylor_s_theorem" > Taylor's theorem </a>, there is some $0 \le \theta \le 1$ such that 
