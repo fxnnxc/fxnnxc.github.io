@@ -9,7 +9,7 @@ giscus_comments: false
 disqus_comments: false
 date: 2024-01-10
 featured: true
-title: 'Taylor's Theorem'
+title: "Taylor's Theorem"
 description: 'Description of Taylor's Theorem and Applications'
 _styles: >
     .table {
@@ -20,7 +20,6 @@ _styles: >
     .p {
         font-size:20px;
     }
-
 ---
 
 <blockquote>

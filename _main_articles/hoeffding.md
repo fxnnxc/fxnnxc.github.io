@@ -9,8 +9,8 @@ giscus_comments: false
 disqus_comments: false
 date: 2024-01-10
 featured: true
-title: 'Hoeffding's Lemma and Inequality'
-description: 'Description of Hoeffding's Lemma, Inequality and Applications'
+title: "Hoeffding's Lemma and Inequality"
+description: "Description of Hoeffding's Lemma, Inequality and Applications"
 _styles: >
     .table {
         padding-top:200px;
