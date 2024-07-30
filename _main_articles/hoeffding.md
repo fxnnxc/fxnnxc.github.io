@@ -73,7 +73,7 @@ $$
 \begin{align}
 \frac{ab e^h}{(b-a e^h)^2} =& - \frac{AB}{(B-A)^2}  \\
  =& \frac{AB}{B^2 -2AB + B^2} \\
- \le& \frac{AB}{4AB}  (\because AM-GM inequality* ) \\
+ \le& \frac{AB}{4AB}  ~~~ (\because \text{AM-GM inequality}* ) \\
  =& \frac{1}{4} \\
 \end{align}
 $$
