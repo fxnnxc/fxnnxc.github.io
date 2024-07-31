@@ -23,7 +23,7 @@ _styles: >
 ---
 <style>
 blockquote {
-    width: 150%; 
+    width: 100%; 
 }
 </style>
 
@@ -58,6 +58,39 @@ In other words, you will have
 $$
 \hat{R}_{\mathcal{S}} (\text{a set of linear models}) <  \cdots <  \hat{R}_{\mathcal{S}} (\text{a set of neural networks})
 $$
+
+
+<blockquote>
+<h3> (More intuitive Way) </h3>
+
+Imagine that a professor gives you a problem which consists of samples from the Rademacher distribution,
+$$
+P = (-1,1,-1,1,1,1,-1,1,-1,-1)
+$$
+
+
+The function class is a set of your solutions $\mathcal{F}$. If you cat match every problem $P$ by finding $f \in \mathcal{F}$ that maximizes the sum of the following array,
+
+$$
+(-1 \cdot f(x_1) ,1 \cdot f(x_2),-1 \cdot f(x_3), \cdots) 
+$$
+
+Your function class $\mathcal{F}$ is complex enough to tackle any problem given by the professor. 
+
+$$
+\hat{R}_{\mathcal{S}} (\mathcal{F}) = \mathbb{E}_\sigma \Big[  
+    \textcolor{red}{\operatorname{sup}_{f \in \mathcal{F}}}  \frac{1}{n} \textcolor{blue}{\sum_{i=1}^n \sigma_i f(x_i)}
+    \Big]
+$$
+
+1) $\textcolor{red}{\operatorname{sup}_{f \in \mathcal{F}}}$ is finding the solution engine  
+<br>
+2) $ \textcolor{blue}{\sum_{i=1}^n \sigma_i f(x_i)}$ is your solution of $P$.  
+
+
+</blockquote>
+
+
 
 ## Generalization Bound 
 
