@@ -68,13 +68,14 @@ $$
 P = (-1,1,-1,1,1,1,-1,1,-1,-1)
 $$
 
-
-The function class is a set of your solutions $\mathcal{F}$. If you cat match every problem $P$ by finding $f \in \mathcal{F}$ that maximizes the sum of the following array,
+The function class is a set of your solution engines $\mathcal{F}$. 
+If you cat match every problem $P$ by finding a solution engine $f \in \mathcal{F}$ that maximizes the sum of the following array,
 
 $$
 (-1 \cdot f(x_1) ,1 \cdot f(x_2),-1 \cdot f(x_3), \cdots) 
 $$
-
+where $x_i$ is just assumed any information about the label (such as just index of a sample in the problem $P$.)
+<br>
 Your function class $\mathcal{F}$ is complex enough to tackle any problem given by the professor. 
 
 $$
