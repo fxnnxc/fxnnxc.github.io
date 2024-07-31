@@ -51,6 +51,14 @@ $$
 \end{equation}
 $$
 
+Note that $\sigma$ is sampled randomly and you must find a model $f \in \mathcal{F}$ that maximizes the (-1, 1) randomness. 
+When your function class $\mathcal{F}$ has more functions, the chance of maximizing the $\sigma_i f(x_i)$ increases. 
+In other words, you will have 
+
+$$
+\hat{R}_{\mathcal{S}} (\text{a set of linear models}) <  \cdots <  \hat{R}_{\mathcal{S}} (\text{a set of neural networks})
+$$
+
 ## Generalization Bound 
 
 Given a sample $$ S = \{(x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n)\} $$ of $$n$$ i.i.d. 
