@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<!-- _layouts/distill.html -->
+<html>
+  <head>    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bumjini | [연구 1] Kolmar Software Overview</title>
+    <meta name="author" content="Bumjini  " />
+    <meta name="description" content="기본적인 머신러닝/딥러닝 프레임워크 및 실험 과정" />
+    <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website" />
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous" />
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="none" id="highlight_theme_light" />
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪴</text></svg>">
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://fxnnxc.github.io/Pkolmar/kolmar_230828/">
+    
+    <!-- Dark Mode -->
+    
+
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams',
+        inlineMath: [['$','$'], ['\\(','\\)']]
+      },
+      chtml: {
+          scale: 1.0,
+          minScale: .6,  
+          mtextFontInherit: true,
+          mtextInheritFont: true,
+          merrorInheritFont: true,
+        },
+        svg: {
+          scale: 1.2
+        }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <!-- Distill js -->
+    <script src="/assets/js/distillpub/template.v2.js"></script>
+    <script src="/assets/js/distillpub/transforms.v2.js"></script>
+    
+  </head>
+
+  <d-front-matter>
+    <script async type="text/json">{
+      "title": "[연구 1] Kolmar Software Overview",
+      "description": "기본적인 머신러닝/딥러닝 프레임워크 및 실험 과정",
+      "published": "August 28, 2023",
+      "authors": [
+        {
+          "author": "Bumjin Park",
+          "authorURL": "",
+          "affiliations": [
+            {
+              "name": "KAIST",
+              "url": ""
+            }
+          ]
+        }
+        
+      ],
+      "katex": {
+        "delimiters": [
+          {
+            "left": "$",
+            "right": "$",
+            "display": false
+          },
+          {
+            "left": "$$",
+            "right": "$$",
+            "display": true
+          }
+        ]
+      }
+    }</script>
+  </d-front-matter>
+
+  <body class="sticky-bottom-footer">
+
+    <!-- Header -->    
+    <center>
+      <img src="/assets/common/KAIST-hi.gif" width="40px" style="margin-right:0px; padding-bottom: 3px;">
+    </center>
+    <hr> 
+
+    <!-- Content -->
+    <div class="post distill">
+
+      <d-title>
+        <h1 style="font-size: 32px;">[연구 1] Kolmar Software Overview</h1>
+        <p>기본적인 머신러닝/딥러닝 프레임워크 및 실험 과정</p>
+      </d-title>
+
+      <d-byline></d-byline>
+
+      <d-article>
+        
+
+        <h4 id="요구사항">요구사항</h4>
+
+<ul>
+  <li>
+<strong>데이터셋 형태</strong> : <a href="#3-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%85%8B-%EC%98%88%EC%8B%9C">3.데이터셋_예시</a> 참조 ✅</li>
+  <li>
+<strong>기본 딥러닝 프레임워크</strong> : <a href="#1-%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4-%EB%AA%A9%EC%A0%81">1.소프트웨어 목적</a> 참조 ✅</li>
+  <li>
+<strong>딥러닝 실험 관리 방침</strong> : <a href="#2-versioning-%EB%8B%A4%EC%96%91%ED%95%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A2%85%EB%A5%98-%EB%AA%A8%EB%8D%B8-%EC%A2%85%EB%A5%98-%ED%95%99%EC%8A%B5-%EA%B2%B0%EA%B3%BC-%EB%B3%B4%EA%B3%A0%EC%84%9C">2.버전관리</a> 참조 ✅</li>
+</ul>
+
+<h2 id="1-소프트웨어-목적">1. 소프트웨어 목적</h2>
+
+<p>콜마 소프트웨어의 목적은 <strong>지속적이고 자동적인 실험</strong>을 지원하며, 새로운 데이터, 모델 구조, 실험을 지속적으로 관리하는 <strong>딥러닝 프레임워크</strong>를 제공하고, 학습된 모델로부터 인사이트 도출을 돕는데 있다. 
+기본적인 구조는 다음과 같이 학습과 평가가 구분된 구조로, 학습에 사용하는 데이터와 테스트에 사용되는 데이터를 구분한다. <strong>(1) 학습</strong>과정에서는 선택된 학습 데이터, 모델, 모델 트레이너를 바탕으로 학습이 진행되며, 학습 과정에서 모델 체크포인트가 저장된다. 저장된 체크포인트는 <strong>(2) 테스트</strong>과정에서에서 테스트 데이터를 바탕으로 평가코드로 정량적 및 정성적 평가 결과들을 생성해낸다. 이로부터 저장된 학습 및 테스트 정보들은 레포트를 작성하는 소재가 된다.</p>
+
+<figure>
+<img src="https://drive.google.com/uc?export=view&amp;id=1AjinezaQqG-mRg4IhT4QZzHjFX7w_v8X">
+</figure>
+
+<p>사용자가 데이터셋, 모델, 학습방법, 평가데이터셋, 평가코드를 선택하면, <strong>자동으로 모델의 학습부터 평가까지 진행되며</strong>, 정량적 및 정성적으로 평가결과는 저장된다. 이로부터 전체 실험에 대해서 정보를 저장하고, 인사이트가 존재하는 경우, 수동적으로 레포트를 작성한다. 유저는 자동화된 소프트웨어로부터 학습부터 평가까지 진행하지만, 이로부터 레포트를 작성하는 것은 수동적으로 진행한다. 이러한 구분은 보다 딥러닝 모델로부터 지속적인 인사이트를 얻는데 “효율적인 정보”를 따로 추출해내는데 있다.</p>
+
+<p><strong>📌 (수동)</strong>[선택:학습데이터, 모델, 테스트데이터, 평가방식] $\rightarrow$ <strong>(자동)</strong>[학습, 평가] $\rightarrow$ <strong>(수동)</strong>[레포트 작성]</p>
+
+<p>해당 도안에는 딥러닝에 필수적인 <em>“데이터 전처리”</em>와 <em>“학습 세팅 (training configuration)”</em>이 포함되어 있지 않지만, 마찬가지로 버전으로 관리된다.</p>
+
+<h2 id="2-versioning-다양한-데이터-종류-모델-종류-학습-결과-보고서">2. Versioning: 다양한 데이터 종류, 모델 종류, 학습 결과 보고서</h2>
+
+<p>이에 본 소프트웨어는 지속적으로 업데이트될 데이터, 모델, 학습 방법, 학습 결과, 평가, 레포트에 대해서 <strong>버전으로 관리하는 것을 목적으로 한다.</strong> 버전 관리는 <strong>데이터 및 모델이 지속적으로 업데이트</strong> 되는 과제의 특성상 적합하며, 비개발자가 사용하는데 있어서, 요소들을 버전으로 선택함으로써 사용의 효율화를 돕는다. 
+버전관리에 해당 하는 부분들은 다음과 같이 학습 및 평가를 구성하는 여러 항목들이다. 해당 항목들은 지속적인 연구 개발을 위해서 버전으로 관리되며, 지속적인 
+모델 및 데이터셋 간의 성능 비교를 가능하게 만든다.</p>
+
+<figure>
+<img src="https://drive.google.com/uc?export=view&amp;id=14Vx1064dr3wzyntBGfje0wd0yRn3Dall">
+</figure>
+
+<ul>
+  <li>
+<code style="background-color:#FFFFDD">데이터셋</code> : 학습과 평가에 사용되는 데이터셋의 버전을 나타낸다.</li>
+  <li>
+<code style="background-color:#DDFFDD">모델</code>: 모델과 모델 학습에 사용되는 Trainer의 버전을 나타낸다.</li>
+  <li>
+<code style="background-color:#DDEEFF">평가</code> : 평가 및 레포트의 버전을 나타낸다.</li>
+</ul>
+
+<h2 id="3-데이터셋-예시">3. 데이터셋 예시</h2>
+
+<p>데이터셋은 버전으로 관리되며, <code class="language-plaintext highlighter-rouge">dataset_v1</code> 와 같은 이름으로 버전을 관리한다. 예시로, <code class="language-plaintext highlighter-rouge">example_excel</code> 을 살펴보자. 
+해당 데이터셋은 다음과 같이 입력과 출력을 위한 폴더가 따로 존재하며, 각 폴더 내에는 샘플들을 액셀파일로 저장되어 있다.</p>
+
+<d-code block="" language="bash" style="font-size:`15px">
+- input (폴더📂)
+    - sample_0.xlsx (샘플0 - 성분, 엑셀, 📊) 
+    - sample_1.xlsx (샘플1 - 성분, 엑셀, 📊)
+    - sample_2.xlsx (샘플2 - 성분, 엑셀, 📊)
+    ...
+- output (폴더📂)
+    - sample_0.xlsx (샘플0 - 물성, 엑셀, 📊)
+    - sample_1.xlsx (샘플1 - 물성, 엑셀, 📊)
+    - sample_2.xlsx (샘플2 - 물성, 엑셀, 📊)
+    ...
+</d-code>
+
+<p>총 9개의 랜덤 샘플을 생성한 데이터는 [<a href="https://drive.google.com/drive/folders/1jKcLQoga0ScRa5mvJqkbMmgpWscJU3-i?usp=sharing" target="_blank" rel="noopener noreferrer">drive link</a>]에서 확인할 수 있다. 
+각 샘플의 입력 (input) 과 출력 (output)은 다음과 같은 형태이며, 이는 임의로 작성된 것으로 실제 데이터셋은 실무자와 회의를 거쳐서 선택된다.</p>
+
+<center>
+    <table>
+    <tr>
+<td>input/sample_0.xlsx</td>
+<td>output/sample_0.xlsx</td>
+</tr>
+    <tr>
+    <td> <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSB5oP_dVkjaOGK2B4Xhj1pHVgsB5J2RXIHZ_ftg5BnzXE_LBY0jUctdIS5fX3sSw/pubhtml?widget=true&amp;headers=false" height="300px" width="100%">
+    </iframe>
+    </td> 
+    <td> <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQvPoHj4AM6ZoWm2U49Exw1wMhnGwQFQhnTcH8_38BOqC69knJvNARGKWqqM0It0Q/pubhtml?widget=true&amp;headers=false" height="300px" width="100%">
+    </iframe>
+    </td> 
+    </tr>
+    </table>
+</center>
+
+<h2 id="추가적인-테스크-확장성">추가적인 테스크 (확장성)</h2>
+
+<p>딥러닝으로부터 인사이트를 얻기 위해서는 모델을 활용하여 다양한 Task<d-footnote> 모델을 가지고 할 수 있는 일은 다양하며, 학습과 테스트는 그 방법들 중 한 가지 방법이다. </d-footnote>를 생성해야 한다. 본 소프트웨어 소개에서는 학습-테스트에 초점을 맞춰서 소프트웨어를 설명하였지만, 실제 소프트웨어는 더욱 다양한 기능들을 포함할 수 있다. 예시는 다음과 같다.</p>
+
+<ul>
+  <li>Domain Adaptation</li>
+  <li>Transfer Learning</li>
+  <li>Representation Learning</li>
+  <li>hierarchical feature learning</li>
+  <li>XAI (설명가능인공지능)</li>
+  <li>Interpretability (딥러닝 모델 해석)</li>
+</ul>
+
+<p>이러한 테스크들을 지원하기 위해서 본 소프트웨어는 학습과 테스트에 대해서 (학습-테스크) 및 (테스트-테스크)로 명칭하며, 이후 추가적인 테스크들이 필요성을 의논하고 개발될 예정이다.</p>
+
+<hr>
+
+
+      </d-article>
+
+      <d-appendix>
+        <d-footnote-list></d-footnote-list>
+        <d-citation-list></d-citation-list>
+      </d-appendix>
+
+
+      <hr>
+<!--<div id="giscus_thread" style="max-width: 1000px; margin: 0 auto;">
+    <script>
+      let giscusTheme = localStorage.getItem("theme");
+      let giscusAttributes = {
+          "src": "https://giscus.app/client.js",
+          "data-repo": "fxnnxc/fxnnxc",
+          "data-repo-id": "MDEwOlJlcG9zaXRvcnkzMjQ2NjUxMTU=",
+          "data-category": "Q&A",
+          "data-category-id": "DIC_kwDOE1n_G84CYOk_",
+          "data-mapping": "title",
+          "data-strict": "0",
+          "data-reactions-enabled": "1",
+          "data-emit-metadata": "0",
+          "data-input-position": "top",
+          "data-theme": giscusTheme,
+          "data-lang": "en",
+          "crossorigin": "anonymous",
+          "async": "",
+      };
+  
+  
+      let giscusScript = document.createElement("script");
+      Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+      document.getElementById("giscus_thread").appendChild(giscusScript);
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript">comments powered by giscus.</a></noscript>
+  </div>--><div id="giscus_thread" style="max-width: 1000px; margin: 0 auto;">
+    <script>
+      let giscusTheme = localStorage.getItem("theme");
+      let giscusAttributes = {
+          "src": "https://giscus.app/client.js",
+          "data-repo": "fxnnxc/fxnnxc",
+          "data-repo-id": "MDEwOlJlcG9zaXRvcnkzMjQ2NjUxMTU=",
+          "data-category": "Q&A",
+          "data-category-id": "DIC_kwDOE1n_G84CYOk_",
+          "data-mapping": "title",
+          "data-strict": "0",
+          "data-reactions-enabled": "1",
+          "data-emit-metadata": "0",
+          "data-input-position": "top",
+          "data-theme": giscusTheme,
+          "data-lang": "en",
+          "crossorigin": "anonymous",
+          "async": "",
+      };
+  
+  
+      let giscusScript = document.createElement("script");
+      Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+      document.getElementById("giscus_thread").appendChild(giscusScript);
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript" target="_blank" rel="noopener noreferrer">comments powered by giscus.</a>
+</noscript>
+  </div>
+</div>
+
+    <!-- Footer -->    <footer class="sticky-bottom mt-5" style="border: none;border-top:0px">
+      <div class="container" style="text-align: center; ">
+        © Copyright 2024 Bumjini  . Powered by Jekyll with al-folio theme. Hosted by GitHub Pages.
+
+      </div>
+    </footer>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js" integrity="sha256-l/1pMF/+J4TThfgARS6KwWrk/egwuVvhRzfLAMQ6Ds4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha256-SyTu6CwrfOhaznYZPoolVw2rxoY7lKYKQvqbtqN93HI=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    
+    
+
+<!-- Scrolling Progress Bar -->
+<script type="text/javascript">
+  /*
+   * This JavaScript code has been adapted from the article 
+   * https://css-tricks.com/reading-position-indicator/ authored by Pankaj Parashar, 
+   * published on the website https://css-tricks.com on the 7th of May, 2014.
+   * Couple of changes were made to the original code to make it compatible 
+   * with the `al-foio` theme.
+   */
+  const progressBar = $("#progress");
+  /*
+   * We set up the bar after all elements are done loading.
+   * In some cases, if the images in the page are larger than the intended
+   * size they'll have on the page, they'll be resized via CSS to accomodate
+   * the desired size. This mistake, however, breaks the computations as the
+   * scroll size is computed as soon as the elements finish loading.
+   * To account for this, a minimal delay was introduced before computing the
+   * values.
+   */
+  window.onload = function () {
+    setTimeout(progressBarSetup, 50);
+  };
+  /*
+   * We set up the bar according to the browser.
+   * If the browser supports the progress element we use that.
+   * Otherwise, we resize the bar thru CSS styling
+   */
+  function progressBarSetup() {
+    if ("max" in document.createElement("progress")) {
+      initializeProgressElement();
+      $(document).on("scroll", function() {
+        progressBar.attr({ value: getCurrentScrollPosition() });
+      });
+      $(window).on("resize", initializeProgressElement);
+    } else {
+      resizeProgressBar();
+      $(document).on("scroll", resizeProgressBar);
+      $(window).on("resize", resizeProgressBar);
+    }
+  }
+  /*
+   * The vertical scroll position is the same as the number of pixels that
+   * are hidden from view above the scrollable area. Thus, a value > 0 is
+   * how much the user has scrolled from the top
+   */
+  function getCurrentScrollPosition() {
+    return $(window).scrollTop();
+  }
+
+  function initializeProgressElement() {
+    let navbarHeight = $("#navbar").outerHeight(true);
+    $("body").css({ "padding-top": 0 });
+    $("progress-container").css({ "padding-top": 0 });
+    progressBar.css({ top: navbarHeight });
+    progressBar.attr({
+      max: getDistanceToScroll(),
+      value: getCurrentScrollPosition(),
+    });
+  }
+  /*
+   * The offset between the html document height and the browser viewport
+   * height will be greater than zero if vertical scroll is possible.
+   * This is the distance the user can scroll
+   */
+  function getDistanceToScroll() {
+    return $(document).height() - $(window).height();
+  }
+
+  function resizeProgressBar() {
+    progressBar.css({ width: getWidthPercentage() + "%" });
+  }
+  // The scroll ratio equals the percentage to resize the bar
+  function getWidthPercentage() {
+    return (getCurrentScrollPosition() / getDistanceToScroll()) * 100;
+  }
+</script>
+
+  </body>
+
+  <d-bibliography src="/assets/bibliography/">
+  </d-bibliography>
+
+  <!-- jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="/assets/js/distillpub/overrides.js"></script>
+
+    <center>
+        <img src="/assets/common/KAIST-hi.gif" width="40px" style="margin-right:0px; padding-bottom: 3px;">
+    </center>
+    <hr> 
+
+</html>

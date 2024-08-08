@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<!-- _layouts/distill.html -->
+<html>
+  <head>    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bumjini | [연구 4] 2차처방 데이터 / 1차처방 데이터 학습 보완</title>
+    <meta name="author" content="Bumjini  " />
+    <meta name="description" content="데이터 검증 및 1차처방 데이터 학습에 대한 추가적인 학습 및 인사이트" />
+    <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website" />
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous" />
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="none" id="highlight_theme_light" />
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪴</text></svg>">
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://fxnnxc.github.io/Pkolmar/kolmar_231018/">
+    
+    <!-- Dark Mode -->
+    
+
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams',
+        inlineMath: [['$','$'], ['\\(','\\)']]
+      },
+      chtml: {
+          scale: 1.0,
+          minScale: .6,  
+          mtextFontInherit: true,
+          mtextInheritFont: true,
+          merrorInheritFont: true,
+        },
+        svg: {
+          scale: 1.2
+        }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <!-- Distill js -->
+    <script src="/assets/js/distillpub/template.v2.js"></script>
+    <script src="/assets/js/distillpub/transforms.v2.js"></script>
+    
+  </head>
+
+  <d-front-matter>
+    <script async type="text/json">{
+      "title": "[연구 4] 2차처방 데이터 / 1차처방 데이터 학습 보완",
+      "description": "데이터 검증 및 1차처방 데이터 학습에 대한 추가적인 학습 및 인사이트",
+      "published": "October 17, 2023",
+      "authors": [
+        {
+          "author": "Bumjin Park",
+          "authorURL": "",
+          "affiliations": [
+            {
+              "name": "KAIST",
+              "url": ""
+            }
+          ]
+        }
+        
+      ],
+      "katex": {
+        "delimiters": [
+          {
+            "left": "$",
+            "right": "$",
+            "display": false
+          },
+          {
+            "left": "$$",
+            "right": "$$",
+            "display": true
+          }
+        ]
+      }
+    }</script>
+  </d-front-matter>
+
+  <body class="sticky-bottom-footer">
+
+    <!-- Header -->    
+    <center>
+      <img src="/assets/common/KAIST-hi.gif" width="40px" style="margin-right:0px; padding-bottom: 3px;">
+    </center>
+    <hr> 
+
+    <!-- Content -->
+    <div class="post distill">
+
+      <d-title>
+        <h1 style="font-size: 32px;">[연구 4] 2차처방 데이터 / 1차처방 데이터 학습 보완</h1>
+        <p>데이터 검증 및 1차처방 데이터 학습에 대한 추가적인 학습 및 인사이트</p>
+      </d-title>
+
+      <d-byline></d-byline>
+
+      <d-article>
+        
+
+        <h2 id="1-report-info">1. Report Info</h2>
+
+<div class="spanbox" style="width:40rem;background-color:#FFFDFD;">
+  <ol>
+    <li>👨🏻‍💻 <strong>Code Release</strong>:  Tag <a href="https://github.com/fxnnxc/kolmar/tree/v23.10.19.1" target="_blank" rel="noopener noreferrer">v23.10.19.1</a>
+</li>
+    <li>📂 <strong>Raw Data</strong> :  (2.1, <code class="language-plaintext highlighter-rouge">raw_data:second_receipt</code>)  # 1. 코드별로 합산한 데이터</li>
+    <li>🗂️ <strong>Datasets</strong> :  (2, <code class="language-plaintext highlighter-rouge">ds:first_receipt_ml</code>)  # 2.RF and 3. PDP</li>
+    <li>👾 <strong>Models</strong> :  (1, <code class="language-plaintext highlighter-rouge">svr</code>) / (2, <code class="language-plaintext highlighter-rouge">random_forest_regressor</code>)</li>
+    <li>🦄 <strong>Trainers</strong> : (1, <code class="language-plaintext highlighter-rouge">sklearn_regressor</code>)</li>
+    <li>📌 <strong>Related Notebooks</strong>
+      <ul>
+        <li><a href="https://github.com/fxnnxc/kolmar/tree/v23.10.19.1/labs/second_receipt_eda" target="_blank" rel="noopener noreferrer">second_receipt_eda notebooks</a></li>
+        <li><a href="https://github.com/fxnnxc/kolmar/blob/v23.10.19.1/labs/first_receipt_rmse/partial_dependency_svr.ipynb" target="_blank" rel="noopener noreferrer">partial_dependency_svr.ipynb</a></li>
+        <li><a href="https://github.com/fxnnxc/kolmar/blob/v23.10.19.1/labs/first_receipt_rmse//plot_rmse_rf.ipynb" target="_blank" rel="noopener noreferrer">plot_rmse_rf.ipynb</a></li>
+      </ul>
+    </li>
+  </ol>
+
+</div>
+
+<h2 id="2차-처방-데이터">2차 처방 데이터</h2>
+
+<p>1차 처방 50개 코드와 비교해보면, MMM000 이 가장 많이 사용되는 것은 동일하나, 이후부터 코드 순서는 일치하지 않는다.</p>
+<ul>
+  <li><a href="https://drive.google.com/file/d/19BT4EoPCzjhESs7D5mNeXZqH-7PsoRqe/view?usp=share_link" target="_blank" rel="noopener noreferrer">1차 데이터 순서.json</a></li>
+  <li><a href="https://drive.google.com/drive/folders/1i3ovRmBiW5nDCUYhdTQlrqaTimLvI_VI?usp=sharing" target="_blank" rel="noopener noreferrer">2차 데이터 순서.json</a></li>
+</ul>
+
+<h3 id="1차-처방--2차-처방-코드-분포">1차 처방 / 2차 처방 코드 분포</h3>
+
+<div class="spanbox" style="width:60rem;background-color:#FFFDFD;margin-left:-5rem;">
+  <p><img src="https://drive.google.com/uc?export=view&amp;id=1L_JVd1oasKDdVA8s23tNF8AsYndP3SpI" style="width:49%">
+<img src="https://drive.google.com/uc?export=view&amp;id=1VM2_2MV_7ej5slA169uffLH9R8NWBEO4" style="width:49%"></p>
+</div>
+
+<h3 id="특징들">특징들</h3>
+
+<ol>
+  <li>
+<strong>입력랩</strong>과 <strong>출력랩</strong> 개수
+    <ul>
+      <li>
+<strong>입력 랩넘버 수</strong> : 7641</li>
+      <li>
+<strong>출력 랩넘버 수</strong> : (783개) (유일 :771개 ) (중복: )</li>
+    </ul>
+  </li>
+  <li>합산해서 100 여부
+    <ul>
+      <li>합산이 100인 랩 개수 : 4972</li>
+      <li>합산이 100이 아닌 랩 개수 : 2669 (대부분은 99.5 이상 [<a href="https://github.com/fxnnxc/kolmar/blob/v23.10.19.1/labs/second_receipt_eda/code_verification.ipynb" target="_blank" rel="noopener noreferrer">notebook</a>])</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="2차-처방-예측값-분포-110000--1차-처방-비교">2차 처방 예측값 분포 (1/10000) / (1차 처방 비교)</h3>
+
+<p>예측값의 분포는 다음과 같다. 2차 처방의 경우</p>
+
+<div class="spanbox" style="width:100%">
+  <p><img src="https://drive.google.com/uc?export=view&amp;id=1759r2Afe8HKChHH_oNoePBw9akxC8RNq" style="width:49%">
+<img src="https://drive.google.com/uc?export=view&amp;id=16-ZXy2tI6s72_agj7pzy4PTM7IrcB4hd" style="width:49%"></p>
+</div>
+
+<hr>
+
+<h2 id="2-random-forest">2. Random Forest</h2>
+
+<p>Decision Tree 에서 사용된 예측 방법은 Tree 형태로 root부터 leaf 노드까지 feature 를 선택하여 값을 기준으로 나눈 최종 leaf에서 예측을 진행하는 방식이다. 점도 예측의 경우는 다음과 같이 코드 선택의 결과로 최종적으로 점도값 (value) 가 결정된다. 
+<img src="https://drive.google.com/uc?export=view&amp;id=1mtE_2yeXeac1vUJF_b75SSPEGDPoX0Tv" style="width:100%"></p>
+
+<p>DT 는 뿌리부터 하나의 코드에 대해서 값을 나누기 때문에, 제한된 개수의 코드가 모델에 활용된다. 따라서 표현력이 부족한데, Random Forest (RF)는 Tree를 무수히 많이 만들고 사용되는 feature (코드)도 랜덤하게 선택하여 선택의 다양성을 보장한다. 최종 예측은 모든 트리에서 예측된 값의 평균으로 사용되는 것이 일반적이다.</p>
+
+<center>
+<img src="https://drive.google.com/uc?export=view&amp;id=1q8kQrssUtgFPFcqIzsATvwo0fPb2XJ0e" style="width:80%"> 
+</center>
+
+<h3 id="성능-rmse">성능 (RMSE)</h3>
+
+<ul>
+  <li>좌 : <strong>Random Forest</strong> (RF)</li>
+  <li>우 : Support Vector Regressor (SVR)</li>
+</ul>
+
+<p>RF 의 성능은 SVR과 비교해서 학습데이터에 대해서 월등한 성능을 보였다. 테스트 데이터에 대해서는 SVR 만큼의 일반화는 안되었지만, 에러는 0.9 정도로 비슷한 것을 확인할 수 있다. 따라서, 정량적으로 RF를 사용하는 것은 학습데이터 에러(0.4), 테스트 에러 (0.9) 수준임을 알 수 있다. 점도를 예측하는 경우 평균적으로 4000~9000정도의 에러를 가지는 것을 확인할 수 있다.</p>
+
+<center>
+<img src="https://drive.google.com/uc?export=view&amp;id=1PDIupT4BJRypHvL_16Byg5UG7giDmz8-" style="width:49%"> 
+<img src="https://drive.google.com/uc?export=view&amp;id=10-vwD_CzikpZFPvHji2Qs-EP-m8jb5TY" style="width:49%">
+</center>
+
+<h2 id="23-error-prediction---target">2.3 Error (prediction - target)</h2>
+
+<p>예측값과 실제값의 차이 (x-축) 과 비율(y-축) 그래프를 보면, 코드 개수가 늘어남에 따라서 첨도가 올라가므로 (반대로 분산은 줄어들기에) 예측율이 올라감을 확인할 수 있다. SVR의 에러 분포와 비교해보면,  2~4 부분이 높았던 것이 많이 줄어들었고, 좌우밸런스가 잘 맞는 것을 확인할 수 있다.</p>
+
+<div class="spanbox" style="width:100%">
+  <h3 id="rf--">RF 에러 분포</h3>
+  <p><img src="https://drive.google.com/uc?export=view&amp;id=1DHkbJGNn6Ga2EeRdfIrXT3-0YKggDVfP" style="width:49%"> 
+<img src="https://drive.google.com/uc?export=view&amp;id=1E-2NGm76uRpgWklLW0gynXZYkJ_3ycZW" style="width:49%"></p>
+</div>
+
+<div class="spanbox" style="width:100%">
+  <h3 id="svr--">SVR 에러 분포</h3>
+  <p><img src="https://drive.google.com/uc?export=view&amp;id=1VOgfS065VeZyBa516uOD3rVlzIC9Z4dD" style="width:49%">
+<img src="https://drive.google.com/uc?export=view&amp;id=1EawHk8Xyg5aObOJnA1umyzjod0pKBSxl" style="width:49%"></p>
+</div>
+
+<h3 id="하이퍼파리미터-찾기">하이퍼파리미터 찾기</h3>
+
+<p>코드 개수에 대해서 최적의 하이퍼파라미터를 찾아보면, 트리의 개수인 <code class="language-plaintext highlighter-rouge">n_estimators</code>는 200~1000에 고르게 분포됨을 확인할 수 있다. 트리의 깊이인 <code class="language-plaintext highlighter-rouge">max_depth</code>의 경우 일반적으로 높은 것을 확인할 수 있는데, 이는 점도의 예측값이 이산화 (discrete) 상태이기보다 연속적으로 넓게 분포되었기 때문으로 고려된다.</p>
+
+<p><img src="https://drive.google.com/uc?export=view&amp;id=1b8iNmlmi29LuCjQ4w9V0M6hs3NtxHewT" style="width:100%"></p>
+
+<h3 id="rf-결론">RF 결론</h3>
+
+<p>Decision Tree의 앙상블 버전인 RF를 사용ㅎ하는 경우 성능이 더 많이 개선됨을 확인할 수 있다. 
+모델의 성능은 <code class="language-plaintext highlighter-rouge">RF &gt; SVR &gt; DT</code> 순서이며, 학습데이터에 대해서는 4000점도 수준으로 테스트 데이터에 대해서는 9000 수준의 에러가 있다. 
+다만 현재까지 성능을 낸 모델이 40개의 코드만 사용한 것을 보면, 1970여개의 코드에 대해서 일반화된 모델은 특별한 모델링이 필요해 보인다.</p>
+
+<hr>
+
+<h2 id="3-partial-dependency-plot-1차-처방-모델에-대한-검증">3. Partial Dependency Plot (1차 처방 모델에 대한 검증)</h2>
+
+<p>Partial Dependency Plot 은 임의의 블랙박스 모델 $f$ 에 대해서, 특정 feature $x_s$ 에 대한 평균적인 값의 영향력을 확인하는 방법이다.</p>
+
+\[\hat{f}_S(x_S) = \mathbb{E}_{X_C}[\hat{f}(x_S, X_C)]\]
+
+<p>여기서 $X_C$는 다른 feature (코드)를 나타낸다. 계산적으로는 데이터셋에 대해서 평균값으로 구해진다.</p>
+
+\[\hat{f}_S(x_S) = \frac{1}{n} \sum_{i=1}^n \hat{f}(x_S, x_C^{(i)})\]
+
+<p>특정값을 $x_S$ 에 대해서 고정하고 모든 샘플에 대한 값들로 대체하여 평균적인 영향력을 계산하면 된다. 이 계산은 모델의 내부에 의존적이지 않으므로, 
+모든 머신러닝/딥러닝 모델에 대해서 사용할 수 있다. (자세한 내용 <a href="https://christophm.github.io/interpretable-ml-book/pdp.html" target="_blank" rel="noopener noreferrer">Christopher 8.1 PDP</a>)
+⚠️ PDP 의 경우 데이터셋에 대한 값을 넣는데, 현재 프로젝트는 특정 코드에 대한 값의 영향력을 검증할 필요가 있다. 따라서, PDP 대신에 모델에 특정 코드의 값만 넣었을 때의 값을 분석한다.</p>
+
+<p>따라서 모델 입력으로 다음과 같이 0으로 세팅하고 특정 코드 $x_S$ 에 대해서 값을 $\hat{x}_S$ 로 설정하여 모델에 넣는다. 이 경우는 zero-fill로 부른다.</p>
+
+\[[0,0,0,0,0, \cdots, 0, \hat{x}_S, 0, \cdots, 0] \mapsto 목표값(점도)\]
+
+<p>아래 그림에서 x축은 코드에 넣은 값, y축은 점도를 나타낸다. 범례(legend) 는 어떤 코드를 선택하였는지를 나타낸다.</p>
+
+<p><img src="https://drive.google.com/uc?export=view&amp;id=1oeT2ai2o5n8EeEFi-Dbsk7uqN4CZhmt6" style="width:100%"></p>
+
+<p>⚠️ 레올로지의 특성상 함량은 100으로 통일된다. 따라서 나머지의 값을 가장 많이 사용되는 코드로 채우는 경우도 비교한다. 이 경우는 rest-fill 로 부른다. 
+\([100-\hat{x}_S, 0,0,0,0, \cdots, 0, \hat{x}_S, 0, \cdots, 0] \mapsto 목표값(점도)\)</p>
+
+<h3 id="svr">SVR</h3>
+
+<p>SVR 모델에 대허서 변형된 PDP를 사용해보면 다음과 같다. 모델은 최적의 성능을 보인 300개 코드를 사용한 SVR로 테스트 하였다. 
+행에 대해서 비교하는 코드의 개수가 다르며 (300 vs 10), 열은 zero-fill 과 나머지를 특정 코드값으로 채우는 rest-fill을 나타낸다.</p>
+<ul>
+  <li>첫 번째 그림은 300개 코드 모두를 사용한 경우, 코드 값을 0~60까지 증가시킬 경우 점도의 변화이다.</li>
+  <li>두 번째 그림은 일부 선택된 코드에 대해서 값을 0~60까지 변화시킬 경우 점도를 예측한 값이다.</li>
+</ul>
+
+<p>특정 코드에 대해서 점도 값이 증가하기도, 감소하기도 하는 것을 확인할 수 있다. 변화가 부드럽게 나타난 것은 결과적으로 SVR 모델 자체가 선형성을 지니기 때문이다. 
+주의사항은 모든 코드에 대해서 0~60으로 확인해봤지만, 실제로는 학습에 사용된 코드의 범위. 예, (0~1.0) 으로 분석하는 게 맞다. 이는 코드별 선형관계 (<a href="https://drive.google.com/file/d/1mnm2JTaPNILD2-4TCkzEDIdXo1svijLa/view?usp=share_link" target="_blank" rel="noopener noreferrer">codebooks</a>) 에서 확인된 범위로 추가적으로 분석되어야 한다.</p>
+
+<div class="spanbox" style="width:60rem;margin-left:-10rem;">
+  <p><img src="https://drive.google.com/uc?export=view&amp;id=1C44tltJ8wxO7TwZtXhR2TESgbTfl-3jP" style="width:100%"> 
+<img src="https://drive.google.com/uc?export=view&amp;id=14eKb7ZUb6HSPSdltASYnk226k8eTz7sX" style="width:100%"></p>
+</div>
+
+<h3 id="random-forest">Random Forest</h3>
+
+<p>SVR이 선형적인 특성으로 항목값과 점도의 부드러운 관계를 보여줬다면, RF의 경우는 코드에 대해서 분석하는 것이 쉽지 않다. 
+이는 Decision Tree가 코드값의 범위로 나누기 예측값을 결정하기 때문인데, DT에서 root에 선택된 feature가 특정값을 기준으로 나뉘는데, 변형된 PDP에서는 무조건 0을 넣으니, 가지치기의 branch가 편향적이다.</p>
+
+<div class="spanbox" style="width:60rem;margin-left:-10rem;">
+  <p><img src="https://drive.google.com/uc?export=view&amp;id=1QCMzdmyVKEQibeaH1Us0j6O-kkLctAeC" style="width:100%"> 
+<img src="https://drive.google.com/uc?export=view&amp;id=1ViCXDdASUnjCP1OVglZEyxrEaF-4wafO" style="width:100%"></p>
+</div>
+
+<h3 id="random-forest-zoom-in">Random Forest (Zoom in)</h3>
+
+<div class="spanbox" style="width:60rem;margin-left:-10rem;">
+  <p><img src="https://drive.google.com/uc?export=view&amp;id=1bMXzDLyqMRIDL8ei20Xox9Ea2qYO9qpK" style="width:100%"> 
+<img src="https://drive.google.com/uc?export=view&amp;id=1Rw9RvjQqWoAfFnp1SzAB9xdKnl7DkyUf" style="width:100%"></p>
+</div>
+
+<p>결과적으로 RF의 경우, 변형된 PDP로 분석하는 것은 적절하지 않으며, 제대로 된 PDP로 분석해야 한다.</p>
+
+      </d-article>
+
+      <d-appendix>
+        <d-footnote-list></d-footnote-list>
+        <d-citation-list></d-citation-list>
+      </d-appendix>
+
+
+      <hr>
+<!--<div id="giscus_thread" style="max-width: 1000px; margin: 0 auto;">
+    <script>
+      let giscusTheme = localStorage.getItem("theme");
+      let giscusAttributes = {
+          "src": "https://giscus.app/client.js",
+          "data-repo": "fxnnxc/fxnnxc",
+          "data-repo-id": "MDEwOlJlcG9zaXRvcnkzMjQ2NjUxMTU=",
+          "data-category": "Q&A",
+          "data-category-id": "DIC_kwDOE1n_G84CYOk_",
+          "data-mapping": "title",
+          "data-strict": "0",
+          "data-reactions-enabled": "1",
+          "data-emit-metadata": "0",
+          "data-input-position": "top",
+          "data-theme": giscusTheme,
+          "data-lang": "en",
+          "crossorigin": "anonymous",
+          "async": "",
+      };
+  
+  
+      let giscusScript = document.createElement("script");
+      Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+      document.getElementById("giscus_thread").appendChild(giscusScript);
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript">comments powered by giscus.</a></noscript>
+  </div>--><div id="giscus_thread" style="max-width: 1000px; margin: 0 auto;">
+    <script>
+      let giscusTheme = localStorage.getItem("theme");
+      let giscusAttributes = {
+          "src": "https://giscus.app/client.js",
+          "data-repo": "fxnnxc/fxnnxc",
+          "data-repo-id": "MDEwOlJlcG9zaXRvcnkzMjQ2NjUxMTU=",
+          "data-category": "Q&A",
+          "data-category-id": "DIC_kwDOE1n_G84CYOk_",
+          "data-mapping": "title",
+          "data-strict": "0",
+          "data-reactions-enabled": "1",
+          "data-emit-metadata": "0",
+          "data-input-position": "top",
+          "data-theme": giscusTheme,
+          "data-lang": "en",
+          "crossorigin": "anonymous",
+          "async": "",
+      };
+  
+  
+      let giscusScript = document.createElement("script");
+      Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+      document.getElementById("giscus_thread").appendChild(giscusScript);
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript" target="_blank" rel="noopener noreferrer">comments powered by giscus.</a>
+</noscript>
+  </div>
+</div>
+
+    <!-- Footer -->    <footer class="sticky-bottom mt-5" style="border: none;border-top:0px">
+      <div class="container" style="text-align: center; ">
+        © Copyright 2024 Bumjini  . Powered by Jekyll with al-folio theme. Hosted by GitHub Pages.
+
+      </div>
+    </footer>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js" integrity="sha256-l/1pMF/+J4TThfgARS6KwWrk/egwuVvhRzfLAMQ6Ds4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha256-SyTu6CwrfOhaznYZPoolVw2rxoY7lKYKQvqbtqN93HI=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    
+    
+
+<!-- Scrolling Progress Bar -->
+<script type="text/javascript">
+  /*
+   * This JavaScript code has been adapted from the article 
+   * https://css-tricks.com/reading-position-indicator/ authored by Pankaj Parashar, 
+   * published on the website https://css-tricks.com on the 7th of May, 2014.
+   * Couple of changes were made to the original code to make it compatible 
+   * with the `al-foio` theme.
+   */
+  const progressBar = $("#progress");
+  /*
+   * We set up the bar after all elements are done loading.
+   * In some cases, if the images in the page are larger than the intended
+   * size they'll have on the page, they'll be resized via CSS to accomodate
+   * the desired size. This mistake, however, breaks the computations as the
+   * scroll size is computed as soon as the elements finish loading.
+   * To account for this, a minimal delay was introduced before computing the
+   * values.
+   */
+  window.onload = function () {
+    setTimeout(progressBarSetup, 50);
+  };
+  /*
+   * We set up the bar according to the browser.
+   * If the browser supports the progress element we use that.
+   * Otherwise, we resize the bar thru CSS styling
+   */
+  function progressBarSetup() {
+    if ("max" in document.createElement("progress")) {
+      initializeProgressElement();
+      $(document).on("scroll", function() {
+        progressBar.attr({ value: getCurrentScrollPosition() });
+      });
+      $(window).on("resize", initializeProgressElement);
+    } else {
+      resizeProgressBar();
+      $(document).on("scroll", resizeProgressBar);
+      $(window).on("resize", resizeProgressBar);
+    }
+  }
+  /*
+   * The vertical scroll position is the same as the number of pixels that
+   * are hidden from view above the scrollable area. Thus, a value > 0 is
+   * how much the user has scrolled from the top
+   */
+  function getCurrentScrollPosition() {
+    return $(window).scrollTop();
+  }
+
+  function initializeProgressElement() {
+    let navbarHeight = $("#navbar").outerHeight(true);
+    $("body").css({ "padding-top": 0 });
+    $("progress-container").css({ "padding-top": 0 });
+    progressBar.css({ top: navbarHeight });
+    progressBar.attr({
+      max: getDistanceToScroll(),
+      value: getCurrentScrollPosition(),
+    });
+  }
+  /*
+   * The offset between the html document height and the browser viewport
+   * height will be greater than zero if vertical scroll is possible.
+   * This is the distance the user can scroll
+   */
+  function getDistanceToScroll() {
+    return $(document).height() - $(window).height();
+  }
+
+  function resizeProgressBar() {
+    progressBar.css({ width: getWidthPercentage() + "%" });
+  }
+  // The scroll ratio equals the percentage to resize the bar
+  function getWidthPercentage() {
+    return (getCurrentScrollPosition() / getDistanceToScroll()) * 100;
+  }
+</script>
+
+  </body>
+
+  <d-bibliography src="/assets/bibliography/">
+  </d-bibliography>
+
+  <!-- jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="/assets/js/distillpub/overrides.js"></script>
+
+    <center>
+        <img src="/assets/common/KAIST-hi.gif" width="40px" style="margin-right:0px; padding-bottom: 3px;">
+    </center>
+    <hr> 
+
+</html>

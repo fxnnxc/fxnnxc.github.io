@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<!-- _layouts/distill.html -->
+<html>
+  <head>    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bumjini | [연구 15] 원료 정보를 활용한 모델링</title>
+    <meta name="author" content="Bumjini  " />
+    <meta name="description" content="원료 정보를 포함한 실험 결과" />
+    <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website" />
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous" />
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="none" id="highlight_theme_light" />
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪴</text></svg>">
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://fxnnxc.github.io/Pkolmar/kolmar_240125/">
+    
+    <!-- Dark Mode -->
+    
+
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams',
+        inlineMath: [['$','$'], ['\\(','\\)']]
+      },
+      chtml: {
+          scale: 1.0,
+          minScale: .6,  
+          mtextFontInherit: true,
+          mtextInheritFont: true,
+          merrorInheritFont: true,
+        },
+        svg: {
+          scale: 1.2
+        }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <!-- Distill js -->
+    <script src="/assets/js/distillpub/template.v2.js"></script>
+    <script src="/assets/js/distillpub/transforms.v2.js"></script>
+    
+  </head>
+
+  <d-front-matter>
+    <script async type="text/json">{
+      "title": "[연구 15] 원료 정보를 활용한 모델링",
+      "description": "원료 정보를 포함한 실험 결과",
+      "published": "January 24, 2024",
+      "authors": [
+        {
+          "author": "Bumjin Park",
+          "authorURL": "",
+          "affiliations": [
+            {
+              "name": "KAIST",
+              "url": ""
+            }
+          ]
+        }
+        
+      ],
+      "katex": {
+        "delimiters": [
+          {
+            "left": "$",
+            "right": "$",
+            "display": false
+          },
+          {
+            "left": "$$",
+            "right": "$$",
+            "display": true
+          }
+        ]
+      }
+    }</script>
+  </d-front-matter>
+
+  <body class="sticky-bottom-footer">
+
+    <!-- Header -->    
+    <center>
+      <img src="/assets/common/KAIST-hi.gif" width="40px" style="margin-right:0px; padding-bottom: 3px;">
+    </center>
+    <hr> 
+
+    <!-- Content -->
+    <div class="post distill">
+
+      <d-title>
+        <h1 style="font-size: 32px;">[연구 15] 원료 정보를 활용한 모델링</h1>
+        <p>원료 정보를 포함한 실험 결과</p>
+      </d-title>
+
+      <d-byline></d-byline>
+
+      <d-article>
+        
+
+        <h2 id="1-처방-물성-예측-문제">1. 처방 물성 예측 문제</h2>
+
+<p>처방의 물성을 예측하는 문제는 신경망에 처방의 정보와 예측 물성의 정보를 넣어 기대값을 예측하는 문재이다. 
+입력으로 들어가는 정보는 원료의 정보와 함량, 그리고 물성에 대한 정보이다. 
+가장 기본적인 방식은 각 물성마다 신경망을 구성하는 것인데, 이는 확장성이 제한적이다. 
+새로운 물성을 예측할 때 새로운 신경망이 학습되어야 한다.</p>
+
+<center>
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%21833&amp;authkey=%21AA9mhP3YbvPbpfI&amp;width=2798&amp;height=1488" style="width:50%"> 
+</center>
+
+<h2 id="학습의-의미-및-에러-타입">학습의 의미 및 에러 타입</h2>
+
+<p>처방에 대한 물성을 예측하는 문제에는 “원료”와 함량에 대한 조합을 신경망이 이해하는지 여부가 중요하다. 
+아래 그림에서 처방으로부터 무엇을 모델이 학습하는지 확인할 수 있다.</p>
+
+<center>
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%21856&amp;authkey=%21ANYltdw6q9LDhJs&amp;width=1116&amp;height=563" width="100%">
+</center>
+
+<p>원료 조합에 대해서 두 개의 처방을 학습할 때, 공통으로 들어있는 원료는 모든 처방에 적합한 표현으로 학습된다. 
+학습 이후 모델에게 바라는 점은 임의의 처방에서 원료 조합, 함량에 대해서 잘 적응하는 것을 바란다. 
+그러나 이 때 3가지 형태의 에러 종류가 나타난다.</p>
+
+<center>
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%21889&amp;authkey=%21ALKQ7M528d7PTZA&amp;width=1024" width="100%">
+</center>
+
+<ol>
+  <li>안 본 함량에 대한 에러</li>
+  <li>안 본 학습 원료 조합에 대한 에러</li>
+  <li>안 본 원료에 대한 에러</li>
+</ol>
+
+<p>세 종류의 에러는 모델이 모든 원료에 대해서 잘하기 위한 단계를 보여준다. 
+에러는 순서대로 어려우며, 각 에러들은 서로 다른 방식으로 파해되어야 한다. 
+본 연구에서는 학습 이후 세 종류의 에러의 경향성을 분석하여 
+“어떤 에러가 현재 모델링으로 해결 가능한지” 확인하고, 추후 연구를 위한 방향을 모색한다.</p>
+
+<h2 id="데이터-분포">데이터 분포</h2>
+
+<p>먼저 학습 데이터는 다음과 같이 분포되어 있다. 
+Density 는 특정 값에 몰려 있어 정규 분포 형태로 나타나지 않는다.</p>
+
+<center>
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%21878&amp;authkey=%21ACWQmcasrhLKYC4&amp;width=1200&amp;height=600" width="100%">
+</center>
+
+<h2 id="memorization-with-codes">Memorization with Codes</h2>
+
+<p>학습데이터를 암기하는데 있어서 두 개의 모델링의 결과를 비교하였다.</p>
+
+<ul>
+  <li>더하는 방식 (ADD_A) : 학습을 진행할수록 암기하는 수준을 지속적으로 올라가며, pH는 어느수준까지만 가능한 것을 확인하였다. 나머지는 더 오랜 시간 학습이 필요하다.</li>
+  <li>Attention 방식 (CATTN_B) : 학습 자체가 불안정하여 에러가 내려가다 올라가는 경향을 보였다. 따라서 모델 자체를 개선해야 한다.</li>
+</ul>
+
+<center>
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%21886&amp;authkey=%21AGDa2FuEwqwmQ64&amp;width=1000&amp;height=500" width="100%">
+</center>
+
+<h2 id="에러">에러</h2>
+
+<p>위에서 언급한 세 종류를 에러를 포함한 전체 에러 수준을 보자.</p>
+
+<ul>
+  <li>파랑 : 학습 처방에 대한 에러</li>
+  <li>노랑 : 원료 함량이 달라지는 경우 생기는 에러</li>
+  <li>초록 : 다른 조합을 사용하는 경우 발생하는 에러</li>
+  <li>회색 : 학습에 사용되지 않은 원료가 포함된 경우 에러</li>
+  <li>검정 : 전체 에러</li>
+</ul>
+
+<center>
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%21882&amp;authkey=%21AAiUl2N6atDy2k0&amp;width=1300&amp;height=300" width="100%">
+</center>
+
+<p>학습과정에서 에러를 측정해보면, 타입 2,3 번 에러는 학습을 진행하면서 올라가는 경향성을 보인 것을 확인할 수 있따. 이는 모델이 안 본 조합이나 원료에 대해서는 예측 성능이 저하됨을 나타낸다. 반대로 함량에 대해서 학습 할수록 개선된 형태를 보인 것을 확인할 수 있다.</p>
+
+<center>
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%21883&amp;authkey=%21APwb29WE0bCkXMg&amp;width=1000&amp;height=500" width="100%">
+</center>
+
+<h3 id="원료-정보는-도움이-되는가">원료 정보는 도움이 되는가?</h3>
+
+<p>학습에는 세 종류의 원료가 들어가며, 정보가 없는 원료들은 모두 0 벡터로 나타난다.</p>
+
+<ul>
+  <li>WO : 유성 / 수성 여부</li>
+  <li>Function : 약 40가지 원료 기능</li>
+  <li>INCI : 6가지 특징 (아래 규칙 참조)</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>유화제 : '폴리글리세릴', '솔비탄 -', 'PEG-'
+폴리올 : '-다이올', '-글라이콜', '글리세린'
+water : '-추출물', '-수'
+오일 : '-이트', '오일', '-수'
+점증제 : '아크릴레이트코폴리머', '카보머' '히알루-', '브이피' '잔탄검', '아크릴레이트-', '셀룰로오스' '소듐하이알루-', '전분' 
+왁스 : '-왁스', '알코올'
+
+</code></pre></div></div>
+
+<h4 id="add_a_1">ADD_A_1</h4>
+
+<div style="width:60rem">
+
+  <p>전반적으로 2,3 에러에 대해서 더 나은 성능을 보이도록 만들어 주는 것을 확인할 수 있다. 학습 에러를 낮추는 경우는 viscosity 물성에게 도움이 되었다.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>물성</th>
+        <th>학습</th>
+        <th>학습 (사용)</th>
+        <th>1-E</th>
+        <th>1-E (사용)</th>
+        <th>2-E</th>
+        <th>2-E (사용)</th>
+        <th>3-E</th>
+        <th>3-E (사용)</th>
+        <th>eval</th>
+        <th>eval (사용)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>pH</td>
+        <td>0.017</td>
+        <td>0.023</td>
+        <td>0.024</td>
+        <td>0.024</td>
+        <td>0.218</td>
+        <td>0.211</td>
+        <td>0.220</td>
+        <td>0.218</td>
+        <td>0.202</td>
+        <td>0.200</td>
+      </tr>
+      <tr>
+        <td>hardness</td>
+        <td>0.012</td>
+        <td>0.012</td>
+        <td>0.027</td>
+        <td>0.033</td>
+        <td>0.223</td>
+        <td>0.192</td>
+        <td>0.237</td>
+        <td>0.282</td>
+        <td>0.231</td>
+        <td>0.268</td>
+      </tr>
+      <tr>
+        <td>viscosity_4_6</td>
+        <td>0.026</td>
+        <td>0.024</td>
+        <td>0.095</td>
+        <td>0.096</td>
+        <td>0.299</td>
+        <td>0.325</td>
+        <td>0.390</td>
+        <td>0.380</td>
+        <td>0.349</td>
+        <td>0.346</td>
+      </tr>
+      <tr>
+        <td>density</td>
+        <td>0.016</td>
+        <td>0.000</td>
+        <td>0.000</td>
+        <td>0.001</td>
+        <td>0.001</td>
+        <td>0.001</td>
+        <td>0.001</td>
+        <td>0.154</td>
+        <td>0.001</td>
+        <td>0.108</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="cattnb1">CATTN_B_1</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>물성</th>
+        <th>학습</th>
+        <th>학습 (사용)</th>
+        <th>1-E</th>
+        <th>1-E (사용)</th>
+        <th>2-E</th>
+        <th>2-E (사용)</th>
+        <th>3-E</th>
+        <th>3-E (사용)</th>
+        <th>eval</th>
+        <th>eval (사용)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>pH</td>
+        <td>0.051</td>
+        <td>0.055</td>
+        <td>0.032</td>
+        <td>0.026</td>
+        <td>0.233</td>
+        <td>0.230</td>
+        <td>0.236</td>
+        <td>0.241</td>
+        <td>0.217</td>
+        <td>0.219</td>
+      </tr>
+      <tr>
+        <td>hardness</td>
+        <td>0.044</td>
+        <td>0.054</td>
+        <td>0.036</td>
+        <td>0.085</td>
+        <td>0.195</td>
+        <td>0.231</td>
+        <td>0.301</td>
+        <td>0.262</td>
+        <td>0.286</td>
+        <td>0.255</td>
+      </tr>
+      <tr>
+        <td>viscosity_4_6</td>
+        <td>0.095</td>
+        <td>0.076</td>
+        <td>0.207</td>
+        <td>0.191</td>
+        <td>0.308</td>
+        <td>0.298</td>
+        <td>0.456</td>
+        <td>0.447</td>
+        <td>0.411</td>
+        <td>0.401</td>
+      </tr>
+      <tr>
+        <td>density</td>
+        <td>0.000</td>
+        <td>0.000</td>
+        <td>0.001</td>
+        <td>0.001</td>
+        <td>0.001</td>
+        <td>0.001</td>
+        <td>0.005</td>
+        <td>0.055</td>
+        <td>0.004</td>
+        <td>0.039</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h2 id="어떤-원료-정보는-도움이-되는가">어떤 원료 정보는 도움이 되는가?</h2>
+
+<p>위 실험은 여러 정보를 모두 사용해서 모델을 학습한 경우이며, 아래는 각 원료 정보를 포함하지 않은 경우와 단 하나만 포함하는 경우, 모두 포함하는 경우를 나눠서 학습한 결과이다. WO정보와 INCI 정보가 에러를 낮추는데 도움을 주는 것을 확인할 수 있따.</p>
+
+<p>동일한 학습 시간 대비 원료 정보 사용에 따른 에러 비교한다.</p>
+
+<h4 id="ph">pH</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>에러</th>
+      <th>No</th>
+      <th>WO</th>
+      <th>INCI</th>
+      <th>Function</th>
+      <th>ALL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>학습</td>
+      <td>0.025</td>
+      <td>0.024</td>
+      <td>0.025</td>
+      <td>0.024</td>
+      <td>0.024</td>
+    </tr>
+    <tr>
+      <td>eval</td>
+      <td>0.209</td>
+      <td>0.208</td>
+      <td>0.204</td>
+      <td>0.207</td>
+      <td>0.212</td>
+    </tr>
+    <tr>
+      <td>1-E</td>
+      <td>0.039</td>
+      <td>0.033</td>
+      <td>0.036</td>
+      <td>0.034</td>
+      <td>0.035</td>
+    </tr>
+    <tr>
+      <td>2-E</td>
+      <td>0.221</td>
+      <td>0.215</td>
+      <td>0.206</td>
+      <td>0.220</td>
+      <td>0.220</td>
+    </tr>
+    <tr>
+      <td>3-E</td>
+      <td>0.227</td>
+      <td>0.228</td>
+      <td>0.224</td>
+      <td>0.225</td>
+      <td>0.231</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="hardness">hardness</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>에러</th>
+      <th>No</th>
+      <th>WO</th>
+      <th>INCI</th>
+      <th>Function</th>
+      <th>ALL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>학습</td>
+      <td>0.022</td>
+      <td>0.020</td>
+      <td>0.023</td>
+      <td>0.023</td>
+      <td>0.022</td>
+    </tr>
+    <tr>
+      <td>eval</td>
+      <td>0.262</td>
+      <td>0.230</td>
+      <td>0.270</td>
+      <td>0.232</td>
+      <td>0.294</td>
+    </tr>
+    <tr>
+      <td>1-E</td>
+      <td>0.035</td>
+      <td>0.034</td>
+      <td>0.038</td>
+      <td>0.045</td>
+      <td>0.030</td>
+    </tr>
+    <tr>
+      <td>2-E</td>
+      <td>0.198</td>
+      <td>0.202</td>
+      <td>0.164</td>
+      <td>0.205</td>
+      <td>0.199</td>
+    </tr>
+    <tr>
+      <td>3-E</td>
+      <td>0.274</td>
+      <td>0.238</td>
+      <td>0.286</td>
+      <td>0.240</td>
+      <td>0.310</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="viscosity_4_6">viscosity_4_6</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>에러</th>
+      <th>No</th>
+      <th>WO</th>
+      <th>INCI</th>
+      <th>Function</th>
+      <th>ALL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>학습</td>
+      <td>0.049</td>
+      <td>0.046</td>
+      <td>0.049</td>
+      <td>0.052</td>
+      <td>0.060</td>
+    </tr>
+    <tr>
+      <td>eval</td>
+      <td>0.366</td>
+      <td>0.360</td>
+      <td>0.355</td>
+      <td>0.363</td>
+      <td>0.360</td>
+    </tr>
+    <tr>
+      <td>1-E</td>
+      <td>0.124</td>
+      <td>0.113</td>
+      <td>0.122</td>
+      <td>0.115</td>
+      <td>0.125</td>
+    </tr>
+    <tr>
+      <td>2-E</td>
+      <td>0.328</td>
+      <td>0.306</td>
+      <td>0.279</td>
+      <td>0.298</td>
+      <td>0.269</td>
+    </tr>
+    <tr>
+      <td>3-E</td>
+      <td>0.403</td>
+      <td>0.400</td>
+      <td>0.398</td>
+      <td>0.405</td>
+      <td>0.406</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="density">density</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>에러</th>
+      <th>No</th>
+      <th>WO</th>
+      <th>INCI</th>
+      <th>Function</th>
+      <th>ALL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>학습</td>
+      <td>0.016</td>
+      <td>0.016</td>
+      <td>0.016</td>
+      <td>0.016</td>
+      <td>0.003</td>
+    </tr>
+    <tr>
+      <td>eval</td>
+      <td>0.001</td>
+      <td>0.001</td>
+      <td>0.002</td>
+      <td>0.001</td>
+      <td>0.110</td>
+    </tr>
+    <tr>
+      <td>1-E</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.001</td>
+      <td>0.000</td>
+      <td>0.001</td>
+    </tr>
+    <tr>
+      <td>2-E</td>
+      <td>0.001</td>
+      <td>0.001</td>
+      <td>0.001</td>
+      <td>0.001</td>
+      <td>0.001</td>
+    </tr>
+    <tr>
+      <td>3-E</td>
+      <td>0.001</td>
+      <td>0.001</td>
+      <td>0.003</td>
+      <td>0.001</td>
+      <td>0.158</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="결론">결론</h2>
+
+<p>조금씩 적합한 문제를 정의하고, 문제 내 존재하는 에러를 분할하였다. 
+앞으로는 적합한 모델링을 찾아가며, 에러를 어떻게 더 낮출 것인지, 각 에러들을 어떻게 개선할 것인지 연구해야 한다.</p>
+
+<hr>
+
+<p>전체 실험 결과 그래프는 <a href="https://1drv.ms/f/s!Asr4ZEBiKgSuhm_OFFDkocpEQUlD?e=5KBTSc" target="_blank" rel="noopener noreferrer">링크</a>에서 확인 가능.</p>
+
+
+      </d-article>
+
+      <d-appendix>
+        <d-footnote-list></d-footnote-list>
+        <d-citation-list></d-citation-list>
+      </d-appendix>
+
+
+      <hr>
+<!--<div id="giscus_thread" style="max-width: 1000px; margin: 0 auto;">
+    <script>
+      let giscusTheme = localStorage.getItem("theme");
+      let giscusAttributes = {
+          "src": "https://giscus.app/client.js",
+          "data-repo": "fxnnxc/fxnnxc",
+          "data-repo-id": "MDEwOlJlcG9zaXRvcnkzMjQ2NjUxMTU=",
+          "data-category": "Q&A",
+          "data-category-id": "DIC_kwDOE1n_G84CYOk_",
+          "data-mapping": "title",
+          "data-strict": "0",
+          "data-reactions-enabled": "1",
+          "data-emit-metadata": "0",
+          "data-input-position": "top",
+          "data-theme": giscusTheme,
+          "data-lang": "en",
+          "crossorigin": "anonymous",
+          "async": "",
+      };
+  
+  
+      let giscusScript = document.createElement("script");
+      Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+      document.getElementById("giscus_thread").appendChild(giscusScript);
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript">comments powered by giscus.</a></noscript>
+  </div>--><div id="giscus_thread" style="max-width: 1000px; margin: 0 auto;">
+    <script>
+      let giscusTheme = localStorage.getItem("theme");
+      let giscusAttributes = {
+          "src": "https://giscus.app/client.js",
+          "data-repo": "fxnnxc/fxnnxc",
+          "data-repo-id": "MDEwOlJlcG9zaXRvcnkzMjQ2NjUxMTU=",
+          "data-category": "Q&A",
+          "data-category-id": "DIC_kwDOE1n_G84CYOk_",
+          "data-mapping": "title",
+          "data-strict": "0",
+          "data-reactions-enabled": "1",
+          "data-emit-metadata": "0",
+          "data-input-position": "top",
+          "data-theme": giscusTheme,
+          "data-lang": "en",
+          "crossorigin": "anonymous",
+          "async": "",
+      };
+  
+  
+      let giscusScript = document.createElement("script");
+      Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+      document.getElementById("giscus_thread").appendChild(giscusScript);
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript" target="_blank" rel="noopener noreferrer">comments powered by giscus.</a>
+</noscript>
+  </div>
+</div>
+
+    <!-- Footer -->    <footer class="sticky-bottom mt-5" style="border: none;border-top:0px">
+      <div class="container" style="text-align: center; ">
+        © Copyright 2024 Bumjini  . Powered by Jekyll with al-folio theme. Hosted by GitHub Pages.
+
+      </div>
+    </footer>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js" integrity="sha256-l/1pMF/+J4TThfgARS6KwWrk/egwuVvhRzfLAMQ6Ds4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha256-SyTu6CwrfOhaznYZPoolVw2rxoY7lKYKQvqbtqN93HI=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    
+    
+
+<!-- Scrolling Progress Bar -->
+<script type="text/javascript">
+  /*
+   * This JavaScript code has been adapted from the article 
+   * https://css-tricks.com/reading-position-indicator/ authored by Pankaj Parashar, 
+   * published on the website https://css-tricks.com on the 7th of May, 2014.
+   * Couple of changes were made to the original code to make it compatible 
+   * with the `al-foio` theme.
+   */
+  const progressBar = $("#progress");
+  /*
+   * We set up the bar after all elements are done loading.
+   * In some cases, if the images in the page are larger than the intended
+   * size they'll have on the page, they'll be resized via CSS to accomodate
+   * the desired size. This mistake, however, breaks the computations as the
+   * scroll size is computed as soon as the elements finish loading.
+   * To account for this, a minimal delay was introduced before computing the
+   * values.
+   */
+  window.onload = function () {
+    setTimeout(progressBarSetup, 50);
+  };
+  /*
+   * We set up the bar according to the browser.
+   * If the browser supports the progress element we use that.
+   * Otherwise, we resize the bar thru CSS styling
+   */
+  function progressBarSetup() {
+    if ("max" in document.createElement("progress")) {
+      initializeProgressElement();
+      $(document).on("scroll", function() {
+        progressBar.attr({ value: getCurrentScrollPosition() });
+      });
+      $(window).on("resize", initializeProgressElement);
+    } else {
+      resizeProgressBar();
+      $(document).on("scroll", resizeProgressBar);
+      $(window).on("resize", resizeProgressBar);
+    }
+  }
+  /*
+   * The vertical scroll position is the same as the number of pixels that
+   * are hidden from view above the scrollable area. Thus, a value > 0 is
+   * how much the user has scrolled from the top
+   */
+  function getCurrentScrollPosition() {
+    return $(window).scrollTop();
+  }
+
+  function initializeProgressElement() {
+    let navbarHeight = $("#navbar").outerHeight(true);
+    $("body").css({ "padding-top": 0 });
+    $("progress-container").css({ "padding-top": 0 });
+    progressBar.css({ top: navbarHeight });
+    progressBar.attr({
+      max: getDistanceToScroll(),
+      value: getCurrentScrollPosition(),
+    });
+  }
+  /*
+   * The offset between the html document height and the browser viewport
+   * height will be greater than zero if vertical scroll is possible.
+   * This is the distance the user can scroll
+   */
+  function getDistanceToScroll() {
+    return $(document).height() - $(window).height();
+  }
+
+  function resizeProgressBar() {
+    progressBar.css({ width: getWidthPercentage() + "%" });
+  }
+  // The scroll ratio equals the percentage to resize the bar
+  function getWidthPercentage() {
+    return (getCurrentScrollPosition() / getDistanceToScroll()) * 100;
+  }
+</script>
+
+  </body>
+
+  <d-bibliography src="/assets/bibliography/">
+  </d-bibliography>
+
+  <!-- jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="/assets/js/distillpub/overrides.js"></script>
+
+    <center>
+        <img src="/assets/common/KAIST-hi.gif" width="40px" style="margin-right:0px; padding-bottom: 3px;">
+    </center>
+    <hr> 
+
+</html>

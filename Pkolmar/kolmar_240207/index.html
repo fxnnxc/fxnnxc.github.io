@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<!-- _layouts/distill.html -->
+<html>
+  <head>    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bumjini | [연구 17] 비지도 학습 성능</title>
+    <meta name="author" content="Bumjini  " />
+    <meta name="description" content="모델 하이퍼 파라미터 튜닝" />
+    <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website" />
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous" />
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="none" id="highlight_theme_light" />
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪴</text></svg>">
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://fxnnxc.github.io/Pkolmar/kolmar_240207/">
+    
+    <!-- Dark Mode -->
+    
+
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams',
+        inlineMath: [['$','$'], ['\\(','\\)']]
+      },
+      chtml: {
+          scale: 1.0,
+          minScale: .6,  
+          mtextFontInherit: true,
+          mtextInheritFont: true,
+          merrorInheritFont: true,
+        },
+        svg: {
+          scale: 1.2
+        }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <!-- Distill js -->
+    <script src="/assets/js/distillpub/template.v2.js"></script>
+    <script src="/assets/js/distillpub/transforms.v2.js"></script>
+    
+  </head>
+
+  <d-front-matter>
+    <script async type="text/json">{
+      "title": "[연구 17] 비지도 학습 성능",
+      "description": "모델 하이퍼 파라미터 튜닝",
+      "published": "January 31, 2024",
+      "authors": [
+        {
+          "author": "Bumjin Park",
+          "authorURL": "",
+          "affiliations": [
+            {
+              "name": "KAIST",
+              "url": ""
+            }
+          ]
+        }
+        
+      ],
+      "katex": {
+        "delimiters": [
+          {
+            "left": "$",
+            "right": "$",
+            "display": false
+          },
+          {
+            "left": "$$",
+            "right": "$$",
+            "display": true
+          }
+        ]
+      }
+    }</script>
+  </d-front-matter>
+
+  <body class="sticky-bottom-footer">
+
+    <!-- Header -->    
+    <center>
+      <img src="/assets/common/KAIST-hi.gif" width="40px" style="margin-right:0px; padding-bottom: 3px;">
+    </center>
+    <hr> 
+
+    <!-- Content -->
+    <div class="post distill">
+
+      <d-title>
+        <h1 style="font-size: 32px;">[연구 17] 비지도 학습 성능</h1>
+        <p>모델 하이퍼 파라미터 튜닝</p>
+      </d-title>
+
+      <d-byline></d-byline>
+
+      <d-article>
+        
+
+        <h2 id="cattn_b_1">CATTN_B_1</h2>
+
+<h4 id="ph">pH</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>setting</th>
+      <th>TRAIN</th>
+      <th>E1</th>
+      <th>E2</th>
+      <th>E3</th>
+      <th>E_ALL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>no_pretrain</td>
+      <td>0.022</td>
+      <td>0.022</td>
+      <td>0.265</td>
+      <td>0.292</td>
+      <td>0.263</td>
+    </tr>
+    <tr>
+      <td>proportion_0.0</td>
+      <td>0.055</td>
+      <td>0.035</td>
+      <td>0.188</td>
+      <td>0.183</td>
+      <td>0.099</td>
+    </tr>
+    <tr>
+      <td>proportion_0.1</td>
+      <td>0.053</td>
+      <td>0.035</td>
+      <td>0.186</td>
+      <td>0.175</td>
+      <td>0.096</td>
+    </tr>
+    <tr>
+      <td>proportion_0.25</td>
+      <td>0.056</td>
+      <td>0.038</td>
+      <td>0.190</td>
+      <td>0.173</td>
+      <td>0.096</td>
+    </tr>
+    <tr>
+      <td>proportion_0.5</td>
+      <td>0.055</td>
+      <td>0.040</td>
+      <td>0.190</td>
+      <td>0.175</td>
+      <td>0.097</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="hardness">hardness</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>setting</th>
+      <th>TRAIN</th>
+      <th>E1</th>
+      <th>E2</th>
+      <th>E3</th>
+      <th>E_ALL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>no_pretrain</td>
+      <td>0.006</td>
+      <td>0.071</td>
+      <td>0.138</td>
+      <td>0.383</td>
+      <td>0.356</td>
+    </tr>
+    <tr>
+      <td>proportion_0.0</td>
+      <td>0.038</td>
+      <td>0.071</td>
+      <td>0.170</td>
+      <td>0.172</td>
+      <td>0.089</td>
+    </tr>
+    <tr>
+      <td>proportion_0.1</td>
+      <td>0.028</td>
+      <td>0.074</td>
+      <td>0.148</td>
+      <td>0.190</td>
+      <td>0.087</td>
+    </tr>
+    <tr>
+      <td>proportion_0.25</td>
+      <td>0.033</td>
+      <td>0.075</td>
+      <td>0.143</td>
+      <td>0.168</td>
+      <td>0.082</td>
+    </tr>
+    <tr>
+      <td>proportion_0.5</td>
+      <td>0.028</td>
+      <td>0.067</td>
+      <td>0.160</td>
+      <td>0.177</td>
+      <td>0.083</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="viscosity_4_6">viscosity_4_6</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>setting</th>
+      <th>TRAIN</th>
+      <th>E1</th>
+      <th>E2</th>
+      <th>E3</th>
+      <th>E_ALL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>no_pretrain</td>
+      <td>0.019</td>
+      <td>0.101</td>
+      <td>0.394</td>
+      <td>0.480</td>
+      <td>0.432</td>
+    </tr>
+    <tr>
+      <td>proportion_0.0</td>
+      <td>0.103</td>
+      <td>0.112</td>
+      <td>0.235</td>
+      <td>0.333</td>
+      <td>0.177</td>
+    </tr>
+    <tr>
+      <td>proportion_0.1</td>
+      <td>0.119</td>
+      <td>0.112</td>
+      <td>0.254</td>
+      <td>0.350</td>
+      <td>0.192</td>
+    </tr>
+    <tr>
+      <td>proportion_0.25</td>
+      <td>0.095</td>
+      <td>0.115</td>
+      <td>0.250</td>
+      <td>0.325</td>
+      <td>0.173</td>
+    </tr>
+    <tr>
+      <td>proportion_0.5</td>
+      <td>0.105</td>
+      <td>0.115</td>
+      <td>0.255</td>
+      <td>0.321</td>
+      <td>0.178</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="density">density</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>setting</th>
+      <th>TRAIN</th>
+      <th>E1</th>
+      <th>E2</th>
+      <th>E3</th>
+      <th>E_ALL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>no_pretrain</td>
+      <td>0.010</td>
+      <td>0.000</td>
+      <td>0.001</td>
+      <td>0.183</td>
+      <td>0.128</td>
+    </tr>
+    <tr>
+      <td>proportion_0.0</td>
+      <td>0.014</td>
+      <td>0.000</td>
+      <td>0.001</td>
+      <td>0.001</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <td>proportion_0.1</td>
+      <td>0.014</td>
+      <td>0.000</td>
+      <td>0.001</td>
+      <td>0.001</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <td>proportion_0.25</td>
+      <td>0.014</td>
+      <td>0.000</td>
+      <td>0.001</td>
+      <td>0.001</td>
+      <td>0.001</td>
+    </tr>
+    <tr>
+      <td>proportion_0.5</td>
+      <td>0.014</td>
+      <td>0.000</td>
+      <td>0.001</td>
+      <td>0.001</td>
+      <td>0.000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="cattn_b_2">CATTN_B_2</h2>
+
+<h4 id="ph-1">pH</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>setting</th>
+      <th>TRAIN</th>
+      <th>E1</th>
+      <th>E2</th>
+      <th>E3</th>
+      <th>E_ALL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>no_pretrain</td>
+      <td>0.006</td>
+      <td>0.013</td>
+      <td>0.231</td>
+      <td>0.283</td>
+      <td>0.249</td>
+    </tr>
+    <tr>
+      <td>proportion_0.0</td>
+      <td>0.056</td>
+      <td>0.034</td>
+      <td>0.190</td>
+      <td>0.176</td>
+      <td>0.098</td>
+    </tr>
+    <tr>
+      <td>proportion_0.1</td>
+      <td>0.056</td>
+      <td>0.041</td>
+      <td>0.183</td>
+      <td>0.178</td>
+      <td>0.098</td>
+    </tr>
+    <tr>
+      <td>proportion_0.25</td>
+      <td>0.062</td>
+      <td>0.037</td>
+      <td>0.187</td>
+      <td>0.179</td>
+      <td>0.103</td>
+    </tr>
+    <tr>
+      <td>proportion_0.5</td>
+      <td>0.064</td>
+      <td>0.036</td>
+      <td>0.195</td>
+      <td>0.182</td>
+      <td>0.105</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="hardness-1">hardness</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>setting</th>
+      <th>TRAIN</th>
+      <th>E1</th>
+      <th>E2</th>
+      <th>E3</th>
+      <th>E_ALL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>no_pretrain</td>
+      <td>0.006</td>
+      <td>0.065</td>
+      <td>0.184</td>
+      <td>0.338</td>
+      <td>0.319</td>
+    </tr>
+    <tr>
+      <td>proportion_0.0</td>
+      <td>0.029</td>
+      <td>0.065</td>
+      <td>0.153</td>
+      <td>0.197</td>
+      <td>0.092</td>
+    </tr>
+    <tr>
+      <td>proportion_0.1</td>
+      <td>0.040</td>
+      <td>0.067</td>
+      <td>0.150</td>
+      <td>0.176</td>
+      <td>0.090</td>
+    </tr>
+    <tr>
+      <td>proportion_0.25</td>
+      <td>0.029</td>
+      <td>0.063</td>
+      <td>0.157</td>
+      <td>0.183</td>
+      <td>0.086</td>
+    </tr>
+    <tr>
+      <td>proportion_0.5</td>
+      <td>0.034</td>
+      <td>0.077</td>
+      <td>0.171</td>
+      <td>0.181</td>
+      <td>0.091</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="viscosity_4_6-1">viscosity_4_6</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>setting</th>
+      <th>TRAIN</th>
+      <th>E1</th>
+      <th>E2</th>
+      <th>E3</th>
+      <th>E_ALL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>no_pretrain</td>
+      <td>0.025</td>
+      <td>0.095</td>
+      <td>0.343</td>
+      <td>0.463</td>
+      <td>0.411</td>
+    </tr>
+    <tr>
+      <td>proportion_0.0</td>
+      <td>0.066</td>
+      <td>0.117</td>
+      <td>0.238</td>
+      <td>0.313</td>
+      <td>0.149</td>
+    </tr>
+    <tr>
+      <td>proportion_0.1</td>
+      <td>0.065</td>
+      <td>0.112</td>
+      <td>0.222</td>
+      <td>0.310</td>
+      <td>0.147</td>
+    </tr>
+    <tr>
+      <td>proportion_0.25</td>
+      <td>0.086</td>
+      <td>0.109</td>
+      <td>0.227</td>
+      <td>0.326</td>
+      <td>0.165</td>
+    </tr>
+    <tr>
+      <td>proportion_0.5</td>
+      <td>0.065</td>
+      <td>0.113</td>
+      <td>0.228</td>
+      <td>0.306</td>
+      <td>0.147</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="density-1">density</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>setting</th>
+      <th>TRAIN</th>
+      <th>E1</th>
+      <th>E2</th>
+      <th>E3</th>
+      <th>E_ALL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>no_pretrain</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.001</td>
+      <td>0.843</td>
+      <td>0.588</td>
+    </tr>
+    <tr>
+      <td>proportion_0.0</td>
+      <td>0.014</td>
+      <td>0.000</td>
+      <td>0.001</td>
+      <td>0.001</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <td>proportion_0.1</td>
+      <td>0.014</td>
+      <td>0.000</td>
+      <td>0.001</td>
+      <td>0.001</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <td>proportion_0.25</td>
+      <td>0.014</td>
+      <td>0.000</td>
+      <td>0.001</td>
+      <td>0.001</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <td>proportion_0.5</td>
+      <td>0.014</td>
+      <td>0.000</td>
+      <td>0.001</td>
+      <td>0.001</td>
+      <td>0.000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="cattn_b_3">CATTN_B_3</h2>
+
+<h4 id="ph-2">pH</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>setting</th>
+      <th>TRAIN</th>
+      <th>E1</th>
+      <th>E2</th>
+      <th>E3</th>
+      <th>E_ALL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>no_pretrain</td>
+      <td>0.002</td>
+      <td>0.021</td>
+      <td>0.239</td>
+      <td>0.231</td>
+      <td>0.214</td>
+    </tr>
+    <tr>
+      <td>proportion_0.0</td>
+      <td>0.040</td>
+      <td>0.025</td>
+      <td>0.173</td>
+      <td>0.171</td>
+      <td>0.084</td>
+    </tr>
+    <tr>
+      <td>proportion_0.1</td>
+      <td>0.042</td>
+      <td>0.027</td>
+      <td>0.175</td>
+      <td>0.163</td>
+      <td>0.084</td>
+    </tr>
+    <tr>
+      <td>proportion_0.25</td>
+      <td>0.037</td>
+      <td>0.023</td>
+      <td>0.180</td>
+      <td>0.167</td>
+      <td>0.081</td>
+    </tr>
+    <tr>
+      <td>proportion_0.5</td>
+      <td>0.038</td>
+      <td>0.026</td>
+      <td>0.174</td>
+      <td>0.160</td>
+      <td>0.080</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="hardness-2">hardness</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>setting</th>
+      <th>TRAIN</th>
+      <th>E1</th>
+      <th>E2</th>
+      <th>E3</th>
+      <th>E_ALL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>no_pretrain</td>
+      <td>0.009</td>
+      <td>0.064</td>
+      <td>0.180</td>
+      <td>0.275</td>
+      <td>0.262</td>
+    </tr>
+    <tr>
+      <td>proportion_0.0</td>
+      <td>0.026</td>
+      <td>0.059</td>
+      <td>0.163</td>
+      <td>0.167</td>
+      <td>0.079</td>
+    </tr>
+    <tr>
+      <td>proportion_0.1</td>
+      <td>0.023</td>
+      <td>0.057</td>
+      <td>0.149</td>
+      <td>0.173</td>
+      <td>0.080</td>
+    </tr>
+    <tr>
+      <td>proportion_0.25</td>
+      <td>0.021</td>
+      <td>0.060</td>
+      <td>0.165</td>
+      <td>0.161</td>
+      <td>0.074</td>
+    </tr>
+    <tr>
+      <td>proportion_0.5</td>
+      <td>0.033</td>
+      <td>0.061</td>
+      <td>0.178</td>
+      <td>0.175</td>
+      <td>0.088</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="viscosity_4_6-2">viscosity_4_6</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>setting</th>
+      <th>TRAIN</th>
+      <th>E1</th>
+      <th>E2</th>
+      <th>E3</th>
+      <th>E_ALL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>no_pretrain</td>
+      <td>0.008</td>
+      <td>0.091</td>
+      <td>0.298</td>
+      <td>0.422</td>
+      <td>0.373</td>
+    </tr>
+    <tr>
+      <td>proportion_0.0</td>
+      <td>0.046</td>
+      <td>0.105</td>
+      <td>0.213</td>
+      <td>0.313</td>
+      <td>0.134</td>
+    </tr>
+    <tr>
+      <td>proportion_0.1</td>
+      <td>0.047</td>
+      <td>0.107</td>
+      <td>0.214</td>
+      <td>0.314</td>
+      <td>0.136</td>
+    </tr>
+    <tr>
+      <td>proportion_0.25</td>
+      <td>0.052</td>
+      <td>0.109</td>
+      <td>0.223</td>
+      <td>0.314</td>
+      <td>0.140</td>
+    </tr>
+    <tr>
+      <td>proportion_0.5</td>
+      <td>0.043</td>
+      <td>0.107</td>
+      <td>0.209</td>
+      <td>0.310</td>
+      <td>0.132</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="density-2">density</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>setting</th>
+      <th>TRAIN</th>
+      <th>E1</th>
+      <th>E2</th>
+      <th>E3</th>
+      <th>E_ALL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>no_pretrain</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.001</td>
+      <td>0.167</td>
+      <td>0.116</td>
+    </tr>
+    <tr>
+      <td>proportion_0.0</td>
+      <td>0.014</td>
+      <td>0.000</td>
+      <td>0.001</td>
+      <td>0.002</td>
+      <td>0.001</td>
+    </tr>
+    <tr>
+      <td>proportion_0.1</td>
+      <td>0.014</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.002</td>
+      <td>0.001</td>
+    </tr>
+    <tr>
+      <td>proportion_0.25</td>
+      <td>0.014</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.001</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <td>proportion_0.5</td>
+      <td>0.014</td>
+      <td>0.000</td>
+      <td>0.002</td>
+      <td>0.002</td>
+      <td>0.001</td>
+    </tr>
+  </tbody>
+</table>
+
+      </d-article>
+
+      <d-appendix>
+        <d-footnote-list></d-footnote-list>
+        <d-citation-list></d-citation-list>
+      </d-appendix>
+
+
+      <hr>
+<!--<div id="giscus_thread" style="max-width: 1000px; margin: 0 auto;">
+    <script>
+      let giscusTheme = localStorage.getItem("theme");
+      let giscusAttributes = {
+          "src": "https://giscus.app/client.js",
+          "data-repo": "fxnnxc/fxnnxc",
+          "data-repo-id": "MDEwOlJlcG9zaXRvcnkzMjQ2NjUxMTU=",
+          "data-category": "Q&A",
+          "data-category-id": "DIC_kwDOE1n_G84CYOk_",
+          "data-mapping": "title",
+          "data-strict": "0",
+          "data-reactions-enabled": "1",
+          "data-emit-metadata": "0",
+          "data-input-position": "top",
+          "data-theme": giscusTheme,
+          "data-lang": "en",
+          "crossorigin": "anonymous",
+          "async": "",
+      };
+  
+  
+      let giscusScript = document.createElement("script");
+      Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+      document.getElementById("giscus_thread").appendChild(giscusScript);
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript">comments powered by giscus.</a></noscript>
+  </div>--><div id="giscus_thread" style="max-width: 1000px; margin: 0 auto;">
+    <script>
+      let giscusTheme = localStorage.getItem("theme");
+      let giscusAttributes = {
+          "src": "https://giscus.app/client.js",
+          "data-repo": "fxnnxc/fxnnxc",
+          "data-repo-id": "MDEwOlJlcG9zaXRvcnkzMjQ2NjUxMTU=",
+          "data-category": "Q&A",
+          "data-category-id": "DIC_kwDOE1n_G84CYOk_",
+          "data-mapping": "title",
+          "data-strict": "0",
+          "data-reactions-enabled": "1",
+          "data-emit-metadata": "0",
+          "data-input-position": "top",
+          "data-theme": giscusTheme,
+          "data-lang": "en",
+          "crossorigin": "anonymous",
+          "async": "",
+      };
+  
+  
+      let giscusScript = document.createElement("script");
+      Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+      document.getElementById("giscus_thread").appendChild(giscusScript);
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript" target="_blank" rel="noopener noreferrer">comments powered by giscus.</a>
+</noscript>
+  </div>
+</div>
+
+    <!-- Footer -->    <footer class="sticky-bottom mt-5" style="border: none;border-top:0px">
+      <div class="container" style="text-align: center; ">
+        © Copyright 2024 Bumjini  . Powered by Jekyll with al-folio theme. Hosted by GitHub Pages.
+
+      </div>
+    </footer>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js" integrity="sha256-l/1pMF/+J4TThfgARS6KwWrk/egwuVvhRzfLAMQ6Ds4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha256-SyTu6CwrfOhaznYZPoolVw2rxoY7lKYKQvqbtqN93HI=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    
+    
+
+<!-- Scrolling Progress Bar -->
+<script type="text/javascript">
+  /*
+   * This JavaScript code has been adapted from the article 
+   * https://css-tricks.com/reading-position-indicator/ authored by Pankaj Parashar, 
+   * published on the website https://css-tricks.com on the 7th of May, 2014.
+   * Couple of changes were made to the original code to make it compatible 
+   * with the `al-foio` theme.
+   */
+  const progressBar = $("#progress");
+  /*
+   * We set up the bar after all elements are done loading.
+   * In some cases, if the images in the page are larger than the intended
+   * size they'll have on the page, they'll be resized via CSS to accomodate
+   * the desired size. This mistake, however, breaks the computations as the
+   * scroll size is computed as soon as the elements finish loading.
+   * To account for this, a minimal delay was introduced before computing the
+   * values.
+   */
+  window.onload = function () {
+    setTimeout(progressBarSetup, 50);
+  };
+  /*
+   * We set up the bar according to the browser.
+   * If the browser supports the progress element we use that.
+   * Otherwise, we resize the bar thru CSS styling
+   */
+  function progressBarSetup() {
+    if ("max" in document.createElement("progress")) {
+      initializeProgressElement();
+      $(document).on("scroll", function() {
+        progressBar.attr({ value: getCurrentScrollPosition() });
+      });
+      $(window).on("resize", initializeProgressElement);
+    } else {
+      resizeProgressBar();
+      $(document).on("scroll", resizeProgressBar);
+      $(window).on("resize", resizeProgressBar);
+    }
+  }
+  /*
+   * The vertical scroll position is the same as the number of pixels that
+   * are hidden from view above the scrollable area. Thus, a value > 0 is
+   * how much the user has scrolled from the top
+   */
+  function getCurrentScrollPosition() {
+    return $(window).scrollTop();
+  }
+
+  function initializeProgressElement() {
+    let navbarHeight = $("#navbar").outerHeight(true);
+    $("body").css({ "padding-top": 0 });
+    $("progress-container").css({ "padding-top": 0 });
+    progressBar.css({ top: navbarHeight });
+    progressBar.attr({
+      max: getDistanceToScroll(),
+      value: getCurrentScrollPosition(),
+    });
+  }
+  /*
+   * The offset between the html document height and the browser viewport
+   * height will be greater than zero if vertical scroll is possible.
+   * This is the distance the user can scroll
+   */
+  function getDistanceToScroll() {
+    return $(document).height() - $(window).height();
+  }
+
+  function resizeProgressBar() {
+    progressBar.css({ width: getWidthPercentage() + "%" });
+  }
+  // The scroll ratio equals the percentage to resize the bar
+  function getWidthPercentage() {
+    return (getCurrentScrollPosition() / getDistanceToScroll()) * 100;
+  }
+</script>
+
+  </body>
+
+  <d-bibliography src="/assets/bibliography/">
+  </d-bibliography>
+
+  <!-- jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="/assets/js/distillpub/overrides.js"></script>
+
+    <center>
+        <img src="/assets/common/KAIST-hi.gif" width="40px" style="margin-right:0px; padding-bottom: 3px;">
+    </center>
+    <hr> 
+
+</html>

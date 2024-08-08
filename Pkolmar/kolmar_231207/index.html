@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<!-- _layouts/distill.html -->
+<html>
+  <head>    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bumjini | [연구 10] 중간 이후 연구 계획서</title>
+    <meta name="author" content="Bumjini  " />
+    <meta name="description" content="중간 평가 피드백 및 전반적인 방향에 대한 논의. " />
+    <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website" />
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous" />
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="none" id="highlight_theme_light" />
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪴</text></svg>">
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://fxnnxc.github.io/Pkolmar/kolmar_231207/">
+    
+    <!-- Dark Mode -->
+    
+
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams',
+        inlineMath: [['$','$'], ['\\(','\\)']]
+      },
+      chtml: {
+          scale: 1.0,
+          minScale: .6,  
+          mtextFontInherit: true,
+          mtextInheritFont: true,
+          merrorInheritFont: true,
+        },
+        svg: {
+          scale: 1.2
+        }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <!-- Distill js -->
+    <script src="/assets/js/distillpub/template.v2.js"></script>
+    <script src="/assets/js/distillpub/transforms.v2.js"></script>
+    
+  </head>
+
+  <d-front-matter>
+    <script async type="text/json">{
+      "title": "[연구 10] 중간 이후 연구 계획서",
+      "description": "중간 평가 피드백 및 전반적인 방향에 대한 논의. ",
+      "published": "December 5, 2023",
+      "authors": [
+        {
+          "author": "Bumjin Park",
+          "authorURL": "",
+          "affiliations": [
+            {
+              "name": "KAIST",
+              "url": ""
+            }
+          ]
+        }
+        
+      ],
+      "katex": {
+        "delimiters": [
+          {
+            "left": "$",
+            "right": "$",
+            "display": false
+          },
+          {
+            "left": "$$",
+            "right": "$$",
+            "display": true
+          }
+        ]
+      }
+    }</script>
+  </d-front-matter>
+
+  <body class="sticky-bottom-footer">
+
+    <!-- Header -->    
+    <center>
+      <img src="/assets/common/KAIST-hi.gif" width="40px" style="margin-right:0px; padding-bottom: 3px;">
+    </center>
+    <hr> 
+
+    <!-- Content -->
+    <div class="post distill">
+
+      <d-title>
+        <h1 style="font-size: 32px;">[연구 10] 중간 이후 연구 계획서</h1>
+        <p>중간 평가 피드백 및 전반적인 방향에 대한 논의. </p>
+      </d-title>
+
+      <d-byline></d-byline>
+
+      <d-article>
+        
+
+        <h2 id="중간-평가">중간 평가</h2>
+
+<p>물성 예측 모델의 목표는 물질 정보와 양을 바탕으로 혼합된 물질의 성질을 예측하는 것이다. 중간 단계에서 제안한 방법은 원료에 대한 표현 벡터를 섞어 혼합물 표현 벡터를 만들고, 딥러닝으로 예측하는 방식이다. 이러한 기본적인 프레임워크에서  <strong>믿을 수 있는</strong> 모델을 만들기 위해서  세부 분야들을 고도화 해야 한다. 대표적인 세부 분야들은 다음과 같다.</p>
+
+<ol>
+  <li>
+<strong>혼합물 모델 구조 개선</strong> (고도화)</li>
+  <li>
+<strong>학습 및 테스트 데이터 구분 : 물질</strong>  (정교화)</li>
+  <li>
+<strong>학습 및 테스트 데이터 구분 : 처방</strong>  (정교화)</li>
+  <li>
+<strong>점도 이외에 다양한 예측 목표 형성</strong> (가능성 탐색)</li>
+</ol>
+
+<p><strong>네 가지 요소들</strong>은 예측 성능이 우수하고, 신뢰할 수 있고, 가능성이 높은 물성 예측 모델을 만들기 위해서 필요하다. 
+피드백 당시 거론된 주요 사항은 <strong>(1) 성능의 검증에 대한 정확한 잣대</strong>, <strong>(2) 예측 모델의 성능</strong>을 더욱 올려서 기본기에 충실하는 연구의 필요성이었다. 
+요구사항을 만족하기 위해서는 인공지능 모델의 성능을 올리면서, 믿을 수 있는 방법으로 평가 되어야 한다.</p>
+
+<h3 id="혼합물-모델-구조-개선">혼합물 모델 구조 개선</h3>
+
+<p>현재 기본 모델 구조에서 혼합물 벡터는 각 원료 벡터를 응축한 형태이므로 무수히 많은 원료가 생겨난다면 표현력이 부족할 수 있다. 
+이를 개선하기 위해서 모델 구조를 더욱 고도화 해야 한다.</p>
+
+<p><img src="https://drive.google.com/uc?export=view&amp;id=11zdalhFluv1hE3bi4HJrmm9s-i0SIKbE" style="width:100%"></p>
+
+<h3 id="테스트-데이터-형성">테스트 데이터 형성</h3>
+
+<p>데이터셋에 대한 설계는 모델의 역량을 이해하는데 도움을 준다. 
+학습 데이터를 보면 정확히 어떤 정보에 대해서 모델이 학습했고, 테스트 데이터를 보면, 어떤 데이터로 평가했는지 제 3자가 쉽게 판단할 수 있다. 
+명시적인 학습 및 테스트 구분을 위해 두 가지 측면에 대해서 <strong>테스트용</strong>을 따로 만들어야 한다.</p>
+
+<ol>
+  <li>
+<strong>테스트 물질</strong> : 학습에 사용되지 않는 물질이다. 검증용 처방으로 학습된 모델이 물질 표현 벡터를 찾고 테스트용 처방으로 평가한다.</li>
+  <li>
+<strong>테스트 처방</strong> : 예측이 어려운 처방을 몇 가지 구분 지어, 학습에는 사용되지 않아야 하며, 데모용으로 사용한다.</li>
+</ol>
+
+<p>테스트 물질과 테스트 처방은 모델이 관찰하지 않은 물질, 처방에 대해서 얼마나 잘 적응하는지 보여주는 지표이다. 
+중간 평가 당시 <strong>평균적인 에러 수준</strong>을 보여줬을 뿐, 샘플이 적은 물성에 대해서 얼마나 잘 예측하는지, 물성 예측이 어려운 처방에 대해서 얼마나 잘 작동하는지 보여주지 못했다. 이를 개선하기 위해서는 테스트용으로 따로 데이터를 구분해야 한다. 따라서 명시적으로 원료와 처방을 검증 및 테스트 (validation and test)로 구분하여 준비해야 한다.</p>
+
+<p><img src="https://drive.google.com/uc?export=view&amp;id=1syXBfA9E68ytD9W9-tSjhbKt5Fchb_zZ" style="width:100%"></p>
+
+<p><img src="https://drive.google.com/uc?export=view&amp;id=1whP1yohTIW8ryDS_4H5HRSUpOTiW_6Cc" style="width:100%"></p>
+
+<h3 id="모델-실제-사용으로-적합성-꾸준하게-평가하기">모델 실제 사용으로 적합성 꾸준하게 평가하기.</h3>
+
+<p>물성 예측 모델의 자동화를 위해서는 1,2,3 단계가 존재하며, 
+1단계에서는 실무자가 모델을 사용해보고 쓸만한지 판단한다. 2단계에서는 쉬운 부분에 대해서 모델에게 위임한다. 3단계에서는 완전 자동화를 진행한다. 단계적 전환을 위해서는 실제 모델을 사용하여, 모델을 평가하는 것이 중요하다. 일정 기간 모델을 사용해보고 얼마나 믿을만 한지, 시간과 비용을 단축시키는 효과가 있는지 측정하는 것이 중요하다.</p>
+
+<p><img src="https://drive.google.com/uc?export=view&amp;id=1QrDJmeE8Ls1aM2SVh3m3El8k9mG9jq29" style="width:100%"></p>
+
+<h2 id="중간-평가-핵심-피드백">중간 평가 핵심 피드백</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">index</th>
+      <th style="text-align: left">피드백</th>
+      <th style="text-align: left">수정 및 보완 계획</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: left">기반 기술이 탄탄해야 한다. 현재 모델 성능에 만족하기 보다 성능을 더욱 올릴 필요 있음.</td>
+      <td style="text-align: left">데이터 학습 방법 및 모델 개선</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2</td>
+      <td style="text-align: left">점도 예측은 불충분함.</td>
+      <td style="text-align: left">추가적인 예측 목표 설정</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">3</td>
+      <td style="text-align: left">실무자의 사용과 병향하는 AI 적용 1,2,3단계 활용을 고려해야 한다.</td>
+      <td style="text-align: left">실무적인 사용 고려 및 세팅 실행. 주기적인 측정.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">4</td>
+      <td style="text-align: left">원료 사용 빈도에 대해서 고민해야 한다.</td>
+      <td style="text-align: left">학습 및 테스트용 원료를 구분한다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">5</td>
+      <td style="text-align: left">예측이 어려운 것을 AI로 잘 맞추는 데모가 필요하다.</td>
+      <td style="text-align: left">어려운 예시, 대표되는 처방 선정.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">6</td>
+      <td style="text-align: left">원하는 물성에 대해서 비용을 절감하는 물질을 찾을 수 있음</td>
+      <td style="text-align: left">-</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="최종-목표-설정">최종 목표 설정</h2>
+<p>최종 목표의 세 가지 요소는 (1) 모델 개선, (2) 테스트용 데이터 선정, (3) 예측 물성 확장이다. 
+세 분야에 대한 연구 및 개발은 필수적으로 이루어진다.</p>
+
+<p>원료 표현 벡터들에 대한 시각화 및 이해는 실무자와 인공지능 모델의 의사소통을 위해서 필수적이다. 그러나, 우선적으로 중요한 점은 예측 모델을 더욱 고도화하고, 유용하도록 학습하고, 다양한 물성을 예측하도록 학습하는 것이다. 성능에 대한 우선적인 보장이 주어진 상태에서 원료 표현들을 해독하고, 대체 원료를 찾거나 원료 표현들을 이해하는 연구가 가능하다. 따라서, 본 원료 표현 벡터 관련된 연구는 앞에서 설정한 세 가지 목표가 달성된 다음에 진행하는 게 맞다.</p>
+
+<center>
+<img src="https://drive.google.com/uc?export=view&amp;id=1JHAI_Do_7HwwghjNa3e6UM2VyCuTrO98" style="width:50%"> 
+</center>
+
+      </d-article>
+
+      <d-appendix>
+        <d-footnote-list></d-footnote-list>
+        <d-citation-list></d-citation-list>
+      </d-appendix>
+
+
+      <hr>
+<!--<div id="giscus_thread" style="max-width: 1000px; margin: 0 auto;">
+    <script>
+      let giscusTheme = localStorage.getItem("theme");
+      let giscusAttributes = {
+          "src": "https://giscus.app/client.js",
+          "data-repo": "fxnnxc/fxnnxc",
+          "data-repo-id": "MDEwOlJlcG9zaXRvcnkzMjQ2NjUxMTU=",
+          "data-category": "Q&A",
+          "data-category-id": "DIC_kwDOE1n_G84CYOk_",
+          "data-mapping": "title",
+          "data-strict": "0",
+          "data-reactions-enabled": "1",
+          "data-emit-metadata": "0",
+          "data-input-position": "top",
+          "data-theme": giscusTheme,
+          "data-lang": "en",
+          "crossorigin": "anonymous",
+          "async": "",
+      };
+  
+  
+      let giscusScript = document.createElement("script");
+      Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+      document.getElementById("giscus_thread").appendChild(giscusScript);
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript">comments powered by giscus.</a></noscript>
+  </div>--><div id="giscus_thread" style="max-width: 1000px; margin: 0 auto;">
+    <script>
+      let giscusTheme = localStorage.getItem("theme");
+      let giscusAttributes = {
+          "src": "https://giscus.app/client.js",
+          "data-repo": "fxnnxc/fxnnxc",
+          "data-repo-id": "MDEwOlJlcG9zaXRvcnkzMjQ2NjUxMTU=",
+          "data-category": "Q&A",
+          "data-category-id": "DIC_kwDOE1n_G84CYOk_",
+          "data-mapping": "title",
+          "data-strict": "0",
+          "data-reactions-enabled": "1",
+          "data-emit-metadata": "0",
+          "data-input-position": "top",
+          "data-theme": giscusTheme,
+          "data-lang": "en",
+          "crossorigin": "anonymous",
+          "async": "",
+      };
+  
+  
+      let giscusScript = document.createElement("script");
+      Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+      document.getElementById("giscus_thread").appendChild(giscusScript);
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript" target="_blank" rel="noopener noreferrer">comments powered by giscus.</a>
+</noscript>
+  </div>
+</div>
+
+    <!-- Footer -->    <footer class="sticky-bottom mt-5" style="border: none;border-top:0px">
+      <div class="container" style="text-align: center; ">
+        © Copyright 2024 Bumjini  . Powered by Jekyll with al-folio theme. Hosted by GitHub Pages.
+
+      </div>
+    </footer>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js" integrity="sha256-l/1pMF/+J4TThfgARS6KwWrk/egwuVvhRzfLAMQ6Ds4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha256-SyTu6CwrfOhaznYZPoolVw2rxoY7lKYKQvqbtqN93HI=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    
+    
+
+<!-- Scrolling Progress Bar -->
+<script type="text/javascript">
+  /*
+   * This JavaScript code has been adapted from the article 
+   * https://css-tricks.com/reading-position-indicator/ authored by Pankaj Parashar, 
+   * published on the website https://css-tricks.com on the 7th of May, 2014.
+   * Couple of changes were made to the original code to make it compatible 
+   * with the `al-foio` theme.
+   */
+  const progressBar = $("#progress");
+  /*
+   * We set up the bar after all elements are done loading.
+   * In some cases, if the images in the page are larger than the intended
+   * size they'll have on the page, they'll be resized via CSS to accomodate
+   * the desired size. This mistake, however, breaks the computations as the
+   * scroll size is computed as soon as the elements finish loading.
+   * To account for this, a minimal delay was introduced before computing the
+   * values.
+   */
+  window.onload = function () {
+    setTimeout(progressBarSetup, 50);
+  };
+  /*
+   * We set up the bar according to the browser.
+   * If the browser supports the progress element we use that.
+   * Otherwise, we resize the bar thru CSS styling
+   */
+  function progressBarSetup() {
+    if ("max" in document.createElement("progress")) {
+      initializeProgressElement();
+      $(document).on("scroll", function() {
+        progressBar.attr({ value: getCurrentScrollPosition() });
+      });
+      $(window).on("resize", initializeProgressElement);
+    } else {
+      resizeProgressBar();
+      $(document).on("scroll", resizeProgressBar);
+      $(window).on("resize", resizeProgressBar);
+    }
+  }
+  /*
+   * The vertical scroll position is the same as the number of pixels that
+   * are hidden from view above the scrollable area. Thus, a value > 0 is
+   * how much the user has scrolled from the top
+   */
+  function getCurrentScrollPosition() {
+    return $(window).scrollTop();
+  }
+
+  function initializeProgressElement() {
+    let navbarHeight = $("#navbar").outerHeight(true);
+    $("body").css({ "padding-top": 0 });
+    $("progress-container").css({ "padding-top": 0 });
+    progressBar.css({ top: navbarHeight });
+    progressBar.attr({
+      max: getDistanceToScroll(),
+      value: getCurrentScrollPosition(),
+    });
+  }
+  /*
+   * The offset between the html document height and the browser viewport
+   * height will be greater than zero if vertical scroll is possible.
+   * This is the distance the user can scroll
+   */
+  function getDistanceToScroll() {
+    return $(document).height() - $(window).height();
+  }
+
+  function resizeProgressBar() {
+    progressBar.css({ width: getWidthPercentage() + "%" });
+  }
+  // The scroll ratio equals the percentage to resize the bar
+  function getWidthPercentage() {
+    return (getCurrentScrollPosition() / getDistanceToScroll()) * 100;
+  }
+</script>
+
+  </body>
+
+  <d-bibliography src="/assets/bibliography/">
+  </d-bibliography>
+
+  <!-- jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="/assets/js/distillpub/overrides.js"></script>
+
+    <center>
+        <img src="/assets/common/KAIST-hi.gif" width="40px" style="margin-right:0px; padding-bottom: 3px;">
+    </center>
+    <hr> 
+
+</html>

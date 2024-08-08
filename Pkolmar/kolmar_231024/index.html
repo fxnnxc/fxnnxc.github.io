@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<!-- _layouts/distill.html -->
+<html>
+  <head>    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bumjini | [연구 5] 8개의 ML 모델과  물성모델링</title>
+    <meta name="author" content="Bumjini  " />
+    <meta name="description" content="1,2차 데이터 동시 취합 및 XGBoost 추가 적용. 물성 모델링에 대해서 적은 코드 개수를 적용하여 예측 할 수 있는 방법을 연구한다." />
+    <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website" />
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous" />
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="none" id="highlight_theme_light" />
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪴</text></svg>">
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://fxnnxc.github.io/Pkolmar/kolmar_231024/">
+    
+    <!-- Dark Mode -->
+    
+
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams',
+        inlineMath: [['$','$'], ['\\(','\\)']]
+      },
+      chtml: {
+          scale: 1.0,
+          minScale: .6,  
+          mtextFontInherit: true,
+          mtextInheritFont: true,
+          merrorInheritFont: true,
+        },
+        svg: {
+          scale: 1.2
+        }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <!-- Distill js -->
+    <script src="/assets/js/distillpub/template.v2.js"></script>
+    <script src="/assets/js/distillpub/transforms.v2.js"></script>
+    
+  </head>
+
+  <d-front-matter>
+    <script async type="text/json">{
+      "title": "[연구 5] 8개의 ML 모델과  물성모델링",
+      "description": "1,2차 데이터 동시 취합 및 XGBoost 추가 적용. 물성 모델링에 대해서 적은 코드 개수를 적용하여 예측 할 수 있는 방법을 연구한다.",
+      "published": "October 23, 2023",
+      "authors": [
+        {
+          "author": "Bumjin Park",
+          "authorURL": "",
+          "affiliations": [
+            {
+              "name": "KAIST",
+              "url": ""
+            }
+          ]
+        }
+        
+      ],
+      "katex": {
+        "delimiters": [
+          {
+            "left": "$",
+            "right": "$",
+            "display": false
+          },
+          {
+            "left": "$$",
+            "right": "$$",
+            "display": true
+          }
+        ]
+      }
+    }</script>
+  </d-front-matter>
+
+  <body class="sticky-bottom-footer">
+
+    <!-- Header -->    
+    <center>
+      <img src="/assets/common/KAIST-hi.gif" width="40px" style="margin-right:0px; padding-bottom: 3px;">
+    </center>
+    <hr> 
+
+    <!-- Content -->
+    <div class="post distill">
+
+      <d-title>
+        <h1 style="font-size: 32px;">[연구 5] 8개의 ML 모델과  물성모델링</h1>
+        <p>1,2차 데이터 동시 취합 및 XGBoost 추가 적용. 물성 모델링에 대해서 적은 코드 개수를 적용하여 예측 할 수 있는 방법을 연구한다.</p>
+      </d-title>
+
+      <d-byline></d-byline>
+
+      <d-article>
+        
+
+        <h2 id="1-report-info">1. Report Info</h2>
+
+<div class="spanbox" style="width:40rem;background-color:#FFFDFD;">
+  <ol>
+    <li>👨🏻‍💻 <strong>Code Release</strong>:  Tag <a href="https://github.com/fxnnxc/kolmar/tree/v23.10.23.1" target="_blank" rel="noopener noreferrer">v23.10.23.1</a>
+</li>
+    <li>📂 <strong>Raw Data</strong> :  (3.1, <code class="language-plaintext highlighter-rouge">raw_data:receipt_3</code>)   <br> # 3.1 은 1차 및 2처 처방을 합치고 코드별로 합산한 데이터</li>
+    <li>🗂️ <strong>Datasets</strong> :  (2, <code class="language-plaintext highlighter-rouge">ds:receipt_3_ml</code>)</li>
+    <li>👾 <strong>Models</strong> :  1~8 까지 8개의 ML 모델</li>
+    <li>🦄 <strong>Trainers</strong> : (1, <code class="language-plaintext highlighter-rouge">sklearn_regressor</code>)</li>
+    <li>📌 <strong>Related Notebooks</strong>
+      <ul>
+        <li><a href="https://github.com/fxnnxc/kolmar/blob/v23.10.23.2/labs/receipt_3_eda/dataset.ipynb" target="_blank" rel="noopener noreferrer">receipt_3 target dist.ipynb</a></li>
+        <li><a href="https://github.com/fxnnxc/kolmar/blob/v23.10.23.2/labs/receipt_3_rmse/plot_rmse.ipynb" target="_blank" rel="noopener noreferrer">plot_rmse.ipynb</a></li>
+        <li><a href="https://github.com/fxnnxc/kolmar/blob/v23.10.23.2/labs/receipt_3_rmse/pdp.ipynb" target="_blank" rel="noopener noreferrer">pdp.ipynb</a></li>
+      </ul>
+    </li>
+  </ol>
+</div>
+
+<p>저번 미팅에서 의논한대로, 현재는 <strong>데이터에 적합한 모델을 찾는 것보다</strong> 머신러닝 모델에 대한 이해 및 데이터 구축에 연구 시간을 보내고 있다. 이번 주 보고에서는 ML 모델에 대한 사용을 마무리하고, 프로젝트에 적합한 <strong>모델 입력 디자인</strong>에 대해서 논한다. 레포트 구성은 다음과 같다.</p>
+
+<ol>
+  <li>3차 처방데이터 (1차와 2차의 총합)</li>
+  <li>3차 처방 예측값 상관관계 표</li>
+  <li>8개의 머신러닝 모델</li>
+  <li>8개 모델에 대한 PDP</li>
+  <li>!프로젝트 연구를 위한 본질적인 연구 주제 📌</li>
+  <li>물성 모델링 📌</li>
+  <li>결론</li>
+</ol>
+
+<h2 id="1-3차-처방-데이터">1. 3차 처방 데이터</h2>
+
+<p>1차 처방데이터와 2차 처방데이터를 취합한 데이터셋 구축하였다. 데이터셋에 따른 모델 학습은 향후 다시 구분하여 학습을 진행할 수 있기에 특별한 이유가 없을 때까지는 증가된 데이터셋으로 학습 및 분석을 진행한다. 3차 처방데이터는 1,2차 데이터를 합친 것으로 다음과 같으 처리를 통하여 총 <code class="language-plaintext highlighter-rouge">1745개</code>의 입력데이터가 존재하며, 코드 개수는 <code class="language-plaintext highlighter-rouge">5485개</code>이다.</p>
+
+<d-code language="python">
+[INFO] dropping NaN targets...
+[INFO] sum by duplicated lab numbers for targets...
+[INFO] modified number of targets by dropping NaN and duplication: 1771 --&gt; 1745
+[INFO] fill one-hot code for all targets in the order of unique_formulas in data_raw excluding codes if code-idx &lt; 5485
+100%|██████████| 1745/1745 [00:18&lt;00:00, 92.10it/s]
+--------------------------------------------------
+[INFO] 🗂️ Dataset: Receipt3DatasetBaseML X:(1745, 5485)  Y:(1745,)
+
+</d-code>
+
+<p>3차 데이터의 경우 1차 및 2차 데이터를 결합한 데이터셋이므로, 
+예측값에 대한 분포는 두개의 분포를 결합한 것과 동일하다.</p>
+<center>
+<div class="spanbox" style="width:40rem;background-color:#FFFDFD;margin-left:0rem;">
+    <h3 id="section">1차/2차 점도 예측 목표</h3>
+    <p><img src="https://drive.google.com/uc?export=view&amp;id=1759r2Afe8HKChHH_oNoePBw9akxC8RNq" style="width:39%">
+<img src="https://drive.google.com/uc?export=view&amp;id=16-ZXy2tI6s72_agj7pzy4PTM7IrcB4hd" style="width:39%"></p>
+    <h3 id="section-1">3차 처방 데이터의 점도값 분포는 다음과 같다.</h3>
+    <p><img src="https://drive.google.com/uc?export=view&amp;id=1WCDCzgN8LAad5xYpP7g4D0ZMd4k01QbF" style="width:80%"></p>
+  </div>
+</center>
+
+<h2 id="2-3차-처방-예측값-상관관계-표">2. 3차 처방 예측값 상관관계 표</h2>
+
+<p>각 코드에 대해서 단순선형모델 및 상관관계를 구해보면 다음과 같다.</p>
+
+<p><img src="https://drive.google.com/uc?export=view&amp;id=1h50lUJTqPyeaMWt2v8OiX2uJpU7C3IRU" style="width:80%"></p>
+
+<ul>
+  <li>전체 데이터는 <a href="https://docs.google.com/spreadsheets/d/1PbeJslr2Rv1o-5FHJ0SMB091RzlnfUle/edit?usp=sharing&amp;ouid=112523016502479227051&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer">correlation.xlsx</a> (구글드라이브 보안접근)에서 확인할 수 있다.</li>
+</ul>
+
+<h2 id="3-8개의-머신러닝-모델">3. 8개의 머신러닝 모델</h2>
+
+<p>머신러닝에 사용되는 모델은 크게 3 종류로 구분된다.</p>
+
+<ol>
+  <li>파라미터 회귀형태  : 입력값에 계수를 곱해서 예측이 진행되는 형태이다.</li>
+  <li>의사결정나무 형태  : 분기를 기준으로 나눠서 예측을 진행한다.</li>
+  <li>Non-parametric 데이터 기반 : 학습데이터와 비교를 통해서 예측을 진행한다.</li>
+</ol>
+
+<p>학습에 사용되는 모델은 다음과 같다.</p>
+
+<ol>
+  <li>파라미터 회귀형태  : <code class="language-plaintext highlighter-rouge">lasso_linear</code>, <code class="language-plaintext highlighter-rouge">ridge_linear</code>, <code class="language-plaintext highlighter-rouge">linear</code>, <code class="language-plaintext highlighter-rouge">SVR</code>, <code class="language-plaintext highlighter-rouge">bayes_ridge_linear</code>
+</li>
+  <li>의사결정나무 형태  : <code class="language-plaintext highlighter-rouge">random forest</code>, <code class="language-plaintext highlighter-rouge">lightGBM</code>
+</li>
+  <li>Non-parametric 데이터 기반 : <code class="language-plaintext highlighter-rouge">KNeighborRegressor</code>
+</li>
+</ol>
+
+<p>학습에서는 학습용과 테스트용을 나눠서 진행한다. 학습데이터의 일부는 검증용 데이터로 다시 사용된다. 
+괄호는 (입력 샘플 수, 입력 변수 수), (출력 샘플 수) 를 나타낸다.</p>
+
+<ul>
+  <li>
+<strong>학습데이터</strong> (1221, 5485), (1221,)</li>
+  <li>
+<strong>테스트데이터</strong> (524, 5485), (524,)</li>
+</ul>
+
+<p>1/10000의 값에 대해서 학습 모델을 돌리면 다음과 같은 결과를 얻는다.</p>
+
+<ul>
+  <li>x축 : 학습에 사용된 코드 개수</li>
+  <li>y축 : Root Mean Squared Error 평균</li>
+</ul>
+
+<div class="spanbox" style="width:60rem;background-color:#FFFDFD;margin-left:-5rem;">
+  <h3 id="rmse">RMSE</h3>
+  <center>
+<img src="https://drive.google.com/uc?export=view&amp;id=1LhC7shBOObQGoLo2ftxgK8Q-Wjajq-vi" style="width:100%">
+</center>
+
+  <ol>
+    <li>선형모델은 학습과 테스트 데이터의 결과가 모두 에러가 높게 나왔다. 따라서 부적합하다.</li>
+    <li>LightGBM 은 학습 및 테스트에 대해서 모두 최고의 성능을 보여준다.</li>
+    <li>KNR 이 학습에 대해서 성능이 높은 것은 실제 학습값을 반환하기 때문이다. 대신, 테스트에 대해서도 학습데이터의 Y를 내보낸다. 따라서, Test에서 KNR 보다 성능이 안 좋은 모델들은 모두 <code class="language-plaintext highlighter-rouge">학습 데이터로 맵핑</code>한 예측보다 안 좋은 모델로 판단하면 된다.</li>
+    <li>RF의 경우, 학습데이터에 대해서는 좀더 에러가 LightGBM보다 높은데, 이는 LightGBM 이 더욱 세분하게 예측값을 쪼개기 때문이다.</li>
+  </ol>
+
+</div>
+
+<h2 id="4-8개-모델에-대한-pdp">4. 8개 모델에 대한 PDP</h2>
+
+<p>PDP 는 기존 학습데이터에서 코드를 정하고 0~100까지 강제로 변화시킨 데이터를 모델에 넣어 평균적인 코드의 예측값을 보는 방법이다.</p>
+
+<ul>
+  <li>x-축: 특정 코드에 대한 값</li>
+  <li>y-축: 평균 점도 (3차 처방 데이터)</li>
+</ul>
+
+<div class="spanbox" style="width:60rem;background-color:#FFFDFD;margin-left:-5rem;">
+  <h3 id="pdp">PDP</h3>
+
+  <p>PDP에 대한 해석은 이번 보고서에서는 분석하지 않는다. 왜냐하면 입력에 대한 적합한 모델링 이후 다시 제대로 모델을 학습하고 진행하는 게 맞기 때문이다.</p>
+  <center>
+<img src="https://drive.google.com/uc?export=view&amp;id=1v-rD7f-pfwN8meUaM2lwZXt_Z740vLR7" style="width:100%">
+<img src="https://drive.google.com/uc?export=view&amp;id=1aDLc5Cdh6XX5m5OzFFaGgzenG1onFKWj" style="width:100%">
+</center>
+</div>
+
+<h2 id="5-프로젝트-연구를-위한-본질적인-연구-주제">5. !프로젝트 연구를 위한 본질적인 연구 주제</h2>
+
+<p>프로젝트를 진행하면서 점도 예측에 대해서 어려운 점은 코드 개수가 5000개가 넘는데, 데이터의 샘플은 1700여개라는 점이다. 이는 학습데이터가 아주 적은 것을 의미하며, 학습 모델에 몇 가지 문제점을 지니고 있다.</p>
+
+<h4 id="코드-개수가-너무-많은-것에-대한-문제점">(코드 개수가 너무 많은 것에 대한 문제점)</h4>
+<ol>
+  <li>많이 사용된 코드에 적합하게 학습된다. <br> 적은 코드는 영향을 거의 미치지 못한다. (대부분 값이 0으로 들어가기 떄문에)</li>
+  <li>적은 샘플을 가지는 코드가 큰 weight을 지닐 수 있다. 이 경우, 일반화가 되었다고 판단 오류를 내릴 가능성이 높다.</li>
+</ol>
+
+<p>따라서 적은 샘플을 가지는 코드는 학습이 제대로 진행되지 못했을 가능성이 높다. 그렇다면, 현재 상황에서 필요한 것은 단순히 코드로부터 점도를 예측하는 것을 넘어서, 
+적은 샘플을 지니는 코드로부터 학습하는 방법이다. 머신러닝/딥러닝 학습 전에 먼저 목표로 하는 점은 다음과 같다.</p>
+
+<h4 id="개선된-연구-주제">(개선된 연구 주제)</h4>
+<ol>
+  <li><strong>충분한 실험 개수를 지니는 코드에 대한 점도 영향력 측정.</strong></li>
+  <li><strong>적은 실험 개수를 지니는 코드에 대해서 예측 방법 제안.</strong></li>
+</ol>
+
+<h2 id="6-물성-모델링">6. 물성 모델링</h2>
+
+<p>물과 꿀을 섞는 것을 예로 들어보면, 물과 꿀은 서로 점도를 지니고 있다. 두 물질은 서로 다른 점도 $\rho_1$ $\rho_2$ 를 지니고 있으며, 화학적인 성질 $\psi_1, \psi_2$ 를 가지고 있다. 
+두 개를 $x$ 와 $1-x$ 만큼 섞는 경우 물보다는 진하고 꿀보다는 연한 상태가 되기에,  점도 $\rho$ 는  $[ \rho_1, \rho_2 ]$ 에 놓이게 됨이 자명한데, 만일 화학적인 성질로부터 점도가 유도될 수 있다면, 혼합물의 점도 $\rho$ 는 적당한 함수 $f$에 의해서 결정난다.</p>
+
+\[\begin{equation}
+\rho = f(\psi_1, \psi_2, x, 1-x)
+\end{equation}\]
+
+<p>딥러닝의 목적은 근사함수 $f_\theta$ 를 찾는 것으로, 적당한 모델 파라미터 $\theta$ 로부터 Loss를 최소화는 파라미터를 찾는다.</p>
+
+\[\begin{equation}
+\theta^\star = \arg \min_\theta \mathcal{L}(f_\theta(x, x-1), f(\psi_1, \psi_2, x, 1-x))
+\end{equation}\]
+
+<p>레올로지로부터 얻어지는 값 $y$는 $f(\psi_1, \psi_2, x, 1-x)$ 를 대체하므로, 실험적으로 얻어진 값 $y$ 로 $f$ 를 대체하여 $\theta$를 찾는다.</p>
+
+\[\begin{equation}
+\theta^\star = \arg \min_\theta \mathcal{L}(f_\theta(x, x-1), y)
+\end{equation}\]
+
+<p>적은 개수의 코드에 대해서 <strong>수식 1</strong> 과 같이 화학적인 성질 및 섞는 비율에 의해서 점도가 결정난다면, <strong>비슷한 화학적 성질 및 양을 지니는 물질에 대해서는 $\rho$ 값이 유사하게</strong> 나타날 것이다. 
+<strong>이는 $f$ 함수가 화학적성질 및 섞는 비율에 대해서 Smooth</strong>한 성질이 있다고 가정하는 경우에 가능하다. 즉, 화학적 변화의 차이에 따라서 예측의 차이에 영향을 미친다는 가정이다. 이 가정은 물성을 결정하는 적합한 화학적 성질과 물성의 관계가 존재함을 나타내며, 해당 화학적 성질이 비슷한 두 물질은 서로 교체되어도 $\rho$ 값이 크게 변하지 않을 것이다.</p>
+
+<p>따라서, <strong>5485개의 코드에 대해서 점도를 결정하는 유사한 성질을 유도해낼 수 있다면</strong>, 비록 샘플 수가 적을지라도 유사한 코드 중 가장 많은 샘플로 대체되면 문제가 해결된다. 
+예로, 코드 개수를 100개로 줄일 수 있다면, 변수와 데이터의 비율은 (5485:1745) 에서 (100:1745)로 줄어든다. 이를 통해 더욱 정확한 머신러닝 모델을 학습시킬 수 있다.</p>
+
+<p>(만일 화학적인 특성 없이 단순하게 비율대로 결정이 난다면, $\rho = \rho_1 x_1 + \rho_2 x_2$ 식으로 쓸 수 있을 것이다. 이 경우, 각 코드별로 점도를 예측하고, 단순하게 곱해서 더하면 점도가 예측되어야 한다. 각 물질별로 단 한번의 실험으로 점도를 결정할 필요가 있으므로 코드 개수만큼 실험을 돌려야 한다. 결국 코드 수만큼 필요하다면, 샘플이 코드 개수보다 적은 경우는 Least Square에서 Rank가 더 작은 상태와 동일하다. )</p>
+
+<h3 id="3개-이상을-섞는-경우">3개 이상을 섞는 경우</h3>
+
+<p>위의 수식에서는 2개의 코드에 대해서 섞는 것을 나타냈는데, 여기서는 3개의 코드에 대해서 섞는 경우를 분석한다. 
+코드 개수 $K$ 를 섞는 경우, 각 물질의 특성을 $\psi_k$, 양을 $x_k$ 라고 하면, 해당 조합을 섞었을 때 결정되는 점도는 다음과 같은 식 $f$로 유도된다고 가정한다.</p>
+
+\[\begin{equation}
+\rho = f(\psi_1, \psi_2, \cdots, \psi_K, x_1, x_2, \cdots, x_{K-1}  )
+\end{equation}\]
+
+<p>화학적 특성으로 물성을 결정할 수 있다는 가정에서는 샘플이 적은 코드 $j$ 에 대해서 화학적인 특성이 유사하다면, 코드 $j$ 는 가장 비슷한 다른 코드 $\hat{k}$ 로 맵핑될 수 있다.</p>
+
+\[\begin{equation}
+\hat{k} = \arg \min_{k\in [K_j]} d(\psi_k, \psi_j)
+\end{equation}\]
+
+<p>코드 인덱스 $k$ 가 데이터 수로 정렬되어 있다고 가정할 때, $K_j$ 는 코드 $j$ 보다 샘플수가 충분히 많은 코드의 인덱스이다. 
+이로 인해서, $j$ 코드의 특성 $\psi_j$ 는 $\psi_{k’}$으로 치환된다. 치환되면 $j$ 의 함량은 $\hat{k}$의 함량으로 추가되며, 머신러닝 모델링에서 $\rho$ 를 결정하는 파라미터 $j$ 는 사라지게 된다. 
+이러한 코드 치환은 $d(\psi_k, \psi_j)$ 에서 발생하는 에러가 작을수록 바람직하며, 적절히 요구되는 특성이 유사한 코드가 있다면, $d(\cdot, \cdot)$ 은 작아진다.</p>
+
+<p>이 수식적 분석을 통해서 최종적으로 모델링 해야 하는 것은 <strong>점도 예측에 유의미한 $\psi$ 표현을 찾는 것</strong>이다. 찾아낸 표현으로부터 코드 치환 알고리즘을 최적화하는 경우, 
+물질 결합시 화학적 특성으로 물성이 결정난다는 <strong>수식1</strong>의 점도 결정 함수가 옳다는 가정하에서 치환을 통한 방식은 적은 물성 예측 에러를 지니게 된다.</p>
+
+<hr>
+
+<h3 id="direct-solution-of-5-using-distribution">Direct Solution of 5 using distribution</h3>
+
+<p>(이 부분을 정확하게 수식으로 모델링 하려면 고생이 좀 필요할 것 같다.. 그래서 다음에 필요하면 연구할 계획이다.)</p>
+
+<p>물질의 성질 $\psi$ 값은 점도를 결정지어야 하기 때문에 적절한 $\psi$ 를 모델링 하는 것은 쉽지 않다. 대신 수식5 에서 구하는 distance $d(\psi_k, \psi_j)$를 확률적인 차이로 치환할 수 있다. 
+두 개의 코드에 대해서 점도의 확률분포가 얼마나 유사한지, 다른지를 판단한다면, 화학적인 성질 $\psi$를 구하지 않고 분포의 차이로부터 $k$ 를 구하는 방식이다.</p>
+
+\[\arg \min_{k \in [K_j]} d(\psi_j, \psi_k) = \arg \min_{k \in [K_j]} d(p(Y|X_j;\hat{X}), p(Y|X_k;\hat{X}))\]
+
+<p>즉, 점도의 예측값이 유사하다면, 코드는 다른 코드로 치환될 수 있는 것이다. 예를 들어서, A 라는 물질로 몇 번의 실험으로 점도 예측을 하는 경우, 비슷한 함량을 섞었을 때, 예측 값이 비슷한 다른 코드가 있다면 치환될 수 있다는 가정이다. (To be continued…)</p>
+
+<h2 id="7-결론">7. 결론</h2>
+
+<p>머신러닝 / 딥러닝 모델은 주어진 입력-출력에 대해서 학습에 장점이 있다. 따라서, 모델 학습으로 예측을 진행하는 것은 가능한 사항이다. 
+다만, 현재 프로젝트에서는 코드의 종류가 무수히 많으며, 적은 데이터로 유의미한 모델을 만들 필요가 있다. 따라서, 단순히 머신러닝/딥러닝을 적용하여 사용하는 것보다
+적은 수의 실험으로 물성을 예측하는 방식에 대한 논의가 우선적으로 필요하다. 이후 코드 수의 문제가 일부 해결되면, 머신러닝/딥러닝으로 학습 및 예측을 진행하고, 모델의 결과를 해석하여 유의미한 인사이트를 얻을 수 있을 것으로 기대된다.</p>
+
+      </d-article>
+
+      <d-appendix>
+        <d-footnote-list></d-footnote-list>
+        <d-citation-list></d-citation-list>
+      </d-appendix>
+
+
+      <hr>
+<!--<div id="giscus_thread" style="max-width: 1000px; margin: 0 auto;">
+    <script>
+      let giscusTheme = localStorage.getItem("theme");
+      let giscusAttributes = {
+          "src": "https://giscus.app/client.js",
+          "data-repo": "fxnnxc/fxnnxc",
+          "data-repo-id": "MDEwOlJlcG9zaXRvcnkzMjQ2NjUxMTU=",
+          "data-category": "Q&A",
+          "data-category-id": "DIC_kwDOE1n_G84CYOk_",
+          "data-mapping": "title",
+          "data-strict": "0",
+          "data-reactions-enabled": "1",
+          "data-emit-metadata": "0",
+          "data-input-position": "top",
+          "data-theme": giscusTheme,
+          "data-lang": "en",
+          "crossorigin": "anonymous",
+          "async": "",
+      };
+  
+  
+      let giscusScript = document.createElement("script");
+      Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+      document.getElementById("giscus_thread").appendChild(giscusScript);
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript">comments powered by giscus.</a></noscript>
+  </div>--><div id="giscus_thread" style="max-width: 1000px; margin: 0 auto;">
+    <script>
+      let giscusTheme = localStorage.getItem("theme");
+      let giscusAttributes = {
+          "src": "https://giscus.app/client.js",
+          "data-repo": "fxnnxc/fxnnxc",
+          "data-repo-id": "MDEwOlJlcG9zaXRvcnkzMjQ2NjUxMTU=",
+          "data-category": "Q&A",
+          "data-category-id": "DIC_kwDOE1n_G84CYOk_",
+          "data-mapping": "title",
+          "data-strict": "0",
+          "data-reactions-enabled": "1",
+          "data-emit-metadata": "0",
+          "data-input-position": "top",
+          "data-theme": giscusTheme,
+          "data-lang": "en",
+          "crossorigin": "anonymous",
+          "async": "",
+      };
+  
+  
+      let giscusScript = document.createElement("script");
+      Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+      document.getElementById("giscus_thread").appendChild(giscusScript);
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript" target="_blank" rel="noopener noreferrer">comments powered by giscus.</a>
+</noscript>
+  </div>
+</div>
+
+    <!-- Footer -->    <footer class="sticky-bottom mt-5" style="border: none;border-top:0px">
+      <div class="container" style="text-align: center; ">
+        © Copyright 2024 Bumjini  . Powered by Jekyll with al-folio theme. Hosted by GitHub Pages.
+
+      </div>
+    </footer>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js" integrity="sha256-l/1pMF/+J4TThfgARS6KwWrk/egwuVvhRzfLAMQ6Ds4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha256-SyTu6CwrfOhaznYZPoolVw2rxoY7lKYKQvqbtqN93HI=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    
+    
+
+<!-- Scrolling Progress Bar -->
+<script type="text/javascript">
+  /*
+   * This JavaScript code has been adapted from the article 
+   * https://css-tricks.com/reading-position-indicator/ authored by Pankaj Parashar, 
+   * published on the website https://css-tricks.com on the 7th of May, 2014.
+   * Couple of changes were made to the original code to make it compatible 
+   * with the `al-foio` theme.
+   */
+  const progressBar = $("#progress");
+  /*
+   * We set up the bar after all elements are done loading.
+   * In some cases, if the images in the page are larger than the intended
+   * size they'll have on the page, they'll be resized via CSS to accomodate
+   * the desired size. This mistake, however, breaks the computations as the
+   * scroll size is computed as soon as the elements finish loading.
+   * To account for this, a minimal delay was introduced before computing the
+   * values.
+   */
+  window.onload = function () {
+    setTimeout(progressBarSetup, 50);
+  };
+  /*
+   * We set up the bar according to the browser.
+   * If the browser supports the progress element we use that.
+   * Otherwise, we resize the bar thru CSS styling
+   */
+  function progressBarSetup() {
+    if ("max" in document.createElement("progress")) {
+      initializeProgressElement();
+      $(document).on("scroll", function() {
+        progressBar.attr({ value: getCurrentScrollPosition() });
+      });
+      $(window).on("resize", initializeProgressElement);
+    } else {
+      resizeProgressBar();
+      $(document).on("scroll", resizeProgressBar);
+      $(window).on("resize", resizeProgressBar);
+    }
+  }
+  /*
+   * The vertical scroll position is the same as the number of pixels that
+   * are hidden from view above the scrollable area. Thus, a value > 0 is
+   * how much the user has scrolled from the top
+   */
+  function getCurrentScrollPosition() {
+    return $(window).scrollTop();
+  }
+
+  function initializeProgressElement() {
+    let navbarHeight = $("#navbar").outerHeight(true);
+    $("body").css({ "padding-top": 0 });
+    $("progress-container").css({ "padding-top": 0 });
+    progressBar.css({ top: navbarHeight });
+    progressBar.attr({
+      max: getDistanceToScroll(),
+      value: getCurrentScrollPosition(),
+    });
+  }
+  /*
+   * The offset between the html document height and the browser viewport
+   * height will be greater than zero if vertical scroll is possible.
+   * This is the distance the user can scroll
+   */
+  function getDistanceToScroll() {
+    return $(document).height() - $(window).height();
+  }
+
+  function resizeProgressBar() {
+    progressBar.css({ width: getWidthPercentage() + "%" });
+  }
+  // The scroll ratio equals the percentage to resize the bar
+  function getWidthPercentage() {
+    return (getCurrentScrollPosition() / getDistanceToScroll()) * 100;
+  }
+</script>
+
+  </body>
+
+  <d-bibliography src="/assets/bibliography/">
+  </d-bibliography>
+
+  <!-- jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="/assets/js/distillpub/overrides.js"></script>
+
+    <center>
+        <img src="/assets/common/KAIST-hi.gif" width="40px" style="margin-right:0px; padding-bottom: 3px;">
+    </center>
+    <hr> 
+
+</html>

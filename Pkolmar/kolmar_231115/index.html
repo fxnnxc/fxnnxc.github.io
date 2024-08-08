@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<!-- _layouts/distill.html -->
+<html>
+  <head>    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bumjini | [연구 8] 원료 임베딩 클러스터링</title>
+    <meta name="author" content="Bumjini  " />
+    <meta name="description" content="원료들을 벡터로 표현하고 임베딩하여 유사 원료를 확인하는 방법에 대한 논의" />
+    <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website" />
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous" />
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="none" id="highlight_theme_light" />
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪴</text></svg>">
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://fxnnxc.github.io/Pkolmar/kolmar_231115/">
+    
+    <!-- Dark Mode -->
+    
+
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams',
+        inlineMath: [['$','$'], ['\\(','\\)']]
+      },
+      chtml: {
+          scale: 1.0,
+          minScale: .6,  
+          mtextFontInherit: true,
+          mtextInheritFont: true,
+          merrorInheritFont: true,
+        },
+        svg: {
+          scale: 1.2
+        }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <!-- Distill js -->
+    <script src="/assets/js/distillpub/template.v2.js"></script>
+    <script src="/assets/js/distillpub/transforms.v2.js"></script>
+    
+  </head>
+
+  <d-front-matter>
+    <script async type="text/json">{
+      "title": "[연구 8] 원료 임베딩 클러스터링",
+      "description": "원료들을 벡터로 표현하고 임베딩하여 유사 원료를 확인하는 방법에 대한 논의",
+      "published": "November 15, 2023",
+      "authors": [
+        {
+          "author": "Bumjin Park",
+          "authorURL": "",
+          "affiliations": [
+            {
+              "name": "KAIST",
+              "url": ""
+            }
+          ]
+        }
+        
+      ],
+      "katex": {
+        "delimiters": [
+          {
+            "left": "$",
+            "right": "$",
+            "display": false
+          },
+          {
+            "left": "$$",
+            "right": "$$",
+            "display": true
+          }
+        ]
+      }
+    }</script>
+  </d-front-matter>
+
+  <body class="sticky-bottom-footer">
+
+    <!-- Header -->    
+    <center>
+      <img src="/assets/common/KAIST-hi.gif" width="40px" style="margin-right:0px; padding-bottom: 3px;">
+    </center>
+    <hr> 
+
+    <!-- Content -->
+    <div class="post distill">
+
+      <d-title>
+        <h1 style="font-size: 32px;">[연구 8] 원료 임베딩 클러스터링</h1>
+        <p>원료들을 벡터로 표현하고 임베딩하여 유사 원료를 확인하는 방법에 대한 논의</p>
+      </d-title>
+
+      <d-byline></d-byline>
+
+      <d-article>
+        
+
+        <h2 id="report-info">Report Info</h2>
+
+<div class="spanbox" style="width:40rem;background-color:#FFFDFD;">
+  <ol>
+    <li>👨🏻‍💻 <strong>Code Release</strong>:  Tag <a href="https://github.com/fxnnxc/kolmar/tree/v23.11.14.2" target="_blank" rel="noopener noreferrer">v23.11.14.2</a>
+</li>
+    <li>📂 <strong>Raw Data</strong> :  (<code class="language-plaintext highlighter-rouge">raw_data:receipt_3</code>)   <br> # 3.1 은 1차 및 2처 처방을 합치고 코드별로 합산한 데이터</li>
+    <li>🗂️ <strong>Datasets</strong> :  (<code class="language-plaintext highlighter-rouge">ds:receipt_3_dl</code>)</li>
+    <li>👾 <strong>Models</strong> :  MLP</li>
+    <li>🦄 <strong>Trainers</strong> : (<code class="language-plaintext highlighter-rouge">sigmoid_code_learning</code>)</li>
+    <li>📌 <strong>Related Notebooks</strong>
+      <ul>
+        <li><a href="https://github.com/fxnnxc/kolmar/blob/v23.11.14.2/labs/kcia_eda/clustering.ipynb" target="_blank" rel="noopener noreferrer">clustering.ipynb</a></li>
+        <li><a href="https://github.com/fxnnxc/kolmar/blob/v23.11.14.2/labs/kcia_eda/clustering.ipynb" target="_blank" rel="noopener noreferrer">sigmoid code learning.ipynb</a></li>
+      </ul>
+    </li>
+  </ol>
+
+</div>
+
+<h2 id="1-벡터화">1. 벡터화</h2>
+
+<p>각 원료에 대한 표현벡터를 만드는 것은 꾸준하게 증가하는 신규 원료에 대한 인공지능 모델 학습을 쉽게 하며, 표현된 벡터를 해석함으로써, 사용자는 복잡한 신경망에 대한 부담을 덜 수 있다. 이를 위해서 단순히 함량에 대해서 예측 하는 모델이 아닌, 각 원료를 표현벡터로 맵핑하고, 추가적인 함량과 함께 예측하는 형태를 제안한다.</p>
+
+<p><img src="https://drive.google.com/uc?export=view&amp;id=1tuteKKf0ZehMow4g25kVpP3bxNYJYKqL" style="width:100%;border:1px solid #FFDDDD;"></p>
+
+<p>좀더 자세히 설명하면 표현벡터는 임의의 원료 $\mathcal{M}$를 벡터 $H$ 형태로 맵핑된 형태로 나타나며, 원료의 유사도가 높다면, 벡터의 거리도 줄어드는 성질이 있다.</p>
+
+<ul>
+  <li>해석의 용이성 : 사용자 입장에서 표현벡터를 해석함으로써 원료를 이해할 수 있다.</li>
+  <li>표현으 자율성 : 고차원 벡터로 표현됨으로써, 딥러닝 모델의 학습 성능을 높일 수 있다. 
+<img src="https://drive.google.com/uc?export=view&amp;id=1DSeEosfGztjV8A4c_TEbdEkPloFYWTC_" style="width:100%;border:1px solid #FFDDDD;">
+</li>
+</ul>
+
+<h2 id="2-벡터-표현-학습">2. 벡터 표현 학습</h2>
+
+<p>원료를 벡터로 표현하는 방법은 지도/비지도 학습 방법들을 포함하여 여러가지가 있다. 이번 보고서에서는 크게 데이터의 특성을 기반으로한 벡터와 End-to-End 점도 예측 학습을 활용한 벡터 표현 학습을 다룬다.</p>
+
+<h3 id="method1-원료-정보-바탕">Method1: 원료 정보 바탕</h3>
+
+<p>가장 쉽게 원료에 대한 표현벡터를 만드는 방법은 배합목적을 기반으로 하는 방식이다. 
+KCA데이터에는 원료에 대한 배합목적은 91가지가 있으며, 특정 원료는 각 배합목적을 포함할 수 있다.</p>
+<ol>
+  <li>각 원료에 대한 배합 목적을 확인한다.</li>
+  <li>91가지 배합목적이 서로 배타적이라는 가정하에서 0~90까지 인덱스로 배합목적을 표현한다.</li>
+  <li>91차원 벡터에 0 또는 1로 배합목적 포함 여부를 표시한다.</li>
+</ol>
+
+<d-code language="python">
+
+아래 예시에서는 원료에 대한 배합 목적으로부터 표현벡터를 만드는 예시를 보여준다. 
+
+# 원료 인덱스 : 벡터 인덱스 (이름 변환)
+23331 : ['산화방지제', '헤어컨디셔닝제', '피부보호제', '피부컨디셔닝제(보습제)', '피부컨디셔닝제(기타)', '피부컨디셔닝제(수분차단제)']
+23333 : ['피부컨디셔닝제(유연제)', '피부컨디셔닝제(보습제)']
+23334 : ['헤어컨디셔닝제', '피부보호제', '피부컨디셔닝제(가터)']
+23335 : ['피부컨디셔닝제(기타)']
+23336 : ['피부컨디셔닝제(기타)']
+23337 : ['각질제거제', '비듬방지제', '체취방지제', '피부컨디셔닝제']
+
+
+# 원료 인덱스 : 벡터 인덱스
+23331 : [0, 1, 2, 3, 7, 11]
+23333 : [9, 3]
+23334 : [1, 2, 88]
+23335 : [7]
+23336 : [7]
+
+
+# 원료 벡터 형태 변환 : 원핫벡터
+23331 : [1,1,1,0,0,0,1,0,0,0,1, 0,...]
+23333 : [0,0,0,1,0,0,0,0,0,1,0,...]
+23334 : [0,0,,.....,1,0,0,0]
+23335 : [0,0,0,0,0,0,1,0,...]
+23336 : [0,0,0,0,0,0,1,0,...]
+
+</d-code>
+
+<ul>
+  <li>입력 데이터 개수 : 9973</li>
+  <li>벡터 길이 개수 : 91</li>
+</ul>
+
+<p>91차원은 고차원으로 시각적으로 <strong>유사한 원료</strong>를 찾고 이해하는 것은 쉽지 않다.시각적인 목적으로 사용하는 방법 중 “저차원 임베딩”을 소개한다.저차원 시각화는 91차원 벡터를 2차원으로 사영하여 시각화한다. 추가적인 정보로 레이블을 시각화하는 경우, 예상하는 특징들이 비슷한 벡터 표현으로 묶이는지 확인할 수 있다.</p>
+
+<h4 id="스킨--헤어--스킨헤어-특징">스킨 / 헤어 / 스킨+헤어 특징</h4>
+
+<p><img src="https://drive.google.com/uc?export=view&amp;id=1TWPL6KJ4oF6AxXH5IDisg1PIp09desyP" style="width:100%;border:1px solid #FFDDDD;"></p>
+
+<h4 id="식물-관련-단어-포함-여부-나무-풀-꽃-잎">식물 관련 단어 포함 여부 (나무, 풀, 꽃, 잎)</h4>
+
+<p><img src="https://drive.google.com/uc?export=view&amp;id=18w-NsuCnbbeg3CBQ5No79Oof380oPaX0" style="width:100%;border:1px solid #FFDDDD;"></p>
+
+<h4 id="시성식이-있는-경우와-없는-경우">시성식이 있는 경우와 없는 경우</h4>
+
+<p><img src="https://drive.google.com/uc?export=view&amp;id=1DIYjrYxQXd9F46j4tawrHCOLJV_3sfqB" style="width:100%;border:1px solid #FFDDDD;"></p>
+
+<h3 id="method2--differential-feature-learning">Method2:  Differential Feature Learning</h3>
+
+<p>실제 원료의 특성을 기반으로 하는 방법과 다르게, 점도 예측을 목적으로 코드 표현을 학습할 수 있다. 이 방법의 가정은 “코드 표현이 적절하게 형성된다면, 예측력이 올라간다”는 점이다.  각 원료에 대한 표현벡터 형성을 최적화하여, 점도 예측을 최소화하는 표현벡터를 학습하는 방법이다 .</p>
+
+<p>The code mapping problem has two components $h_{\theta_{map}}$ and  $g_{\theta_{reg}}$ to compute predict any type of outputs with the amount of materials for the input. The direct regression function $f_\theta$  is the composition of two functions.</p>
+
+\[f_\theta = g_{\theta_{reg}} \circ h_{\theta_{map}}\]
+
+<p>The input and output spaces for each module are as follows:</p>
+
+<ul>
+  <li>$h : \mathbb{R}^{N_{code}} \rightarrow \mathbb{R}^{N_{entry}}$</li>
+  <li>$g : \mathbb{R}^{N_{entry}} \rightarrow \mathbb{R}$</li>
+  <li>$f : \mathbb{R}^{N_{code}} \rightarrow \mathbb{R}$</li>
+</ul>
+
+<p>End-to-End code entry preference learning is optimized by</p>
+
+\[\theta_{reg}^{\star},\theta_{map}^{\star}  = \arg \min_{\theta_{map}, \theta_{reg}} \mathcal{L}( f_\theta (x), y)\]
+
+<p>One way to model $h_{\theta_{map}}$ is to map individual code $c$ to a representation vector \(\mathbf{h}_c \in \mathbb{R}^{N_{entry}}\) and combine the $\mathbf{h}_c$ with amounts.</p>
+
+\[h_{\theta_{map}} (A_1, \cdots, A_{N_{code}}) = \sum_{c} A_c \cdot \mathbf{h}_c\]
+
+<p>To minimize the loss, both weights $\theta_{reg}$ and $\theta_{map}$ are jointly optimized.</p>
+
+<h3 id="벡터-길이-n_entry-에-따른-차이">벡터 길이 ($N_{entry}$) 에 따른 차이</h3>
+
+<ul>
+  <li>첫 번쨰 그림 : 각 원료 표현에 대해서 가장 가까운 코드를 시각화</li>
+  <li>두 번째 그림 : 코드 벡터를 2차원에 맵핑하여 시각화 한 그림 (레이블은 코드 등장 횟수 500 번째 이하/이상으로 구분)</li>
+</ul>
+
+<p>벡터 길이에 대한 성능 차이는 없었음.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">ACT</th>
+      <th style="text-align: center">HIDDEN_DIM</th>
+      <th style="text-align: center">N_ENTRIES</th>
+      <th style="text-align: center">NUM_LAYERS</th>
+      <th style="text-align: center">OPTIM</th>
+      <th>(Eval+Train)/2</th>
+      <th>Eval</th>
+      <th>Train</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">sigmoid</td>
+      <td style="text-align: center">128</td>
+      <td style="text-align: center">10</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">adam</td>
+      <td><strong>1494</strong></td>
+      <td><strong>1500</strong></td>
+      <td><strong>1488</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">sigmoid</td>
+      <td style="text-align: center">128</td>
+      <td style="text-align: center">25</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">adam</td>
+      <td><strong>1494</strong></td>
+      <td><strong>1500</strong></td>
+      <td><strong>1488</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">sigmoid</td>
+      <td style="text-align: center">128</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">adam</td>
+      <td><strong>1495</strong></td>
+      <td><strong>1501</strong></td>
+      <td><strong>1489</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">sigmoid</td>
+      <td style="text-align: center">128</td>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">adam</td>
+      <td><strong>1495</strong></td>
+      <td><strong>1501</strong></td>
+      <td><strong>1489</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<center>
+
+### $N_{entry}=2$
+<img src="https://drive.google.com/uc?export=view&amp;id=1Q57jVEg7jJuIEk3LaRkAO-hbrrIiZejL" style="width:100%;border:1px solid #FFDDDD;">
+<img src="https://drive.google.com/uc?export=view&amp;id=1VoG04J6MLpL-3PWk--eTSd7Q40_aCPBe" style="width:100%;border:1px solid #FFDDDD;">
+
+### $N_{entry}=5$
+<img src="https://drive.google.com/uc?export=view&amp;id=1yvoC4uM5-B5S9HV6CbljZU89Ai_mhCJL" style="width:100%;border:1px solid #FFDDDD;">
+<img src="https://drive.google.com/uc?export=view&amp;id=1NGiJ7mChfj7QRoFGrKJHjAjqKkxrouke" style="width:100%;border:1px solid #FFDDDD;">
+
+### $N_{entry}=10$
+<img src="https://drive.google.com/uc?export=view&amp;id=1zVwOfKrhXAwtsjkZJucOfenQSymy12AQ" style="width:100%;border:1px solid #FFDDDD;">
+<img src="https://drive.google.com/uc?export=view&amp;id=1gPr-VE3BSLfRKveH5Pgbl-AVvMLsvBzS" style="width:100%;border:1px solid #FFDDDD;">
+
+### $N_{entry}=10$
+<img src="https://drive.google.com/uc?export=view&amp;id=1uFQzCfACZ1iO86bIhFUBBNmFb1CgRC72" style="width:100%;border:1px solid #FFDDDD;">
+<img src="https://drive.google.com/uc?export=view&amp;id=1uBftX4UDIc0pGPCJTPq79H5vAGukCJuq" style="width:100%;border:1px solid #FFDDDD;">
+</center>
+
+      </d-article>
+
+      <d-appendix>
+        <d-footnote-list></d-footnote-list>
+        <d-citation-list></d-citation-list>
+      </d-appendix>
+
+
+      <hr>
+<!--<div id="giscus_thread" style="max-width: 1000px; margin: 0 auto;">
+    <script>
+      let giscusTheme = localStorage.getItem("theme");
+      let giscusAttributes = {
+          "src": "https://giscus.app/client.js",
+          "data-repo": "fxnnxc/fxnnxc",
+          "data-repo-id": "MDEwOlJlcG9zaXRvcnkzMjQ2NjUxMTU=",
+          "data-category": "Q&A",
+          "data-category-id": "DIC_kwDOE1n_G84CYOk_",
+          "data-mapping": "title",
+          "data-strict": "0",
+          "data-reactions-enabled": "1",
+          "data-emit-metadata": "0",
+          "data-input-position": "top",
+          "data-theme": giscusTheme,
+          "data-lang": "en",
+          "crossorigin": "anonymous",
+          "async": "",
+      };
+  
+  
+      let giscusScript = document.createElement("script");
+      Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+      document.getElementById("giscus_thread").appendChild(giscusScript);
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript">comments powered by giscus.</a></noscript>
+  </div>--><div id="giscus_thread" style="max-width: 1000px; margin: 0 auto;">
+    <script>
+      let giscusTheme = localStorage.getItem("theme");
+      let giscusAttributes = {
+          "src": "https://giscus.app/client.js",
+          "data-repo": "fxnnxc/fxnnxc",
+          "data-repo-id": "MDEwOlJlcG9zaXRvcnkzMjQ2NjUxMTU=",
+          "data-category": "Q&A",
+          "data-category-id": "DIC_kwDOE1n_G84CYOk_",
+          "data-mapping": "title",
+          "data-strict": "0",
+          "data-reactions-enabled": "1",
+          "data-emit-metadata": "0",
+          "data-input-position": "top",
+          "data-theme": giscusTheme,
+          "data-lang": "en",
+          "crossorigin": "anonymous",
+          "async": "",
+      };
+  
+  
+      let giscusScript = document.createElement("script");
+      Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+      document.getElementById("giscus_thread").appendChild(giscusScript);
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript" target="_blank" rel="noopener noreferrer">comments powered by giscus.</a>
+</noscript>
+  </div>
+</div>
+
+    <!-- Footer -->    <footer class="sticky-bottom mt-5" style="border: none;border-top:0px">
+      <div class="container" style="text-align: center; ">
+        © Copyright 2024 Bumjini  . Powered by Jekyll with al-folio theme. Hosted by GitHub Pages.
+
+      </div>
+    </footer>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js" integrity="sha256-l/1pMF/+J4TThfgARS6KwWrk/egwuVvhRzfLAMQ6Ds4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha256-SyTu6CwrfOhaznYZPoolVw2rxoY7lKYKQvqbtqN93HI=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    
+    
+
+<!-- Scrolling Progress Bar -->
+<script type="text/javascript">
+  /*
+   * This JavaScript code has been adapted from the article 
+   * https://css-tricks.com/reading-position-indicator/ authored by Pankaj Parashar, 
+   * published on the website https://css-tricks.com on the 7th of May, 2014.
+   * Couple of changes were made to the original code to make it compatible 
+   * with the `al-foio` theme.
+   */
+  const progressBar = $("#progress");
+  /*
+   * We set up the bar after all elements are done loading.
+   * In some cases, if the images in the page are larger than the intended
+   * size they'll have on the page, they'll be resized via CSS to accomodate
+   * the desired size. This mistake, however, breaks the computations as the
+   * scroll size is computed as soon as the elements finish loading.
+   * To account for this, a minimal delay was introduced before computing the
+   * values.
+   */
+  window.onload = function () {
+    setTimeout(progressBarSetup, 50);
+  };
+  /*
+   * We set up the bar according to the browser.
+   * If the browser supports the progress element we use that.
+   * Otherwise, we resize the bar thru CSS styling
+   */
+  function progressBarSetup() {
+    if ("max" in document.createElement("progress")) {
+      initializeProgressElement();
+      $(document).on("scroll", function() {
+        progressBar.attr({ value: getCurrentScrollPosition() });
+      });
+      $(window).on("resize", initializeProgressElement);
+    } else {
+      resizeProgressBar();
+      $(document).on("scroll", resizeProgressBar);
+      $(window).on("resize", resizeProgressBar);
+    }
+  }
+  /*
+   * The vertical scroll position is the same as the number of pixels that
+   * are hidden from view above the scrollable area. Thus, a value > 0 is
+   * how much the user has scrolled from the top
+   */
+  function getCurrentScrollPosition() {
+    return $(window).scrollTop();
+  }
+
+  function initializeProgressElement() {
+    let navbarHeight = $("#navbar").outerHeight(true);
+    $("body").css({ "padding-top": 0 });
+    $("progress-container").css({ "padding-top": 0 });
+    progressBar.css({ top: navbarHeight });
+    progressBar.attr({
+      max: getDistanceToScroll(),
+      value: getCurrentScrollPosition(),
+    });
+  }
+  /*
+   * The offset between the html document height and the browser viewport
+   * height will be greater than zero if vertical scroll is possible.
+   * This is the distance the user can scroll
+   */
+  function getDistanceToScroll() {
+    return $(document).height() - $(window).height();
+  }
+
+  function resizeProgressBar() {
+    progressBar.css({ width: getWidthPercentage() + "%" });
+  }
+  // The scroll ratio equals the percentage to resize the bar
+  function getWidthPercentage() {
+    return (getCurrentScrollPosition() / getDistanceToScroll()) * 100;
+  }
+</script>
+
+  </body>
+
+  <d-bibliography src="/assets/bibliography/">
+  </d-bibliography>
+
+  <!-- jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="/assets/js/distillpub/overrides.js"></script>
+
+    <center>
+        <img src="/assets/common/KAIST-hi.gif" width="40px" style="margin-right:0px; padding-bottom: 3px;">
+    </center>
+    <hr> 
+
+</html>

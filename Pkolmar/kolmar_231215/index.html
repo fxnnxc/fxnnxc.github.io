@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<!-- _layouts/distill.html -->
+<html>
+  <head>    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bumjini | [연구 11] 전체 프레임워크  및 학습 데이터 구성</title>
+    <meta name="author" content="Bumjini  " />
+    <meta name="description" content="원료 기본 표현 벡터부터 예측용 표현 벡터 변환까지 전반적인 프레임워크에 대한 설명. " />
+    <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website" />
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous" />
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="none" id="highlight_theme_light" />
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪴</text></svg>">
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://fxnnxc.github.io/Pkolmar/kolmar_231215/">
+    
+    <!-- Dark Mode -->
+    
+
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams',
+        inlineMath: [['$','$'], ['\\(','\\)']]
+      },
+      chtml: {
+          scale: 1.0,
+          minScale: .6,  
+          mtextFontInherit: true,
+          mtextInheritFont: true,
+          merrorInheritFont: true,
+        },
+        svg: {
+          scale: 1.2
+        }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <!-- Distill js -->
+    <script src="/assets/js/distillpub/template.v2.js"></script>
+    <script src="/assets/js/distillpub/transforms.v2.js"></script>
+    
+  </head>
+
+  <d-front-matter>
+    <script async type="text/json">{
+      "title": "[연구 11] 전체 프레임워크  및 학습 데이터 구성",
+      "description": "원료 기본 표현 벡터부터 예측용 표현 벡터 변환까지 전반적인 프레임워크에 대한 설명. ",
+      "published": "December 5, 2023",
+      "authors": [
+        {
+          "author": "Bumjin Park",
+          "authorURL": "",
+          "affiliations": [
+            {
+              "name": "KAIST",
+              "url": ""
+            }
+          ]
+        }
+        
+      ],
+      "katex": {
+        "delimiters": [
+          {
+            "left": "$",
+            "right": "$",
+            "display": false
+          },
+          {
+            "left": "$$",
+            "right": "$$",
+            "display": true
+          }
+        ]
+      }
+    }</script>
+  </d-front-matter>
+
+  <body class="sticky-bottom-footer">
+
+    <!-- Header -->    
+    <center>
+      <img src="/assets/common/KAIST-hi.gif" width="40px" style="margin-right:0px; padding-bottom: 3px;">
+    </center>
+    <hr> 
+
+    <!-- Content -->
+    <div class="post distill">
+
+      <d-title>
+        <h1 style="font-size: 32px;">[연구 11] 전체 프레임워크  및 학습 데이터 구성</h1>
+        <p>원료 기본 표현 벡터부터 예측용 표현 벡터 변환까지 전반적인 프레임워크에 대한 설명. </p>
+      </d-title>
+
+      <d-byline></d-byline>
+
+      <d-article>
+        
+
+        <h2 id="이전-내용">이전 내용</h2>
+
+<ol>
+  <li>AI 모델 공부 추가 (Transformer) —&gt; (고도화 🚀)</li>
+  <li>Feature Vector 초기화로 학습
+    <ul>
+      <li>Feature Vector 내용 넣을 거 가공 (성상, 기능)</li>
+      <li>경도, 점도, 비중, PH (고도화 🚀)</li>
+      <li>학습데이터는 원료 개수 신경X 만들기</li>
+    </ul>
+  </li>
+  <li>테스트용 처방 몇 개 고르기: (대표적인 샘플) 📌 (검증)
+    <ul>
+      <li>테스트 처방 타입 1: 처방의 모든 원료가 학습 데이터에 쓰인 경우 : (2개)</li>
+      <li>테스트 처방 타입 2: 학습에 쓰이지 않은 원료가 1개 포함됨. : (2개)</li>
+      <li>테스트 처방 타입 3: 학습에 쓰이지 않은 원료가 많이 포함됨. : (2개)</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="원료-표현-학습-전체-파이프-라인">원료 표현 학습 전체 파이프 라인</h2>
+
+<p>원료에 대한 시작 표현이 존재하며, 각 원료에 대해서 모델이 맞춤형으로 표현을 변화시킨다. 이 때, 만들어지는 원료 표현은 기본 원료 표현으로부터 시작될 수도 있고, 이와 상관없이 초기화 될 수 있다. 원료 표현이 변화되면, 이를 바탕으로 혼합물 표현 벡터를 만드는 모델이 원료 표현들을 섞어서 최종 모델에 집어넣는다.</p>
+
+<ol>
+  <li>기본 원료 표현 : 각 원료의 정보를 제공한다.</li>
+  <li>예측용 원료 표현 : 예측 모델을 위해 원료들의 표현이 변화된 상태이다.</li>
+  <li>혼합물 표현 : 예측용 원료 표현이 섞여서 혼합물 표현을 만든다.</li>
+  <li>예측값 : 혼합물 표현을 바탕으로 예측 모델이 예측한다.</li>
+</ol>
+
+<center>
+<img src="https://drive.google.com/uc?export=view&amp;id=13j5vScelp23dx07r--IzrfqONH7SV1c2" style="width:100%"> 
+</center>
+
+<h3 id="새로운-원료에-대한-적응-방법">새로운 원료에 대한 적응 방법</h3>
+
+<p>충분히 많은 원료 표현들을 바탕으로 예측 모델을 학슶시키면, 
+신규 원료에 대해서 모델 학습 대신에 <strong>최적의 원료 표현</strong>을 찾기 위해서 튜닝하는 방식을 택한다. 
+이 때, 기존 학습된 모델과 원료 표현들의 파라미터는 바꾸지 않고, 새로운 원료 표현만 업데이트 한다.</p>
+
+<center>
+<img src="https://drive.google.com/uc?export=view&amp;id=1YMTa0hZ2fQH7DxMny_DWC13ys3wRmYWn" style="width:80%"> 
+</center>
+
+<h2 id="학습-데이터-구성">학습 데이터 구성</h2>
+
+<p>학습에 포함되는 원료들은 모두 충분히 많은 처방에 사용된 원료들이다. 
+수많은 원료들을 빈도수로 나눌 경우, 나누는 빈도 수를 키울수록 포함되는 원료들은 적어 진다.</p>
+
+<p>학습용 처방은 <strong>학습 원료</strong>들이 모두 포함된 처방들을 택한다. 
+예를 들어서, 빈도수 100번 이상의 원료들을 택하고, 해당 원료들이 모두 포팜된 처방의 수는 적어진다.</p>
+
+<p>이 때, 학습에 포함된 처방이 있고, 학습에서 제외된 처방이 있다. 
+제외된 처방들은 1개 이상의 원료들이 미포함되었으며, 제외된 원료가 표현학습이 된다면 예측 가능한 처방으로 바뀐다. 
+따라서, 원료 미포함 개수가 적은 순서대로 처방들을 차례대로 학습해 나가는 <strong>순차적 원료 표현 학습</strong> 방식이 적합하다.</p>
+
+<center>
+<img src="https://drive.google.com/uc?export=view&amp;id=1tmTGnfeMi1mSiQGHlo4IGy6Vmw13V2dp" style="width:80%"> 
+</center>
+
+<h3 id="순차적-원료-표현-학습">순차적 원료 표현 학습</h3>
+
+<p>제외된 처방에 대해서 몇 개의 원료가 부족한 지 확인하고,
+포함된 원료가 가장 적은 처방부터 차례대로 원료 표현을 최적화 한다.
+이러한 학습 방법을 순차적 신규 원료 표현 최적화라고 부르자.</p>
+
+<center>
+<img src="https://drive.google.com/uc?export=view&amp;id=1Z7Sq4SqGj3YEJj-ev3jacCzXxNBB_P-Z" style="width:80%;padding:10px"> 
+</center>
+
+<p>제외된 처방을 빈도수로 나타내면 다음과 같다. 아래 그림에서 5개 (파란색) 처방 사용을 기준으로 원료 개수를 제한하면, 300개 정도 처방까지는 단 1개의 신규 원료들이 포함되어 있다. 1개의 원료 표현들을 모두 최적화하면, 이후에는 2개의 신규 물질이 포함된 원료 표현들을 최적화 한다. 이러한 방법을 순차적으로 진행하여 최종적으로 모든 원료에 대한 표현을 최적화 한다.</p>
+
+<center>
+<img src="https://drive.google.com/uc?export=view&amp;id=1fUDoNuCbT24TwwmcK-crkwcY-BbS2dGW" style="width:80%"> 
+</center>
+
+<h4 id="요구사항">요구사항</h4>
+
+<p>신규 물질 원료 표현을 찾기 위한 검증 데이터
+신규 물질 원료 표현을 평가하기 위한 평가 데이터
+따라서 최소 2개의 처방이 필요하다. 만일 평가 데이터에 대해서 신규 물질 표현을 최적화한 상태가 더 높은 에러를 보이는 경우, 신규 물질 표현 최적화에 실패한 것으로 간주한다.</p>
+
+<h3 id="최적의-개수-찾기">최적의 개수 찾기</h3>
+
+<p>학습 데이터 처방은 모든 원료들이 충분히 많은 빈도로 나타나며, 또한 학습 데이터 처방 수가 충분해야 한다. 
+빈도수로 데이터를 나눌 경우, 빈도 수가 증가함에 따라서 데이터 수는 줄어들며, 점도 예측에서 제외되는 원료 수는 늘어난다. 
+최적의 빈도 수는 두 가지를 만족해야 한다.</p>
+
+<ol>
+  <li>충분한 빈도 수를 가질 것.</li>
+  <li>충분한 처방 수를 가질 것.</li>
+  <li>적은 수의 추가 원료 학습.</li>
+</ol>
+
+<p>이로부터 구해지는 최적의 빈도수는 아래 그래프에서 구할 수 있다.</p>
+
+<center>
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%21861&amp;authkey=%21AH5H0h-kvzgNFFE&amp;width=1320&amp;height=752" style="width:80%"> 
+</center>
+
+      </d-article>
+
+      <d-appendix>
+        <d-footnote-list></d-footnote-list>
+        <d-citation-list></d-citation-list>
+      </d-appendix>
+
+
+      <hr>
+<!--<div id="giscus_thread" style="max-width: 1000px; margin: 0 auto;">
+    <script>
+      let giscusTheme = localStorage.getItem("theme");
+      let giscusAttributes = {
+          "src": "https://giscus.app/client.js",
+          "data-repo": "fxnnxc/fxnnxc",
+          "data-repo-id": "MDEwOlJlcG9zaXRvcnkzMjQ2NjUxMTU=",
+          "data-category": "Q&A",
+          "data-category-id": "DIC_kwDOE1n_G84CYOk_",
+          "data-mapping": "title",
+          "data-strict": "0",
+          "data-reactions-enabled": "1",
+          "data-emit-metadata": "0",
+          "data-input-position": "top",
+          "data-theme": giscusTheme,
+          "data-lang": "en",
+          "crossorigin": "anonymous",
+          "async": "",
+      };
+  
+  
+      let giscusScript = document.createElement("script");
+      Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+      document.getElementById("giscus_thread").appendChild(giscusScript);
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript">comments powered by giscus.</a></noscript>
+  </div>--><div id="giscus_thread" style="max-width: 1000px; margin: 0 auto;">
+    <script>
+      let giscusTheme = localStorage.getItem("theme");
+      let giscusAttributes = {
+          "src": "https://giscus.app/client.js",
+          "data-repo": "fxnnxc/fxnnxc",
+          "data-repo-id": "MDEwOlJlcG9zaXRvcnkzMjQ2NjUxMTU=",
+          "data-category": "Q&A",
+          "data-category-id": "DIC_kwDOE1n_G84CYOk_",
+          "data-mapping": "title",
+          "data-strict": "0",
+          "data-reactions-enabled": "1",
+          "data-emit-metadata": "0",
+          "data-input-position": "top",
+          "data-theme": giscusTheme,
+          "data-lang": "en",
+          "crossorigin": "anonymous",
+          "async": "",
+      };
+  
+  
+      let giscusScript = document.createElement("script");
+      Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+      document.getElementById("giscus_thread").appendChild(giscusScript);
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript" target="_blank" rel="noopener noreferrer">comments powered by giscus.</a>
+</noscript>
+  </div>
+</div>
+
+    <!-- Footer -->    <footer class="sticky-bottom mt-5" style="border: none;border-top:0px">
+      <div class="container" style="text-align: center; ">
+        © Copyright 2024 Bumjini  . Powered by Jekyll with al-folio theme. Hosted by GitHub Pages.
+
+      </div>
+    </footer>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js" integrity="sha256-l/1pMF/+J4TThfgARS6KwWrk/egwuVvhRzfLAMQ6Ds4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha256-SyTu6CwrfOhaznYZPoolVw2rxoY7lKYKQvqbtqN93HI=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    
+    
+
+<!-- Scrolling Progress Bar -->
+<script type="text/javascript">
+  /*
+   * This JavaScript code has been adapted from the article 
+   * https://css-tricks.com/reading-position-indicator/ authored by Pankaj Parashar, 
+   * published on the website https://css-tricks.com on the 7th of May, 2014.
+   * Couple of changes were made to the original code to make it compatible 
+   * with the `al-foio` theme.
+   */
+  const progressBar = $("#progress");
+  /*
+   * We set up the bar after all elements are done loading.
+   * In some cases, if the images in the page are larger than the intended
+   * size they'll have on the page, they'll be resized via CSS to accomodate
+   * the desired size. This mistake, however, breaks the computations as the
+   * scroll size is computed as soon as the elements finish loading.
+   * To account for this, a minimal delay was introduced before computing the
+   * values.
+   */
+  window.onload = function () {
+    setTimeout(progressBarSetup, 50);
+  };
+  /*
+   * We set up the bar according to the browser.
+   * If the browser supports the progress element we use that.
+   * Otherwise, we resize the bar thru CSS styling
+   */
+  function progressBarSetup() {
+    if ("max" in document.createElement("progress")) {
+      initializeProgressElement();
+      $(document).on("scroll", function() {
+        progressBar.attr({ value: getCurrentScrollPosition() });
+      });
+      $(window).on("resize", initializeProgressElement);
+    } else {
+      resizeProgressBar();
+      $(document).on("scroll", resizeProgressBar);
+      $(window).on("resize", resizeProgressBar);
+    }
+  }
+  /*
+   * The vertical scroll position is the same as the number of pixels that
+   * are hidden from view above the scrollable area. Thus, a value > 0 is
+   * how much the user has scrolled from the top
+   */
+  function getCurrentScrollPosition() {
+    return $(window).scrollTop();
+  }
+
+  function initializeProgressElement() {
+    let navbarHeight = $("#navbar").outerHeight(true);
+    $("body").css({ "padding-top": 0 });
+    $("progress-container").css({ "padding-top": 0 });
+    progressBar.css({ top: navbarHeight });
+    progressBar.attr({
+      max: getDistanceToScroll(),
+      value: getCurrentScrollPosition(),
+    });
+  }
+  /*
+   * The offset between the html document height and the browser viewport
+   * height will be greater than zero if vertical scroll is possible.
+   * This is the distance the user can scroll
+   */
+  function getDistanceToScroll() {
+    return $(document).height() - $(window).height();
+  }
+
+  function resizeProgressBar() {
+    progressBar.css({ width: getWidthPercentage() + "%" });
+  }
+  // The scroll ratio equals the percentage to resize the bar
+  function getWidthPercentage() {
+    return (getCurrentScrollPosition() / getDistanceToScroll()) * 100;
+  }
+</script>
+
+  </body>
+
+  <d-bibliography src="/assets/bibliography/">
+  </d-bibliography>
+
+  <!-- jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="/assets/js/distillpub/overrides.js"></script>
+
+    <center>
+        <img src="/assets/common/KAIST-hi.gif" width="40px" style="margin-right:0px; padding-bottom: 3px;">
+    </center>
+    <hr> 
+
+</html>

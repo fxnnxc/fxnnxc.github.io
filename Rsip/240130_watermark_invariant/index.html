@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<!-- _layouts/distill.html -->
+<html>
+  <head>    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bumjini | Watermark Invariant 표현의 불가능성에 대하여</title>
+    <meta name="author" content="Bumjini  " />
+    <meta name="description" content="" />
+    <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website" />
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous" />
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="none" id="highlight_theme_light" />
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪴</text></svg>">
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://fxnnxc.github.io/Rsip/240130_watermark_invariant/">
+    
+    <!-- Dark Mode -->
+    
+
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams',
+        inlineMath: [['$','$'], ['\\(','\\)']]
+      },
+      chtml: {
+          scale: 1.0,
+          minScale: .6,  
+          mtextFontInherit: true,
+          mtextInheritFont: true,
+          merrorInheritFont: true,
+        },
+        svg: {
+          scale: 1.2
+        }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <!-- Distill js -->
+    <script src="/assets/js/distillpub/template.v2.js"></script>
+    <script src="/assets/js/distillpub/transforms.v2.js"></script>
+    
+    <!-- Page/Post style -->
+    <style type="text/css">
+      .table {
+    padding-top:200px;
+    margin-bottom: 2.5rem;
+    border-bottom: 2px;
+} .p {
+    font-size:20px;
+}
+
+    </style>
+  </head>
+
+  <d-front-matter>
+    <script async type="text/json">{
+      "title": "Watermark Invariant 표현의 불가능성에 대하여",
+      "description": "",
+      "published": "January 29, 2024",
+      "authors": [
+        {
+          "author": "Bumjin Park",
+          "authorURL": "",
+          "affiliations": [
+            {
+              "name": "KAIST",
+              "url": ""
+            }
+          ]
+        }
+        
+      ],
+      "katex": {
+        "delimiters": [
+          {
+            "left": "$",
+            "right": "$",
+            "display": false
+          },
+          {
+            "left": "$$",
+            "right": "$$",
+            "display": true
+          }
+        ]
+      }
+    }</script>
+  </d-front-matter>
+
+  <body class="sticky-bottom-footer">
+
+    <!-- Header -->    
+    <center>
+      <img src="/assets/common/KAIST-hi.gif" width="40px" style="margin-right:0px; padding-bottom: 3px;">
+    </center>
+    <hr> 
+
+    <!-- Content -->
+    <div class="post distill">
+
+      <d-title>
+        <h1 style="font-size: 32px;">Watermark Invariant 표현의 불가능성에 대하여</h1>
+        <p></p>
+      </d-title>
+
+      <d-byline></d-byline>
+
+      <d-article>
+        
+
+        <p>본 연구노트는 GPT 의 워터마크 입력에 대한 논의로, 워터마크를 포함한 학습과 워터마크 없이 생성하는 경우 표현을 일치하기 위해 invariant 한 표현을 만들 수 있는지에 대한 논의이다. 결론은 입력에 워터마크 포함 입력과 미포함 입력의 join학습으로 가능하나 이는 심각한 학습 속도 저하를 일으킨다. 따라서, GPT에 대한 입력 단위의 워터마크 표현은 불가능하다.</p>
+
+<h2 id="1-워터마크-포함-입력">1. 워터마크 포함 입력</h2>
+
+<p>임의의 입력 $y=(y_1, y_2, \cdots, y_M)$의 임베딩 $e=(e_1, e_2, \cdots, e_M)$ 대해서 워터마크 $w$는 다음과 같이 표현을 변화시킨다.</p>
+
+\[\hat{e}_t = e_t + w\]
+
+<p>학습 과정에서 watermark가 추가된 표현을 넣는 것은 모델에게 도움이 될 수 있지만, 
+문서에 대한 가이드가 존재하게 되며, 실제 사용시 문서 가이드가 없다는 사실은 추가적인 학습을 필요로 한다. 
+즉, 워터마크가 포함되지 않아도 생성할 수 있어야 한다.</p>
+
+<p>이를 위한 여러 가지 방법들이 존재하며, 그 중에서 본 연구노트는 watermark invariant module (WIM)이라는 입력 변환 모듈에 대한 가능성을 분석한다.</p>
+
+<figure>
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%21914&amp;authkey=%21AG70S84l2hUDDoE&amp;width=660" width="660" height="auto" />
+<figcaption> Figure. 워터마크를 포함하지 않고 입력으로 넣은 경우와 워터마크를 포함하여 입력으로 넣은 경우
+</figcaption>
+</figure>
+
+<h2 id="2-watermark-invariant-module-wim">2. Watermark Invariant Module (WIM)</h2>
+
+<p>WIM 은 임의의 벡터를 입력으로 받아서 동일한 차원의 벡터로 반환하는 모듈이다. 모듈의 역할은 GPT에 넣기 위한 표현을 만드는 것이고, 워터마크가 포함된 경우와 미포함된 경우에 대해서 동일한 벡터를 만들어주는 것이다.</p>
+
+<p>\(WIM(e_t)  = WIM(e_t + w)\)</p>
+<figure>
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%21911&amp;authkey=%21AOAS46YhhjQgeEU&amp;width=660" width="660" height="auto" />
+<figcaption> Figure. 동일 아웃풋에 대한 space 적 관점. 입력과 워터마크가 섞이는 경우와 입력만 주어지는 경우 두 표현이 일치하도록 강제한다. 
+</figcaption>
+</figure>
+
+<p>이는 WIM 자체가 MLP로 이루어졌고 충분한 표현력을 지녀 서로 다른 두 표현을 동일한 표현으로 만들 수 있다는 가정을 전제로 한다. 
+즉, 생성과정에서 워터마크가 미포함된 단어 임베딩을 변환하여 기존 워터마크가 표현된 상태와 동일한 맵핑을 만들어 준다. 
+그러나 WIM은 여러 문서에 대한 워터마크에 대해서 학습이 불가능하다.</p>
+
+<h2 id="3-wim-학습-방법론">3. WIM 학습 방법론</h2>
+
+<h3 id="방법-1-학습과정에서-워터마크-표현을-활용한-입력을-넣고-이후-워터마크가-미포함된-표현이-이를-따르도록-학습한다">방법 1. 학습과정에서 워터마크 표현을 활용한 입력을 넣고, 이후 워터마크가 미포함된 표현이 이를 따르도록 학습한다.</h3>
+
+<p>이러한 방식은 최근 연구 동향인 stop gradient를 통한 moving average 를 따르도록 하는 것과 유사하다. 학습 때는 워터마크가 포함된 표현으로 학습하고, WIM 이 워터마크가 추가되지 않은 표현을 워터마크가 추가된 표현과 일치하도록 표현을 개선하는 것이다. 
+그러나, 이 방식은 target 자체가 multi-target 이므로, 많아지는 워터마크에 대해서 학습이 불가능하다. 즉, N개의 문서 워터마크에 대해서 모두 다른 타겟을 형성하게 되고, 워터마크가 포함되지 않은 표현은 이들의 평균 표현으로 학습될 뿐, 실제로 일치되지 않는다. 따라서, 이 방법은 적용 불가능하다.</p>
+
+<h3 id="방법-2-포함과-미포함-표현을-동시에-학습하며-일치하도록-만든다">방법 2. 포함과 미포함 표현을 동시에 학습하며 일치하도록 만든다.</h3>
+
+<p>이 방식은 워터마크 invariant 모듈이 두 개의 표현을 일치하도록 만드든 것이다. 이 때 학습은 두 가지 표현 모두에 대해서 일어난다. 가장 쉬운 예시로 모두 0로 맵핑하는 trivial 을 예시로 생각할 수 있다. 입력 표현들을 모두 맵핑하여 동일한 표현이 되도록 강제한다. 이 때, WIM은 language modeling으로부터도 영향을 받기 때문에, invariant loss와 CE loss가 모두 작용한다.</p>
+
+<figure>
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%21913&amp;authkey=%21AJz_UTMBiBzcHos&amp;width=1024" width="1024" height="auto" />
+<figcaption> Figure. 학습 dynamics.  학습이 진행될수록 invariance loss 는 지속적으로 증가하며, 전체 loss 는 invariance loss에 의해 지배된다. 해당 실험은 invariance의 factor 를 0.01로 작게 만들었음에도 나타난 불안정성이다. 실제로 CE보다 초반에는 loss가 더 작았지만 학습이 진행되면서 계속 증가하였다.
+</figcaption>
+</figure>
+
+<p>실제 2-layer GPT로 실험했을 때, loss는 줄어들지 않았다. 그리고, invariant loss는 학습이 계속 진행될수록 값이 향상되었는데, 이는 초반에 trivial 한 표현으로 학습되다가 표현이 점차CE Loss를 최소화하는 방향으로 변하면서 에러가 커지는 결과이다. LLM의 첫 번째 요구사항인 단어 암기에 대해서 watermark invariant representation을 만드는 것은 그만큼 암기를 어렵게 만든다.</p>
+
+<figure>
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%21912&amp;authkey=%21AAAnwEhGMnlo0og&amp;width=1024" width="1024" height="auto" />
+<figcaption>  Figure. 두 가지 학습 방식에 대한 적용 불가능의 해석. 첫 번째 경우는 워터마크 미포함이 워터마크 포함 표현을 따라가게 만든다. 다중 타켓이므로 학습이 불안정하다. 두 번째는 두 표현을 동시에 최적화하는 것이다. 위 실험은 두 번째 방식으로 진행되었고, CE loss가 줄어들도록 학습되지 않는 것을 관찰하였다. 
+</figcaption>
+</figure>
+
+<h2 id="4-결론">4. 결론</h2>
+
+<p>Projection 자체를 일치하도록 강제하여 watermark에 대해서 invariant 한 표현을 만드는 것은 표현학습과 languag modeling 두 개의 상충으로 인해서 불가능한 접근법이다. 입력 단에 워터마크가 추가된 표현을 학습하기 위해서 WIM 모듈을 사용하지 않기를 권장한다.</p>
+
+
+      </d-article>
+
+      <d-appendix>
+        <d-footnote-list></d-footnote-list>
+        <d-citation-list></d-citation-list>
+      </d-appendix>
+
+
+      <hr>
+<!----></div>
+
+    <!-- Footer -->    <footer class="sticky-bottom mt-5" style="border: none;border-top:0px">
+      <div class="container" style="text-align: center; ">
+        &copy; Copyright 2024 Bumjini  . Powered by Jekyll with al-folio theme. Hosted by GitHub Pages.
+
+      </div>
+    </footer>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js" integrity="sha256-l/1pMF/+J4TThfgARS6KwWrk/egwuVvhRzfLAMQ6Ds4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha256-SyTu6CwrfOhaznYZPoolVw2rxoY7lKYKQvqbtqN93HI=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    
+    
+
+<!-- Scrolling Progress Bar -->
+<script type="text/javascript">
+  /*
+   * This JavaScript code has been adapted from the article 
+   * https://css-tricks.com/reading-position-indicator/ authored by Pankaj Parashar, 
+   * published on the website https://css-tricks.com on the 7th of May, 2014.
+   * Couple of changes were made to the original code to make it compatible 
+   * with the `al-foio` theme.
+   */
+  const progressBar = $("#progress");
+  /*
+   * We set up the bar after all elements are done loading.
+   * In some cases, if the images in the page are larger than the intended
+   * size they'll have on the page, they'll be resized via CSS to accomodate
+   * the desired size. This mistake, however, breaks the computations as the
+   * scroll size is computed as soon as the elements finish loading.
+   * To account for this, a minimal delay was introduced before computing the
+   * values.
+   */
+  window.onload = function () {
+    setTimeout(progressBarSetup, 50);
+  };
+  /*
+   * We set up the bar according to the browser.
+   * If the browser supports the progress element we use that.
+   * Otherwise, we resize the bar thru CSS styling
+   */
+  function progressBarSetup() {
+    if ("max" in document.createElement("progress")) {
+      initializeProgressElement();
+      $(document).on("scroll", function() {
+        progressBar.attr({ value: getCurrentScrollPosition() });
+      });
+      $(window).on("resize", initializeProgressElement);
+    } else {
+      resizeProgressBar();
+      $(document).on("scroll", resizeProgressBar);
+      $(window).on("resize", resizeProgressBar);
+    }
+  }
+  /*
+   * The vertical scroll position is the same as the number of pixels that
+   * are hidden from view above the scrollable area. Thus, a value > 0 is
+   * how much the user has scrolled from the top
+   */
+  function getCurrentScrollPosition() {
+    return $(window).scrollTop();
+  }
+
+  function initializeProgressElement() {
+    let navbarHeight = $("#navbar").outerHeight(true);
+    $("body").css({ "padding-top": 0 });
+    $("progress-container").css({ "padding-top": 0 });
+    progressBar.css({ top: navbarHeight });
+    progressBar.attr({
+      max: getDistanceToScroll(),
+      value: getCurrentScrollPosition(),
+    });
+  }
+  /*
+   * The offset between the html document height and the browser viewport
+   * height will be greater than zero if vertical scroll is possible.
+   * This is the distance the user can scroll
+   */
+  function getDistanceToScroll() {
+    return $(document).height() - $(window).height();
+  }
+
+  function resizeProgressBar() {
+    progressBar.css({ width: getWidthPercentage() + "%" });
+  }
+  // The scroll ratio equals the percentage to resize the bar
+  function getWidthPercentage() {
+    return (getCurrentScrollPosition() / getDistanceToScroll()) * 100;
+  }
+</script>
+
+  </body>
+
+  <d-bibliography src="/assets/bibliography/all.bib">
+  </d-bibliography>
+
+  <!-- jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="/assets/js/distillpub/overrides.js"></script>
+
+    <center>
+        <img src="/assets/common/KAIST-hi.gif" width="40px" style="margin-right:0px; padding-bottom: 3px;">
+    </center>
+    <hr> 
+
+</html>
