@@ -17,12 +17,13 @@ author_names: <tag style="font-weight:800">Bumjin Park</tag>, Jaesik Choi
 description: Memorizing documents with known location of GPT is an urgent task for the reliable and faithful generation. This work proposes document guidance loss to disentangle document knowledge in LLM. 
 ---
 
-This post is a brief summary of the paper <br> "[Memorizing Documents with Guidance in Large Language Models]()" 
+**Paper Link**: [IJCAI Proceeding](https://www.ijcai.org/proceedings/2024/0714.pdf) / [Arxiv](https://arxiv.org/abs/2406.15996)
+
 
 * **Code** is available at [Github](https://github.com/fxnnxc/document_guidance_loss_for_llm)🧑🏻‍💻 
 * This work is accepted at [IJCAI 2024](https://ijcai24.org/)🍊
-* Supplementary Materials [[pdf]() TBD]
-* We release **Author Response** [[pdf](https://1drv.ms/b/s!Asr4ZEBiKgSujBZozaWGnG5RTfOy?e=HNG8cz)] for the readers interested in detailed discussions 
+<!-- * Supplementary Materials [[pdf]() TBD] -->
+<!-- * We release **Author Response** [[pdf](https://1drv.ms/b/s!Asr4ZEBiKgSujBZozaWGnG5RTfOy?e=HNG8cz)] for the readers interested in detailed discussions  -->
 
 
 ---
