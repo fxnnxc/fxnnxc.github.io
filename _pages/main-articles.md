@@ -232,6 +232,7 @@ a {
     <li> <a href="/main_articles/hoeffding"> Hoeffding's Lemma and Inequality </a></li>
     <li> <a href="/main_articles/geometry"> Theorems Related Geometry </a></li>
     <li> <a href="/main_articles/complexity"> Complexity </a></li>
+    <li> <a href="/main_articles/causality"> Causality </a></li>
 </ul>
 
 <br>
