@@ -15,5 +15,5 @@ description: ''
 ---
 
 
-* [GPT Tokenizer](https://gist.github.com/fxnnxc/632827af1c044b65708684451ccaa900#file-gpt_tokenize-py)
+* [GPT Tokenize Dataset](https://gist.github.com/fxnnxc/632827af1c044b65708684451ccaa900#file-gpt_tokenize-py)
 * [Intervention Hook](https://gist.github.com/fxnnxc/3a1632fd74b59fed9d27b675f4a14aab)
