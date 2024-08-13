@@ -1,6 +1,6 @@
 ---
 layout: distill
-authors: 
+authors:  
     - name: Bumjin Park
       affiliations:
         name: KAIST
