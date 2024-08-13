@@ -10,11 +10,11 @@ disqus_comments: false
 date: 2024-08-12
 featured: true
 img: 
-title: 'DATA EDA'
+title: 'DATA'
 description: ''
 ---
 
-Github: [https://github.com/fxnnxc/data](https://github.com/fxnnxc/data)
+<img src="/assets/github.png" style="width:1.0em;padding-bottom:0.3em;" > Data Github: [https://github.com/fxnnxc/data](https://github.com/fxnnxc/data)
 
 
 ## Implemented
@@ -22,7 +22,7 @@ Github: [https://github.com/fxnnxc/data](https://github.com/fxnnxc/data)
 * `ParaDetox` : [Github](https://github.com/fxnnxc/data/tree/main/ParaDetox) 
 
 
-## ETC
+## Future Work
 
 * `Wikipedia` : [X]
 * `GYAFC` :  [X]
