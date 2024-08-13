@@ -7,10 +7,12 @@ permalink: /experiment/
 
 <h2> <img src="/assets/github.png" style="width:1.0em;padding-bottom:0.3em;" >  Core Posts </h2>
 
+*  <a href="https://github.com/fxnnxc/data"   style="font-size:1.5rem;font-weight:600;color:#004499;">  Data   </a> 
+*  <a href="https://github.com/fxnnxc/models" style="font-size:1.5rem;font-weight:600;color:#004499;">  Models </a> 
+*  <a href="https://github.com/fxnnxc/reproduce" style="font-size:1.5rem;font-weight:600;color:#004499;">  Reproduce </a>
+*  <a href="https://github.com/fxnnxc/theory" style="font-size:1.5rem;font-weight:600;color:#004499;">  Theory </a> 
 *  <a href="gist"   style="font-size:1.5rem;font-weight:600;color:#FF4499;">  Gist   </a> 
-*  <a href="data"   style="font-size:1.5rem;font-weight:600;color:#FF4499;">  Data   </a> 
-*  <a href="models" style="font-size:1.5rem;font-weight:600;color:#FF4499;">  Models </a> 
-*  <a href="theory" style="font-size:1.5rem;font-weight:600;color:#FF4499;">  Theory </a> 
+ 
 
 <hr>
 
