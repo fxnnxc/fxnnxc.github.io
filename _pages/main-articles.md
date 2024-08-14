@@ -230,7 +230,7 @@ a {
 <ul>
     <li> <a href="/main_articles/taylor_s_theorem"> Taylor's Theorem </a> (you can bound a function by polynomial approximation and residual)  </li>
     <li> <a href="/main_articles/hoeffding"> Hoeffding's Lemma and Inequality </a></li>
-    <li> <a href="/main_articles/geometry"> Theorems Related Geometry </a></li>
+    <li> <a href="/main_articles/geometry"> Geometry </a></li>
     <li> <a href="/main_articles/complexity"> Complexity </a></li>
     <li> <a href="/main_articles/causality"> Causality </a></li>
 </ul>

@@ -162,3 +162,17 @@ The values $x_i^*$ are the coordinates of $x$ with respect to the given basis.
 
 ---
 
+
+## Notes on the Isomorphism 
+
+For two vector spaces $U$ and $V$, two spaces can be **considered equally** for defined metric $d_V$ and d_U$ when 
+1. **There exists an isomorphism** $f:U \rightarrow V$. That is, $f( \mathbf{x} \oplus_U \mathbf{y}) = f( \mathbf{x}) \oplus_V f(\mathbf{y})$ for bijective function $f$ where $\oplus_U$ and $\oplus_V$ are vector additions (operations) in spaces $U$ and $V$ respectively.    
+2. The isomorphism $f$ is also **isometric** (note that it requires additional assumption of metric spaces for $U$ and $V$)
+
+
+$$
+d_V(f(\mathbf{x}), f(\mathbf{y})) = d_U(\mathbf{x}, \mathbf{y}) \quad \text{for all} ~~ \mathbf{x}, \mathbf{y} \in U
+$$
+
+
+---
