@@ -140,8 +140,35 @@ a {
 </style>
 
 
+<h3> Study Collection </h3>
+
+<ul>
+    <li> <a href="/main_articles/causality"> Causality </a></li>
+    <li> <a href="/main_articles/geometry"> Geometry </a></li>
+    <li> <a href="/main_articles/complexity"> Complexity </a></li>
+    <li> <a href="/main_articles/taylor_s_theorem"> Taylor's Theorem </a> (you can bound a function by polynomial approximation and residual)  </li>
+    <li> <a href="/main_articles/hoeffding"> Hoeffding's Lemma and Inequality </a></li>
+</ul>
+
+
 <div class="table-container">
         <table class="styled-table">
+            <tr>
+                <td class="meta-data">
+                    <div class="article-type">Study</div>
+                    <div class="access-type">Incontext</div>
+                    <div class="date">16 Aug 2024</div> <br>
+                    <a class="link" href="/main_articles/240815_incontext_vector" > [Post] </a> 
+                    <a class="link" href="https://openreview.net/pdf?id=dJTChKgv3a"> [ICML 2024] </a> <br>
+                </td>
+                <td class="content">
+                    <a class="link" href="/main_articles/240815_incontext_vector" > 
+                    <h2 class="content-title">Review on "In-context Vectors: Making In Context Learning More Effective and Controllable Through Latent Space Steering"
+                    </h2></a> 
+                    <p class="description">How to steer hidden representation in GPT.</p>
+                    <p class="authors">Bumjin Park</p>
+                </td>
+            </tr>
             <tr>
                 <td class="meta-data">
                     <div class="article-type">Literature Review</div>
@@ -225,15 +252,6 @@ a {
         </table>
 </div>
 
-<h3> Theorem Collection </h3>
-
-<ul>
-    <li> <a href="/main_articles/taylor_s_theorem"> Taylor's Theorem </a> (you can bound a function by polynomial approximation and residual)  </li>
-    <li> <a href="/main_articles/hoeffding"> Hoeffding's Lemma and Inequality </a></li>
-    <li> <a href="/main_articles/geometry"> Geometry </a></li>
-    <li> <a href="/main_articles/complexity"> Complexity </a></li>
-    <li> <a href="/main_articles/causality"> Causality </a></li>
-</ul>
 
 <br>
 <br>

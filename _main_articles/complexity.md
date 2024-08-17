@@ -160,3 +160,7 @@ When
 the true risk has more chance to be close to zero. 
 
 This low true risk means, **model $f_\theta$ will provide the expected behavior on true data $\mathcal{D}$.**
+
+
+--- 
+

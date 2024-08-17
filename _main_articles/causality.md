@@ -116,6 +116,106 @@ Note that model identifiability **implies** intervention and counterfactual iden
 
 ---
 
+## Causal Estimation of Memorization Profiles 
+
+Some definitions in the work (Lesci et al., 2024), which is achieved ACL 2024 best paper. I track the definitions related to causality. 
+
+This work defines **memorization** as "the causal effect of observing an instance during training on a model's ability to correctly predict that instance". As such the authors use the log likelihood as a performance measure of an instance $x$. **Memorization profile** is a model's memorization of training batches over the course of training. 
+
+<blockquote markdown="1">
+Given dataset $\mathcal{D} = \{ x_n \}_{n=1}^N$ whose instances $x$ are sequences drawn from a target distribution $p(x)$, at each iteration $T$, we obtain a new model checkpoint $\mathbf{\theta}_t$ with batch $\mathcal{B}_t$. Let $g \in \{ 1,2, \cdots, T \} \cup \{ \infty \} $ be the timestep. The authors denote $g = \infty$ a batch composed of instances that are not used for the training and which form a validation set. 
+<br>
+The act of training on $x$ defines **the treatment**, while the model's ability to predict an instance defines **the outcome.** The authors define 
+* Treatment assignment variable $G(x)$ to denote the step $g$ an instance is trained on. 
+* Outcome variable $Y_c(x) = \gamma (\theta_c, x) = \log p_{\theta_c} (x)$ 
+</blockquote>
+
+<blockquote markdown="1">
+**Definition 1**: The **potential outcome** of an instance $x$ at timestep $x$ under treatment assignment $g$, denoted as $Y_c(x;g)$, is the value that the outcome would have taken if $G(x)$ was equal to $g$. 
+
+Note: this evaluate the $x$ at $c$ when $x$ was trained at $g$. 
+
+**Definition 2**: **Counterfactual memorization** is the causal effect of using instance $x$ for training at the observed timestep $G(x)=g$ on the model's performance on this same instance at timestep $c$. 
+
+$$
+\tau_{x,c} = Y_c(x;g) - Y_c(x; \infty)
+$$
+
+Note: this evaluate the $x$ at $c$ when (1) $x$ was trained at $g$ and (2) is never used in the training. 
+
+
+</blockquote>
+
+
+<blockquote markdown="1">
+<h2> Assumptions </h2>
+
+**Assumption 1** : Instances $x$ are independently and identically distributed, following $p(x)$, and are randomly assigned to treatment group $g$. 
+
+Under this assumption, we have
+
+$$
+p(x|G(x) = g) = p(x|G(x) = \infty) =  p(x)
+$$
+
+**Assumption 2**: In the absence of training, the expected change in model performance across checkpoints would be the same regardless of treatment. That is, for all $c,c' \ge g -1$, 
+
+$$
+\mathbb{E}_x [Y_c(x;\infty) - Y_{c'}(x;\infty) \vert G(x) = g] = 
+\mathbb{E}_x [Y_c(x;\infty) - Y_{c'}(x;\infty) \vert G(x) = \infty]
+$$
+
+**Assumption 3**: Training has no effect before it happens. That is, for all $c < g$:
+
+$$
+\mathbb{E}_x [Y_c(x; g) \vert G(x) = g] = \mathbb{E}_x [Y_c(x;\infty) \vert G(x) = g]
+$$
+
+</blockquote>
+
+
+<blockquote markdown="1">
+<h2> Estimators </h2>
+**Definition 3**: **Expected Counterfactual memorization** is the average causal effect of using instances for training at timestep $g$ on the model's performance on these same instances at timestep $c$:
+
+$$
+\tau_{g,c} = \mathbb{E}_{x} \Big[ Y_c(x;g) - Y_c(x; \infty)  \vert G(x) = g \Big]
+$$
+
+**Estimator 1** : The **difference estimator**, defined as: 
+
+$$
+\hat{\tau}_{g,c}^{\operatorname{diff}} = \bar{Y}_c(g) - \bar{Y}_c({\infty})
+$$
+
+**E1** is an unbiased estimator of $\tau_{g,c}$ under Assumption 1. Usually, the meaning of unbiased is 
+$$
+\mathbb{E}[\hat{\tau}] = \frac{1}{K} \sum_{i=1}^K \hat{\tau}_i = \tau
+$$
+
+but, in this setting, the average is over the instances:
+
+$$
+\mathbb{E}[\hat{\tau}] = \mathbb{E}_{\mathcal{B}_g, \mathcal{B}_\infty} [\hat{\tau}_{g,c}] = \tau
+$$
+
+**Estimator 2** : The **difference-in-differences estimator** (DiD), defined as:
+
+$$
+\hat{\tau}_{g,c}^{\operatorname{did}} = 
+\Big( \bar{Y}_c(g) - \bar{Y}_{g-1}(g)  \Big)
+- \Big( \bar{Y}_c(\infty) - \bar{Y}_{g-1}(\infty) \Big) 
+$$
+
+where $$ \bar{Y}_c(g) = \frac{1}{\vert \mathcal{B}_g \vert} \sum_{x\in \mathcal{B}_g} Y_c(x) $$
+
+</blockquote>
+
+
+---
+
+
+
 ## References 
 
 [1] Learning Structural Causal Models through Deep Generative Models: Methods, Guarantees, and Challenges
