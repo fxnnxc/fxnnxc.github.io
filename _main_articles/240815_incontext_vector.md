@@ -132,11 +132,87 @@ Please paraphrase the following sentence. Sentence: Worst restaurant ever!, para
 </blockquote>
 
 
-## Steering 의 목적
+## RAVEL 
 
-In-context 방식을 따르게
-1. Few-shot example task --> query --> x 
-2. Concept 향상 Styling 
+* $E$: entity such as King 
+* $A$: attribution such as man 
+* $\mathcal{P}_E^A$: prompts contain mention of $E$ and instruct the model to output the attribute value $A_E$.
+* $\mathcal{W}_E$ : prompts include mention of $E$. 
+
+<blockquote markdown="1">
+* $E$ = Paris 
+* $A$ = continent 
+* $A_E$ = Europe
+* Prompt: Paris is in the continent of
+<code>
+{"city": "Paris", "continent":"”}
+
+$\mathcal{W}_E$ may include "Tokyo is a large city.
+
+</code>
+</blockquote>
 
 ---
-3. Bias (x,y) pair 
+
+Consider linear classifier with parameter $W \in \mathbb{R}^{d_y \times d_x}$
+
+$$ 
+L(W) = \frac{1}{2N} \sum_{i=1}^N \Vert W \mathbf{x}_i - \mathbf{y}_i \Vert^2
+$$
+
+One step gradient with learning rate $\eta$ yields the weight change 
+
+$$
+\Delta W = -\eta \nabla_W L(W) = -\frac{\eta}{N}  \sum_{i=1}^N (W \mathbf{x}_i - \mathbf{y}_i) \mathbf{x}_i^{\top}
+$$
+
+After updating the weight $W$, we have the following loss 
+
+$$ 
+\begin{aligned}
+L(W + \Delta W) 
+&= \frac{1}{2N} \sum_{i=1}^N \Vert (W+\Delta W)\mathbf{x}_i - \mathbf{y}_i \Vert^2 \\
+&= \frac{1}{2N} \sum_{i=1}^N \Vert W \mathbf{x}_i +\Delta W \mathbf{x}_i - \mathbf{y}_i \Vert^2 \\
+&= \frac{1}{2N} \sum_{i=1}^N \Vert W \mathbf{x}_i - (\mathbf{y}_i - \Delta W \mathbf{x}_i ) \Vert^2 
+\end{aligned}
+$$
+
+Here, $\mathbf{y}_i - \Delta W \mathbf{x}_i$ can be considered as updated target $\mathbf{y}_i$ by the direction of $\Delta W \mathbf{x}_i$ 
+
+$$
+\begin{aligned}
+\Delta W \mathbf{x}_i  
+=& -\frac{\eta}{N}  \sum_{j=1}^N (W \mathbf{x}_j - \mathbf{y}_j) \mathbf{x}_j^{\top} \mathbf{x}_i   \\
+=& -\frac{\eta}{N}  \sum_{j=1}^N (W \mathbf{x}_j - \mathbf{y}_j) \langle \mathbf{x}_j,  \mathbf{x}_i \rangle \\
+\end{aligned}
+$$
+
+Finally, the one step update of $\mathbf{y}_i$ is 
+
+$$
+\mathbf{y}_i - \Delta W \mathbf{x}_i = \mathbf{y}_i  + \frac{\eta}{N}  \sum_{j=1}^N (W \mathbf{x}_j - \mathbf{y}_j) \langle \mathbf{x}_j,  \mathbf{x}_i \rangle 
+$$
+
+Note that, this operation can be implemented by a transformer Q,K, and V. 
+Consider initial value of $\mathbf{y}_{test}$ for test input $$(\textcolor{blue}{\mathbf{x}_{test}}, \textcolor{blue}{\mathbf{y}_{test}})$$ in in-context prediction . 
+
+$$
+\textcolor{blue}{\mathbf{y}_{test}} - \Delta W \mathbf{x}_i = \textcolor{blue}{\mathbf{y}_{test}}  + \frac{\eta}{N}  \sum_{j=1}^N (W \mathbf{x}_j - \mathbf{y}_j) \langle \mathbf{x}_j,  \textcolor{blue}{\mathbf{x}_{test}} \rangle 
+$$
+
+* $$  \sum_{j=1}^N $$ : aggregation can be implemented by aggregation in attention. 
+* $$\langle \mathbf{x}_j,   \textcolor{blue}{\mathbf{x}_{test}} \rangle$$ : kernel can be implemented by attention score.
+* $$(W \mathbf{x}_j - \mathbf{y}_j)$$ : these vectors can be interpreted as values (note that the transformer attention might have different attention scores for $x$ and $y$. Hence, transformer is the generalized version of the kernel smoothing. ) 
+
+### The role of MLP:  Kernelized least-square regression problem 
+The original problem 
+
+$$
+L(W) = \frac{1}{2N} \sum_{i=1}^N \Vert W \mathbf{x}_i - \mathbf{y}_i \Vert^2 
+$$
+
+is modified with mlp $m$ by 
+
+$$
+L(W) = \frac{1}{2N} \sum_{i=1}^N \Vert W m(\mathbf{x}_i) - \mathbf{y}_i \Vert^2.  
+$$
