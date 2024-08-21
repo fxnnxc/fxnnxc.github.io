@@ -154,6 +154,8 @@ $\mathcal{W}_E$ may include "Tokyo is a large city.
 
 ---
 
+## Transformers Learn In-Context by Gradient Descent
+
 Consider linear classifier with parameter $W \in \mathbb{R}^{d_y \times d_x}$
 
 $$ 
