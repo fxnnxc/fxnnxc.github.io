@@ -143,6 +143,7 @@ a {
 <h3> Study Collection </h3>
 
 <ul>
+    <li> <a href="/main_articles/reading_list"> Reading List </a></li>
     <li> <a href="/main_articles/causality"> Causality </a></li>
     <li> <a href="/main_articles/geometry"> Geometry </a></li>
     <li> <a href="/main_articles/complexity"> Complexity </a></li>
