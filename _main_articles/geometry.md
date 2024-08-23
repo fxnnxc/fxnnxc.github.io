@@ -176,3 +176,72 @@ $$
 
 
 ---
+
+
+## Riesz Isomorphism 
+
+
+Let $H$ be a Hilbert space whose inner product $\langle x,y \rangle$ is linear. 
+For every continuous linear functional $\phi \in H^*$, there exists a unique vector $f_\phi \in H$, called the Riesz representation of $\phi$, such that 
+
+$$ 
+\phi(x) = \langle x, f_\phi \rangle  \quad \text{for all } x \in H
+$$
+
+<blockquote markdown="1">
+Used in the paper: *The Linear Representation Hypothesis and the Geometry of Large Language Models*.
+
+---
+
+Each **concept variable** $W$ defines a set of counterfactual outputs
+
+$$\{Y (W = w)\}$$ such as $$\{ king, queen, man, woman, \cdots \}$$
+
+
+The **Embedding Representation** 
+
+* Embedding representation $\bar{\gamma}_W$ of a concept $W$ if we have $\lambda_1 - \lambda_0 \in  \text{Cone}(\bar{\lambda}_W)$ for any context embeddings $\lambda_0, \lambda_1 \in \Lambda$ that satisfy 
+
+$$
+\frac{P(W=1 \vert \lambda_1)}{P(W=1 \vert \lambda_0)} > 1 \quad \text{and} \quad 
+\frac{P(W, Z \vert \lambda_1)}{P(W, Z \vert \lambda_0)} = 
+\frac{P(W \vert \lambda_1)}{P(W \vert \lambda_0)}
+$$
+
+for each concept $Z$ that is causally separable with $W$. 
+
+* $\lambda_0 = \lambda(\text{He is the monarch of England})$ 
+* $\lambda_1 = \lambda((\text{She is the monarch of England})$
+
+
+$$P(W) \quad \text{for }  W \in \{0, 1\}$$ 
+
+* $W=1$ : concept output  (king)
+* $W=0$ : counterfactual output (queen)
+
+The paper restrict to binary concepts. 
+
+
+---
+
+The **Unembedding Representation** is defined by the difference between two representations. 
+
+* Unembedding representation $\bar{\gamma}_W$ of a concept $W$ if
+    * $\gamma(Y(1)) - \gamma(Y(0)) \in \text{Cone}(\bar{\gamma}_W)$
+    * $\gamma(king) - \gamma(queen)$
+    * $Y(1) = king$,  $Y(0) = queen$ 
+
+---
+
+
+Consider Riesz isomorphism $\bar{\gamma} \mapsto \langle \bar{\gamma}, \cdot \rangle_C $
+
+We can map $\bar{\Gamma}$ to $\Lambda$ by mapping each $\bar{\gamma}_W$ to a linear function according to 
+
+$$\bar{\gamma}_W \mapsto \langle \bar{\gamma}_W, \cdot \rangle_C$$
+
+
+This map sends each unembedding representation of a concept to the embedding representation of the same concept. 
+
+
+</blockquote>

@@ -16,6 +16,7 @@ tags: neuron
 
 
 
+* [Recurrent Neural Networks Learn to Store and Generate Sequences using Non-Linear Representations](https://arxiv.org/abs/2408.10920)
 * [Patchscopes: A Unifying Framework for Inspecting Hidden Representations of Language Models](https://arxiv.org/abs/2401.06102)
 * [The Linear Representation Hypothesis and the Geometry of Large Language Models (ICML 2024)](https://arxiv.org/abs/2311.03658)
 * [Function Vectors (ICLR 2024)](https://arxiv.org/abs/2310.15213)
