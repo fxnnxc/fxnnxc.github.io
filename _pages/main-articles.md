@@ -84,13 +84,13 @@ th:nth-child(2), td:nth-child(2) {
 
 .article-type {
     font-weight: bold;
-    color: #009900;
+    color: #00430b;
     font-size: 18px;
 
 }
 
 .access-type {
-    color: #009900;
+    color: #00430b;
     font-size: 17px;
 
 }
@@ -140,7 +140,7 @@ a {
 </style>
 
 
-<h3> Study Collection </h3>
+<h2> 📝 Collection of Studies </h2>
 
 <ul>
     <li> <a href="/main_articles/reading_list"> Reading List </a></li>
@@ -151,9 +151,30 @@ a {
     <li> <a href="/main_articles/hoeffding"> Hoeffding's Lemma and Inequality </a></li>
 </ul>
 
+<br>
+<br>
+<hr>
+<br>
+<br>
 
 <div class="table-container">
         <table class="styled-table">
+            <tr>
+                <td class="meta-data">
+                    <div class="article-type">Literature Review</div>
+                    <div class="access-type">Interpretability</div>
+                    <div class="date">1 Sep 2024</div> <br>
+                    <a class="link" href="/main_articles/240909_multi_level_interpretability_from_neurosciece" > [Post] </a> 
+                    <a class="link" href="https://arxiv.org/abs/2408.12664"> [Arxiv] </a> <br>
+                </td>
+                <td class="content">
+                    <a class="link" href="/main_articles/240909_multi_level_interpretability_from_neurosciece" > 
+                    <h2 class="content-title">Review on "Multilevel Interpretability Of Artificial Neural Networks"
+                    </h2></a> 
+                    <p class="description">Lessons from neuroscience</p>
+                    <p class="authors">Bumjin Park</p>
+                </td>
+            </tr>
             <tr>
                 <td class="meta-data">
                     <div class="article-type">Study</div>
