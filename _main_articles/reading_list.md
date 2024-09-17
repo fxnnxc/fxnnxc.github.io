@@ -18,6 +18,11 @@ tags: neuron
 
 #### 2024.09 
 
+* [Entity-Based Knowledge Conflicts in Question Answering](https://aclanthology.org/2021.emnlp-main.565/)
+* [DisentQA: Disentangling Parametric and Contextual Knowledge with Counterfactual Question Answering](https://aclanthology.org/2023.acl-long.559/)
+* [Editing Factual Knowledge in Language Models](https://aclanthology.org/2021.emnlp-main.522/)
+* [Adaptable and Interpretable Neural MemoryOver Symbolic Knowledge](https://aclanthology.org/2021.naacl-main.288/)
+
 * [Uncovering Intermediate Variables in Transformers using Circuit Probing](https://arxiv.org/abs/2311.04354)
 * [Transformer Circuit Faithfulness Metrics Are Not Robust](https://arxiv.org/abs/2407.08734)
 * [Multilevel Interpretability Of Artificial Neural Networks: Leveraging Framework And Methods From Neuroscience](https://arxiv.org/abs/2408.12664)
