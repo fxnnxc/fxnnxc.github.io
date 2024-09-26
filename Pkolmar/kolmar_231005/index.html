@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<!-- _layouts/distill.html -->
+<html>
+  <head>    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bumjini | [연구 2] First Receipt 데이터 EDA 및 초기 학습 결과</title>
+    <meta name="author" content="Bumjini  " />
+    <meta name="description" content="첫 데이터 분석 및 Decision Tree 모델 학습" />
+    <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website" />
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous" />
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="none" id="highlight_theme_light" />
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪴</text></svg>">
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://fxnnxc.github.io/Pkolmar/kolmar_231005/">
+    
+    <!-- Dark Mode -->
+    
+
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams',
+        inlineMath: [['$','$'], ['\\(','\\)']]
+      },
+      chtml: {
+          scale: 1.0,
+          minScale: .6,  
+          mtextFontInherit: true,
+          mtextInheritFont: true,
+          merrorInheritFont: true,
+        },
+        svg: {
+          scale: 1.2
+        }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <!-- Distill js -->
+    <script src="/assets/js/distillpub/template.v2.js"></script>
+    <script src="/assets/js/distillpub/transforms.v2.js"></script>
+    
+  </head>
+
+  <d-front-matter>
+    <script async type="text/json">{
+      "title": "[연구 2] First Receipt 데이터 EDA 및 초기 학습 결과",
+      "description": "첫 데이터 분석 및 Decision Tree 모델 학습",
+      "published": "October 1, 2023",
+      "authors": [
+        {
+          "author": "Bumjin Park",
+          "authorURL": "",
+          "affiliations": [
+            {
+              "name": "KAIST",
+              "url": ""
+            }
+          ]
+        }
+        
+      ],
+      "katex": {
+        "delimiters": [
+          {
+            "left": "$",
+            "right": "$",
+            "display": false
+          },
+          {
+            "left": "$$",
+            "right": "$$",
+            "display": true
+          }
+        ]
+      }
+    }</script>
+  </d-front-matter>
+
+  <body class="sticky-bottom-footer">
+
+    <!-- Header -->    
+    <center>
+      <img src="/assets/common/KAIST-hi.gif" width="40px" style="margin-right:0px; padding-bottom: 3px;">
+    </center>
+    <hr> 
+
+    <!-- Content -->
+    <div class="post distill">
+
+      <d-title>
+        <h1 style="font-size: 32px;">[연구 2] First Receipt 데이터 EDA 및 초기 학습 결과</h1>
+        <p>첫 데이터 분석 및 Decision Tree 모델 학습</p>
+      </d-title>
+
+      <d-byline></d-byline>
+
+      <d-article>
+        <d-contents>
+          <nav class="l-text figcaption">
+          <h3>Contents</h3>
+            <div style="margin:0.0em; margin-bottom: 10px;"><a style="margin:0.0em;" href="#1-report-info">1. Report Info</a></div>
+            <div style="margin:0.0em; margin-bottom: 10px;"><a style="margin:0.0em;" href="#2-raw-%EB%8D%B0%EC%9D%B4%ED%84%B0-firstreceipt">2. Raw 데이터 : FirstReceipt</a></div>
+            <ul style="margin:0.0em; ">
+              <li style="margin:0.0em; margin-bottom: 1px;"><a style="margin:0.0em;" href="#2-1-%EC%BD%94%EB%93%9C-%EB%93%B1%EC%9E%A5-%ED%9A%9F%EC%88%98">2-1 코드 등장 횟수</a></li>
+              <li style="margin:0.0em; margin-bottom: 1px;"><a style="margin:0.0em;" href="#2-2-%EB%9E%A9%EC%97%90-%EC%A1%B4%EC%9E%AC%ED%95%98%EB%8A%94-%EC%BD%94%EB%93%9C-%EA%B0%9C%EC%88%98">2-2 랩에 존재하는 코드 개수</a></li>
+              <li style="margin:0.0em; margin-bottom: 1px;"><a style="margin:0.0em;" href="#2-3-%EC%B6%9C%EB%A0%A5-%EB%AA%A9%ED%91%9C%EA%B0%92">2-3 출력 목표값</a></li>
+              <li style="margin:0.0em; margin-bottom: 1px;"><a style="margin:0.0em;" href="#2-4-%EC%B6%9C%EB%A0%A5-%EB%9E%A9-%EB%84%98%EB%B2%84-%EC%A4%91%EB%B3%B5-%EC%97%AC%EB%B6%80">2-4 출력 랩 넘버 중복 여부</a></li>
+              
+            </ul>
+<div style="margin:0.0em; margin-bottom: 10px;"><a style="margin:0.0em;" href="#3-%EC%B5%9C%EC%A2%85-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%85%8B">3 최종 데이터셋</a></div>
+            <div style="margin:0.0em; margin-bottom: 10px;"><a style="margin:0.0em;" href="#4-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EA%B4%80%EB%A0%A8-%EC%A7%88%EB%AC%B8">4. 데이터 관련 질문</a></div>
+            <div style="margin:0.0em; margin-bottom: 10px;"><a style="margin:0.0em;" href="#5-%EC%BD%94%EB%93%9C%EA%B0%92%EA%B3%BC-%EC%A0%90%EB%8F%84%EC%9D%98-%EC%84%A0%ED%98%95%EA%B4%80%EA%B3%84">5. 코드값과 점도의 선형관계</a></div>
+            
+          </nav>
+        </d-contents>
+
+        <h2 id="1-report-info">1. Report Info</h2>
+
+<p>본 글에서는 <code class="language-plaintext highlighter-rouge">first_receipt</code> 데이터의 입력값과 출력값에 대한 통계량을 분석하고, 학습 데이터를 구축한다.</p>
+
+<ul>
+  <li>👨🏻‍💻 Code Release Tag <a href="https://github.com/fxnnxc/kolmar/tree/v23.10.05.1" target="_blank" rel="noopener noreferrer">v23.10.05.1</a>
+</li>
+  <li>📂 Raw Data :  (1, <code class="language-plaintext highlighter-rouge">raw_data:first_receipt</code>)</li>
+  <li>🗂️ Datasets :  (2, <code class="language-plaintext highlighter-rouge">ds:first_receipt_ml</code>)</li>
+  <li>📌 Related Notebook <a href="https://github.com/fxnnxc/kolmar/blob/v23.10.05/notebooks/eda_first_receipt.ipynb" target="_blank" rel="noopener noreferrer">eda_first_receipt.ipynb</a>
+</li>
+</ul>
+
+<h2 id="2-raw-데이터--firstreceipt">2. Raw 데이터 : FirstReceipt</h2>
+
+<p>주어진 데이터는 다음과 같은 Table 형태로 주어진다. 
+랩넘버는 입력과 출력을 연결짓는 Primary Key이며, 코드는 원료, 함량은 원료가 포함된 양을 나타낸다. 이를 통해서, 출력의 목표값을 예측한다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>입력</th>
+      <th>출력</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="https://drive.google.com/uc?export=view&amp;id=1dS2L1XkpxPhj82fivfpD2bcyfxDsKnFp"></td>
+      <td><img src="https://drive.google.com/uc?export=view&amp;id=1M8GNRvbFqAMW2cy93IWxT0EGnZt5Qa2n"></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>먼저, 데이터가 일치하는지 확인해본 결과, 다음과 같은 랩넘버의 통계값을 얻는다.
+일치하지 않는 샘플이 존재하기에, <strong>출력의 랩넘버 (979)개에 대해서 존재하는 입력 랩넘버</strong>로 데이터셋을 구축한다.</p>
+
+<ul>
+  <li>Unique input lab names: 1573</li>
+  <li>Unique output lab names : 979</li>
+  <li>non-existing output labels:  595 (레올로지 결과 없음)</li>
+  <li>non-existing input  labels:  1 개 (레올로지 입력이 없음[‘CC2195-FB2’])</li>
+</ul>
+
+<p>샘플의 feature 를 만들기 위해서 코드 (formula)에 대한 수를 세어보면 다음과 같다.</p>
+
+<ul>
+  <li>Unique formula   : 1979
+<img src="https://drive.google.com/uc?export=view&amp;id=16AFEm7CgrUe5xBNVmd_45ML6qaGMan-J" style="width:100%">
+</li>
+</ul>
+
+<p>코드 길이</p>
+<ul>
+  <li>length 6: 1887</li>
+  <li>length 7: 85</li>
+  <li>length 8: 6</li>
+  <li>length 10: 1</li>
+</ul>
+
+<p>질문: Q: 코드 길이 혹은 코드 방식을 추가적인 Feature 로 사용해도 되는가? Ex) FFF가 들어있는 애들을 묶음.</p>
+
+<h3 id="2-1-코드-등장-횟수">2-1 코드 등장 횟수</h3>
+
+<p>학습 Feature 의 빈도 수를 살펴보면 다음과 같다.</p>
+
+<d-code language="python" style="border:1px dashed;padding:1em;">
+# 많은 순서대로
+MMM000    2571
+RTY966    1288
+FFF001    1187
+BDD001    1101
+
+# 적은 순서대로 
+FGH334    1
+FGH336    1
+JMI006    1
+RTY964    1
+RVP002    1
+</d-code>
+
+<p>대부분의 코드가 sparse 하다. 이 경우, 일부 feature를 사용한 모델과 모든 feature를 사용한 모델을 구분하여 성능을 비교하는 것이 바람직하다.</p>
+
+<p><img src="https://drive.google.com/uc?export=view&amp;id=1rzhsIh0RKx5R3uI16U5BDnOt3q3UrOF2" style="width:80%"></p>
+
+<h3 id="2-2-랩에-존재하는-코드-개수">2-2 랩에 존재하는 코드 개수</h3>
+
+<p>하나의 랩에 몇 개의 Feature 가 존재하는지 살펴보면 다음과 같다. 
+대부분은 20개 이상의 Feature를 포함하는 것을 확인할 수 있다.</p>
+
+<d-code language="python" style="border:1px dashed;padding:1em;">
+# 많은 순서대로
+CC2229-AF       64
+CC2145-LA       61
+CC1708-QE1      60
+CCA08101-TAA    56
+
+
+# 적은 순서대로
+CC1413-TA     13
+CC1706-NZ     12
+CC7109-JE1    11
+CC1808-PA     10
+CC7191-WF      2
+</d-code>
+
+<p><img src="https://drive.google.com/uc?export=view&amp;id=1IE7OKSOCEZVMp6aGBAxD_hZ8UyGl4yGq" style="width:80%"></p>
+
+<h3 id="2-3-출력-목표값">2-3 출력 목표값</h3>
+
+<p>출력의 목표값 (A ~ B) 형태에 대해서 데이터 전처리를 진행 후, 일치하지 않는 데이터는 다음과 같다.</p>
+
+<d-code language="python" style="border:1px dashed;padding:1em;">
+# Invalid outputs
+MAX.350                                           
+MAX. 300                                           ['.', '300']
+MAX. 100                                           ['.', '100']
+MAX 500                                           
+total output:988
+valid output:984
+invalid output:4
+</d-code>
+
+<p>값은 범위로 이루어져 있으며, 모든 샘플에 대해서 출력해보면 다음과 같다. 
+대부분은 범위의 길이가 비슷한 것을 확인할 수 있다. 
+이 경우, 타겟을 카테고리(e.g., Label1: 10000~20000)로 하는 것이 바람직해 보인다.</p>
+
+<p><img src="https://drive.google.com/uc?export=view&amp;id=1U5UxfVMJCCq0xbbGXzRNtlfsirNJccvG" style="width:100%"></p>
+
+<h3 id="2-4-출력-랩-넘버-중복-여부">2-4 출력 랩 넘버 중복 여부</h3>
+
+<p>출력에는 동일한 랩넘버를 지니는 출력 샘플이 있다. 확인해본 결과 랩넘버가 같은 경우 출력값도 일치하는 것으로 확인되었다. 이에, 중복된 랩넘버는 1개만 사용하였다.</p>
+
+<d-code language="python" style="border:1px dashed;padding:1em;">
+# 출력값 랩넘버 수 984개 중에서 중복 8개 종류 모두 제외 시 967 개 랩넘버 존재 
+# 중복된 랩넘버도 예측값이 동일하여 추가, 975개 최종.  
+랩넘버	개수 
+CC7802-JB	3
+CC7533-MA	2
+CCB06001-FAE	2
+CC1928-VZBT	2
+CC2163-WA	2
+CC2193-FA	2
+CC2156-KZHH	2
+CC9085-CB	2
+CC2206-MG	1
+CC2206-AH	1
+
+</d-code>
+
+<hr>
+
+<h2 id="3-최종-데이터셋">3. 최종 데이터셋</h2>
+
+<p>최종적으로 얻어지는 데이터셋 수는 다음과 같다. 
+총 코드 1979개를 모두 사용하고, 존재하지 않는 값에 대해서는 0으로 입력값을 줬다. 
+(후에, 이중에서 일부 코드만 사용한 데이터셋 구축도 가능하다.)</p>
+
+<d-code language="python" style="border:1px dashed;padding:1em;">
+# 총 랩넘버 975 개
+# 총 코드 개수 1979
+# 제외 코드는 Feature 에 위치에는 포함되지만, 값이 0으로 할당된다. 
+[INFO] 🗂️ Dataset: FirstReceiptDatasetML X:(975, 1979)  Y:(975,)
+Train: (676, 1979) (676,)
+Valid: (96, 1979) (96,)
+Test: (195, 1979) (195,)
+
+</d-code>
+
+<ul>
+  <li>
+<strong>제외 코드 (값 0 할당)</strong> : [(0, ‘MMM000’), (2, ‘FFF001’), (4, ‘JKL430’), (7, ‘QWE831’), (8, ‘FGH202’), (17, ‘ZXC086’), (20, ‘FGH377’), (23, ‘QWE830’), (27, ‘RTY1107’), (29, ‘JKL037’), (35, ‘RTY827’), (36, ‘XCV272’), (39, ‘BNM325’), (41, ‘SDF045’), (56, ‘SDF241’), (90, ‘SDF024’), (93, ‘ASD854’), (103, ‘SDF139’), (104, ‘FGH395’), (116, ‘VBN651’), (135, ‘DFG071’), (136, ‘TYU089’), (141, ‘NAT016’), (142, ‘SDF165’), (168, ‘QWE947’), (190, ‘GHJ401’), (232, ‘NAT011’), (251, ‘SDF180’), (267, ‘ASD714’), (275, ‘QWE512’), (317, ‘NEP003’), (365, ‘RTY1126’), (416, ‘RTY642’), (493, ‘RTY109’), (509, ‘FGH396’), (538, ‘JKL852’), (586, ‘JKL680’), (600, ‘DGP012’), (614, ‘ZXC219’), (646, ‘IOP278’), (692, ‘JKL833’), (980, ‘RTY348’), (1018, ‘JKL871’), (1252, ‘DFG252’), (1342, ‘KSC002’)]</li>
+</ul>
+
+<h2 id="4-데이터-관련-질문">4. 데이터 관련 질문</h2>
+
+<ol>
+  <li>랩넘버가 일치하지 않는 데이터에 대한 이유</li>
+  <li>Max 100 과 같은 형태의 데이터 처리 방안 (다른 데이터는 1만~8만 범위값)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">40.000</code> 마침표로 이루어진 데이터는 <code class="language-plaintext highlighter-rouge">40,000</code> 콤마와 같은지</li>
+  <li>Output의 랩넘버가 중복된 데이터는 사용가능한지 (모두 예측값이 동일해서 포함하였음. )</li>
+</ol>
+
+<h2 id="5-코드값과-점도의-선형관계">5. 코드값과 점도의 선형관계</h2>
+
+<p>점도를 에측하는데 있어서, 가장 기본이 되는 것은 단 하나의 변수(코드)를 사용하여 예측하는 방법이다. 선형모델로 예측 모델을 만들었을 때, 상관관계가 있다면, 양 또는 음의 기울기를 가지게 된다. 1900 여 개의 코드에 대해서 점도값에 대한 선형 모델을 학습시키는 결과를 반영하여 모델링 하여, 각 코드가 지니는 상관관계를 파악한다.</p>
+
+<ul>
+  <li>x축: 변수값 (코드값)</li>
+  <li>y축: 예측 항목값</li>
+</ul>
+
+<p>📔 <a href="https://drive.google.com/drive/folders/1lLVdMUGp0U1z3et3KhPeWcSFtFMQNM18?usp=drive_link" target="_blank" rel="noopener noreferrer">Codebook link</a></p>
+
+<p>🔗 Codebook Page 1 (64개) <a href="https://drive.google.com/uc?export=view&amp;id=17fK06-k4OiziWDr7MB8EvvCHGaOP5nqQ" target="_blank" rel="noopener noreferrer">google drive</a></p>
+
+<p>🔗 Codebook Page 2 (64개) <a href="https://drive.google.com/uc?export=view&amp;id=1ZND8_ACLiuaH8SJfRDV5N8ImMIDA-oDL" target="_blank" rel="noopener noreferrer">google drive</a></p>
+
+<p>단 한 번 나타난 코드에 대해서 선형모델을 학습시킨 결과, 0에 분포되있는 값은, 코드 값이 할당되지 않은 코드=0 값을 나타낸다.</p>
+
+<embed src="https://drive.google.com/uc?export=view&amp;id=1Jw2iadSZGFXW19a6xZ33M2CUGuECE-ey" width="150%" height="1000" style="margin-left:-5rem" type="application/pdf"></embed>
+
+
+      </d-article>
+
+      <d-appendix>
+        <d-footnote-list></d-footnote-list>
+        <d-citation-list></d-citation-list>
+      </d-appendix>
+
+
+      <hr>
+<!--<div id="giscus_thread" style="max-width: 1000px; margin: 0 auto;">
+    <script>
+      let giscusTheme = localStorage.getItem("theme");
+      let giscusAttributes = {
+          "src": "https://giscus.app/client.js",
+          "data-repo": "fxnnxc/fxnnxc",
+          "data-repo-id": "MDEwOlJlcG9zaXRvcnkzMjQ2NjUxMTU=",
+          "data-category": "Q&A",
+          "data-category-id": "DIC_kwDOE1n_G84CYOk_",
+          "data-mapping": "title",
+          "data-strict": "0",
+          "data-reactions-enabled": "1",
+          "data-emit-metadata": "0",
+          "data-input-position": "top",
+          "data-theme": giscusTheme,
+          "data-lang": "en",
+          "crossorigin": "anonymous",
+          "async": "",
+      };
+  
+  
+      let giscusScript = document.createElement("script");
+      Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+      document.getElementById("giscus_thread").appendChild(giscusScript);
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript">comments powered by giscus.</a></noscript>
+  </div>--><div id="giscus_thread" style="max-width: 1000px; margin: 0 auto;">
+    <script>
+      let giscusTheme = localStorage.getItem("theme");
+      let giscusAttributes = {
+          "src": "https://giscus.app/client.js",
+          "data-repo": "fxnnxc/fxnnxc",
+          "data-repo-id": "MDEwOlJlcG9zaXRvcnkzMjQ2NjUxMTU=",
+          "data-category": "Q&A",
+          "data-category-id": "DIC_kwDOE1n_G84CYOk_",
+          "data-mapping": "title",
+          "data-strict": "0",
+          "data-reactions-enabled": "1",
+          "data-emit-metadata": "0",
+          "data-input-position": "top",
+          "data-theme": giscusTheme,
+          "data-lang": "en",
+          "crossorigin": "anonymous",
+          "async": "",
+      };
+  
+  
+      let giscusScript = document.createElement("script");
+      Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+      document.getElementById("giscus_thread").appendChild(giscusScript);
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript" target="_blank" rel="noopener noreferrer">comments powered by giscus.</a>
+</noscript>
+  </div>
+</div>
+
+    <!-- Footer -->    <footer class="sticky-bottom mt-5" style="border: none;border-top:0px">
+      <div class="container" style="text-align: center; ">
+        © Copyright 2024 Bumjini  . Powered by Jekyll with al-folio theme. Hosted by GitHub Pages.
+
+      </div>
+    </footer>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js" integrity="sha256-l/1pMF/+J4TThfgARS6KwWrk/egwuVvhRzfLAMQ6Ds4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha256-SyTu6CwrfOhaznYZPoolVw2rxoY7lKYKQvqbtqN93HI=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    
+    
+
+<!-- Scrolling Progress Bar -->
+<script type="text/javascript">
+  /*
+   * This JavaScript code has been adapted from the article 
+   * https://css-tricks.com/reading-position-indicator/ authored by Pankaj Parashar, 
+   * published on the website https://css-tricks.com on the 7th of May, 2014.
+   * Couple of changes were made to the original code to make it compatible 
+   * with the `al-foio` theme.
+   */
+  const progressBar = $("#progress");
+  /*
+   * We set up the bar after all elements are done loading.
+   * In some cases, if the images in the page are larger than the intended
+   * size they'll have on the page, they'll be resized via CSS to accomodate
+   * the desired size. This mistake, however, breaks the computations as the
+   * scroll size is computed as soon as the elements finish loading.
+   * To account for this, a minimal delay was introduced before computing the
+   * values.
+   */
+  window.onload = function () {
+    setTimeout(progressBarSetup, 50);
+  };
+  /*
+   * We set up the bar according to the browser.
+   * If the browser supports the progress element we use that.
+   * Otherwise, we resize the bar thru CSS styling
+   */
+  function progressBarSetup() {
+    if ("max" in document.createElement("progress")) {
+      initializeProgressElement();
+      $(document).on("scroll", function() {
+        progressBar.attr({ value: getCurrentScrollPosition() });
+      });
+      $(window).on("resize", initializeProgressElement);
+    } else {
+      resizeProgressBar();
+      $(document).on("scroll", resizeProgressBar);
+      $(window).on("resize", resizeProgressBar);
+    }
+  }
+  /*
+   * The vertical scroll position is the same as the number of pixels that
+   * are hidden from view above the scrollable area. Thus, a value > 0 is
+   * how much the user has scrolled from the top
+   */
+  function getCurrentScrollPosition() {
+    return $(window).scrollTop();
+  }
+
+  function initializeProgressElement() {
+    let navbarHeight = $("#navbar").outerHeight(true);
+    $("body").css({ "padding-top": 0 });
+    $("progress-container").css({ "padding-top": 0 });
+    progressBar.css({ top: navbarHeight });
+    progressBar.attr({
+      max: getDistanceToScroll(),
+      value: getCurrentScrollPosition(),
+    });
+  }
+  /*
+   * The offset between the html document height and the browser viewport
+   * height will be greater than zero if vertical scroll is possible.
+   * This is the distance the user can scroll
+   */
+  function getDistanceToScroll() {
+    return $(document).height() - $(window).height();
+  }
+
+  function resizeProgressBar() {
+    progressBar.css({ width: getWidthPercentage() + "%" });
+  }
+  // The scroll ratio equals the percentage to resize the bar
+  function getWidthPercentage() {
+    return (getCurrentScrollPosition() / getDistanceToScroll()) * 100;
+  }
+</script>
+
+  </body>
+
+  <d-bibliography src="/assets/bibliography/">
+  </d-bibliography>
+
+  <!-- jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="/assets/js/distillpub/overrides.js"></script>
+
+    <center>
+        <img src="/assets/common/KAIST-hi.gif" width="40px" style="margin-right:0px; padding-bottom: 3px;">
+    </center>
+    <hr> 
+
+</html>

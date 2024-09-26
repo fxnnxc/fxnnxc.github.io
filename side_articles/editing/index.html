@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<!-- _layouts/distill.html -->
+<html>
+    
+<head>    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bumjini | Neural Network Editing Study </title>
+    <meta name="author" content="Bumjini  " />
+    <meta name="description" content="Study of network editing." />
+    <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website" />
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous" />
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="none" id="highlight_theme_light" />
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪴</text></svg>">
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://fxnnxc.github.io/side_articles/editing/">
+    
+    <!-- Dark Mode -->
+    
+
+  <!-- jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams',
+        inlineMath: [['$','$'], ['\\(','\\)']]
+      },
+      chtml: {
+          scale: 1.0,
+          minScale: .6,  
+          mtextFontInherit: true,
+          mtextInheritFont: true,
+          merrorInheritFont: true,
+        },
+        svg: {
+          scale: 1.2
+        }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+  <!-- Distill js -->
+  <script src="/assets/js/distillpub/template.v2.js"></script>
+  <script src="/assets/js/distillpub/transforms.v2.js"></script>
+  <script src="/assets/js/distillpub/overrides.js"></script>
+  <!-- Page/Post style -->
+  
+</head>
+
+  <d-front-matter>
+    <script async type="text/json">{
+      "title": "Neural Network Editing Study ",
+      "description": "Study of network editing.",
+      "published": "September 4, 2023",
+      "authors": [
+        {
+          "author": "Bumjin Park",
+          "authorURL": "",
+          "affiliations": [
+            {
+              "name": "KAIST",
+              "url": ""
+            }
+          ]
+        }
+        
+      ],
+      "katex": {
+        "delimiters": [
+          {
+            "left": "$",
+            "right": "$",
+            "display": false
+          },
+          {
+            "left": "$$",
+            "right": "$$",
+            "display": true
+          }
+        ]
+      }
+    }</script>
+  </d-front-matter>
+
+  <body style="padding-top:0px" class="sticky-bottom-footer"> 
+    
+    <!-- Header --><header>
+      
+      <!-- Nav Bar -->
+      <nav id="navbar" class="navbar navbar-light navbar-expand-sm sticky-top">
+        <div class="container">
+          <img>
+          <!-- <img src="/assets/common/KAIST-hi.gif" width="40px" style="margin-right:0px; padding-bottom: 3px;"> -->
+          
+          <a class="navbar-brand title font-weight-lighter" href="https://fxnnxc.github.io/" style="margin-left:20px ;">
+              <!--Bumjini-->
+           <span class="font-weight-bold" style="font-size:larger;font-family:Times New Roman;">Bumjini    </span>
+        </a>
+          <!-- Navbar Toggle -->
+          <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar top-bar"></span>
+            <span class="icon-bar middle-bar"></span>
+            <span class="icon-bar bottom-bar"></span>
+          </button>
+
+          <div class="collapse navbar-collapse text-right" id="navbarNav">
+            <ul class="navbar-nav ml-auto flex-nowrap">
+
+              <!-- About -->
+              <!-- <li style="font-size: 17px" class="nav-item ">
+                <a class="nav-link" href="/">  About Me</a>
+              </li> -->
+              
+              <!-- Blog -->
+              <li style="font-size: 17px" class="nav-item ">
+                <a class="nav-link" href="/main_papers/"> Papers</a>
+              </li>
+
+              <li style="font-size: 17px" class="nav-item ">
+                <a class="nav-link" href="/main_articles/"> Articles</a>
+              </li>
+
+              <li style="font-size: 17px" class="nav-item ">
+                <a class="nav-link" href="/main_projects/"> Projects</a>
+              </li>
+
+              <!-- Other pages -->
+              <li style="font-size: 17px" class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/side_papers/">🗂️ side-paper</a>
+                  <a class="dropdown-item" href="/side_articles/">🥕 side-articles</a>
+                  <a class="dropdown-item" href="/book/">📚 book (korean)</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Content -->
+    <div class="post distill">
+
+      <d-title>
+        <h1 style="font-size: 32px;">Neural Network Editing Study </h1>
+        <p>Study of network editing.</p>
+      </d-title>
+
+      <d-byline></d-byline>
+
+      <d-article>
+        
+
+        <blockquote>
+  <p>This post is a personal study of editing neural networks</p>
+</blockquote>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>This post is about my practice on the mathematical formulation of editing. This post covers maths in [📃 <em>Rewriting a deep generative model</em>]<d-cite key="bau2020rewriting"></d-cite> which are further used in</p>
+<ul>
+  <li>[📃  <em>Editing a classifier by rewriting its prediction rules</em>]<d-cite key="santurkar2021editing"></d-cite>
+</li>
+  <li>[📃  <em>Locating and editing factual associations in GPT</em>, Factual GPT]<d-cite key="meng2022locating"></d-cite>
+</li>
+  <li>[📃 <em>Unified Concept Editing in Diffusion Models</em>]<d-cite key="gandikota2023unified"></d-cite>
+</li>
+</ul>
+
+<h2 id="keywords-summary">Keywords Summary</h2>
+
+<ul>
+  <li>🔖 <em>model rewriting</em> : task which aims to add, remove, and alter the semantic and physical rules of a pretrained deep network.</li>
+  <li>🔖 <em>linear associative memory</em> : relationship between two values are defined as linear transform. input as key and the output as value.</li>
+</ul>
+
+<h2 id="example">Example</h2>
+
+<p>We have initial weight $w_0$ which is further rewritten with another weights $\Delta$ by</p>
+
+<ol>
+  <li>$w_0 + \Delta_1$ : remove text in image</li>
+  <li>$w_0 + \Delta_1 + \Delta_2$ : add people</li>
+  <li>$w_0 + \Delta_1 + \Delta_2 + \Delta_3$ : replace tower by tower</li>
+</ol>
+
+<figure>
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%212446&amp;authkey=%21AG1O4N7rV_e9YOA&amp;width=1024" width="1024" height="auto">
+<figcaption>
+Figure from the paper "Rewriting a deep generative model"
+</figcaption>
+</figure>
+
+<h2 id="formulation-of-editing">Formulation of Editing</h2>
+
+<p>A pre-trained generator $G(z;\theta_0)$ with weights $\theta_0$ and input latent $z$, generate images $x_i = G(z_i;\theta_0)$ is produced by a latent code $z_i$. As we want to edit $x_i$ to desired image \(x_i^*\), we would update weights $\theta_1$ that change a computational rule to match $x_i^* \approx G(z_i; \theta_1)$ with regularization</p>
+
+<div style="width:100%; overflow-x:clip; overflow-y:clip;">
+
+$$
+\begin{gather}
+\theta_1 = \arg \min_\theta \mathcal{L}_\mathrm{smooth}(\theta) + \lambda \mathcal{L}_\mathrm{constraint}(\theta)\\ 
+\mathcal{L}_\mathrm{smooth}(\theta) =  \mathbb{E}_z [\ell(G(z;\theta_0), G(z; \theta))] \\ 
+\mathcal{L}_\mathrm{constraint}(\theta) =  \sum_i \ell(x_i^*, G(z_i; \theta))
+\end{gather}
+$$
+
+</div>
+
+<p>Equation 2 ensures little difference between two operations $(G(z;\theta_0)$ and  $G(z; \theta)$ and Equation 3 ensures the generated image with $z_i$ is the desired image \(x_i^*\).</p>
+
+<p>However, this technique requires the modification of all weight $\theta$ and the novel idea proposed by Bau is the modification of only one layer<d-footnote> In the paper, the authors said "we reduce the degrees of freedom by modifying weights at only one layer." </d-footnote>.</p>
+
+<p>Let $v = f_l(k;W_0)$ denote the computation of layer $L$ with weights $W_0$. For each exemplar latent $z_i$, The layer produce features \(k_i^*\) and \(v_i^* = f_l(k_i^*;W_0)\) Here, \(v_i^*\) is the latent for the desired image \(x_i^*\) which could be obtained via such as GAN inversion. The objective Equation 1 becomes</p>
+
+<div style="width:100%; overflow-x:clip; overflow-y:clip;">
+
+$$
+\begin{gather}
+W_1 = \arg \min_W \mathcal{L}_\mathrm{smooth}(W) + \lambda \mathcal{L}_\mathrm{constraint}(W)\\ 
+\mathcal{L}_\mathrm{smooth}(W) =  \mathbb{E}_k [\Vert  f_l(k;W_0), f_l(k; W)\Vert^2] \\ 
+\mathcal{L}_\mathrm{constraint}(W) =  \sum_i \Vert (v_i^*, f_l(k_i; W) \Vert^2 
+\end{gather}
+$$
+
+</div>
+
+<p>The editing of generative model is done by learning weights to match \(k_i^*\) (given input from \(z_i\))  and  \(v_i^*\) (desired feature for \(x_i^*\)).</p>
+
+<blockquote>
+  <p>In conclusion, modifying weights in a layer to map $k_i^* \rightarrow v_i^*$.</p>
+</blockquote>
+
+<h2 id="weight-matrix-update">Weight Matrix Update</h2>
+
+<p>Matrix $W$ can be viewed as an association memory. The term association means the memory determines the association of two values, <em>inputs</em> and <em>outputs</em>. 
+A set of key-value pairs ${ (k_i, v_i) }$ has the following association with memory $W$.</p>
+
+\[v_i \approx W k_i\]
+
+<p>If the keys are (1) mutually orthogonal and (2) error-free, then the memory can be recovered in <em>error-free</em> manner.</p>
+
+<div style="width:100%; overflow-x:clip; overflow-y:clip;">
+
+$$
+\begin{equation}
+W_\mathrm{orth} \triangleq \sum_i v_i k_i^\top
+\end{equation}
+$$
+
+</div>
+
+<p>With this matrix, we have the following property</p>
+
+<div style="width:100%; overflow-x:clip; overflow-y:clip;">
+
+$$
+\begin{aligned}
+W_\mathrm{orth} k_j 
+&amp;= (\sum_i v_i k_i^\top) k_j  \\ 
+&amp;= v_j k_j^\top k_j + \sum_{i\ne j} v_i k_i^\top k_j  \\
+&amp;= v_j \cdot 1 +  \sum_{i\ne j} v_i 0  \\
+&amp;= v_j
+\end{aligned}
+$$
+
+</div>
+
+<p>The below example shows the editing of convolutional layer which produces \(v = W_\mathrm{reshaped} k_\mathrm{reshaped}\).</p>
+
+<ul>
+  <li>Weight $W$  : convolutional weight  (<code class="language-plaintext highlighter-rouge">256 x 512 x 3 x 3</code> dim / reshaped : <code class="language-plaintext highlighter-rouge">2304 x 512</code>)</li>
+  <li>Key $k$ : a single feature vector matches <strong>the similar location semantic</strong> (<code class="language-plaintext highlighter-rouge">512</code> dim )</li>
+  <li>Value $v$ : <strong>rendered shape semantic</strong> (<code class="language-plaintext highlighter-rouge">256 x 3 x 3</code> dim / reshaped: <code class="language-plaintext highlighter-rouge">2304</code>)</li>
+</ul>
+
+<figure>
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%212447&amp;authkey=%21AIpClIcZ01mDp4g&amp;width=1024" width="1024" height="auto">
+<figcaption>
+Figure from the paper "Rewriting a deep generative model"
+</figcaption>
+</figure>
+
+<h3 id="nonorthogonal-keys">Nonorthogonal keys</h3>
+
+<p>Orthogonal keys have at most $N$ number of keys where $N$ is length of columns. In other words, only $N$ number of semantic keys are possible. However, the semantic space could have more number of semantic keys and nonorthogonal encode more key-value pairs with 🌟<strong>superpositions</strong>.</p>
+
+<p>Let $N’$ be the number of nonorthogonal keys ${k_i}$. We choose $W_0$ to minimize error:</p>
+
+<div style="width:100%; overflow-x:clip; overflow-y:clip;">
+$$
+\begin{equation}
+W_0 \triangleq  \arg \min_W \sum_{i} \Vert v_i - Wk_i \Vert^2
+\end{equation}
+$$
+</div>
+
+<p>For the simplification of notations, we can stack the key and values columns to form matrices</p>
+
+<div style="width:100%; overflow-x:clip; overflow-y:clip;">
+
+$$
+\begin{gather}
+K \triangleq  [k_1 | k_2 | \cdots | k_i | \cdots | k_{N'}  ] \\ 
+V \triangleq  [v_1 | v_2 | \cdots | v_i | \cdots | v_{N'}  ]
+\end{gather}
+$$
+
+</div>
+
+<div style="width:100%; overflow-x:clip; overflow-y:clip;">
+
+$$
+\begin{align}
+W_\mathrm{0} &amp;=  \arg \min_W \Vert V - WK \Vert^2 \\
+\Rightarrow&amp;  W_0 KK^\top = VK^\top \\ 
+\Rightarrow&amp;  W_0 = VK^\top (KK^\top)^{-1} \\ 
+\Rightarrow&amp;  W_0 = VK^+ \\ 
+\end{align}
+$$
+
+</div>
+
+<p>where $K^+$ is the pseudo-inverse of $K$ [<a href="https://en.wikipedia.org/wiki/Moore%E2%80%93Penrose_inverse" target="_blank" rel="noopener noreferrer">see wiki</a>].</p>
+
+<h3 id="insert-new-value">Insert New Value</h3>
+
+<div style="width:100%; overflow-x:clip; overflow-y:clip;">
+$$
+\begin{align}
+W_1   &amp;= \min_W \sum_{i} \Vert v_i - Wk_i \Vert^2 \\ 
+&amp; \mathrm{subject~to~} v_* = W_1 k_*
+\end{align}
+$$
+</div>
+
+<p>It is known that Equation 15 with constraint Equation 16 can be solved exactly as \(W_1KK^\top  = VK^\top + \Lambda k_*^\top\) where \(\Lambda \in \mathbb{R}^{m}\) is determined to satisfy the constraint in Equation 16.</p>
+
+<div style="width:100%; overflow-x:clip; overflow-y:clip;">
+$$
+\begin{align}
+W_1KK^\top  
+&amp;= VK^\top + \Lambda k_*^\top \\
+W_1 &amp;= W_0 + \Lambda((KK^\top)^{-1}k_*)^\top \\
+W_1 &amp;= W_0 + \Lambda(C^{-1}k_*)^\top \\
+W_1 &amp;= W_0 + \Lambda d^\top \\
+\end{align}
+$$
+</div>
+
+<p>As $\Lambda$ is a vector and $d$ is also a vector, the modification updates $W_0$ to $W_1$ with rank one matrix. This is why editing with this method is called <strong>Rank One Model Editing (ROME)</strong>.</p>
+
+<h3 id="nonlinear-neural-layer">Nonlinear Neural Layer</h3>
+
+<p>The nonlinear means that the value is not just the output of a matrix but the non-linearly modified value with activations such as ReLU and Tanh. The authors also generated the insertion as follows.</p>
+
+<p>The key direction is the multiplication of the inverse of covariance matrix $C^{-1}$ and the desired key $k_*$.</p>
+
+<div style="width:100%; overflow-x:clip; overflow-y:clip;">
+$$
+\begin{equation}
+d \triangleq C^{-1} k_*
+\end{equation}
+$$
+</div>
+
+<p>The component $\Lambda$ for the row space is found by the optimization process.</p>
+
+<div style="width:100%; overflow-x:clip; overflow-y:clip;">
+$$
+\begin{align}
+\Lambda_1  = \arg \min_{\Lambda \in \mathbb{R}^M} \Vert v_* - f(k_*;W_0 + \Lambda d^\top) \Vert \\
+\Rightarrow W_1 = W_0 + \Lambda_1 d^\top 
+\end{align}
+$$
+</div>
+
+<p>The update weight is same with Equation 20.</p>
+
+<div style="width:100%; overflow-x:clip; overflow-y:clip;">
+$$
+\begin{align}
+W_1 &amp;= W_0 + \Lambda d^\top 
+\end{align}
+$$
+</div>
+
+<p>There are situations where more number of values should be updated at once. 
+More generalized number of modification is the matrix version of finding components.</p>
+
+<div style="width:100%; overflow-x:clip; overflow-y:clip;">
+$$
+\begin{align}
+\Lambda_S  &amp;= \arg \min_{\Lambda \in \mathbb{R}^{M\times S}} \Vert V_* - f(K_*;W_0 + \Lambda D_S^\top) \Vert \\ 
+&amp; \Rightarrow W_S = W_0 + \Lambda_S D_S^\top 
+\end{align}
+$$
+</div>
+
+<p>where \(D_S = [d_1 \vert d_2 \vert \cdots \vert d_S]\).</p>
+
+<hr>
+
+<h2 id="editing-classifier">Editing Classifier</h2>
+
+<p>I summarized briefly the core mechanism of  [📃  <em>Editing a classifier by rewriting its prediction rules</em>]<d-cite key="santurkar2021editing"></d-cite></p>
+
+<h3 id="method">Method</h3>
+
+<p>Given an original image $x$, the original output $y$ is produced by the classifier and the internal representation value $v$ which may have semantic meaning. This value $v$ is the representation that already mapped to the correct label $y$.</p>
+
+<p>Now assume that we have modified input $x’$ and we want to map it to the value $v$ to produce label $y$. To do this, the <em>linear association memory</em> is applied to map the new key to desired the value</p>
+
+<div style="width:100%; overflow-x:clip; overflow-y:clip;">
+$$
+\begin{align}
+k_* \rightarrow v_*
+\end{align}
+$$
+</div>
+
+<p>For example, the original car image has semantic wheel which is mapped to the label <em>Car</em> or <em>Bicycle</em> and leaves the value $v^*$ from the <em>wheel</em> concept. When we want edit the wheel concept to <em>wooden wheel</em>, but preserves the prediction as <em>Car</em> and <em>Bicycle</em>, the new key <em>wooden wheel</em> needs to be mapped to the value $v^*$.</p>
+
+<figure>
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%212449&amp;authkey=%21AEG0f28C7pukc7M&amp;width=1024" width="1024" height="auto">
+<figcaption>
+Figure from the paper "Editing a classifier by rewriting its prediction rules"
+</figcaption>
+</figure>
+
+<h3 id="why-we-edit-association-key-rightarrow-value">Why We Edit Association (Key $\rightarrow$ Value)?</h3>
+
+<p>Because there is spurious correlation between backgrounds in classification, the prediction could be biased. For example, <strong>snow</strong> concept should be mapped to the value of <strong>road</strong> to be invariant to the backgrounds.</p>
+
+<figure>
+<img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%212448&amp;authkey=%21AH2SNnmY6dpphEs&amp;width=1024" width="1024" height="auto">
+<figcaption>
+Figure from the paper "Editing a classifier by rewriting its prediction rules"
+</figcaption>
+</figure>
+
+      </d-article>
+
+      <d-appendix>
+        <d-footnote-list></d-footnote-list>
+        <d-citation-list></d-citation-list>
+      </d-appendix>
+
+<!--
+    </div>
+ -->
+      <hr>
+<div id="giscus_thread" style="max-width: 1000px; margin: 0 auto;">
+    <script>
+      let giscusTheme = localStorage.getItem("theme");
+      let giscusAttributes = {
+          "src": "https://giscus.app/client.js",
+          "data-repo": "fxnnxc/fxnnxc",
+          "data-repo-id": "MDEwOlJlcG9zaXRvcnkzMjQ2NjUxMTU=",
+          "data-category": "Q&A",
+          "data-category-id": "DIC_kwDOE1n_G84CYOk_",
+          "data-mapping": "title",
+          "data-strict": "0",
+          "data-reactions-enabled": "1",
+          "data-emit-metadata": "0",
+          "data-input-position": "top",
+          "data-theme": giscusTheme,
+          "data-lang": "en",
+          "crossorigin": "anonymous",
+          "async": "",
+      };
+  
+  
+      let giscusScript = document.createElement("script");
+      Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+      document.getElementById("giscus_thread").appendChild(giscusScript);
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript" target="_blank" rel="noopener noreferrer">comments powered by giscus.</a>
+</noscript>
+  </div>
+<!-- Footer -->    <footer class="sticky-bottom mt-5" style="border: none;border-top:0px">
+      <div class="container" style="text-align: center; ">
+        © Copyright 2024 Bumjini  . Powered by Jekyll with al-folio theme. Hosted by GitHub Pages.
+
+      </div>
+    </footer>
+    
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js" integrity="sha256-l/1pMF/+J4TThfgARS6KwWrk/egwuVvhRzfLAMQ6Ds4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha256-SyTu6CwrfOhaznYZPoolVw2rxoY7lKYKQvqbtqN93HI=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    
+    
+
+<!-- Scrolling Progress Bar -->
+<script type="text/javascript">
+  /*
+   * This JavaScript code has been adapted from the article 
+   * https://css-tricks.com/reading-position-indicator/ authored by Pankaj Parashar, 
+   * published on the website https://css-tricks.com on the 7th of May, 2014.
+   * Couple of changes were made to the original code to make it compatible 
+   * with the `al-foio` theme.
+   */
+  const progressBar = $("#progress");
+  /*
+   * We set up the bar after all elements are done loading.
+   * In some cases, if the images in the page are larger than the intended
+   * size they'll have on the page, they'll be resized via CSS to accomodate
+   * the desired size. This mistake, however, breaks the computations as the
+   * scroll size is computed as soon as the elements finish loading.
+   * To account for this, a minimal delay was introduced before computing the
+   * values.
+   */
+  window.onload = function () {
+    setTimeout(progressBarSetup, 50);
+  };
+  /*
+   * We set up the bar according to the browser.
+   * If the browser supports the progress element we use that.
+   * Otherwise, we resize the bar thru CSS styling
+   */
+  function progressBarSetup() {
+    if ("max" in document.createElement("progress")) {
+      initializeProgressElement();
+      $(document).on("scroll", function() {
+        progressBar.attr({ value: getCurrentScrollPosition() });
+      });
+      $(window).on("resize", initializeProgressElement);
+    } else {
+      resizeProgressBar();
+      $(document).on("scroll", resizeProgressBar);
+      $(window).on("resize", resizeProgressBar);
+    }
+  }
+  /*
+   * The vertical scroll position is the same as the number of pixels that
+   * are hidden from view above the scrollable area. Thus, a value > 0 is
+   * how much the user has scrolled from the top
+   */
+  function getCurrentScrollPosition() {
+    return $(window).scrollTop();
+  }
+
+  function initializeProgressElement() {
+    let navbarHeight = $("#navbar").outerHeight(true);
+    $("body").css({ "padding-top": 0 });
+    $("progress-container").css({ "padding-top": 0 });
+    progressBar.css({ top: navbarHeight });
+    progressBar.attr({
+      max: getDistanceToScroll(),
+      value: getCurrentScrollPosition(),
+    });
+  }
+  /*
+   * The offset between the html document height and the browser viewport
+   * height will be greater than zero if vertical scroll is possible.
+   * This is the distance the user can scroll
+   */
+  function getDistanceToScroll() {
+    return $(document).height() - $(window).height();
+  }
+
+  function resizeProgressBar() {
+    progressBar.css({ width: getWidthPercentage() + "%" });
+  }
+  // The scroll ratio equals the percentage to resize the bar
+  function getWidthPercentage() {
+    return (getCurrentScrollPosition() / getDistanceToScroll()) * 100;
+  }
+</script>
+  </div></body>
+  
+  <d-bibliography src="/assets/bibliography/all.bib">
+  </d-bibliography>
+  <script src="/assets/js/distillpub/overrides.js"></script>
+
+  <center>
+    <a  href="">
+    <img src="/assets/common/KAIST-hi.gif" width="40px" style="margin-right:0px; padding-bottom: 3px;">
+    </a>
+  </center>
+  <hr> 
+
+  </html>

@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<!-- _layouts/distill.html -->
+<html>
+  <head>    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bumjini | [연구 7] 물성 정보 데이터 수집</title>
+    <meta name="author" content="Bumjini  " />
+    <meta name="description" content="물성 정보를 수집하고 분석하기 위해 살펴본 내용" />
+    <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website" />
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous" />
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="none" id="highlight_theme_light" />
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪴</text></svg>">
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://fxnnxc.github.io/Pkolmar/kolmar_231109/">
+    
+    <!-- Dark Mode -->
+    
+
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams',
+        inlineMath: [['$','$'], ['\\(','\\)']]
+      },
+      chtml: {
+          scale: 1.0,
+          minScale: .6,  
+          mtextFontInherit: true,
+          mtextInheritFont: true,
+          merrorInheritFont: true,
+        },
+        svg: {
+          scale: 1.2
+        }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <!-- Distill js -->
+    <script src="/assets/js/distillpub/template.v2.js"></script>
+    <script src="/assets/js/distillpub/transforms.v2.js"></script>
+    
+  </head>
+
+  <d-front-matter>
+    <script async type="text/json">{
+      "title": "[연구 7] 물성 정보 데이터 수집",
+      "description": "물성 정보를 수집하고 분석하기 위해 살펴본 내용",
+      "published": "November 9, 2023",
+      "authors": [
+        {
+          "author": "Bumjin Park",
+          "authorURL": "",
+          "affiliations": [
+            {
+              "name": "KAIST",
+              "url": ""
+            }
+          ]
+        }
+        
+      ],
+      "katex": {
+        "delimiters": [
+          {
+            "left": "$",
+            "right": "$",
+            "display": false
+          },
+          {
+            "left": "$$",
+            "right": "$$",
+            "display": true
+          }
+        ]
+      }
+    }</script>
+  </d-front-matter>
+
+  <body class="sticky-bottom-footer">
+
+    <!-- Header -->    
+    <center>
+      <img src="/assets/common/KAIST-hi.gif" width="40px" style="margin-right:0px; padding-bottom: 3px;">
+    </center>
+    <hr> 
+
+    <!-- Content -->
+    <div class="post distill">
+
+      <d-title>
+        <h1 style="font-size: 32px;">[연구 7] 물성 정보 데이터 수집</h1>
+        <p>물성 정보를 수집하고 분석하기 위해 살펴본 내용</p>
+      </d-title>
+
+      <d-byline></d-byline>
+
+      <d-article>
+        
+
+        <h2 id="한국화장품협회-데이터">한국화장품협회 데이터</h2>
+
+<p>한국화장품협회 <a href="https://kcia.or.kr/home/main/" target="_blank" rel="noopener noreferrer">kca</a> 에는 약 20000개의 성분에 대한 정보가 있음.<br>
+<a href="https://docs.google.com/spreadsheets/d/1KFCujKq_eU9GXio6q8y59vUXpN_7T21Q/edit?usp=drive_link&amp;ouid=112523016502479227051&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer">데이터링크</a> 참조.</p>
+
+<p>데이터 예시)</p>
+
+<h3 id="산달로">산달로</h3>
+<center>
+<img src="https://drive.google.com/uc?export=view&amp;id=1-QILaND0et_KpWix8CZi5ICZCX--Yhl1" style="width:100%;border:1px solid #FFDDDD;">
+</center>
+
+<h3 id="콩단백질">콩단백질</h3>
+<center>
+<img src="https://drive.google.com/uc?export=view&amp;id=1Ezj-w26781tO5NZnfdwzDUAUJrTgGNc7" style="width:100%;border:1px solid #FFDDDD;">
+</center>
+
+<h2 id="성분-특징-정보-존재-여부">성분 특징 정보 존재 여부</h2>
+
+<p>2만개 성분 중 <strong>배합목적</strong>은 1만개에 대해서 존재하였다. 나머지 자료들도 후속 연구를 위해서 수집하였음.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Column</th>
+      <th>Non-Null  Count</th>
+      <th>Dtype</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">0</td>
+      <td>idx</td>
+      <td>20636 non-null</td>
+      <td>int64</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">1</td>
+      <td>성분코드</td>
+      <td>20636 non-null</td>
+      <td>int64</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2</td>
+      <td>성분명</td>
+      <td>20636 non-null</td>
+      <td>object</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">3</td>
+      <td>중문명</td>
+      <td>
+<strong>(협회사 로그인 필요)</strong>  526 non-null</td>
+      <td>object</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">4</td>
+      <td>영문명</td>
+      <td>19651 non-null</td>
+      <td>object</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">5</td>
+      <td>CAS No.</td>
+      <td>7727 non-null</td>
+      <td>object</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">6</td>
+      <td>기원 및 정의</td>
+      <td>10671 non-null</td>
+      <td>object</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">7</td>
+      <td>배합목적</td>
+      <td>9973 non-null</td>
+      <td>object</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">8</td>
+      <td>화학물분류</td>
+      <td>
+<strong>(협회사 로그인 필요)</strong> 10345 non-null</td>
+      <td>object</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">9</td>
+      <td>성분의 기원</td>
+      <td>
+<strong>(협회사 로그인 필요)</strong> 10380 non-null</td>
+      <td>object</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">10</td>
+      <td>명칭변경이력</td>
+      <td>515 non-null</td>
+      <td>object</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">11</td>
+      <td>분자구조식</td>
+      <td>2638 non-null</td>
+      <td>object</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">12</td>
+      <td>시성식</td>
+      <td>2052 non-null</td>
+      <td>object</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">13</td>
+      <td>별명(이명)</td>
+      <td>86 non-null</td>
+      <td>object</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">14</td>
+      <td>상품명</td>
+      <td>606 non-null</td>
+      <td>object</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">15</td>
+      <td>복합물 상품명</td>
+      <td>40 non-null</td>
+      <td>object</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="특징-예시">특징 예시</h3>
+
+<ol>
+  <li>
+<strong>성분명</strong> : [ ‘가공소금’, ‘가지열매추출물’, ‘구멍쇠미역추출물’, …, ‘산달로’, ‘징크탤크클로라이드하이드록사이드’ ‘C12-18알카노일글리세린/세바식애씨드코폴리머’ ]</li>
+  <li>
+<strong>영문명</strong>: [‘nan’, ‘Solanum Melongena (Eggplant) Fruit Extract’, ‘Agarum Cribrosum Extract’, ‘Lupine Amino Acids’, … ]</li>
+  <li>
+<strong>CAS No.</strong> : [nan, ‘84012-19-1’, nan, nan, ‘328-39-2(DL-)<em>x000D</em>\n61-90-5(L-)’, nan, nan, nan, ‘78-70-6’, ‘115-95-7’]</li>
+  <li>
+<strong>기원 및 정의</strong> : [‘\n이 원료는 비타민나무 Hippophae rhamnoides의 배양된 캘러스에서 추출한 것이다.\n’,
+    ‘\n이 원료는 네오펜틸글라이콜, 트라이메틸올프로판, 글리시딜데카노에이트와 프탈릭안하이드라이드의 에스터화반응으로 얻은 공중합체이다.\n’,
+    ‘\n이 원료는 주로 다음의 구조를 갖는 4급 암모늄 화합물이다.\n’, …,
+    ‘\n이 원료는 다음의 구조를 갖는 유기화합물이다.]</li>
+  <li>
+<strong>배합목적</strong> : [‘산화방지제, 헤어컨디셔닝제, 피부보호제, 피부컨디셔닝제(보습제)’, ‘피막형성제’, ‘정전기방지제,]</li>
+  <li>
+<strong>명칭변경이력</strong> : [‘2017.11.14 통칙변경 [밤송이추출물 ☞ 밤나무깍정이추출물]’, ‘2017.11.14 통칙변경 [멘탄다이올 ☞ 멘테인다이올]’,]</li>
+  <li>
+<strong>분자구조식</strong> : 그림으로 존재</li>
+  <li>
+<strong>시성식</strong> : [‘C17H30N • Cl’, ‘C25H39N3O5S’, ‘C15H24O6’, ‘C15H14O3’, ‘C10H20O2’, ‘C12H23NO3’, ‘C36H64N4O12’, ‘C54H78O3’, ‘C25H35ClO6’, ‘C9H12N2O4’]</li>
+  <li>
+<strong>별명(이명)</strong> : [‘\n1,3-다이아미노프로판다이말리에이트 ‘, ‘\nHumulus Lupulus (Hops) Flower Extract ‘, ‘\n딱나무추출물금화규추출물 ‘, ‘\n딱나무잎가루금화규잎가루 ‘, ‘\n딱나무꽃가루금화규꽃가루 ‘, ‘\n황산은 ‘,]</li>
+  <li>
+<strong>상품명</strong> : ([‘\nIMWITOR PG4 Cocoate ((주)인터케어)\n’, ‘\nArtemisia Capillaris Extract (와이트레이딩)\n’, ‘\nPteridium Aquilinum Extract (와이트레이딩)\n’, ‘\nCharcoal Extract (와이트레이딩)\n’, ‘\nAcorus Gramineus Extract (와이트레이딩)\n’, ‘\nPaeonia Lactiflora Bark/Sap Extract (와이트레이딩)\n’,]</li>
+  <li>
+<strong>복합물 상품명</strong> : [‘\nIMWITOR liteMULS((주)인터케어)\n’, ‘\nTCI-211((주)에스제이인터내셔널)\n’,
+   ‘\n오곡명초((주) 웨이브 비씨엠)\n’,
+   ‘\nPlatycladus orientalis leaf essential oil (JINR)((재)전남바이오산업진흥원 천연자원연구센터)\n’,
+   ‘\nECO-칼슘아세테이트수((주)에코마인)\n’,]</li>
+</ol>
+
+<h3 id="배합-목적-데이터-분석">배합 목적 데이터 분석</h3>
+
+<p>각 성분은 여러가지 배합 목적으로 이루어져 있다. 예시를 살펴보면 다음과 같다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>성분명</th>
+      <th>배합목적</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>비타민나무캘러스추출물</td>
+      <td>산화방지제, 헤어컨디셔닝제, 피부보호제, 피부컨디셔닝제(보습제)</td>
+    </tr>
+    <tr>
+      <td>폴리에스터-23</td>
+      <td>피막형성제</td>
+    </tr>
+    <tr>
+      <td>라우릴피리디늄클로라이드</td>
+      <td>정전기방지제, 체취방지제</td>
+    </tr>
+    <tr>
+      <td>소듐헤파린</td>
+      <td>피부컨디셔닝제(기타)</td>
+    </tr>
+    <tr>
+      <td>들깨잎오일</td>
+      <td>착향제</td>
+    </tr>
+    <tr>
+      <td>빌트리열매추출물</td>
+      <td>피부컨디셔닝제(기타)</td>
+    </tr>
+    <tr>
+      <td>그멜리나뿌리추출물</td>
+      <td>피부컨디셔닝제(기타)</td>
+    </tr>
+    <tr>
+      <td>락토바실러스/황칠나무잎/줄기추출발효여과물</td>
+      <td>피부컨디셔닝제(유연제)</td>
+    </tr>
+    <tr>
+      <td>락토바실러스/황칠나무수액발효여과물</td>
+      <td>피부컨디셔닝제(유연제)</td>
+    </tr>
+    <tr>
+      <td>밤나무깍정이추출물</td>
+      <td>산화방지제, 피부보호제, 피부컨디셔닝제(유연제)</td>
+    </tr>
+    <tr>
+      <td>아세틸글루타미노일파네실시스테인</td>
+      <td>피부컨디셔닝제(보습제)</td>
+    </tr>
+    <tr>
+      <td>다우니그라운드체리열매즙</td>
+      <td>헤어컨디셔닝제, 피부컨디셔닝제(기타)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="등장-횟수">등장 횟수</h3>
+
+<p>원료에 대해서 등장한 배합 목적의 횟수를 보면 다음과 같음. 
+ 배합목적들은 몇 가지 특성으로 나뉠 수 있는 것 같음 (콜마측에 요청). 
+ 해당 배합목적 이외에 특성이 더 존재하는지 문의필요.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">순번</th>
+      <th style="text-align: left">배합목적</th>
+      <th style="text-align: left">등장 횟수</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: left">피부컨디셔닝제(기타)</td>
+      <td style="text-align: left">3690</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: left">헤어컨디셔닝제</td>
+      <td style="text-align: left">1433</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2</td>
+      <td style="text-align: left">피부컨디셔닝제(유연제)</td>
+      <td style="text-align: left">1227</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">3</td>
+      <td style="text-align: left">계면활성제(유화제)</td>
+      <td style="text-align: left">1060</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">4</td>
+      <td style="text-align: left">피부보호제</td>
+      <td style="text-align: left">896</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">5</td>
+      <td style="text-align: left">계면활성제(세정제)</td>
+      <td style="text-align: left">896</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">6</td>
+      <td style="text-align: left">산화방지제</td>
+      <td style="text-align: left">817</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">7</td>
+      <td style="text-align: left">피부컨디셔닝제(보습제)</td>
+      <td style="text-align: left">763</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">8</td>
+      <td style="text-align: left">착향제</td>
+      <td style="text-align: left">541</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">9</td>
+      <td style="text-align: left">피막형성제</td>
+      <td style="text-align: left">428</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">10</td>
+      <td style="text-align: left">정전기방지제</td>
+      <td style="text-align: left">422</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">11</td>
+      <td style="text-align: left">피부컨디셔닝제</td>
+      <td style="text-align: left">364</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">12</td>
+      <td style="text-align: left">계면활성제(거품촉진제)</td>
+      <td style="text-align: left">289</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">13</td>
+      <td style="text-align: left">보습제</td>
+      <td style="text-align: left">279</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">14</td>
+      <td style="text-align: left">피부컨디셔닝제(수분차단제)</td>
+      <td style="text-align: left">268</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">15</td>
+      <td style="text-align: left">유화안정제</td>
+      <td style="text-align: left">233</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">16</td>
+      <td style="text-align: left">점도증가제(비수성)</td>
+      <td style="text-align: left">228</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">17</td>
+      <td style="text-align: left">점도증가제(수성)</td>
+      <td style="text-align: left">223</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">18</td>
+      <td style="text-align: left">용제</td>
+      <td style="text-align: left">215</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">19</td>
+      <td style="text-align: left">계면활성제(용해보조제)</td>
+      <td style="text-align: left">213</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">20</td>
+      <td style="text-align: left">결합제</td>
+      <td style="text-align: left">163</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">21</td>
+      <td style="text-align: left">수렴제</td>
+      <td style="text-align: left">162</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">22</td>
+      <td style="text-align: left">계면활성제(친수제)</td>
+      <td style="text-align: left">156</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">23</td>
+      <td style="text-align: left">모발고정제</td>
+      <td style="text-align: left">102</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">24</td>
+      <td style="text-align: left">연마제</td>
+      <td style="text-align: left">81</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">25</td>
+      <td style="text-align: left">염모제</td>
+      <td style="text-align: left">80</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">26</td>
+      <td style="text-align: left">표면조정제</td>
+      <td style="text-align: left">70</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">27</td>
+      <td style="text-align: left">각질제거제</td>
+      <td style="text-align: left">69</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">28</td>
+      <td style="text-align: left">감미제</td>
+      <td style="text-align: left">68</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">29</td>
+      <td style="text-align: left">미끄럼조정제/활택제</td>
+      <td style="text-align: left">64</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">30</td>
+      <td style="text-align: left">pH 조정제</td>
+      <td style="text-align: left">63</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">31</td>
+      <td style="text-align: left">가소제</td>
+      <td style="text-align: left">62</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">32</td>
+      <td style="text-align: left">흡수제</td>
+      <td style="text-align: left">59</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">33</td>
+      <td style="text-align: left">안티케이킹제</td>
+      <td style="text-align: left">56</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">34</td>
+      <td style="text-align: left">점도감소제</td>
+      <td style="text-align: left">55</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">35</td>
+      <td style="text-align: left">금속이온봉쇄제</td>
+      <td style="text-align: left">55</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">36</td>
+      <td style="text-align: left">계면활성제(분산제)</td>
+      <td style="text-align: left">52</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">37</td>
+      <td style="text-align: left">보존제</td>
+      <td style="text-align: left">47</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">38</td>
+      <td style="text-align: left">불투명화제</td>
+      <td style="text-align: left">46</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">39</td>
+      <td style="text-align: left">분산제(비계면활성제)</td>
+      <td style="text-align: left">45</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">40</td>
+      <td style="text-align: left">벌킹제(증량제)</td>
+      <td style="text-align: left">37</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">41</td>
+      <td style="text-align: left">네일컨디셔닝제</td>
+      <td style="text-align: left">34</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">42</td>
+      <td style="text-align: left">변색방지제</td>
+      <td style="text-align: left">27</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">43</td>
+      <td style="text-align: left">광안정화제</td>
+      <td style="text-align: left">24</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">44</td>
+      <td style="text-align: left">완충화제</td>
+      <td style="text-align: left">20</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">45</td>
+      <td style="text-align: left">체취방지제</td>
+      <td style="text-align: left">19</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">46</td>
+      <td style="text-align: left">기포방지제</td>
+      <td style="text-align: left">16</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">47</td>
+      <td style="text-align: left">환원제</td>
+      <td style="text-align: left">16</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">48</td>
+      <td style="text-align: left">산화제</td>
+      <td style="text-align: left">12</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">49</td>
+      <td style="text-align: left">부식방지제</td>
+      <td style="text-align: left">11</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">50</td>
+      <td style="text-align: left">피부컨디셔닝제 (기타)</td>
+      <td style="text-align: left">11</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">51</td>
+      <td style="text-align: left">점도증가제-비수성</td>
+      <td style="text-align: left">9</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">52</td>
+      <td style="text-align: left">비듬방지제</td>
+      <td style="text-align: left">9</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">53</td>
+      <td style="text-align: left">속눈썹컨디셔닝제</td>
+      <td style="text-align: left">8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">54</td>
+      <td style="text-align: left">퍼머넌트웨이브용제/헤어스트레이트너용제</td>
+      <td style="text-align: left">7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">55</td>
+      <td style="text-align: left">점도조절제</td>
+      <td style="text-align: left">7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">56</td>
+      <td style="text-align: left">변성제</td>
+      <td style="text-align: left">7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">57</td>
+      <td style="text-align: left">계면활성제</td>
+      <td style="text-align: left">7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">58</td>
+      <td style="text-align: left">제모제(물리적)</td>
+      <td style="text-align: left">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">59</td>
+      <td style="text-align: left">착색제</td>
+      <td style="text-align: left">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">60</td>
+      <td style="text-align: left">벌킹제</td>
+      <td style="text-align: left">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">61</td>
+      <td style="text-align: left">산화방지제. 피부보호제</td>
+      <td style="text-align: left">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">62</td>
+      <td style="text-align: left">분사제</td>
+      <td style="text-align: left">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">63</td>
+      <td style="text-align: left">피부보습제</td>
+      <td style="text-align: left">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">64</td>
+      <td style="text-align: left">제모제(화학적)</td>
+      <td style="text-align: left">3</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">65</td>
+      <td style="text-align: left">피부컨디셔닝제(유화제)</td>
+      <td style="text-align: left">2</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">66</td>
+      <td style="text-align: left">점착제</td>
+      <td style="text-align: left">2</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">67</td>
+      <td style="text-align: left">피부 컨디셔닝</td>
+      <td style="text-align: left">2</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">68</td>
+      <td style="text-align: left">계면활성제(수성)</td>
+      <td style="text-align: left">2</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">69</td>
+      <td style="text-align: left">피부컨디 셔닝제(기타)</td>
+      <td style="text-align: left">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">70</td>
+      <td style="text-align: left">착색제(화장비누)</td>
+      <td style="text-align: left">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">71</td>
+      <td style="text-align: left">스킨</td>
+      <td style="text-align: left">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">72</td>
+      <td style="text-align: left">분산제(비계면활성제</td>
+      <td style="text-align: left">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">73</td>
+      <td style="text-align: left">흡착제</td>
+      <td style="text-align: left">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">74</td>
+      <td style="text-align: left">피부컨디셔닝제(가터)</td>
+      <td style="text-align: left">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">75</td>
+      <td style="text-align: left">피부컨디셔닝</td>
+      <td style="text-align: left">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">76</td>
+      <td style="text-align: left">피부컨디셔닝제 (보습제)</td>
+      <td style="text-align: left">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">77</td>
+      <td style="text-align: left">헤어컨디셔닝제(보습제)</td>
+      <td style="text-align: left">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">78</td>
+      <td style="text-align: left">피부 보호제</td>
+      <td style="text-align: left">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">79</td>
+      <td style="text-align: left">피부컨디셔닝(기타)</td>
+      <td style="text-align: left">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">80</td>
+      <td style="text-align: left">피부컨디셔닝제 (유연제)</td>
+      <td style="text-align: left">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">81</td>
+      <td style="text-align: left">피부컨디셔닝제(유연제</td>
+      <td style="text-align: left">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">82</td>
+      <td style="text-align: left">계면활성제(점도증가제)</td>
+      <td style="text-align: left">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">83</td>
+      <td style="text-align: left">자외선차단제</td>
+      <td style="text-align: left">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">84</td>
+      <td style="text-align: left">유연화제</td>
+      <td style="text-align: left">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">85</td>
+      <td style="text-align: left">피부컨디셔닝제(수분차단제</td>
+      <td style="text-align: left">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">86</td>
+      <td style="text-align: left">헤어컨디셔닝제. 피부보호제</td>
+      <td style="text-align: left">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">87</td>
+      <td style="text-align: left">증점제</td>
+      <td style="text-align: left">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">88</td>
+      <td style="text-align: left">계면활성제(거품형성촉진제)</td>
+      <td style="text-align: left">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">89</td>
+      <td style="text-align: left">피부컨티셔닝제(기타)</td>
+      <td style="text-align: left">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">90</td>
+      <td style="text-align: left">피부컨디셔닝제(보습)</td>
+      <td style="text-align: left">1</td>
+    </tr>
+  </tbody>
+</table>
+
+
+      </d-article>
+
+      <d-appendix>
+        <d-footnote-list></d-footnote-list>
+        <d-citation-list></d-citation-list>
+      </d-appendix>
+
+
+      <hr>
+<!--<div id="giscus_thread" style="max-width: 1000px; margin: 0 auto;">
+    <script>
+      let giscusTheme = localStorage.getItem("theme");
+      let giscusAttributes = {
+          "src": "https://giscus.app/client.js",
+          "data-repo": "fxnnxc/fxnnxc",
+          "data-repo-id": "MDEwOlJlcG9zaXRvcnkzMjQ2NjUxMTU=",
+          "data-category": "Q&A",
+          "data-category-id": "DIC_kwDOE1n_G84CYOk_",
+          "data-mapping": "title",
+          "data-strict": "0",
+          "data-reactions-enabled": "1",
+          "data-emit-metadata": "0",
+          "data-input-position": "top",
+          "data-theme": giscusTheme,
+          "data-lang": "en",
+          "crossorigin": "anonymous",
+          "async": "",
+      };
+  
+  
+      let giscusScript = document.createElement("script");
+      Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+      document.getElementById("giscus_thread").appendChild(giscusScript);
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript">comments powered by giscus.</a></noscript>
+  </div>--><div id="giscus_thread" style="max-width: 1000px; margin: 0 auto;">
+    <script>
+      let giscusTheme = localStorage.getItem("theme");
+      let giscusAttributes = {
+          "src": "https://giscus.app/client.js",
+          "data-repo": "fxnnxc/fxnnxc",
+          "data-repo-id": "MDEwOlJlcG9zaXRvcnkzMjQ2NjUxMTU=",
+          "data-category": "Q&A",
+          "data-category-id": "DIC_kwDOE1n_G84CYOk_",
+          "data-mapping": "title",
+          "data-strict": "0",
+          "data-reactions-enabled": "1",
+          "data-emit-metadata": "0",
+          "data-input-position": "top",
+          "data-theme": giscusTheme,
+          "data-lang": "en",
+          "crossorigin": "anonymous",
+          "async": "",
+      };
+  
+  
+      let giscusScript = document.createElement("script");
+      Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+      document.getElementById("giscus_thread").appendChild(giscusScript);
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript" target="_blank" rel="noopener noreferrer">comments powered by giscus.</a>
+</noscript>
+  </div>
+</div>
+
+    <!-- Footer -->    <footer class="sticky-bottom mt-5" style="border: none;border-top:0px">
+      <div class="container" style="text-align: center; ">
+        © Copyright 2024 Bumjini  . Powered by Jekyll with al-folio theme. Hosted by GitHub Pages.
+
+      </div>
+    </footer>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js" integrity="sha256-l/1pMF/+J4TThfgARS6KwWrk/egwuVvhRzfLAMQ6Ds4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha256-SyTu6CwrfOhaznYZPoolVw2rxoY7lKYKQvqbtqN93HI=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    
+    
+
+<!-- Scrolling Progress Bar -->
+<script type="text/javascript">
+  /*
+   * This JavaScript code has been adapted from the article 
+   * https://css-tricks.com/reading-position-indicator/ authored by Pankaj Parashar, 
+   * published on the website https://css-tricks.com on the 7th of May, 2014.
+   * Couple of changes were made to the original code to make it compatible 
+   * with the `al-foio` theme.
+   */
+  const progressBar = $("#progress");
+  /*
+   * We set up the bar after all elements are done loading.
+   * In some cases, if the images in the page are larger than the intended
+   * size they'll have on the page, they'll be resized via CSS to accomodate
+   * the desired size. This mistake, however, breaks the computations as the
+   * scroll size is computed as soon as the elements finish loading.
+   * To account for this, a minimal delay was introduced before computing the
+   * values.
+   */
+  window.onload = function () {
+    setTimeout(progressBarSetup, 50);
+  };
+  /*
+   * We set up the bar according to the browser.
+   * If the browser supports the progress element we use that.
+   * Otherwise, we resize the bar thru CSS styling
+   */
+  function progressBarSetup() {
+    if ("max" in document.createElement("progress")) {
+      initializeProgressElement();
+      $(document).on("scroll", function() {
+        progressBar.attr({ value: getCurrentScrollPosition() });
+      });
+      $(window).on("resize", initializeProgressElement);
+    } else {
+      resizeProgressBar();
+      $(document).on("scroll", resizeProgressBar);
+      $(window).on("resize", resizeProgressBar);
+    }
+  }
+  /*
+   * The vertical scroll position is the same as the number of pixels that
+   * are hidden from view above the scrollable area. Thus, a value > 0 is
+   * how much the user has scrolled from the top
+   */
+  function getCurrentScrollPosition() {
+    return $(window).scrollTop();
+  }
+
+  function initializeProgressElement() {
+    let navbarHeight = $("#navbar").outerHeight(true);
+    $("body").css({ "padding-top": 0 });
+    $("progress-container").css({ "padding-top": 0 });
+    progressBar.css({ top: navbarHeight });
+    progressBar.attr({
+      max: getDistanceToScroll(),
+      value: getCurrentScrollPosition(),
+    });
+  }
+  /*
+   * The offset between the html document height and the browser viewport
+   * height will be greater than zero if vertical scroll is possible.
+   * This is the distance the user can scroll
+   */
+  function getDistanceToScroll() {
+    return $(document).height() - $(window).height();
+  }
+
+  function resizeProgressBar() {
+    progressBar.css({ width: getWidthPercentage() + "%" });
+  }
+  // The scroll ratio equals the percentage to resize the bar
+  function getWidthPercentage() {
+    return (getCurrentScrollPosition() / getDistanceToScroll()) * 100;
+  }
+</script>
+
+  </body>
+
+  <d-bibliography src="/assets/bibliography/">
+  </d-bibliography>
+
+  <!-- jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="/assets/js/distillpub/overrides.js"></script>
+
+    <center>
+        <img src="/assets/common/KAIST-hi.gif" width="40px" style="margin-right:0px; padding-bottom: 3px;">
+    </center>
+    <hr> 
+
+</html>

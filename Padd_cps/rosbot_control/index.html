@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<!-- _layouts/distill.html -->
+<html>
+  <head>    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bumjini | ADD CPS - Rosbot Control</title>
+    <meta name="author" content="Bumjini  " />
+    <meta name="description" content="Project" />
+    <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website" />
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous" />
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="none" id="highlight_theme_light" />
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪴</text></svg>">
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://fxnnxc.github.io/Padd_cps/rosbot_control/">
+    
+    <!-- Dark Mode -->
+    
+
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams',
+        inlineMath: [['$','$'], ['\\(','\\)']]
+      },
+      chtml: {
+          scale: 1.0,
+          minScale: .6,  
+          mtextFontInherit: true,
+          mtextInheritFont: true,
+          merrorInheritFont: true,
+        },
+        svg: {
+          scale: 1.2
+        }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <!-- Distill js -->
+    <script src="/assets/js/distillpub/template.v2.js"></script>
+    <script src="/assets/js/distillpub/transforms.v2.js"></script>
+    
+  </head>
+
+  <d-front-matter>
+    <script async type="text/json">{
+      "title": "ADD CPS - Rosbot Control",
+      "description": "Project",
+      "published": "October 17, 2023",
+      "authors": [
+        
+      ],
+      "katex": {
+        "delimiters": [
+          {
+            "left": "$",
+            "right": "$",
+            "display": false
+          },
+          {
+            "left": "$$",
+            "right": "$$",
+            "display": true
+          }
+        ]
+      }
+    }</script>
+  </d-front-matter>
+
+  <body class="sticky-bottom-footer">
+
+    <!-- Header -->    
+    <center>
+      <img src="/assets/common/KAIST-hi.gif" width="40px" style="margin-right:0px; padding-bottom: 3px;">
+    </center>
+    <hr> 
+
+    <!-- Content -->
+    <div class="post distill">
+
+      <d-title>
+        <h1 style="font-size: 32px;">ADD CPS - Rosbot Control</h1>
+        <p>Project</p>
+      </d-title>
+
+      <d-byline></d-byline>
+
+      <d-article>
+        
+
+        <h2 id="연구목적">연구목적</h2>
+
+<p>물리적 Rosbot 의 컨트롤을 연구하여, 해당 연구를 Drone에도 확장하여 최종시연을 위한 로봇 컨트롤 환경을 구축하는 것을 목표로 한다. 
+요구사항은 특정좌표를 입력하면, body frame 에서 해당 위치로 이동. 이동 알고리즘은 룰기반과 강화학습 기반 두 가지로 제공한다.</p>
+
+<h2 id="연구-내용">연구 내용</h2>
+
+<h3 id="202310061-rosbot-gazebo">2023.10.06.1: Rosbot Gazebo</h3>
+
+<ul>
+  <li>🗳️ release  : <a href="https://github.com/fxnnxc/add_cps/tree/v23.10.06.1" target="_blank" rel="noopener noreferrer">v23.10.06.1</a>
+</li>
+  <li>👨🏻‍💻 code : see <code class="language-plaintext highlighter-rouge">/robots/rosbot/README.md</code>
+</li>
+</ul>
+
+<p>로스봇 세팅 코드 클린 버전 구현 [<a href="https://github.com/fxnnxc/add_cps/tree/v23.10.06.1/robots/rosbot" target="_blank" rel="noopener noreferrer">Document</a>]</p>
+
+<p>Terminal 패널 정보:</p>
+<ol>
+  <li>roscore</li>
+  <li>gazebo map load</li>
+  <li>Rosbot spawn</li>
+  <li>keyboard Control</li>
+</ol>
+
+<p><img src="https://drive.google.com/uc?export=view&amp;id=1Zw9gg6PlNxSGJ9Yfg1Xjer3j3ufiLiSL" style="width:100%"></p>
+
+<hr>
+
+<h3 id="202310062-rosbot-environment-sample-collection">2023.10.06.2: Rosbot Environment Sample Collection</h3>
+
+<ul>
+  <li>🗳️ release  : <a href="https://github.com/fxnnxc/add_cps/tree/v23.10.06.2" target="_blank" rel="noopener noreferrer">v23.10.06.2</a>
+</li>
+  <li>👨🏻‍💻 code : see <code class="language-plaintext highlighter-rouge">/labs/rosbot_collect_samples/run.py</code>
+</li>
+</ul>
+
+<p>로스복 강화학습 환경 랜덤 액션을 통한 샘플 획득 [<a href="https://github.com/fxnnxc/add_cps/tree/v23.10.06.2/labs/rosbot_collect_samples" target="_blank" rel="noopener noreferrer">Document</a>]</p>
+
+<p>데모 비디오 <a href="https://drive.google.com/file/d/11E2sRsafGk8bjPlP1MqxnjlAbJ52ZDmt/view?usp=sharing" target="_blank" rel="noopener noreferrer">google drive</a></p>
+<video controls="" width="550">
+  <source src="https://drive.google.com/uc?export=view&amp;id=11E2sRsafGk8bjPlP1MqxnjlAbJ52ZDmt" type="video/webm"></source>
+
+</video>
+
+<hr>
+
+<h3 id="202310161-rosbot-rpy">2023.10.16.1: Rosbot RPY</h3>
+
+<ul>
+  <li>🗳️ release  : <a href="https://github.com/fxnnxc/add_cps/tree/v23.10.16.1" target="_blank" rel="noopener noreferrer">v23.10.16.1</a>
+</li>
+  <li>👨🏻‍💻 code : see <code class="language-plaintext highlighter-rouge">/labs/rosbot_rpy/rosbot_rpy.py</code>
+</li>
+</ul>
+
+<p>로봇이 놓이는 환경에서는 두 가지 좌표, world Frame / body Frame 이 존재한다. 로봇 컨트롤 시 사용자가 조종하는 컨트롤은 body frame 에서 동작하나, 실제 목표하는 위치는 world frame에 놓여있다. 따라서, 환경에서 body frame 의 목표를 world frame으로 전환하는 것은 실제 목표 위치에 도달하는 정도를 표시하기 위해 필수적이다. 이 때 계산에 관여하는 값은 <code class="language-plaintext highlighter-rouge">yaw</code> 이다. 
+로봇의 실제 2차원 좌표를 $(G_x, G_y)$라고 하자, 상대적 위치 $(R_x, R_y)$의 절대좌표는 로봇의 2차원 회전 방향값 $\Psi$ (yaw)에 대해서 다음과 같이 구할 수 있다.</p>
+
+\[\begin{gather}
+G_{tx}  = G_{x} +  \operatorname{Rotate}(R_{x}, R_{y}, \Psi)_x \\ 
+G_{ty}  = G_{y} +  \operatorname{Rotate}(R_{x}, R_{y}, \Psi)_y
+\end{gather}\]
+
+<p>여기서 Rotate 는 $\Psi$ 회전행렬에 대해서 $R_{x}, R_{y}$ 값을 변환한 벡터를 반환하는 함수이다. 
+로봇의 2D에서 실제 좌표에 대해서 목표로 하는 상대적 타겟 위치 (1,2) 를 다른 로봇의 yaw 값에 대해서 찍어보면 다음과 같이 구할 수 있다.</p>
+<center>
+<img src="https://drive.google.com/uc?export=view&amp;id=14_ujsTJ3EFIQSGVYA15Xg7sr3rkMTFTR" style="width:50%">
+</center>
+
+<p>목표로 하는 환경은 다음곽 같이 로봇의 위치 변화를 요구하는 타겟 위치가 있으며, 이에 대한 강화학습 보상은 절대 좌표계에서 주어진다.</p>
+
+<center>
+<img src="https://drive.google.com/uc?export=view&amp;id=1mK_N4wltjVcj7K1sHIF63QedCtpZFQCZ" style="width:50%">
+</center>
+
+<h4 id="시뮬레이터-yaw값-확인">시뮬레이터 Yaw값 확인</h4>
+
+<p>시뮬레이터에서 Yaw 값을 확인해보면, 회전속도를 올리면 yaw 값이 선형으로 변하는 것을 확인할 수 있다. 값의 범위는 $-\pi \sim \pi$ 이다.</p>
+<center>
+<img src="https://drive.google.com/uc?export=view&amp;id=1GUyyg8RElBJCEZvBGH5lNyTP354M-ZxX" style="width:50%">
+</center>
+
+<p>시뮬레이터에서 Yaw 값에 해당하는 로봇의 실제 좌표는 다음과 같이 주어진다. 빨간색 좌표축을 기준으로 <code class="language-plaintext highlighter-rouge">yaw</code>값이 측정됨을 확인할 수 있다.</p>
+
+<center>
+<video controls="" width="550">
+  <source src="https://drive.google.com/uc?export=view&amp;id=1tiF-u2WAuImxhzmxmXQOltnmmUmhfK7G" type="video/webm"></source>
+</video>
+</center>
+
+<hr>
+
+<h2 id="rosbot-goal-control">Rosbot Goal Control</h2>
+
+<ul>
+  <li>
+<strong>관찰공간</strong> : 로봇 상태 / 목표할당시 로봇 상태 / 상대 위치 / 목표 전달 시간</li>
+  <li>
+<strong>행동공간</strong> : 전방속도, 좌우회전속도 (continuous)</li>
+  <li>
+<strong>보상값</strong> : world frame의 목표 위치와 world frame의 로봇 위치 차이</li>
+  <li>
+<strong>종료</strong> : 1) timestep<em>60</em>control_hz 초과 / 2) 목표 거리 0.1 이하</li>
+  <li>
+<strong>목표할당</strong> : Reset 시 -5~5 범위의 목표위치 생성</li>
+</ul>
+
+<d-code language="python" style="border:2px dashed gray;border-radius:10px;padding-left:5px;">
+# 관찰 공간의 각 Dimension 에 해당하는 값은 다음과 같다. 
+feature_names = [  #현재 상태 
+            'linear_velocity_1',
+            'linear_velocity_2',
+            'linear_velocity_3',
+            'linear_acceleration_1',
+            'linear_acceleration_2',
+            'linear_acceleration_3',
+            'raw',
+            'pitch',
+            'yaw',
+            'angular_velocity_1',
+            'angular_velocity_2',
+            'angular_velocity_3',
+        ]  + [  # 목표 할당시 상태 
+            'prev_linear_velocity_1',
+            'prev_linear_velocity_2',
+            'prev_linear_velocity_3',
+            'prev_linear_acceleration_1',
+            'prev_linear_acceleration_2',
+            'prev_linear_acceleration_3',
+            'prev_raw',
+            'prev_pitch',
+            'prev_yaw',
+            'prev_angular_velocity_1',
+            'prev_angular_velocity_2',
+            'prev_angular_velocity_3',
+        ] + [ # 목표 상대 위치 정보
+            'rel_x', 
+            'rel_y',
+            'duration'
+        ]
+        
+</d-code>
+
+<h2 id="sac-training-results-20231017">SAC Training Results 2023.10.17</h2>
+
+<ul>
+  <li>🗳️ code release: <a href="https://github.com/fxnnxc/add_cps/tree/v23.10.17.1" target="_blank" rel="noopener noreferrer">v23.10.17.1</a>
+</li>
+  <li>🔗 300K SAC 학습모델 / 분석 그림들 <a href="https://drive.google.com/drive/folders/1pexb0a5R9WzmyJXHpyNv47KKprHUfNHV?usp=drive_link" target="_blank" rel="noopener noreferrer">link</a>
+</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">rosbot_goal_control</code> 환경에 SAC으로 300K 시간에 대해서 학습한 모델의 구조는 다음과 같다. 
+Actor 와 Critic은 서로 파라미터를 공유하지 않으며, Critic 의 값은 (관찰값과 행동)에 대해서 $V$ 를 반환한다.</p>
+
+<d-code language="python" style="border:2px dashed gray;border-radius:10px;padding-left:5px;">
+Actor(
+  (mlp): Sequential(
+    (0): Linear(in_features=27, out_features=64, bias=True)
+    (1): Tanh()
+    (2): Linear(in_features=64, out_features=64, bias=True)
+    (3): Tanh()
+    (4): Linear(in_features=64, out_features=64, bias=True)
+    (5): Tanh()
+  )
+  (fc_mean): Linear(in_features=64, out_features=2, bias=True)
+  (fc_logstd): Linear(in_features=64, out_features=2, bias=True)
+)
+Critic(
+  (mlp): Sequential(
+    (0): Linear(in_features=29, out_features=64, bias=True)
+    (1): GELU(approximate='none')
+    (2): Linear(in_features=64, out_features=64, bias=True)
+    (3): GELU(approximate='none')
+    (4): Linear(in_features=64, out_features=1, bias=True)
+  )
+)
+</d-code>
+
+<p>학습 과정에서 episode의 return 값은 다음과 같다. 학습결과 100K 수준에서 보상이 수렴한 것을 확인할 수 있다. 
+성능이 -30 이후로 성능이 개선되지 않았는데, 이에 대해서 Upperbound 여부를 확인해봐야 한다.</p>
+
+<center>
+<img src="https://drive.google.com/uc?export=view&amp;id=15D4Izk8FA_Sl0sY-x_S5vSXin8OgnpLX" style="width:80%">
+</center>
+
+<hr>
+
+<p>로봇의 컨트롤 $action = (\beta, \alpha)$ 에 대해서 $\beta$는 전진하는 속도, $\alpha$는 회전 값으로 범위는 다음과 같다. $\beta \in [0,1]$ 과 $\alpha \in (-1, 1)$ 회전값은 $-1$ 의 경우 왼쪽, $+1$의 경우 오른쪽으로 나타낸다. 학습 완료된 모델에 대해서 목표로 하는 상대위치 $(rx,ry)$ 를 줬을 때 로봇의 행동을 분석해 보면 다음과 같다.</p>
+
+<ul>
+  <li>입력값: $[0,0,\cdots,0, rx,ry,0]$</li>
+  <li>출력 : $(\beta, \alpha)$</li>
+</ul>
+
+<center>
+<img src="https://drive.google.com/uc?export=view&amp;id=1_8nnH7TRBk-YsR5Tpssn7YBBYnOPPDER" style="width:49%">
+<img src="https://drive.google.com/uc?export=view&amp;id=17Ui29wMO2AJY2Dvn9Y6JOb0sFoNa8yZ0" style="width:49%">
+</center>
+
+<ul>
+  <li>회전값 $\alpha$가 y축을 기준으로 왼쪽과 오른쪽에 대해서 극단적인 회전으로 구분되는 것을 확인할 수 있다.</li>
+  <li>가속도 $\beta$는 전방 좌우에 대해서 1값으로 높은 것을 볼 수 있으며, (-2, 2) 부근에서는 상대적으로 낮은 속도를 내는 것을 확인한다. 이는 학습이 불충분하게 되었기 때문으로 사료된다.</li>
+</ul>
+
+<p>로봇의 실제 방향 $(dx,dy)$의 값을 $(\beta, \alpha)$ 로부터 다음과 같은 식으로 유도될 수 있다.</p>
+
+\[\begin{gather}
+\theta = (1-\alpha)/2 \pi \\
+dx = \beta \cdot \cos{\theta}  \\
+dy = \beta \cdot \sin{\theta}
+\end{gather}\]
+
+<p>방향벡터를 목표 위치 $(rx, ry) \in [-3,3] \times [-3,3]$ 의 위치에서 표시해보면 다음과 같은 로봇의 이동 선호도를 볼 수 있다.</p>
+
+<center>
+<img src="https://drive.google.com/uc?export=view&amp;id=1g7BEhpLTit7VEp4991lxrvJmVnfLNuF3" style="width:80%">
+</center>
+
+<hr>
+
+<h3 id="20231017--문제점--real-trajectory-가-완벽하지-않음">2023.10.17 : 문제점 : Real Trajectory 가 완벽하지 않음.</h3>
+
+<ul>
+  <li>Reward 가 제대로된 것과 별개로 모든 상태에 대해서 제대로 동작하는지 확실하지 않음.</li>
+  <li>Real Trajectory 가 더욱 제대로 되도록 학습되어야 함.</li>
+  <li>(<strong>필요</strong>) 학습 데이터를 더욱 일반화가 되도록 다양화 (입력의 속도/각도 등에 대해서 다양한 상태에서 시작해야 함. )</li>
+</ul>
+
+<center>
+<img src="https://drive.google.com/uc?export=view&amp;id=1GV5Xc5smpryb4KXlCtjDpLWeLsCJ8wMM" style="width:50%">
+</center>
+<ul>
+  <li>해당 그림은 CPU에서 학습된 모델로, Return 값이 좀더 낮긴 했음</li>
+</ul>
+
+<hr>
+
+<h3 id="20231018--rosbot-data-collect">2023.10.18:  Rosbot Data Collect</h3>
+
+<ul>
+  <li>
+    <p>Collaborator : 청웅</p>
+  </li>
+  <li>Linear : 1.0 0.5 0.1 (+/-) (1.0 이 대략 1미터)</li>
+  <li>Angular : 20 / 10 / 1 / 5 (+/-)</li>
+</ul>
+
+<hr>
+
+      </d-article>
+
+      <d-appendix>
+        <d-footnote-list></d-footnote-list>
+        <d-citation-list></d-citation-list>
+      </d-appendix>
+
+
+      <hr>
+<!---->
+</div>
+
+    <!-- Footer -->    <footer class="sticky-bottom mt-5" style="border: none;border-top:0px">
+      <div class="container" style="text-align: center; ">
+        © Copyright 2024 Bumjini  . Powered by Jekyll with al-folio theme. Hosted by GitHub Pages.
+
+      </div>
+    </footer>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js" integrity="sha256-l/1pMF/+J4TThfgARS6KwWrk/egwuVvhRzfLAMQ6Ds4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha256-SyTu6CwrfOhaznYZPoolVw2rxoY7lKYKQvqbtqN93HI=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    
+    
+
+<!-- Scrolling Progress Bar -->
+<script type="text/javascript">
+  /*
+   * This JavaScript code has been adapted from the article 
+   * https://css-tricks.com/reading-position-indicator/ authored by Pankaj Parashar, 
+   * published on the website https://css-tricks.com on the 7th of May, 2014.
+   * Couple of changes were made to the original code to make it compatible 
+   * with the `al-foio` theme.
+   */
+  const progressBar = $("#progress");
+  /*
+   * We set up the bar after all elements are done loading.
+   * In some cases, if the images in the page are larger than the intended
+   * size they'll have on the page, they'll be resized via CSS to accomodate
+   * the desired size. This mistake, however, breaks the computations as the
+   * scroll size is computed as soon as the elements finish loading.
+   * To account for this, a minimal delay was introduced before computing the
+   * values.
+   */
+  window.onload = function () {
+    setTimeout(progressBarSetup, 50);
+  };
+  /*
+   * We set up the bar according to the browser.
+   * If the browser supports the progress element we use that.
+   * Otherwise, we resize the bar thru CSS styling
+   */
+  function progressBarSetup() {
+    if ("max" in document.createElement("progress")) {
+      initializeProgressElement();
+      $(document).on("scroll", function() {
+        progressBar.attr({ value: getCurrentScrollPosition() });
+      });
+      $(window).on("resize", initializeProgressElement);
+    } else {
+      resizeProgressBar();
+      $(document).on("scroll", resizeProgressBar);
+      $(window).on("resize", resizeProgressBar);
+    }
+  }
+  /*
+   * The vertical scroll position is the same as the number of pixels that
+   * are hidden from view above the scrollable area. Thus, a value > 0 is
+   * how much the user has scrolled from the top
+   */
+  function getCurrentScrollPosition() {
+    return $(window).scrollTop();
+  }
+
+  function initializeProgressElement() {
+    let navbarHeight = $("#navbar").outerHeight(true);
+    $("body").css({ "padding-top": 0 });
+    $("progress-container").css({ "padding-top": 0 });
+    progressBar.css({ top: navbarHeight });
+    progressBar.attr({
+      max: getDistanceToScroll(),
+      value: getCurrentScrollPosition(),
+    });
+  }
+  /*
+   * The offset between the html document height and the browser viewport
+   * height will be greater than zero if vertical scroll is possible.
+   * This is the distance the user can scroll
+   */
+  function getDistanceToScroll() {
+    return $(document).height() - $(window).height();
+  }
+
+  function resizeProgressBar() {
+    progressBar.css({ width: getWidthPercentage() + "%" });
+  }
+  // The scroll ratio equals the percentage to resize the bar
+  function getWidthPercentage() {
+    return (getCurrentScrollPosition() / getDistanceToScroll()) * 100;
+  }
+</script>
+
+  </body>
+
+  <d-bibliography src="/assets/bibliography/">
+  </d-bibliography>
+
+  <!-- jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="/assets/js/distillpub/overrides.js"></script>
+
+    <center>
+        <img src="/assets/common/KAIST-hi.gif" width="40px" style="margin-right:0px; padding-bottom: 3px;">
+    </center>
+    <hr> 
+
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<!-- _layouts/distill.html -->
+<html>
+  <head>    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bumjini | [MARL-Message-Adaptor] 1. Framework </title>
+    <meta name="author" content="Bumjini  " />
+    <meta name="description" content="Project" />
+    <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website" />
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous" />
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="none" id="highlight_theme_light" />
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪴</text></svg>">
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://fxnnxc.github.io/Padd_cps/marl_experiments/">
+    
+    <!-- Dark Mode -->
+    
+
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams',
+        inlineMath: [['$','$'], ['\\(','\\)']]
+      },
+      chtml: {
+          scale: 1.0,
+          minScale: .6,  
+          mtextFontInherit: true,
+          mtextInheritFont: true,
+          merrorInheritFont: true,
+        },
+        svg: {
+          scale: 1.2
+        }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <!-- Distill js -->
+    <script src="/assets/js/distillpub/template.v2.js"></script>
+    <script src="/assets/js/distillpub/transforms.v2.js"></script>
+    
+  </head>
+
+  <d-front-matter>
+    <script async type="text/json">{
+      "title": "[MARL-Message-Adaptor] 1. Framework ",
+      "description": "Project",
+      "published": "January 25, 2024",
+      "authors": [
+        {
+          "author": "Bumjin Park",
+          "authorURL": "",
+          "affiliations": [
+            {
+              "name": "KAIST",
+              "url": ""
+            }
+          ]
+        }
+        
+      ],
+      "katex": {
+        "delimiters": [
+          {
+            "left": "$",
+            "right": "$",
+            "display": false
+          },
+          {
+            "left": "$$",
+            "right": "$$",
+            "display": true
+          }
+        ]
+      }
+    }</script>
+  </d-front-matter>
+
+  <body class="sticky-bottom-footer">
+
+    <!-- Header -->    
+    <center>
+      <img src="/assets/common/KAIST-hi.gif" width="40px" style="margin-right:0px; padding-bottom: 3px;">
+    </center>
+    <hr> 
+
+    <!-- Content -->
+    <div class="post distill">
+
+      <d-title>
+        <h1 style="font-size: 32px;">[MARL-Message-Adaptor] 1. Framework </h1>
+        <p>Project</p>
+      </d-title>
+
+      <d-byline></d-byline>
+
+      <d-article>
+        
+
+        <h2 id="메시지에-의한-행동-차이-중요성">메시지에 의한 행동 차이 중요성</h2>
+
+<p><img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%21900&amp;authkey=%21AN3mJJl1JF5cWZI&amp;width=853&amp;height=480" width="853" height="480"></p>
+
+<p><a href="https://1drv.ms/i/s!Asr4ZEBiKgSuhwVxE_iNwBLoepP8?e=wgyqkv" target="_blank" rel="noopener noreferrer">gif rendering issue.. GIF 이미지 링크</a></p>
+
+<hr>
+
+<h2 id="1-메시지-어뎁터-방식">1. 메시지 어뎁터 방식</h2>
+
+<p>어뎁터는 기존 에이전트의 행동에 대한 정보를 바탕으로 이를 보정하는 메시지 기반 모듈을 추가학습하여 모델을 개선한다.</p>
+
+<h2 id="2-액션-메시지-정의">2. 액션 메시지 정의</h2>
+
+<ol>
+  <li>기존 : 에이전트가 다른 에이전트에게 전달할 메시지를 만든다.</li>
+  <li>본 연구 : 에이전트가 본인의 행동과 관찰에 대해서 다른 메시지에게 전달한다.</li>
+</ol>
+
+<p>따라서 본 연구에서는 메시지 자체가 개별 에이전트가 결정된 행동 및 관찰 정보로 부터 유용한 정보로 정의한다. 
+행동을 결정할 당시 전달할 수 있는 메시지는 세 가지가 존재한다. 각 에이전트는 아래 정보들을 생성하여 다른 에이전트에게 전달한다.</p>
+
+<ul>
+  <li>처리된 관찰 값 : $h_i$</li>
+  <li>행동 및 확률 : $a_i, p_{a_{i}}$</li>
+  <li>다른 행동에 대한 확률 : $P_{a_{i}}$</li>
+</ul>
+
+\[m_i = (h_i, a_i, p_{a_{i}}, P_{a_{i}})\]
+
+<h3 id="3-processing-multiagent-messages">3. Processing Multiagent Messages</h3>
+
+<p>임의의 개수의 에이전트가 주는 메시지를 처리하기 위해서는 데이터를 pooling하는 것보다 RNN 으로 처리하여 정보를 최대한 보존하는 게 유리하다. 따라서 GRU 방식으로 메시지를 처리하였다. 
+(단, action_v1 만 구현된 상태고, message_v은 RNN이 아닌 Pooling 방식이다)</p>
+
+<h3 id="4-실험-결과">4. 실험 결과</h3>
+
+<h4 id="최종-보상">최종 보상</h4>
+
+<p>학습은 각 에이전트가 관찰로부터 보상을 최대화 하는 Step1 이후, 통신메시지를 결합하는 Step2를 진행하였다. 
+학습 시간은 2.5M이다. 아래 표는 학습 완료된 모델에 대해서 100 에피소드에 대한 보상의 평균과 분산을 나타낸다. 
+spread 환경에서는 통신을 통해서 모두 성능이 개선되었다. 그러나, reference 환경에서는 통신을 하는 것이 오히려 불안정성을 높혔는데, 이는 reference 에서는 이미 Step1에서 필요한 정보가 모두 존재하며, Step2는 보상최대를 위해 필요한 정보가 추가되지 않기 때문이다. Simple Tag 에서는 기존 Step1보다 성능이 저하되는 경우도 존재하였기에, 메시지 종류에 따라서 다른 성능을 보이는 것으로 확인된다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Environment</th>
+      <th>Model</th>
+      <th>Step1 Return</th>
+      <th>Step2 Return</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>mpe.simple_tag_v3</td>
+      <td>message_v1</td>
+      <td>$34.30 \pm(26.73)$</td>
+      <td>$\textcolor{green}{36.20 \pm(29.56)}$</td>
+    </tr>
+    <tr>
+      <td>mpe.simple_tag_v3</td>
+      <td>action_v1</td>
+      <td>$33.60 \pm(28.76)$</td>
+      <td>$\textcolor{red}{31.00 \pm(23.94)}$</td>
+    </tr>
+    <tr>
+      <td>mpe.simple_reference_v3</td>
+      <td>message_v1</td>
+      <td>$-40.36 \pm(14.91)$</td>
+      <td>$\textcolor{red}{-46.29 \pm(19.25)}$</td>
+    </tr>
+    <tr>
+      <td>mpe.simple_reference_v3</td>
+      <td>action_v1</td>
+      <td>$-39.76 \pm(14.39)$</td>
+      <td>$\textcolor{red}{-54.57 \pm(19.13)}$</td>
+    </tr>
+    <tr>
+      <td>mpe.simple_spread_v3</td>
+      <td>message_v1</td>
+      <td>$-65.79 \pm(35.68)$</td>
+      <td>$\textcolor{green}{-54.89 \pm(18.29)}$</td>
+    </tr>
+    <tr>
+      <td>mpe.simple_spread_v3</td>
+      <td>action_v1</td>
+      <td>$-64.76 \pm(32.98)$</td>
+      <td>$\textcolor{green}{-54.85 \pm(18.22)}$</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="학습-다이나믹스">학습 다이나믹스</h3>
+
+<h4 id="step2-adaptor-학습-비교">Step2: Adaptor 학습 비교</h4>
+
+<p><img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%21899&amp;authkey=%21ACPyZ9dgwToCcLw&amp;width=660" style="border:1px solid #000000" width="660" height="auto"></p>
+
+<p><img src="https://onedrive.live.com/embed?resid=AE042A624064F8CA%21901&amp;authkey=%21AAPm-_KxLiklRNQ&amp;width=806&amp;height=246" style="border:1px solid #000000"></p>
+
+<h2 id="결론">결론</h2>
+
+<p>메세지 adaptation은 일반적으로 더 높은 성능이 나오도록 학습된다. 
+그러나 어떤 메시지를 주는 지에 따라서 학습 성능이 다르다. 따라서 각 환경에 적합한 메시지의 형태를 고려할 필요가 있다. 
+논문의 주제는 message adaption framework의 제안. 메시지의 다양한 형태에 대한 제안이다.</p>
+
+<ol>
+  <li>심층 메시지는 항상 효율적인가? 아니다. 환경따라 다르고, 메시지 타입 따라 다르다 (정보가 많은 것은 그만큼 많은 처리를 필요로하고, MARL에서 더 오랜 시간 학습을 필요로 하고, 불안정성이 높다.)</li>
+  <li>심층 메시지의 효과를 나눠서 확인하는 방법은 무엇인가?, Message Adaptor framework</li>
+  <li>심층 메시지의 효과를 개선하는 방법은 무엇인가? Action Information Message</li>
+</ol>
+
+<hr>
+
+<h2 id="정리-안됨">정리 안됨</h2>
+
+<ol>
+  <li>메시지는 굉장히 노이즈한 경향성을 보인다.</li>
+  <li>메세지에 의존해서 전체 모델을 학습하는 것을 위험하다. (메시지가 noisy 한 경우는 어떻게 되는가? 잘 안되겠지. 불안정하겠지.)</li>
+  <li>구조적으로 메시지 노이즈를 처리할 수 있는 모듈은 어떤 형태인가?</li>
+</ol>
+
+<p>멀티에이전트에서 통신한다는 것은 정보교환이 발생하는 것을 나타낸다. 협업을 위해서 통신은 필수적이고, 
+이에 대하 효과를 명시적으로 확인하기 위해서는 통신의 효용만큼 에이전트의 행동이 개선되어 성능 향상을 보여야 한다.</p>
+
+<p>멀티에이전트 환경에서는 관찰, 에이전트의 행동과 같은 기본 요소들이 통신과 더불어 반응하여 기존 에이전트의 행동을 제대로 구분되게 보여주지 못한다. 
+각 에이전트의 컨트롤에 대한 부분과 통신에 대한 부분을 명시적으로 구분하는 것은 두 가지 장점이 있다.</p>
+
+<ol>
+  <li>기존 비통신 대비 성능 향상. 성능 향상에서 통신에 의한 행동 변화를 보여줌.</li>
+  <li>행동 자체의 변화에 대해서 해석할 수 있다.</li>
+</ol>
+
+<p>통신의 효과를 명시적으로 확인하고</p>
+
+<h2 id="성능-비교">성능 비교</h2>
+
+<p>행동을 관찰하는 것과 관찰 메시지를 전달받는 것은 성능 차이를 보이는가? 
+행동을 관찰하는 것과 의도에 대한 메시지를 전달받는 것은 성능 차이를 보이는가?</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>환경</td>
+      <td>에이전트 관찰</td>
+      <td>에이전트 관찰 메시지</td>
+      <td>에이전트 관찰+행동 메시지</td>
+    </tr>
+    <tr>
+      <td>simple_spread_v3</td>
+      <td>000</td>
+      <td>000</td>
+      <td>000</td>
+    </tr>
+    <tr>
+      <td>simple_reference_v3</td>
+      <td>000</td>
+      <td>000</td>
+      <td>000</td>
+    </tr>
+  </tbody>
+</table>
+
+      </d-article>
+
+      <d-appendix>
+        <d-footnote-list></d-footnote-list>
+        <d-citation-list></d-citation-list>
+      </d-appendix>
+
+
+      <hr>
+<!---->
+</div>
+
+    <!-- Footer -->    <footer class="sticky-bottom mt-5" style="border: none;border-top:0px">
+      <div class="container" style="text-align: center; ">
+        © Copyright 2024 Bumjini  . Powered by Jekyll with al-folio theme. Hosted by GitHub Pages.
+
+      </div>
+    </footer>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js" integrity="sha256-l/1pMF/+J4TThfgARS6KwWrk/egwuVvhRzfLAMQ6Ds4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha256-SyTu6CwrfOhaznYZPoolVw2rxoY7lKYKQvqbtqN93HI=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    
+    
+
+<!-- Scrolling Progress Bar -->
+<script type="text/javascript">
+  /*
+   * This JavaScript code has been adapted from the article 
+   * https://css-tricks.com/reading-position-indicator/ authored by Pankaj Parashar, 
+   * published on the website https://css-tricks.com on the 7th of May, 2014.
+   * Couple of changes were made to the original code to make it compatible 
+   * with the `al-foio` theme.
+   */
+  const progressBar = $("#progress");
+  /*
+   * We set up the bar after all elements are done loading.
+   * In some cases, if the images in the page are larger than the intended
+   * size they'll have on the page, they'll be resized via CSS to accomodate
+   * the desired size. This mistake, however, breaks the computations as the
+   * scroll size is computed as soon as the elements finish loading.
+   * To account for this, a minimal delay was introduced before computing the
+   * values.
+   */
+  window.onload = function () {
+    setTimeout(progressBarSetup, 50);
+  };
+  /*
+   * We set up the bar according to the browser.
+   * If the browser supports the progress element we use that.
+   * Otherwise, we resize the bar thru CSS styling
+   */
+  function progressBarSetup() {
+    if ("max" in document.createElement("progress")) {
+      initializeProgressElement();
+      $(document).on("scroll", function() {
+        progressBar.attr({ value: getCurrentScrollPosition() });
+      });
+      $(window).on("resize", initializeProgressElement);
+    } else {
+      resizeProgressBar();
+      $(document).on("scroll", resizeProgressBar);
+      $(window).on("resize", resizeProgressBar);
+    }
+  }
+  /*
+   * The vertical scroll position is the same as the number of pixels that
+   * are hidden from view above the scrollable area. Thus, a value > 0 is
+   * how much the user has scrolled from the top
+   */
+  function getCurrentScrollPosition() {
+    return $(window).scrollTop();
+  }
+
+  function initializeProgressElement() {
+    let navbarHeight = $("#navbar").outerHeight(true);
+    $("body").css({ "padding-top": 0 });
+    $("progress-container").css({ "padding-top": 0 });
+    progressBar.css({ top: navbarHeight });
+    progressBar.attr({
+      max: getDistanceToScroll(),
+      value: getCurrentScrollPosition(),
+    });
+  }
+  /*
+   * The offset between the html document height and the browser viewport
+   * height will be greater than zero if vertical scroll is possible.
+   * This is the distance the user can scroll
+   */
+  function getDistanceToScroll() {
+    return $(document).height() - $(window).height();
+  }
+
+  function resizeProgressBar() {
+    progressBar.css({ width: getWidthPercentage() + "%" });
+  }
+  // The scroll ratio equals the percentage to resize the bar
+  function getWidthPercentage() {
+    return (getCurrentScrollPosition() / getDistanceToScroll()) * 100;
+  }
+</script>
+
+  </body>
+
+  <d-bibliography src="/assets/bibliography/">
+  </d-bibliography>
+
+  <!-- jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="/assets/js/distillpub/overrides.js"></script>
+
+    <center>
+        <img src="/assets/common/KAIST-hi.gif" width="40px" style="margin-right:0px; padding-bottom: 3px;">
+    </center>
+    <hr> 
+
+</html>

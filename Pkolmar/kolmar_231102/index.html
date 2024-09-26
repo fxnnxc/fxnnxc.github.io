@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<!-- _layouts/distill.html -->
+<html>
+  <head>    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bumjini | [연구 6] Feature Based Materiality Prediction</title>
+    <meta name="author" content="Bumjini  " />
+    <meta name="description" content="물성에 대한 예측 수식적 모델링" />
+    <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website" />
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous" />
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="none" id="highlight_theme_light" />
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪴</text></svg>">
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://fxnnxc.github.io/Pkolmar/kolmar_231102/">
+    
+    <!-- Dark Mode -->
+    
+
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams',
+        inlineMath: [['$','$'], ['\\(','\\)']]
+      },
+      chtml: {
+          scale: 1.0,
+          minScale: .6,  
+          mtextFontInherit: true,
+          mtextInheritFont: true,
+          merrorInheritFont: true,
+        },
+        svg: {
+          scale: 1.2
+        }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <!-- Distill js -->
+    <script src="/assets/js/distillpub/template.v2.js"></script>
+    <script src="/assets/js/distillpub/transforms.v2.js"></script>
+    
+  </head>
+
+  <d-front-matter>
+    <script async type="text/json">{
+      "title": "[연구 6] Feature Based Materiality Prediction",
+      "description": "물성에 대한 예측 수식적 모델링",
+      "published": "November 2, 2023",
+      "authors": [
+        {
+          "author": "Bumjin Park",
+          "authorURL": "",
+          "affiliations": [
+            {
+              "name": "KAIST",
+              "url": ""
+            }
+          ]
+        }
+        
+      ],
+      "katex": {
+        "delimiters": [
+          {
+            "left": "$",
+            "right": "$",
+            "display": false
+          },
+          {
+            "left": "$$",
+            "right": "$$",
+            "display": true
+          }
+        ]
+      }
+    }</script>
+  </d-front-matter>
+
+  <body class="sticky-bottom-footer">
+
+    <!-- Header -->    
+    <center>
+      <img src="/assets/common/KAIST-hi.gif" width="40px" style="margin-right:0px; padding-bottom: 3px;">
+    </center>
+    <hr> 
+
+    <!-- Content -->
+    <div class="post distill">
+
+      <d-title>
+        <h1 style="font-size: 32px;">[연구 6] Feature Based Materiality Prediction</h1>
+        <p>물성에 대한 예측 수식적 모델링</p>
+      </d-title>
+
+      <d-byline></d-byline>
+
+      <d-article>
+        
+
+        <h2 id="report-info">Report Info</h2>
+
+<div class="spanbox" style="width:40rem;background-color:#FFFDFD;">
+  <ol>
+    <li>👨🏻‍💻 <strong>Code Release</strong>:  Tag <a href="https://github.com/fxnnxc/kolmar/tree/v23.11.01.1" target="_blank" rel="noopener noreferrer">v23.11.01.1</a>
+</li>
+    <li>📂 <strong>Raw Data</strong> :  (<code class="language-plaintext highlighter-rouge">raw_data:receipt_3</code>)   <br> # 3.1 은 1차 및 2처 처방을 합치고 코드별로 합산한 데이터</li>
+    <li>🗂️ <strong>Datasets</strong> :  (<code class="language-plaintext highlighter-rouge">ds:receipt_3_dl</code>)</li>
+    <li>👾 <strong>Models</strong> :  MLP</li>
+    <li>🦄 <strong>Trainers</strong> : (1, <code class="language-plaintext highlighter-rouge">mlp_regressor</code>)</li>
+    <li>📌 <strong>Related Notebooks</strong>
+      <ul>
+        <li><a href="https://github.com/fxnnxc/kolmar/blob/v23.11.01.1/labs/receipt_3_mlp/train_rmse.ipynb" target="_blank" rel="noopener noreferrer">train_rmse.ipynb</a></li>
+      </ul>
+    </li>
+  </ol>
+
+</div>
+
+<h2 id="소개">소개</h2>
+
+<p>여러 원료를 섞는 경우, 처방이라고 불리는 복잡한 상태의 혼합물이 만들어진다. 처방은 여러 원료들을 특정 비율로 섞은 물질로 고유의 기능과 물성을 가지고 있다. 대표적으로 화장품은 여러 원료들을 한데 섞어서 기능성을 띄고 사용감에 대한 물성을 가진다. 처방이라고 불리는 물질에 대한 기능과 물성은 물질을 혼합하는데 숙련된 연구자라면 감각적으로 예측할 수 있다. 그러나, 이를 위해서는 수많은 물질들을 다뤄보고 각 원료가 지니는 어떤 고유한 특징을 감각적으로 배워야 하며, 마지막으로 배합의 결과를 예측할 수 있어야 한다.</p>
+
+<p>물성 학습 과정에서 그들을 섞는 것에 대한 감각적인 인식을 이해하고 모델링 할 수 있다면, 감각적이던 물질 혼합에 대한 직감을 수식화하며 모델링 할 수 있고, 이를 활용하여 조합적으로 에측 가능한 수많은 처방들을 시도해볼 수 있다. 이 모델로부터 얻을 수 있는 효과는 다음과 같다. 원하는 목표 물성을 달성하기 위해 혼합물의 비율을 엮으로 조정할 수 있으며, 동일한 기능성과 물성을 가지는 화장품에 대해서 구성 원료를 바꿈으로써 비용감축을 이뤄낼 수 있다.</p>
+
+<p>따라서 감각적으로 모델링 하는 기능과 물성을 측정할 수 있는 모델이 있고, 그 모델이 정확하다면, 수많은 경우의 수를 바탕으로 실험을 했던 과거와 다르게 수많은 조합을 시험해볼 수 있으므로  얻을 수 있는 경제적 이익은 무궁무진하다.</p>
+
+<p>모든 원료에 대한 특성들을 $f_1, f_2, f_3, \cdots $ 라고 하자…. 이들은 모든 원료에 대해서 우리가 측정할 수 있는, 혹은 표현할 수 있는 모든 객관적인 특성을 나타낸다. 즉, 물질이 지니는 고유의 특성이며 이는 수치적으로 0~1 값으로 표현할 수 있다.</p>
+
+<p>예를 들어서, 점성이 0~100,000 범위로 측정된다면, 1/100000 으로 낮출 경우 점성을 0~1로 나타낼 수 있다. 
+비슷하게, Ph, 점성과 탄성이 존재하여, 세 값이 [0.5, 0.7, 0.8] 으로 상태를 표현할 수 있다. 
+이 표현 벡터를 feature vector (FV) 라고 부르자. 
+\(F = [F_1, F_2, \cdots]\)</p>
+
+<h3 id="아키텍처의-가정">아키텍처의 가정</h3>
+<ol>
+  <li>모든 물질은 특정 양 A가 주어지면 feature vector $F_A$ 로 나타낼 수 있다</li>
+  <li>모든 물질은 feature vector 로부터 물성은 결정된다.</li>
+</ol>
+
+<p>1번은 물질의 양이 다를 경우 특성이 다를 수 있음을 가정한다. 그러나 이 경우에도 특정 양에 대해서 유일한 feature vector 로 표현이 가능하다는 가정이다. 2번에 의해서 물성을 예측하는데 있어서 물질의 feature vector로부터 유도될 수 있음을 나타낸다.</p>
+
+<ul>
+  <li>만일 가정 1이 없다면, 물질의 특성을 나타내는 표현 자체가 불가능하거나, 특성 자체가 확률성을 띄는 것이다. 예를 들어서 온도, 시간에 따라서 특성이 변하는 경우에 해당한다. 따라서 고정된 환경에서 물질의 특성에 변화가 없다는 가정이다.</li>
+  <li>이는 물질의 특징을 feature vector로 표현한 정보로 특정 물성이 결정난다는 결정론이다. 해당 가정이 없다면, 예측 모델링이 불가능하거나 측정될 수 있는 feature FA가 아닌 다른 것들로 물성이 결정난다.</li>
+</ul>
+
+<p>따라서 다음과 같은 형태의 예측이 진행된다.</p>
+
+<center>
+<img src="https://drive.google.com/uc?export=view&amp;id=1coZdkpkxr83eALyFK1bMsYLfKYrUi1U8" style="width:50%;border:1px solid #FFDDDD;">
+</center>
+
+<h3 id="혼합물-모델링">혼합물 모델링</h3>
+<p>여러 물질을 섞어서 혼합물을 만드는 경우, 물질의 양과 feature vector 의 관계를 유도해야 한다. 
+이를 위해서 물질의 양에 상관없이 FA 가 결정난다고 가정하고, 여러 물질을 혼합하는 경우 feature vector 의 형태로 선형적으로 더해진다는 가정을 하자.</p>
+
+<ol>
+  <li>특정 물질은 충분한 양이 있다면, 양에 상관없는 feature vector를 지닌다.</li>
+  <li>여러 원료를 혼합시 feature vector는 넣는 비율만큼 선형적으로 증가한다.</li>
+</ol>
+
+<p>예시는 
+두 물질에 대한 고정된 FV들이 존재하고
+물의 FV : [0.3, 0.5, 0.8]
+꿀의 FV : [0.7, 0.2, 0.3]</p>
+
+<p>물 70 과 꿀 30을 섞는 경우, 비율 0.7 과 0.3에 의해서 혼합물의 FV는 다음과 같이 결정난다.</p>
+
+\[FV = 0.7 \cdot [0.3, 0.5, 0.8] + 0.3 \cdot  [0.7, 0.2, 0.3] = [0.42, 0.41, 0.65]\]
+
+<ul>
+  <li>만일 가정 3이 없다면, 물질의 양에 대해서 서로 다른 특성을 가정해야 하므로 모델링이 더욱 복잡해진다.</li>
+  <li>만일 가정 4가 없다면, 비율에 대해서 선형적으로 특성이 증가하는 것이 아닌, 다른 방식으로 더해진다.</li>
+</ul>
+
+<h2 id="딥러닝-기반-특성-학습">딥러닝 기반 특성 학습</h2>
+
+<p><strong>(딥러닝 기반 모델링은 위에서 설명한 혼합물 모델링이 아닌, 단순 원료의 양을 맵핑하여 학습한 결과이다.)</strong></p>
+
+<p>딥러닝 모델은 입력에 대해서 무수히 많은 뉴런들로 입력값을 처리하고, 최종 출력을 내놓는 형태이다. 특징은 크게</p>
+
+<ul>
+  <li>레이어의 개수  : 병렬적인 노드가 있는 레이어의 수. 보통 2~6개를 사용한다.</li>
+  <li>레이어의 노드 수 : hidden_dim 이라고도 불리며, 뉴런의 숫자이다. 보통 128~1024 개를 사용한다.</li>
+</ul>
+
+<p>아래 그림은 입력의 차원이 3, 출력의 차원이 1인 모델이다. 레어어는 3개이며, 중간 레이어는 3개의 노드를 가지고 있다.</p>
+
+<center>
+<img src="https://drive.google.com/uc?export=view&amp;id=1G6vwUnhroT9NshPX-uspkQFEK8GhiqVX" style="width:40%">
+</center>
+
+<h3 id="비선형-함수의-결합">비선형 함수의 결합</h3>
+
+<p>Multi-layer Perceptron (MLP) 모델은 각 레이어가 선형 결합이고, 레이어의 연결이 비선형으로 이루어진 형태이다. 보통 비선형 함수는  <code class="language-plaintext highlighter-rouge">Sigmoid</code>, <code class="language-plaintext highlighter-rouge">ReLU</code>, <code class="language-plaintext highlighter-rouge">Tanh</code> 와 같은 함수들을 사용한다. 아래 그림에서 비선형 부분은 초록색으로 표시하였다.</p>
+
+<p><img src="https://drive.google.com/uc?export=view&amp;id=16bC2ZxkRl587IsP1gTIe9WjO8Pk2t5-j" style="width:100%;border:1px solid #FFDDDD;"></p>
+
+<h2 id="mlp-학습-결과">MLP 학습 결과</h2>
+
+<ul>
+  <li>데이터 : 1차 + 2차 처방 데이터  (샘플수 1745개 / 코드 개수 5485개)</li>
+  <li>
+<strong>학습데이터</strong> (1221, 5485), (1221,)</li>
+  <li>
+<strong>테스트데이터</strong> (524, 5485), (524,)</li>
+</ul>
+
+<p>최고 성능을 보이는 모델은 학습에 대해서 234 에러 / 테스트에 대해서 4922 에러를 보였다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">ACT</th>
+      <th style="text-align: center">HIDDEN_DIM</th>
+      <th style="text-align: center">N_ENTRIES</th>
+      <th style="text-align: center">NUM_LAYERS</th>
+      <th style="text-align: center">OPTIM</th>
+      <th>(Eval+Train)/2</th>
+      <th>Eval</th>
+      <th>Train</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">sigmoid</td>
+      <td style="text-align: center">128</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">6</td>
+      <td style="text-align: center">adam</td>
+      <td><strong>2578</strong></td>
+      <td><strong>4922</strong></td>
+      <td><strong>234</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">sigmoid</td>
+      <td style="text-align: center">128</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">adam</td>
+      <td><strong>2622</strong></td>
+      <td><strong>5042</strong></td>
+      <td><strong>202</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">tanh</td>
+      <td style="text-align: center">128</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">6</td>
+      <td style="text-align: center">sgd</td>
+      <td><strong>2665</strong></td>
+      <td><strong>4950</strong></td>
+      <td><strong>381</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">sigmoid</td>
+      <td style="text-align: center">256</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">adam</td>
+      <td><strong>2673</strong></td>
+      <td><strong>5133</strong></td>
+      <td><strong>214</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">relu</td>
+      <td style="text-align: center">256</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">sgd</td>
+      <td><strong>2721</strong></td>
+      <td><strong>5124</strong></td>
+      <td><strong>318</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">relu</td>
+      <td style="text-align: center">256</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">6</td>
+      <td style="text-align: center">sgd</td>
+      <td><strong>2735</strong></td>
+      <td><strong>5180</strong></td>
+      <td><strong>290</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">sigmoid</td>
+      <td style="text-align: center">256</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">adam</td>
+      <td><strong>2743</strong></td>
+      <td><strong>5264</strong></td>
+      <td><strong>222</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="8개-학습-모델에-대한-학습-커브">8개 학습 모델에 대한 학습 커브</h3>
+
+<p>위 : 테스트 데이터
+아래 : 테스트 데이터</p>
+
+<p>그림은 학습경과에 따라서 Error 감소를 보여준다.</p>
+
+<div class="spanbox" style="width:100%;background-color:#FFFDFD;margin-left:0rem;">
+
+  <h4 id="top-5-model-training-curves">Top 5 Model Training Curves</h4>
+
+  <p><img src="https://drive.google.com/uc?export=view&amp;id=14FUmw8bGBah6EVQDB6Q7uAaXiLAcD4zV" style="width:100%"></p>
+
+  <h4 id="bottom-5-model-training-curves">Bottom 5 Model Training Curves</h4>
+
+  <p><img src="https://drive.google.com/uc?export=view&amp;id=1Rz3Xqj9wTYDyccLh9G0SGC3QsQU7lOgL" style="width:100%"></p>
+
+</div>
+
+<h3 id="hyperparameter-test">Hyperparameter Test</h3>
+
+<p>MLP를 학습할 때, 하이퍼파라미터에 따라서 학습 진행 과정을 보여준다.</p>
+
+<div class="spanbox" style="width:60rem;background-color:#FFFDFD;margin-left:-5rem;">
+  <center>
+<img src="https://drive.google.com/uc?export=view&amp;id=1YiixXR5uBuWe28shhZ1Q9FbANdlVrZTy" style="width:100%">
+</center>
+</div>
+
+<h3 id="전체-모델-성능">전체 모델 성능</h3>
+
+<p>테스트와 학습 에러에 대해서 평균낸 점수를 기준으로 정렬하였다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">ACT</th>
+      <th style="text-align: center">HIDDEN_DIM</th>
+      <th style="text-align: center">N_ENTRIES</th>
+      <th style="text-align: center">NUM_LAYERS</th>
+      <th style="text-align: center">OPTIM</th>
+      <th>(Eval+Train)/2</th>
+      <th>Eval</th>
+      <th>Train</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">sigmoid</td>
+      <td style="text-align: center">128</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">6</td>
+      <td style="text-align: center">adam</td>
+      <td><strong>2578</strong></td>
+      <td><strong>4922</strong></td>
+      <td><strong>234</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">sigmoid</td>
+      <td style="text-align: center">128</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">adam</td>
+      <td><strong>2622</strong></td>
+      <td><strong>5042</strong></td>
+      <td><strong>202</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">tanh</td>
+      <td style="text-align: center">128</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">6</td>
+      <td style="text-align: center">sgd</td>
+      <td><strong>2665</strong></td>
+      <td><strong>4950</strong></td>
+      <td><strong>381</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">sigmoid</td>
+      <td style="text-align: center">256</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">adam</td>
+      <td><strong>2673</strong></td>
+      <td><strong>5133</strong></td>
+      <td><strong>214</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">relu</td>
+      <td style="text-align: center">256</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">sgd</td>
+      <td><strong>2721</strong></td>
+      <td><strong>5124</strong></td>
+      <td><strong>318</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">relu</td>
+      <td style="text-align: center">256</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">6</td>
+      <td style="text-align: center">sgd</td>
+      <td><strong>2735</strong></td>
+      <td><strong>5180</strong></td>
+      <td><strong>290</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">sigmoid</td>
+      <td style="text-align: center">256</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">adam</td>
+      <td><strong>2743</strong></td>
+      <td><strong>5264</strong></td>
+      <td><strong>222</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">tanh</td>
+      <td style="text-align: center">128</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">sgd</td>
+      <td><strong>2747</strong></td>
+      <td><strong>5099</strong></td>
+      <td><strong>394</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">tanh</td>
+      <td style="text-align: center">256</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">6</td>
+      <td style="text-align: center">sgd</td>
+      <td><strong>2754</strong></td>
+      <td><strong>5126</strong></td>
+      <td><strong>381</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">tanh</td>
+      <td style="text-align: center">256</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">sgd</td>
+      <td><strong>2839</strong></td>
+      <td><strong>5272</strong></td>
+      <td><strong>405</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">relu</td>
+      <td style="text-align: center">128</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">6</td>
+      <td style="text-align: center">sgd</td>
+      <td><strong>2850</strong></td>
+      <td><strong>5211</strong></td>
+      <td><strong>489</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">sigmoid</td>
+      <td style="text-align: center">128</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">adam</td>
+      <td><strong>2916</strong></td>
+      <td><strong>5562</strong></td>
+      <td><strong>270</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">relu</td>
+      <td style="text-align: center">128</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">sgd</td>
+      <td><strong>2979</strong></td>
+      <td><strong>5564</strong></td>
+      <td><strong>393</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">tanh</td>
+      <td style="text-align: center">128</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">sgd</td>
+      <td><strong>3005</strong></td>
+      <td><strong>5509</strong></td>
+      <td><strong>500</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">relu</td>
+      <td style="text-align: center">256</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">sgd</td>
+      <td><strong>3024</strong></td>
+      <td><strong>5678</strong></td>
+      <td><strong>371</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">relu</td>
+      <td style="text-align: center">128</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">sgd</td>
+      <td><strong>3039</strong></td>
+      <td><strong>5620</strong></td>
+      <td><strong>458</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">tanh</td>
+      <td style="text-align: center">256</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">sgd</td>
+      <td><strong>3060</strong></td>
+      <td><strong>5612</strong></td>
+      <td><strong>508</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">tanh</td>
+      <td style="text-align: center">128</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">adam</td>
+      <td><strong>3211</strong></td>
+      <td><strong>5754</strong></td>
+      <td><strong>669</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">sigmoid</td>
+      <td style="text-align: center">128</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">sgd</td>
+      <td><strong>3523</strong></td>
+      <td><strong>5576</strong></td>
+      <td><strong>1470</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">sigmoid</td>
+      <td style="text-align: center">256</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">sgd</td>
+      <td><strong>3605</strong></td>
+      <td><strong>5504</strong></td>
+      <td><strong>1706</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">sigmoid</td>
+      <td style="text-align: center">128</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">sgd</td>
+      <td><strong>3703</strong></td>
+      <td><strong>5527</strong></td>
+      <td><strong>1878</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">tanh</td>
+      <td style="text-align: center">128</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">adam</td>
+      <td><strong>3719</strong></td>
+      <td><strong>5685</strong></td>
+      <td><strong>1754</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">tanh</td>
+      <td style="text-align: center">256</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">adam</td>
+      <td><strong>3863</strong></td>
+      <td><strong>5950</strong></td>
+      <td><strong>1776</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">sigmoid</td>
+      <td style="text-align: center">256</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">sgd</td>
+      <td><strong>3932</strong></td>
+      <td><strong>5619</strong></td>
+      <td><strong>2246</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">sigmoid</td>
+      <td style="text-align: center">128</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">6</td>
+      <td style="text-align: center">sgd</td>
+      <td><strong>3989</strong></td>
+      <td><strong>5673</strong></td>
+      <td><strong>2305</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">relu</td>
+      <td style="text-align: center">128</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">6</td>
+      <td style="text-align: center">adam</td>
+      <td><strong>4022</strong></td>
+      <td><strong>6548</strong></td>
+      <td><strong>1495</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">sigmoid</td>
+      <td style="text-align: center">256</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">6</td>
+      <td style="text-align: center">sgd</td>
+      <td><strong>4152</strong></td>
+      <td><strong>5594</strong></td>
+      <td><strong>2710</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">relu</td>
+      <td style="text-align: center">128</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">adam</td>
+      <td><strong>4432</strong></td>
+      <td><strong>8374</strong></td>
+      <td><strong>490</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">relu</td>
+      <td style="text-align: center">256</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">adam</td>
+      <td><strong>4725</strong></td>
+      <td><strong>8854</strong></td>
+      <td><strong>595</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">relu</td>
+      <td style="text-align: center">256</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">adam</td>
+      <td><strong>4846</strong></td>
+      <td><strong>9242</strong></td>
+      <td><strong>451</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">relu</td>
+      <td style="text-align: center">128</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">adam</td>
+      <td><strong>5261</strong></td>
+      <td><strong>9703</strong></td>
+      <td><strong>820</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">tanh</td>
+      <td style="text-align: center">256</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">adam</td>
+      <td><strong>14840</strong></td>
+      <td><strong>15000</strong></td>
+      <td><strong>14679</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">tanh</td>
+      <td style="text-align: center">128</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">6</td>
+      <td style="text-align: center">adam</td>
+      <td><strong>14931</strong></td>
+      <td><strong>14971</strong></td>
+      <td><strong>14890</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">relu</td>
+      <td style="text-align: center">256</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">6</td>
+      <td style="text-align: center">adam</td>
+      <td><strong>14944</strong></td>
+      <td><strong>15000</strong></td>
+      <td><strong>14888</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">sigmoid</td>
+      <td style="text-align: center">256</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">6</td>
+      <td style="text-align: center">adam</td>
+      <td><strong>14944</strong></td>
+      <td><strong>15000</strong></td>
+      <td><strong>14888</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">tanh</td>
+      <td style="text-align: center">256</td>
+      <td style="text-align: center">-1</td>
+      <td style="text-align: center">6</td>
+      <td style="text-align: center">adam</td>
+      <td><strong>14961</strong></td>
+      <td><strong>15030</strong></td>
+      <td><strong>14891</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+      </d-article>
+
+      <d-appendix>
+        <d-footnote-list></d-footnote-list>
+        <d-citation-list></d-citation-list>
+      </d-appendix>
+
+
+      <hr>
+<!--<div id="giscus_thread" style="max-width: 1000px; margin: 0 auto;">
+    <script>
+      let giscusTheme = localStorage.getItem("theme");
+      let giscusAttributes = {
+          "src": "https://giscus.app/client.js",
+          "data-repo": "fxnnxc/fxnnxc",
+          "data-repo-id": "MDEwOlJlcG9zaXRvcnkzMjQ2NjUxMTU=",
+          "data-category": "Q&A",
+          "data-category-id": "DIC_kwDOE1n_G84CYOk_",
+          "data-mapping": "title",
+          "data-strict": "0",
+          "data-reactions-enabled": "1",
+          "data-emit-metadata": "0",
+          "data-input-position": "top",
+          "data-theme": giscusTheme,
+          "data-lang": "en",
+          "crossorigin": "anonymous",
+          "async": "",
+      };
+  
+  
+      let giscusScript = document.createElement("script");
+      Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+      document.getElementById("giscus_thread").appendChild(giscusScript);
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript">comments powered by giscus.</a></noscript>
+  </div>--><div id="giscus_thread" style="max-width: 1000px; margin: 0 auto;">
+    <script>
+      let giscusTheme = localStorage.getItem("theme");
+      let giscusAttributes = {
+          "src": "https://giscus.app/client.js",
+          "data-repo": "fxnnxc/fxnnxc",
+          "data-repo-id": "MDEwOlJlcG9zaXRvcnkzMjQ2NjUxMTU=",
+          "data-category": "Q&A",
+          "data-category-id": "DIC_kwDOE1n_G84CYOk_",
+          "data-mapping": "title",
+          "data-strict": "0",
+          "data-reactions-enabled": "1",
+          "data-emit-metadata": "0",
+          "data-input-position": "top",
+          "data-theme": giscusTheme,
+          "data-lang": "en",
+          "crossorigin": "anonymous",
+          "async": "",
+      };
+  
+  
+      let giscusScript = document.createElement("script");
+      Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+      document.getElementById("giscus_thread").appendChild(giscusScript);
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript" target="_blank" rel="noopener noreferrer">comments powered by giscus.</a>
+</noscript>
+  </div>
+</div>
+
+    <!-- Footer -->    <footer class="sticky-bottom mt-5" style="border: none;border-top:0px">
+      <div class="container" style="text-align: center; ">
+        © Copyright 2024 Bumjini  . Powered by Jekyll with al-folio theme. Hosted by GitHub Pages.
+
+      </div>
+    </footer>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js" integrity="sha256-l/1pMF/+J4TThfgARS6KwWrk/egwuVvhRzfLAMQ6Ds4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha256-SyTu6CwrfOhaznYZPoolVw2rxoY7lKYKQvqbtqN93HI=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    
+    
+
+<!-- Scrolling Progress Bar -->
+<script type="text/javascript">
+  /*
+   * This JavaScript code has been adapted from the article 
+   * https://css-tricks.com/reading-position-indicator/ authored by Pankaj Parashar, 
+   * published on the website https://css-tricks.com on the 7th of May, 2014.
+   * Couple of changes were made to the original code to make it compatible 
+   * with the `al-foio` theme.
+   */
+  const progressBar = $("#progress");
+  /*
+   * We set up the bar after all elements are done loading.
+   * In some cases, if the images in the page are larger than the intended
+   * size they'll have on the page, they'll be resized via CSS to accomodate
+   * the desired size. This mistake, however, breaks the computations as the
+   * scroll size is computed as soon as the elements finish loading.
+   * To account for this, a minimal delay was introduced before computing the
+   * values.
+   */
+  window.onload = function () {
+    setTimeout(progressBarSetup, 50);
+  };
+  /*
+   * We set up the bar according to the browser.
+   * If the browser supports the progress element we use that.
+   * Otherwise, we resize the bar thru CSS styling
+   */
+  function progressBarSetup() {
+    if ("max" in document.createElement("progress")) {
+      initializeProgressElement();
+      $(document).on("scroll", function() {
+        progressBar.attr({ value: getCurrentScrollPosition() });
+      });
+      $(window).on("resize", initializeProgressElement);
+    } else {
+      resizeProgressBar();
+      $(document).on("scroll", resizeProgressBar);
+      $(window).on("resize", resizeProgressBar);
+    }
+  }
+  /*
+   * The vertical scroll position is the same as the number of pixels that
+   * are hidden from view above the scrollable area. Thus, a value > 0 is
+   * how much the user has scrolled from the top
+   */
+  function getCurrentScrollPosition() {
+    return $(window).scrollTop();
+  }
+
+  function initializeProgressElement() {
+    let navbarHeight = $("#navbar").outerHeight(true);
+    $("body").css({ "padding-top": 0 });
+    $("progress-container").css({ "padding-top": 0 });
+    progressBar.css({ top: navbarHeight });
+    progressBar.attr({
+      max: getDistanceToScroll(),
+      value: getCurrentScrollPosition(),
+    });
+  }
+  /*
+   * The offset between the html document height and the browser viewport
+   * height will be greater than zero if vertical scroll is possible.
+   * This is the distance the user can scroll
+   */
+  function getDistanceToScroll() {
+    return $(document).height() - $(window).height();
+  }
+
+  function resizeProgressBar() {
+    progressBar.css({ width: getWidthPercentage() + "%" });
+  }
+  // The scroll ratio equals the percentage to resize the bar
+  function getWidthPercentage() {
+    return (getCurrentScrollPosition() / getDistanceToScroll()) * 100;
+  }
+</script>
+
+  </body>
+
+  <d-bibliography src="/assets/bibliography/">
+  </d-bibliography>
+
+  <!-- jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="/assets/js/distillpub/overrides.js"></script>
+
+    <center>
+        <img src="/assets/common/KAIST-hi.gif" width="40px" style="margin-right:0px; padding-bottom: 3px;">
+    </center>
+    <hr> 
+
+</html>

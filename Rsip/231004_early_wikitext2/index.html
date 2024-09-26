@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<!-- _layouts/distill.html -->
+<html>
+  <head>    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bumjini | [3] SIP with wikitext for 10 classes</title>
+    <meta name="author" content="Bumjini  " />
+    <meta name="description" content="GPT 모델 파라미터로 문장을 인코딩하여, 다음 단어 예측 표현으로 원천소스를 맵핑한다. 모델 사이즈별로 유의미한 차이가 있음을 발견하였다. " />
+    <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website" />
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous" />
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="none" id="highlight_theme_light" />
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪴</text></svg>">
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://fxnnxc.github.io/Rsip/231004_early_wikitext2/">
+    
+    <!-- Dark Mode -->
+    
+
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams',
+        inlineMath: [['$','$'], ['\\(','\\)']]
+      },
+      chtml: {
+          scale: 1.0,
+          minScale: .6,  
+          mtextFontInherit: true,
+          mtextInheritFont: true,
+          merrorInheritFont: true,
+        },
+        svg: {
+          scale: 1.2
+        }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <!-- Distill js -->
+    <script src="/assets/js/distillpub/template.v2.js"></script>
+    <script src="/assets/js/distillpub/transforms.v2.js"></script>
+    
+    <!-- Page/Post style -->
+    <style type="text/css">
+      .table {
+    padding-top:200px;
+    margin-bottom: 2.5rem;
+    border-bottom: 2px;
+} .p {
+    font-size:20px;
+}
+
+    </style>
+  </head>
+
+  <d-front-matter>
+    <script async type="text/json">{
+      "title": "[3] SIP with wikitext for 10 classes",
+      "description": "GPT 모델 파라미터로 문장을 인코딩하여, 다음 단어 예측 표현으로 원천소스를 맵핑한다. 모델 사이즈별로 유의미한 차이가 있음을 발견하였다. ",
+      "published": "October 4, 2023",
+      "authors": [
+        {
+          "author": "Bumjin Park",
+          "authorURL": "",
+          "affiliations": [
+            {
+              "name": "KAIST",
+              "url": ""
+            }
+          ]
+        }
+        
+      ],
+      "katex": {
+        "delimiters": [
+          {
+            "left": "$",
+            "right": "$",
+            "display": false
+          },
+          {
+            "left": "$$",
+            "right": "$$",
+            "display": true
+          }
+        ]
+      }
+    }</script>
+  </d-front-matter>
+
+  <body class="sticky-bottom-footer">
+
+    <!-- Header -->    
+    <center>
+      <img src="/assets/common/KAIST-hi.gif" width="40px" style="margin-right:0px; padding-bottom: 3px;">
+    </center>
+    <hr> 
+
+    <!-- Content -->
+    <div class="post distill">
+
+      <d-title>
+        <h1 style="font-size: 32px;">[3] SIP with wikitext for 10 classes</h1>
+        <p>GPT 모델 파라미터로 문장을 인코딩하여, 다음 단어 예측 표현으로 원천소스를 맵핑한다. 모델 사이즈별로 유의미한 차이가 있음을 발견하였다. </p>
+      </d-title>
+
+      <d-byline></d-byline>
+
+      <d-article>
+        
+
+        <h2 id="1-introduction">1. Introduction</h2>
+
+<p>데이터에 대한 원천소스를 찾기 위해서 할 수 있는 쉬운 방법은 텍스트를 암기하는 것이다. 주어진 모델에 대해서 암기를 하는 방법은 크게 두 가지가 있다. 
+1) 주어진 문장의 N-gram에 대해서 원천소스에 맵핑하는 방법 2) 주어진 문장을 모델에 넣고 주어진 표현으로 원천소스를 맵핑하는 방법. 이 중 두 번째, 주어진 문잦을 모델에 넣는 방법은 주어진 문장에 대한 모델의 표현을 얻어, 이로부터 원천소스를 맵핑하는 방법이다. 만일 모델이 주어진 문장에 대해서, 다음에 나타날 단어를 어느정도 알고 있다면, 그 정보로부터 문장의 출처를 암기하는데 사용할 수 있다는 관점이다.</p>
+
+<ol>
+  <li>모델이 문장에 대해서 다음에 나타날 표현을 알고 있다.</li>
+  <li>알고 있는 문장이므로, 소스를 암기해야 한다.</li>
+</ol>
+
+<p>반대로, 문장의 표현을 제대로 알고 있지 못하다면, 다음에 나타나는 단어들은 랜덤한 형태를 띄고, 원천소스를 암기할 필요가 없다. 
+즉, <strong>문장의 의미를 알고 있다면, 원천소스도 기억해라</strong> 라는 의무적인 모델링 방식이다.</p>
+
+<p>이러한 철학으로부터 다음으로 고민할 문제는 문장의 의미를 인지하고 있는지 알고 있는 표현으로부터 원천소스를 맵핑하는 방법이다. 
+이는 Probing 연구와 비슷하게, 해당 표현으로부터 원천소스를 맵핑하는 Classification 혹은 Generation 문제로 치환하는 것이다. 
+이 실험에서는 간단한 Probing + Classification 으로 두 가지를 확인한다.</p>
+
+<ol>
+  <li>문장이 길수록 원천소스 암기력은 올라가는가?</li>
+  <li>모델 사이즈가 클수록 암기력은 올라가는가?</li>
+</ol>
+
+<p>두 가지는 새로운 내용이 아니며, 어느정도 당연한 사실이다. 이 사실을 실험을 통해서 검증한다. 
+Probing에 사용된 방식은 GPT 모델에 문장을 넣고 나오는 Next Token Prediction 전 Hidden Representation 을 Mean Pooling하고, LayerNorm 을 거쳐서 128차원 ReLU Activation을 가지는 6개 Linear Layer MLP 모델이다. 또한, 원천소스는 10개의 클래스에 대해서 진행하였고, 각 클래스별 샘플 수는 최소 200개에서 최대 1000개이다.</p>
+
+<h2 id="2-number-of-words-comparison">2. Number of Words Comparison</h2>
+
+<ul>
+  <li>Hyperparameter is the for num_words in <code class="language-plaintext highlighter-rouge">[4 8 16]</code>
+</li>
+  <li>Model Size : <code class="language-plaintext highlighter-rouge">Pythia-1b</code>
+</li>
+</ul>
+
+<p><strong>결론</strong> : 단어 길이가 길수록 정확도가 오르며, 너무 짧은 경우 학습 Loss 가 줄어들지 않았다. 8개부터는 보다 자연스러운 학습이 되는 것으로 간주된다.</p>
+
+<p>데이터 생성 시 원천소스의 문장들은 단어 개수로 나누기 때문에, 단어 개수가 많아질수록 학습 데이터 수는 줄어든다. 따라서 8개 정도면 wikitext2 데이터에서 충분한 샘플 수를 보장할 수 있는 것으로 보인다.</p>
+
+<figure style="margin-left:-10rem; width:150%">
+<img src="https://drive.google.com/uc?export=view&amp;id=1A-QHI96khQt84rwlSE6judHweaPby4pF">
+</figure>
+
+<hr>
+
+<h2 id="3-pythia-model-size-comparison--binary">3. Pythia Model Size Comparison : Binary</h2>
+
+<ul>
+  <li>Hyperparameter is the model size : <code class="language-plaintext highlighter-rouge">['70m', '160m', '410m', '1b', '1.4b', '2.8b', '6.9b', '12b']</code>
+</li>
+  <li>num_words: <code class="language-plaintext highlighter-rouge">8</code>
+</li>
+</ul>
+
+<p>여기서는 모델 사이즈에 대해서 검증한다. 모델 사이즈가 클수록 다음에 나타나는 단어를 정확하게 예측할 수 있으므로, 성능이 우수하다. 
+<code class="language-plaintext highlighter-rouge">1B</code> 이상의 모델이 원천소스를 기억하는데 사용될 수 있으며, <code class="language-plaintext highlighter-rouge">6B</code> 이상부터는 더욱 빠르게 원천소스를 예측할 수 있는 것을 확인한다.</p>
+
+<figure style="margin-left:-10rem; width:150%">
+<img src="https://drive.google.com/uc?export=view&amp;id=1F0TvufzyBdxlGqgxQDdU7D7Q2D5sKfck">
+</figure>
+
+<p>여기서 Class Label로 활용된 방식은 Binary 로, 아래와 같은 형태의 레이블을 지닌다.</p>
+
+<d-code language="python">
+----Hash-------
+ Valkyria Chronicles III                   : 0001
+ USS Atlanta ( 1861 )                      : 0010
+ Gambia women 's national football team    : 0011
+  Mary Barker                              : 0100
+ 2011 – 12 Columbus Blue Jackets season    : 0101
+ There 's Got to Be a Way                  : 0110
+ Plain maskray                             : 0111
+ Gregorian Tower                           : 1000
+ Nebraska Highway 88                       : 1001
+  ; Sv %                                   : 1010
+ Tower Building of the Little Rock Arsenal : 1011
+---------------
+</d-code>
+
+<hr>
+
+<h2 id="4-pythia-model-size-comparison--category">4. Pythia Model Size Comparison : Category</h2>
+
+<ul>
+  <li>Hyperparameter is the model size : <code class="language-plaintext highlighter-rouge">['70m', '160m', '410m', '1b', '1.4b', '2.8b', '6.9b', '12b']</code>
+</li>
+  <li>num_words: <code class="language-plaintext highlighter-rouge">8</code>
+</li>
+</ul>
+
+<p>단순 원천소스 분류의 경우, 레이블을 Binary형태가 아닌 Category 형태로 만들 수 있다. 이 경우, <code class="language-plaintext highlighter-rouge">410m</code> 모델 또한 학습이 가능했다. 
+그러나 여전히 모델 사이즈가 커야 학습이 된다. <code class="language-plaintext highlighter-rouge">70m</code>의 경우 학습이 되지 않는 것을 확인할 수 있다.</p>
+
+<p>궁극적으로, 모델 사이즈가 작은 경우, Category 방식이 Binary 방식보다 좀더 학습이 잘 되는 것을 확인하였는데, 
+모델 사이즈가 큰 경우 두 학습 결과에는 차이가 없다.</p>
+
+<figure style="margin-left:-10rem; width:150%">
+<img src="https://drive.google.com/uc?export=view&amp;id=1zra8OkZYg0dANK7RbcsmyUJ3k14dVwFI">
+</figure>
+
+<d-code language="python">
+----Hash-------
+ Valkyria Chronicles III                   : 1
+ USS Atlanta ( 1861 )                      : 2
+ Gambia women 's national football team    : 3
+  Mary Barker                              : 4
+ 2011 – 12 Columbus Blue Jackets season    : 5
+ There 's Got to Be a Way                  : 6
+ Plain maskray                             : 7
+ Gregorian Tower                           : 8
+ Nebraska Highway 88                       : 9
+  ; Sv %                                   : 10
+ Tower Building of the Little Rock Arsenal : 11
+---------------
+</d-code>
+
+<h2 id="5-결론-및-추가-실험">5. 결론 및 추가 실험</h2>
+
+<p>다음 단어 예측으로 원천소스를 인코딩 하는 경우, 모델이 문장을 암기하는 수준으로부터 원천소스 암기 가능성을 볼 수 있다. 
+이는 Memorization을 평가하는 한 가지 방법으로 보인다.</p>
+
+<p>원천 소스 정확도가 목적인 경우 대안은 다음과 같다. 적어도 성능 비교를 위해서 할 필요는 있다. 다만, 해당 테스크는 원천소스와 모델 파라미터의 관계에 대해서 정보를 주지 못하므로, 본 연구와는 차이가 있다.</p>
+
+<ol>
+  <li>개별 모델 BERT Encoding –&gt; Prediction (단점: 모델과 원천소스의 관계성은 없다. 원천소스 예측 Task)</li>
+  <li>GPT Input Embedding 사용 (Prediction 대신)</li>
+</ol>
+
+<p>추가 데이터셋</p>
+<ol>
+  <li>Plain English : 책 어휘와 같은 데이터 셋</li>
+  <li>PhilPaper : 논문 데이터셋</li>
+</ol>
+
+<hr>
+
+<p><button onclick="myFunction(1)" style="background-color:#FFDD00;border-radius:10px">Open Appendix</button></p>
+
+<div id="1" style="display:none;border:3px solid #DDDDDD;padding:1rem;">
+
+  <h1 id="appendix">Appendix</h1>
+
+  <h2 id="code-release">Code Release</h2>
+
+  <ul>
+    <li>
+<strong>Github Code Release</strong>
+      <ul>
+        <li>Repository: source_identification_problem</li>
+        <li>Version <a href="https://github.com/fxnnxc/source_identification_problem/tree/v23.10.04.2" target="_blank" rel="noopener noreferrer">v23.10.04.2</a>
+</li>
+      </ul>
+    </li>
+    <li>
+<strong>W&amp;B</strong> :
+      <ul>
+        <li>binary : https://wandb.ai/bumjin/sip-pythia_comparison_binary?workspace=user-bumjin</li>
+        <li>category : https://wandb.ai/bumjin/sip-pythia_comparison_category?workspace=user-bumjin</li>
+        <li>number of words : https://wandb.ai/bumjin/sip-num_words_comparison?workspace=user-bumjin</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2 id="word-examples">Word Examples</h2>
+
+  <p>랜덤하게 학습데이터에서 추출한 데이터</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Label (Source)</th>
+        <th>Text Chunk (Length 4)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>USS Atlanta ( 1861 )</td>
+        <td>the 15 @-@ inch</td>
+      </tr>
+      <tr>
+        <td>USS Atlanta ( 1861 )</td>
+        <td>opened fire with both</td>
+      </tr>
+      <tr>
+        <td>Tower Building of the Little Rock Arsenal</td>
+        <td>Guard , office ,</td>
+      </tr>
+      <tr>
+        <td>Valkyria Chronicles III</td>
+        <td>follows the “ Nameless</td>
+      </tr>
+      <tr>
+        <td>2011 – 12 Columbus Blue Jackets season</td>
+        <td>After the game ,</td>
+      </tr>
+      <tr>
+        <td>2011 – 12 Columbus Blue Jackets season</td>
+        <td>soon to be free</td>
+      </tr>
+      <tr>
+        <td>2011 – 12 Columbus Blue Jackets season</td>
+        <td>his second game ,</td>
+      </tr>
+      <tr>
+        <td>Mary Barker</td>
+        <td>remarkable freedom of spirit</td>
+      </tr>
+      <tr>
+        <td>Tower Building of the Little Rock Arsenal</td>
+        <td>last week in the</td>
+      </tr>
+      <tr>
+        <td>Mary Barker</td>
+        <td>deteriorate . She was</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Label (Source)</th>
+        <th>Text Chunk (Length 8)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>USS Atlanta ( 1861 )</td>
+        <td>( 381 mm ) shell struck the ironclad</td>
+      </tr>
+      <tr>
+        <td>Valkyria Chronicles III</td>
+        <td>, experience points are awarded to the squad</td>
+      </tr>
+      <tr>
+        <td>Valkyria Chronicles III</td>
+        <td>other is sealed off to the player .</td>
+      </tr>
+      <tr>
+        <td>Tower Building of the Little Rock Arsenal</td>
+        <td>last part of the month . “ The</td>
+      </tr>
+      <tr>
+        <td>Tower Building of the Little Rock Arsenal</td>
+        <td>. The arsenal was briefly seized once more</td>
+      </tr>
+      <tr>
+        <td>John Cullen</td>
+        <td>with 110 points combined between the Penguins and</td>
+      </tr>
+      <tr>
+        <td>2011 – 12 Columbus Blue Jackets season</td>
+        <td>their first three @-@ game win streak of</td>
+      </tr>
+      <tr>
+        <td>Valkyria Chronicles III</td>
+        <td>with Valkyria Chronicles II director Takeshi Ozawa .</td>
+      </tr>
+      <tr>
+        <td>Mary Barker</td>
+        <td>with an analytical eye and was friend to</td>
+      </tr>
+      <tr>
+        <td>Tower Building of the Little Rock Arsenal</td>
+        <td>, and machinery at the Little Rock Arsenal</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Label (Source)</th>
+        <th>Text Chunk (Length 16)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>2011 – 12 Columbus Blue Jackets season</td>
+        <td>the third worst point total in franchise history . = = Off @-@ season = =</td>
+      </tr>
+      <tr>
+        <td>General aviation in the United Kingdom</td>
+        <td>more specific terminology can be used to <unk> its purpose . The CAA strategic review of</unk>
+</td>
+      </tr>
+      <tr>
+        <td>Ancient Egyptian deities</td>
+        <td>. Many gods had more than one cult center , and their local ties changed over</td>
+      </tr>
+      <tr>
+        <td>John Cullen</td>
+        <td>with 110 points combined between the Penguins and Whalers , and was the team ‘s best</td>
+      </tr>
+      <tr>
+        <td>Jacqueline Fernandez</td>
+        <td>balloon “ . Later that year , she made a cameo appearance in Sajid Khan ‘s</td>
+      </tr>
+      <tr>
+        <td>South of Heaven</td>
+        <td>Russell Simmons and Rubin parted ways , Slayer signed to Rubin ‘s newly founded Def American</td>
+      </tr>
+      <tr>
+        <td>Ancient Egyptian deities</td>
+        <td>god ‘s connections and interactions with other deities helped define its character . Thus Isis ,</td>
+      </tr>
+      <tr>
+        <td>General aviation in the United Kingdom</td>
+        <td>Cessna and Piper introduced light aircraft designed for the private market . The Cessna 172 ,</td>
+      </tr>
+      <tr>
+        <td>SMS Zrínyi</td>
+        <td>Saint @-@ Germain @-@ en @-@ <unk> , the transfer was not recognized ; instead ,</unk>
+</td>
+      </tr>
+      <tr>
+        <td>Jacqueline Fernandez</td>
+        <td>, a role based on the Princess Jasmine character . Fernandez garnered mixed reviews for her</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 id="training-settings">Training Settings</h2>
+
+  <p>Memorization 에 사용된 모델은 다음과 같다.</p>
+  <ul>
+    <li>linear_hidden_size: 256</li>
+    <li>linear_activation: relu</li>
+    <li>linear_n_layers: 6</li>
+  </ul>
+
+  <d-code language="python">
+👾 FLAGS
+datetime: '10_03_203434'
+data: wikitext-2-v1
+data_cache_dir: /data/EleutherAI_wikitext
+num_words: 8
+max_tokens: 32
+lm_batch_size: 8
+num_first_labels: 10
+num_samples_per_label: 1000
+min_samples_per_label: 200
+datasets_split_ratio: 0.8
+exp_name: pythia_comparison_binary
+test: false
+lm_model: pythia
+lm_model_size: 1b
+lm_model_path: /data/EleutherAI
+lm_num_gpus: 2
+lr: 0.001
+batch_size: 4
+hash_type: binary
+device: cuda:0
+num_warmup_steps: 1000
+num_epochs: 1000
+num_train_steps: 33000
+num_eval: 10
+num_save: 10
+hash_model_type: linear
+hash_batch_size: 128
+linear_hidden_size: 256
+linear_activation: relu
+linear_n_layers: 6
+rnn_hidden_size: 128
+rnn_n_layers: 2
+bert_num_hidden_layers: 12
+bert_replace_to_bert: false
+task: train_hash
+project_name: sip-pythia_comparison_binary
+num_binaries: 4
+num_labels: 12
+hidden_size: 2048
+num_steps_per_epoch: 33
+save_freq: 3300
+eval_freq: 3300
+global_step: 0
+</d-code>
+
+</div>
+
+<script>
+function myFunction(n) {
+  var x = document.getElementById(n);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+
+
+      </d-article>
+
+      <d-appendix>
+        <d-footnote-list></d-footnote-list>
+        <d-citation-list></d-citation-list>
+      </d-appendix>
+
+
+      <hr>
+<!---->
+</div>
+
+    <!-- Footer -->    <footer class="sticky-bottom mt-5" style="border: none;border-top:0px">
+      <div class="container" style="text-align: center; ">
+        © Copyright 2024 Bumjini  . Powered by Jekyll with al-folio theme. Hosted by GitHub Pages.
+
+      </div>
+    </footer>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js" integrity="sha256-l/1pMF/+J4TThfgARS6KwWrk/egwuVvhRzfLAMQ6Ds4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha256-SyTu6CwrfOhaznYZPoolVw2rxoY7lKYKQvqbtqN93HI=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    
+    
+
+<!-- Scrolling Progress Bar -->
+<script type="text/javascript">
+  /*
+   * This JavaScript code has been adapted from the article 
+   * https://css-tricks.com/reading-position-indicator/ authored by Pankaj Parashar, 
+   * published on the website https://css-tricks.com on the 7th of May, 2014.
+   * Couple of changes were made to the original code to make it compatible 
+   * with the `al-foio` theme.
+   */
+  const progressBar = $("#progress");
+  /*
+   * We set up the bar after all elements are done loading.
+   * In some cases, if the images in the page are larger than the intended
+   * size they'll have on the page, they'll be resized via CSS to accomodate
+   * the desired size. This mistake, however, breaks the computations as the
+   * scroll size is computed as soon as the elements finish loading.
+   * To account for this, a minimal delay was introduced before computing the
+   * values.
+   */
+  window.onload = function () {
+    setTimeout(progressBarSetup, 50);
+  };
+  /*
+   * We set up the bar according to the browser.
+   * If the browser supports the progress element we use that.
+   * Otherwise, we resize the bar thru CSS styling
+   */
+  function progressBarSetup() {
+    if ("max" in document.createElement("progress")) {
+      initializeProgressElement();
+      $(document).on("scroll", function() {
+        progressBar.attr({ value: getCurrentScrollPosition() });
+      });
+      $(window).on("resize", initializeProgressElement);
+    } else {
+      resizeProgressBar();
+      $(document).on("scroll", resizeProgressBar);
+      $(window).on("resize", resizeProgressBar);
+    }
+  }
+  /*
+   * The vertical scroll position is the same as the number of pixels that
+   * are hidden from view above the scrollable area. Thus, a value > 0 is
+   * how much the user has scrolled from the top
+   */
+  function getCurrentScrollPosition() {
+    return $(window).scrollTop();
+  }
+
+  function initializeProgressElement() {
+    let navbarHeight = $("#navbar").outerHeight(true);
+    $("body").css({ "padding-top": 0 });
+    $("progress-container").css({ "padding-top": 0 });
+    progressBar.css({ top: navbarHeight });
+    progressBar.attr({
+      max: getDistanceToScroll(),
+      value: getCurrentScrollPosition(),
+    });
+  }
+  /*
+   * The offset between the html document height and the browser viewport
+   * height will be greater than zero if vertical scroll is possible.
+   * This is the distance the user can scroll
+   */
+  function getDistanceToScroll() {
+    return $(document).height() - $(window).height();
+  }
+
+  function resizeProgressBar() {
+    progressBar.css({ width: getWidthPercentage() + "%" });
+  }
+  // The scroll ratio equals the percentage to resize the bar
+  function getWidthPercentage() {
+    return (getCurrentScrollPosition() / getDistanceToScroll()) * 100;
+  }
+</script>
+
+  </body>
+
+  <d-bibliography src="/assets/bibliography/all.bib">
+  </d-bibliography>
+
+  <!-- jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="/assets/js/distillpub/overrides.js"></script>
+
+    <center>
+        <img src="/assets/common/KAIST-hi.gif" width="40px" style="margin-right:0px; padding-bottom: 3px;">
+    </center>
+    <hr> 
+
+</html>
