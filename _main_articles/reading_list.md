@@ -18,6 +18,22 @@ tags: neuron
 
 #### 2024.09 
 
+
+* Evaluating Open-Source Sparse Autoencoders on Disentangling Factual Knowledge in GPT-2 Small
+* [Failures in Kindness](https://www.lesswrong.com/posts/GLpFovxZdwXYwmbkJ/failures-in-kindness)
+* [Fun Theory](https://www.lesswrong.com/posts/K4aGvLnHvYgX9pZHS/the-fun-theory-sequence)
+* Chai-1
+* DataGemma
+* LLaMa-Omni
+* Agent Workflow Memory
+* Learning to Reason with LLMs
+* Can LLMs Generation Novel Research Ideas
+* SimPO (Preference Optimization)
+* Self-Contrastive Decoding with MoE
+* Navigating the Safety Landscape: Measuring Risks in Finetuning Large Language Models
+* Multi-Object Hallucination in Vision-Language Models
+* XplainLLM: A Knowledge-Augmented Dataset for Reliable Grounded Explanations in LLMs
+
 * [Entity-Based Knowledge Conflicts in Question Answering](https://aclanthology.org/2021.emnlp-main.565/)
 * [DisentQA: Disentangling Parametric and Contextual Knowledge with Counterfactual Question Answering](https://aclanthology.org/2023.acl-long.559/)
 * [Editing Factual Knowledge in Language Models](https://aclanthology.org/2021.emnlp-main.522/)
@@ -27,7 +43,8 @@ tags: neuron
 * [Transformer Circuit Faithfulness Metrics Are Not Robust](https://arxiv.org/abs/2407.08734)
 * [Multilevel Interpretability Of Artificial Neural Networks: Leveraging Framework And Methods From Neuroscience](https://arxiv.org/abs/2408.12664)
 * [Bi-Factorial Preference Optimization: Balancing Safety-Helpfulness in Language Models](https://arxiv.org/abs/2408.15313)
-
+* Capabilities of Gemini Models in Medicine, 2024
+* Advancing Multimodal Medical Capabilities of Gemini, 2024
 
 #### 2024.08
 
